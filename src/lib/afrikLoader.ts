@@ -201,6 +201,16 @@ export interface SearchWithLeads {
   leads: SearchLead[];
   /** Per-type match counts (REQ-124) for the named-lens chips. */
   counts: SearchLensCounts;
+  /**
+   * Whether the API answered at all.
+   *
+   * Every failure below degrades to the same empty envelope, which is right
+   * for rendering — a reader is shown "no result" either way rather than a
+   * stack trace. It is wrong for anything counting those zeroes: an outage
+   * and a query the corpus cannot answer are not the same fact, and folding
+   * them together files every failed request under the corpus's own gaps.
+   */
+  answered: boolean;
 }
 
 // @req REQ-125
@@ -228,6 +238,7 @@ export async function searchWithLeads(
         results: [],
         leads: [],
         counts: { ...EMPTY_SEARCH_LENS_COUNTS },
+        answered: false,
       };
     }
 
@@ -242,10 +253,16 @@ export async function searchWithLeads(
         : results,
       leads,
       counts,
+      answered: true,
     };
   } catch (error) {
     logger.error("[searchWithLeads] Exception", error);
-    return { results: [], leads: [], counts: { ...EMPTY_SEARCH_LENS_COUNTS } };
+    return {
+      results: [],
+      leads: [],
+      counts: { ...EMPTY_SEARCH_LENS_COUNTS },
+      answered: false,
+    };
   }
 }
 

@@ -1,0 +1,410 @@
+{
+  "id": "BWA",
+  "nameFr": "Botswana",
+  "nameEn": "Botswana",
+  "nameOfficial": "Republic of Botswana",
+  "summary": "Botswana takes its name from the Tswana people, with the prefix bo-: \"land of the Tswana\" is the translation the country's institutions favour, but what \"Tswana\" means is not established, and a lexicographer at the University of Botswana writes that on this point there is only conjecture. The name was not coined at independence: it is put to the Bechuanaland Legislative Assembly in December 1965, and a Bo- form is recorded as a self-designation as early as 1801. San, Kalanga, Herero and Mbukushu peoples live there alongside the Tswana.",
+  "etymology": "\"Botswana\" is formed on the name of the people, with the prefix bo-, just as mo- forms the name of a person, ba- that of the people, and se- that of the language. The series is attested without interruption from the first Setswana grammar, published by James Archbell in 1837, to the linguists of the University of Botswana today. The translation \"land of the Tswana\" is the one given by the country's institutions and official nomenclatures, and it serves a reader well — but it is not the grammatical value of the prefix. Bo- first forms abstract nouns: Denis Creissels makes it the class of quality, where tau, \"lion\", gives bolau, \"the nature of a lion\". John Brown's Setswana dictionary, in 1895, indeed glosses Bocwana as \"the personality of a Mocwana\", not a territory. The territorial use does exist, but it is lexical rather than grammatical: the same dictionary gives Bokweni for the land of the Bakweni and Borwe for that of the San.\n\nWhat the root Tswana designates is not established, and it is the voices closest to the language that say so. Thapelo Otlogetswe, professor at the University of Botswana and author of the first monolingual Setswana dictionary, writes that very little is known of the origin of these words and that on this point there is only conjecture. David Livingstone, for his part, proposed in 1857 to connect the name to chuana, \"similar, equal\", and reported that it was also explained by a traveller's misunderstanding, who was supposedly answered \"they are like us\" — a hypothesis he dismissed, the name being in use among people with no contact with Europeans. On the following page, he notes that the Bechuana cannot explain the derivation of their own name. Brown's dictionary gives chwana two meanings, \"to be similar\" and the feminine of ncho, \"black\"; the Dictionary of South African English keeps both roots and does not decide between them. Paul Maylam, for his part, holds that the name Bechuana was coined by whites in the nineteenth century. A refutation of Livingstone by the Motswana scholar D. M. Ramoshoana exists, but it survives only in the introduction to Desmond Cole's grammar, which has not been read.",
+  "nameOriginActor": "The name was carried locally before being ratified in London. The Prime Minister puts it to the Bechuanaland Legislative Assembly on 13 December 1965; more than one hundred and fifty public meetings and kgotla gatherings bring it before the chiefs; the Assembly and the House of Chiefs approve it; the London conference of February 1966 examines proposals drafted locally; the British Act of 3 August 1966 confirms it for 30 September. It was not a matter of inventing a word: a Bo- form is recorded as a self-designation as early as 1801, and a party was already named the Botswana Independence Party at the March 1965 elections. \"Bechuanaland\" was the anglicised form of baTswana. Who formed the root Tswana is not established.",
+  "content": {
+    "historicalNames": {
+      "formerNames": ["Bechuanaland Protectorate (1885-1966)"],
+      "antiquity": "The present-day territory of Botswana was inhabited by Khoisan peoples (San and Khoikhoi), the region's first inhabitants, with no unified name for the whole territory. The indigenous peoples had their own names for their territories.",
+      "middleAges": "Arrival and expansion of Bantu peoples (Tswana) in the region. Development of Tswana chieftaincies. Contacts between Bantu and Khoisan peoples. No unified name for the whole territory.",
+      "precolonial": "A mosaic of autonomous Tswana chieftaincies (Bakwena, Bangwato, Bangwaketse, Batawana, and others). Khoisan peoples (San) in the Kalahari Desert. Europeans used the term \"Bechuanaland\" to designate the region.",
+      "colonization": "1885-1966: Bechuanaland Protectorate (British Bechuanaland Protectorate). The British established the protectorate in 1885 to protect the Tswana chieftaincies against Boer and German expansion. The territory was administered from the Cape (South Africa) and then from London. No significant British settler colonisation.",
+      "contemporary": "1966: Independence of Botswana (30 September 1966), proclamation of the Republic of Botswana. The name \"Botswana\" replaces \"Bechuanaland\". The country has enjoyed remarkable political stability since independence, with a multiparty democracy and an economy based on diamonds."
+    },
+    "kingdoms": [
+      {
+        "name": "Tswana Chieftaincies",
+        "period": "Precolonial - present",
+        "entryType": "polity",
+        "dominantPeoples": ["Tswana (Batswana)"],
+        "politicalCenters": [
+          "Gaborone (capitale moderne)",
+          "chefferies traditionnelles (Bakwena",
+          "Bangwato",
+          "Bangwaketse",
+          "Batawana",
+          "etc.)"
+        ],
+        "historicalRole": "Tswana chieftaincies organised into traditional political structures. Kgotla system (traditional assembly). Resistance to colonisation. Major role in Botswana's independence."
+      },
+      {
+        "name": "Bechuanaland Protectorate",
+        "period": "1885 - 1966",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1885,
+          "endYear": 1966,
+          "precision": "year"
+        },
+        "dominantPeoples": [
+          "Tous les peuples botswanais sous protectorat britannique"
+        ],
+        "politicalCenters": [
+          "Mafikeng (capitale administrative",
+          "en Afrique du Sud)",
+          "puis Gaborone (à partir de 1965)"
+        ],
+        "historicalRole": "British protectorate, indirect administration (respecting traditional chieftaincies). No settler colonisation. Development of the independence movement in the twentieth century. Threat of annexation by South Africa averted."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Tswana",
+        "selfAppellation": "Batswana (plural), Motswana (singular)",
+        "exonyms": [
+          "Tswana (term used by Europeans)",
+          "Batswana",
+          "\"Bechuana\" (ancienne orthographe coloniale",
+          "dépassée)"
+        ],
+        "peopleId": "PPL_TSWANA",
+        "mainRegion": "All of Botswana (majority people)",
+        "languages": ["Setswana / Tswana (tsn", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Batswana\" is the self-designation (plural), \"Tswana\" is the most common exonym. \"Bechuana\" is an outdated colonial spelling. No pejorative term is known."
+      },
+      {
+        "name": "Kgalagadi",
+        "selfAppellation": "Kgalagadi",
+        "exonyms": ["Kgalagadi (term used by Europeans)"],
+        "peopleId": "PPL_KGALAGADI",
+        "mainRegion": "Kalahari Desert (Botswana)",
+        "languages": ["Kgalagadi (xkv", "ISO 639-3)", "setswana", "anglais"],
+        "languageFamily": "FLG_KHOE",
+        "appellationRemarks": "The term \"Kgalagadi\" is the people's self-designation. No pejorative term is known."
+      },
+      {
+        "name": "San",
+        "selfAppellation": "Variées selon les groupes (Ju|'hoansi, ǂHoan, etc.)",
+        "exonyms": [
+          "\"Bushmen\" (terme colonial péjoratif",
+          "à éviter)",
+          "\"San\" (terme générique",
+          "parfois utilisé)",
+          "\"Khoisan\" (academic term)"
+        ],
+        "peopleId": null,
+        "mainRegion": "Kalahari Desert (Botswana)",
+        "languages": [
+          "Langues khoïsan (plusieurs langues)",
+          "setswana",
+          "anglais"
+        ],
+        "languageFamily": "FLG_KXA",
+        "appellationRemarks": "The terms \"Bushmen\" and \"Hottentots\" are pejorative colonial exonyms and are to be avoided. \"San\" is a generic term sometimes used, but each group has its own self-designation (Ju|'hoansi, ǂHoan, and others). \"Khoisan\" is an academic term used to designate the whole of the peoples of this language family. The San are the first inhabitants of Botswana and of southern Africa."
+      },
+      {
+        "name": "Kalanga",
+        "selfAppellation": "Kalanga",
+        "exonyms": ["Kalanga (term used by Europeans)"],
+        "peopleId": "PPL_KALANGA",
+        "mainRegion": "North-eastern Botswana, on the border with Zimbabwe",
+        "languages": ["Kalanga (kck", "ISO 639-3)", "setswana", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "The term \"Kalanga\" is the people's self-designation. No pejorative term is known."
+      },
+      {
+        "name": "Herero",
+        "selfAppellation": "Ovaherero",
+        "exonyms": ["Herero (term used by Europeans)", "Ovaherero"],
+        "peopleId": "PPL_HERERO",
+        "mainRegion": "North-western Botswana, on the border with Namibia",
+        "languages": ["Otjiherero (her", "ISO 639-3)", "setswana", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Ovaherero\" is the self-designation (plural), \"Herero\" is the most common exonym. No pejorative term is known."
+      },
+      {
+        "name": "Mbukushu",
+        "selfAppellation": "Mbukushu",
+        "exonyms": ["Mbukushu (term used by Europeans)"],
+        "peopleId": "PPL_MBUKUSHU",
+        "mainRegion": "Northern Botswana (Okavango), on the border with Namibia and Angola",
+        "languages": ["Mbukushu (mhw", "ISO 639-3)", "setswana", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "The term \"Mbukushu\" is the people's self-designation. No pejorative term is known."
+      },
+      {
+        "name": "Yeyi",
+        "selfAppellation": "Yeyi",
+        "exonyms": ["Yeyi (term used by Europeans)"],
+        "peopleId": "PPL_YEYI",
+        "mainRegion": "Northern Botswana (Okavango)",
+        "languages": ["Yeyi (yey", "ISO 639-3)", "setswana", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "The term \"Yeyi\" is the people's self-designation. No pejorative term is known."
+      },
+      {
+        "name": "Autres peuples",
+        "selfAppellation": "Variées selon les groupes",
+        "exonyms": ["Variées selon les groupes"],
+        "peopleId": "PPL_SHUA",
+        "mainRegion": "Various regions of Botswana",
+        "languages": ["Langues khoïsan", "setswana", "anglais"],
+        "languageFamily": "FLG_KHOE",
+        "appellationRemarks": "Each group has its own self-designation. No pejorative term is known."
+      }
+    ],
+    "culture": {
+      "mainLanguages": [
+        { "name": "Setswana / Tswana", "isoCode": "tsn" },
+        { "name": "anglais", "isoCode": "eng", "isPrimary": true },
+        { "name": "Kgalagadi", "isoCode": "xkv" },
+        { "name": "langues khoïsan" },
+        { "name": "Kalanga", "isoCode": "kck" },
+        { "name": "Otjiherero", "isoCode": "her" },
+        { "name": "Mbukushu", "isoCode": "mhw" },
+        { "name": "Yeyi", "isoCode": "yey" }
+      ],
+      "culturalTraditions": "Dominant Tswana traditions (kgotla, traditional assemblies). Khoisan traditions (hunting and gathering, rock art). Herero traditions (livestock herding, traditional dress). Varied traditional music and dance. Rites of passage, initiation rites, traditional festivals. San rock art (UNESCO World Heritage).",
+      "dominantReligions": "Christianity (majority Protestantism, Catholicism), traditional African religions (frequent syncretism), traditional Khoisan beliefs",
+      "lifestyles": "Agriculture and livestock herding (Tswana, Herero), hunting and gathering (San), trade and urban activities (urban areas, Gaborone). Growing urbanisation. Economy based on diamonds, livestock (cattle), and tourism (safaris, Kalahari Desert).",
+      "socialOrganization": "Organisation into traditional Tswana chieftaincies (kgotla, traditional assemblies). Patrilineal clan structure. Importance of lineages and extended families. Role of councils of elders. Egalitarian organisation among the San (hunter-gatherers).",
+      "regionalRelations": "Historical relations with South Africa (trade, migrations), Namibia (border, cross-border peoples), Zimbabwe (Kalanga, trade). Integration into SADC (Southern African Development Community). Cross-border trade and cultural relations. Historical economic dependence on South Africa."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Initial settlement by Khoisan peoples (San and Khoikhoi), the region's first inhabitants, present for tens of thousands of years. San rock art (UNESCO World Heritage).",
+      "middleAges": "Arrival and expansion of Bantu peoples (Tswana) in the region from the first millennium CE. Development of Tswana chieftaincies. Contacts between Bantu and Khoisan peoples. Development of regional trade networks.",
+      "precolonial": "Consolidation of the Tswana chieftaincies (Bakwena, Bangwato, Bangwaketse, Batawana, and others). Kgotla system (traditional assembly). Resistance to Boer raids and outside pressures. Khoisan peoples (San) in the Kalahari Desert, a hunter-gatherer way of life.",
+      "colonization": "1885: Establishment of the Bechuanaland Protectorate by the British to protect the Tswana chieftaincies against Boer and German expansion. Period of the British protectorate (1885-1966), indirect administration (respecting traditional chieftaincies). No significant British settler colonisation. Threat of annexation by South Africa averted through the resistance of the Tswana chiefs. Twentieth century: Development of the independence movement, formation of political parties.",
+      "independenceStruggle": "1960s: Independence movement led by Tswana leaders (Seretse Khama, and others). 1965: Transfer of the capital from Mafikeng (South Africa) to Gaborone. 1966: Independence of Botswana (30 September 1966), proclamation of the Republic of Botswana. The name \"Botswana\" replaces \"Bechuanaland\".",
+      "postIndependence": "1966-present: Remarkable political stability, multiparty democracy, presidency of Seretse Khama (1966-1980). Discovery and exploitation of diamonds (1970s), economic transformation. Economic and social development, improvement in development indicators. Challenges: HIV/AIDS, social inequalities, dependence on diamonds. Botswana is regarded as a model of democracy and development in Africa."
+    },
+    "sources": [
+      {
+        "title": "SIL Ethnologue – Languages of Botswana",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Botswana",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNFPA – World Population Dashboard — Botswana",
+        "url": "https://www.unfpa.org/data/world-population/BW",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry for UNFPA."
+      },
+      {
+        "title": "Schapera, Isaac – \"A Handbook of Tswana Law and Custom\"",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Parsons, Neil – \"A New History of Southern Africa\"",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNESCO – Art rupestre san du Botswana (patrimoine mondial)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements botswanais",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples du Botswana",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Botswana (ethnic groups)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      },
+      {
+        "title": "David Livingstone, Missionary Travels and Researches in South Africa, Londres, John Murray, 1857, p. 200-201",
+        "url": "https://archive.org/details/missionarytravel03livi",
+        "tier": "referenced",
+        "notes": "Connects the name to chuana, \"similar, equal\", reports then dismisses the explanation involving a traveller's misunderstanding, and notes that the Bechuana cannot explain the derivation of their own name. Also gives the pair Sichuana for their language and Sekoa for that of the whites. Passage read in facsimile on 9 September 2026."
+      },
+      {
+        "title": "John Brown, Secwana Dictionary: English-Secwana and Secwana-English, imprimé pour la London Missionary Society par Butler et Tanner, 1895",
+        "url": "https://archive.org/details/secwanadictionar00brow",
+        "tier": "referenced",
+        "notes": "Gives chwana two meanings, \"to be similar\" and the feminine of ncho, \"black\", and glosses Bocwana as \"the personality of a Mocwana\", not a territory. It does, however, carry Bokweni for the land of the Bakweni and Borwe for that of the San, which attests to the territorial use of the prefix. The facsimile record gives an incorrect date and author; the title page and preface, signed at Taungs in March 1895, have been read, as has the Open Library entry. Accessed 9 September 2026."
+      },
+      {
+        "title": "James Archbell, A Grammar of the Bechuana Language, Grahamstown, Meurant et Godlonton, 1837",
+        "url": "https://archive.org/details/grammarofbechuan00arch",
+        "tier": "referenced",
+        "notes": "First grammar of Setswana. It establishes the mo-, ba-, se-, bo- prefix system. It classifies the form Buchuana among duals, however, not among territory names: the reading \"land of the Tswana\" for this passage is that of modern commentators, not Archbell's. Volume read in facsimile on 9 September 2026."
+      },
+      {
+        "title": "Dictionary of South African English on Historical Principles, entrées « Motswana » et « Bechuana »",
+        "url": "https://dsae.co.za/entry/motswana/e04953",
+        "tier": "referenced",
+        "notes": "Gives two competing roots for -tswana without choosing between them: an adjective meaning \"black\" in the feminine, and a verb meaning \"to be similar\". Treats \"Bechuana\" as the anglicised form of baTswana, records some forty attested spellings, and cites an 1801 record where the word is already a self-designation, as well as Paul Maylam's position that the name was coined by whites in the nineteenth century. Entries read on 9 September 2026; the works cited by the dictionary have not been read."
+      },
+      {
+        "title": "Thapelo J. Otlogetswe, « The Origins of \"Tswana\" », extrait d'un mémoire de l'université d'Oxford, publié par l'auteur, 5 octobre 2005",
+        "url": "https://otlogetswe.wordpress.com/2005/10/05/the-origins-of-tswana/",
+        "tier": "unverified",
+        "notes": "Self-published, hence the tier, but the author is a professor in the English department at the University of Botswana, a lexicographer and a specialist in proper names, and the author of the first monolingual Setswana dictionary. He writes that very little is known of the origin of the words Se-Tswana and Bo-Tswana, and that on this point there is only conjecture. He refers to Livingstone's refutation by D. M. Ramoshoana, preserved in the introduction to Desmond Cole's grammar, which has not been read. Page read on 9 September 2026."
+      },
+      {
+        "title": "Denis Creissels, « Number in Tswana », dans Number in the World's Languages: A Comparative Handbook, Berlin et Boston, De Gruyter Mouton, p. 107-127",
+        "url": "http://www.deniscreissels.fr/public/Creissels-Number_in_Tswana.pdf",
+        "tier": "referenced",
+        "notes": "Describes the prefix bo- as that of the abstract quality class, where tau, \"lion\", gives bolau, \"the nature of a lion\". Like the other grammatical descriptions consulted, it does not mention country names: this is why the fiche presents the territorial use as lexical rather than as a rule. Text read on 9 September 2026."
+      },
+      {
+        "title": "Permanent Committee on Geographical Names, Toponymic Factfile: Botswana, Royaume-Uni, juillet 2025",
+        "url": "https://assets.publishing.service.gov.uk/media/68aee27d3a052c9c504c8e7f/Botswana_Toponymic_Factfile.pdf",
+        "tier": "official",
+        "notes": "Official British geographical nomenclature. It gives \"Land of the Tswana\" for the country's name and notes that the territory was called the Bechuanaland Protectorate under British administration. Document read on 9 September 2026."
+      },
+      {
+        "title": "Bechuanaland Protectorate: Report for the year 1965, Londres, His Majesty's Stationery Office, établi par le service d'information du gouvernement du Bechuanaland",
+        "url": "https://archive.org/details/b31415994",
+        "tier": "official",
+        "notes": "Annual report of the territory, written by its own government. It reports that a document presented to the Legislative Assembly by the Prime Minister on 13 December 1965 proposed the establishment of a republic \"to be called the Republic of Botswana\". This is the first dated and attributable act of naming that has been found. Passage read in facsimile on 9 September 2026."
+      },
+      {
+        "title": "Botswana Independence Act 1966, Royaume-Uni, 1966 chapitre 23, article 1",
+        "url": "https://www.legislation.gov.uk/ukpga/1966/23/enacted",
+        "tier": "official",
+        "notes": "Provides that the Bechuanaland Protectorate becomes, on 30 September 1966, an independent republic \"under the name of Botswana\". The Act confirms a name proposed locally the previous year; it does not say who chose it. Text read on 9 September 2026."
+      }
+    ],
+    "demographics": {
+      "totalPopulation": 2600000,
+      "referenceYear": 2025,
+      "source": "UNFPA – World Population Dashboard",
+      "peoples": [
+        {
+          "name": "Tswana",
+          "percentageInCountry": 79,
+          "peopleId": "PPL_TSWANA",
+          "region": "All of Botswana (majority people)"
+        },
+        {
+          "name": "Autres groupes ethniques",
+          "peopleId": null,
+          "region": "Various",
+          "languageFamily": null,
+          "percentageInCountry": 21
+        }
+      ]
+    }
+  },
+  "_translation": {
+    "kind": "machine",
+    "translatedAt": "2026-09-09T09:14:33.431Z",
+    "model": "claude-sonnet-5",
+    "sourceHash": "d05bbe3a86750310f365e4fa477470c2cdd31642a935be0adf2914e991d19f07",
+    "fieldHashes": {
+      "nameOfficial": "2bb72779d8c86908",
+      "summary": "a2242dbc0f0bf509",
+      "etymology": "e70fa472d5373cad",
+      "nameOriginActor": "102c5ec213b6f9b2",
+      "content.historicalNames.formerNames[0]": "ceceb42aacadc3ff",
+      "content.historicalNames.antiquity": "f7a30ca8f83a42b6",
+      "content.historicalNames.middleAges": "ea42c6772d1642f0",
+      "content.historicalNames.precolonial": "ab34c937ba9aec80",
+      "content.historicalNames.colonization": "43194a4350635490",
+      "content.historicalNames.contemporary": "ad4fcb1f97733a6d",
+      "content.kingdoms[0].name": "784d3eca729da87d",
+      "content.kingdoms[0].period": "30ec12efb265311f",
+      "content.kingdoms[0].dominantPeoples[0]": "2f9d554f505f8f39",
+      "content.kingdoms[0].historicalRole": "664d37772b631eb3",
+      "content.kingdoms[1].name": "83bed188213c9313",
+      "content.kingdoms[1].period": "d974c719408c3f30",
+      "content.kingdoms[1].historicalRole": "67c726af4977d5f3",
+      "content.majorPeoples[0].selfAppellation": "d5133fc1c9520a75",
+      "content.majorPeoples[0].exonyms[0]": "4cc233431e3a2ba3",
+      "content.majorPeoples[0].mainRegion": "e10663cebe3306a1",
+      "content.majorPeoples[0].appellationRemarks": "a1e3aca985a5ded1",
+      "content.majorPeoples[1].exonyms[0]": "4cc233431e3a2ba3",
+      "content.majorPeoples[1].mainRegion": "8f89e29247612cb9",
+      "content.majorPeoples[1].appellationRemarks": "20c6a5855634d2bd",
+      "content.majorPeoples[2].selfAppellation": "c1c43910eead4694",
+      "content.majorPeoples[2].exonyms[4]": "006e6147e0d9f52b",
+      "content.majorPeoples[2].mainRegion": "8f89e29247612cb9",
+      "content.majorPeoples[2].appellationRemarks": "b5bc68fe619fe00d",
+      "content.majorPeoples[3].exonyms[0]": "4cc233431e3a2ba3",
+      "content.majorPeoples[3].mainRegion": "9b069f4020df6a52",
+      "content.majorPeoples[3].appellationRemarks": "69ad9017d0f07b78",
+      "content.majorPeoples[4].exonyms[0]": "4cc233431e3a2ba3",
+      "content.majorPeoples[4].mainRegion": "6ac596fe05aed946",
+      "content.majorPeoples[4].appellationRemarks": "fb9a1a54e14acc68",
+      "content.majorPeoples[5].exonyms[0]": "4cc233431e3a2ba3",
+      "content.majorPeoples[5].mainRegion": "be22d45cc90ce389",
+      "content.majorPeoples[5].appellationRemarks": "336d610f76da9c79",
+      "content.majorPeoples[6].exonyms[0]": "4cc233431e3a2ba3",
+      "content.majorPeoples[6].mainRegion": "9d0d332775013e45",
+      "content.majorPeoples[6].appellationRemarks": "a3614b56beb76b2b",
+      "content.majorPeoples[7].mainRegion": "21d84d14d0f20ff8",
+      "content.majorPeoples[7].appellationRemarks": "46e5bea2d42f1807",
+      "content.culture.culturalTraditions": "bd38bc3d1b680263",
+      "content.culture.dominantReligions": "98db06d5beeacde8",
+      "content.culture.lifestyles": "aefc93e9f35f1742",
+      "content.culture.socialOrganization": "1a24bc056841fdb4",
+      "content.culture.regionalRelations": "c90362c47f267fbb",
+      "content.historicalFacts.ancientPeriods": "a57a3de1b38733c9",
+      "content.historicalFacts.middleAges": "6a1ab4a8153066f1",
+      "content.historicalFacts.precolonial": "99aae0bab7f3fb4c",
+      "content.historicalFacts.colonization": "a58cb82ac5832c03",
+      "content.historicalFacts.independenceStruggle": "16d362463d2b5e15",
+      "content.historicalFacts.postIndependence": "5b86f8ef97c03b6c",
+      "content.sources[0].notes": "6b52475b40d94130",
+      "content.sources[1].notes": "6b52475b40d94130",
+      "content.sources[2].notes": "5b01fa636848b75c",
+      "content.sources[3].notes": "6b52475b40d94130",
+      "content.sources[4].notes": "6b52475b40d94130",
+      "content.sources[5].notes": "6b52475b40d94130",
+      "content.sources[6].notes": "6b52475b40d94130",
+      "content.sources[7].notes": "6b52475b40d94130",
+      "content.sources[8].notes": "6b52475b40d94130",
+      "content.sources[9].notes": "5f85c6028609b720",
+      "content.sources[10].notes": "01dc074906184d5f",
+      "content.sources[11].notes": "bbf4ccc43e2908ea",
+      "content.sources[12].notes": "a05ad25e6235ef22",
+      "content.sources[13].notes": "3d33d6ad6a1fb7ff",
+      "content.sources[14].notes": "25f5b3347f58123f",
+      "content.sources[15].notes": "10f900ec9fce110d",
+      "content.sources[16].notes": "05fd25ef6cf14177",
+      "content.sources[17].notes": "befb4122bf5b6669",
+      "content.sources[18].notes": "283c88ba7b57c8a7",
+      "content.demographics.peoples[0].region": "e10663cebe3306a1",
+      "content.demographics.peoples[1].region": "f16444f595e1ad20"
+    },
+    "reviewRequired": [
+      "nameOfficial",
+      "etymology",
+      "content.historicalNames.formerNames[0]",
+      "content.kingdoms[0].name",
+      "content.kingdoms[1].name",
+      "content.majorPeoples[0].appellationRemarks",
+      "content.majorPeoples[1].appellationRemarks",
+      "content.majorPeoples[2].appellationRemarks",
+      "content.majorPeoples[3].appellationRemarks",
+      "content.majorPeoples[4].appellationRemarks",
+      "content.majorPeoples[5].appellationRemarks",
+      "content.majorPeoples[6].appellationRemarks",
+      "content.majorPeoples[7].appellationRemarks"
+    ]
+  }
+}

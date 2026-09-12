@@ -3,9 +3,9 @@
   "nameFr": "Bénin",
   "nameEn": "Benin",
   "nameOfficial": "République du Bénin (République du Bénin)",
-  "summary": "Le Bénin porte depuis 1975 le nom d'un royaume qui n'était pas le sien : celui du Bénin, situé dans l'actuel Nigeria. Il s'appelait auparavant Dahomey, du nom du royaume qui domina la région du XVIIe au XIXe siècle. Fon, Adja-Ewe, Yoruba, Bariba et Dendi y ont laissé des traditions royales, la divination Ifá et le vodun.",
-  "etymology": "Le nom \"Bénin\" provient de l'ancien royaume du Bénin (actuel Nigeria), mais a été choisi pour le pays en 1975 pour remplacer \"Dahomey\". Le nom \"Dahomey\" venait du royaume du Dahomey (XVIIe-XIXe siècles), lui-même nommé d'après \"Danhomé\" (dans le ventre de Dan), fondé par le roi Houegbadja. Le choix de \"Bénin\" en 1975 visait à créer une identité nationale neutre, sans référence à un groupe ethnique spécifique.",
-  "nameOriginActor": "Le nom \"Bénin\" a été choisi par le gouvernement de la République populaire du Bénin en 1975, sous la présidence de Mathieu Kérékou. Il remplace \"Dahomey\", nom colonial français dérivé du royaume du Dahomey (fondé par les Fon). Le nom \"Bénin\" fait référence à l'ancien royaume du Bénin (actuel Nigeria), mais a été adopté pour sa neutralité ethnique.",
+  "summary": "Le Bénin porte depuis 1975 le nom d'un royaume qui n'était pas le sien, celui du Bénin, situé dans l'actuel Nigeria ; les raisons de ce choix ne sont portées par aucune source spécialisée. Il s'appelait auparavant Dahomey, du nom du royaume qui domina la région du XVIIe au XIXe siècle, dont l'explication par « le ventre de Dan » est discutée depuis Burton. Fon, Adja-Ewe, Yoruba, Bariba et Dendi y ont laissé des traditions royales, la divination Ifá et le vodun.",
+  "etymology": "Le pays a changé de nom en 1975. Le président Mathieu Kérékou l'annonce dans un discours du 30 novembre, et l'ordonnance n° 75-80 du 2 décembre 1975 portant dénomination de l'État l'établit : les visas de deux ordonnances de janvier 1976, publiées par le secrétariat général du gouvernement béninois, citent l'une et l'autre. Le dépositaire des traités des Nations unies retient la même date, en notant que le pays s'appelait Dahomey jusqu'au 2 décembre 1975. En revanche, la raison du choix n'est établie par aucune source spécialisée. L'idée d'un nom recherché pour sa neutralité ethnique ne se lit que chez des auteurs non spécialistes ; le rattachement au golfe du Bénin n'est guère mieux porté ; et la seule lecture publiée dans une revue à comité de lecture, celle de Camilla Strandsbjerg, place le changement dans une lutte dirigée à la fois contre la puissance coloniale et contre les pouvoirs royaux d'Abomey. Le nom lui-même vient d'un royaume edo, que les Edo appellent Ubini et non Bénin — ils se nomment eux-mêmes Edo — et dont la forme portugaise Beny est elle aussi discutée : Ekhaguosa Aisien la fait venir de l'itsekiri Ubini, Alan Ryder objecte qu'aucune langue du sud du Nigeria n'en offre une source plausible, et l'historien edo Osarhieme Osadolor suit Ryder.\n\n« Dahomey » transcrit le fon Danhomè. La morphologie est réelle : le fon dit xò, ou xomɛ̀, pour le ventre, et mɛ̀ marque le lieu, si bien que « dans le ventre de Dan » se forme correctement. Le récit qui l'accompagne, lui, ne tient pas en place. Un roi cède un terrain, s'irrite de le voir empiéter, demande si l'on va bâtir jusque sur son ventre, et l'on bâtit sur son corps — mais le meurtrier change d'une source à l'autre : Dakodonou chez Robert Norris en 1789, chez Archibald Dalzel en 1793 et, sous la forme Dako, chez Richard Burton en 1864 ; Adarunza dans un récit portugais de 1797 ; Houegbadja chez Auguste Le Hérissé en 1911 ; Akaba chez Maurice Ahanhanzo Glélé. Le rang de la victime change aussi, roi, prince, chef voisin ou chef de terre, et le sens avec lui : le ventre, les entrailles, le cobra, ou la maison. Burton relevait dès 1864 que la légende pourrait être née du nom plutôt que l'inverse, et donnait pour raison qu'une seconde s'y trouvait à l'identique — Le Hérissé rapporte en effet le même meurtre une génération plus tôt, produisant Agrigomè, « dans le carquois d'Agri ». Dalzel imprimait déjà, dans le même volume que le récit, une dérivation concurrente. Et Dan n'est pas seulement un homme : c'est chez les Fon le serpent vodun, et c'est aussi un lieu. Deux chercheurs de l'université d'Abomey-Calavi glosent d'ailleurs Danxômè par « dans le ventre du serpent ». Aucun chercheur béninois ou fon contestant l'étymologie n'a été trouvé ; ceux qui la contestent sont tous européens, ce qui est en soi une donnée.",
+  "nameOriginActor": "Le nom a été donné par le président Mathieu Kérékou, chef de l'État, par ordonnance, le Conseil des ministres entendu : annonce le 30 novembre 1975, ordonnance n° 75-80 le 2 décembre. Il n'existait pas de législature à cette date. Pourquoi « Bénin » plutôt qu'un autre nom n'est établi par aucune source spécialisée, et l'atlas ne le tranche pas. « Dahomey » était le nom du royaume fon, transcrit par les Européens à partir du XVIIIe siècle ; qui a nommé ce royaume, et d'après quoi, reste discuté.",
   "content": {
     "historicalNames": {
       "formerNames": [
@@ -305,6 +305,60 @@
         "url": "https://unstats.un.org/unsd/methodology/m49/",
         "tier": "official",
         "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      },
+      {
+        "title": "Ordonnance n° 76-6 du 26 janvier 1976 portant dénomination des sociétés d'État et d'économie mixte, des établissements publics et autres institutions de l'État, République populaire du Bénin",
+        "url": "https://sgg.gouv.bj/doc/ordonnance-1976-6/download",
+        "tier": "official",
+        "notes": "Publiée par le secrétariat général du gouvernement béninois. Ses visas citent l'ordonnance n° 75-80 du 2 décembre 1975 portant dénomination de l'État, ainsi que le discours du 30 novembre 1975 : c'est ce qui établit à la fois l'instrument et la double date. L'ordonnance 75-80 elle-même n'est pas numérisée et n'a pas été lue. Document téléchargé et lu le 9 septembre 2026 ; sa reconnaissance de caractères est médiocre."
+      },
+      {
+        "title": "Nations unies, Traités multilatéraux déposés auprès du Secrétaire général, informations historiques",
+        "url": "https://treaties.un.org/pages/HistoricalInfo.aspx",
+        "tier": "official",
+        "notes": "Le dépositaire note que le pays s'appelait Dahomey jusqu'au 2 décembre 1975, ce qui recoupe exactement l'ordonnance citée en visa. La page des États membres du site des Nations unies donne pour sa part une date de 1974 et un nom de République du Bénin : les deux sont erronés. Page lue le 9 septembre 2026."
+      },
+      {
+        "title": "Osarhieme Benson Osadolor, The Military System of Benin Kingdom, c. 1440-1897, thèse de doctorat, Universität Hamburg, 2001",
+        "url": "https://ediss.sub.uni-hamburg.de/bitstream/ediss/3156/2/Disse.pdf",
+        "tier": "referenced",
+        "notes": "Travail d'un historien edo. Il établit que les Edo se nomment eux-mêmes Edo et non Bénin, que la graphie du nom ancien est Ubini, et il expose le désaccord sur la forme portugaise : Ekhaguosa Aisien la fait venir de l'itsekiri Ubini, Alan Ryder objecte qu'aucune langue du sud du Nigeria n'en offre une source plausible, et l'auteur suit Ryder. Il distingue aussi Ubini de l'expression yoruba Ile-Ibinu, « la terre de la contrariété », qu'Oranmiyan aurait employée et que les Edo n'ont jamais reprise. Thèse lue le 9 septembre 2026 ; les ouvrages qu'elle cite ne l'ont pas été."
+      },
+      {
+        "title": "Archibald Dalzel, The History of Dahomy, an Inland Kingdom of Africa, Londres, 1793",
+        "url": "https://archive.org/details/historydahomyan00dalzgoog",
+        "tier": "referenced",
+        "notes": "Première mise en forme imprimée du récit : Tacoodonou fait ouvrir le ventre de Da et bâtit sur son corps, d'où Da-homy. L'auteur ajoute lui-même que tout ce qui précède cette date repose sur la tradition, et il imprime dans sa préface une dérivation concurrente rapprochant Dahomy du Dauma des anciennes cartes. Volume lu en fac-similé le 9 septembre 2026."
+      },
+      {
+        "title": "Richard F. Burton, A Mission to Gelele, King of Dahome, volume I, deuxième édition, Londres, Tinsley Brothers, 1864, p. 160-161",
+        "url": "https://archive.org/details/amissiontogelel00burtgoog",
+        "tier": "referenced",
+        "notes": "Donne Danh pour le serpent ou l'arc-en-ciel, décompose Danh-ho-men en « les entrailles de Danh » ou « dans le ventre de Danh », et note que les gens préfèrent le second. Surtout, il écrit que la légende pourrait être née du nom, et donne pour raison l'existence d'un doublet, Agri-go-men. C'est la plus ancienne mise en doute repérée. Volume lu en fac-similé le 9 septembre 2026."
+      },
+      {
+        "title": "Auguste Le Hérissé, L'ancien royaume du Dahomey : mœurs, religion, histoire, Paris, E. Larose, 1911",
+        "url": "https://gallica.bnf.fr/ark:/12148/bpt6k209284r",
+        "tier": "referenced",
+        "notes": "Rapporte le meurtre de Dan par Houegbadja et la maison élevée sur sa tombe, appelée Danhomè, dans une partie que l'auteur présente comme l'histoire racontée par un chef de canton nommé Agbidinoukoun. Le même livre raconte le même meurtre une génération plus tôt, Dako tuant Agri, d'où Agrigomè, « dans le carquois d'Agri ». Il donne aussi Dan pour le serpent vodun et pour un lieu ayant son propre chef. Consulté par recherche dans le texte numérisé de la Bibliothèque nationale de France le 9 septembre 2026 ; les folios n'ont pas été lus en image, et la pagination imprimée n'est donc pas donnée."
+      },
+      {
+        "title": "Midjèou Béranger Avohouémè Togbé et Lambert Roch Mongbo, « Mobilisations politiques autour du Festival international des cultures de Danxômè (Abomey, Bénin) », Cahiers d'études africaines, numéro 233, 2019, p. 193-214",
+        "url": "https://doi.org/10.4000/etudesafricaines.25257",
+        "tier": "referenced",
+        "notes": "Deux chercheurs de l'université d'Abomey-Calavi. Ils glosent Danxômè, sans réserve, par « dans le ventre du serpent » — la lecture par l'animal plutôt que par un homme nommé Dan. Article lu le 9 septembre 2026."
+      },
+      {
+        "title": "Camilla Strandsbjerg, « Continuité et rupture dans les représentations du pouvoir politique au Bénin entre 1972 et 2001 », Cahiers d'études africaines, numéro 177, 2005, p. 71-94",
+        "url": "https://doi.org/10.4000/etudesafricaines.14893",
+        "tier": "referenced",
+        "notes": "Seule lecture parue dans une revue à comité de lecture qui donne un sens au changement de nom. Elle le rattache à une lutte dirigée contre la puissance coloniale et contre les pouvoirs royaux d'Abomey, et non à une recherche de neutralité ethnique. Article consulté le 9 septembre 2026 par une lecture assistée de la page, non sur le texte brut."
+      },
+      {
+        "title": "Michael Houseman, « Note sur les récits de fondation des royaumes Aja-Tado du Sud Bénin », dans La terre et le pouvoir, Paris, CNRS Éditions, 2012, p. 223-248",
+        "url": "https://shs.hal.science/halshs-01469933/document",
+        "tier": "referenced",
+        "notes": "Retrace l'explication du nom jusqu'à Norris en 1789 et Dalzel en 1793, et rappelle que tout le reste des récits a été recueilli au XXe siècle, alors que des travaux récents mettent en doute l'exactitude des faits qu'ils rapportent. Avertit aussi qu'il serait abusif de confondre le Dahomey avec la chefferie de Dauma des cartes du XVIe siècle. Texte lu le 9 septembre 2026."
       }
     ],
     "demographics": {

@@ -20,6 +20,8 @@ import { FicheOnward } from "@/components/fiche/FicheOnward";
 import { buildOnwardLinks } from "@/lib/fiche/onwardLinks";
 import { countryOnwardGroups } from "@/lib/fiche/onwardGroups";
 import { getAfrikLanguageFamilyRoster } from "@/lib/supabase/queries/afrik/languageFamilies";
+import { getCountryLanguagesFact } from "@/lib/supabase/queries/afrik/countryLanguages";
+import { getCountryFamilyCount } from "@/lib/supabase/queries/afrik/countryFamilyCount";
 import { ficheJsonLdFor } from "@/lib/seo/ficheJsonLd";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
 import { FicheSnapshotView } from "@/components/fiche/FicheSnapshotView";
@@ -27,7 +29,6 @@ import { FicheHeroHead } from "@/components/fiche/FicheHeroHead";
 import { FicheHeroBand } from "@/components/fiche/FicheHeroBand";
 import { CountryFicheTitle } from "@/components/country/CountryFicheTitle";
 import { CountryRecordView } from "@/components/country/CountryRecordView";
-import { CountrySynthesisBrief } from "@/components/fiche/CountrySynthesisBrief";
 import {
   compactCountryAtlasLanguages,
   deriveCountrySynthesisFromDetail,
@@ -191,6 +192,13 @@ export default async function PaysSlugPage({
 
   const navigationContext = (await searchParams) ?? {};
   const countryDetail = mapCountryDetail(country);
+  const [countryLanguages, familyCount] = await Promise.all([
+    getCountryLanguagesFact(
+      countryDetail.id,
+      countryDetail.culture?.mainLanguages
+    ).catch(() => null),
+    getCountryFamilyCount(countryDetail.id).catch(() => null),
+  ]);
 
   /** The only place a country fiche's `FLG_*` identifiers get a name. */
   const familyNamesById = new Map<string, string>(
@@ -298,13 +306,6 @@ export default async function PaysSlugPage({
         }
         record={
           <>
-            {/* The chapô goes in through `record` rather than through a new
-                FicheSequence slot: it is part of what the record says, and
-                the sequence already knows where the record belongs. */}
-            <CountrySynthesisBrief
-              synthesis={currentSynthesis}
-              language={lang as Language}
-            />
             <CountryRecordView
               country={countryDetail}
               language={lang as Language}
@@ -312,6 +313,24 @@ export default async function PaysSlugPage({
               fromPeopleName={navigationContext.fromPeopleName}
               fromPeopleId={navigationContext.fromPeopleId}
               patronymes={patronymes}
+              countryLanguages={countryLanguages}
+              summaryFigures={{
+                population:
+                  countryDetail.demographics?.totalPopulation &&
+                  countryDetail.demographics.referenceYear
+                    ? {
+                        value: countryDetail.demographics.totalPopulation,
+                        referenceYear: countryDetail.demographics.referenceYear,
+                      }
+                    : null,
+                peoples: countryDetail.demographics?.peoples?.length,
+                languages: countryLanguages?.value.length || null,
+                families: familyCount,
+                names: patronymes
+                  ? patronymes.attested.length +
+                    patronymes.borneByPeoples.length
+                  : null,
+              }}
               onward={
                 <FicheOnward
                   from="country"

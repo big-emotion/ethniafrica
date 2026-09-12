@@ -160,7 +160,7 @@ export const CHAPITRE_LE_PEUPLE: DossierChapter = {
           {
             cells: [
               "missionn-",
-              "25",
+              "26",
               "Nommer pour évangéliser, puis pour alphabétiser",
             ],
             sourceRefs: [],

@@ -1,76 +1,83 @@
 # What exists, what shipped, and what it did
 
-The substance of the production library and the publication record, carried here
-so the skill knows rather than points. Refresh the numbers each session; the
-structure below is what does not change.
+The state of the publication record, carried here so the skill knows rather than
+points. **Rewritten 2026-09-09**, after the whole editorial chain was redone.
+Refresh the numbers each session; the structure is what does not change.
 
-## The five cuts that exist
+## Where the truth lives
 
-| Cut                                                                                                                                                 | Length | State                                                                                                                                                                                                                                  |
-| --------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Afrique** — why one continent of 54 countries carries a single name, from a Roman province around Carthage                                        | 41.7 s | **Published** 2026-09-05 on YouTube, TikTok, Instagram, LinkedIn                                                                                                                                                                       |
-| **Nigeria, Codex cut** — the journalist Flora Shaw proposes the name in the Times, 8 January 1897; it becomes the country's in 1914                 | 38.0 s | **Published** 2026-09-05 on the same four                                                                                                                                                                                              |
-| **Lingala** — the language grew from bobangi on the Congo river; Belgian missionaries codified and spread it, which is not the same as inventing it | 34.8 s | **Published** 2026-09-05 on the same four                                                                                                                                                                                              |
-| **Nigeria, Claude cut**                                                                                                                             | 35.1 s | Approved for viewing, **not published**. Both Nigeria cuts are approved and neither has been designated the publishing version — that choice is still open                                                                             |
-| **Bantu V5** — "Bantu is not a name"                                                                                                                | 34.8 s | Approved for format, voice, pacing and animation, **blocked**: it opens on a LinkedIn excerpt whose author's permission was requested and never recorded. If permission is declined, the standing instruction is to remove the excerpt |
+It is split, and the split is the point.
 
-A channel-presentation video also exists and was published everywhere.
+**The engine is here**, versioned: `social/harness/` renders — `ethni_render.py`
+for video, `ethni_card.py` for images, `ethni_brand.py` for the mark, all sharing
+one visual language — and `docs/design/gabarits-social/` is the spec they read.
 
-## What they actually did — measured 2026-09-07
+**The productions are not**, and never will be. They live in the production
+library, outside version control, at whatever path
+`ETHNIAFRICA_SOCIAL_PROJECTS` points to on this machine. So do the publication
+index, the dated editorial guides and the pipeline state.
 
-| Channel                     | Followers | Reach                                                                                                      | Site clicks                                                                           |
-| --------------------------- | --------- | ---------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| **YouTube Shorts**          | 16        | Nigeria **861**, Afrique **706**, Lingala **632**, presentation **13** — **2 212 views**                   | none possible in feed                                                                 |
-| **LinkedIn** (company page) | —         | 296 impressions over 30 days; Afrique 78, Lingala 60, Nigeria 24, presentation 31, article 50              | **4 total** — 2 on the presentation post, 2 on the article, **0 on all three videos** |
-| **Facebook**                | 6         | reels posted                                                                                               | —                                                                                     |
-| **Instagram**               | 2         | 4 publications                                                                                             | —                                                                                     |
-| **TikTok**                  | 0         | 0 likes — **verify the videos are live**, the record says posted manually and the profile does not show it | —                                                                                     |
+Two consequences worth stating, because both have already caused a wrong answer:
+a figure about what has been published cannot be read from this repository, and a
+question about how a render is produced cannot be answered from the library.
 
-Meanwhile the site recorded 55 consented visitors over the same 30 days, **45 %
-of them attributed to LinkedIn** and none to YouTube, TikTok or Instagram.
+## What is approved and waiting to be produced
 
-### The three conclusions that follow
+Twenty-two publications, all copy written and validated on 2026-09-09:
+thirteen videos and nine carousels, with one hundred and ten captions across five
+networks. They live in the library's guides — `production-list-2026-09-09.md`,
+`narrations-2026-09-09.md`, `serie-villes-2026-09-09.md`,
+`cartes-carrousels-2026-09-09.md` and `legendes-110-2026-09-09.md`.
 
-1. **The videos work.** 2 212 views from a 16-subscriber channel is not a
-   content problem. Any plan that treats the video output as underperforming is
-   reading the wrong number.
-2. **The bridge to the site is missing, not the audience.** Reach and traffic
-   are on different channels and nothing connects them.
-3. **The channel-presentation video is the counter-example that proves the
-   pillars.** 13 views against 632–861 for the etymology cuts. Institutional
-   self-description does not travel. On LinkedIn it inverts — the presentation
-   post is one of only two that produced clicks — which is exactly why the
-   channels need different content, not different crops.
+**Nothing of the twenty-two has been produced yet.** Two things block production,
+and both have a written prompt in `prompts-production-2026-09-09.md`:
 
-## The established caption register
+1. **The video template.** The intro, the outro, the mark and the gold captions
+   are approved. The text card and the on-screen plate do not exist as a shared
+   grammar — every project still places raw items by hand.
+2. **Carousel mode.** `ethni_card.py` renders one card per subject. A carousel
+   needs six to eight, ordered, each on its own licence-verified photograph.
 
-Set by the posts of 2026-09-05 and worth keeping:
+## What shipped before, and the one lesson the numbers taught
 
-- **TikTok**: short, interrogative, a claim that provokes. _« Le nom "Nigeria" a
-  été proposé… par une journaliste, dans un journal britannique, en 1897. »_
-  Three to four hashtags.
-- **Instagram**: longer, carries the sourced detail and the nuance, ends on what
-  the reader gains. Five hashtags.
-- **LinkedIn**: full sentences, the source named, the link explicit. This is the
-  channel where the decolonial editorial posture is an asset rather than a
-  detail.
+Five cuts were published on 2026-09-05 (Afrique, two Nigeria cuts, Lingala,
+Bantu V5) plus a channel presentation. A thirteen-video batch followed on
+2026-09-05 and **was rejected**: its scripts were never approved. Do not revive
+those montages.
 
-The recurring rhetorical move across all three: name the colonial-era fact, then
-return the autonym and the people's own history. That move _is_ the brand.
+The measured lesson, and it is the one that matters:
 
-## The production method
+- **No verdict on a short before 72 hours.** On 2026-09-08 the Ghana cut sat at
+  47 views and was used as evidence that a script was weak. Hours later it was at
+  402, and Sénégal at 566. View counts are not corrected for age, and a
+  three-day-old video against a three-week-old one is not a comparable.
+- **A measure that is unavailable is empty, never zero.** An invented zero
+  poisons every comparison after it.
+- **Retention at three seconds is still not collected.** It is the only figure
+  that judges a hook, and until it exists no hook can be called good or bad.
 
-Videos are built on **hook → build → payoff → turn → CTA**, validated in
-production and responsible for the retention the shorts achieve. The first three
-seconds carry the whole decision.
+## The link problem, still open
 
-## Two decisions still open
+No outbound link from any network carries a parameter, so every visit a video
+earns lands in Plausible's `Direct / None` bucket. `social/tools/link-builder/`
+is written and not yet in service. Until it is, no publication can say what it
+brought back, and the UTM scheme in `description-template-2026-09-09.md` is the
+one every caption already assumes.
 
-Both are the operator's, and both block a calendar slot:
+## The caption register
 
-1. **Which Nigeria cut publishes** — Claude or Codex. The Codex cut is already
-   live and holds 861 views, the channel's best. The Claude cut is queued for a
-   later date with no date chosen.
-2. **Whether the Bantu excerpt is cleared** — or the excerpt is removed and the
-   cut ships without it. This has been pending since the launch, and Bantu is
-   the plan's own first post.
+Set by `description-template-2026-09-09.md` and binding: the hook, the proof, the
+exit; the first hundred characters complete before the cut; the claim identical
+on all five networks and the form rewritten for each. Plain language everywhere
+except LinkedIn, per `plain-language-doctrine-2026-09-09.md`.
+
+The recurring move: name the colonial-era fact, then return the autonym and the
+people's own history. That move is the brand.
+
+## Decisions still open
+
+1. **Which Nigeria cut publishes** — two cuts are approved, neither designated.
+2. **Whether the Bantu excerpt is cleared**, or removed so the cut can ship.
+3. **The seven country fiches**, whose etymologies carry no source of their own.
+   Bénin and Sénégal are in curation; the Bénin carousel and the Sénégal
+   corrective video wait on them.

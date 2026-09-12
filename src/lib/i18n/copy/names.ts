@@ -70,16 +70,16 @@ const fr: NamesCopy = {
   /**
    * Why the page exists, in the reader's terms.
    *
-   * Naming a people is contested, and the corpus takes no side: it records
+   * Naming a people is contested, and the atlas takes no side: it records
    * every attested form and says where each came from. Without this said
    * plainly, a reader meets three thousand forms and no reason for them —
-   * and the page reads as a duplicate of the people fiches, which name one
+   * and the page reads as a duplicate of the people pages, which name one
    * autonym each and cannot be entered from a name heard elsewhere.
    */
   purpose:
     "Un peuple porte rarement un seul nom. Il en a un qu'il emploie lui-même, d'autres que ses voisins lui donnent, d'autres encore qu'une administration coloniale a fixés par écrit — et certains sont péjoratifs. Cette page les recense tous, pour qu'un nom entendu quelque part mène au peuple qu'il désigne, sans décider lequel est le bon.",
   // The note used to say the genealogy of personal names was "not covered
-  // yet". It is: the patronyme fiches exist and now have their own route
+  // yet". It is: the patronyme pages exist and now have their own route
   // (DEC-038), so the note points there instead of closing the door.
   genealogyNote:
     "Cette page documente les noms de peuples (ethnonymes) — endonymes, exonymes et appellations imposées. Vous cherchez l'origine d'un nom de famille ? C'est la dimension Nom, qui documente les systèmes de nommage des personnes.",
@@ -99,7 +99,7 @@ const fr: NamesCopy = {
     exonym: NAME_TYPE_LABELS.fr.exonym,
     historical_spelling: NAME_TYPE_LABELS.fr.historical_spelling,
     // Kept for `NameTypeBadge`, which labels a record of that type. The
-    // filter chip it once fed is now rendered only when the corpus holds
+    // filter chip it once fed is now rendered only when the atlas holds
     // such a record, and it holds none — see migration 071.
     surname: NAME_TYPE_LABELS.fr.surname,
     imposed: "noms imposés",

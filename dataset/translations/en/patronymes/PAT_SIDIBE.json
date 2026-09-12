@@ -1,0 +1,157 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique ; chaque affirmation positive renvoie à une source dédiée et les absences sont déclarées dans gaps."
+  },
+  "id": "PAT_SIDIBE",
+  "nameMain": "Sidibé",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Sidibé",
+      "attestations": [
+        { "countryId": "MLI", "sourceRefs": ["afrik-candidate-queue"] }
+      ]
+    },
+    {
+      "spelling": "Sidibe",
+      "attestations": [
+        { "countryId": "MLI", "sourceRefs": ["afrik-candidate-queue"] }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "In their study of Guinean governing elites, Rainer and Trebbi describe bearers of Sidibé as originating from Wassoulou: their consultant classifies them as Fulani linguistically and culturally integrated with the Malinké, while sources diverge between the two affiliations.",
+        "claimStatus": "contested",
+        "sourceRefs": ["rainer-trebbi-2012-political-power"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_FULA",
+      "status": "attested",
+      "sourceRefs": [
+        "afrik-candidate-queue",
+        "rainer-trebbi-2012-political-power"
+      ]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "MLI",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "alliances": [
+    {
+      "targetPatronymeId": "PAT_SANGARE",
+      "allianceType": "sanankuya",
+      "sourceRefs": [
+        "bamadaba-jamuw",
+        "diallo-2006-plaisanterie-peuls",
+        "canut-2002-senankuya",
+        "canut-smith-2006-pactes"
+      ]
+    }
+  ],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "The atlas does not yet document this name in detail: no dedicated source has been consulted. This record exists to note the name, not to state anything about it. Future verification will draw on electoral registers, national statistical institutes and onomastic research in the country concerned."
+    },
+    {
+      "sourceKey": "rainer-trebbi-2012-political-power",
+      "title": "New Tools for the Analysis of Political Power in Africa",
+      "url": "https://www.nber.org/papers/w18424.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Ilia Rainer and Francesco Trebbi, NBER Working Paper 18424, September 2012. The appendix on Guinea, p. 43, separately explains the classification of Diakite, Sidibe and Sangare: originating from Wassoulou and described as Fulani integrated with Malinké populations, they are coded by the authors as equally Fulani and Malinké. The document states that it has not been peer-reviewed."
+    },
+    {
+      "sourceKey": "bamadaba-jamuw",
+      "title": "Bamadaba — dictionnaire des noms claniques (jamuw)",
+      "url": "http://cormand.huma-num.fr/dicos/jamuw.zip",
+      "tier": "referenced",
+      "source_kind": "linguistic_reference",
+      "notes": "Onomastic appendix of the Bamadaba, a Bambara-French electronic dictionary supplement to the Corpus bambara de référence (Bailleul, Davydov, Erman, Maslinsky, Méric, Vydrin, 2011-2020, CC BY-NC-SA); the clan-name appendix is identified as such by Vydrin, « Vers une lexicographie mandingue sur la base de grands corpus annotés », Mandenkan 63, 2020, p. 89-110. The Sidibe entry carries a joking-partner marker (senankun) towards Sangaré; links of this kind are not systematically reciprocal from one entry to another, but this one is carried by the Sidibe entry itself."
+    },
+    {
+      "sourceKey": "diallo-2006-plaisanterie-peuls",
+      "title": "Identités et relations de plaisanterie chez les Peuls de l'ouest du Burkina Faso",
+      "url": "https://journals.openedition.org/etudesafricaines/15399",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Youssouf Diallo, Cahiers d'études africaines, vol. 46, no. 184, 2006, p. 779-794 (DOI 10.4000/etudesafricaines.15399). Peer-reviewed journal; the author was at the time affiliated with the Max-Planck-Institut für ethnologische Forschung. The article places Sidibé among the four principal Fulani clans (Diallo, Diakité, Sidibé, Sangaré) and describes the Sidibé/Sangaré pair as counterparts within the mythic core of Fulani identity, maintaining on that basis joking relations (dendiraagu, the Fulani term for this relationship); the fieldwork covers the Fulani of western Burkina Faso."
+    },
+    {
+      "sourceKey": "canut-2002-senankuya",
+      "title": "Pouvoir, places et filiation : les senankuya au Mali",
+      "url": "https://journals.openedition.org/praxematique/2307",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Canut, Cécile, Cahiers de praxématique, issue 38, 2002, p. 175-197. Fieldwork in Mali. She sets out what the pact obliges: the relationship holds in perpetuity for the entire descent of both lineages, marriage between them is prohibited — variously applied today, she specifies — and mutual assistance is owed without reservation. Cited for the obligation itself; it does not name the pair on this record, which is carried by the entries cited alongside it."
+    },
+    {
+      "sourceKey": "canut-smith-2006-pactes",
+      "title": "Pactes, alliances et plaisanteries. Pratiques locales, discours global",
+      "url": "https://doi.org/10.4000/etudesafricaines.6198",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Canut, Cécile, and Smith, Étienne, Cahiers d'études africaines, issue 184, 2006, p. 687 onwards. Cited for the caution it carries: the idea that joking kinship would defuse conflict is treated there as a hypothesis inherited from Radcliffe-Brown and taken up by conflict-resolution studies, thus as a discourse to be analysed rather than as a measured effect. The starting page is verified, the ending page is not."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Rainer and Trebbi document a disputed ethnic classification for Sidibé, but no caste or hereditary function; no other dedicated study has been found."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Rainer and Trebbi cite ministers to establish their ethnic coding, but the research has not verified a deceased bearer and their lineage affiliation; no bearer has been added."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "The accented and unaccented variants of Sidibé have been searched for in the Rainer and Trebbi appendix; the source does not distinguish two homonymous origins."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "Rainer and Trebbi explain the Fulani/Malinké identification of Sidibé without describing the rule governing transmission of the name; no dedicated onomastic study establishing patrilineal, matrilineal or elective descent has been found."
+    }
+  ],
+  "_translation": {
+    "kind": "machine",
+    "translatedAt": "2026-09-09T09:29:28.933Z",
+    "model": "claude-sonnet-5",
+    "sourceHash": "4126b9e58808d413388109dd7639a0311f9ff3b7713575109b44009e7be7f10f",
+    "fieldHashes": {
+      "origin.writtenChronicles[0].claim": "0ccdadf015346128",
+      "sources[0].notes": "78128286f23912b9",
+      "sources[1].notes": "6301ebe96da7d36b",
+      "sources[2].notes": "68b1031e5184d1cd",
+      "sources[3].notes": "e9ee2babb07d33af",
+      "sources[4].notes": "2c14e48c42d56e18",
+      "sources[5].notes": "79986afda62f44db",
+      "gaps[0].reason": "6028bb0f2153c538",
+      "gaps[1].reason": "bf7e57102fc5bc5f",
+      "gaps[2].reason": "81de149f455c31d4",
+      "gaps[3].reason": "49a454e06016654a"
+    },
+    "reviewRequired": []
+  }
+}

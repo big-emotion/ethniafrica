@@ -138,12 +138,21 @@
     {
       "targetPatronymeId": "PAT_COULIBALY",
       "allianceType": "sanankuya",
-      "sourceRefs": ["gha-v-16-18", "bamadaba-jamuw", "segoublog-sanankuya"]
+      "sourceRefs": [
+        "gha-v-16-18",
+        "bamadaba-jamuw",
+        "canut-2002-senankuya",
+        "canut-smith-2006-pactes"
+      ]
     },
     {
       "targetPatronymeId": "PAT_FOFANA",
       "allianceType": "sanankuya",
-      "sourceRefs": ["bamadaba-jamuw"]
+      "sourceRefs": [
+        "bamadaba-jamuw",
+        "canut-2002-senankuya",
+        "canut-smith-2006-pactes"
+      ]
     }
   ],
   "casteOrSocialFunction": null,
@@ -181,14 +190,6 @@
       "notes": "Jansen, Jan, Universiteit Leiden. Travail critique sur la transmission de l'épopée et sur le jamu comme institution sociale plutôt que comme mémoire historique ; utilisé ici pour la nature du jamu, non pour dater un ancêtre."
     },
     {
-      "sourceKey": "segoublog-sanankuya",
-      "title": "Sinankouya ou Sanankuya : cousinage, parenté à plaisanterie",
-      "url": "https://segoublog.wordpress.com/2019/12/27/piqure-de-rappel-sinankouya-ou-sanankuya-cousinage-parente-a-plaisanterie/",
-      "tier": "unverified",
-      "source_kind": "community",
-      "notes": "Blog malien. Cité pour les paires de sanankuya nommées (Traoré/Diarra, Keïta/Coulibaly) ; le pacte est rapporté comme remontant à Soundiata, ce que la source n'établit pas elle-même."
-    },
-    {
       "sourceKey": "gha-v-16-18",
       "title": "General History of Africa, V: Africa from the Sixteenth to the Eighteenth Century",
       "url": "https://archive.org/details/unesco_general_history_africa_v",
@@ -203,6 +204,22 @@
       "tier": "referenced",
       "source_kind": "linguistic_reference",
       "notes": "Annexe onomastique du Bamadaba, dictionnaire électronique bambara-français supplément du Corpus bambara de référence (Bailleul, Davydov, Erman, Maslinsky, Méric, Vydrin, 2011-2020, CC BY-NC-SA) ; l'annexe des noms claniques est signalée comme telle par Vydrin, « Vers une lexicographie mandingue sur la base de grands corpus annotés », Mandenkan 63, 2020, p. 89-110. 375 entrées au format MDF, consultées sur le fichier complet. Le fichier ne livre aucune légende de ses marqueurs, et la lecture retenue est celle que le fichier impose : \\ca porte les termes de statut mandingues eux-mêmes (nùmu, jèli, hɔ́rɔn, garanke, finɛ, tontigi, wage, gesere) ; \\sn se lit senankun parce que l'entrée Kúyate annote sa propre ligne « \\sn Keyita » d'une réserve disant que cette relation-là est une entente amicale et non un senankuya. Les liens \\sn ne sont pas systématiquement réciproques d'une entrée à l'autre : chaque paire est donc citée d'après l'entrée qui la porte, nommée dans le claim ou le gap."
+    },
+    {
+      "sourceKey": "canut-2002-senankuya",
+      "title": "Pouvoir, places et filiation : les senankuya au Mali",
+      "url": "https://journals.openedition.org/praxematique/2307",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Canut, Cécile, Cahiers de praxématique, numéro 38, 2002, p. 175-197. Enquête de terrain au Mali. Elle énonce ce que le pacte oblige : la relation vaut à perpétuité pour toute la descendance des deux lignées, le mariage entre elles est prohibé — diversement appliqué aujourd'hui, précise-t-elle — et l'entraide y est due sans réserve. Citée pour l'obligation elle-même ; elle ne nomme pas la paire de cette fiche, que portent les entrées citées à côté d'elle."
+    },
+    {
+      "sourceKey": "canut-smith-2006-pactes",
+      "title": "Pactes, alliances et plaisanteries. Pratiques locales, discours global",
+      "url": "https://doi.org/10.4000/etudesafricaines.6198",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Canut, Cécile, et Smith, Étienne, Cahiers d'études africaines, numéro 184, 2006, p. 687 et suivantes. Citée pour la mise en garde qu'elle porte : l'idée que la parenté à plaisanterie apaiserait les conflits y est traitée comme une hypothèse héritée de Radcliffe-Brown et reprise par les études sur la résolution des conflits, donc comme un discours à analyser et non comme un effet mesuré. La page de début est vérifiée, la page de fin ne l'est pas."
     }
   ],
   "gaps": [

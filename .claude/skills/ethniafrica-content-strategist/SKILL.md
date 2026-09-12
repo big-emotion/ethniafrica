@@ -1,6 +1,6 @@
 ---
 name: ethniafrica-content-strategist
-description: Decides what EthniAfrica should publish next — site pages and social content — from measured audience evidence and the real publishing history. Consumes the dated report written by ethniafrica-audience-audit, carries the launch plan, the publication record and the per-platform doctrine as its own knowledge, collects per-post performance from YouTube, LinkedIn, Instagram, Facebook and TikTok, and answers what to post on which network, how often, and for which audience. Use when the user asks "quoi publier", "quelle vidéo ensuite", "sur quel réseau", "à quelle fréquence", "quel public", "plan éditorial", "calendrier de contenu", "quel contenu marche", "stratégie de contenu", or invokes /ethniafrica-content-strategist.
+description: Decides what EthniAfrica should publish next — site pages and social content — from measured audience evidence and the real publishing history. Consumes the dated report written by audience-audit, carries the launch plan, the publication record and the per-platform doctrine as its own knowledge, collects per-post performance from YouTube, LinkedIn, Instagram, Facebook and TikTok, and answers what to post on which network, how often, and for which audience. Use when the user asks "quoi publier", "quelle vidéo ensuite", "sur quel réseau", "à quelle fréquence", "quel public", "plan éditorial", "calendrier de contenu", "quel contenu marche", "stratégie de contenu", or invokes /ethniafrica-content-strategist.
 metadata:
   author: Big Emotion
   version: "2.0.0"

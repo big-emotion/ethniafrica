@@ -73,7 +73,7 @@ describe("buildComparisonOgCard", () => {
       id: "PPL_ILLUSTRATIVE_ONE",
       autonym: "Endonyme Un",
       exonym: "Exonyme Un",
-      confidenceLabel: "fiche non auditée",
+      confidenceLabel: "page non auditée",
     });
   });
 
@@ -93,7 +93,7 @@ describe("buildComparisonOgCard", () => {
       id: "FLG_ILLUSTRATIVE",
       autonym: "Endonyme Famille",
       exonym: "Ancien nom",
-      confidenceLabel: "fiche non auditée",
+      confidenceLabel: "page non auditée",
     });
   });
 
@@ -105,7 +105,7 @@ describe("buildComparisonOgCard", () => {
       id: "COM",
       autonym: "Comores",
       exonym: null,
-      confidenceLabel: "fiche non auditée",
+      confidenceLabel: "page non auditée",
     });
   });
 
@@ -120,7 +120,7 @@ describe("buildComparisonOgCard", () => {
   it("replaces a missing confidence score with the unaudited fallback", () => {
     const card = buildComparisonOgCard(peuplePageData);
 
-    expect(card.entities[0].confidenceLabel).toBe("fiche non auditée");
+    expect(card.entities[0].confidenceLabel).toBe("page non auditée");
   });
 
   // @req REQ-097
@@ -174,12 +174,12 @@ describe("buildComparisonOgCard", () => {
     const card = buildComparisonOgCard(peuplePageData, "en");
 
     expect(card.entityTypeLabel).toBe("Peoples");
-    expect(card.entities[0].confidenceLabel).toBe("unaudited fiche");
+    expect(card.entities[0].confidenceLabel).toBe("unaudited page");
     expect(card.entities[1].confidenceLabel).toBe("82% confidence");
   });
 
   // @req REQ-097
-  it("produces exactly one card entity per column, nothing beyond fiche data", () => {
+  it("produces exactly one card entity per column, nothing beyond page data", () => {
     const card = buildComparisonOgCard(peuplePageData);
 
     expect(card.entities).toHaveLength(2);

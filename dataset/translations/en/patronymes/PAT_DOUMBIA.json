@@ -1,0 +1,195 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier court fondé sur le passage du corpus AFRIK référencé ; ne pas étendre les affirmations sans source dédiée."
+  },
+  "id": "PAT_DOUMBIA",
+  "nameMain": "Doumbia",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Doumbia",
+      "attestations": [
+        {
+          "countryId": "CIV",
+          "sourceRefs": ["corpus-ppl-dioula-organisation"]
+        },
+        {
+          "countryId": "BFA",
+          "sourceRefs": ["corpus-ppl-dioula-organisation"]
+        },
+        {
+          "countryId": "MLI",
+          "sourceRefs": ["corpus-ppl-dioula-organisation"]
+        },
+        {
+          "countryId": "GHA",
+          "sourceRefs": ["corpus-ppl-dioula-organisation"]
+        },
+        { "countryId": "GNB", "sourceRefs": ["corpus-ppl-dioula-organisation"] }
+      ]
+    }
+  ],
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "The jamu is a patrilineal clan name: it designates membership of a descent group, not individual filiation to the father.",
+        "claimStatus": "established",
+        "sourceRefs": ["jansen-sunjata-paradigm"]
+      },
+      {
+        "claim": "The nyamakalaw — endogamous groups of artisans and musicians — are attested among the Malinke by at least around 1300 and are found among more than fifteen West African peoples. Status is transmitted with the jamu, which makes the clan name the vehicle of social position as much as of descent.",
+        "claimStatus": "established",
+        "sourceRefs": ["tamari-1991-caste"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_DIOULA",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-dioula-organisation"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "CIV",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-dioula-organisation"]
+    },
+    {
+      "countryId": "BFA",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-dioula-organisation"]
+    },
+    {
+      "countryId": "MLI",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-dioula-organisation"]
+    },
+    {
+      "countryId": "GHA",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-dioula-organisation"]
+    },
+    {
+      "countryId": "GNB",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-dioula-organisation"]
+    }
+  ],
+  "alliances": [
+    {
+      "targetPatronymeId": "PAT_DIARRA",
+      "allianceType": "sanankuya",
+      "sourceRefs": [
+        "bamadaba-jamuw",
+        "canut-2002-senankuya",
+        "canut-smith-2006-pactes"
+      ]
+    }
+  ],
+  "casteOrSocialFunction": {
+    "value": "Blacksmith lineage (numu): Charry explicitly places the jamu among the numu lineages, alongside Kanté. The attribution rests on this source alone — the jamuw dictionary, which gives a status to seven of the ten Mande jamuw in the set, carries none for the Dunbiya entry.",
+    "sourceRefs": ["charry-1996-jembe", "tamari-1991-caste", "bamadaba-jamuw"]
+  },
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "corpus-ppl-dioula-organisation",
+      "title": "EthniAfrica — fiche du peuple Dioula, organisation clanique",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Taken from the \"Clan organisation\" chapter of the Dioula people's fiche."
+    },
+    {
+      "sourceKey": "jansen-sunjata-paradigm",
+      "title": "Beyond the Mali Empire — A New Paradigm for the Sunjata Epic",
+      "url": "https://scholarlypublications.universiteitleiden.nl/access/item:2952645/download",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Jansen, Jan, Universiteit Leiden. Critical work on the transmission of the epic and on the jamu as a social institution rather than a historical memory; used here for the nature of the jamu, not to date an ancestor."
+    },
+    {
+      "sourceKey": "charry-1996-jembe",
+      "title": "A Guide to the Jembe",
+      "url": "https://echarry.web.wesleyan.edu/jembearticle/article.html",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Charry, Eric, Percussive Notes 34(2), April 1996, pp. 66-72; the author is the ethnomusicologist of Mande Music (University of Chicago Press, 2000). An article in a specialist trade journal, not a peer-reviewed journal: it is cited here for the attribution of jamuw to Mandinka social statuses (numu, jeli, horon), which it states by name clan by clan, and not for the history of the jembe."
+    },
+    {
+      "sourceKey": "tamari-1991-caste",
+      "title": "The Development of Caste Systems in West Africa",
+      "url": "https://shs.hal.science/halshs-00690180v1",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Tamari, Tal, The Journal of African History 32(2), 1991, pp. 221-250; open deposit HAL-SHS. Establishes that endogamous groups of artisans and musicians are found among more than fifteen West African peoples and are attested among the Malinke by at least around 1300. Used for the institution of the caste, never to attach a named clan to a caste: that attribution comes from another source."
+    },
+    {
+      "sourceKey": "bamadaba-jamuw",
+      "title": "Bamadaba — dictionnaire des noms claniques (jamuw)",
+      "url": "http://cormand.huma-num.fr/dicos/jamuw.zip",
+      "tier": "referenced",
+      "source_kind": "linguistic_reference",
+      "notes": "Onomastic appendix of the Bamadaba, an electronic Bambara-French dictionary supplement to the Corpus bambara de référence (Bailleul, Davydov, Erman, Maslinsky, Méric, Vydrin, 2011-2020, CC BY-NC-SA); the appendix of clan names is identified as such by Vydrin, \"Vers une lexicographie mandingue sur la base de grands corpus annotés\", Mandenkan 63, 2020, pp. 89-110. 375 entries in MDF format, consulted from the complete file. The file provides no legend for its markers, and the reading adopted is the one the file imposes: \\ca carries the Mandinka status terms themselves (nùmu, jèli, hɔ́rɔn, garanke, finɛ, tontigi, wage, gesere); \\sn reads as senankun because the Kúyate entry annotates its own \"\\sn Keyita\" line with a note stating that this particular relation is a friendly understanding and not a senankuya. The \\sn links are not systematically reciprocal from one entry to another: each pair is therefore cited according to the entry that carries it, named in the claim or the gap."
+    },
+    {
+      "sourceKey": "canut-2002-senankuya",
+      "title": "Pouvoir, places et filiation : les senankuya au Mali",
+      "url": "https://journals.openedition.org/praxematique/2307",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Canut, Cécile, Cahiers de praxématique, number 38, 2002, pp. 175-197. Field research in Mali. She sets out what the pact obliges: the relation holds in perpetuity for all descendants of the two lineages, marriage between them is prohibited — variably applied today, she notes — and mutual assistance is owed without reservation. Cited for the obligation itself; it does not name the pair in this fiche, which is carried by the entries cited alongside it."
+    },
+    {
+      "sourceKey": "canut-smith-2006-pactes",
+      "title": "Pactes, alliances et plaisanteries. Pratiques locales, discours global",
+      "url": "https://doi.org/10.4000/etudesafricaines.6198",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Canut, Cécile, and Smith, Étienne, Cahiers d'études africaines, number 184, 2006, p. 687 and following. Cited for the caution it carries: the idea that joking kinship would ease conflicts is treated there as a hypothesis inherited from Radcliffe-Brown and taken up by conflict-resolution studies, therefore as a discourse to be analysed rather than a measured effect. The starting page is verified, the end page is not."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "bearers",
+      "reason": "The bearer that current directories attach to the clan is Fakoli, the blacksmith nephew of Soumaoro who defected to Soundiata's side, under the form \"Fakoli Doumbia\". Niane's transcription has been re-checked on this point: it names him Fakoli Koroma, and the General History of Africa likewise. The jamu Doumbia is therefore given to him by none of the sources consulted, and no other bearer could be attached to the clan."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "The jamuw dictionary groups Dunbiya, Dunbuya, Dumuya and Dunmuya under a single entry and lists Kouroma and Sissoko among its equivalences — clan names of other peoples held to be the same. Four spellings and two correspondences, no distinct lineage of origin."
+    }
+  ],
+  "_translation": {
+    "kind": "machine",
+    "translatedAt": "2026-09-09T09:39:26.335Z",
+    "model": "claude-sonnet-5",
+    "sourceHash": "2cc06089bf10059b6bb88346206934f935fddd6867f93630e8b57ed8c9c242b1",
+    "fieldHashes": {
+      "origin.linguisticReconstructions[0].claim": "14f92c91d5d99f18",
+      "origin.linguisticReconstructions[1].claim": "77da92e5bff5b48d",
+      "casteOrSocialFunction.value": "dc7d667caca11c0d",
+      "sources[0].notes": "8b203b5d149279c0",
+      "sources[1].notes": "4e75f41a563c53c3",
+      "sources[2].notes": "3cb50137a59120fd",
+      "sources[3].notes": "6c2eae881a0321de",
+      "sources[4].notes": "b80adb343411bfb9",
+      "sources[5].notes": "2c14e48c42d56e18",
+      "sources[6].notes": "79986afda62f44db",
+      "gaps[0].reason": "6055bf6d95d4841d",
+      "gaps[1].reason": "a0229dcfd4dcc870"
+    },
+    "reviewRequired": [
+      "origin.linguisticReconstructions[0].claim",
+      "origin.linguisticReconstructions[1].claim"
+    ]
+  }
+}

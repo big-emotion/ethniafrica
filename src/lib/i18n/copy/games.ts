@@ -6,7 +6,7 @@ const en = {
   correctVerdict: "Correct",
   incorrectVerdict: "Not quite",
   provenanceLabel: "According to",
-  openFiche: "Read the fiche",
+  openFiche: "Read the page",
   openAtlas: "Open the atlas",
   confidenceAriaSuffix: "for the subject of this round",
   yourEstimate: "Your estimate:",
@@ -21,15 +21,15 @@ const en = {
   corpusLimited:
     "This game was shorter than expected: the outlines do not yet provide enough misleading comparisons for eight rounds.",
   emptyCorpus:
-    "The corpus does not yet contain enough fiches to compose a round of this game.",
+    "The atlas does not yet contain enough pages to compose a round of this game.",
   emptyCorpusHint:
-    "This game will open when the corresponding fiches have been published.",
+    "This game will open when the corresponding pages have been published.",
   trueSizeHeading: "Africa's true size",
   unResolution:
     "On 4 September 2026, the United Nations General Assembly adopted by 164 votes to one, at Togo's initiative on behalf of the African Group and with the African Union's support, a resolution calling for this ‘symbolic minimisation’ of the continent to be corrected and for area-respecting projections such as Equal Earth to be preferred.",
   unSourceLabel: "UN News in French, 4 September 2026",
   continentGlobe: {
-    missing: "The corpus does not yet record any people by country.",
+    missing: "The atlas does not yet record any people by country.",
     fallback: "Flat map of Africa: this browser cannot display the globe.",
     wholeArea: "The whole continent",
     areaNoun: "the continent",
@@ -59,7 +59,7 @@ const fr: GamesCopy = {
   correctVerdict: "Bonne réponse",
   incorrectVerdict: "Ce n'est pas ça",
   provenanceLabel: "D'après",
-  openFiche: "Lire la fiche",
+  openFiche: "Lire la page",
   openAtlas: "Ouvrir l'atlas",
   confidenceAriaSuffix: "pour le sujet de cette manche",
   yourEstimate: "Votre estimation :",
@@ -74,15 +74,15 @@ const fr: GamesCopy = {
   corpusLimited:
     "Cette partie a été plus courte que prévu : les tracés ne fournissent pas encore assez de comparaisons trompeuses pour huit manches.",
   emptyCorpus:
-    "Le corpus ne contient pas encore assez de fiches pour composer un tour de ce jeu.",
+    "L’atlas ne contient pas encore assez de pages pour composer un tour de ce jeu.",
   emptyCorpusHint:
-    "Ce jeu s'ouvrira quand les fiches correspondantes auront été publiées.",
+    "Ce jeu s'ouvrira quand les pages correspondantes auront été publiées.",
   trueSizeHeading: "La taille réelle de l'Afrique",
   unResolution:
     "Le 4 septembre 2026, l'Assemblée générale des Nations unies a adopté par 164 voix contre une, portée par le Togo au nom du groupe africain et soutenue par l'Union africaine, une résolution appelant à corriger cette « minimisation symbolique » du continent et à préférer les projections qui respectent les surfaces, comme Equal Earth.",
   unSourceLabel: "ONU Info, 4 septembre 2026",
   continentGlobe: {
-    missing: "Le corpus ne renseigne encore aucun peuple par pays.",
+    missing: "L’atlas ne renseigne encore aucun peuple par pays.",
     fallback:
       "Carte de l'Afrique, à plat : ce navigateur ne peut pas afficher le globe.",
     wholeArea: "Tout le continent",

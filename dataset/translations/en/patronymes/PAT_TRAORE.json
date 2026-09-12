@@ -1,0 +1,226 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier court fondé sur le passage du corpus AFRIK référencé ; ne pas étendre les affirmations sans source dédiée."
+  },
+  "id": "PAT_TRAORE",
+  "nameMain": "Traore",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Traore",
+      "attestations": [
+        {
+          "countryId": "MLI",
+          "sourceRefs": ["corpus-ppl-bambara-organisation"]
+        },
+        {
+          "countryId": "BFA",
+          "sourceRefs": ["corpus-ppl-bambara-organisation"]
+        },
+        {
+          "countryId": "CIV",
+          "sourceRefs": ["corpus-ppl-bambara-organisation"]
+        },
+        {
+          "countryId": "GIN",
+          "sourceRefs": ["corpus-ppl-bambara-organisation"]
+        },
+        {
+          "countryId": "SEN",
+          "sourceRefs": ["corpus-ppl-bambara-organisation"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [
+      {
+        "claim": "Tiramaghan Traoré, general to Soundiata and conqueror of Kaabu, is given as the eponymous ancestor of the Tarawele clan in the epic.",
+        "claimStatus": "claimed",
+        "griot": "Djeli Mamadou Kouyaté (Djeliba Koro, Siguiri)",
+        "transcription": "Niane, Djibril Tamsir, Soundjata ou l'épopée mandingue, 1960",
+        "sourceRefs": ["niane-1960"]
+      }
+    ],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "The jamu is a patrilineal clan name: it designates membership in a descent group, not individual filiation to the father.",
+        "claimStatus": "established",
+        "sourceRefs": ["jansen-sunjata-paradigm"]
+      },
+      {
+        "claim": "The Mande form of the name is Tarawele; Traoré is its francophone colonial transcription. No etymology commands consensus.",
+        "claimStatus": "contested",
+        "sourceRefs": ["jansen-sunjata-paradigm"]
+      },
+      {
+        "claim": "The name enters into a system of correspondences between family names of different peoples, established after Soundiata: in Wolof country, a Traoré is received as a brother by the Diop and may take their name, and reciprocally. The jamu is therefore not only hereditary, it is convertible from one area to another.",
+        "claimStatus": "established",
+        "sourceRefs": ["gha-iv-mali"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_BAMBARA",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-bambara-organisation"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "MLI",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-bambara-organisation"]
+    },
+    {
+      "countryId": "BFA",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-bambara-organisation"]
+    },
+    {
+      "countryId": "CIV",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-bambara-organisation"]
+    },
+    {
+      "countryId": "GIN",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-bambara-organisation"]
+    },
+    {
+      "countryId": "SEN",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-bambara-organisation"]
+    }
+  ],
+  "alliances": [
+    {
+      "targetPatronymeId": "PAT_DIARRA",
+      "allianceType": "sanankuya",
+      "sourceRefs": [
+        "bamadaba-jamuw",
+        "canut-2002-senankuya",
+        "canut-smith-2006-pactes"
+      ]
+    }
+  ],
+  "casteOrSocialFunction": {
+    "value": "Status varies from one area to another, rather than being absent. Charry places Traoré among the jamuw hɔrɔn, of free and non-craft condition; the dictionary of jamuw records for the same entry hɔ́rɔn, then tontigi among the Bamana and the Maninka, then nùmu (blacksmith) among the Kagoro and the Wassoulounké. The numu side of the jamu is therefore attested, and the absence of a hereditary function does not hold for the whole area of the name.",
+    "sourceRefs": ["charry-1996-jembe", "bamadaba-jamuw"]
+  },
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Tiramaghan Traoré",
+      "sourceRefs": ["niane-1960", "gha-iv-mali"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "corpus-ppl-bambara-organisation",
+      "title": "EthniAfrica — fiche du peuple Bambara, organisation clanique",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Taken from the \"Clan organisation\" chapter of the Bambara people's fiche."
+    },
+    {
+      "sourceKey": "niane-1960",
+      "title": "Soundjata ou l'épopée mandingue",
+      "url": "https://books.google.com/books/about/Soundjata.html?id=PtJyAAAAMAAJ",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Niane, Djibril Tamsir, Présence Africaine, 1960. Transcription of the narrative of the griot Djeli Mamadou Kouyaté of Djeliba Koro (Siguiri). Reference source for the Soundiata epic and the lineages it founds; it is a written record of an oral tradition, not an archival document."
+    },
+    {
+      "sourceKey": "jansen-sunjata-paradigm",
+      "title": "Beyond the Mali Empire — A New Paradigm for the Sunjata Epic",
+      "url": "https://scholarlypublications.universiteitleiden.nl/access/item:2952645/download",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Jansen, Jan, Universiteit Leiden. Critical work on the transmission of the epic and on the jamu as a social institution rather than as historical memory; used here for the nature of the jamu, not to date an ancestor."
+    },
+    {
+      "sourceKey": "bamadaba-jamuw",
+      "title": "Bamadaba — dictionnaire des noms claniques (jamuw)",
+      "url": "http://cormand.huma-num.fr/dicos/jamuw.zip",
+      "tier": "referenced",
+      "source_kind": "linguistic_reference",
+      "notes": "Onomastic appendix of the Bamadaba, a Bambara-French electronic dictionary supplementing the Corpus bambara de référence (Bailleul, Davydov, Erman, Maslinsky, Méric, Vydrin, 2011-2020, CC BY-NC-SA); the clan-name appendix is identified as such by Vydrin, \"Vers une lexicographie mandingue sur la base de grands corpus annotés\", Mandenkan 63, 2020, pp. 89-110. 375 entries in MDF format, consulted from the complete file. The file provides no legend for its markers, and the reading adopted is the one the file imposes: \\ca carries the Mande status terms themselves (nùmu, jèli, hɔ́rɔn, garanke, finɛ, tontigi, wage, gesere); \\sn reads as senankun because the Kúyate entry annotates its own line \"\\sn Keyita\" with a caveat stating that this particular relationship is a friendly understanding and not a senankuya. \\sn links are not systematically reciprocal from one entry to another: each pair is therefore cited according to the entry that carries it, named in the claim or the gap."
+    },
+    {
+      "sourceKey": "charry-1996-jembe",
+      "title": "A Guide to the Jembe",
+      "url": "https://echarry.web.wesleyan.edu/jembearticle/article.html",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Charry, Eric, Percussive Notes 34(2), April 1996, pp. 66-72; the author is the ethnomusicologist of Mande Music (University of Chicago Press, 2000). Article from a specialist magazine, not a peer-reviewed journal: it is cited here for the attribution of jamuw to Mande social statuses (numu, jeli, horon), which he states by name clan by clan, and not for the history of the djembe."
+    },
+    {
+      "sourceKey": "gha-iv-mali",
+      "title": "General History of Africa, IV: Africa from the Twelfth to the Sixteenth Century",
+      "url": "https://archive.org/details/unesco_general_history_africa_iv",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "notes": "UNESCO, General History of Africa, vol. IV, ed. D. T. Niane, 1984; consulted on the full text of the digitised copy, not on an index. Chapter 6, \"Mali and the second Mandingo expansion\" (D. T. Niane, pp. 117-171), gives lineage by lineage the settlement of the Malinke clans: the Kamara holding Sibi and Tabon and the Traoré the Gangaran (p. 127), the two Camara branches led by Tabon-Wana and Kamadian Camara of Sibi (p. 131), Tiramaghan Traoré founder of Gabu (p. 127 n. 28, p. 133), the correspondence of clan names from one people to another — a Traoré is received as a brother by the Diop in Wolof country and may take their name (p. 134 n. 43) —, the Diabaté griots of Keyla and the seven-yearly re-roofing of the Kamablon of Kangaba (p. 127 n. 28), and the griot of the mansa always chosen from the Kouyaté clan (p. 160). The work is a scholarly synthesis, not a chronicle: the claims it carries here are therefore classed outside writtenChronicles."
+    },
+    {
+      "sourceKey": "canut-2002-senankuya",
+      "title": "Pouvoir, places et filiation : les senankuya au Mali",
+      "url": "https://journals.openedition.org/praxematique/2307",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Canut, Cécile, Cahiers de praxématique, number 38, 2002, pp. 175-197. Field survey in Mali. She sets out what the pact requires: the relationship holds in perpetuity for the whole descent of both lineages, marriage between them is prohibited — variously applied today, she notes — and mutual aid is owed without reservation. Cited for the obligation itself; it does not name the pair in this fiche, which is carried by the entries cited alongside it."
+    },
+    {
+      "sourceKey": "canut-smith-2006-pactes",
+      "title": "Pactes, alliances et plaisanteries. Pratiques locales, discours global",
+      "url": "https://doi.org/10.4000/etudesafricaines.6198",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Canut, Cécile, and Smith, Étienne, Cahiers d'études africaines, number 184, 2006, p. 687 and following. Cited for the caution it carries: the idea that joking kinship would ease conflicts is treated there as a hypothesis inherited from Radcliffe-Brown and taken up by conflict-resolution studies, hence as a discourse to be analysed, not as a measured effect. The starting page is verified, the end page is not."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "homonyms",
+      "reason": "Traoré and Tarawele are two spellings of the same jamu, the first stemming from the colonial transcription; the dictionary of jamuw adds a third, Taraore, under the same entry. It further groups Sane, Mane, Ouédraogo, Dembélé, Diouf and — at Ségou — Touré among its equivalences, clan names of other peoples held to be the same, an institution that the General History of Africa describes for its part by noting that a Traoré settled in Wolof country may take the name Diop. Neither the spellings nor the equivalences make separate lineages: none is treated as a homonym."
+    }
+  ],
+  "_translation": {
+    "kind": "machine",
+    "translatedAt": "2026-09-09T09:32:05.896Z",
+    "model": "claude-sonnet-5",
+    "sourceHash": "a4d1e560e8b379566d9cd8f370507cede05e2f67fb342e10b81340169428ae25",
+    "fieldHashes": {
+      "origin.oralTraditions[0].claim": "3f165a38a142cf98",
+      "origin.oralTraditions[0].transcription": "d753a01648ff3240",
+      "origin.linguisticReconstructions[0].claim": "14f92c91d5d99f18",
+      "origin.linguisticReconstructions[1].claim": "6bad8b943e3018a1",
+      "origin.linguisticReconstructions[2].claim": "0ed69539bc505847",
+      "casteOrSocialFunction.value": "04e8a4f11e274a30",
+      "sources[0].notes": "ae5f56f3682b91ff",
+      "sources[1].notes": "fc0dbc4dd8f99c38",
+      "sources[2].notes": "4e75f41a563c53c3",
+      "sources[3].notes": "b80adb343411bfb9",
+      "sources[4].notes": "3cb50137a59120fd",
+      "sources[5].notes": "16bdc28ca53255a6",
+      "sources[6].notes": "2c14e48c42d56e18",
+      "sources[7].notes": "79986afda62f44db",
+      "gaps[0].reason": "5a6a6446b9d688f5"
+    },
+    "reviewRequired": [
+      "origin.oralTraditions[0].transcription",
+      "origin.linguisticReconstructions[0].claim",
+      "origin.linguisticReconstructions[1].claim",
+      "origin.linguisticReconstructions[2].claim"
+    ]
+  }
+}

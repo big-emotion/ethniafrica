@@ -1,0 +1,534 @@
+{
+  "id": "BEN",
+  "nameFr": "Bénin",
+  "nameEn": "Benin",
+  "nameOfficial": "Republic of Benin (Republic of Benin)",
+  "summary": "Since 1975, Benin has carried the name of a kingdom that was not its own, that of Benin, located in present-day Nigeria; the reasons for this choice are not carried by any specialist source. It was formerly called Dahomey, after the kingdom that dominated the region from the seventeenth to the nineteenth century, whose explanation as \"the belly of Dan\" has been disputed since Burton. The Fon, Adja-Ewe, Yoruba, Bariba and Dendi peoples left royal traditions, Ifá divination and vodun there.",
+  "etymology": "The country changed its name in 1975. President Mathieu Kérékou announces it in a speech on 30 November, and ordinance no. 75-80 of 2 December 1975 on the naming of the State establishes it: the preambles of two ordinances from January 1976, published by the general secretariat of the Beninese government, cite both. The depositary of United Nations treaties retains the same date, noting that the country was called Dahomey until 2 December 1975. The reason for the choice, however, is not established by any specialist source. The idea of a name sought for its ethnic neutrality is found only in non-specialist authors; the link to the Bight of Benin fares little better; and the only reading published in a peer-reviewed journal, that of Camilla Strandsbjerg, places the change within a struggle directed at once against the colonial power and against the royal powers of Abomey. The name itself comes from an Edo kingdom, which the Edo call Ubini rather than Benin — they call themselves Edo — and whose Portuguese form Beny is itself disputed: Ekhaguosa Aisien derives it from the Itsekiri Ubini, Alan Ryder objects that no language of southern Nigeria offers a plausible source for it, and the Edo historian Osarhieme Osadolor follows Ryder.\n\n“Dahomey” transcribes the Fon Danhomè. The morphology is real: Fon says xò, or xomɛ̀, for belly, and mɛ̀ marks place, so that “in the belly of Dan” forms correctly. The story that accompanies it, however, does not hold together. A king cedes land, grows irritated at seeing it encroached upon, asks whether building will go as far as his belly, and building proceeds upon his body — but the killer changes from one source to another: Dakodonou in Robert Norris in 1789, in Archibald Dalzel in 1793 and, in the form Dako, in Richard Burton in 1864; Adarunza in a Portuguese account of 1797; Houegbadja in Auguste Le Hérissé in 1911; Akaba in Maurice Ahanhanzo Glélé. The rank of the victim also changes — king, prince, neighbouring chief or land chief — and the meaning changes with it: the belly, the entrails, the cobra, or the house. Burton noted as early as 1864 that the legend might have arisen from the name rather than the reverse, and gave as reason that a second one existed identically — Le Hérissé indeed reports the same murder a generation earlier, producing Agrigomè, “in Agri's quiver”. Dalzel had already printed, in the same volume as the account, a competing derivation. And Dan is not only a man: among the Fon he is the vodun serpent, and he is also a place. Two researchers from the University of Abomey-Calavi indeed gloss Danxômè as “in the belly of the serpent”. No Beninese or Fon researcher disputing the etymology has been found; those who dispute it are all European, which is itself a piece of data.",
+  "nameOriginActor": "The name was given by President Mathieu Kérékou, head of state, by ordinance, after consultation with the Council of Ministers: announced on 30 November 1975, ordinance no. 75-80 on 2 December. No legislature existed at that date. Why \"Benin\" rather than another name is not established by any specialist source, and the atlas does not settle it. \"Dahomey\" was the name of the Fon kingdom, transcribed by Europeans from the eighteenth century onward; who named this kingdom, and on what basis, remains disputed.",
+  "content": {
+    "historicalNames": {
+      "formerNames": [
+        "Colony of Dahomey (1894-1960)",
+        "Republic of Dahomey (1960-1975)",
+        "People's Republic of Benin (1975-1990)"
+      ],
+      "antiquity": "The present-day territory of Benin was inhabited by various societies with no unified name. The indigenous peoples had their own names for their kingdoms and territories (Dahomey, Nikki, Kétou, etc.).",
+      "middleAges": "Development of kingdoms and chiefdoms: the kingdom of Dahomey (Fon, seventeenth to nineteenth centuries), the kingdom of Nikki (Bariba), the kingdom of Kétou (Yoruba/Nago), the Adja-Ewe kingdoms. No unified name for the territory as a whole.",
+      "precolonial": "A mosaic of autonomous kingdoms and chiefdoms: the kingdom of Dahomey (a powerful militarised state, famous for its Amazons), the kingdom of Nikki (Bariba), the kingdom of Kétou (Yoruba), the Adja-Ewe chiefdoms, the Somba/Otamari peoples of the Atacora. The French used the term \"Dahomey\" to designate the region.",
+      "colonization": "1894-1960: Colony of Dahomey (part of French West Africa, AOF). The French conquered the kingdom of Dahomey in 1894 and established the colony of Dahomey. The territory was administered as a French colony until independence in 1960.",
+      "contemporary": "1960-1975: Republic of Dahomey (independence on 1 August 1960). 1975-1990: People's Republic of Benin (name changed on 30 November 1975, Marxist-Leninist regime under Mathieu Kérékou). Since 1990: Republic of Benin (return to multi-party democracy, new constitution in 1990)."
+    },
+    "kingdoms": [
+      {
+        "name": "Kingdom of Dahomey",
+        "period": "17th century - 1894",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1601,
+          "endYear": 1894,
+          "precision": "century"
+        },
+        "dominantPeoples": ["Fon"],
+        "politicalCenters": ["Abomey (capitale)", "Allada", "Ouidah"],
+        "historicalRole": "A powerful, militarised kingdom of Dahomey, famous for its army and its Amazons (female warriors). Territorial expansion, trade with Europeans (the slave trade), resistance to French colonisation. Major cultural influence (vodun, royal art). French conquest in 1894."
+      },
+      {
+        "name": "Kingdom of Nikki",
+        "period": "Precolonial - 19th century",
+        "entryType": "polity",
+        "dominantPeoples": ["Bariba (Baatonu)"],
+        "politicalCenters": ["Nikki (capitale)", "Parakou"],
+        "historicalRole": "The kingdom of Nikki, a powerful Bariba state in the Borgou. A tradition of cavalry, centralised political organisation. Resistance to French colonisation."
+      },
+      {
+        "name": "Kingdom of Kétou",
+        "period": "Precolonial - 19th century",
+        "entryType": "polity",
+        "dominantPeoples": ["Yoruba (Nago)"],
+        "politicalCenters": ["Kétou (capitale)"],
+        "historicalRole": "The kingdom of Kétou, a Yoruba state culturally linked to Nigeria. Relations with the kingdom of Oyo. Yoruba cultural influence (Ifá, Gẹ̀lẹ̀dẹ́ masks)."
+      },
+      {
+        "name": "Adja-Ewe kingdoms",
+        "period": "Precolonial - present",
+        "entryType": "polity",
+        "dominantPeoples": ["Adja", "Ewe"],
+        "politicalCenters": ["Tado (centre historique)", "chefferies locales"],
+        "historicalRole": "Adja-Ewe kingdoms and chiefdoms, the original centre of the Gbe migrations toward Abomey and southern Togo. Gbe cultural traditions (masks, agrarian rites)."
+      },
+      {
+        "name": "Colony of Dahomey",
+        "period": "1894 - 1960",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1894,
+          "endYear": 1960,
+          "precision": "year"
+        },
+        "dominantPeoples": [
+          "Tous les peuples béninois sous domination française"
+        ],
+        "politicalCenters": [
+          "Porto-Novo (capitale administrative)",
+          "Cotonou (port principal)"
+        ],
+        "historicalRole": "A French colony, integrated into the AOF (French West Africa). Economic exploitation (palm oil, cotton), development of the colonial administration, resistance by the indigenous peoples, development of the independence movement in the twentieth century."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Fon",
+        "selfAppellation": "Fɔ̀ngbè / Fon",
+        "exonyms": [
+          "Fon (accepted French term)",
+          "Dahoméens (linked to the former kingdom of Dahomey)"
+        ],
+        "peopleId": "PPL_FON",
+        "mainRegion": "Southern Benin (Abomey, Porto-Novo, Cotonou)",
+        "languages": ["Fon (fon", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_BENOUECONGO",
+        "appellationRemarks": "The term \"Fon\" is the self-designation and is used respectfully. \"Dahoméens\" refers to the historical kingdom and is not pejorative, but is less used today."
+      },
+      {
+        "name": "Adja-Ewe",
+        "selfAppellation": "Adja / Adyá, Ewe",
+        "exonyms": ["Adja", "Ewe (terms used by Europeans)"],
+        "peopleId": "PPL_ADJA",
+        "mainRegion": "Southwestern Benin (Mono, Couffo), border with Togo",
+        "languages": [
+          "Adja (ajg",
+          "ISO 639-3)",
+          "Ewe (ewe",
+          "ISO 639-3)",
+          "français"
+        ],
+        "languageFamily": "FLG_BENOUECONGO",
+        "appellationRemarks": "\"Adja\" and \"Ewe\" are the respective self-designations. No pejorative term is known."
+      },
+      {
+        "name": "Yoruba / Nago",
+        "selfAppellation": "Yoruba, Anagó / Nago",
+        "exonyms": [
+          "Yoruba",
+          "Nago (terms used by Europeans)",
+          "\"Nago\" peut avoir une connotation réductrice dans certains contextes mais est accepté comme auto-appellation par les Anago"
+        ],
+        "peopleId": "PPL_YORUBA",
+        "mainRegion": "Southeastern Benin (Porto-Novo, Kétou), border with Nigeria",
+        "languages": ["Yoruba (yor", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_BENOUECONGO",
+        "appellationRemarks": "\"Yoruba\" and \"Anagó\" are self-designations. \"Nago\" is an exonym variant that can carry a reductive connotation in certain historical contexts, but is accepted as a self-designation by the Anago of Benin and Togo."
+      },
+      {
+        "name": "Bariba",
+        "selfAppellation": "Baatonu",
+        "exonyms": [
+          "Bariba (term used by Europeans and the French)",
+          "Baatonu (self-designation)"
+        ],
+        "peopleId": "PPL_BARIBA",
+        "mainRegion": "Northern Benin (Borgou, Alibori), kingdom of Nikki",
+        "languages": ["Baatonu (bci", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_GUR",
+        "appellationRemarks": "\"Baatonu\" is the self-designation, \"Bariba\" is the most common exonym. No pejorative term is known."
+      },
+      {
+        "name": "Dendi",
+        "selfAppellation": "Dendi",
+        "exonyms": ["Dendi (term used by Europeans)"],
+        "peopleId": "PPL_DENDI",
+        "mainRegion": "Northern Benin, border with Niger and Nigeria",
+        "languages": ["Dendi (ddn", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_SONGHAY",
+        "appellationRemarks": "The term \"Dendi\" is the people's self-designation. No pejorative term is known."
+      },
+      {
+        "name": "Peul / Fulani",
+        "selfAppellation": "Fulɓe (plural), Pullo (singular)",
+        "exonyms": [
+          "Peul (French term)",
+          "Fulani (Hausa term)",
+          "Fula (English term)",
+          "\"Fellata\" (terme haoussa parfois péjoratif",
+          "à éviter)"
+        ],
+        "peopleId": "PPL_FULA",
+        "mainRegion": "Northern Benin (nomadic and settled pastoralists)",
+        "languages": ["Fulfulde (ful", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_ATLANTIQUE",
+        "appellationRemarks": "\"Fulɓe\" is the self-designation. \"Peul\" and \"Fulani\" are accepted exonyms. \"Fellata\" can carry a pejorative connotation in certain contexts and should be avoided."
+      },
+      {
+        "name": "Otamari / Somba",
+        "selfAppellation": "Otamari, Somba",
+        "exonyms": [
+          "Otamari",
+          "Somba (terms used by Europeans and the French)"
+        ],
+        "peopleId": "PPL_OTAMARI_SOMBA",
+        "mainRegion": "Northwestern Benin (Atacora), famous for their tata somba (fortified dwellings)",
+        "languages": ["Otamari (otm", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_GUR",
+        "appellationRemarks": "\"Otamari\" and \"Somba\" are self-designations. The tata somba (fortified dwellings) are listed as UNESCO World Heritage. No pejorative term is known."
+      },
+      {
+        "name": "Lamba",
+        "selfAppellation": "Lamba",
+        "exonyms": ["Lamba (term used by Europeans)"],
+        "peopleId": "PPL_LAMBA",
+        "mainRegion": "Northwestern Benin (mountain societies)",
+        "languages": ["Lamba (lam", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_GUR",
+        "appellationRemarks": "The term \"Lamba\" is the people's self-designation. No pejorative term is known."
+      }
+    ],
+    "culture": {
+      "mainLanguages": [
+        { "name": "Français", "isoCode": "fra", "isPrimary": true },
+        { "name": "Fon", "isoCode": "fon" },
+        { "name": "Yoruba", "isoCode": "yor" },
+        { "name": "Adja", "isoCode": "ajg" },
+        { "name": "Ewe", "isoCode": "ewe" },
+        { "name": "Baatonu", "isoCode": "bci" },
+        { "name": "Dendi", "isoCode": "ddn" },
+        { "name": "Fulfulde", "isoCode": "ful" },
+        { "name": "Otamari", "isoCode": "otm" },
+        { "name": "Lamba", "isoCode": "lam" },
+        { "name": "Gurma", "isoCode": "gux" }
+      ],
+      "culturalTraditions": "Significant cultural diversity reflecting Benin's ethnic mosaic. Gbe traditions (Fon, Adja, Ewe) with vodun, Ifá divination, masks. Yoruba traditions (Ifá, Gẹ̀lẹ̀dẹ́ masks). Bariba traditions (cavalry, the kingdom of Nikki). Somba traditions (fortified tata dwellings, unique architecture). Royal art of Dahomey (bronzes, wood sculptures). Varied traditional music and dance. Rites of passage, initiation rites, traditional festivals.",
+      "dominantReligions": "Traditional African religions (vodun very present, especially among the Fon), Christianity (Catholicism predominant, Protestantism growing), Islam (a minority, especially in the north)",
+      "lifestyles": "Agriculture (south, food crops, oil palms, cotton), livestock farming (north, the Fulani), trade and urban activities (coastal areas, Cotonou, Porto-Novo). Growing urbanisation. An economy based on agriculture (cotton, pineapple, cashew nuts), cross-border trade, and services.",
+      "socialOrganization": "Organisation into historical kingdoms (Dahomey, Nikki, Kétou), traditional chiefdoms, patrilineal and matrilineal clan structures depending on the group. The importance of lineages and extended families. The role of councils of elders. Monarchic traditions (the kingdom of Dahomey, the kingdom of Nikki).",
+      "regionalRelations": "Historical relations with Nigeria (Yoruba, trade), Togo (Adja-Ewe, border), Niger (Dendi, trans-Saharan trade), Burkina Faso (Gurma, trade). Integration into ECOWAS (Economic Community of West African States). Cross-border trade and cultural relations. Major cultural influence of vodun in the Afro-Atlantic diaspora."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Initial settlement by various societies with no unified name. Development of local chiefdoms and kingdoms. Arrival and expansion of the Gbe peoples (Adja, Fon, Ewe) in the south.",
+      "middleAges": "Formation and development of the kingdom of Dahomey (seventeenth century), the kingdom of Nikki (Bariba), the kingdom of Kétou (Yoruba). Development of regional and transatlantic trade networks. Expansion of the kingdom of Dahomey, development of the army and the Amazons.",
+      "precolonial": "Apogee of the kingdom of Dahomey (seventeenth to nineteenth centuries), a powerful militarised state, trade with Europeans (the slave trade, palm oil). Resistance to European colonisation. Relations with the kingdom of Oyo (Nigeria). Development of royal art (bronzes, sculptures).",
+      "colonization": "1894: French conquest of the kingdom of Dahomey, establishment of the colony of Dahomey. French colonial period (1894-1960), integration into the AOF. Economic exploitation (palm oil, cotton), development of the colonial administration, resistance by the indigenous peoples. Twentieth century: development of the independence movement, formation of political parties.",
+      "independenceStruggle": "1958: referendum on self-government; Dahomey votes \"yes\" to the French Community. 1960: independence of Dahomey (1 August 1960), proclamation of the Republic of Dahomey. A period of political instability (1960-1972), several coups d'état.",
+      "postIndependence": "1972-1990: Marxist-Leninist regime under Mathieu Kérékou, name changed to \"People's Republic of Benin\" (1975). 1990: return to multi-party democracy, new constitution, name changed to \"Republic of Benin\". A period of democratisation and economic development. Development challenges, poverty, social inequalities. Benin is regarded as a model of democracy in West Africa."
+    },
+    "sources": [
+      {
+        "title": "SIL Ethnologue – Languages of Benin",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Benin",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNFPA – World Population Dashboard — Bénin",
+        "url": "https://www.unfpa.org/data/world-population/BJ",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry for UNFPA."
+      },
+      {
+        "title": "Law, Robin – \"The Kingdom of Allada\"",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Gender, Politics, and Culture in the Kingdom of Dahomey\"",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Archives du Royaume d'Abomey",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNESCO – Tatas somba du Bénin (patrimoine mondial)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements béninois",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples du Bénin",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      },
+      {
+        "title": "Ordonnance n° 76-6 du 26 janvier 1976 portant dénomination des sociétés d'État et d'économie mixte, des établissements publics et autres institutions de l'État, République populaire du Bénin",
+        "url": "https://sgg.gouv.bj/doc/ordonnance-1976-6/download",
+        "tier": "official",
+        "notes": "Published by the general secretariat of the Beninese government. Its recitals cite ordinance no. 75-80 of 2 December 1975 concerning the naming of the State, as well as the speech of 30 November 1975: this is what establishes both the instrument and the double date. Ordinance 75-80 itself has not been digitised and has not been read. Document downloaded and read on 9 September 2026; its character recognition is poor."
+      },
+      {
+        "title": "Nations unies, Traités multilatéraux déposés auprès du Secrétaire général, informations historiques",
+        "url": "https://treaties.un.org/pages/HistoricalInfo.aspx",
+        "tier": "official",
+        "notes": "The depositary notes that the country was called Dahomey until 2 December 1975, which matches exactly the ordinance cited in the recital. The United Nations website's member states page, for its part, gives a date of 1974 and the name Republic of Benin: both are erroneous. Page read on 9 September 2026."
+      },
+      {
+        "title": "Osarhieme Benson Osadolor, The Military System of Benin Kingdom, c. 1440-1897, thèse de doctorat, Universität Hamburg, 2001",
+        "url": "https://ediss.sub.uni-hamburg.de/bitstream/ediss/3156/2/Disse.pdf",
+        "tier": "referenced",
+        "notes": "The work of an Edo historian. He establishes that the Edo call themselves Edo rather than Benin, that the spelling of the ancient name is Ubini, and he sets out the disagreement over the Portuguese form: Ekhaguosa Aisien derives it from the Itsekiri Ubini, Alan Ryder objects that no language of southern Nigeria offers a plausible source for it, and the author follows Ryder. He also distinguishes Ubini from the Yoruba expression Ile-Ibinu, \"the land of vexation\", said to have been used by Oranmiyan and never adopted by the Edo. Thesis read on 9 September 2026; the works it cites have not been read."
+      },
+      {
+        "title": "Archibald Dalzel, The History of Dahomy, an Inland Kingdom of Africa, Londres, 1793",
+        "url": "https://archive.org/details/historydahomyan00dalzgoog",
+        "tier": "referenced",
+        "notes": "The first printed version of the story: Tacoodonou has Da's belly opened and builds on his body, hence Da-homy. The author himself adds that everything preceding this date rests on tradition, and in his preface he prints a rival derivation linking Dahomy to the Dauma of older maps. Volume read in facsimile on 9 September 2026."
+      },
+      {
+        "title": "Richard F. Burton, A Mission to Gelele, King of Dahome, volume I, deuxième édition, Londres, Tinsley Brothers, 1864, p. 160-161",
+        "url": "https://archive.org/details/amissiontogelel00burtgoog",
+        "tier": "referenced",
+        "notes": "Gives Danh for the serpent or the rainbow, breaks Danh-ho-men down as \"the entrails of Danh\" or \"in the belly of Danh\", and notes that people prefer the latter. Above all, he writes that the legend might have arisen from the name, giving as his reason the existence of a doublet, Agri-go-men. This is the earliest instance of doubt found. Volume read in facsimile on 9 September 2026."
+      },
+      {
+        "title": "Auguste Le Hérissé, L'ancien royaume du Dahomey : mœurs, religion, histoire, Paris, E. Larose, 1911",
+        "url": "https://gallica.bnf.fr/ark:/12148/bpt6k209284r",
+        "tier": "referenced",
+        "notes": "Reports the murder of Dan by Houegbadja and the house built on his grave, called Danhomè, in a part the author presents as the story told by a canton chief named Agbidinoukoun. The same book recounts the same murder a generation earlier, Dako killing Agri, hence Agrigomè, \"in Agri's quiver\". It also gives Dan as the vodun serpent and as a place with its own chief. Consulted by searching the digitised text of the Bibliothèque nationale de France on 9 September 2026; the folios were not read in image form, so the printed pagination is not given."
+      },
+      {
+        "title": "Midjèou Béranger Avohouémè Togbé et Lambert Roch Mongbo, « Mobilisations politiques autour du Festival international des cultures de Danxômè (Abomey, Bénin) », Cahiers d'études africaines, numéro 233, 2019, p. 193-214",
+        "url": "https://doi.org/10.4000/etudesafricaines.25257",
+        "tier": "referenced",
+        "notes": "Two researchers at the University of Abomey-Calavi. They gloss Danxômè, without qualification, as \"in the belly of the serpent\" — the reading by the animal rather than by a man named Dan. Article read on 9 September 2026."
+      },
+      {
+        "title": "Camilla Strandsbjerg, « Continuité et rupture dans les représentations du pouvoir politique au Bénin entre 1972 et 2001 », Cahiers d'études africaines, numéro 177, 2005, p. 71-94",
+        "url": "https://doi.org/10.4000/etudesafricaines.14893",
+        "tier": "referenced",
+        "notes": "The only reading published in a peer-reviewed journal that gives a meaning to the name change. It links it to a struggle directed against the colonial power and against the royal powers of Abomey, rather than to a search for ethnic neutrality. Article consulted on 9 September 2026 by an assisted reading of the page, not from the raw text."
+      },
+      {
+        "title": "Michael Houseman, « Note sur les récits de fondation des royaumes Aja-Tado du Sud Bénin », dans La terre et le pouvoir, Paris, CNRS Éditions, 2012, p. 223-248",
+        "url": "https://shs.hal.science/halshs-01469933/document",
+        "tier": "referenced",
+        "notes": "Traces the explanation of the name back to Norris in 1789 and Dalzel in 1793, and recalls that all the remaining accounts were collected in the twentieth century, while recent scholarship casts doubt on the accuracy of the facts they report. Also warns that it would be a mistake to conflate Dahomey with the Dauma chiefdom of sixteenth-century maps. Text read on 9 September 2026."
+      }
+    ],
+    "demographics": {
+      "totalPopulation": 14800000,
+      "referenceYear": 2025,
+      "source": "UNFPA – World Population Dashboard",
+      "peoples": [
+        {
+          "name": "Fon",
+          "percentageInCountry": 38,
+          "peopleId": "PPL_FON",
+          "region": "Southern Benin (Abomey, Porto-Novo, Cotonou)",
+          "languageFamily": "FLG_BENOUECONGO"
+        },
+        {
+          "name": "Adja-Ewe",
+          "population": 2240000,
+          "percentageInCountry": 16,
+          "peopleId": "PPL_ADJA",
+          "region": "Southwestern Benin (Mono, Couffo), border with Togo",
+          "languageFamily": "FLG_BENOUECONGO"
+        },
+        {
+          "name": "Yoruba / Nago",
+          "population": 1680000,
+          "percentageInCountry": 12,
+          "peopleId": "PPL_YORUBA",
+          "region": "Southeastern Benin (Porto-Novo, Kétou), border with Nigeria",
+          "languageFamily": "FLG_BENOUECONGO"
+        },
+        {
+          "name": "Bariba",
+          "population": 1260000,
+          "percentageInCountry": 9,
+          "peopleId": "PPL_BARIBA",
+          "region": "Northern Benin (Borgou, Alibori), kingdom of Nikki",
+          "languageFamily": "FLG_GUR"
+        },
+        {
+          "name": "Dendi",
+          "population": 840000,
+          "percentageInCountry": 6,
+          "peopleId": "PPL_DENDI",
+          "region": "Northern Benin, border with Niger and Nigeria",
+          "languageFamily": "FLG_SONGHAY"
+        },
+        {
+          "name": "Peul / Fulani",
+          "population": 980000,
+          "percentageInCountry": 7,
+          "peopleId": "PPL_FULA",
+          "region": "Northern Benin (nomadic and settled pastoralists)",
+          "languageFamily": "FLG_ATLANTIQUE"
+        },
+        {
+          "name": "Otamari / Somba",
+          "population": 700000,
+          "percentageInCountry": 5,
+          "peopleId": "PPL_OTAMARI_SOMBA",
+          "region": "Northwestern Benin (Atacora), tata somba",
+          "languageFamily": "FLG_GUR"
+        },
+        {
+          "name": "Lamba",
+          "population": 280000,
+          "percentageInCountry": 2,
+          "peopleId": "PPL_LAMBA",
+          "region": "Northwestern Benin (mountain societies)",
+          "languageFamily": "FLG_GUR"
+        },
+        {
+          "name": "Autres peuples",
+          "population": 700000,
+          "percentageInCountry": 5,
+          "peopleId": "PPL_GURMA",
+          "region": "Various regions of Benin",
+          "languageFamily": "FLG_GUR"
+        }
+      ]
+    }
+  },
+  "_translation": {
+    "kind": "machine",
+    "translatedAt": "2026-09-09T09:29:06.912Z",
+    "model": "claude-sonnet-5",
+    "sourceHash": "263af052afdf74a9d9ed4fd045c6ad8ffdc009155b652ce59b3f4cc0ad74f4e0",
+    "fieldHashes": {
+      "nameOfficial": "f73e866cff041ffe",
+      "summary": "6e4cc75a931dfc6e",
+      "etymology": "5fb6b694a5f9e44e",
+      "nameOriginActor": "600d18eda1a68821",
+      "content.historicalNames.formerNames[0]": "92d47391bc4756e7",
+      "content.historicalNames.formerNames[1]": "1a3fd996f745a59f",
+      "content.historicalNames.formerNames[2]": "3bd05dc05016a912",
+      "content.historicalNames.antiquity": "39160034cf5ef252",
+      "content.historicalNames.middleAges": "7142dd96ca8bf5f8",
+      "content.historicalNames.precolonial": "3a3b54ab6c15aa6b",
+      "content.historicalNames.colonization": "b8c2d006f1ab33a6",
+      "content.historicalNames.contemporary": "4683e96215ada2ef",
+      "content.kingdoms[0].name": "bc629ca369c94823",
+      "content.kingdoms[0].period": "c89db46bfc6250a8",
+      "content.kingdoms[0].historicalRole": "364018d83aaeb9ed",
+      "content.kingdoms[1].name": "a81a584e9f325f9c",
+      "content.kingdoms[1].period": "211262744abeb1d8",
+      "content.kingdoms[1].dominantPeoples[0]": "a376f8d4bf9f284a",
+      "content.kingdoms[1].historicalRole": "fb3fb8eb5031e9f6",
+      "content.kingdoms[2].name": "0525a4525a2069d7",
+      "content.kingdoms[2].period": "211262744abeb1d8",
+      "content.kingdoms[2].dominantPeoples[0]": "c6a2212a82196d5f",
+      "content.kingdoms[2].historicalRole": "4a4d5fea56d3382e",
+      "content.kingdoms[3].name": "aa509efcf0910208",
+      "content.kingdoms[3].period": "30ec12efb265311f",
+      "content.kingdoms[3].historicalRole": "84691f30ffdaaf81",
+      "content.kingdoms[4].name": "f916f2d6bcb1a333",
+      "content.kingdoms[4].period": "42b2cf0a0e41853b",
+      "content.kingdoms[4].historicalRole": "252314e3a70d4bf1",
+      "content.majorPeoples[0].exonyms[0]": "2c800c6cfb51a3fc",
+      "content.majorPeoples[0].exonyms[1]": "c45df965f8977cbf",
+      "content.majorPeoples[0].mainRegion": "8b394f9bd9105ef3",
+      "content.majorPeoples[0].appellationRemarks": "55d2f9ef3b8e199f",
+      "content.majorPeoples[1].exonyms[1]": "f5ffc6fa2fabb2d6",
+      "content.majorPeoples[1].mainRegion": "642f19b1229d9f68",
+      "content.majorPeoples[1].appellationRemarks": "3a5ccc32b72be2f8",
+      "content.majorPeoples[2].exonyms[1]": "f5ffc6fa2fabb2d6",
+      "content.majorPeoples[2].mainRegion": "320cadce456a69be",
+      "content.majorPeoples[2].appellationRemarks": "5ffb9428e4de3a50",
+      "content.majorPeoples[3].exonyms[0]": "5ea7dae6befad295",
+      "content.majorPeoples[3].exonyms[1]": "075aa1f8400198e8",
+      "content.majorPeoples[3].mainRegion": "ff7ec5df54ce1465",
+      "content.majorPeoples[3].appellationRemarks": "91c5be1a098c1349",
+      "content.majorPeoples[4].exonyms[0]": "4cc233431e3a2ba3",
+      "content.majorPeoples[4].mainRegion": "c2bad9b1c965963f",
+      "content.majorPeoples[4].appellationRemarks": "1ac995c1d5db9dbf",
+      "content.majorPeoples[5].selfAppellation": "8115a94a0224d64a",
+      "content.majorPeoples[5].exonyms[0]": "34d16259a0f24cb2",
+      "content.majorPeoples[5].exonyms[1]": "699aaae8ac4fc9e8",
+      "content.majorPeoples[5].exonyms[2]": "4ebc5cce57e45791",
+      "content.majorPeoples[5].mainRegion": "35eb424baa2d02ed",
+      "content.majorPeoples[5].appellationRemarks": "8f4f5c275e192f57",
+      "content.majorPeoples[6].exonyms[1]": "7121dd5e3f451804",
+      "content.majorPeoples[6].mainRegion": "485981ff433d3e9b",
+      "content.majorPeoples[6].appellationRemarks": "0bf23bd34ac81218",
+      "content.majorPeoples[7].exonyms[0]": "4cc233431e3a2ba3",
+      "content.majorPeoples[7].mainRegion": "eec43b9e608a92c5",
+      "content.majorPeoples[7].appellationRemarks": "236fd9930971df51",
+      "content.culture.culturalTraditions": "cfa418268554ee15",
+      "content.culture.dominantReligions": "a7ec650210bdd06a",
+      "content.culture.lifestyles": "969bf3e72aac5429",
+      "content.culture.socialOrganization": "99cb49ad8afa001c",
+      "content.culture.regionalRelations": "153954a2fa1ed4d3",
+      "content.historicalFacts.ancientPeriods": "8bf25c3ea683d3cd",
+      "content.historicalFacts.middleAges": "e538f29b95dd90c3",
+      "content.historicalFacts.precolonial": "fd883d8c16da1150",
+      "content.historicalFacts.colonization": "2f3bf48d8ed45424",
+      "content.historicalFacts.independenceStruggle": "2385c601caabb7ab",
+      "content.historicalFacts.postIndependence": "b7a40abf512a83f4",
+      "content.sources[0].notes": "6b52475b40d94130",
+      "content.sources[1].notes": "6b52475b40d94130",
+      "content.sources[2].notes": "5b01fa636848b75c",
+      "content.sources[3].notes": "6b52475b40d94130",
+      "content.sources[4].notes": "6b52475b40d94130",
+      "content.sources[5].notes": "6b52475b40d94130",
+      "content.sources[6].notes": "6b52475b40d94130",
+      "content.sources[7].notes": "6b52475b40d94130",
+      "content.sources[8].notes": "6b52475b40d94130",
+      "content.sources[9].notes": "5f85c6028609b720",
+      "content.sources[10].notes": "d4d9bf2b4425a9bc",
+      "content.sources[11].notes": "7911229e80e3e2fe",
+      "content.sources[12].notes": "93218285e5fc20f5",
+      "content.sources[13].notes": "ce17e087f3a3e316",
+      "content.sources[14].notes": "6dbb378d5d940b1b",
+      "content.sources[15].notes": "b9916676a174dc4c",
+      "content.sources[16].notes": "4a0aa387d1e5dea8",
+      "content.sources[17].notes": "e65bc5c4b1c4dc97",
+      "content.sources[18].notes": "4882b8ab0ef815f5",
+      "content.demographics.peoples[0].region": "8b394f9bd9105ef3",
+      "content.demographics.peoples[1].region": "642f19b1229d9f68",
+      "content.demographics.peoples[2].region": "320cadce456a69be",
+      "content.demographics.peoples[3].region": "ff7ec5df54ce1465",
+      "content.demographics.peoples[4].region": "c2bad9b1c965963f",
+      "content.demographics.peoples[5].region": "35eb424baa2d02ed",
+      "content.demographics.peoples[6].region": "f6d48412a63e0200",
+      "content.demographics.peoples[7].region": "eec43b9e608a92c5",
+      "content.demographics.peoples[8].region": "5667cf3965202d14"
+    },
+    "reviewRequired": [
+      "nameOfficial",
+      "etymology",
+      "content.historicalNames.formerNames[0]",
+      "content.historicalNames.formerNames[1]",
+      "content.historicalNames.formerNames[2]",
+      "content.kingdoms[0].name",
+      "content.kingdoms[1].name",
+      "content.kingdoms[2].name",
+      "content.kingdoms[3].name",
+      "content.kingdoms[4].name",
+      "content.majorPeoples[0].appellationRemarks",
+      "content.majorPeoples[1].appellationRemarks",
+      "content.majorPeoples[2].appellationRemarks",
+      "content.majorPeoples[3].appellationRemarks",
+      "content.majorPeoples[4].appellationRemarks",
+      "content.majorPeoples[5].appellationRemarks",
+      "content.majorPeoples[6].appellationRemarks",
+      "content.majorPeoples[7].appellationRemarks"
+    ]
+  }
+}

@@ -3,9 +3,9 @@
   "nameFr": "Botswana",
   "nameEn": "Botswana",
   "nameOfficial": "République du Botswana (Republic of Botswana)",
-  "summary": "Le Botswana tire son nom du peuple tswana : le préfixe « bo- » signifie « pays de » en setswana. Le territoire fut d'abord celui des peuples khoïsan, puis des chefferies tswana, avant de devenir le protectorat britannique du Bechuanaland. San, Kalanga, Herero et Mbukushu y vivent aux côtés des Tswana.",
-  "etymology": "Le nom \"Botswana\" dérive de \"Tswana\", le nom du peuple majoritaire, avec le préfixe \"Bo-\" qui signifie \"pays de\" en setswana. \"Botswana\" signifie donc \"pays des Tswana\". Le nom a été adopté à l'indépendance en 1966 pour remplacer \"Bechuanaland\", nom colonial britannique.",
-  "nameOriginActor": "Le nom \"Botswana\" a été choisi par les dirigeants tswana à l'indépendance en 1966. Il remplace \"Bechuanaland\", nom colonial britannique dérivé de \"Bechuana\" (ancienne orthographe de \"Tswana\"). Le nom \"Botswana\" reflète l'identité du peuple majoritaire (Batswana).",
+  "summary": "Le Botswana tire son nom du peuple tswana, avec le préfixe bo- : « pays des Tswana » est la traduction que retiennent les institutions du pays, mais ce que signifie « Tswana » n'est pas établi, et un lexicographe de l'université du Botswana écrit qu'il n'existe là-dessus que des conjectures. Le nom n'a pas été forgé à l'indépendance : il est proposé à l'Assemblée législative du Bechuanaland en décembre 1965, et une forme en Bo- est relevée comme auto-désignation dès 1801. San, Kalanga, Herero et Mbukushu y vivent aux côtés des Tswana.",
+  "etymology": "« Botswana » est formé sur le nom du peuple, avec le préfixe bo-, comme mo- forme le nom d'une personne, ba- celui du peuple et se- celui de la langue. La série est attestée sans interruption depuis la première grammaire du setswana, publiée par James Archbell en 1837, jusqu'aux linguistes de l'université du Botswana aujourd'hui. La traduction « pays des Tswana » est celle que donnent les institutions du pays et les nomenclatures officielles, et elle est bonne pour un lecteur — mais elle n'est pas la valeur grammaticale du préfixe. Bo- forme d'abord des noms abstraits : Denis Creissels en fait la classe de la qualité, où tau, « lion », donne bolau, « la nature du lion ». Le dictionnaire setswana de John Brown, en 1895, glose d'ailleurs Bocwana par « la personnalité d'un Mocwana », non par un territoire. L'emploi territorial existe bien, mais il est lexical plutôt que grammatical : le même dictionnaire donne Bokweni pour le pays des Bakweni et Borwe pour celui des San.\n\nCe que désigne la racine Tswana n'est pas établi, et ce sont les voix les plus proches de la langue qui le disent. Thapelo Otlogetswe, professeur à l'université du Botswana et auteur du premier dictionnaire monolingue setswana, écrit qu'on sait très peu de chose de l'origine de ces mots et qu'il n'existe là-dessus que des conjectures. David Livingstone, lui, proposait en 1857 de rattacher le nom à chuana, « semblable, égal », et rapportait qu'on l'expliquait aussi par le malentendu d'un voyageur à qui l'on aurait répondu « ils sont comme nous » — hypothèse qu'il écartait, le nom étant en usage chez des gens sans contact avec les Européens. À la page suivante, il note que les Bechuana ne savent pas expliquer la dérivation de leur propre nom. Le dictionnaire de Brown donne à chwana deux sens, « être semblable » et le féminin de ncho, « noir » ; le Dictionary of South African English retient les deux racines et ne tranche pas. Paul Maylam tient pour sa part que l'appellation Bechuana a été forgée par les Blancs au XIXe siècle. Une réfutation de Livingstone par le lettré motswana D. M. Ramoshoana existe, mais elle ne subsiste que dans l'introduction de la grammaire de Desmond Cole, qui n'a pas été lue.",
+  "nameOriginActor": "Le nom a été porté localement avant d'être ratifié à Londres. Le Premier ministre le soumet à l'Assemblée législative du Bechuanaland le 13 décembre 1965 ; plus de cent cinquante réunions publiques et des kgotla le portent devant les chefs ; l'Assemblée et la Chambre des chefs l'approuvent ; la conférence de Londres de février 1966 examine des propositions rédigées sur place ; la loi britannique du 3 août 1966 l'entérine pour le 30 septembre. Il ne s'agissait pas d'inventer un mot : une forme en Bo- est relevée comme auto-désignation dès 1801, et un parti se nommait déjà Botswana Independence Party aux élections de mars 1965. « Bechuanaland » était la forme anglicisée de baTswana. Qui a formé la racine Tswana n'est pas établi.",
   "content": {
     "historicalNames": {
       "formerNames": ["Protectorat du Bechuanaland (1885-1966)"],
@@ -257,6 +257,60 @@
         "url": "https://unstats.un.org/unsd/methodology/m49/",
         "tier": "official",
         "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      },
+      {
+        "title": "David Livingstone, Missionary Travels and Researches in South Africa, Londres, John Murray, 1857, p. 200-201",
+        "url": "https://archive.org/details/missionarytravel03livi",
+        "tier": "referenced",
+        "notes": "Rattache le nom à chuana, « semblable, égal », rapporte puis écarte l'explication par le malentendu d'un voyageur, et note que les Bechuana ne savent pas expliquer la dérivation de leur propre nom. Donne aussi le couple Sichuana pour leur langue et Sekoa pour celle des Blancs. Passage lu en fac-similé le 9 septembre 2026."
+      },
+      {
+        "title": "John Brown, Secwana Dictionary: English-Secwana and Secwana-English, imprimé pour la London Missionary Society par Butler et Tanner, 1895",
+        "url": "https://archive.org/details/secwanadictionar00brow",
+        "tier": "referenced",
+        "notes": "Donne à chwana deux sens, « être semblable » et le féminin de ncho, « noir », et glose Bocwana par « la personnalité d'un Mocwana », non par un territoire. Il porte en revanche Bokweni pour le pays des Bakweni et Borwe pour celui des San, ce qui atteste l'emploi territorial du préfixe. La notice du fac-similé donne une date et un auteur erronés ; la page de titre et la préface, signée à Taungs en mars 1895, ont été lues, ainsi que la fiche de la Open Library. Consulté le 9 septembre 2026."
+      },
+      {
+        "title": "James Archbell, A Grammar of the Bechuana Language, Grahamstown, Meurant et Godlonton, 1837",
+        "url": "https://archive.org/details/grammarofbechuan00arch",
+        "tier": "referenced",
+        "notes": "Première grammaire du setswana. Elle établit le système des préfixes mo-, ba-, se-, bo-. Elle range toutefois la forme Buchuana parmi les duels, et non parmi les noms de territoire : la lecture « pays des Tswana » de ce passage est celle de commentateurs modernes, pas celle d'Archbell. Volume lu en fac-similé le 9 septembre 2026."
+      },
+      {
+        "title": "Dictionary of South African English on Historical Principles, entrées « Motswana » et « Bechuana »",
+        "url": "https://dsae.co.za/entry/motswana/e04953",
+        "tier": "referenced",
+        "notes": "Donne deux racines concurrentes pour -tswana sans choisir entre elles : un adjectif signifiant « noir » au féminin, et un verbe signifiant « être semblable ». Traite « Bechuana » comme la forme anglicisée de baTswana, relève une quarantaine de graphies attestées, et cite un relevé de 1801 où le mot est déjà une auto-désignation ainsi que la position de Paul Maylam, pour qui l'appellation a été forgée par les Blancs au XIXe siècle. Entrées lues le 9 septembre 2026 ; les ouvrages cités par le dictionnaire ne l'ont pas été."
+      },
+      {
+        "title": "Thapelo J. Otlogetswe, « The Origins of \"Tswana\" », extrait d'un mémoire de l'université d'Oxford, publié par l'auteur, 5 octobre 2005",
+        "url": "https://otlogetswe.wordpress.com/2005/10/05/the-origins-of-tswana/",
+        "tier": "unverified",
+        "notes": "Publication personnelle, d'où le rang, mais l'auteur est professeur au département d'anglais de l'université du Botswana, lexicographe et spécialiste des noms propres, et l'auteur du premier dictionnaire monolingue setswana. Il écrit qu'on sait très peu de chose de l'origine des mots Se-Tswana et Bo-Tswana, et qu'il n'existe là-dessus que des conjectures. Il renvoie à la réfutation de Livingstone par D. M. Ramoshoana, conservée dans l'introduction de la grammaire de Desmond Cole, qui n'a pas été lue. Page lue le 9 septembre 2026."
+      },
+      {
+        "title": "Denis Creissels, « Number in Tswana », dans Number in the World's Languages: A Comparative Handbook, Berlin et Boston, De Gruyter Mouton, p. 107-127",
+        "url": "http://www.deniscreissels.fr/public/Creissels-Number_in_Tswana.pdf",
+        "tier": "referenced",
+        "notes": "Décrit le préfixe bo- comme celui de la classe de la qualité abstraite, où tau, « lion », donne bolau, « la nature du lion ». Comme les autres descriptions grammaticales consultées, il ne mentionne pas les noms de pays : c'est pourquoi la fiche présente l'emploi territorial comme lexical et non comme une règle. Texte lu le 9 septembre 2026."
+      },
+      {
+        "title": "Permanent Committee on Geographical Names, Toponymic Factfile: Botswana, Royaume-Uni, juillet 2025",
+        "url": "https://assets.publishing.service.gov.uk/media/68aee27d3a052c9c504c8e7f/Botswana_Toponymic_Factfile.pdf",
+        "tier": "official",
+        "notes": "Nomenclature géographique officielle britannique. Elle donne « Land of the Tswana » pour le nom du pays et rappelle que le territoire s'appelait Bechuanaland Protectorate sous administration britannique. Document lu le 9 septembre 2026."
+      },
+      {
+        "title": "Bechuanaland Protectorate: Report for the year 1965, Londres, His Majesty's Stationery Office, établi par le service d'information du gouvernement du Bechuanaland",
+        "url": "https://archive.org/details/b31415994",
+        "tier": "official",
+        "notes": "Rapport annuel du territoire, rédigé par son propre gouvernement. Il rapporte qu'un document présenté à l'Assemblée législative par le Premier ministre le 13 décembre 1965 proposait l'établissement d'une république « to be called the Republic of Botswana ». C'est le premier acte de dénomination daté et attribuable qui ait été trouvé. Passage lu en fac-similé le 9 septembre 2026."
+      },
+      {
+        "title": "Botswana Independence Act 1966, Royaume-Uni, 1966 chapitre 23, article 1",
+        "url": "https://www.legislation.gov.uk/ukpga/1966/23/enacted",
+        "tier": "official",
+        "notes": "Dispose que le protectorat du Bechuanaland devient le 30 septembre 1966 une république indépendante « under the name of Botswana ». La loi entérine un nom proposé sur place l'année précédente ; elle ne dit pas qui l'a choisi. Texte lu le 9 septembre 2026."
       }
     ],
     "demographics": {

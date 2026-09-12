@@ -33,7 +33,7 @@ const en = {
     // Says what the atlas has not established, never why the workshop has
     // not established it yet.
     assembling:
-      "This fiche is still being assembled: what it states remains to be confirmed.",
+      "This page is still being assembled: what it states remains to be confirmed.",
   },
   casteOrSocialFunctionLabel: "Caste or social function",
   attestedFormsTitle: "Attested spellings",
@@ -77,26 +77,25 @@ const en = {
   onFiche: {
     peopleTitle: "Names borne",
     peopleEmpty:
-      "The corpus does not yet attach any name to this people. The names dimension has just opened and covers only a small part of the atlas.",
+      "The atlas does not yet attach any name to this people. The names dimension has just opened and covers only a small part of the atlas.",
     peopleUnavailable:
-      "The names borne could not be loaded. The problem is on our side, not an empty corpus.",
-    countryTitle: "Attested names",
-    countryNote:
-      "Two distinct registers: what a source attests in this country, and what the peoples who live there bear.",
+      "The names borne could not be loaded. The problem is on our side, not an empty atlas.",
+    countryTitle: "Names of the country",
+    countryAlphabeticalIndexLabel: "Alphabetical index",
     attestedLabel: "Attested in the country",
     reachLabel: "Borne by the country's peoples, with no attestation here",
     reachViaPrefix: "via",
     countryEmpty:
-      "The corpus does not yet attest any name in this country, and none of the peoples who live there bears a documented one.",
+      "The atlas does not yet attest any name in this country, and none of the peoples who live there bears a documented one.",
     countryUnavailable:
-      "The names could not be loaded. The problem is on our side, not an empty corpus.",
+      "The names could not be loaded. The problem is on our side, not an empty atlas.",
   },
   index: {
     pageTitle: "Names",
     pageSubtitle:
-      "The naming systems of persons documented in the corpus — clan names, non-hereditary patronymics, nisba and praise names.",
+      "The naming systems of persons documented in the atlas — clan names, non-hereditary patronymics, nisba and praise names.",
     unavailable:
-      "The names could not be loaded. The problem is on our side, not an empty corpus.",
+      "The names could not be loaded. The problem is on our side, not an empty atlas.",
     countSingular: "name",
     countPlural: "names",
     emptyState: "No name is documented yet.",
@@ -124,7 +123,7 @@ const fr: PatronymesCopy = {
     // Says what the atlas has not established, never why the workshop has
     // not established it yet.
     assembling:
-      "Cette fiche est en cours de constitution : ce qu'elle avance reste à confirmer.",
+      "Cette page est en cours de constitution : ce qu'elle avance reste à confirmer.",
   },
   casteOrSocialFunctionLabel: "Caste ou fonction sociale",
   attestedFormsTitle: "Graphies attestées",
@@ -147,7 +146,7 @@ const fr: PatronymesCopy = {
   originClaimStatusLabels: PATRONYME_VOCABULARY.fr.originClaimStatus,
   // Attributed to the transcription and its griot rather than stated as
   // a bare fact: an oral chain of transmission is the source, and a
-  // fiche that dropped that attribution would present a griot's telling
+  // page that dropped that attribution would present a griot's telling
   // as if it were the corpus's own claim.
   griotOriginNote:
     "Cette origine est transmise par tradition orale griotique. Elle est présentée telle que transcrite, avec sa source et, lorsqu'il est documenté, le griot qui l'a transmise.",
@@ -167,7 +166,7 @@ const fr: PatronymesCopy = {
   associatedPeoplesLabel: "Peuples",
   associatedCountriesLabel: "Pays",
   // AC4: a non-hereditary patronymic works differently by region — the
-  // fiche says so explicitly rather than let the reader assume the
+  // page says so explicitly rather than let the reader assume the
   // hereditary-surname model that `nameSystem` elsewhere denies.
   nonHereditaryGuidance:
     "Ce patronyme n'est pas transmis de façon héréditaire : il ne se lit pas comme un nom de famille au sens européen. Sa portée varie selon la région — les peuples et pays ci-dessous indiquent où ce mode de nommage est documenté.",
@@ -192,12 +191,11 @@ const fr: PatronymesCopy = {
   onFiche: {
     peopleTitle: "Noms portés",
     peopleEmpty:
-      "Le corpus ne rattache encore aucun nom à ce peuple. La dimension des noms vient d'ouvrir et ne couvre qu'une petite part de l'atlas.",
+      "L’atlas ne rattache encore aucun nom à ce peuple. La dimension des noms vient d'ouvrir et ne couvre qu'une petite part de l'atlas.",
     peopleUnavailable:
-      "Les noms portés n'ont pas pu être chargés. Le problème vient de notre côté, pas d'un corpus vide.",
-    countryTitle: "Noms attestés",
-    countryNote:
-      "Deux registres distincts : ce qu'une source atteste dans ce pays, et ce que portent les peuples qui y vivent.",
+      "Les noms portés n'ont pas pu être chargés. Le problème vient de notre côté, pas d'un atlas vide.",
+    countryTitle: "Noms du pays",
+    countryAlphabeticalIndexLabel: "Index alphabétique",
     attestedLabel: "Attestés dans le pays",
     // Says both halves of the inference in the label itself — whose
     // names these are, and that no source places them here. A label
@@ -207,9 +205,9 @@ const fr: PatronymesCopy = {
     reachLabel: "Portés par les peuples du pays, sans attestation ici",
     reachViaPrefix: "par",
     countryEmpty:
-      "Le corpus n'atteste encore aucun nom dans ce pays, et aucun des peuples qui y vivent n'en porte de documenté.",
+      "L’atlas n'atteste encore aucun nom dans ce pays, et aucun des peuples qui y vivent n'en porte de documenté.",
     countryUnavailable:
-      "Les noms n'ont pas pu être chargés. Le problème vient de notre côté, pas d'un corpus vide.",
+      "Les noms n'ont pas pu être chargés. Le problème vient de notre côté, pas d'un atlas vide.",
   },
   // The /fr/atlas/noms index (ETNI-1803, REQ-139) — the corpus-class
   // listing that leads to the fiches above. Kept nested here rather than
@@ -218,9 +216,9 @@ const fr: PatronymesCopy = {
   index: {
     pageTitle: "Noms",
     pageSubtitle:
-      "Les systèmes de nommage des personnes documentés dans le corpus — noms de clan, patronymes non héréditaires, nisba et noms d'éloge.",
+      "Les systèmes de nommage des personnes documentés dans l’atlas — noms de clan, patronymes non héréditaires, nisba et noms d'éloge.",
     unavailable:
-      "Les noms n'ont pas pu être chargés. Le problème vient de notre côté, pas d'un corpus vide.",
+      "Les noms n'ont pas pu être chargés. Le problème vient de notre côté, pas d'un atlas vide.",
     countSingular: "nom",
     countPlural: "noms",
     emptyState: "Aucun nom n'est encore documenté.",

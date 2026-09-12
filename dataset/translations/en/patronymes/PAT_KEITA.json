@@ -1,0 +1,259 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier court fondé sur le passage du corpus AFRIK référencé ; ne pas étendre les affirmations sans source dédiée."
+  },
+  "id": "PAT_KEITA",
+  "nameMain": "Keïta",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Keïta",
+      "attestations": [
+        {
+          "countryId": "MLI",
+          "sourceRefs": ["corpus-ppl-malinke-organisation"]
+        },
+        {
+          "countryId": "GIN",
+          "sourceRefs": ["corpus-ppl-malinke-organisation"]
+        },
+        {
+          "countryId": "SEN",
+          "sourceRefs": ["corpus-ppl-malinke-organisation"]
+        },
+        {
+          "countryId": "GMB",
+          "sourceRefs": ["corpus-ppl-malinke-organisation"]
+        },
+        {
+          "countryId": "CIV",
+          "sourceRefs": ["corpus-ppl-malinke-organisation"]
+        },
+        {
+          "countryId": "BFA",
+          "sourceRefs": ["corpus-ppl-malinke-organisation"]
+        },
+        {
+          "countryId": "GNB",
+          "sourceRefs": ["corpus-ppl-malinke-organisation"]
+        },
+        {
+          "countryId": "LBR",
+          "sourceRefs": ["corpus-ppl-malinke-organisation"]
+        },
+        {
+          "countryId": "SLE",
+          "sourceRefs": ["corpus-ppl-malinke-organisation"]
+        },
+        {
+          "countryId": "GHA",
+          "sourceRefs": ["corpus-ppl-malinke-organisation"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [
+      {
+        "claim": "The Keïta clan is that of Soundiata and the imperial dynasty of Mali; the epic gives it the lion as ancestor-totem, hence the epithet \"son of the Lion\".",
+        "claimStatus": "claimed",
+        "griot": "Djeli Mamadou Kouyaté (Djeliba Koro, Siguiri)",
+        "transcription": "Niane, Djibril Tamsir, Soundjata ou l'épopée mandingue, 1960",
+        "sourceRefs": ["niane-1960"]
+      }
+    ],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "The jamu is a patrilineal clan name: it designates membership in a descent group, not individual filiation to the father.",
+        "claimStatus": "established",
+        "sourceRefs": ["jansen-sunjata-paradigm"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_MALINKE",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-malinke-organisation"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "MLI",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-malinke-organisation"]
+    },
+    {
+      "countryId": "GIN",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-malinke-organisation"]
+    },
+    {
+      "countryId": "SEN",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-malinke-organisation"]
+    },
+    {
+      "countryId": "GMB",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-malinke-organisation"]
+    },
+    {
+      "countryId": "CIV",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-malinke-organisation"]
+    },
+    {
+      "countryId": "BFA",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-malinke-organisation"]
+    },
+    {
+      "countryId": "GNB",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-malinke-organisation"]
+    },
+    {
+      "countryId": "LBR",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-malinke-organisation"]
+    },
+    {
+      "countryId": "SLE",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-malinke-organisation"]
+    },
+    {
+      "countryId": "GHA",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-malinke-organisation"]
+    }
+  ],
+  "alliances": [
+    {
+      "targetPatronymeId": "PAT_COULIBALY",
+      "allianceType": "sanankuya",
+      "sourceRefs": [
+        "gha-v-16-18",
+        "bamadaba-jamuw",
+        "canut-2002-senankuya",
+        "canut-smith-2006-pactes"
+      ]
+    },
+    {
+      "targetPatronymeId": "PAT_FOFANA",
+      "allianceType": "sanankuya",
+      "sourceRefs": [
+        "bamadaba-jamuw",
+        "canut-2002-senankuya",
+        "canut-smith-2006-pactes"
+      ]
+    }
+  ],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Soundiata Keïta",
+      "sourceRefs": ["niane-1960"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "corpus-ppl-malinke-organisation",
+      "title": "EthniAfrica — fiche du peuple Malinké, organisation clanique",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Taken from the \"Clan organisation\" chapter of the Malinké people's fiche."
+    },
+    {
+      "sourceKey": "niane-1960",
+      "title": "Soundjata ou l'épopée mandingue",
+      "url": "https://books.google.com/books/about/Soundjata.html?id=PtJyAAAAMAAJ",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Niane, Djibril Tamsir, Présence Africaine, 1960. Transcription of the account of the griot Djeli Mamadou Kouyaté of Djeliba Koro (Siguiri). Reference source for the epic of Soundiata and the lineages it founds; it is a written record of an oral tradition, not an archival document."
+    },
+    {
+      "sourceKey": "jansen-sunjata-paradigm",
+      "title": "Beyond the Mali Empire — A New Paradigm for the Sunjata Epic",
+      "url": "https://scholarlypublications.universiteitleiden.nl/access/item:2952645/download",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Jansen, Jan, Universiteit Leiden. Critical work on the transmission of the epic and on the jamu as a social institution rather than as historical memory; used here for the nature of the jamu, not to date an ancestor."
+    },
+    {
+      "sourceKey": "gha-v-16-18",
+      "title": "General History of Africa, V: Africa from the Sixteenth to the Eighteenth Century",
+      "url": "https://archive.org/details/unesco_general_history_africa_v",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "notes": "UNESCO, Histoire générale de l'Afrique, vol. V, dir. B. A. Ogot, 1992; consulted on the full text. Chapter 12, \"From the Niger to the Volta\" (M. Izard and J. Ki-Zerbo): the sanankunya between the Kulibali (Kurubari) and the Keita or the Ture, given as evidence of ancient relations between Bambara and Malinké (p. 330); the etymology kulu \"canoe\" + privative bali, drawn from crossing the river without a canoe, accompanied by the source's own mention that other etymologies exist (p. 330 n. 7); the genealogy of Mamari Kulibali known as Biton (1712-1755), great-grandson of Baramangolo through Kaladian, Danfassari and Soma (p. 330-333). Chapter 13, \"The states and cultures of the Upper Guinean coast\" (C. Wondji): the migration of the Kongo-Vai from the upper Niger under the leadership of the Camara clan, towards Bopolou then the Mano and Moa rivers, and the correlated displacement of the Kono and the Vai towards the coasts of Liberia and Sierra Leone (p. 375-377)."
+    },
+    {
+      "sourceKey": "bamadaba-jamuw",
+      "title": "Bamadaba — dictionnaire des noms claniques (jamuw)",
+      "url": "http://cormand.huma-num.fr/dicos/jamuw.zip",
+      "tier": "referenced",
+      "source_kind": "linguistic_reference",
+      "notes": "Onomastic appendix of the Bamadaba, the Bambara-French electronic dictionary supplement to the Corpus bambara de référence (Bailleul, Davydov, Erman, Maslinsky, Méric, Vydrin, 2011-2020, CC BY-NC-SA); the clan-name appendix is identified as such by Vydrin, \"Vers une lexicographie mandingue sur la base de grands corpus annotés\", Mandenkan 63, 2020, p. 89-110. 375 entries in MDF format, consulted on the complete file. The file provides no legend for its markers, and the reading adopted is the one the file imposes: \\ca carries the Mandingo status terms themselves (nùmu, jèli, hɔ́rɔn, garanke, finɛ, tontigi, wage, gesere); \\sn reads senankun because the Kúyate entry annotates its own line \"\\sn Keyita\" with a caveat stating that this particular relation is a friendly agreement and not a senankuya. The \\sn links are not systematically reciprocal from one entry to another: each pair is therefore cited according to the entry that carries it, named in the claim or the gap."
+    },
+    {
+      "sourceKey": "canut-2002-senankuya",
+      "title": "Pouvoir, places et filiation : les senankuya au Mali",
+      "url": "https://journals.openedition.org/praxematique/2307",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Canut, Cécile, Cahiers de praxématique, issue 38, 2002, p. 175-197. Fieldwork in Mali. She states what the pact requires: the relationship holds in perpetuity for the entire descent of both lineages, marriage between them is prohibited — variably applied today, she specifies — and mutual aid is owed without reservation. Cited for the obligation itself; it does not name the pair in this fiche, which is carried by the entries cited alongside it."
+    },
+    {
+      "sourceKey": "canut-smith-2006-pactes",
+      "title": "Pactes, alliances et plaisanteries. Pratiques locales, discours global",
+      "url": "https://doi.org/10.4000/etudesafricaines.6198",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Canut, Cécile, and Smith, Étienne, Cahiers d'études africaines, issue 184, 2006, p. 687 ff. Cited for the caution it raises: the idea that joking kinship would ease conflicts is treated there as a hypothesis inherited from Radcliffe-Brown and taken up by conflict-resolution studies, and so as a discourse to be analysed rather than a measured effect. The starting page is verified, the ending page is not."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Charry explicitly lists Keita among the jamuw horon, that is, the noble-status names rather than the craft-status ones. The dictionary of jamuw points the same way through its silence: the Kéyità entry is one of the rare ones in the Mande block to carry no status marker, whereas Traoré, Coulibaly, Camara, Diabaté, Kouyaté, Bamba and Fofana all carry at least one. The absence of a hereditary function is therefore an established result, not an unsuccessful search: royalty is not a caste in the sense of this field."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "No homonymous lineage of distinct origin has been found. The jamu is carried well beyond the dynastic descent, through affiliation and adoption, but this is an extension of the same name, not a second origin. The dictionary of jamuw likewise groups Kéyità, Kétà and Kɛ́yità under a single entry and lists Souma, Koné and Beawɔgi among its equivalents."
+    }
+  ],
+  "_translation": {
+    "kind": "machine",
+    "translatedAt": "2026-09-09T09:27:10.820Z",
+    "model": "claude-sonnet-5",
+    "sourceHash": "2c06fae66222c9d0a16da2299dafdb0aa1604f7eab60cdd5f81f56ea206f9537",
+    "fieldHashes": {
+      "origin.oralTraditions[0].claim": "e96b0dc94c6a80c3",
+      "origin.oralTraditions[0].transcription": "d753a01648ff3240",
+      "origin.linguisticReconstructions[0].claim": "14f92c91d5d99f18",
+      "sources[0].notes": "29012643eb034ff2",
+      "sources[1].notes": "fc0dbc4dd8f99c38",
+      "sources[2].notes": "4e75f41a563c53c3",
+      "sources[3].notes": "3a5b80d26c30b0b6",
+      "sources[4].notes": "b80adb343411bfb9",
+      "sources[5].notes": "2c14e48c42d56e18",
+      "sources[6].notes": "79986afda62f44db",
+      "gaps[0].reason": "6f0e3c41d59bf256",
+      "gaps[1].reason": "d39d08d11a9f5b36"
+    },
+    "reviewRequired": [
+      "origin.oralTraditions[0].transcription",
+      "origin.linguisticReconstructions[0].claim"
+    ]
+  }
+}

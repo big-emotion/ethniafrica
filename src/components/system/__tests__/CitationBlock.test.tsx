@@ -8,7 +8,7 @@ const LIVE_URL = "https://example.org/fr/fiche/reference";
 const PINNED_URL = "https://example.org/fr/fiche/reference@v7";
 const ACCESSED_AT = new Date("2026-07-14T12:00:00.000Z");
 const PLAIN_LIVE_CITATION =
-  "Fiche de référence (Nom autonome / Nom usuel). EthniAfrica. https://example.org/fr/fiche/reference. Consulté le 14 juillet 2026. CC-BY-SA 4.0.";
+  "Page de référence (Nom autonome / Nom usuel). EthniAfrica. https://example.org/fr/fiche/reference. Consulté le 14 juillet 2026. CC-BY-SA 4.0.";
 
 function renderCitationBlock(
   overrides: Partial<React.ComponentProps<typeof CitationBlock>> = {}
@@ -16,7 +16,7 @@ function renderCitationBlock(
   return render(
     <CitationBlock
       language="fr"
-      title="Fiche de référence (Nom autonome / Nom usuel)"
+      title="Page de référence (Nom autonome / Nom usuel)"
       liveUrl={LIVE_URL}
       accessedAt={ACCESSED_AT}
       {...overrides}
@@ -37,12 +37,12 @@ describe("CitationBlock", () => {
   it("renders the citation controls and access wording in English", () => {
     renderCitationBlock({
       language: "en",
-      title: "Reference fiche",
+      title: "Reference page",
       liveUrl: "https://example.org/en/fiche/reference",
     });
 
     expect(
-      screen.getByRole("heading", { name: "Cite this fiche" })
+      screen.getByRole("heading", { name: "Cite this page" })
     ).toBeVisible();
     expect(screen.getByRole("button", { name: "Copy citation" })).toBeVisible();
     expect(
@@ -102,7 +102,7 @@ describe("CitationBlock", () => {
     await user.click(screen.getByRole("option", { name: "Markdown" }));
 
     expect(preview.value).toContain(
-      "[Fiche de référence \\(Nom autonome / Nom usuel\\)]"
+      "[Page de référence \\(Nom autonome / Nom usuel\\)]"
     );
     expect(preview.value).toContain("CC-BY-SA 4.0.");
   });
@@ -211,7 +211,7 @@ describe("CitationBlock", () => {
     rerender(
       <CitationBlock
         language="fr"
-        title="Fiche de référence (Nom autonome / Nom usuel)"
+        title="Page de référence (Nom autonome / Nom usuel)"
         liveUrl={LIVE_URL}
         accessedAt={ACCESSED_AT}
         defaultVariant="pinned"

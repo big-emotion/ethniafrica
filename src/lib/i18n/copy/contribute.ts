@@ -8,7 +8,7 @@ const en = {
     introStrong: "structured database",
     introBeforeAbout: ", organised according to the AFRIK methodology. The ",
     aboutLink: "About page",
-    introAfterAbout: "describes what the corpus contains.",
+    introAfterAbout: "describes what the atlas contains.",
     invitationBeforeStrong: "I welcome ",
     invitationStrong: "all suggestions and contributions",
     invitationBeforeGithub:
@@ -62,7 +62,7 @@ const en = {
   updateLanguageFamily: "Update a language family",
   requiredFields: "Complete all required fields.",
   sourceUnverified:
-    "This source will be published as ‘Unverified’: the contribution is accepted, but the confidence score shown on the fiche will reflect this and be lower.",
+    "This source will be published as ‘Unverified’: the contribution is accepted, but the confidence score shown on the page will reflect this and be lower.",
   summaries: {
     new_people: "Proposal for a new people",
     update_people: "Proposed correction to a people",
@@ -158,7 +158,7 @@ const fr: ContributeCopy = {
     introStrong: "base de données structurée",
     introBeforeAbout: ", organisée selon la méthodologie AFRIK. La page ",
     aboutLink: "À propos",
-    introAfterAbout: "détaille ce que contient le corpus.",
+    introAfterAbout: "détaille ce que contient l’atlas.",
     invitationBeforeStrong: "Je suis ",
     invitationStrong: "ouvert à toutes les propositions ou contributions",
     invitationBeforeGithub:
@@ -212,7 +212,7 @@ const fr: ContributeCopy = {
   updateLanguageFamily: "Modifier une famille linguistique",
   requiredFields: "Veuillez remplir tous les champs obligatoires",
   sourceUnverified:
-    "Cette source sera publiée avec la mention « Non vérifiée » : la contribution est acceptée, mais l'indice de confiance affiché sur la fiche en tiendra compte et sera plus bas.",
+    "Cette source sera publiée avec la mention « Non vérifiée » : la contribution est acceptée, mais l'indice de confiance affiché sur la page en tiendra compte et sera plus bas.",
   summaries: {
     new_people: "Proposition d'un nouveau peuple",
     update_people: "Proposition de correction sur un peuple",

@@ -2,53 +2,34 @@ import { Info } from "lucide-react";
 import { DossierLinks } from "@/components/dossiers/DossierLinks";
 import type { ReactNode } from "react";
 
-import { KingdomsTimeline } from "@/components/country/KingdomsTimeline";
+import { LanguagesSection } from "@/components/country/LanguagesSection";
 import { PeoplesSection } from "@/components/country/PeoplesSection";
 import { SourcesFooter } from "@/components/country/SourcesFooter";
 import { FicheSection as Section } from "@/components/fiche/FicheSection";
 import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
+import {
+  FicheSummaryBrief,
+  type CountrySummaryFigures,
+} from "@/components/fiche/FicheSummaryBrief";
+import { FicheTile } from "@/components/fiche/FicheTile";
+import { chapterAnchorId } from "@/lib/ficheChapters";
+import type { ProvenanceState } from "@/lib/fieldProvenance";
 import type { CountryPageData } from "@/lib/countryDataTransformer";
 import type { CountryDetail } from "@/types/afrik-frontend";
 import type { Language } from "@/types/shared";
 import { countryCopy } from "@/lib/i18n/copy/country";
 import { ficheCopy } from "@/lib/i18n/copy/fiche";
 
-/**
- * The country fiche's reading: a head and four sections on parchment, below
- * the night band the globe stands in.
- *
- * The head states the country and, under it, the official name — both of which
- * the corpus already carries, `nameCommonFr` for the one and `nameFr` for the
- * other. Nothing here is authored: the mockup's italic "un nom de 1914" is a
- * date no field states, so it is not written.
- *
- * Every chapter the fiche model defines is printed, whether or not the corpus
- * fills it, and an unfilled one carries `FieldProvenanceMarker`. This fiche
- * used to drop those chapters, arguing that an absence read the silence more
- * honestly than an empty block. Charter §4 rules the other way, and it is the
- * stronger argument: an empty field is information about the state of the
- * corpus, and dropping the chapter is what deletes it. The reader of a fiche
- * with no royaumes could not tell "nobody has written this yet" from "this
- * country had none" — the atlas's own contribution surface depends on their
- * being able to.
- */
+/** The country chapters, ordered for reading after the globe. */
 
 export interface CountryParchmentProps {
   data: CountryPageData;
   language: Language;
-  /**
-   * The two fields §1 reads straight from the corpus. The transformer parses
-   * them into an etymology shape built for the card layout; the mockup prints
-   * the sentence the fiche actually wrote.
-   */
   country: CountryDetail;
+  summaryFigures?: CountrySummaryFigures;
+  languagesState?: ProvenanceState | "unavailable";
   hasSourceFlag?: boolean;
-  /**
-   * Chapters the page adds beyond the four the mockup frames. They land here,
-   * between the royaumes and the sources, because the sources close the
-   * reading: rendered after this component instead, they put the bibliography
-   * in the middle of the fiche.
-   */
+  /** Name and culture chapters supplied by CountryRecordView. */
   children?: ReactNode;
   /**
    * The way out of the fiche — `FicheOnward`, composed by the route.
@@ -66,11 +47,17 @@ export interface CountryParchmentProps {
   onward?: ReactNode;
 }
 
+function firstSentence(text: string): string {
+  return text.match(/^.*?[.!?](?=\s|$)/u)?.[0] ?? text;
+}
+
 // @req REQ-115
 export function CountryParchment({
   data,
   language,
   country,
+  summaryFigures,
+  languagesState,
   hasSourceFlag,
   children,
   onward,
@@ -81,15 +68,69 @@ export function CountryParchment({
   const hasPeoples =
     data.peoples.rows.length > 0 ||
     Boolean(data.peoples.totalPopulationFormatted);
+  const hasHistory =
+    data.kingdoms.cards.length > 0 ||
+    Boolean(data.historicalFacts?.periods.length);
+  const figures: CountrySummaryFigures = summaryFigures ?? {
+    population:
+      country.demographics?.totalPopulation &&
+      country.demographics.referenceYear
+        ? {
+            value: country.demographics.totalPopulation,
+            referenceYear: country.demographics.referenceYear,
+          }
+        : null,
+    peoples: country.demographics?.peoples?.length,
+    languages: data.languages.bubbles.length || null,
+  };
+  const remainingFormerNames = (
+    country.historicalNames?.formerNames ?? []
+  ).filter((formerName) => {
+    const normalized = formerName.toLocaleLowerCase(language);
+    const withoutDates = normalized.replace(/\s*\([^)]*\)\s*$/u, "").trim();
+    return !data.timeline.items.some(
+      (item) =>
+        item.name?.toLocaleLowerCase(language) === withoutDates ||
+        item.prose?.toLocaleLowerCase(language).includes(normalized)
+    );
+  });
+  const nameStations = [
+    ...data.timeline.items.filter((item) => item.type !== "sovereign"),
+    ...remainingFormerNames.map((name) => ({
+      era: "—",
+      name,
+      prose: undefined,
+    })),
+    ...data.timeline.items.filter((item) => item.type === "sovereign"),
+  ];
 
   return (
     <div className="afh-parchment" id="fiche">
-      {/* The head stands above the globe now (CountryFicheTitle), so a
-          reader is told which country they opened before the band fills the
-          screen. The parchment opens on its first chapter. */}
+      <section
+        data-fiche-section={copy.summary.title}
+        id={chapterAnchorId(copy.summary.title)}
+        aria-label={copy.summary.title}
+      >
+        <FicheSummaryBrief
+          kind="country"
+          entityId={country.id}
+          name={country.nameCommonFr || country.nameFr}
+          language={language}
+          figures={figures}
+        />
+        {country.summary?.trim() ? <p>{country.summary}</p> : null}
+      </section>
 
-      <Section title={copy.sections.etymology}>
-        {etymology || nameOriginActor ? (
+      <Section title={copy.sections.peoples}>
+        {!hasPeoples ? (
+          <FieldProvenanceMarker state="missing" language={language} />
+        ) : (
+          <PeoplesSection data={data.peoples} language={language} />
+        )}
+      </Section>
+
+      <Section title={copy.sections.nameAndHistory}>
+        {etymology || nameOriginActor || nameStations.length > 0 ? (
           <>
             {etymology && <p>{etymology}</p>}
             {nameOriginActor && (
@@ -100,6 +141,19 @@ export function CountryParchment({
                 />
                 {nameOriginActor}
               </div>
+            )}
+            {nameStations.length > 0 && (
+              <ol className="afh-parchment-timeline afh-chronology-spine">
+                {nameStations.map((item, index) => (
+                  <li className="afh-tl-item" key={`${item.era}-${index}`}>
+                    <span className="afh-tl-period">{item.era}</span>
+                    <div>
+                      {item.name ? <h3>{item.name}</h3> : null}
+                      {item.prose ? <p>{item.prose}</p> : null}
+                    </div>
+                  </li>
+                ))}
+              </ol>
             )}
           </>
         ) : (
@@ -113,26 +167,70 @@ export function CountryParchment({
         />
       </Section>
 
-      <Section title={copy.sections.peoples}>
-        {!hasPeoples ? (
-          <FieldProvenanceMarker state="missing" language={language} />
+      <Section
+        title={copy.sections.languages}
+        note={
+          languagesState === "derived" ? copy.languagesDerivedNote : undefined
+        }
+      >
+        {languagesState === "unavailable" ? (
+          <FieldProvenanceMarker
+            state="documented-gap"
+            reason={copy.languagesUnavailable}
+            language={language}
+          />
+        ) : data.languages.bubbles.length > 0 ? (
+          <LanguagesSection data={data.languages} language={language} />
         ) : (
-          /* A shortfall in the declared shares is stated once, by
-             PeoplesSection's own coverage note, in the reader's terms. The
-             callout that stood here repeated that sentence and prefixed it
-             with the identifier of the validation rule behind it — a number
-             no visitor can act on. */
-          <PeoplesSection data={data.peoples} language={language} />
+          <FieldProvenanceMarker state="missing" language={language} />
         )}
       </Section>
 
-      <Section title={copy.sections.kingdoms}>
-        {data.kingdoms.cards.length > 0 ? (
-          <KingdomsTimeline
-            cards={data.kingdoms.cards}
-            countryId={country.id}
-            language={language}
-          />
+      <Section title={copy.sections.history}>
+        {hasHistory ? (
+          <ol className="afh-parchment-timeline afh-chronology-spine">
+            {data.kingdoms.cards.map((card) => (
+              <li className="afh-tl-item" key={`${card.name}-${card.period}`}>
+                <span className="afh-tl-period">{card.period ?? "—"}</span>
+                {card.historicalRole || card.centers?.length ? (
+                  <FicheTile
+                    title={card.name}
+                    closedFact={card.period ?? copy.historyDateMissing}
+                  >
+                    {card.historicalRole ? <p>{card.historicalRole}</p> : null}
+                    {card.centers?.length ? (
+                      <p>
+                        {copy.generated.centers} · {card.centers.join(" · ")}
+                      </p>
+                    ) : null}
+                  </FicheTile>
+                ) : (
+                  <h3>{card.name}</h3>
+                )}
+              </li>
+            ))}
+            {data.historicalFacts?.periods.map((period) => {
+              const lead = firstSentence(period.content);
+              const remainder = period.content.slice(lead.length).trim();
+              return (
+                <li
+                  className="afh-tl-item afh-tl-item--fact"
+                  key={period.label}
+                >
+                  {remainder ? (
+                    <FicheTile title={period.label} closedFact={lead}>
+                      <p>{remainder}</p>
+                    </FicheTile>
+                  ) : (
+                    <div>
+                      <h3>{period.label}</h3>
+                      <p>{lead}</p>
+                    </div>
+                  )}
+                </li>
+              );
+            })}
+          </ol>
         ) : (
           <FieldProvenanceMarker state="missing" language={language} />
         )}

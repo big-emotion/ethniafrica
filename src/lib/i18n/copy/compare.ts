@@ -5,7 +5,7 @@ import type { Language } from "@/types/shared";
 const en = {
   title: "Compare",
   pickerIntroduction:
-    "Choose two or three fiches of the same type, then start the comparison.",
+    "Choose two or three pages of the same type, then start the comparison.",
   entityTypeLegend: "Entity type to compare",
   entityTypes: {
     peoples: "peoples",
@@ -69,7 +69,7 @@ const en = {
   selectManually: "select manually",
   metadataTitle: (labels: string) => `Comparison: ${labels}`,
   metadataDescription: (labels: string) =>
-    `Comparison of AFRIK fiches: ${labels}. Identity, languages, demography and editorial confidence side by side.`,
+    `Comparison of AFRIK pages: ${labels}. Identity, languages, demography and editorial confidence side by side.`,
   metadataImageAlt: "AFRIK comparison",
   notFoundTitle: "Comparison not found",
   notFoundBeforePattern:
@@ -85,7 +85,7 @@ const en = {
       pays: "Countries",
       famille: "Language families",
     },
-    unaudited: "unaudited fiche",
+    unaudited: "unaudited page",
     confidence: (score: number) => `${score}% confidence`,
   },
 };
@@ -95,7 +95,7 @@ type CompareCopy = typeof en;
 const fr: CompareCopy = {
   title: "Comparer",
   pickerIntroduction:
-    "Choisissez deux ou trois fiches du même type, puis lancez la comparaison.",
+    "Choisissez deux ou trois pages du même type, puis lancez la comparaison.",
   entityTypeLegend: "Type d'entité à comparer",
   entityTypes: {
     peoples: "peuples",
@@ -158,7 +158,7 @@ const fr: CompareCopy = {
   selectManually: "sélectionner manuellement",
   metadataTitle: (labels) => `Comparaison : ${labels}`,
   metadataDescription: (labels) =>
-    `Comparaison de fiches AFRIK : ${labels}. Identité, langues, démographie et confiance éditoriale côte à côte.`,
+    `Comparaison de pages AFRIK : ${labels}. Identité, langues, démographie et confiance éditoriale côte à côte.`,
   metadataImageAlt: "Comparaison AFRIK",
   notFoundTitle: "Comparaison introuvable",
   notFoundBeforePattern:
@@ -174,7 +174,7 @@ const fr: CompareCopy = {
       pays: "Pays",
       famille: "Familles linguistiques",
     },
-    unaudited: "fiche non auditée",
+    unaudited: "page non auditée",
     confidence: (score) => `${score} % de confiance`,
   },
 };

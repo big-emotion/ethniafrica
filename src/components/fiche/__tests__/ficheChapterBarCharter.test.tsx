@@ -96,10 +96,10 @@ describe("FicheChapterBar", () => {
   it("localises its navigation chrome in English", () => {
     renderFiche(THREE_CHAPTERS, "en");
     expect(
-      screen.getByRole("navigation", { name: "Fiche chapters" })
+      screen.getByRole("navigation", { name: "Page chapters" })
     ).toBeVisible();
     expect(
-      screen.getByRole("button", { name: /Fiche contents — chapter 1 of 3/ })
+      screen.getByRole("button", { name: /Page contents — chapter 1 of 3/ })
     ).toBeVisible();
     expect(screen.getByText("Contents")).toBeVisible();
   });

@@ -56,7 +56,7 @@ const fr: CommonCopy = {
   title: PRODUCT_NAME,
   // Drawn into the social-card images (opengraph-image.tsx,
   // twitter-image.tsx), so it is read far more often than it is seen on the
-  // site. Held to the six corpus classes by siteDescription.test.ts.
+  // site. Held to the six atlas classes by siteDescription.test.ts.
   subtitle:
     "Encyclopédie des peuples, langues, familles linguistiques, pays, appellations et noms d'Afrique",
   byCountry: "Par Pays",

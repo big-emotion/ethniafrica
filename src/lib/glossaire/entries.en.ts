@@ -225,9 +225,9 @@ export const GLOSSARY_DEFINITIONS_EN: Readonly<
   },
   sanankuya: {
     definition:
-      "Mande joking kinship: a pact between two clan names whose bearers owe each other ritual mockery and assistance, and to whom conflict is forbidden. The name binds: to bear one of the two is to inherit the pact.",
+      "Mande joking kinship: a pact between two clan names that binds their whole descent. Cécile Canut records three features — the relation holds in perpetuity for both lineages, marriage between them is prohibited, and mutual aid is owed without reserve — ritual mockery being its visible face. The name binds: to bear one of the two is to inherit the pact.",
     corpusExample:
-      "Keïta and Coulibaly, whose pact is reported as going back to Soundiata.",
+      "Keïta and Coulibaly, whose pact tradition traces back to Soundiata.",
     provenance: "machine",
   },
   "tradition-inventee": {

@@ -109,7 +109,7 @@ describe("RevisionDrawer", () => {
     expect(screen.getByText("Revision history")).toBeInTheDocument();
     await waitFor(() => {
       expect(
-        screen.getByText("No published revision — initial fiche")
+        screen.getByText("No published revision — initial page")
       ).toBeInTheDocument();
     });
   });
@@ -148,7 +148,7 @@ describe("RevisionDrawer", () => {
     renderDrawer();
     await waitFor(() => {
       expect(
-        screen.getByText("Aucune révision publiée — fiche initiale")
+        screen.getByText("Aucune révision publiée — page initiale")
       ).toBeInTheDocument();
     });
   });

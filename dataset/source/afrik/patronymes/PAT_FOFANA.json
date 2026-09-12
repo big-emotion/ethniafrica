@@ -27,7 +27,10 @@
           "countryId": "GHA",
           "sourceRefs": ["corpus-ppl-dioula-organisation"]
         },
-        { "countryId": "GNB", "sourceRefs": ["corpus-ppl-dioula-organisation"] }
+        {
+          "countryId": "GNB",
+          "sourceRefs": ["corpus-ppl-dioula-organisation"]
+        }
       ]
     }
   ],
@@ -82,17 +85,29 @@
     {
       "targetPatronymeId": "PAT_CAMARA",
       "allianceType": "sanankuya",
-      "sourceRefs": ["bamadaba-jamuw"]
+      "sourceRefs": [
+        "bamadaba-jamuw",
+        "canut-2002-senankuya",
+        "canut-smith-2006-pactes"
+      ]
     },
     {
       "targetPatronymeId": "PAT_KEITA",
       "allianceType": "sanankuya",
-      "sourceRefs": ["bamadaba-jamuw"]
+      "sourceRefs": [
+        "bamadaba-jamuw",
+        "canut-2002-senankuya",
+        "canut-smith-2006-pactes"
+      ]
     },
     {
       "targetPatronymeId": "PAT_COULIBALY",
       "allianceType": "sanankuya",
-      "sourceRefs": ["bamadaba-jamuw"]
+      "sourceRefs": [
+        "bamadaba-jamuw",
+        "canut-2002-senankuya",
+        "canut-smith-2006-pactes"
+      ]
     }
   ],
   "casteOrSocialFunction": {
@@ -133,6 +148,22 @@
       "tier": "referenced",
       "source_kind": "academic",
       "notes": "Charry, Eric, Percussive Notes 34(2), avril 1996, p. 66-72 ; l'auteur est l'ethnomusicologue de Mande Music (University of Chicago Press, 2000). Article de revue spécialisée, non de revue à comité de lecture : il est cité ici pour l'attribution des jamuw aux statuts sociaux mandingues (numu, jeli, horon), qu'il énonce nommément clan par clan, et non pour l'histoire du jembe."
+    },
+    {
+      "sourceKey": "canut-2002-senankuya",
+      "title": "Pouvoir, places et filiation : les senankuya au Mali",
+      "url": "https://journals.openedition.org/praxematique/2307",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Canut, Cécile, Cahiers de praxématique, numéro 38, 2002, p. 175-197. Enquête de terrain au Mali. Elle énonce ce que le pacte oblige : la relation vaut à perpétuité pour toute la descendance des deux lignées, le mariage entre elles est prohibé — diversement appliqué aujourd'hui, précise-t-elle — et l'entraide y est due sans réserve. Citée pour l'obligation elle-même ; elle ne nomme pas la paire de cette fiche, que portent les entrées citées à côté d'elle."
+    },
+    {
+      "sourceKey": "canut-smith-2006-pactes",
+      "title": "Pactes, alliances et plaisanteries. Pratiques locales, discours global",
+      "url": "https://doi.org/10.4000/etudesafricaines.6198",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Canut, Cécile, et Smith, Étienne, Cahiers d'études africaines, numéro 184, 2006, p. 687 et suivantes. Citée pour la mise en garde qu'elle porte : l'idée que la parenté à plaisanterie apaiserait les conflits y est traitée comme une hypothèse héritée de Radcliffe-Brown et reprise par les études sur la résolution des conflits, donc comme un discours à analyser et non comme un effet mesuré. La page de début est vérifiée, la page de fin ne l'est pas."
     }
   ],
   "gaps": [

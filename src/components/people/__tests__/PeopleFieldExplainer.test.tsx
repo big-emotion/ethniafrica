@@ -14,7 +14,7 @@ describe("PeopleFieldExplainer (REQ-116)", () => {
     render(<PeopleFieldExplainer distribution={distribution} language="en" />);
     expect(
       screen.getByText(
-        /no corpus source states where this people's presence ends/i
+        /no atlas source states where this people's presence ends/i
       )
     ).toBeVisible();
     expect(screen.getByText(/2 populations by country/i)).toBeVisible();
@@ -32,7 +32,7 @@ describe("PeopleFieldExplainer (REQ-116)", () => {
   });
 
   // @req REQ-116
-  it("counts the countries the corpus actually declares", () => {
+  it("counts the countries the atlas actually declares", () => {
     render(<PeopleFieldExplainer distribution={distribution} />);
 
     expect(screen.getByText(/2 populations par pays/)).toBeInTheDocument();
@@ -50,7 +50,7 @@ describe("PeopleFieldExplainer (REQ-116)", () => {
   });
 
   // @req REQ-119
-  it("says nothing at all when the fiche declares no distribution", () => {
+  it("says nothing at all when the page declares no distribution", () => {
     const { container } = render(<PeopleFieldExplainer distribution={[]} />);
 
     expect(container.firstChild).toBeNull();

@@ -29,6 +29,7 @@ export type PageType =
   | "dossierLunda"
   | "dossierSpiritualitesKongo"
   | "glossary"
+  | "wallpapers"
   | "atlasHub"
   | "dossiersHub"
   | "jeuxHub";
@@ -90,6 +91,7 @@ const SLUGS: Record<Language, Record<PageType, string>> = {
     dossierLunda: "dossiers/lunda-empire",
     dossierSpiritualitesKongo: "dossiers/kongo-spiritualities",
     glossary: "glossary",
+    wallpapers: "wallpapers",
     // `dossiers` is kept as an English word on purpose: the retired module
     // paths keyed `dossiers/…` in `middleware.ts` then work in both locales.
     atlasHub: "atlas",
@@ -148,6 +150,10 @@ const SLUGS: Record<Language, Record<PageType, string>> = {
     // the games as much as the dossiers, and it is reached from the footer's
     // "Le projet" rubric.
     glossary: "glossaire",
+    // The scale ladder's download surface. No axis lists it either, and
+    // it describes the project rather than the corpus, so it joins
+    // `about`, `doctrine` and `sources` in carrying no prefix.
+    wallpapers: "fonds-decran",
     // REQ-114/REQ-138: one hub route per access mode. The slug is the verb
     // the reader arrived with, which is what keeps it from colliding with
     // the resource pages (peuples/pays/familles) it now holds.
@@ -372,6 +378,19 @@ const singleQueryValue = (query: DeepLinkQuery, key: string): string | null => {
   const value = query[key];
   return typeof value === "string" && value.length > 0 ? value : null;
 };
+
+/**
+ * The query keys a deep-link redirect spends on its way to a fiche. They are
+ * the identifier the target already states in its path, so forwarding them
+ * would hand the fiche a second copy the directory it replaced would act on.
+ *
+ * Everything *else* the reader arrived with survives the hop — campaign
+ * tagging above all. A `?country=BEN&utm_source=youtube` dropped whole sends
+ * the visit into Plausible's "Direct / None", where a video that converted
+ * cannot be told from one that did not.
+ */
+// @req REQ-091
+export const DEEP_LINK_QUERY_KEYS = ["country", "people", "family"] as const;
 
 /**
  * The one place a directory query becomes a fiche href, and so the one place

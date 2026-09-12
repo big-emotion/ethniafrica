@@ -243,7 +243,7 @@ describe("FlagTarget", () => {
     // @req REQ-012
     it.each([
       ["assertion", assertionTarget, "Affirmation"],
-      ["fiche_section", sectionTarget, "Section de fiche"],
+      ["fiche_section", sectionTarget, "Section de page"],
       ["source", sourceTarget, "Source"],
     ])(
       "names target of type %s in French, without its identifier",

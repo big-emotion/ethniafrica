@@ -146,7 +146,10 @@ describe("withTranslation (REQ-142)", () => {
   // @req REQ-142
   it("names a reviewer and reports the reviewed standing (AC2)", async () => {
     vi.mocked(getAfrikTranslation).mockResolvedValue(
-      englishRecord({ translationKind: "machine_reviewed", reviewedBy: "jnk" })
+      englishRecord({
+        translationKind: "machine_reviewed",
+        reviewedBy: "reviewer-1",
+      })
     );
 
     const result = await withTranslation(
@@ -158,7 +161,7 @@ describe("withTranslation (REQ-142)", () => {
 
     expect(result.translation).toMatchObject({
       kind: "machine_reviewed",
-      reviewedBy: "jnk",
+      reviewedBy: "reviewer-1",
     });
     expect(result.record.content.appellations.originOfExonyms).toBe(
       "The term Ashanti is an anglophone variant."

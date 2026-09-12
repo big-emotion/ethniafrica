@@ -1,7 +1,12 @@
-# Self-hosted Plausible Community Edition (analytics.ethniafrica.com's collector), on the
-# same OVH VPS as the ethniafrica app itself. Its own compose project, joined to Traefik's
-# external `proxy` network — the same convention docker-compose.yml (repo root) follows for
-# the app, so that this stays independently restartable and cannot take the app down with it.
+# Self-hosted Plausible Community Edition, on the same OVH VPS as the ethniafrica app
+# itself. Its own compose project, joined to Traefik's external `proxy` network — the same
+# convention docker-compose.yml (repo root) follows for the app, so that this stays
+# independently restartable and cannot take the app down with it.
+#
+# It is a SHARED collector: it measures `ethniafrica.com` and `big-emotion.com` as two
+# properties of one instance, reachable under either brand's hostname (see the Traefik
+# labels). It lives in this repository for historical reasons — this is where it was
+# built — but it is no longer only this project's. Changing it now affects both sites.
 #
 # compose.yml and the clickhouse/ config files are vendored verbatim from
 # https://github.com/plausible/hosting (v3.2.1) — the ClickHouse tuning trims it to fit a
@@ -84,12 +89,21 @@ services:
       - "traefik.enable=true"
       - "traefik.docker.network=proxy"
 
-      - "traefik.http.routers.plausible.rule=Host(`stats.ethniafrica.com`)"
+      # Two hostnames, one instance. This collector now measures BIG EMOTION as well as
+      # EthniAfrica, and an agency's public page source pointing at another brand's
+      # analytics domain reads as a leak even when it is not one — so each brand reaches
+      # the dashboard under its own name. Both are kept routed rather than one replacing
+      # the other: `stats.ethniafrica.com` is what the runbook, the app's
+      # NEXT_PUBLIC_PLAUSIBLE_CUSTOM_DOMAIN and every existing invite link already say.
+      # `certresolver` issues a separate certificate per host on first request, so
+      # `stats.big-emotion.com` must resolve to this VPS *before* this lands — otherwise
+      # the ACME challenge fails on every retry.
+      - "traefik.http.routers.plausible.rule=Host(`stats.ethniafrica.com`) || Host(`stats.big-emotion.com`)"
       - "traefik.http.routers.plausible.entrypoints=websecure"
       - "traefik.http.routers.plausible.tls.certresolver=myresolver"
       - "traefik.http.services.plausible.loadbalancer.server.port=8000"
 
-      - "traefik.http.routers.plausible-http.rule=Host(`stats.ethniafrica.com`)"
+      - "traefik.http.routers.plausible-http.rule=Host(`stats.ethniafrica.com`) || Host(`stats.big-emotion.com`)"
       - "traefik.http.routers.plausible-http.entrypoints=web"
       - "traefik.http.routers.plausible-http.middlewares=plausible-https"
       - "traefik.http.middlewares.plausible-https.redirectscheme.scheme=https"

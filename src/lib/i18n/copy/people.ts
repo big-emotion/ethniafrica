@@ -1,22 +1,48 @@
 import type { Language } from "@/types/shared";
 
 const en = {
+  summary: {
+    title: "In brief",
+    persons: "Persons recorded for this people",
+    referenceYear: (year: number) => `Reference year: ${year}`,
+    countriesOfPresence: "Countries of documented presence",
+    mainLanguage: "Main language",
+    linguisticFamily: "Language family",
+    namesReferencedHere: "Names borne and referenced here",
+    missingData: "Not recorded in the atlas",
+    factTier: "Source tier",
+    populationDisagreement: (declared: string, summed: string) =>
+      `The declared total is ${declared} people, while the populations listed by country add up to ${summed}. These figures do not agree.`,
+  },
   sections: {
-    naming: "The name borne, the names imposed",
+    naming: "The name and its designations",
     mapGrammar: "Why the map draws no boundary",
     mapDerivation: "Derived from the distribution by country",
     origins: "Origins and formation",
     language: "Language",
     historicalAffiliation: "Historical affiliation",
-    historicalRole: "Historical role",
-    culture: "Culture and spirituality",
+    historicalRole: "History",
+    culture: "Culture and society",
     neighbours: "Neighbouring peoples and organisation",
-    distribution: "Geographic distribution",
+    distribution: "Where this people lives",
+    borneNames: "Names borne",
     referenceYear: "Reference year: 2025",
     fragmentation: "Colonial fragmentation",
     fragmentationNote:
       "Derived from the people's presence in several countries",
+    fragmentationCount: (count: number) => `${count} countries of presence`,
     sources: "Sources",
+  },
+  chapterDetails: {
+    historyChronology: "Historical chronology",
+    historyUndated: "Undated",
+    historyRole: "Historical role",
+    cultureRitesAndSymbols: "Rites and symbols",
+    associatedGroups: (count: number) =>
+      `${count} associated ${count === 1 ? "group" : "groups"}`,
+    documentedRelations: (count: number) =>
+      `${count} documented ${count === 1 ? "relation" : "relations"}`,
+    borneNamesIndex: "Alphabetical index of names borne",
   },
   reportSection: "Report this section",
   naming: {
@@ -29,10 +55,12 @@ const en = {
     pronunciation: (ipa: string) => `Phonetic pronunciation: ${ipa}`,
     collapse: "Show less",
     more: (count: number) => `+${count} more`,
+    exonymCount: (count: number) => `${count} names recorded`,
+    currentUsageAndCritique: "Usage and context",
   },
   field: {
     explanation: (count: number) =>
-      `On a country fiche, the line closes because an administrative boundary is published and dated. Nothing comparable exists here: no corpus source states where this people's presence ends. What the corpus declares is ${count} populations by country. The map follows exactly that — one halo per country, whose area follows the population and whose border is zero. A closed outline would assert an inside and an outside that nobody can source.`,
+      `On a country page, the line closes because an administrative boundary is published and dated. Nothing comparable exists here: no atlas source states where this people's presence ends. What the atlas declares is ${count} populations by country. The map follows exactly that — one halo per country, whose area follows the population and whose border is zero. A closed outline would assert an inside and an outside that nobody can source.`,
     legend: "Decreasing density, no border",
     offMapOne:
       "One declared presence is outside the map, as the atlas covers only Africa:",
@@ -80,10 +108,11 @@ const en = {
   external: {
     title: "External identifiers",
     description:
-      "The corresponding records in the external registries referenced by this fiche.",
+      "The corresponding records in the external registries referenced by this page.",
   },
   countries: {
     offMap: "outside the map",
+    derivedShare: "country populations listed here",
     source: "Source",
     sourceMissing: "Source not recorded",
     reference: "ref.",
@@ -99,7 +128,7 @@ const en = {
   media: {
     title: "Media credits",
     description:
-      "Author, licence and source page for each image or video attached to this fiche.",
+      "Author, licence and source page for each image or video attached to this page.",
     unknownAuthor: "Unknown author",
     licence: "Licence",
     sourcePage: "Source page",
@@ -109,7 +138,7 @@ const en = {
     reference: "ref.",
     presenceCountries: (count: number) =>
       `${count} ${count === 1 ? "country" : "countries"} of presence`,
-    sourceAria: (name: string) => `for the ${name} fiche`,
+    sourceAria: (name: string) => `for the ${name} page`,
   },
   presenceFacts: {
     description: (id: string) =>
@@ -120,7 +149,7 @@ const en = {
     haloBody:
       "The radius follows the square root of the population, so the area follows the population. The border is zero: there is no boundary to read.",
     reference: "Ref.",
-    readFull: "Read the full fiche",
+    readFull: "Read the full page",
   },
   atlas: {
     missingDistribution: (name: string) =>
@@ -135,21 +164,47 @@ const en = {
 type PeopleCopy = typeof en;
 
 const fr: PeopleCopy = {
+  summary: {
+    title: "En bref",
+    persons: "Personnes déclarées pour ce peuple",
+    referenceYear: (year) => `Année de référence : ${year}`,
+    countriesOfPresence: "Pays de présence documentée",
+    mainLanguage: "Langue principale",
+    linguisticFamily: "Famille linguistique",
+    namesReferencedHere: "Noms portés référencés ici",
+    missingData: "Non renseigné dans l’atlas",
+    factTier: "Niveau de source",
+    populationDisagreement: (declared, summed) =>
+      `Le total déclaré est de ${declared} personnes, tandis que les populations indiquées par pays totalisent ${summed}. Ces chiffres ne concordent pas.`,
+  },
   sections: {
-    naming: "Le nom porté, les noms subis",
+    naming: "Le nom et ses appellations",
     mapGrammar: "Pourquoi la carte ne trace pas de frontière",
     mapDerivation: "Dérivé de la répartition par pays",
     origins: "Origines & formation",
     language: "Langue",
     historicalAffiliation: "Filiation historique",
-    historicalRole: "Rôle historique",
-    culture: "Culture & spiritualité",
+    historicalRole: "Histoire",
+    culture: "Culture et société",
     neighbours: "Peuples voisins & organisation",
-    distribution: "Répartition géographique",
+    distribution: "Où vit ce peuple",
+    borneNames: "Noms portés",
     referenceYear: "Année de référence : 2025",
     fragmentation: "Fragmentation coloniale",
     fragmentationNote: "Dérivé de la présence du peuple dans plusieurs pays",
+    fragmentationCount: (count) => `${count} pays de présence`,
     sources: "Sources",
+  },
+  chapterDetails: {
+    historyChronology: "Chronologie historique",
+    historyUndated: "Non daté",
+    historyRole: "Rôle historique",
+    cultureRitesAndSymbols: "Rites & symboles",
+    associatedGroups: (count) =>
+      `${count} ${count === 1 ? "groupe associé" : "groupes associés"}`,
+    documentedRelations: (count) =>
+      `${count} ${count === 1 ? "relation documentée" : "relations documentées"}`,
+    borneNamesIndex: "Index alphabétique des noms portés",
   },
   reportSection: "Signaler cette section",
   naming: {
@@ -162,10 +217,12 @@ const fr: PeopleCopy = {
     pronunciation: (ipa) => `Prononciation phonétique : ${ipa}`,
     collapse: "Réduire",
     more: (count) => `+${count} autres`,
+    exonymCount: (count) => `${count} noms relevés`,
+    currentUsageAndCritique: "Usage et contexte",
   },
   field: {
     explanation: (count) =>
-      `Sur la fiche d'un pays, le trait se referme parce qu'une frontière administrative est publiée et datée. Ici, rien de tel n'existe : aucune source du corpus ne dit où la présence de ce peuple s'arrête. Ce que le corpus déclare, ce sont ${count} populations par pays. La carte s'en tient exactement à cela — un halo par pays, dont l'aire suit la population et dont le bord vaut zéro. Un tracé fermé aurait affirmé un dedans et un dehors que personne ne peut sourcer.`,
+      `Sur la page d'un pays, le trait se referme parce qu'une frontière administrative est publiée et datée. Ici, rien de tel n'existe : aucune source de l’atlas ne dit où la présence de ce peuple s'arrête. Ce que l’atlas déclare, ce sont ${count} populations par pays. La carte s'en tient exactement à cela — un halo par pays, dont l'aire suit la population et dont le bord vaut zéro. Un tracé fermé aurait affirmé un dedans et un dehors que personne ne peut sourcer.`,
     legend: "Densité décroissante, bord nul",
     offMapOne:
       "Une présence déclarée est hors carte, l'atlas ne couvrant que l'Afrique :",
@@ -213,10 +270,11 @@ const fr: PeopleCopy = {
   external: {
     title: "Identifiants externes",
     description:
-      "Les fiches correspondantes dans les registres externes référencés par cette fiche.",
+      "Les entrées correspondantes dans les registres extérieurs auxquels cette page renvoie.",
   },
   countries: {
     offMap: "hors carte",
+    derivedShare: "populations par pays indiquées ici",
     source: "Source",
     sourceMissing: "Source non renseignée",
     reference: "réf.",
@@ -232,7 +290,7 @@ const fr: PeopleCopy = {
   media: {
     title: "Crédits médias",
     description:
-      "Auteur, licence et page d'origine de chaque image ou vidéo attachée à cette fiche.",
+      "Auteur, licence et page d'origine de chaque image ou vidéo attachée à cette page.",
     unknownAuthor: "Auteur inconnu",
     licence: "Licence",
     sourcePage: "Page source",
@@ -241,7 +299,7 @@ const fr: PeopleCopy = {
     people: "personnes",
     reference: "réf.",
     presenceCountries: (count) => `${count} pays de présence`,
-    sourceAria: (name) => `pour la fiche ${name}`,
+    sourceAria: (name) => `pour la page ${name}`,
   },
   presenceFacts: {
     description: (id) => `${id} · présence déclarée, sans tracé de limite`,
@@ -251,7 +309,7 @@ const fr: PeopleCopy = {
     haloBody:
       "Le rayon suit la racine de la population, donc l'aire suit la population. Le bord vaut zéro : il n'y a pas de limite à lire.",
     reference: "Réf.",
-    readFull: "Lire la fiche complète",
+    readFull: "Lire la page complète",
   },
   atlas: {
     missingDistribution: (name) =>

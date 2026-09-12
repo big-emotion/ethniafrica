@@ -1,0 +1,488 @@
+[
+  {
+    "country": "BWA",
+    "countryPopulation": 2600000,
+    "sumRaw": 10241800,
+    "ratioRaw": 3.9391538461538462,
+    "sumAfterCuration": 7612800,
+    "ratioAfterCuration": 2.928,
+    "usableAfterCuration": false
+  },
+  {
+    "country": "LSO",
+    "countryPopulation": 2400000,
+    "sumRaw": 11275000,
+    "ratioRaw": 4.697916666666667,
+    "sumAfterCuration": 6875000,
+    "ratioAfterCuration": 2.8645833333333335,
+    "usableAfterCuration": false
+  },
+  {
+    "country": "GHA",
+    "countryPopulation": 35100000,
+    "sumRaw": 85426406,
+    "ratioRaw": 2.433800740740741,
+    "sumAfterCuration": 78155406,
+    "ratioAfterCuration": 2.2266497435897437,
+    "usableAfterCuration": false
+  },
+  {
+    "country": "BDI",
+    "countryPopulation": 14400000,
+    "sumRaw": 63780000,
+    "ratioRaw": 4.429166666666666,
+    "sumAfterCuration": 29880000,
+    "ratioAfterCuration": 2.075,
+    "usableAfterCuration": false
+  },
+  {
+    "country": "GNQ",
+    "countryPopulation": 1900000,
+    "sumRaw": 7402200,
+    "ratioRaw": 3.8958947368421053,
+    "sumAfterCuration": 3627200,
+    "ratioAfterCuration": 1.9090526315789473,
+    "usableAfterCuration": false
+  },
+  {
+    "country": "SWZ",
+    "countryPopulation": 1300000,
+    "sumRaw": 3526000,
+    "ratioRaw": 2.712307692307692,
+    "sumAfterCuration": 2326000,
+    "ratioAfterCuration": 1.7892307692307692,
+    "usableAfterCuration": false
+  },
+  {
+    "country": "ZAF",
+    "countryPopulation": 64800000,
+    "sumRaw": 229304500,
+    "ratioRaw": 3.5386496913580245,
+    "sumAfterCuration": 106610400,
+    "ratioAfterCuration": 1.6452222222222221,
+    "usableAfterCuration": false
+  },
+  {
+    "country": "ZWE",
+    "countryPopulation": 17000000,
+    "sumRaw": 57726500,
+    "ratioRaw": 3.3956764705882354,
+    "sumAfterCuration": 26300500,
+    "ratioAfterCuration": 1.5470882352941175,
+    "usableAfterCuration": false
+  },
+  {
+    "country": "MWI",
+    "countryPopulation": 22200000,
+    "sumRaw": 59171000,
+    "ratioRaw": 2.6653603603603604,
+    "sumAfterCuration": 34231000,
+    "ratioAfterCuration": 1.541936936936937,
+    "usableAfterCuration": false
+  },
+  {
+    "country": "ERI",
+    "countryPopulation": 3600000,
+    "sumRaw": 4969000,
+    "ratioRaw": 1.3802777777777777,
+    "sumAfterCuration": 4969000,
+    "ratioAfterCuration": 1.3802777777777777,
+    "usableAfterCuration": false
+  },
+  {
+    "country": "GAB",
+    "countryPopulation": 2600000,
+    "sumRaw": 7245000,
+    "ratioRaw": 2.7865384615384614,
+    "sumAfterCuration": 3575000,
+    "ratioAfterCuration": 1.375,
+    "usableAfterCuration": false
+  },
+  {
+    "country": "COM",
+    "countryPopulation": 900000,
+    "sumRaw": 2080000,
+    "ratioRaw": 2.311111111111111,
+    "sumAfterCuration": 1230000,
+    "ratioAfterCuration": 1.3666666666666667,
+    "usableAfterCuration": false
+  },
+  {
+    "country": "ZMB",
+    "countryPopulation": 21900000,
+    "sumRaw": 48100950,
+    "ratioRaw": 2.1963904109589043,
+    "sumAfterCuration": 28870950,
+    "ratioAfterCuration": 1.3183082191780822,
+    "usableAfterCuration": false
+  },
+  {
+    "country": "BFA",
+    "countryPopulation": 24100000,
+    "sumRaw": 59884500,
+    "ratioRaw": 2.4848340248962657,
+    "sumAfterCuration": 31727500,
+    "ratioAfterCuration": 1.31649377593361,
+    "usableAfterCuration": false
+  },
+  {
+    "country": "CIV",
+    "countryPopulation": 32700000,
+    "sumRaw": 58449300,
+    "ratioRaw": 1.787440366972477,
+    "sumAfterCuration": 42589300,
+    "ratioAfterCuration": 1.3024250764525993,
+    "usableAfterCuration": false
+  },
+  {
+    "country": "RWA",
+    "countryPopulation": 14600000,
+    "sumRaw": 48850000,
+    "ratioRaw": 3.345890410958904,
+    "sumAfterCuration": 18950000,
+    "ratioAfterCuration": 1.297945205479452,
+    "usableAfterCuration": false
+  },
+  {
+    "country": "AGO",
+    "countryPopulation": 39000000,
+    "sumRaw": 120357150,
+    "ratioRaw": 3.0860807692307692,
+    "sumAfterCuration": 50605650,
+    "ratioAfterCuration": 1.2975807692307693,
+    "usableAfterCuration": false
+  },
+  {
+    "country": "NAM",
+    "countryPopulation": 3100000,
+    "sumRaw": 5961854,
+    "ratioRaw": 1.9231787096774193,
+    "sumAfterCuration": 3849454,
+    "ratioAfterCuration": 1.2417593548387096,
+    "usableAfterCuration": false
+  },
+  {
+    "country": "ETH",
+    "countryPopulation": 135500000,
+    "sumRaw": 179288600,
+    "ratioRaw": 1.3231630996309962,
+    "sumAfterCuration": 166438600,
+    "ratioAfterCuration": 1.2283291512915129,
+    "usableAfterCuration": false
+  },
+  {
+    "country": "SYC",
+    "countryPopulation": 100000,
+    "sumRaw": 210500,
+    "ratioRaw": 2.105,
+    "sumAfterCuration": 120500,
+    "ratioAfterCuration": 1.205,
+    "usableAfterCuration": false
+  },
+  {
+    "country": "NER",
+    "countryPopulation": 27900000,
+    "sumRaw": 49099000,
+    "ratioRaw": 1.759820788530466,
+    "sumAfterCuration": 33299000,
+    "ratioAfterCuration": 1.1935125448028674,
+    "usableAfterCuration": false
+  },
+  {
+    "country": "LBR",
+    "countryPopulation": 5700000,
+    "sumRaw": 8149273,
+    "ratioRaw": 1.4296970175438597,
+    "sumAfterCuration": 6649273,
+    "ratioAfterCuration": 1.1665391228070174,
+    "usableAfterCuration": false
+  },
+  {
+    "country": "CMR",
+    "countryPopulation": 29900000,
+    "sumRaw": 78578890,
+    "ratioRaw": 2.6280565217391305,
+    "sumAfterCuration": 34833890,
+    "ratioAfterCuration": 1.1650130434782608,
+    "usableAfterCuration": false
+  },
+  {
+    "country": "SDN",
+    "countryPopulation": 51700000,
+    "sumRaw": 62356000,
+    "ratioRaw": 1.2061121856866537,
+    "sumAfterCuration": 59306000,
+    "ratioAfterCuration": 1.1471179883945841,
+    "usableAfterCuration": true
+  },
+  {
+    "country": "LBY",
+    "countryPopulation": 7500000,
+    "sumRaw": 9072900,
+    "ratioRaw": 1.20972,
+    "sumAfterCuration": 8422900,
+    "ratioAfterCuration": 1.1230533333333332,
+    "usableAfterCuration": true
+  },
+  {
+    "country": "MAR",
+    "countryPopulation": 38400000,
+    "sumRaw": 54204000,
+    "ratioRaw": 1.4115625,
+    "sumAfterCuration": 42204000,
+    "ratioAfterCuration": 1.0990625,
+    "usableAfterCuration": true
+  },
+  {
+    "country": "GIN",
+    "countryPopulation": 15100000,
+    "sumRaw": 36165929,
+    "ratioRaw": 2.3950946357615894,
+    "sumAfterCuration": 16465929,
+    "ratioAfterCuration": 1.0904588741721855,
+    "usableAfterCuration": true
+  },
+  {
+    "country": "SOM",
+    "countryPopulation": 19700000,
+    "sumRaw": 21186000,
+    "ratioRaw": 1.0754314720812184,
+    "sumAfterCuration": 21185000,
+    "ratioAfterCuration": 1.0753807106598985,
+    "usableAfterCuration": true
+  },
+  {
+    "country": "SLE",
+    "countryPopulation": 8800000,
+    "sumRaw": 15457943,
+    "ratioRaw": 1.7565844318181818,
+    "sumAfterCuration": 9353943,
+    "ratioAfterCuration": 1.0629480681818182,
+    "usableAfterCuration": true
+  },
+  {
+    "country": "CPV",
+    "countryPopulation": 500000,
+    "sumRaw": 1083869,
+    "ratioRaw": 2.167738,
+    "sumAfterCuration": 513869,
+    "ratioAfterCuration": 1.027738,
+    "usableAfterCuration": true
+  },
+  {
+    "country": "NGA",
+    "countryPopulation": 237500000,
+    "sumRaw": 397828470,
+    "ratioRaw": 1.6750672421052633,
+    "sumAfterCuration": 233078470,
+    "ratioAfterCuration": 0.9813830315789474,
+    "usableAfterCuration": true
+  },
+  {
+    "country": "DZA",
+    "countryPopulation": 47400000,
+    "sumRaw": 58221000,
+    "ratioRaw": 1.2282911392405063,
+    "sumAfterCuration": 46221000,
+    "ratioAfterCuration": 0.975126582278481,
+    "usableAfterCuration": true
+  },
+  {
+    "country": "TUN",
+    "countryPopulation": 12400000,
+    "sumRaw": 12150000,
+    "ratioRaw": 0.9798387096774194,
+    "sumAfterCuration": 12050000,
+    "ratioAfterCuration": 0.9717741935483871,
+    "usableAfterCuration": true
+  },
+  {
+    "country": "MUS",
+    "countryPopulation": 1300000,
+    "sumRaw": 1592000,
+    "ratioRaw": 1.2246153846153847,
+    "sumAfterCuration": 1232000,
+    "ratioAfterCuration": 0.9476923076923077,
+    "usableAfterCuration": true
+  },
+  {
+    "country": "SEN",
+    "countryPopulation": 18900000,
+    "sumRaw": 37464600,
+    "ratioRaw": 1.9822539682539682,
+    "sumAfterCuration": 17285600,
+    "ratioAfterCuration": 0.9145820105820106,
+    "usableAfterCuration": true
+  },
+  {
+    "country": "DJI",
+    "countryPopulation": 1200000,
+    "sumRaw": 1050000,
+    "ratioRaw": 0.875,
+    "sumAfterCuration": 1050000,
+    "ratioAfterCuration": 0.875,
+    "usableAfterCuration": true
+  },
+  {
+    "country": "KEN",
+    "countryPopulation": 57500000,
+    "sumRaw": 163645501,
+    "ratioRaw": 2.8460087130434784,
+    "sumAfterCuration": 49855501,
+    "ratioAfterCuration": 0.8670521913043479,
+    "usableAfterCuration": true
+  },
+  {
+    "country": "MRT",
+    "countryPopulation": 5300000,
+    "sumRaw": 5110000,
+    "ratioRaw": 0.9641509433962264,
+    "sumAfterCuration": 4510000,
+    "ratioAfterCuration": 0.8509433962264151,
+    "usableAfterCuration": true
+  },
+  {
+    "country": "EGY",
+    "countryPopulation": 118400000,
+    "sumRaw": 100437000,
+    "ratioRaw": 0.848285472972973,
+    "sumAfterCuration": 100407000,
+    "ratioAfterCuration": 0.8480320945945946,
+    "usableAfterCuration": true
+  },
+  {
+    "country": "TCD",
+    "countryPopulation": 21000000,
+    "sumRaw": 26485800,
+    "ratioRaw": 1.2612285714285714,
+    "sumAfterCuration": 17685800,
+    "ratioAfterCuration": 0.8421809523809524,
+    "usableAfterCuration": true
+  },
+  {
+    "country": "TZA",
+    "countryPopulation": 70600000,
+    "sumRaw": 195451700,
+    "ratioRaw": 2.768437677053824,
+    "sumAfterCuration": 58601700,
+    "ratioAfterCuration": 0.8300524079320113,
+    "usableAfterCuration": true
+  },
+  {
+    "country": "MLI",
+    "countryPopulation": 25200000,
+    "sumRaw": 46932000,
+    "ratioRaw": 1.8623809523809525,
+    "sumAfterCuration": 20832000,
+    "ratioAfterCuration": 0.8266666666666667,
+    "usableAfterCuration": true
+  },
+  {
+    "country": "SSD",
+    "countryPopulation": 12200000,
+    "sumRaw": 22079000,
+    "ratioRaw": 1.8097540983606557,
+    "sumAfterCuration": 9979000,
+    "ratioAfterCuration": 0.8179508196721311,
+    "usableAfterCuration": true
+  },
+  {
+    "country": "CAF",
+    "countryPopulation": 5500000,
+    "sumRaw": 9159000,
+    "ratioRaw": 1.6652727272727272,
+    "sumAfterCuration": 4472000,
+    "ratioAfterCuration": 0.8130909090909091,
+    "usableAfterCuration": true
+  },
+  {
+    "country": "UGA",
+    "countryPopulation": 51400000,
+    "sumRaw": 139359280,
+    "ratioRaw": 2.7112700389105058,
+    "sumAfterCuration": 41659280,
+    "ratioAfterCuration": 0.8104918287937743,
+    "usableAfterCuration": true
+  },
+  {
+    "country": "MOZ",
+    "countryPopulation": 35600000,
+    "sumRaw": 104168000,
+    "ratioRaw": 2.926067415730337,
+    "sumAfterCuration": 27265000,
+    "ratioAfterCuration": 0.7658707865168539,
+    "usableAfterCuration": true
+  },
+  {
+    "country": "COG",
+    "countryPopulation": 6500000,
+    "sumRaw": 20221000,
+    "ratioRaw": 3.110923076923077,
+    "sumAfterCuration": 4893000,
+    "ratioAfterCuration": 0.7527692307692307,
+    "usableAfterCuration": true
+  },
+  {
+    "country": "TGO",
+    "countryPopulation": 9700000,
+    "sumRaw": 8817400,
+    "ratioRaw": 0.9090103092783505,
+    "sumAfterCuration": 6797400,
+    "ratioAfterCuration": 0.7007628865979382,
+    "usableAfterCuration": true
+  },
+  {
+    "country": "BEN",
+    "countryPopulation": 14800000,
+    "sumRaw": 11245000,
+    "ratioRaw": 0.7597972972972973,
+    "sumAfterCuration": 10045000,
+    "ratioAfterCuration": 0.6787162162162163,
+    "usableAfterCuration": true
+  },
+  {
+    "country": "GNB",
+    "countryPopulation": 2300000,
+    "sumRaw": 3242300,
+    "ratioRaw": 1.409695652173913,
+    "sumAfterCuration": 1528300,
+    "ratioAfterCuration": 0.6644782608695652,
+    "usableAfterCuration": true
+  },
+  {
+    "country": "MDG",
+    "countryPopulation": 32700000,
+    "sumRaw": 50755000,
+    "ratioRaw": 1.5521406727828746,
+    "sumAfterCuration": 21155000,
+    "ratioAfterCuration": 0.6469418960244648,
+    "usableAfterCuration": true
+  },
+  {
+    "country": "GMB",
+    "countryPopulation": 2800000,
+    "sumRaw": 2944100,
+    "ratioRaw": 1.0514642857142857,
+    "sumAfterCuration": 1697100,
+    "ratioAfterCuration": 0.6061071428571428,
+    "usableAfterCuration": true
+  },
+  {
+    "country": "COD",
+    "countryPopulation": 112800000,
+    "sumRaw": 324714000,
+    "ratioRaw": 2.8786702127659574,
+    "sumAfterCuration": 54794000,
+    "ratioAfterCuration": 0.48576241134751774,
+    "usableAfterCuration": true
+  },
+  {
+    "country": "STP",
+    "countryPopulation": 200000,
+    "sumRaw": 291000,
+    "ratioRaw": 1.455,
+    "sumAfterCuration": 96000,
+    "ratioAfterCuration": 0.48,
+    "usableAfterCuration": true
+  }
+]

@@ -1,0 +1,25 @@
+# Python dependencies of the social render engine, measured from the workstation
+# that produced every published short and carousel to date.
+#
+# Pinned exact, not floored. This engine's job is to draw the same pixels twice:
+# Pillow decides glyph rasterisation and NumPy decides the compositing maths, so
+# a minor bump is a silent re-render of the whole back catalogue. The tests that
+# compare a fresh render against a known one (`test_rendus_intacts.py`) are what
+# would catch it, and they are worth nothing if the versions float underneath.
+#
+# Only the three direct imports are listed. Their transitive closure is another
+# twenty-one packages, all resolved by pip and none imported here; pinning them
+# too would freeze somebody else's dependency graph without adding a guarantee.
+#
+# Python 3.13 — earlier versions are untested here.
+#
+#     python3 -m venv social/harness/venv
+#     social/harness/venv/bin/python -m pip install -r social/harness/requirements.txt
+#
+# `ffmpeg` and `ffprobe` are called as binaries, not imported, so they are not in
+# this file. Install them separately; without them `ethni_audio.py` and
+# `ethni_montage.py` fail on the first subprocess call.
+
+pillow==12.3.0
+numpy==2.5.3
+faster-whisper==1.2.1

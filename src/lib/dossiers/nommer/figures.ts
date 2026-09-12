@@ -25,7 +25,7 @@
 import type { CorpusFigure, FigureKey } from "./types";
 
 /** Every count below was taken against `recette` on this date. */
-const COUNTED_ON = "2026-09-07";
+const COUNTED_ON = "2026-09-10";
 
 const PEOPLE_GLOB = "dataset/source/afrik/peuples/*/*.json";
 
@@ -184,7 +184,7 @@ export const NOMMER_FIGURES: Record<FigureKey, CorpusFigure> = {
     kind: "counted",
     figureKey: "probe-missionary",
     label: "fiches employant le radical « missionn- »",
-    value: 25,
+    value: 26,
     method: "radical missionn dans originOfExonyms + whyProblematic",
     countedOn: COUNTED_ON,
   },

@@ -29,10 +29,10 @@ import { getLocalizedRoute, getPeopleRoute } from "@/lib/routing";
  */
 describe("NotFound (root boundary)", () => {
   // @req REQ-099
-  it("renders the same French Fiche introuvable page as the localized 404", () => {
+  it("renders the same French Page introuvable page as the localized 404", () => {
     render(<NotFound />);
     expect(
-      screen.getByRole("heading", { name: /fiche introuvable/i })
+      screen.getByRole("heading", { name: /page introuvable/i })
     ).toBeTruthy();
   });
 
@@ -49,7 +49,7 @@ describe("NotFound (root boundary)", () => {
 
     expect(
       screen
-        .getByRole("link", { name: /rechercher une fiche/i })
+        .getByRole("link", { name: /rechercher une page/i })
         .getAttribute("href")
     ).toContain("/fr/");
     expect(container.textContent).not.toMatch(/PPL_|FLG_/);
@@ -60,7 +60,7 @@ describe("NotFound (root boundary)", () => {
     render(<NotFound />);
     expect(
       screen
-        .getByRole("link", { name: /rechercher une fiche/i })
+        .getByRole("link", { name: /rechercher une page/i })
         .getAttribute("href")
     ).toBe(getLocalizedRoute("fr", "search"));
   });

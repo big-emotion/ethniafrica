@@ -1,0 +1,135 @@
+import { render, screen, within } from "@testing-library/react";
+import { describe, expect, it } from "vitest";
+
+import { CountryAttestedNamesSection } from "@/components/patronymes/CountryAttestedNamesSection";
+import { getPatronymeRoute } from "@/lib/routing";
+
+const name = (
+  id: string,
+  nameMain: string,
+  nameSystem: "clan_name" | "nisba" = "clan_name"
+) => ({ id, nameMain, nameSystem });
+
+const reach = (id: string, nameMain: string, peopleName = "Zénètes") => ({
+  ...name(id, nameMain),
+  viaPeoples: [{ id: "PPL_ZENATA", nameMain: peopleName }],
+});
+
+describe("CountryAttestedNamesSection", () => {
+  // @req REQ-154
+  it("renames the chapter in both languages without breaking its published anchors or adding a subtitle", () => {
+    const { rerender } = render(
+      <CountryAttestedNamesSection
+        language="fr"
+        patronymes={{
+          attested: [name("PAT_KEITA", "Keïta")],
+          borneByPeoples: [reach("PAT_MAGHRAWA", "Maghrawa")],
+        }}
+      />
+    );
+
+    const frenchChapter = screen.getByRole("region", { name: "Noms du pays" });
+    expect(frenchChapter).toHaveAttribute("id", "chapitre-noms-attestes");
+    expect(frenchChapter).not.toHaveTextContent("Deux registres distincts");
+
+    rerender(
+      <CountryAttestedNamesSection
+        language="en"
+        patronymes={{
+          attested: [name("PAT_KEITA", "Keïta")],
+          borneByPeoples: [reach("PAT_MAGHRAWA", "Maghrawa")],
+        }}
+      />
+    );
+    expect(
+      screen.getByRole("region", { name: "Names of the country" })
+    ).toHaveAttribute("id", "chapitre-attested-names");
+  });
+
+  // @req REQ-154
+  it("indexes and sorts every name A–Z within its provenance register without pagination", () => {
+    const attested = [
+      name("PAT_ZURI", "Zuri"),
+      name("PAT_KEITA", "Keïta"),
+      name("PAT_ABA", "Aba"),
+      name("PAT_ADE", "Adé"),
+    ];
+    const many = Array.from({ length: 82 }, (_, index) =>
+      name(`PAT_TEST_${index}`, `Kalo ${String(index).padStart(2, "0")}`)
+    );
+    render(
+      <CountryAttestedNamesSection
+        language="fr"
+        patronymes={{
+          attested: [...attested, ...many],
+          borneByPeoples: [reach("PAT_MAGHRAWA", "Maghrawa")],
+        }}
+      />
+    );
+
+    const registers = screen.getAllByRole("definition");
+    const direct = registers[0];
+    const via = registers[1];
+    const directIndex = within(direct).getByRole("navigation", {
+      name: /index alphabétique/i,
+    });
+    expect(
+      within(directIndex)
+        .getAllByRole("link")
+        .map((link) => link.textContent)
+    ).toEqual(["A", "K", "Z"]);
+    expect(
+      within(directIndex).getByRole("link", { name: "K" })
+    ).toHaveAttribute("href", "#country-name-attested-k");
+    expect(
+      direct.querySelector("#country-name-attested-k")
+    ).toBeInTheDocument();
+    expect(
+      within(via).getByRole("navigation", { name: /index alphabétique/i })
+    ).toBeInTheDocument();
+    expect(within(via).getByRole("link", { name: "Maghrawa" })).toHaveAttribute(
+      "href",
+      getPatronymeRoute("fr", "PAT_MAGHRAWA")
+    );
+    const directLinks = within(direct)
+      .getAllByRole("link")
+      .filter((link) => link.getAttribute("href")?.startsWith("/"));
+    expect(directLinks).toHaveLength(86);
+    expect(directLinks.slice(0, 3).map((link) => link.textContent)).toEqual([
+      "Aba",
+      "Adé",
+      "Kalo 00",
+    ]);
+    expect(
+      within(direct).queryByRole("button", { name: /suivant|précédent/i })
+    ).not.toBeInTheDocument();
+  });
+
+  // @req REQ-154
+  it("hides only an identical adjacent gloss while preserving a changed system and a different bearer", () => {
+    render(
+      <CountryAttestedNamesSection
+        language="fr"
+        patronymes={{
+          attested: [
+            name("PAT_ABA", "Aba"),
+            name("PAT_ADE", "Adé"),
+            name("PAT_ANI", "Ani", "nisba"),
+            name("PAT_ARO", "Aro"),
+          ],
+          borneByPeoples: [
+            reach("PAT_BA", "Ba", "Zénètes"),
+            reach("PAT_BE", "Be", "Zénètes"),
+            reach("PAT_BI", "Bi", "Banyarwanda"),
+          ],
+        }}
+      />
+    );
+
+    const registers = screen.getAllByRole("definition");
+    expect(within(registers[0]).getAllByText("Nom de clan")).toHaveLength(2);
+    expect(within(registers[0]).getAllByText("Nisba")).toHaveLength(1);
+    expect(within(registers[1]).getAllByText(/Zénètes/)).toHaveLength(1);
+    expect(within(registers[1]).getAllByText(/Banyarwanda/)).toHaveLength(1);
+  });
+});

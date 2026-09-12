@@ -199,7 +199,7 @@ EthniAfrica's editorial doctrine is non-negotiable. This is the domain-critical 
    - A fiche with an empty `sources` block, or containing "unknown" / "internet" / "wikipedia" as the source itself, is a **P0** — the claim must be removed, not downgraded.
 5. **Database vs source-JSON consistency** — for the sampled fiches, confirm the row in `afrik_peoples` / `afrik_countries` / `afrik_language_families` matches the source `.json` (demographics especially). If `scripts/validateAfrikData.ts` does not cover this, record it as a gap rather than asserting consistency.
 6. **CI enforcement** — `.github/workflows/data-integrity.yml` and `editorial-rules.yml` must run these checks on PRs and must **not** be in advisory mode (`continue-on-error: true`) for `recette`/`main`. An advisory data gate is a P1 regardless of how green the local run is.
-7. **Known-issues carry-over** — read `/Users/jnk/.claude/projects/-Users-jnk-Documents-Dev-ethniafrica/memory/data_quality_status.md` if present and surface unresolved items (duplicate fiches, FLG mismatches, erroneous fiches) so a known problem is not re-discovered as new.
+7. **Known-issues carry-over** — read the session memory's `data_quality_status.md` if present and surface unresolved items (duplicate fiches, FLG mismatches, erroneous fiches) so a known problem is not re-discovered as new.
 
 Include the full result verbatim under section 10 of the audit doc.
 

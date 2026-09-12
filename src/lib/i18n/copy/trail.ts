@@ -43,6 +43,7 @@ export const TRAIL_PAGE_LABELS: Record<Language, Record<PageType, string>> = {
     dossierLunda: "Lunda: alliances and connections",
     dossierSpiritualitesKongo: "Kongo spiritualities: objects and change",
     glossary: "Glossary",
+    wallpapers: "Wallpapers",
     // The English hub labels live in the dictionary rather than on
     // `ACCESS_MODE_LABELS`, which is French and read by ninety-odd callers
     // that take one shape from it; changing its shape would move all of
@@ -83,6 +84,7 @@ export const TRAIL_PAGE_LABELS: Record<Language, Record<PageType, string>> = {
     dossierSpiritualitesKongo:
       "Spiritualités kongo : objets et transformations",
     glossary: "Glossaire",
+    wallpapers: "Fonds d’écran",
     atlasHub: ACCESS_MODE_LABELS.atlas,
     dossiersHub: ACCESS_MODE_LABELS.dossiers,
     jeuxHub: ACCESS_MODE_LABELS.jeux,

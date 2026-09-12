@@ -6,8 +6,15 @@ not substitute for any of them.
 
 Licences were read from the Wikimedia Commons API (`extmetadata`), not
 assumed. Anything under CC BY-SA must keep its credit visible in the
-rendered page, not only in this file — `PurposeBlocks` prints it as the
-figure caption.
+rendered page, not only in this file — `ChapterPlate`, which opens each
+chapter of `/[lang]/about`, prints the author, the licence's own address and
+a link to the file as the figure caption. A notice a reader cannot reach is
+not a notice (brand charter §9).
+
+Three of the four are in use. `PurposeBlocks`, which showed all four on the
+About page, was cut on 11 September 2026 for carrying three screens of prose;
+its plates came back the same day without the prose. The hero still carries
+al-Idrisi and Ogilby.
 
 ## `al-idrisi-1154.jpg`
 
@@ -40,7 +47,9 @@ figure caption.
 - **Author**: Patrick Gruban.
 - **Source**: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Tifinagh_Algeria.jpg)
 - **Licence**: **CC BY-SA 2.0** — attribution and licence notice are
-  **required**, and the caption in `PurposeBlocks` carries both.
+  **required**. The caption rendered by `ChapterPlate` carries the author, the
+  licence linked to its own URI, and a link to the Commons file. Asserted by
+  `AboutPageContent.test.tsx`, so the notice cannot quietly go missing.
 - **Why this one**: the block is about a people the Greeks named _barbaros_,
   "those who do not speak our language". Showing their writing answers it.
 - **Edit**: cropped to the inscriptions, resized to 900px.
@@ -50,7 +59,10 @@ figure caption.
 - **Work**: photographic portrait of Wilhelm Bleek (1827–1875).
 - **Source**: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Wilhelm_Bleek.jpg)
 - **Licence**: **Public domain**.
-- **Why this one**: Bleek coined "Bantu". The block is about him.
+- **Why this one**: Bleek coined "Bantu". The block was about him.
+- **Status**: **not rendered anywhere since 11 September 2026**, when the block
+  that used it was cut. Kept on disk rather than deleted: the portrait is the
+  only public-domain one available, and the subject recurs across the corpus.
 - **Note**: the only public-domain portrait available is 183px wide. It is
   used at vignette size deliberately — enlarging it would be blurry, and
   substituting another face would misidentify the subject.

@@ -17,11 +17,31 @@ import { parseSkillName } from "./skillParity";
  */
 export const AUDIENCE_REPORT_DIR = "docs/audience";
 
+/**
+ * The producer, which this repository holds again.
+ *
+ * It left for the private workspace on 2026-09-10, on the rule that a public
+ * repository carries no production skills, and came back on 2026-09-11 when that
+ * rule was reversed: an engine and a chain nobody can read the history of are an
+ * engine and a chain nobody can repair. What did *not* come back is the output —
+ * renders, per-subject cards and sources stay in the library, addressed by
+ * `ETHNIAFRICA_SOCIAL_PROJECTS`.
+ *
+ * So the contract can check the whole handoff again, producer included, rather
+ * than half of it.
+ */
 export const AUDIENCE_PRODUCER = "ethniafrica-audience-audit";
 
+/**
+ * Both consumers are back in this repository too. `ethniafrica-content-strategist`
+ * decides what ships; `ethniafrica-experience-optimizer` acts on the site's own
+ * pages. Each must still open the dated report rather than guess — a consumer
+ * edited until it no longer reads the report keeps running and silently reverts
+ * to taste.
+ */
 export const AUDIENCE_CONSUMERS = [
-  "ethniafrica-experience-optimizer",
   "ethniafrica-content-strategist",
+  "ethniafrica-experience-optimizer",
 ] as const;
 
 export interface SkillContractIssue {
@@ -43,21 +63,33 @@ function skillMarkdown(
   return existsSync(path) ? readFileSync(path, "utf8") : null;
 }
 
-/**
- * A dated report filename, not merely the directory: a skill that mentions
- * `docs/audience` in passing has not committed to producing anything.
- */
-const DATED_REPORT = new RegExp(
-  `${AUDIENCE_REPORT_DIR}/audit-(?:YYYY-MM-DD|\\d{4}-\\d{2}-\\d{2})\\.md`
-);
-
 export function checkAudienceSkillContract(
   projectRoot: string,
   overrides: SkillMarkdownOverrides = {}
 ): SkillContractIssue[] {
   const issues: SkillContractIssue[] = [];
 
-  for (const skill of [AUDIENCE_PRODUCER, ...AUDIENCE_CONSUMERS]) {
+  const producer = skillMarkdown(projectRoot, AUDIENCE_PRODUCER, overrides);
+  if (producer === null) {
+    issues.push({ skill: AUDIENCE_PRODUCER, detail: "SKILL.md is missing" });
+  } else {
+    const declaredName = parseSkillName(producer);
+    if (declaredName !== AUDIENCE_PRODUCER) {
+      issues.push({
+        skill: AUDIENCE_PRODUCER,
+        detail: `frontmatter name is ${JSON.stringify(declaredName)}, expected ${JSON.stringify(AUDIENCE_PRODUCER)}`,
+      });
+    }
+
+    if (!producer.includes(`${AUDIENCE_REPORT_DIR}/`)) {
+      issues.push({
+        skill: AUDIENCE_PRODUCER,
+        detail: `does not write the audit report to ${AUDIENCE_REPORT_DIR}/`,
+      });
+    }
+  }
+
+  for (const skill of AUDIENCE_CONSUMERS) {
     const markdown = skillMarkdown(projectRoot, skill, overrides);
 
     if (markdown === null) {
@@ -71,16 +103,6 @@ export function checkAudienceSkillContract(
         skill,
         detail: `frontmatter name is ${JSON.stringify(declaredName)}, expected ${JSON.stringify(skill)}`,
       });
-    }
-
-    if (skill === AUDIENCE_PRODUCER) {
-      if (!DATED_REPORT.test(markdown)) {
-        issues.push({
-          skill,
-          detail: `does not write a dated report into ${AUDIENCE_REPORT_DIR}/`,
-        });
-      }
-      continue;
     }
 
     if (!markdown.includes(`${AUDIENCE_REPORT_DIR}/`)) {

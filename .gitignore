@@ -65,6 +65,9 @@ build
 !.claude/skills/ethniafrica-audit/
 !.claude/skills/ethniafrica-bootstrap-confluence/
 !.claude/skills/ethniafrica-content-strategist/
+!.claude/skills/ethniafrica-idee/
+!.claude/skills/ethniafrica-produire/
+!.claude/skills/ethniafrica-structure/
 !.claude/skills/ethniafrica-experience-optimizer/
 !.claude/skills/ethniafrica-release/
 !.claude/skills/ethniafrica-spec/
@@ -120,3 +123,15 @@ dataset/source/afrik/logs/
 # Agent runtime mirrors (local skill caches, not project source)
 .agents/
 .codex/
+# Media renders and agent scratch produced in the checkout, never project
+# source. The approved media library lives outside the repository.
+output/
+
+# The social render engine is Python. Its bytecode caches and its virtualenv are
+# build products of a machine, not source; `social/harness/requirements.txt` is
+# what actually pins the dependencies.
+__pycache__/
+*.pyc
+social/harness/venv/
+Claude outputs/
+skills-lock.json

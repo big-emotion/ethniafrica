@@ -1,8 +1,8 @@
 /**
- * The family fiche's parchment: the reading below the globe band.
+ * A fiche's parchment: the reading below the globe band.
  *
- * Sections alternate between the two page grounds and are separated by a
- * single hairline — no cards, no shadows. The fiche is one continuous
+ * Sections alternate between the two page grounds and keep a bottom hairline,
+ * with the section-gap token between chapters. The fiche is one
  * document, and boxing each section would make it read as a dashboard of
  * unrelated widgets rather than as a text with parts.
  *
@@ -111,6 +111,24 @@
 }
 
 .afh-parchment-section {
+  padding: 26px 20px;
+  border-bottom: 1px solid var(--afh-border);
+}
+
+.afh-parchment
+  > :is([data-fiche-section], .afh-parchment-section)
+  + :is([data-fiche-section], .afh-parchment-section) {
+  margin-block-start: var(--afh-section-gap);
+}
+
+/* Three family chapters use a wrapper for their background. Their chapter
+   box must meet the wrapper's edge so the measured gap stays the token. */
+.afh-parchment-section:has(> [data-fiche-section]) {
+  padding: 0;
+  border-bottom: 0;
+}
+
+.afh-parchment-section > [data-fiche-section] {
   padding: 26px 20px;
   border-bottom: 1px solid var(--afh-border);
 }
@@ -639,6 +657,33 @@
   gap: 0;
 }
 
+/* The country chronology keeps dated and undated stations on one visible line. */
+.afh-chronology-spine {
+  margin: 0;
+  padding: 0 0 0 20px;
+  list-style: none;
+  border-left: 2px solid var(--accent-tint);
+}
+
+.afh-chronology-spine > .afh-tl-item {
+  position: relative;
+}
+
+.afh-chronology-spine > .afh-tl-item::before {
+  content: "";
+  position: absolute;
+  left: -26px;
+  top: 20px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent-ink);
+}
+
+.afh-tl-item--fact > * {
+  grid-column: 1 / -1;
+}
+
 .afh-tl-item {
   display: grid;
   grid-template-columns: 1fr;
@@ -695,6 +740,10 @@
 @container (min-width: 760px) {
   .afh-parchment-head,
   .afh-parchment-section {
+    padding: 34px 40px;
+  }
+
+  .afh-parchment-section > [data-fiche-section] {
     padding: 34px 40px;
   }
 

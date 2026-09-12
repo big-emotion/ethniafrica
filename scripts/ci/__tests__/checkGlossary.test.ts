@@ -170,6 +170,96 @@ describe("glossary gate — one translated record", () => {
   });
 });
 
+/**
+ * The glossary policed leaves the translator is forbidden to touch, so no
+ * country could be translated at all: 27 of the 54 country fiches cite a CIA
+ * section whose own name is "ethnic groups", and renaming it to satisfy the
+ * glossary would make the citation unfindable — the failure the source-tier
+ * policy exists to prevent. The declaration in `translationClasses` already
+ * says which leaves carry over verbatim; the gate now reads it instead of
+ * judging a string nobody translated.
+ */
+describe("glossary gate — leaves the translator never touches", () => {
+  const COUNTRY = "dataset/translations/en/pays/SEN.json";
+
+  // @req REQ-144
+  it("does not police a cited source title", () => {
+    expect(
+      checkTranslatedRecord(
+        {
+          id: "SEN",
+          content: {
+            sources: [
+              {
+                title:
+                  "CIA World Factbook – Senegal (ethnic groups, 2019 est.)",
+              },
+            ],
+          },
+        },
+        COUNTRY
+      )
+    ).toEqual([]);
+  });
+
+  // @req REQ-144
+  it("does not police an invariant that stays in French", () => {
+    expect(
+      checkTranslatedRecord(
+        {
+          id: "SEN",
+          content: {
+            demographics: { peoples: [{ name: "Autres groupes ethniques" }] },
+          },
+        },
+        COUNTRY
+      )
+    ).toEqual([]);
+  });
+
+  // A glossed invariant with no parenthesis has nothing a translator renders,
+  // so the whole string carries over and none of it is the gate's business.
+  // @req REQ-144
+  it("does not police a glossed invariant that carries no gloss", () => {
+    expect(
+      checkTranslatedRecord(
+        {
+          id: "SEN",
+          content: {
+            kingdoms: [{ dominantPeoples: ["Tous les peuples sénégalais"] }],
+          },
+        },
+        COUNTRY
+      )
+    ).toEqual([]);
+  });
+
+  // @req REQ-144
+  it("still polices the gloss of a glossed invariant", () => {
+    const findings = checkTranslatedRecord(
+      {
+        id: "SEN",
+        content: { kingdoms: [{ dominantPeoples: ["Fulɓe (a tribe)"] }] },
+      },
+      COUNTRY
+    );
+
+    expect(findings).toHaveLength(1);
+    expect(findings[0].path).toBe("content.kingdoms[0].dominantPeoples[0]");
+  });
+
+  // @req REQ-144
+  it("still polices a translatable leaf of the same record", () => {
+    const findings = checkTranslatedRecord(
+      { id: "SEN", summary: "A tribe of the lower valley." },
+      COUNTRY
+    );
+
+    expect(findings).toHaveLength(1);
+    expect(findings[0].path).toBe("summary");
+  });
+});
+
 describe("glossary gate — runner", () => {
   let tmp: string;
 

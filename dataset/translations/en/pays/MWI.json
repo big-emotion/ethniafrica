@@ -1,0 +1,404 @@
+{
+  "id": "MWI",
+  "nameFr": "Malawi",
+  "nameEn": "Malawi",
+  "nameOfficial": "Republic of Malawi (Republic of Malawi, Dziko la Malaŵi)",
+  "summary": "The name \"Malawi\", readopted in 1964 from the Maravi kingdom, is said to have been chosen by Hastings Kamuzu Banda after he saw it on an eighteenth-century French map; the meaning of \"flames\" often attributed to it exists in Chichewa, but no scholarship establishes that the kingdom took its name from this. A British protectorate under the name Nyasaland until 1964, the country then readopted this older name. There, the Chewa, Tumbuka, Lomwe and Yao peoples continue the Gule Wamkulu, a great masked ritual.",
+  "etymology": "The name derives from that of the Maravi kingdom, which dominated the region during the sixteenth and seventeenth centuries, and whose form circulated in Europe well before 1964: Livingstone reports in 1865 a \"Lake Maravi\" known from Portuguese sources, and d'Anville's map of Africa, published in Paris in 1749, carries a Lac Maravi. It was on a French map of this kind that Hastings Kamuzu Banda is said, according to his biographers, to have settled on his choice at independence, for the form and the sound of the word.\n\nThe meaning attributed to it is less certain. Jan Vermeullen's Chinyanja dictionary does give, under the root lawi, the form malawi for \"flame of fire\". But David Clement Scott's major Mang'anja dictionary, published in Edinburgh in 1892, does not know this root: it gives chirangali and kwiri for flame, and glosses \"Malawi\" as the Yao word meaning \"tomorrow\". No identified work links the name of the kingdom to this word, and the reference article on the beginnings of Maravi, published by Malyn Newitt in 1982, does not address the origin of the name. The explanation by the sun's reflections on the lake circulates widely; no source carrying this reading has been found.\n\nThe colonial name, for its part, illustrates a documented mechanism. Livingstone reports in 1865 that \"nyanja or nyanza generally designates a marsh, a lake, a river, or even a simple stream\", and recounts that his companions, asking to be led to the \"Nyanja Mukulu\", the great lake, were taken to a marsh that bore that name for their guide. The traveller asks for a proper name, and is answered with a common noun.",
+  "nameOriginActor": "The name \"Malawi\" was made official at independence, in 1964, by the government of Hastings Kamuzu Banda, who took it from an old European map bearing a Lac Maravi. \"Nyasaland\" was the name of the British protectorate, formed on a word that Livingstone himself gives as a common noun denoting any body of water. Who named the Maravi kingdom, and on what basis, is not established.",
+  "content": {
+    "historicalNames": {
+      "formerNames": ["Nyasaland (1891-1964)"],
+      "antiquity": "The present-day territory of Malawi was inhabited by various Bantu societies with no unified name. The indigenous peoples had their own names for their territories.",
+      "middleAges": "Bantu migrations into the region. Development of local chiefdoms and kingdoms. No unified name for the territory as a whole.",
+      "precolonial": "Sixteenth-seventeenth centuries: the Maravi kingdom, a powerful kingdom that dominated the region. The kingdom was centred on Lake Malawi (Lake Nyasa). Development of the Chewa, Tumbuka, Yao, Lomwe, Nyanja, Sena, Ngoni and Tonga chiefdoms. Regional trade and trade with the Portuguese. Europeans used the term \"Nyasaland\" (land of the Nyasa) to designate the region.",
+      "colonization": "1891-1964: British protectorate of Nyasaland (Nyasaland Protectorate). The British established a protectorate over Nyasaland in 1891. The territory was administered as a British protectorate until independence in 1964.",
+      "contemporary": "1964: independence of Nyasaland (6 July 1964), proclamation of the Republic of Malawi. The name \"Malawi\" was made official at independence to replace \"Nyasaland\"."
+    },
+    "kingdoms": [
+      {
+        "name": "Maravi Kingdom",
+        "period": "Sixteenth century – seventeenth century",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1501,
+          "endYear": 1700,
+          "precision": "century"
+        },
+        "dominantPeoples": ["Chewa", "autres peuples bantous"],
+        "politicalCenters": ["Centres autour du lac Malawi"],
+        "historicalRole": "A powerful Maravi kingdom, matrilineal system, development of regional trade, relations with the Portuguese. The kingdom was centred on Lake Malawi (Lake Nyasa). Founded by the Chewa."
+      },
+      {
+        "name": "Chewa chiefdoms",
+        "period": "Precolonial – present",
+        "entryType": "polity",
+        "dominantPeoples": ["Chewa"],
+        "politicalCenters": ["Chefferies traditionnelles (centre du Malawi)"],
+        "historicalRole": "Chewa chiefdoms, matrilineal system, cultural traditions (Gule Wamkulu masks, a major initiation ritual), agriculture (maize). Heirs of the Maravi kingdom."
+      },
+      {
+        "name": "Tumbuka chiefdoms",
+        "period": "Precolonial – present",
+        "entryType": "polity",
+        "dominantPeoples": ["Tumbuka"],
+        "politicalCenters": ["Chefferies traditionnelles (nord du Malawi)"],
+        "historicalRole": "Tumbuka chiefdoms, cultural traditions, patrilineal lineage structures."
+      },
+      {
+        "name": "Yao chiefdoms",
+        "period": "Precolonial – present",
+        "entryType": "polity",
+        "dominantPeoples": ["Yao"],
+        "politicalCenters": ["Chefferies traditionnelles (sud du Malawi)"],
+        "historicalRole": "Yao chiefdoms, Islamic traditions, regional trade, resistance to British colonisation."
+      },
+      {
+        "name": "British Protectorate of Nyasaland",
+        "period": "1891 – 1964",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1891,
+          "endYear": 1964,
+          "precision": "year"
+        },
+        "dominantPeoples": [
+          "Tous les peuples malawiens sous protectorat britannique"
+        ],
+        "politicalCenters": ["Zomba (capitale coloniale)"],
+        "historicalRole": "British protectorate, development of colonial administration, resistance from indigenous peoples (notably Yao resistance). Development of the independence movement in the twentieth century, leadership of Hastings Kamuzu Banda."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Chewa",
+        "selfAppellation": "Achewa",
+        "exonyms": [
+          "Chewa (term used by Europeans)",
+          "Cewa (colonial variant)"
+        ],
+        "peopleId": "PPL_CHEWA",
+        "mainRegion": "Central Malawi",
+        "languages": ["Chewa / Chichewa (nya", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Achewa\" is the autonym. \"Chewa\" is the most common exonym. \"Cewa\" is a less commonly used colonial variant. No pejorative term is known. Heirs of the Maravi kingdom."
+      },
+      {
+        "name": "Tumbuka",
+        "selfAppellation": "Tumbuka",
+        "exonyms": ["Tumbuka (term used by Europeans)"],
+        "peopleId": "PPL_TUMBUKA",
+        "mainRegion": "Northern Malawi",
+        "languages": ["Tumbuka (tum", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Tumbuka\" is the autonym. No pejorative term is known."
+      },
+      {
+        "name": "Lomwe",
+        "selfAppellation": "Lomwe",
+        "exonyms": ["Lomwe (term used by Europeans)"],
+        "peopleId": "PPL_LOMWE",
+        "mainRegion": "South-eastern Malawi",
+        "languages": ["Lomwe (lon", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Lomwe\" is the autonym. No pejorative term is known."
+      },
+      {
+        "name": "Yao",
+        "selfAppellation": "Yao",
+        "exonyms": ["Yao (term used by Europeans)"],
+        "peopleId": "PPL_YAO_MALAWI",
+        "mainRegion": "Southern Malawi",
+        "languages": ["Yao (yao", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Yao\" is the autonym. No pejorative term is known. Islamic traditions, regional trade."
+      },
+      {
+        "name": "Nyanja",
+        "selfAppellation": "Nyanja",
+        "exonyms": ["Nyanja (term used by Europeans)"],
+        "peopleId": "PPL_NYANJA",
+        "mainRegion": "Central and southern Malawi",
+        "languages": ["Nyanja (ny", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Nyanja\" is the autonym. No pejorative term is known."
+      },
+      {
+        "name": "Sena",
+        "selfAppellation": "Sena",
+        "exonyms": ["Sena (term used by Europeans)"],
+        "peopleId": "PPL_SENA",
+        "mainRegion": "Southern Malawi",
+        "languages": ["Sena (seh", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Sena\" is the autonym. No pejorative term is known."
+      },
+      {
+        "name": "Ngoni",
+        "selfAppellation": "Ngoni",
+        "exonyms": ["Ngoni (term used by Europeans)"],
+        "peopleId": "PPL_NGONI",
+        "mainRegion": "Central and northern Malawi",
+        "languages": ["Ngoni (ngo", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Ngoni\" is the autonym. No pejorative term is known. Nineteenth-century Zulu migrants."
+      },
+      {
+        "name": "Tonga",
+        "selfAppellation": "Tonga",
+        "exonyms": ["Tonga (term used by Europeans)"],
+        "peopleId": "PPL_TONGA_MALA",
+        "mainRegion": "Northern Malawi (Lake Malawi)",
+        "languages": ["Tonga (toi", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Tonga\" is the autonym. No pejorative term is known. A people of Lake Malawi."
+      },
+      {
+        "name": "Autres peuples",
+        "selfAppellation": "Variées selon les groupes",
+        "exonyms": ["Variées selon les groupes"],
+        "mainRegion": "Various regions of Malawi",
+        "languages": ["Langues diverses", "anglais"],
+        "appellationRemarks": "Each group has its own autonym. No pejorative term is known."
+      }
+    ],
+    "culture": {
+      "mainLanguages": [
+        { "name": "Anglais", "isoCode": "eng", "isPrimary": true },
+        { "name": "Chewa / Chichewa" },
+        { "name": "Tumbuka", "isoCode": "tum" },
+        { "name": "Lomwe", "isoCode": "lon" },
+        { "name": "Yao", "isoCode": "yao" },
+        { "name": "Nyanja" },
+        { "name": "Sena", "isoCode": "seh" },
+        { "name": "Ngoni", "isoCode": "ngo" },
+        { "name": "Tonga", "isoCode": "toi" }
+      ],
+      "culturalTraditions": "Significant cultural diversity reflecting Malawi's ethnic mosaic. Bantu traditions: Gule Wamkulu masks (Chewa, a major initiation ritual), traditional music, traditional dance. Matrilineal traditions (Chewa, matrilineal system). Patrilineal traditions (Tumbuka, other peoples). Islamic traditions (Yao). Varied traditional music and dance. Rites of passage, initiation rites, traditional festivals. Lake Malawi (Lake Nyasa) is a central element of Malawian culture and economy.",
+      "dominantReligions": "Christianity (majority Protestantism, Catholicism, African independent churches), Islam (minority, Yao), traditional African religions (frequent syncretism, ancestor worship, masks, rituals)",
+      "lifestyles": "Agriculture (maize, tobacco, tea, food crops), fishing (Lake Malawi, an important source of protein), livestock farming (cattle, goats), trade and urban activities (urban areas, Lilongwe, Blantyre). Moderate urbanisation. An economy based on agriculture (maize, tobacco and tea, the main exports), fishing, and services. Malawi is one of the poorest countries in Africa.",
+      "socialOrganization": "Organisation into historical kingdoms (the Maravi kingdom), traditional chiefdoms (Chewa, Tumbuka, Yao, Lomwe, Nyanja, Sena, Ngoni, Tonga), matrilineal (Chewa) and patrilineal (Tumbuka, other peoples) clan structures. The importance of lineages and extended families. The role of councils of elders. Initiation traditions and rites of passage to adulthood. Matrilineal system (Chewa).",
+      "regionalRelations": "Historical relations with Mozambique (trade, migrations, cross-border peoples, the border), Zambia (Tumbuka, trade, the border), Tanzania (trade, the border). Integration into the SADC (Southern African Development Community). Cross-border trade and cultural relations. Lake Malawi is shared with Mozambique and Tanzania."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Initial settlement by Bantu peoples. Bantu migrations into the region. Development of local chiefdoms.",
+      "middleAges": "Continued Bantu migrations. Development of local political structures. Contacts with neighbouring peoples.",
+      "precolonial": "Sixteenth-seventeenth centuries: the Maravi kingdom, a powerful kingdom that dominated the region, centred on Lake Malawi. Consolidation of the Chewa, Tumbuka, Yao, Lomwe, Nyanja, Sena, Ngoni and Tonga chiefdoms. Regional trade and trade with the Portuguese. Nineteenth century: Ngoni migrations (Zulu migrants). Development of cultural traditions.",
+      "colonization": "1891: establishment of the British protectorate of Nyasaland. British colonial period (1891-1964), development of colonial administration, resistance from indigenous peoples (notably Yao resistance). Twentieth century: development of the independence movement, leadership of Hastings Kamuzu Banda.",
+      "independenceStruggle": "1950s-1964: independence movement led by Hastings Kamuzu Banda and the Malawi Congress Party (MCP). 1964: independence of Nyasaland (6 July 1964), proclamation of the Republic of Malawi. Hastings Kamuzu Banda becomes the first president.",
+      "postIndependence": "1964-1994: presidency of Hastings Kamuzu Banda, an authoritarian regime, a one-party state. 1994-present: democratic transition, multi-party elections, the presidencies of Bakili Muluzi (1994-2004), Bingu wa Mutharika (2004-2012), Joyce Banda (2012-2014), Peter Mutharika (2014-2020), and Lazarus Chakwera (since 2020). Challenges: poverty, economic development, HIV/AIDS, food security. Malawi is one of the poorest countries in Africa."
+    },
+    "sources": [
+      {
+        "title": "SIL Ethnologue – Languages of Malawi",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Malawi",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNFPA – World Population Dashboard — Malawi",
+        "url": "https://www.unfpa.org/data/world-population/MW",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry for UNFPA."
+      },
+      {
+        "title": "Recensements malawiens",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples du Malawi",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur le royaume de Maravi",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Malawi (ethnic groups, 2018 census)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      },
+      {
+        "title": "David et Charles Livingstone, Narrative of an Expedition to the Zambesi and its Tributaries, Londres, John Murray, 1865",
+        "url": "https://archive.org/details/narrativeofexpe00livi",
+        "tier": "referenced",
+        "notes": "Gives \"nyanja or nyanza\" as a common noun denoting a marsh, a lake, a river or a stream, and reports the episode in which the party, asking for the great lake, is led to a marsh that bears that name for the guide. Also mentions a Lake Maravi known from Portuguese sources. Volume read in facsimile on 9 September 2026."
+      },
+      {
+        "title": "Jean-Baptiste Bourguignon d'Anville, Afrique, publiée sous les auspices de Monseigneur le Duc d'Orléans, gravé par Guillaume Delahaye, Paris, 1749",
+        "url": "https://gallica.bnf.fr/ark:/12148/btv1b53053165w",
+        "tier": "official",
+        "notes": "Map held and digitised by the Bibliothèque nationale de France. This is the type of map on which Banda's biographers place the choice of the name. The digitised copy was located on 9 September 2026; the label Lac Maravi was not read on the image itself."
+      },
+      {
+        "title": "Philip Short, Banda, Londres, Routledge & Kegan Paul, 1974",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Biography from which the account of the choice of the name on an old French map is drawn. The printed edition is verified in the catalogue; the passage itself has not been read, and is taken from accounts that refer to it."
+      },
+      {
+        "title": "David Clement Scott, A Cyclopaedic Dictionary of the Mang'anja Language Spoken in British Central Africa, Édimbourg, Foreign Mission Committee of the Church of Scotland, 1892",
+        "url": "https://archive.org/details/acyclopdicdicti00commgoog",
+        "tier": "referenced",
+        "notes": "Does not know the root lawi. Gives chirangali and kwiri for flame of fire, and glosses \"Malawi\" as the Yao word meaning tomorrow, mang'anja saying mawa. Entries read in facsimile on 9 September 2026."
+      },
+      {
+        "title": "Jan Vermeullen, Chinyanja (Chicewa) – English Dictionary, Lusaka, Missionnaires d'Afrique, 1979, révision de 1999",
+        "url": "https://www.fenza.org/docs/various/vermeullen_chewa_dictionary.pdf",
+        "tier": "referenced",
+        "notes": "Gives, under the root lawi, the form malawi for \"flame of fire\". This is the lexical attestation of the meaning attributed to the country's name, in a state of the language nearly a century later than Scott's dictionary. Entry read on 9 September 2026."
+      },
+      {
+        "title": "Malyn Newitt, « The Early History of the Maravi », The Journal of African History, volume 23, numéro 2, 1982, p. 145-162",
+        "url": "https://doi.org/10.1017/S0021853700020508",
+        "tier": "referenced",
+        "notes": "Reference article on the formation of the Maravi chiefdoms. It is cited here for what it does not do: it does not address the origin or meaning of the name Maravi. Entry and abstract read on 9 September 2026; full text is paywalled."
+      }
+    ],
+    "demographics": {
+      "totalPopulation": 22200000,
+      "referenceYear": 2025,
+      "source": "UNFPA – World Population Dashboard",
+      "peoples": [
+        {
+          "name": "Chewa",
+          "percentageInCountry": 34.3,
+          "peopleId": "PPL_CHEWA",
+          "region": "Central Malawi"
+        },
+        {
+          "name": "Autres groupes ethniques",
+          "peopleId": null,
+          "region": "Various",
+          "languageFamily": null,
+          "percentageInCountry": 65
+        }
+      ]
+    }
+  },
+  "_translation": {
+    "kind": "machine",
+    "translatedAt": "2026-09-09T09:27:56.733Z",
+    "model": "claude-sonnet-5",
+    "sourceHash": "08392572173a6d6d06bbd92704cdf87082cc0624328b6c673e1bb530291222bf",
+    "fieldHashes": {
+      "nameOfficial": "275f310d41a58004",
+      "summary": "bacf6735dcf0680b",
+      "etymology": "8dbfbe563efef034",
+      "nameOriginActor": "7825cf5a20600138",
+      "content.historicalNames.formerNames[0]": "3382f1bc9b8be993",
+      "content.historicalNames.antiquity": "a17ff47ccf98a615",
+      "content.historicalNames.middleAges": "3ed64fa04e6f4078",
+      "content.historicalNames.precolonial": "16a351797ab153e9",
+      "content.historicalNames.colonization": "8da5e8af3171be29",
+      "content.historicalNames.contemporary": "5d112fd3fd157d1a",
+      "content.kingdoms[0].name": "d7436ca4f0cdabb0",
+      "content.kingdoms[0].period": "737ae53e6aaf5267",
+      "content.kingdoms[0].historicalRole": "463e9219bdcd8afe",
+      "content.kingdoms[1].name": "8e3ac10498b004d7",
+      "content.kingdoms[1].period": "30ec12efb265311f",
+      "content.kingdoms[1].historicalRole": "48e19fd53f427b5f",
+      "content.kingdoms[2].name": "3eae2fb4986b1fc0",
+      "content.kingdoms[2].period": "30ec12efb265311f",
+      "content.kingdoms[2].historicalRole": "93f19267980e5adf",
+      "content.kingdoms[3].name": "c212ea8e31b1d434",
+      "content.kingdoms[3].period": "30ec12efb265311f",
+      "content.kingdoms[3].historicalRole": "22832c288f1650ca",
+      "content.kingdoms[4].name": "31ee1fa2a5607d9b",
+      "content.kingdoms[4].period": "10f372ef28d48b06",
+      "content.kingdoms[4].historicalRole": "a54be0ddab090d54",
+      "content.majorPeoples[0].exonyms[0]": "4cc233431e3a2ba3",
+      "content.majorPeoples[0].exonyms[1]": "f1548f83c2b7170f",
+      "content.majorPeoples[0].mainRegion": "f91b77567c85a527",
+      "content.majorPeoples[0].appellationRemarks": "d200b6fe31a30dae",
+      "content.majorPeoples[1].exonyms[0]": "4cc233431e3a2ba3",
+      "content.majorPeoples[1].mainRegion": "a56f493ef7867a24",
+      "content.majorPeoples[1].appellationRemarks": "59cc2ebced315f25",
+      "content.majorPeoples[2].exonyms[0]": "4cc233431e3a2ba3",
+      "content.majorPeoples[2].mainRegion": "7beb0b6a6b37c831",
+      "content.majorPeoples[2].appellationRemarks": "6d0dd9eccac9ba43",
+      "content.majorPeoples[3].exonyms[0]": "4cc233431e3a2ba3",
+      "content.majorPeoples[3].mainRegion": "b850a24140db693e",
+      "content.majorPeoples[3].appellationRemarks": "bf47ae9a965cf1be",
+      "content.majorPeoples[4].exonyms[0]": "4cc233431e3a2ba3",
+      "content.majorPeoples[4].mainRegion": "91f07889c9ee48d4",
+      "content.majorPeoples[4].appellationRemarks": "07a731d88dd42495",
+      "content.majorPeoples[5].exonyms[0]": "4cc233431e3a2ba3",
+      "content.majorPeoples[5].mainRegion": "b850a24140db693e",
+      "content.majorPeoples[5].appellationRemarks": "5f4eee169e77e68d",
+      "content.majorPeoples[6].exonyms[0]": "4cc233431e3a2ba3",
+      "content.majorPeoples[6].mainRegion": "460489bd29d271a4",
+      "content.majorPeoples[6].appellationRemarks": "df7a802bffeb0a8b",
+      "content.majorPeoples[7].exonyms[0]": "4cc233431e3a2ba3",
+      "content.majorPeoples[7].mainRegion": "848b9510f3df16ac",
+      "content.majorPeoples[7].appellationRemarks": "e2b3f5859a122e50",
+      "content.majorPeoples[8].mainRegion": "175f55658c928738",
+      "content.majorPeoples[8].appellationRemarks": "46e5bea2d42f1807",
+      "content.culture.culturalTraditions": "c8a7f7e0c2cb9fda",
+      "content.culture.dominantReligions": "63bd4bf725c1f134",
+      "content.culture.lifestyles": "c85ac9ebb0f7c1c1",
+      "content.culture.socialOrganization": "cde85fe2b754312f",
+      "content.culture.regionalRelations": "4c5974403c1eccec",
+      "content.historicalFacts.ancientPeriods": "15e827c02f98fe9e",
+      "content.historicalFacts.middleAges": "20a9668814ae8491",
+      "content.historicalFacts.precolonial": "9c77952de5f25247",
+      "content.historicalFacts.colonization": "274b935033d0a4f6",
+      "content.historicalFacts.independenceStruggle": "b3bd9ba8827ee16d",
+      "content.historicalFacts.postIndependence": "5723a5cae347cf86",
+      "content.sources[0].notes": "6b52475b40d94130",
+      "content.sources[1].notes": "6b52475b40d94130",
+      "content.sources[2].notes": "5b01fa636848b75c",
+      "content.sources[3].notes": "6b52475b40d94130",
+      "content.sources[4].notes": "6b52475b40d94130",
+      "content.sources[5].notes": "6b52475b40d94130",
+      "content.sources[6].notes": "6b52475b40d94130",
+      "content.sources[7].notes": "5f85c6028609b720",
+      "content.sources[8].notes": "f0e878bebbbd732a",
+      "content.sources[9].notes": "6b599ac2bd53b380",
+      "content.sources[10].notes": "0cf60b9af105bf7d",
+      "content.sources[11].notes": "3de8891d54dd3ed7",
+      "content.sources[12].notes": "6c427cc1d4d90b65",
+      "content.sources[13].notes": "385ece43cab57e5a",
+      "content.demographics.peoples[0].region": "f91b77567c85a527",
+      "content.demographics.peoples[1].region": "f16444f595e1ad20"
+    },
+    "reviewRequired": [
+      "nameOfficial",
+      "etymology",
+      "content.historicalNames.formerNames[0]",
+      "content.kingdoms[0].name",
+      "content.kingdoms[1].name",
+      "content.kingdoms[2].name",
+      "content.kingdoms[3].name",
+      "content.kingdoms[4].name",
+      "content.majorPeoples[0].appellationRemarks",
+      "content.majorPeoples[1].appellationRemarks",
+      "content.majorPeoples[2].appellationRemarks",
+      "content.majorPeoples[3].appellationRemarks",
+      "content.majorPeoples[4].appellationRemarks",
+      "content.majorPeoples[5].appellationRemarks",
+      "content.majorPeoples[6].appellationRemarks",
+      "content.majorPeoples[7].appellationRemarks",
+      "content.majorPeoples[8].appellationRemarks"
+    ]
+  }
+}

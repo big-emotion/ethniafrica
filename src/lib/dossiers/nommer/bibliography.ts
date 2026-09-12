@@ -276,6 +276,62 @@ export const NOMMER_BIBLIOGRAPHY: Record<SourceKey, DossierSource> = {
     discoveredVia: [],
   },
 
+  "canut-2002-senankuya": {
+    sourceKey: "canut-2002-senankuya",
+    title: "Pouvoir, places et filiation : les senankuya au Mali",
+    authors: ["Cécile Canut"],
+    publicationYear: 2002,
+    publisher: "Cahiers de praxématique, numéro 38, p. 175-197",
+    url: "https://journals.openedition.org/praxematique/2307",
+    standing: "referenced",
+    sourceKind: "academic",
+    notes:
+      "Étude de terrain au Mali, et la seule source lue qui énonce ce que le pacte oblige : la relation vaut à perpétuité pour toute la descendance des deux lignées, le mariage entre elles est prohibé, et l'entraide y est due sans réserve. La prohibition du mariage est donnée comme diversement appliquée aujourd'hui. L'article établit ce qu'est l'institution, jamais l'existence d'une paire de noms particulière.",
+    discoveredVia: [],
+  },
+  "canut-smith-2006-pactes": {
+    sourceKey: "canut-smith-2006-pactes",
+    title:
+      "Pactes, alliances et plaisanteries. Pratiques locales, discours global",
+    authors: ["Cécile Canut", "Étienne Smith"],
+    publicationYear: 2006,
+    publisher: "Cahiers d'études africaines, numéro 184, p. 687 et suivantes",
+    url: "https://doi.org/10.4000/etudesafricaines.6198",
+    standing: "referenced",
+    sourceKind: "academic",
+    notes:
+      "Introduction du dossier « Parentés, plaisanteries et politique ». Elle est citée ici pour la mise en garde qu'elle porte : l'idée que la parenté à plaisanterie apaiserait les conflits y est traitée comme une hypothèse héritée de Radcliffe-Brown, reprise dans les années 1990 par les études sur la résolution des conflits et par les institutions de développement — un discours à analyser, non un effet mesuré. Le même texte rappelle que la Charte de Kouroukan Fouga ne doit pas être confondue avec la Charte du Mandé de la confrérie des chasseurs, et que sa version écrite en quarante-quatre articles est une restitution produite en 1998 à Kankan. Page de début vérifiée ; la page de fin ne l'est pas.",
+    discoveredVia: [],
+  },
+  "canut-2006-mali-senankuya": {
+    sourceKey: "canut-2006-mali-senankuya",
+    title:
+      "Construction des discours identitaires au Mali. Ethnicisation et instrumentalisation des senankuya",
+    authors: ["Cécile Canut"],
+    publicationYear: 2006,
+    publisher: "Cahiers d'études africaines, numéro 184, p. 967-986",
+    url: "https://doi.org/10.4000/etudesafricaines.15427",
+    standing: "referenced",
+    sourceKind: "academic",
+    notes:
+      "Rattache les senankuya aux jamu, les noms claniques, ce qui en fait la source la plus proche de ce que décrivent les fiches de patronymes. Elle montre aussi que le discours récent tenu sur ces relations, par les responsables politiques, les organismes de développement et la presse, tend à les figer, et pourrait renforcer les hiérarchies plutôt que les défaire.",
+    discoveredVia: [],
+  },
+  "unesco-charte-manden-00290": {
+    sourceKey: "unesco-charte-manden-00290",
+    title: "La Charte du Mandén, proclamée à Kouroukan Fouga",
+    authors: ["UNESCO"],
+    publicationYear: 2009,
+    publisher:
+      "Liste représentative du patrimoine culturel immatériel, dossier 00290, décision 4.COM 13.59",
+    url: "https://ich.unesco.org/fr/RL/la-charte-du-manden-proclamee-a-kouroukan-fouga-00290",
+    standing: "official",
+    sourceKind: "intergovernmental",
+    notes:
+      "Élément inscrit en 2009 à la demande du Mali. La description publiée de l'élément ne mentionne nulle part la parenté à plaisanterie : les sept chapitres qu'elle énumère portent sur la paix sociale, l'inviolabilité de la personne, l'éducation, l'intégrité de la patrie, la sécurité alimentaire, l'abolition de l'esclavage par razzia et la liberté d'expression. La parenté à plaisanterie n'apparaît qu'une fois, dans le formulaire de candidature déposé par le Mali, comme affirmation de l'État déposant. Ce dossier atteste l'inscription de la charte, pas l'ancienneté du pacte.",
+    discoveredVia: [],
+  },
+
   // ── La chose ─────────────────────────────────────────────────────────────
   "vlisco-helmond": {
     sourceKey: "vlisco-helmond",

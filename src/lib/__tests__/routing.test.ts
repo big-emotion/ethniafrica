@@ -455,6 +455,7 @@ describe("English slugs (DEC-049)", () => {
       dossierLunda: "/en/dossiers/lunda-empire",
       dossierSpiritualitesKongo: "/en/dossiers/kongo-spiritualities",
       glossary: "/en/glossary",
+      wallpapers: "/en/wallpapers",
       doctrine: "/en/doctrine",
       about: "/en/about",
       sources: "/en/sources",

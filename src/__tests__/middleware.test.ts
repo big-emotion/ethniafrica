@@ -579,6 +579,44 @@ describe("middleware", () => {
     });
 
     /**
+     * Spending the identifier is not a licence to drop the whole query. A
+     * reader arriving from a video carries the campaign tagging the audit
+     * report asked for, and it is the only evidence that the video converted;
+     * dropped here, the visit lands in "Direct / None" and the video is
+     * unmeasurable.
+     */
+    // @req REQ-091
+    it("keeps campaign tagging when it spends a deep-link query", async () => {
+      const response = await middleware(
+        new NextRequest(
+          "http://localhost:3000/fr/atlas/pays" +
+            "?country=BEN&utm_source=youtube&utm_medium=social" +
+            "&utm_campaign=traore-diop&utm_content=video"
+        )
+      );
+
+      expect(response.status).toBe(308);
+      expect(response.headers.get("location")).toBe(
+        "http://localhost:3000/fr/atlas/pays/BEN" +
+          "?utm_source=youtube&utm_medium=social" +
+          "&utm_campaign=traore-diop&utm_content=video"
+      );
+    });
+
+    // The spent identifier is the only thing that goes; a query holding
+    // nothing else must not leave a bare `?` on the target.
+    // @req REQ-091
+    it("leaves no empty query behind when the identifier was all there was", async () => {
+      const response = await middleware(
+        new NextRequest("http://localhost:3000/fr/peuples?people=PPL_YORUBA")
+      );
+
+      expect(response.headers.get("location")).toBe(
+        "http://localhost:3000/fr/atlas/peuples/PPL_YORUBA"
+      );
+    });
+
+    /**
      * DEC-049: one document, one address per locale. With the folders French,
      * `/en/atlas/pays` would otherwise be served as a second English address
      * for the countries directory, so a path written in the other locale's

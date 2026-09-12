@@ -11,8 +11,14 @@
     {
       "spelling": "Camara",
       "attestations": [
-        { "countryId": "LBR", "sourceRefs": ["corpus-ppl-vai-organisation"] },
-        { "countryId": "SLE", "sourceRefs": ["corpus-ppl-vai-organisation"] }
+        {
+          "countryId": "LBR",
+          "sourceRefs": ["corpus-ppl-vai-organisation"]
+        },
+        {
+          "countryId": "SLE",
+          "sourceRefs": ["corpus-ppl-vai-organisation"]
+        }
       ]
     }
   ],
@@ -77,7 +83,11 @@
     {
       "targetPatronymeId": "PAT_FOFANA",
       "allianceType": "sanankuya",
-      "sourceRefs": ["bamadaba-jamuw"]
+      "sourceRefs": [
+        "bamadaba-jamuw",
+        "canut-2002-senankuya",
+        "canut-smith-2006-pactes"
+      ]
     }
   ],
   "casteOrSocialFunction": {
@@ -156,6 +166,22 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "canut-2002-senankuya",
+      "title": "Pouvoir, places et filiation : les senankuya au Mali",
+      "url": "https://journals.openedition.org/praxematique/2307",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Canut, Cécile, Cahiers de praxématique, numéro 38, 2002, p. 175-197. Enquête de terrain au Mali. Elle énonce ce que le pacte oblige : la relation vaut à perpétuité pour toute la descendance des deux lignées, le mariage entre elles est prohibé — diversement appliqué aujourd'hui, précise-t-elle — et l'entraide y est due sans réserve. Citée pour l'obligation elle-même ; elle ne nomme pas la paire de cette fiche, que portent les entrées citées à côté d'elle."
+    },
+    {
+      "sourceKey": "canut-smith-2006-pactes",
+      "title": "Pactes, alliances et plaisanteries. Pratiques locales, discours global",
+      "url": "https://doi.org/10.4000/etudesafricaines.6198",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Canut, Cécile, et Smith, Étienne, Cahiers d'études africaines, numéro 184, 2006, p. 687 et suivantes. Citée pour la mise en garde qu'elle porte : l'idée que la parenté à plaisanterie apaiserait les conflits y est traitée comme une hypothèse héritée de Radcliffe-Brown et reprise par les études sur la résolution des conflits, donc comme un discours à analyser et non comme un effet mesuré. La page de début est vérifiée, la page de fin ne l'est pas."
     }
   ],
   "gaps": [

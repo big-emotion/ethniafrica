@@ -1,0 +1,97 @@
+"""Where a production writes, and the one place it must never write.
+
+Every renderer here took its project directory from `argv[1]` and trusted it.
+That is how 1,2 Go of masters, rushes and one-off build scripts came to live in
+a site checkout under `output/`, which is gitignored and therefore backed up by
+nothing at all. The path was never wrong in the code; it was wrong on the command
+line, once, and no one noticed for a month.
+
+So the destination is resolved here instead of in each script.
+
+The engine used to sit beside the productions, which let one constant answer two
+questions at once: where this file lives, and where a subject lives. Versioning
+the engine split them. `ETHNIAFRICA_SOCIAL_PROJECTS` now names the workshop — one
+subdirectory per subject, holding its `cards.json`, its verified assets, its
+narration and its scratch `work/`. It sits in the production library, outside
+this repository, because productions are large and git is not a media store.
+
+It is not where the finished images go: a deck carries its own `outDir`, and the
+shelf a post is filed on is derived from the post's own status. Aiming a render
+by moving this variable would file every lot in the same bucket.
+
+Unset, a render lands under the checkout's own `output/`. That is deliberate: a
+fresh clone must be able to render without configuring anything. `output/` is
+gitignored, so those files are lost with the worktree rather than committed —
+which is the argument for setting the variable, not a defect of the fallback.
+
+The guard that refuses a git checkout stays, minus the one case that now has to
+work: the engine itself lives in one. Our own `output/` is allowed; any other
+path with a `.git` ancestor is still refused, because "has a `.git` ancestor"
+remains an exact test for "this is somebody's source tree" and costs no
+configuration.
+"""
+
+import os
+import pathlib
+import sys
+
+import ethni_env
+
+# `.env.local` is this repository's own convention and the first place anyone
+# looks, but only Next parses it. Without this the two directories below would
+# have to be declared a second time in a shell profile. The environment still
+# wins, so a one-off override on the command line is unaffected.
+ethni_env.load_into_environ()
+
+ENV_VAR = "ETHNIAFRICA_SOCIAL_PROJECTS"
+
+HARNESS = pathlib.Path(__file__).resolve().parent
+REPO = HARNESS.parents[1]
+FALLBACK = REPO / "output" / "social"
+
+
+def productions_root():
+    """The directory holding one subdirectory per subject.
+
+    The name is spelled out rather than read through `ENV_VAR` because the
+    repository's `.env.example` gate greps for a literal. Behind an indirection
+    the variable is invisible to it, and a variable the gate cannot see is one
+    that can neither be documented nor missed.
+    """
+    declared = os.environ.get("ETHNIAFRICA_SOCIAL_PROJECTS", "").strip()
+    if declared:
+        return pathlib.Path(declared).expanduser().resolve()
+    return FALLBACK
+
+
+def assert_writable(path):
+    """Refuse a destination inside a git working tree, except our own output/."""
+    if path == FALLBACK or FALLBACK in path.parents:
+        return path
+    for parent in [path, *path.parents]:
+        if (parent / ".git").exists():
+            raise SystemExit(
+                f"refus d'écrire dans un dépôt git : {path}\n"
+                f"dépôt détecté : {parent}\n"
+                f"les productions vivent sous {productions_root()}\n"
+                f"déclare {ENV_VAR} pour les écrire ailleurs"
+            )
+    return path
+
+
+def resolve_project(arg=None):
+    """A subject name, a relative path or an absolute one, never a checkout.
+
+    A single-segment argument that does not already name something on disk is
+    read as a subject and resolved under the productions root. Anything else is
+    taken at face value, so an explicit path still works for a one-off.
+    """
+    if arg is None:
+        raise SystemExit(
+            f"usage: {pathlib.Path(sys.argv[0]).name} <sujet|chemin>\n"
+            f"un sujet nu est résolu sous {productions_root()}"
+        )
+    candidate = pathlib.Path(arg).expanduser()
+    if len(candidate.parts) == 1 and not candidate.exists():
+        candidate = productions_root() / candidate
+    return assert_writable(candidate.resolve())

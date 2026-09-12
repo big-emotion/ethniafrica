@@ -1,0 +1,202 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier court fondé sur le passage du corpus AFRIK référencé ; ne pas étendre les affirmations sans source dédiée."
+  },
+  "id": "PAT_DIABATE",
+  "nameMain": "Diabate",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Diabate",
+      "attestations": [
+        {
+          "countryId": "BFA",
+          "sourceRefs": ["corpus-ppl-dafing-organisation"]
+        },
+        { "countryId": "MLI", "sourceRefs": ["corpus-ppl-dafing-organisation"] }
+      ]
+    }
+  ],
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "The jamu is a patrilineal clan name: it designates membership of a descent group, not an individual filiation to the father.",
+        "claimStatus": "established",
+        "sourceRefs": ["jansen-sunjata-paradigm"]
+      },
+      {
+        "claim": "The nyamakalaw — endogamous groups of artisans and musicians — are attested among the Malinke by around 1300 at the latest and are found among more than fifteen West African peoples. Status is transmitted with the jamu, which makes the clan name the vehicle of social position as much as of descent.",
+        "claimStatus": "established",
+        "sourceRefs": ["tamari-1991-caste"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_DAFING",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-dafing-organisation"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "BFA",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-dafing-organisation"]
+    },
+    {
+      "countryId": "MLI",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-dafing-organisation"]
+    }
+  ],
+  "alliances": [
+    {
+      "targetPatronymeId": "PAT_DIARRA",
+      "allianceType": "sanankuya",
+      "sourceRefs": [
+        "bamadaba-jamuw",
+        "canut-2002-senankuya",
+        "canut-smith-2006-pactes"
+      ]
+    }
+  ],
+  "casteOrSocialFunction": {
+    "value": "Jeli (griot), with a named office: the Diabaté of Keyla, near Kangaba, keep the traditions of the Keïta royal family, retile the Kamablon every seven years and there recite the history of Soundiata and the origin of the empire of Mali. Charry identifies Diabaté and Kouyaté as the two jamuw that by themselves signal jeli status. The dictionary of jamuw records for the same entry jèli, then hɔ̀rɔn in south-eastern Mali, then nùmu, then gesere among the Soninke: the griot function therefore does not cover the whole jamu.",
+    "sourceRefs": [
+      "gha-iv-mali",
+      "jelis-multilingualism-2024",
+      "charry-1996-jembe",
+      "tamari-1991-caste",
+      "bamadaba-jamuw"
+    ]
+  },
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Massa Makan Diabaté (1938-1988)",
+      "sourceRefs": ["gha-iv-mali", "nichols-2020-diabate-review"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "corpus-ppl-dafing-organisation",
+      "title": "EthniAfrica — fiche du peuple Dafing, organisation clanique",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Taken from the \"Clan organisation\" chapter of the Dafing people's fiche."
+    },
+    {
+      "sourceKey": "jansen-sunjata-paradigm",
+      "title": "Beyond the Mali Empire — A New Paradigm for the Sunjata Epic",
+      "url": "https://scholarlypublications.universiteitleiden.nl/access/item:2952645/download",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Jansen, Jan, Universiteit Leiden. Critical work on the transmission of the epic and on the jamu as a social institution rather than as historical memory; used here for the nature of the jamu, not to date an ancestor."
+    },
+    {
+      "sourceKey": "jelis-multilingualism-2024",
+      "title": "Language choices reflecting social changes: multilingualism in the popular music of Guinean jelis",
+      "url": "https://www.tandfonline.com/doi/full/10.1080/14790718.2024.2379547",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Journal of Multilingual and Multicultural Development, 2024. Establishes that jeli are recruited from identifiable clans (Kouyaté, Diabaté, Kanté, Cissoko) and that the function is hereditary."
+    },
+    {
+      "sourceKey": "charry-1996-jembe",
+      "title": "A Guide to the Jembe",
+      "url": "https://echarry.web.wesleyan.edu/jembearticle/article.html",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Charry, Eric, Percussive Notes 34(2), April 1996, pp. 66-72; the author is the ethnomusicologist of Mande Music (University of Chicago Press, 2000). An article from a specialist trade magazine, not a peer-reviewed journal: it is cited here for the attribution of jamuw to Mandingo social statuses (numu, jeli, horon), which he sets out by name clan by clan, and not for the history of the jembe."
+    },
+    {
+      "sourceKey": "tamari-1991-caste",
+      "title": "The Development of Caste Systems in West Africa",
+      "url": "https://shs.hal.science/halshs-00690180v1",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Tamari, Tal, The Journal of African History 32(2), 1991, pp. 221-250; open deposit HAL-SHS. Establishes that endogamous groups of artisans and musicians are found among more than fifteen West African peoples and that they are attested among the Malinke by around 1300 at the latest. Used for the institution of the caste, never to attach a named clan to a caste: that attribution comes from another source."
+    },
+    {
+      "sourceKey": "bamadaba-jamuw",
+      "title": "Bamadaba — dictionnaire des noms claniques (jamuw)",
+      "url": "http://cormand.huma-num.fr/dicos/jamuw.zip",
+      "tier": "referenced",
+      "source_kind": "linguistic_reference",
+      "notes": "Onomastic appendix of the Bamadaba, the Bambara-French electronic dictionary supplement to the Corpus bambara de référence (Bailleul, Davydov, Erman, Maslinsky, Méric, Vydrin, 2011-2020, CC BY-NC-SA); the clan-name appendix is identified as such by Vydrin, \"Vers une lexicographie mandingue sur la base de grands corpus annotés,\" Mandenkan 63, 2020, pp. 89-110. 375 entries in MDF format, consulted on the complete file. The file provides no legend for its markers, and the reading adopted here is the one the file imposes: \\ca carries the Mandingo status terms themselves (nùmu, jèli, hɔ́rɔn, garanke, finɛ, tontigi, wage, gesere); \\sn is read as senankun because the Kúyate entry annotates its own line \"\\sn Keyita\" with a caveat stating that this particular relation is a friendly understanding and not a senankuya. \\sn links are not systematically reciprocal from one entry to another: each pair is therefore cited according to the entry that carries it, named in the claim or the gap."
+    },
+    {
+      "sourceKey": "gha-iv-mali",
+      "title": "General History of Africa, IV: Africa from the Twelfth to the Sixteenth Century",
+      "url": "https://archive.org/details/unesco_general_history_africa_iv",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "notes": "UNESCO, Histoire générale de l'Afrique, vol. IV, ed. D. T. Niane, 1984; consulted on the full text of the digitised copy, not on an index. Chapter 6, \"Mali and the second Mandingo expansion\" (D. T. Niane, pp. 117-171), gives lineage by lineage the settlement of the Malinke clans: the Kamara holding Sibi and Tabon and the Traoré holding the Gangaran (p. 127), the two Camara branches led by Tabon-Wana and Kamadian Camara of Sibi (p. 131), Tiramaghan Traoré founder of Gabu (p. 127 n. 28, p. 133), the correspondence of clan names from one people to another — a Traoré is received as a brother by the Diop in Wolof country and may take their name (p. 134 n. 43) —, the Diabaté griots of Keyla and the seven-yearly retiling of the Kamablon of Kangaba (p. 127 n. 28), and the mansa's griot always chosen from the Kouyaté clan (p. 160). The work is a scholarly synthesis, not a chronicle: the claims it carries here are therefore classified outside writtenChronicles."
+    },
+    {
+      "sourceKey": "nichols-2020-diabate-review",
+      "title": "Review of Massa Makan Diabaté, The Lieutenant of Kouta (trans. Auerbach & Yost)",
+      "url": "https://www.cambridge.org/core/journals/african-studies-review/article/massa-makan-diabate-the-lieutenant-of-kouta-translated-from-french-by-shane-auerbach-and-david-yost-east-lansing-michigan-state-university-press-2017-xi-113-pp-introduction-2000-paper-isbn-9781611862270/01AF0FE3900BD82768691B37BA6E998C",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Nichols, Eliza, African Studies Review 63(2), Cambridge University Press, 2020. Gives the dates of Massa Makan Diabaté (1938-1988), his griot ancestry and the fact that he was the only writer of his generation to keep the family name that links him to the caste of genealogists — that is, a source bearing on the name itself, and not merely on a family-name homonymy."
+    },
+    {
+      "sourceKey": "canut-2002-senankuya",
+      "title": "Pouvoir, places et filiation : les senankuya au Mali",
+      "url": "https://journals.openedition.org/praxematique/2307",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Canut, Cécile, Cahiers de praxématique, issue 38, 2002, pp. 175-197. Fieldwork survey in Mali. She sets out what the pact obliges: the relation holds in perpetuity for the whole descent of both lineages, marriage between them is prohibited — variably applied today, she notes — and mutual assistance is owed without reservation. Cited for the obligation itself; it does not name the pair in this fiche, which is carried by the entries cited alongside it."
+    },
+    {
+      "sourceKey": "canut-smith-2006-pactes",
+      "title": "Pactes, alliances et plaisanteries. Pratiques locales, discours global",
+      "url": "https://doi.org/10.4000/etudesafricaines.6198",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Canut, Cécile, and Smith, Étienne, Cahiers d'études africaines, issue 184, 2006, p. 687 ff. Cited for the caution it carries: the idea that joking kinship would ease conflicts is treated there as a hypothesis inherited from Radcliffe-Brown and taken up by conflict-resolution studies, hence as a discourse to be analysed rather than a measured effect. The start page is verified, the end page is not."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "homonyms",
+      "reason": "The spelling Diabaté transcribes the Mandingo Jɛbatɛ, which the dictionary of jamuw groups with Jabatɛ, Jubatɛ, Jabagatɛ, Jɛbaatɛ and Jɛbagatɛ under a single entry. Six spellings of one jamu, and no distinct lineage of origin in the sources consulted."
+    }
+  ],
+  "_translation": {
+    "kind": "machine",
+    "translatedAt": "2026-09-09T09:37:36.783Z",
+    "model": "claude-sonnet-5",
+    "sourceHash": "46b9dfb5aa7def8ecb081e64ca4d0922a9c0773b1885aed441e8c488e367caa3",
+    "fieldHashes": {
+      "origin.linguisticReconstructions[0].claim": "14f92c91d5d99f18",
+      "origin.linguisticReconstructions[1].claim": "77da92e5bff5b48d",
+      "casteOrSocialFunction.value": "48fc3ba3b4dfcb66",
+      "sources[0].notes": "9b35244276192465",
+      "sources[1].notes": "4e75f41a563c53c3",
+      "sources[2].notes": "76f62600c259fdd9",
+      "sources[3].notes": "3cb50137a59120fd",
+      "sources[4].notes": "6c2eae881a0321de",
+      "sources[5].notes": "b80adb343411bfb9",
+      "sources[6].notes": "16bdc28ca53255a6",
+      "sources[7].notes": "355b61541b5c2078",
+      "sources[8].notes": "2c14e48c42d56e18",
+      "sources[9].notes": "79986afda62f44db",
+      "gaps[0].reason": "bb000e8bf8116b11"
+    },
+    "reviewRequired": [
+      "origin.linguisticReconstructions[0].claim",
+      "origin.linguisticReconstructions[1].claim"
+    ]
+  }
+}

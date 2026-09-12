@@ -23,6 +23,15 @@
  * `originOfExonyms`, `contemporaryUsage` — and whatever no reader sees:
  * `_meta`, identifiers, URLs.
  *
+ * So is every leaf the class table calls `invariant`, because a translator is
+ * forbidden to touch one and the gate must not demand what the rules refuse.
+ * The word left standing there is the corpus quoting itself — a cited title,
+ * an autonym, a people's name. 27 of the 54 country fiches cite a CIA section
+ * called "ethnic groups"; policing it asked for the title to be rewritten into
+ * a citation nobody can find, and no country fiche could be translated at all.
+ * A glossed invariant is policed on its parenthetical only, which is the sole
+ * part of it a translator writes.
+ *
  * Zero translated records exist on the day this ships; the gate passes on an
  * empty set and says so. `runGlossaryGate` is exported so the translation
  * parity gate can ride on it later.
@@ -35,6 +44,15 @@ import * as path from "node:path";
 import { pathToFileURL } from "node:url";
 
 import { GLOSSARY_TERMS, type GlossaryTerm } from "@/lib/glossaire/terms";
+import { classifierFor } from "@/lib/afrik/translations/leafClassifier";
+import {
+  ENTITY_TYPE_BY_CORPUS_DIRECTORY,
+  modelForEntity,
+} from "@/lib/afrik/translations/types";
+import {
+  glossedInvariantName,
+  type StrictModelFile,
+} from "@/lib/i18n/translationClasses";
 import { translations } from "@/lib/translations";
 import { escapeWorkflowCommand } from "./checkEditorialRules";
 
@@ -315,16 +333,61 @@ function recordIdOf(record: unknown, file: string): string {
     : path.basename(file, ".json");
 }
 
-/** Every string leaf of one translated record, through the two rules. */
+const ARRAY_INDEX = /\[\d+\]/g;
+
+/**
+ * The strict model whose class table governs a sidecar, read from its place in
+ * the mirrored tree. A file outside the corpus directories — a dossier's sparse
+ * overlay, a test fixture — resolves to none, and every leaf is policed as
+ * before.
+ */
+function modelForSidecar(
+  record: unknown,
+  file: string
+): StrictModelFile | undefined {
+  const directory = file
+    .split("/")
+    .find((segment) => segment in ENTITY_TYPE_BY_CORPUS_DIRECTORY);
+  if (directory === undefined) return undefined;
+  return modelForEntity(
+    ENTITY_TYPE_BY_CORPUS_DIRECTORY[directory],
+    (record ?? {}) as Record<string, unknown>
+  );
+}
+
+/** The parenthetical of a glossed invariant — the only part a translator renders. */
+function glossOf(value: string): string {
+  return value.replace(glossedInvariantName(value), "").trim();
+}
+
+/**
+ * Every string leaf of one translated record that a translator actually wrote,
+ * through the two rules.
+ *
+ * An invariant is carried over byte for byte, so French surviving in one is the
+ * corpus quoting itself, not a translation to correct: a cited title, an
+ * autonym, the name of a people. Policing it asked for a citation that no
+ * longer resolves, and blocked every country fiche outright.
+ */
 export function checkTranslatedRecord(
   record: unknown,
   file: string
 ): GlossaryFinding[] {
   const recordId = recordIdOf(record, file);
+  const model = modelForSidecar(record, file);
+  const classify = model === undefined ? undefined : classifierFor(model);
   const findings: GlossaryFinding[] = [];
   walkStrings(record, "", "", (text, jsonPath) => {
+    const treatment = classify?.(jsonPath.replace(ARRAY_INDEX, "[]"));
+    if (treatment === "invariant") return;
+    const policed = treatment === "glossed_invariant" ? glossOf(text) : text;
+    if (policed === "") return;
     findings.push(
-      ...checkTranslatedText(text, { file, record: recordId, path: jsonPath })
+      ...checkTranslatedText(policed, {
+        file,
+        record: recordId,
+        path: jsonPath,
+      })
     );
   });
   return findings;

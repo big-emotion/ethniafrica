@@ -16,9 +16,9 @@ const en = {
     present: (family: string) => `${family} peoples present`,
     total: (count: number) => `Of the family's ${count} peoples`,
     widespread: "Among the most widespread",
-    derived: "Derived — not declared by the family fiche",
-    readFull: "Read the full fiche",
-    readFullFor: (family: string) => `Read the full fiche for ${family}`,
+    derived: "Derived — the family does not give it",
+    readFull: "Read the full page",
+    readFullFor: (family: string) => `Read the full page for ${family}`,
   },
   parchment: {
     undeclaredDistribution: "Distribution not declared",
@@ -39,14 +39,14 @@ const en = {
     omitted: (count: number) =>
       `${count} other attached peoples are not listed here.`,
     missingDistribution:
-      "This fiche declares neither its branches nor its distribution by country. The area drawn above is therefore reconstructed from the peoples attached to the family, and marked as such.",
+      "This page gives neither its branches nor the countries it covers. The area drawn above is therefore rebuilt from the peoples attached to the family, and said to be.",
     footprintMemberPeoples: (peopleCount: number, countryCount: number) =>
-      `The area drawn above is not read from the family fiche: it is calculated. Each people fiche declares its language family and the countries where that people is found today; the union of those countries across the ${peopleCount} peoples attached to this family produces the ${countryCount} shaded countries, with intensity following the number of peoples present.`,
+      `The area drawn above is not read from the family page: it is calculated. Each people gives its language family and the countries where it is found today; the union of those countries across the ${peopleCount} peoples attached to this family produces the ${countryCount} shaded countries, with intensity following the number of peoples present.`,
     footprintDeclaredPeoples: (peopleCount: number, countryCount: number) =>
-      `The area drawn above is not read from the family fiche: it is calculated. No people is attached directly to this family: they belong to its subfamilies. Instead of adding those together—which would make the map assert a unity the fiche itself disputes—the area follows the only list the fiche endorses, the peoples named by the fiche: the union of the countries where those ${peopleCount} peoples are found today produces the ${countryCount} shaded countries. The map therefore says nothing beyond the text.`,
+      `The area drawn above is not read from the family page: it is calculated. No people is attached directly to this family: they belong to its subfamilies. Instead of adding those together—which would make the map assert a unity the page itself disputes—the area follows the only list the page endorses, the peoples named by the page: the union of the countries where those ${peopleCount} peoples are found today produces the ${countryCount} shaded countries. The map therefore says nothing beyond the text.`,
     borderNote:
       "The edge remains dashed throughout: a language family has no border, and this aggregate even less than the rest.",
-    declaredArea: "Area declared by the fiche:",
+    declaredArea: "Area given here:",
   },
   decolonial: {
     title: "Designations and decolonisation",
@@ -97,9 +97,9 @@ const fr: FamilyCopy = {
     present: (family) => `Peuples ${family} présents`,
     total: (count) => `Sur les ${count} de la famille`,
     widespread: "Parmi les plus répandus",
-    derived: "Dérivé — non déclaré par la fiche famille",
-    readFull: "Lire la fiche complète",
-    readFullFor: (family) => `Lire la fiche complète de ${family}`,
+    derived: "Dérivé — la famille ne le donne pas",
+    readFull: "Lire la page complète",
+    readFullFor: (family) => `Lire la page complète de ${family}`,
   },
   parchment: {
     undeclaredDistribution: "Distribution non déclarée",
@@ -119,14 +119,14 @@ const fr: FamilyCopy = {
     omitted: (count) =>
       `${count} autres peuples rattachés ne sont pas listés ici.`,
     missingDistribution:
-      "Cette fiche ne déclare ni ses branches ni sa répartition par pays. L'aire dessinée plus haut est donc reconstruite depuis les peuples rattachés à la famille, et signalée comme telle.",
+      "Cette page ne donne ni ses branches ni les pays où elle est présente. L'aire dessinée plus haut est donc reconstruite à partir des peuples rattachés à la famille, et c'est écrit.",
     footprintMemberPeoples: (peopleCount, countryCount) =>
-      `L'aire dessinée plus haut n'est pas lue dans la fiche famille : elle est calculée. Chaque fiche peuple déclare sa famille linguistique et les pays où ce peuple se trouve aujourd'hui ; l'union de ces pays sur les ${peopleCount} peuples rattachés à cette famille donne les ${countryCount} pays teintés, l'intensité suivant le nombre de peuples présents.`,
+      `L'aire dessinée plus haut n'est pas lue dans la page de la famille : elle est calculée. Chaque peuple donne sa famille de langues et les pays où il se trouve aujourd'hui ; l'union de ces pays sur les ${peopleCount} peuples rattachés à cette famille donne les ${countryCount} pays teintés, l'intensité suivant le nombre de peuples présents.`,
     footprintDeclaredPeoples: (peopleCount, countryCount) =>
-      `L'aire dessinée plus haut n'est pas lue dans la fiche famille : elle est calculée. Aucun peuple n'est rattaché directement à cette famille : ils relèvent de ses sous-familles. Plutôt que d'additionner celles-ci — ce qui ferait affirmer à la carte une unité que la fiche elle-même conteste — l'aire suit la seule liste que la fiche assume, les peuples que la fiche nomme : l'union des pays où ces ${peopleCount} peuples se trouvent aujourd'hui donne les ${countryCount} pays teintés. La carte ne dit donc rien de plus que le texte.`,
+      `L'aire dessinée plus haut n'est pas lue dans la page de la famille : elle est calculée. Aucun peuple n'est rattaché directement à cette famille : ils relèvent de ses sous-familles. Plutôt que d'additionner celles-ci — ce qui ferait affirmer à la carte une unité que la page elle-même conteste — l'aire suit la seule liste que la page assume, les peuples que la page nomme : l'union des pays où ces ${peopleCount} peuples se trouvent aujourd'hui donne les ${countryCount} pays teintés. La carte ne dit donc rien de plus que le texte.`,
     borderNote:
       "Le bord reste tireté partout : une famille linguistique n'a pas de frontière, et cet agrégat encore moins que le reste.",
-    declaredArea: "Aire déclarée par la fiche :",
+    declaredArea: "Aire donnée ici :",
   },
   decolonial: {
     title: "Appellations et décolonisation",

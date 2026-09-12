@@ -27,15 +27,16 @@ vi.mock("next/link", () => ({
 describe("NotFound ([lang]/not-found)", () => {
   beforeEach(() => mockUsePathname.mockReturnValue("/fr/introuvable"));
 
-  it("renders the calm French heading Fiche introuvable", () => {
+  // @req REQ-099
+  it("renders the calm French heading Page introuvable", () => {
     render(<NotFound />);
     expect(
-      screen.getByRole("heading", { name: /fiche introuvable/i })
+      screen.getByRole("heading", { name: /page introuvable/i })
     ).toBeTruthy();
   });
 
   // @req REQ-099
-  it("says why the page is missing, and spells out no corpus key", () => {
+  it("says why the page is missing, and spells out no atlas key", () => {
     const { container } = render(<NotFound />);
     expect(container.textContent).toMatch(/pas encore publiée/i);
     expect(container.textContent).not.toMatch(/PPL_|FLG_/);
@@ -65,10 +66,10 @@ describe("NotFound ([lang]/not-found)", () => {
     render(<NotFound />);
 
     expect(
-      screen.getByRole("heading", { name: "Fiche not found" })
+      screen.getByRole("heading", { name: "Page not found" })
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("link", { name: "Search for a fiche" })
+      screen.getByRole("link", { name: "Search for a page" })
     ).toHaveAttribute("href", getLocalizedRoute("en", "search"));
     expect(screen.queryByText(/pas encore publiée/i)).not.toBeInTheDocument();
   });

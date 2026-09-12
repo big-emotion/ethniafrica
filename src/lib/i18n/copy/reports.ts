@@ -9,10 +9,10 @@ const en = {
       "The information on this site comes from different public and collaborative sources. Although we make every effort to verify and consolidate the data, some information may be incomplete, approximate or incorrect.",
     formIntroduction:
       "Describe what is wrong below. No account is required, and both a suggested correction and a source are optional: we prefer an incomplete report to one you decide not to send.",
-    ficheGuidanceBefore: "If the error is on a specific fiche, the",
+    ficheGuidanceBefore: "If the error is on a specific page, the",
     reportButton: "Report",
     ficheGuidanceAfter:
-      "button in that fiche's reading bar targets the relevant chapter directly — it is faster for you and more precise for moderation.",
+      "button in that page's reading bar targets the relevant chapter directly — it is faster for you and more precise for moderation.",
     openAtlas: "Open the atlas of peoples",
     followUpTitle: "What happens to reports",
     followUp:
@@ -26,7 +26,7 @@ const en = {
       country: "Country",
       language: "Language",
       language_family: "Language family",
-      fiche_section: "Fiche section",
+      fiche_section: "Page section",
       assertion: "Assertion",
       source: "Source",
       general: "General report",
@@ -131,10 +131,10 @@ const fr: ReportsCopy = {
     formIntroduction:
       "Décrivez ci-dessous ce qui ne va pas. Aucun compte n'est nécessaire, et la correction proposée comme la source sont facultatives : nous préférons un signalement incomplet à un signalement que vous renoncez à écrire.",
     ficheGuidanceBefore:
-      "Si l'erreur se trouve sur une fiche précise, le bouton",
+      "Si l'erreur se trouve sur une page précise, le bouton",
     reportButton: "Signaler",
     ficheGuidanceAfter:
-      "de la barre de lecture de cette fiche vise directement le chapitre concerné — c'est plus rapide pour vous et plus précis pour la modération.",
+      "de la barre de lecture de cette page vise directement le chapitre concerné — c'est plus rapide pour vous et plus précis pour la modération.",
     openAtlas: "Ouvrir l'atlas des peuples",
     followUpTitle: "Ce que deviennent les signalements",
     followUp:
@@ -148,7 +148,7 @@ const fr: ReportsCopy = {
       country: "Pays",
       language: "Langue",
       language_family: "Famille linguistique",
-      fiche_section: "Section de fiche",
+      fiche_section: "Section de page",
       assertion: "Affirmation",
       source: "Source",
       general: "Signalement général",

@@ -25,9 +25,9 @@ const en = {
   },
   citation: {
     eyebrow: "Reference",
-    title: "Cite this fiche",
+    title: "Cite this page",
     description: "A ready-to-copy reference with its version and access date.",
-    versionLabel: "Fiche version",
+    versionLabel: "Page version",
     liveVersion: "Living version",
     pinnedVersion: "Pinned version",
     liveDescription: "Citation of the living version.",
@@ -71,10 +71,10 @@ const fr: SystemCopy = {
   },
   citation: {
     eyebrow: "Référence",
-    title: "Citer cette fiche",
+    title: "Citer cette page",
     description:
       "Une référence prête à copier, avec sa version et sa date de consultation.",
-    versionLabel: "Version de la fiche",
+    versionLabel: "Version de la page",
     liveVersion: "Version vivante",
     pinnedVersion: "Version figée",
     liveDescription: "Citation de la version vivante.",

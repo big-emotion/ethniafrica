@@ -379,6 +379,38 @@ describe("afrikLoader", () => {
       expect(leads).toHaveLength(0);
     });
 
+    // The empty envelope a failure degrades to is indistinguishable from a
+    // query nothing matched, which is fine for rendering and wrong for any
+    // caller counting those zeroes. `answered` is what separates them.
+    // @req REQ-046
+    it("reports that the API did not answer when the request failed", async () => {
+      mockFetch.mockResolvedValueOnce({
+        ok: false,
+        status: 500,
+        json: () => Promise.resolve({ error: { message: "Server error" } }),
+      });
+
+      const { answered } = await searchWithLeads("test");
+
+      expect(answered).toBe(false);
+    });
+
+    // @req REQ-046
+    it("reports that the API answered when a search legitimately found nothing", async () => {
+      mockFetch.mockResolvedValueOnce({
+        ok: true,
+        json: () =>
+          Promise.resolve({
+            data: { peoples: [], countries: [], families: [], total: 0 },
+          }),
+      });
+
+      const { results, answered } = await searchWithLeads("qqqqqq");
+
+      expect(results).toHaveLength(0);
+      expect(answered).toBe(true);
+    });
+
     // @req REQ-124
     it("carries the per-type lens counts alongside the results", async () => {
       mockFetch.mockResolvedValueOnce({

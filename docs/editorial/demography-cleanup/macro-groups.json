@@ -1,0 +1,149 @@
+[
+  {
+    "id": "PPL_BENOUECONGO_MACRO",
+    "name": "Peuples Bénoué-Congo",
+    "totalPopulation": 500000000,
+    "languageFamilyId": "FLG_BENOUECONGO",
+    "countries": 9
+  },
+  {
+    "id": "PPL_BANTU",
+    "name": "Bantou",
+    "totalPopulation": 420000000,
+    "languageFamilyId": "FLG_NIGERCONGO",
+    "countries": 21
+  },
+  {
+    "id": "PPL_MANDE_MACRO",
+    "name": "Peuples Mandé (macro-groupe)",
+    "totalPopulation": 60000000,
+    "languageFamilyId": "FLG_MANDE",
+    "countries": 7
+  },
+  {
+    "id": "PPL_NILOTIQUE_MACRO",
+    "name": "Peuples Nilotiques (macro-groupe)",
+    "totalPopulation": 50000000,
+    "languageFamilyId": "FLG_NILOTIQUE",
+    "countries": 7
+  },
+  {
+    "id": "PPL_LINGALA",
+    "name": "Lingala (locuteurs)",
+    "totalPopulation": 40000000,
+    "languageFamilyId": "FLG_NIGERCONGO",
+    "countries": 4
+  },
+  {
+    "id": "PPL_AMAZIGH_MACRO",
+    "name": "Amazigh (Berberes)",
+    "totalPopulation": 35000000,
+    "languageFamilyId": "FLG_BERBERE",
+    "countries": 9
+  },
+  {
+    "id": "PPL_ATLANTIQUE_MACRO",
+    "name": "Peuples atlantiques",
+    "totalPopulation": 30000000,
+    "languageFamilyId": "FLG_ATLANTIQUE",
+    "countries": 6
+  },
+  {
+    "id": "PPL_GUR_MACRO",
+    "name": "Peuples Gur",
+    "totalPopulation": 30000000,
+    "languageFamilyId": "FLG_GUR",
+    "countries": 7
+  },
+  {
+    "id": "PPL_AUSTRO_MACRO",
+    "name": "Peuples Austronésiens de Madagascar (macro-groupe)",
+    "totalPopulation": 29600000,
+    "languageFamilyId": "FLG_AUSTRONESIENNE",
+    "countries": 1
+  },
+  {
+    "id": "PPL_SCT_MACRO",
+    "name": "Peuples Soudaniques Centraux (macro-groupe)",
+    "totalPopulation": 15000000,
+    "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
+    "countries": 7
+  },
+  {
+    "id": "PPL_SAHARIEN_MACRO",
+    "name": "Peuples Sahariens (macro-groupe)",
+    "totalPopulation": 11500000,
+    "languageFamilyId": "FLG_SAHARIEN",
+    "countries": 6
+  },
+  {
+    "id": "PPL_KROU_MACRO",
+    "name": "Krou (macro-groupe)",
+    "totalPopulation": 8000000,
+    "languageFamilyId": "FLG_KROU",
+    "countries": 2
+  },
+  {
+    "id": "PPL_OMOTIQUE_MACRO",
+    "name": "Peuples Omotiques (macro-groupe)",
+    "totalPopulation": 7900000,
+    "languageFamilyId": "FLG_OMOTIQUE",
+    "countries": 2
+  },
+  {
+    "id": "PPL_SONGHAY_MACRO",
+    "name": "Peuples Songhay (macro-groupe)",
+    "totalPopulation": 7000000,
+    "languageFamilyId": "FLG_SONGHAY",
+    "countries": 5
+  },
+  {
+    "id": "PPL_NDEBELE_MACRO",
+    "name": "Ndebele (Macro)",
+    "totalPopulation": 4400000,
+    "languageFamilyId": "FLG_NIGERCONGO",
+    "countries": 4
+  },
+  {
+    "id": "PPL_CREOLE_MACRO",
+    "name": "Peuples Créoles (macro-groupe)",
+    "totalPopulation": 4000000,
+    "languageFamilyId": "FLG_CREOLE",
+    "countries": 6
+  },
+  {
+    "id": "PPL_KHOE_MACRO",
+    "name": "Peuples Khoe (macro-groupe)",
+    "totalPopulation": 430000,
+    "languageFamilyId": "FLG_KHOE",
+    "countries": 5
+  },
+  {
+    "id": "PPL_PEUPLES_FORESTIERS_DU_SUD_ET_DE_L_EST",
+    "name": "Peuples forestiers du Sud et de l'Est",
+    "totalPopulation": 300000,
+    "languageFamilyId": "FLG_BANTU",
+    "countries": 4
+  },
+  {
+    "id": "PPL_PYGMEES_AUTOCHTONES",
+    "name": "Peuples autochtones des forets d'Afrique centrale (Baka, Bagyeli, Bedzan)",
+    "totalPopulation": 100000,
+    "languageFamilyId": "FLG_BANTU",
+    "countries": 4
+  },
+  {
+    "id": "PPL_KXA_MACRO",
+    "name": "Peuples Kx'a (macro-groupe)",
+    "totalPopulation": 50000,
+    "languageFamilyId": "FLG_KXA",
+    "countries": 3
+  },
+  {
+    "id": "PPL_TUU_MACRO",
+    "name": "Peuples Tuu (macro-groupe)",
+    "totalPopulation": 2500,
+    "languageFamilyId": "FLG_TUU",
+    "countries": 3
+  }
+]

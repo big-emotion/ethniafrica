@@ -35,16 +35,16 @@ describe("buildFamilyTargetFacts", () => {
     expect(screen.getByText(/Benue-Congo peoples present/i)).toBeVisible();
     expect(screen.getByText(/Of the family's 60 peoples/i)).toBeVisible();
     expect(
-      screen.getByText(/Derived — not declared by the family fiche/i)
+      screen.getByText(/Derived — the family does not give it/i)
     ).toBeVisible();
     expect(
-      screen.getByRole("link", { name: /Read the full fiche/i })
+      screen.getByRole("link", { name: /Read the full page/i })
     ).toBeVisible();
   });
 
   // @req REQ-117
   it("returns data, never a resolver, so it can cross to a client component", () => {
-    // The family fiche is a server component and AtlasGlobe is a client one.
+    // The family page is a server component and AtlasGlobe is a client one.
     // This shipped as a function once and every family route answered HTTP 500
     // — a failure no unit test saw, because a unit test renders AtlasGlobe on
     // the client where a function is perfectly valid, and no build catches it
@@ -99,11 +99,11 @@ describe("buildFamilyTargetFacts", () => {
   // @req REQ-117
   it("marks the whole reading as derived", () => {
     // The most important line in the panel: none of this is declared by the
-    // family fiche, and the panel must not let a reader think otherwise.
+    // family page, and the panel must not let a reader think otherwise.
     renderFacts("NGA");
 
     expect(
-      screen.getByText(/Dérivé — non déclaré par la fiche famille/i)
+      screen.getByText(/Dérivé — la famille ne le donne pas/i)
     ).toBeInTheDocument();
   });
 
@@ -111,10 +111,10 @@ describe("buildFamilyTargetFacts", () => {
   it("offers a way back into the fiche it is quoting", () => {
     renderFacts("NGA");
 
-    const back = screen.getByRole("link", { name: /Lire la fiche complète/i });
+    const back = screen.getByRole("link", { name: /Lire la page complète/i });
 
     expect(back).toHaveAttribute("href", "#fiche");
-    // The accessible name named the family, then spelled out its corpus key.
+    // The accessible name named the family, then spelled out its atlas key.
     // A reader hearing "FLG_BENOUECONGO" is being read the database, not the
     // atlas — the same reason the compact heading stopped printing one.
     expect(back.getAttribute("aria-label")).toContain("Bénoué-Congo");

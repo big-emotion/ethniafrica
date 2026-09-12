@@ -38,7 +38,7 @@
     "linguisticCharacteristics": {
       "typology": " Langues isolantes à morphologie analytique. Structure SVO (Sujet-Verbe-Objet) dominante. Exemples concrets (créole cap-verdien / Kriolu) : - *N ka kume funchi* « Je mange du funchi » – structure SVO, *ka* marque l'aspect progressif",
       "phonologicalFeatures": " Détails précis :",
-      "relationsWithNeighbors": " Exemples concrets d'emprunts :",
+      "relationsWithNeighbors": " Exemples concrets d'emprunts : - Bantoues (Angola, Congo) : le créole haïtien zonbi se rattache à une famille de formes bantoues d'Afrique centrale dont le sens diverge selon la langue. En kikongo, nzambi désigne l'Être Suprême et zumbi un fétiche bienfaisant ; en kimbundu, nzumbi désigne l'âme d'un mort qui revient en paix, par opposition à celle qui poursuit les vivants. Les sources divergent sur laquelle de ces formes est la racine, et le sens de mort-vivant n'appartient à aucune d'elles : il apparaît en Haïti, puis passe à l'anglais en 1929.",
       "keyInnovations": " Traits spécifiques avec exemples :"
     },
     "historyAndOrigins": {
@@ -140,7 +140,36 @@
         "url": "https://unstats.un.org/",
         "tier": "official",
         "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      },
+      {
+        "title": "René Butaye, Dictionnaire kikongo-français, français-kikongo, 1910",
+        "url": "https://archive.org/details/dictionnaire-butaye",
+        "tier": "referenced",
+        "notes": "Dictionnaire publié, auteur identifié, consultable en ligne le 10 septembre 2026. Lexicographie missionnaire de la période coloniale, donc une description extérieure à la société décrite. Donne nzambi comme Être Suprême, zumbi comme fétiche bienfaisant et mvumbi comme cadavre."
+      },
+      {
+        "title": "J. D. Cordeiro da Matta, Ensaio de diccionario kimbúndu-portuguez, 1893",
+        "url": "https://archive.org/details/ensaiodediccion00mattgoog",
+        "tier": "referenced",
+        "notes": "Dictionnaire du kimbundu par un auteur angolais, publié à Lisbonne en 1893, consulté le 10 septembre 2026. Donne nzumbi comme l'âme d'un mort qui revient en paix, par opposition à celle qui poursuit les vivants."
+      },
+      {
+        "title": "Floribert Patrick C. Endong, « The Westernization of the African Zombie in Nollywood Films », International Journal of Modern Anthropology, 2022",
+        "url": "https://doi.org/10.4314/ijma.v2i17.2",
+        "tier": "referenced",
+        "notes": "Article de revue à comité de lecture, université de Dschang, Cameroun. Donne l'origine du mot comme controversée et énumère les racines bantoues proposées."
+      },
+      {
+        "title": "Hans-W. Ackermann et Jeanine Gauthier, « The Ways and Nature of the Zombi », The Journal of American Folklore, 1991",
+        "url": "https://doi.org/10.2307/541551",
+        "tier": "referenced",
+        "notes": "Article de revue universitaire à comité de lecture consacré aux racines bantoues du mot. Accès fermé : la référence est vérifiée, son contenu ne l'est pas."
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: none of the 24 linguistic family records has an English sidecar, so translating this one alone would make it the atlas's only English family record. translate:record accepts this record (30 leaves, 3 review-required), so this is a sequencing choice, not a pipeline refusal. It follows the family corpus's first translation pass."
+    }
   }
 }

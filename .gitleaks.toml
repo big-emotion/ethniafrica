@@ -36,11 +36,19 @@ regexes = [
   # the point — a real credential dropped into a sourceKey would carry
   # uppercase, underscores or symbols and would still be caught. Exempting the
   # corpus by path instead would have blinded the scanner to ~890 files.
-  '''"sourceKey"\s*:\s*"[a-z0-9]+(?:-[a-z0-9]+)*"''',
+  #
+  # The quotes around the field name are optional because the same handle is
+  # written twice in two syntaxes: quoted in the JSON fiches, bare in the
+  # TypeScript bibliography that resolves them. Anchoring on the JSON form alone
+  # left the `.ts` side unexempted, where it stayed invisible only as long as no
+  # handle happened to clear the rule's entropy floor — until two of them did.
+  # The value shape still carries the exemption: a credential dropped into a
+  # sourceKey would hold uppercase, underscores or symbols and remain visible.
+  '''"?sourceKey"?\s*:\s*"[a-z0-9]+(?:-[a-z0-9]+)*"''',
   # Dossier figures use the same non-secret kebab-case handle convention.
-  # Restrict the exemption to the exact JSON field and value shape so tokens
+  # Restrict the exemption to the exact field and value shape so tokens
   # containing uppercase characters, underscores or symbols remain visible.
-  '''"figureKey"\s*:\s*"[a-z0-9]+(?:-[a-z0-9]+)*"''',
+  '''"?figureKey"?\s*:\s*"[a-z0-9]+(?:-[a-z0-9]+)*"''',
 ]
 
 paths = [

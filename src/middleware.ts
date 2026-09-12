@@ -4,6 +4,7 @@ import { validateApiKey } from "@/lib/api/auth";
 import { applyIpRateLimit, applyRateLimit } from "@/lib/api/rate-limit";
 import { applyVersioningHeaders } from "@/lib/api/versioning";
 import {
+  DEEP_LINK_QUERY_KEYS,
   localeSlugMismatch,
   resolveCountryDeepLink,
   resolveFamilyDeepLink,
@@ -435,10 +436,12 @@ const DEEP_LINK_RESOLVERS: Record<
 /**
  * Where a legacy path leads now.
  *
- * `keepQuery` is false only when the query is what produced the target: a
- * `?country=BEN` that became `/fr/atlas/pays/BEN` has been spent, and
- * carrying it along would leave the identifier stated twice, once in the path
- * and once in a query the directory it lands on would read and act on again.
+ * `spentDeepLink` says the query is what produced the target: a `?country=BEN`
+ * that became `/fr/atlas/pays/BEN` has been spent, and carrying that key along
+ * would leave the identifier stated twice, once in the path and once in a
+ * query the directory it lands on would read and act on again. Only the keys
+ * in `DEEP_LINK_QUERY_KEYS` are spent — the rest of the query is the reader's
+ * and rides along, which is what keeps campaign tagging alive across the hop.
  *
  * Exported for `redirectCharter.test.ts`, which walks both tables to assert
  * the two properties reading them cannot establish: that every entry lands in
@@ -448,7 +451,7 @@ const DEEP_LINK_RESOLVERS: Record<
 // @req REQ-091
 export interface RelocatedPath {
   path: string;
-  keepQuery: boolean;
+  spentDeepLink: boolean;
 }
 
 /**
@@ -501,6 +504,23 @@ export function resolveCanonicalDeepLink(
   );
 }
 
+/**
+ * The query a spent deep link forwards: everything the reader arrived with,
+ * minus the identifier the target now states in its path.
+ *
+ * Re-serialising is safe here and only here — a spent link is a legacy address
+ * whose surviving parameters are campaign tagging, not a hand-authored query
+ * whose byte-for-byte spelling matters. The untouched branch still forwards
+ * `nextUrl.search` verbatim.
+ */
+// @req REQ-091
+function searchWithoutSpentIdentifier(search: URLSearchParams): string {
+  const forwarded = new URLSearchParams(search);
+  for (const key of DEEP_LINK_QUERY_KEYS) forwarded.delete(key);
+  const rendered = forwarded.toString();
+  return rendered ? `?${rendered}` : "";
+}
+
 // @req REQ-091
 export function resolveRelocatedPath(
   pathname: string,
@@ -521,10 +541,10 @@ export function resolveRelocatedPath(
   // Below the root the query is the page's own business, so it is left alone.
   if (!tail) {
     const fiche = DEEP_LINK_RESOLVERS[segment]?.(locale, search);
-    if (fiche) return { path: fiche, keepQuery: false };
+    if (fiche) return { path: fiche, spentDeepLink: true };
   }
 
-  return { path: `/${locale}/${destination}${tail}`, keepQuery: true };
+  return { path: `/${locale}/${destination}${tail}`, spentDeepLink: false };
 }
 
 // True when the request originates from the deployment itself — i.e. the
@@ -625,14 +645,14 @@ export async function middleware(request: NextRequest) {
   // Lot 3's relocation: the module did not change, its address did. A deep
   // link resolves to the fiche here rather than at the directory, so the
   // reader and the crawler both make the trip once.
-  let keepQuery = true;
+  let spentDeepLink = false;
   const relocated = resolveRelocatedPath(
     canonicalPath,
     request.nextUrl.searchParams
   );
   if (relocated) {
     canonicalPath = relocated.path;
-    keepQuery = relocated.keepQuery;
+    spentDeepLink = relocated.spentDeepLink;
     moved = true;
   }
 
@@ -672,12 +692,14 @@ export async function middleware(request: NextRequest) {
   );
   if (canonicalFiche) {
     canonicalPath = canonicalFiche;
-    keepQuery = false;
+    spentDeepLink = true;
     moved = true;
   }
 
   if (moved) {
-    const search = keepQuery ? request.nextUrl.search : "";
+    const search = spentDeepLink
+      ? searchWithoutSpentIdentifier(request.nextUrl.searchParams)
+      : request.nextUrl.search;
     return NextResponse.redirect(
       new URL(`${canonicalPath}${search}`, request.nextUrl.origin),
       temporaryLocaleContainment ? 307 : 308

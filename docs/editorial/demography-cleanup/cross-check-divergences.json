@@ -1,0 +1,2611 @@
+[
+  {
+    "country": "SYC",
+    "peopleId": "PPL_FRANCO_SEYCHELLOIS",
+    "name": "Franco-Seychellois",
+    "percentageInCountry": 1,
+    "impliedFromCountryFiche": 1000,
+    "peopleFicheSays": 17000,
+    "ratio": 17,
+    "status": "divergent"
+  },
+  {
+    "country": "LBY",
+    "peopleId": "PPL_TOUBOU",
+    "name": "Toubou",
+    "percentageInCountry": 1.4,
+    "impliedFromCountryFiche": 105000,
+    "peopleFicheSays": 1502000,
+    "ratio": 14.304761904761905,
+    "status": "divergent"
+  },
+  {
+    "country": "EGY",
+    "peopleId": "PPL_BEJA",
+    "name": "Beja",
+    "percentageInCountry": 0.05,
+    "impliedFromCountryFiche": 59200,
+    "peopleFicheSays": 350000,
+    "ratio": 5.912162162162162,
+    "status": "divergent"
+  },
+  {
+    "country": "TCD",
+    "peopleId": "PPL_TOUBOU",
+    "name": "Toubou",
+    "percentageInCountry": 2.4,
+    "impliedFromCountryFiche": 504000,
+    "peopleFicheSays": 2750000,
+    "ratio": 5.4563492063492065,
+    "status": "divergent"
+  },
+  {
+    "country": "BFA",
+    "peopleId": "PPL_GOUROUNSI",
+    "name": "Gourounsi",
+    "percentageInCountry": 3,
+    "impliedFromCountryFiche": 723000,
+    "peopleFicheSays": 3500000,
+    "ratio": 4.840940525587828,
+    "status": "divergent"
+  },
+  {
+    "country": "MAR",
+    "peopleId": "PPL_RIFAIN",
+    "name": "Rifains",
+    "percentageInCountry": 3.2,
+    "impliedFromCountryFiche": 1228800,
+    "peopleFicheSays": 4400000,
+    "ratio": 3.5807291666666665,
+    "status": "divergent"
+  },
+  {
+    "country": "NGA",
+    "peopleId": "PPL_IJAW",
+    "name": "Ijaw",
+    "percentageInCountry": 1.8,
+    "impliedFromCountryFiche": 4275000,
+    "peopleFicheSays": 15000000,
+    "ratio": 3.508771929824561,
+    "status": "divergent"
+  },
+  {
+    "country": "SDN",
+    "peopleId": "PPL_FOUR",
+    "name": "Four",
+    "percentageInCountry": 4,
+    "impliedFromCountryFiche": 2068000,
+    "peopleFicheSays": 6450000,
+    "ratio": 3.118955512572534,
+    "status": "divergent"
+  },
+  {
+    "country": "DJI",
+    "peopleId": "PPL_ARABES_AFRIQUE",
+    "name": "Arabes",
+    "percentageInCountry": 3,
+    "impliedFromCountryFiche": 36000,
+    "peopleFicheSays": 100000,
+    "ratio": 2.7777777777777777,
+    "status": "divergent"
+  },
+  {
+    "country": "ERI",
+    "peopleId": "PPL_BEJA",
+    "name": "Hedareb / Beja",
+    "percentageInCountry": 2,
+    "impliedFromCountryFiche": 72000,
+    "peopleFicheSays": 200000,
+    "ratio": 2.7777777777777777,
+    "status": "divergent"
+  },
+  {
+    "country": "ERI",
+    "peopleId": "PPL_BILEN",
+    "name": "Bilen",
+    "percentageInCountry": 2,
+    "impliedFromCountryFiche": 72000,
+    "peopleFicheSays": 186000,
+    "ratio": 2.5833333333333335,
+    "status": "divergent"
+  },
+  {
+    "country": "SYC",
+    "peopleId": "PPL_INDO_SEYCHELLOIS",
+    "name": "Indo-Seychellois",
+    "percentageInCountry": 5,
+    "impliedFromCountryFiche": 5000,
+    "peopleFicheSays": 12000,
+    "ratio": 2.4,
+    "status": "divergent"
+  },
+  {
+    "country": "ERI",
+    "peopleId": "PPL_RASHAIDA",
+    "name": "Rashaida",
+    "percentageInCountry": 1,
+    "impliedFromCountryFiche": 36000,
+    "peopleFicheSays": 80000,
+    "ratio": 2.2222222222222223,
+    "status": "divergent"
+  },
+  {
+    "country": "CPV",
+    "peopleId": "PPL_AFRICAINS_D_ORIGINE_RECENTE",
+    "name": "Africains d'origine récente",
+    "percentageInCountry": 1,
+    "impliedFromCountryFiche": 5000,
+    "peopleFicheSays": 10869,
+    "ratio": 2.1738,
+    "status": "divergent"
+  },
+  {
+    "country": "TCD",
+    "peopleId": "PPL_KANEMBU",
+    "name": "Kanembu",
+    "percentageInCountry": 3.9,
+    "impliedFromCountryFiche": 819000,
+    "peopleFicheSays": 1750000,
+    "ratio": 2.1367521367521367,
+    "status": "divergent"
+  },
+  {
+    "country": "MRT",
+    "peopleId": "PPL_WOLOF",
+    "name": "Wolof",
+    "percentageInCountry": 2,
+    "impliedFromCountryFiche": 106000,
+    "peopleFicheSays": 200000,
+    "ratio": 1.8867924528301887,
+    "status": "divergent"
+  },
+  {
+    "country": "UGA",
+    "peopleId": "PPL_LANGI",
+    "name": "Langi",
+    "percentageInCountry": 3,
+    "impliedFromCountryFiche": 1542000,
+    "peopleFicheSays": 2884000,
+    "ratio": 1.8702983138780804,
+    "status": "divergent"
+  },
+  {
+    "country": "STP",
+    "peopleId": "PPL_ANGOLAR",
+    "name": "Angolar",
+    "percentageInCountry": 4.5,
+    "impliedFromCountryFiche": 9000,
+    "peopleFicheSays": 16000,
+    "ratio": 1.7777777777777777,
+    "status": "divergent"
+  },
+  {
+    "country": "ERI",
+    "peopleId": "PPL_AFAR",
+    "name": "Afar",
+    "percentageInCountry": 5,
+    "impliedFromCountryFiche": 180000,
+    "peopleFicheSays": 300000,
+    "ratio": 1.6666666666666667,
+    "status": "divergent"
+  },
+  {
+    "country": "NGA",
+    "peopleId": "PPL_NUPE",
+    "name": "Nupe",
+    "percentageInCountry": 1.5,
+    "impliedFromCountryFiche": 3562500,
+    "peopleFicheSays": 5500000,
+    "ratio": 1.543859649122807,
+    "status": "divergent"
+  },
+  {
+    "country": "SSD",
+    "peopleId": "PPL_SHILLUK",
+    "name": "Shilluk",
+    "percentageInCountry": 4,
+    "impliedFromCountryFiche": 488000,
+    "peopleFicheSays": 750000,
+    "ratio": 1.5368852459016393,
+    "status": "divergent"
+  },
+  {
+    "country": "GAB",
+    "peopleId": "PPL_PUNU",
+    "name": "Punu",
+    "percentageInCountry": 11.5,
+    "impliedFromCountryFiche": 299000,
+    "peopleFicheSays": 430000,
+    "ratio": 1.4381270903010033,
+    "status": "consistent"
+  },
+  {
+    "country": "CAF",
+    "peopleId": "PPL_MANJA",
+    "name": "Manja",
+    "percentageInCountry": 4.3,
+    "impliedFromCountryFiche": 236500,
+    "peopleFicheSays": 338000,
+    "ratio": 1.4291754756871036,
+    "status": "consistent"
+  },
+  {
+    "country": "ERI",
+    "peopleId": "PPL_SAHO",
+    "name": "Saho",
+    "percentageInCountry": 4,
+    "impliedFromCountryFiche": 144000,
+    "peopleFicheSays": 203000,
+    "ratio": 1.4097222222222223,
+    "status": "consistent"
+  },
+  {
+    "country": "NGA",
+    "peopleId": "PPL_GBAGYI",
+    "name": "Gbagyi / Gwari",
+    "percentageInCountry": 1.2,
+    "impliedFromCountryFiche": 2850000,
+    "peopleFicheSays": 4000000,
+    "ratio": 1.4035087719298245,
+    "status": "consistent"
+  },
+  {
+    "country": "NGA",
+    "peopleId": "PPL_IBIBIO",
+    "name": "Ibibio-Efik",
+    "percentageInCountry": 1.8,
+    "impliedFromCountryFiche": 4275000,
+    "peopleFicheSays": 5900000,
+    "ratio": 1.3801169590643274,
+    "status": "consistent"
+  },
+  {
+    "country": "MDG",
+    "peopleId": "PPL_SAKALAVA",
+    "name": "Sakalava",
+    "percentageInCountry": 5,
+    "impliedFromCountryFiche": 1635000,
+    "peopleFicheSays": 2200000,
+    "ratio": 1.345565749235474,
+    "status": "consistent"
+  },
+  {
+    "country": "MLI",
+    "peopleId": "PPL_SONGHAI",
+    "name": "Songhai",
+    "percentageInCountry": 5.9,
+    "impliedFromCountryFiche": 1486800,
+    "peopleFicheSays": 2000000,
+    "ratio": 1.3451708366962605,
+    "status": "consistent"
+  },
+  {
+    "country": "NGA",
+    "peopleId": "PPL_KANURI",
+    "name": "Kanuri",
+    "percentageInCountry": 2.4,
+    "impliedFromCountryFiche": 5700000,
+    "peopleFicheSays": 7650000,
+    "ratio": 1.3421052631578947,
+    "status": "consistent"
+  },
+  {
+    "country": "ZMB",
+    "peopleId": "PPL_BEMBA",
+    "name": "Bemba",
+    "percentageInCountry": 21,
+    "impliedFromCountryFiche": 4599000,
+    "peopleFicheSays": 6000000,
+    "ratio": 1.304631441617743,
+    "status": "consistent"
+  },
+  {
+    "country": "SLE",
+    "peopleId": "PPL_MENDE",
+    "name": "Mende",
+    "percentageInCountry": 24,
+    "impliedFromCountryFiche": 2112000,
+    "peopleFicheSays": 2730000,
+    "ratio": 1.2926136363636365,
+    "status": "consistent"
+  },
+  {
+    "country": "NGA",
+    "peopleId": "PPL_YORUBA",
+    "name": "Yoruba",
+    "percentageInCountry": 15.5,
+    "impliedFromCountryFiche": 36812500,
+    "peopleFicheSays": 45500000,
+    "ratio": 1.2359932088285228,
+    "status": "consistent"
+  },
+  {
+    "country": "LBR",
+    "peopleId": "PPL_KRU",
+    "name": "Kru",
+    "percentageInCountry": 6,
+    "impliedFromCountryFiche": 342000,
+    "peopleFicheSays": 420000,
+    "ratio": 1.2280701754385965,
+    "status": "consistent"
+  },
+  {
+    "country": "SOM",
+    "peopleId": "PPL_SOMALI",
+    "name": "Somali",
+    "percentageInCountry": 85,
+    "impliedFromCountryFiche": 16745000,
+    "peopleFicheSays": 19700000,
+    "ratio": 1.1764705882352942,
+    "status": "consistent"
+  },
+  {
+    "country": "LBR",
+    "peopleId": "PPL_GOLA",
+    "name": "Gola",
+    "percentageInCountry": 4.4,
+    "impliedFromCountryFiche": 250800,
+    "peopleFicheSays": 293000,
+    "ratio": 1.168261562998405,
+    "status": "consistent"
+  },
+  {
+    "country": "UGA",
+    "peopleId": "PPL_BATOORO",
+    "name": "Batooro",
+    "percentageInCountry": 2,
+    "impliedFromCountryFiche": 1028000,
+    "peopleFicheSays": 1200000,
+    "ratio": 1.1673151750972763,
+    "status": "consistent"
+  },
+  {
+    "country": "MLI",
+    "peopleId": "PPL_TUAREG",
+    "name": "Touareg",
+    "percentageInCountry": 1.7,
+    "impliedFromCountryFiche": 428400,
+    "peopleFicheSays": 500000,
+    "ratio": 1.1671335200746966,
+    "status": "consistent"
+  },
+  {
+    "country": "SSD",
+    "peopleId": "PPL_NUER",
+    "name": "Nuer",
+    "percentageInCountry": 15.6,
+    "impliedFromCountryFiche": 1903200,
+    "peopleFicheSays": 2200000,
+    "ratio": 1.1559478772593528,
+    "status": "consistent"
+  },
+  {
+    "country": "SLE",
+    "peopleId": "PPL_TEMNE",
+    "name": "Temne",
+    "percentageInCountry": 30,
+    "impliedFromCountryFiche": 2640000,
+    "peopleFicheSays": 3050000,
+    "ratio": 1.1553030303030303,
+    "status": "consistent"
+  },
+  {
+    "country": "UGA",
+    "peopleId": "PPL_BANYANKOLE",
+    "name": "Banyankole",
+    "percentageInCountry": 7,
+    "impliedFromCountryFiche": 3598000,
+    "peopleFicheSays": 4150000,
+    "ratio": 1.1534185658699276,
+    "status": "consistent"
+  },
+  {
+    "country": "GNB",
+    "peopleId": "PPL_PAPEL",
+    "name": "Papel",
+    "percentageInCountry": 7,
+    "impliedFromCountryFiche": 161000,
+    "peopleFicheSays": 185000,
+    "ratio": 1.1490683229813665,
+    "status": "consistent"
+  },
+  {
+    "country": "ETH",
+    "peopleId": "PPL_GURAGE",
+    "name": "Gurage",
+    "percentageInCountry": 2.6,
+    "impliedFromCountryFiche": 3523000,
+    "peopleFicheSays": 4000000,
+    "ratio": 1.1353959693443088,
+    "status": "consistent"
+  },
+  {
+    "country": "UGA",
+    "peopleId": "PPL_BASOGA",
+    "name": "Basoga",
+    "percentageInCountry": 6,
+    "impliedFromCountryFiche": 3084000,
+    "peopleFicheSays": 3500000,
+    "ratio": 1.1348897535667963,
+    "status": "consistent"
+  },
+  {
+    "country": "MUS",
+    "peopleId": "PPL_FRANCO_MAURICIENS",
+    "name": "Franco-Mauriciens",
+    "percentageInCountry": 1.5,
+    "impliedFromCountryFiche": 19500,
+    "peopleFicheSays": 22000,
+    "ratio": 1.1282051282051282,
+    "status": "consistent"
+  },
+  {
+    "country": "GHA",
+    "peopleId": "PPL_GA_DANGME",
+    "name": "Ga-Dangme",
+    "percentageInCountry": 7.1,
+    "impliedFromCountryFiche": 2492100,
+    "peopleFicheSays": 2800000,
+    "ratio": 1.1235504193250672,
+    "status": "consistent"
+  },
+  {
+    "country": "MUS",
+    "peopleId": "PPL_INDO_MAURICIENS",
+    "name": "Indo-Mauriciens",
+    "percentageInCountry": 57.7,
+    "impliedFromCountryFiche": 750100,
+    "peopleFicheSays": 840000,
+    "ratio": 1.1198506865751232,
+    "status": "consistent"
+  },
+  {
+    "country": "GHA",
+    "peopleId": "PPL_GUAN",
+    "name": "Guan",
+    "percentageInCountry": 3.2,
+    "impliedFromCountryFiche": 1123200,
+    "peopleFicheSays": 1250000,
+    "ratio": 1.1128917378917378,
+    "status": "consistent"
+  },
+  {
+    "country": "GMB",
+    "peopleId": "PPL_WOLOF",
+    "name": "Wolof",
+    "percentageInCountry": 12.2,
+    "impliedFromCountryFiche": 341600,
+    "peopleFicheSays": 380000,
+    "ratio": 1.1124121779859484,
+    "status": "consistent"
+  },
+  {
+    "country": "GNQ",
+    "peopleId": "PPL_BUBI",
+    "name": "Bubi",
+    "percentageInCountry": 6,
+    "impliedFromCountryFiche": 114000,
+    "peopleFicheSays": 126000,
+    "ratio": 1.105263157894737,
+    "status": "consistent"
+  },
+  {
+    "country": "CMR",
+    "peopleId": "PPL_BETI",
+    "name": "Beti-Fang-Bulu",
+    "percentageInCountry": 22,
+    "impliedFromCountryFiche": 6578000,
+    "peopleFicheSays": 7200000,
+    "ratio": 1.0945576162967467,
+    "status": "consistent"
+  },
+  {
+    "country": "NGA",
+    "peopleId": "PPL_IGBO",
+    "name": "Igbo",
+    "percentageInCountry": 15.2,
+    "impliedFromCountryFiche": 36100000,
+    "peopleFicheSays": 39000000,
+    "ratio": 1.080332409972299,
+    "status": "consistent"
+  },
+  {
+    "country": "LBR",
+    "peopleId": "PPL_BASSA",
+    "name": "Bassa",
+    "percentageInCountry": 13.4,
+    "impliedFromCountryFiche": 763800,
+    "peopleFicheSays": 824000,
+    "ratio": 1.078816444095313,
+    "status": "consistent"
+  },
+  {
+    "country": "NER",
+    "peopleId": "PPL_HAUSA",
+    "name": "Hausa",
+    "percentageInCountry": 53.1,
+    "impliedFromCountryFiche": 14814900,
+    "peopleFicheSays": 15800000,
+    "ratio": 1.0664938676602609,
+    "status": "consistent"
+  },
+  {
+    "country": "COD",
+    "peopleId": "PPL_NANDE",
+    "name": "Nande",
+    "percentageInCountry": 2.5,
+    "impliedFromCountryFiche": 2820000,
+    "peopleFicheSays": 3000000,
+    "ratio": 1.0638297872340425,
+    "status": "consistent"
+  },
+  {
+    "country": "GIN",
+    "peopleId": "PPL_KISSI",
+    "name": "Kissi",
+    "percentageInCountry": 5,
+    "impliedFromCountryFiche": 755000,
+    "peopleFicheSays": 798429,
+    "ratio": 1.0575218543046359,
+    "status": "consistent"
+  },
+  {
+    "country": "TZA",
+    "peopleId": "PPL_SUKUMA",
+    "name": "Sukuma",
+    "percentageInCountry": 16,
+    "impliedFromCountryFiche": 11296000,
+    "peopleFicheSays": 11800000,
+    "ratio": 1.0446175637393769,
+    "status": "consistent"
+  },
+  {
+    "country": "MLI",
+    "peopleId": "PPL_FULA",
+    "name": "Peul / Fulani",
+    "percentageInCountry": 13.3,
+    "impliedFromCountryFiche": 3351600,
+    "peopleFicheSays": 3500000,
+    "ratio": 1.0442773600668338,
+    "status": "consistent"
+  },
+  {
+    "country": "COM",
+    "peopleId": "PPL_COMORIEN",
+    "name": "Comorien",
+    "percentageInCountry": 97,
+    "impliedFromCountryFiche": 873000,
+    "peopleFicheSays": 900000,
+    "ratio": 1.0309278350515463,
+    "status": "consistent"
+  },
+  {
+    "country": "ETH",
+    "peopleId": "PPL_SIDAMA",
+    "name": "Sidama",
+    "percentageInCountry": 4.1,
+    "impliedFromCountryFiche": 5555500,
+    "peopleFicheSays": 5702000,
+    "ratio": 1.026370263702637,
+    "status": "consistent"
+  },
+  {
+    "country": "GHA",
+    "peopleId": "PPL_EWE",
+    "name": "Ewe",
+    "percentageInCountry": 12.8,
+    "impliedFromCountryFiche": 4492800,
+    "peopleFicheSays": 4600000,
+    "ratio": 1.023860398860399,
+    "status": "consistent"
+  },
+  {
+    "country": "KEN",
+    "peopleId": "PPL_MIJIKENDA",
+    "name": "Mijikenda",
+    "percentageInCountry": 5.1,
+    "impliedFromCountryFiche": 2932500,
+    "peopleFicheSays": 3000000,
+    "ratio": 1.0230179028132993,
+    "status": "consistent"
+  },
+  {
+    "country": "BFA",
+    "peopleId": "PPL_MOSSI",
+    "name": "Mossi",
+    "percentageInCountry": 50,
+    "impliedFromCountryFiche": 12050000,
+    "peopleFicheSays": 12300000,
+    "ratio": 1.020746887966805,
+    "status": "consistent"
+  },
+  {
+    "country": "BEN",
+    "peopleId": "PPL_YORUBA",
+    "name": "Yoruba / Nago",
+    "percentageInCountry": 12,
+    "impliedFromCountryFiche": 1776000,
+    "peopleFicheSays": 1800000,
+    "ratio": 1.0135135135135136,
+    "status": "consistent"
+  },
+  {
+    "country": "CPV",
+    "peopleId": "PPL_CREOLE_CABOVERDIEN",
+    "name": "Créoles cap-verdiens",
+    "percentageInCountry": 99,
+    "impliedFromCountryFiche": 495000,
+    "peopleFicheSays": 500000,
+    "ratio": 1.0101010101010102,
+    "status": "consistent"
+  },
+  {
+    "country": "SDN",
+    "peopleId": "PPL_BEJA",
+    "name": "Beja",
+    "percentageInCountry": 4.5,
+    "impliedFromCountryFiche": 2326500,
+    "peopleFicheSays": 2350000,
+    "ratio": 1.0101010101010102,
+    "status": "consistent"
+  },
+  {
+    "country": "GIN",
+    "peopleId": "PPL_FULA",
+    "name": "Peul / Fula",
+    "percentageInCountry": 33,
+    "impliedFromCountryFiche": 4983000,
+    "peopleFicheSays": 5000000,
+    "ratio": 1.0034115994380894,
+    "status": "consistent"
+  },
+  {
+    "country": "COG",
+    "peopleId": "PPL_KONGO_BRAZZA",
+    "name": "Kongo (Brazzaville)",
+    "percentageInCountry": 40,
+    "impliedFromCountryFiche": 2600000,
+    "peopleFicheSays": 2600000,
+    "ratio": 1,
+    "status": "consistent"
+  },
+  {
+    "country": "SYC",
+    "peopleId": "PPL_CREOLE_SEYCHELLES",
+    "name": "Créoles seychellois",
+    "percentageInCountry": 90,
+    "impliedFromCountryFiche": 90000,
+    "peopleFicheSays": 90000,
+    "ratio": 1,
+    "status": "consistent"
+  },
+  {
+    "country": "LBR",
+    "peopleId": "PPL_TOMA_LOMA",
+    "name": "Loma",
+    "percentageInCountry": 5.1,
+    "impliedFromCountryFiche": 290700,
+    "peopleFicheSays": 290000,
+    "ratio": 0.9975920192638459,
+    "status": "consistent"
+  },
+  {
+    "country": "BFA",
+    "peopleId": "PPL_BISSA",
+    "name": "Bissa",
+    "percentageInCountry": 3,
+    "impliedFromCountryFiche": 723000,
+    "peopleFicheSays": 721000,
+    "ratio": 0.9972337482710927,
+    "status": "consistent"
+  },
+  {
+    "country": "BDI",
+    "peopleId": "PPL_HUTU_BURUNDI",
+    "name": "Hutu (Burundi)",
+    "percentageInCountry": 85,
+    "impliedFromCountryFiche": 12240000,
+    "peopleFicheSays": 12200000,
+    "ratio": 0.9967320261437909,
+    "status": "consistent"
+  },
+  {
+    "country": "ETH",
+    "peopleId": "PPL_SOMALI",
+    "name": "Somali",
+    "percentageInCountry": 7.2,
+    "impliedFromCountryFiche": 9756000,
+    "peopleFicheSays": 9700000,
+    "ratio": 0.994259942599426,
+    "status": "consistent"
+  },
+  {
+    "country": "SEN",
+    "peopleId": "PPL_SERER",
+    "name": "Sérère",
+    "percentageInCountry": 16,
+    "impliedFromCountryFiche": 3024000,
+    "peopleFicheSays": 3000000,
+    "ratio": 0.9920634920634921,
+    "status": "consistent"
+  },
+  {
+    "country": "LSO",
+    "peopleId": "PPL_SOTHO",
+    "name": "Sotho / Basotho",
+    "percentageInCountry": 99,
+    "impliedFromCountryFiche": 2376000,
+    "peopleFicheSays": 2350000,
+    "ratio": 0.9890572390572391,
+    "status": "consistent"
+  },
+  {
+    "country": "TUN",
+    "peopleId": "PPL_ARABES_AFRIQUE",
+    "name": "Arabes de Tunisie",
+    "percentageInCountry": 98,
+    "impliedFromCountryFiche": 12152000,
+    "peopleFicheSays": 12000000,
+    "ratio": 0.9874917709019092,
+    "status": "consistent"
+  },
+  {
+    "country": "KEN",
+    "peopleId": "PPL_LUHYA",
+    "name": "Luhya",
+    "percentageInCountry": 14.3,
+    "impliedFromCountryFiche": 8222500,
+    "peopleFicheSays": 8100000,
+    "ratio": 0.985101854667072,
+    "status": "consistent"
+  },
+  {
+    "country": "SSD",
+    "peopleId": "PPL_DINKA",
+    "name": "Dinka",
+    "percentageInCountry": 35.8,
+    "impliedFromCountryFiche": 4367600,
+    "peopleFicheSays": 4300000,
+    "ratio": 0.9845223921604542,
+    "status": "consistent"
+  },
+  {
+    "country": "BWA",
+    "peopleId": "PPL_TSWANA",
+    "name": "Tswana",
+    "percentageInCountry": 79,
+    "impliedFromCountryFiche": 2054000,
+    "peopleFicheSays": 2000000,
+    "ratio": 0.9737098344693281,
+    "status": "consistent"
+  },
+  {
+    "country": "ZWE",
+    "peopleId": "PPL_SHONA",
+    "name": "Shona",
+    "percentageInCountry": 82,
+    "impliedFromCountryFiche": 13940000,
+    "peopleFicheSays": 13500000,
+    "ratio": 0.9684361549497847,
+    "status": "consistent"
+  },
+  {
+    "country": "NAM",
+    "peopleId": "PPL_OVAMBO",
+    "name": "Ovambo",
+    "percentageInCountry": 50,
+    "impliedFromCountryFiche": 1550000,
+    "peopleFicheSays": 1500000,
+    "ratio": 0.967741935483871,
+    "status": "consistent"
+  },
+  {
+    "country": "GHA",
+    "peopleId": "PPL_AKAN",
+    "name": "Akan",
+    "percentageInCountry": 45.7,
+    "impliedFromCountryFiche": 16040700,
+    "peopleFicheSays": 15500000,
+    "ratio": 0.9662919947383842,
+    "status": "consistent"
+  },
+  {
+    "country": "MAR",
+    "peopleId": "PPL_CHLEUH",
+    "name": "Chleuhs",
+    "percentageInCountry": 21.6,
+    "impliedFromCountryFiche": 8294400,
+    "peopleFicheSays": 8000000,
+    "ratio": 0.9645061728395061,
+    "status": "consistent"
+  },
+  {
+    "country": "DZA",
+    "peopleId": "PPL_ARABES_AFRIQUE",
+    "name": "Arabes d'Algérie",
+    "percentageInCountry": 70,
+    "impliedFromCountryFiche": 33180000,
+    "peopleFicheSays": 32000000,
+    "ratio": 0.9644364074743822,
+    "status": "consistent"
+  },
+  {
+    "country": "LBY",
+    "peopleId": "PPL_ARABES_AFRIQUE",
+    "name": "Arabes de Libye",
+    "percentageInCountry": 90,
+    "impliedFromCountryFiche": 6750000,
+    "peopleFicheSays": 6500000,
+    "ratio": 0.9629629629629629,
+    "status": "consistent"
+  },
+  {
+    "country": "UGA",
+    "peopleId": "PPL_BANYORO",
+    "name": "Banyoro",
+    "percentageInCountry": 3,
+    "impliedFromCountryFiche": 1542000,
+    "peopleFicheSays": 1469000,
+    "ratio": 0.9526588845654993,
+    "status": "consistent"
+  },
+  {
+    "country": "SWZ",
+    "peopleId": "PPL_SWAZI",
+    "name": "Swazi",
+    "percentageInCountry": 97,
+    "impliedFromCountryFiche": 1261000,
+    "peopleFicheSays": 1200000,
+    "ratio": 0.9516256938937351,
+    "status": "consistent"
+  },
+  {
+    "country": "UGA",
+    "peopleId": "PPL_ACHOLI",
+    "name": "Acholi",
+    "percentageInCountry": 4,
+    "impliedFromCountryFiche": 2056000,
+    "peopleFicheSays": 1950000,
+    "ratio": 0.9484435797665369,
+    "status": "consistent"
+  },
+  {
+    "country": "DZA",
+    "peopleId": "PPL_CHAOUI",
+    "name": "Chaouis",
+    "percentageInCountry": 6.4,
+    "impliedFromCountryFiche": 3033600,
+    "peopleFicheSays": 2870000,
+    "ratio": 0.9460706751054853,
+    "status": "consistent"
+  },
+  {
+    "country": "KEN",
+    "peopleId": "PPL_KISII",
+    "name": "Kisii",
+    "percentageInCountry": 5.7,
+    "impliedFromCountryFiche": 3277500,
+    "peopleFicheSays": 3100000,
+    "ratio": 0.9458428680396643,
+    "status": "consistent"
+  },
+  {
+    "country": "MRT",
+    "peopleId": "PPL_HARATINE",
+    "name": "Haratine",
+    "percentageInCountry": 30,
+    "impliedFromCountryFiche": 1590000,
+    "peopleFicheSays": 1500000,
+    "ratio": 0.9433962264150944,
+    "status": "consistent"
+  },
+  {
+    "country": "SDN",
+    "peopleId": "PPL_ARABES_AFRIQUE",
+    "name": "Arabes soudanais",
+    "percentageInCountry": 70,
+    "impliedFromCountryFiche": 36190000,
+    "peopleFicheSays": 34000000,
+    "ratio": 0.9394860458690246,
+    "status": "consistent"
+  },
+  {
+    "country": "MAR",
+    "peopleId": "PPL_ARABES_AFRIQUE",
+    "name": "Arabes du Maroc",
+    "percentageInCountry": 70,
+    "impliedFromCountryFiche": 26880000,
+    "peopleFicheSays": 25000000,
+    "ratio": 0.9300595238095238,
+    "status": "consistent"
+  },
+  {
+    "country": "MAR",
+    "peopleId": "PPL_AIT_ATTA",
+    "name": "Aït Atta",
+    "percentageInCountry": 1.4,
+    "impliedFromCountryFiche": 537600,
+    "peopleFicheSays": 500000,
+    "ratio": 0.9300595238095238,
+    "status": "consistent"
+  },
+  {
+    "country": "NGA",
+    "peopleId": "PPL_TIV",
+    "name": "Tiv",
+    "percentageInCountry": 2.4,
+    "impliedFromCountryFiche": 5700000,
+    "peopleFicheSays": 5290000,
+    "ratio": 0.9280701754385965,
+    "status": "consistent"
+  },
+  {
+    "country": "ERI",
+    "peopleId": "PPL_TIGRE",
+    "name": "Tigré",
+    "percentageInCountry": 30,
+    "impliedFromCountryFiche": 1080000,
+    "peopleFicheSays": 1000000,
+    "ratio": 0.9259259259259259,
+    "status": "consistent"
+  },
+  {
+    "country": "TCD",
+    "peopleId": "PPL_SARA",
+    "name": "Sara",
+    "percentageInCountry": 18,
+    "impliedFromCountryFiche": 3780000,
+    "peopleFicheSays": 3500000,
+    "ratio": 0.9259259259259259,
+    "status": "consistent"
+  },
+  {
+    "country": "GNQ",
+    "peopleId": "PPL_FANG",
+    "name": "Fang",
+    "percentageInCountry": 80,
+    "impliedFromCountryFiche": 1520000,
+    "peopleFicheSays": 1400000,
+    "ratio": 0.9210526315789473,
+    "status": "consistent"
+  },
+  {
+    "country": "MWI",
+    "peopleId": "PPL_CHEWA",
+    "name": "Chewa",
+    "percentageInCountry": 34.3,
+    "impliedFromCountryFiche": 7614600,
+    "peopleFicheSays": 7000000,
+    "ratio": 0.9192866335723479,
+    "status": "consistent"
+  },
+  {
+    "country": "LBR",
+    "peopleId": "PPL_VAI",
+    "name": "Vai",
+    "percentageInCountry": 4,
+    "impliedFromCountryFiche": 228000,
+    "peopleFicheSays": 209000,
+    "ratio": 0.9166666666666666,
+    "status": "consistent"
+  },
+  {
+    "country": "LBR",
+    "peopleId": "PPL_KISSI",
+    "name": "Kissi",
+    "percentageInCountry": 4.8,
+    "impliedFromCountryFiche": 273600,
+    "peopleFicheSays": 250273,
+    "ratio": 0.9147404970760233,
+    "status": "consistent"
+  },
+  {
+    "country": "SLE",
+    "peopleId": "PPL_LIMBA",
+    "name": "Limba",
+    "percentageInCountry": 7.2,
+    "impliedFromCountryFiche": 633600,
+    "peopleFicheSays": 577800,
+    "ratio": 0.9119318181818182,
+    "status": "consistent"
+  },
+  {
+    "country": "EGY",
+    "peopleId": "PPL_ARABES_AFRIQUE",
+    "name": "Arabes d'Égypte",
+    "percentageInCountry": 90,
+    "impliedFromCountryFiche": 106560000,
+    "peopleFicheSays": 96000000,
+    "ratio": 0.9009009009009009,
+    "status": "consistent"
+  },
+  {
+    "country": "MUS",
+    "peopleId": "PPL_CREOLE_MAURICE",
+    "name": "Créoles mauriciens",
+    "percentageInCountry": 30.8,
+    "impliedFromCountryFiche": 400400,
+    "peopleFicheSays": 360000,
+    "ratio": 0.8991008991008991,
+    "status": "consistent"
+  },
+  {
+    "country": "SLE",
+    "peopleId": "PPL_KURANKO",
+    "name": "Kuranko",
+    "percentageInCountry": 6,
+    "impliedFromCountryFiche": 528000,
+    "peopleFicheSays": 473000,
+    "ratio": 0.8958333333333334,
+    "status": "consistent"
+  },
+  {
+    "country": "CAF",
+    "peopleId": "PPL_BANDA",
+    "name": "Banda",
+    "percentageInCountry": 28.6,
+    "impliedFromCountryFiche": 1573000,
+    "peopleFicheSays": 1400000,
+    "ratio": 0.8900190718372537,
+    "status": "consistent"
+  },
+  {
+    "country": "COD",
+    "peopleId": "PPL_RWANDAIS_HUTU",
+    "name": "Hutu (Rwandais)",
+    "percentageInCountry": 1.5,
+    "impliedFromCountryFiche": 1692000,
+    "peopleFicheSays": 1500000,
+    "ratio": 0.8865248226950354,
+    "status": "consistent"
+  },
+  {
+    "country": "GIN",
+    "peopleId": "PPL_SOUSSOU",
+    "name": "Soussou",
+    "percentageInCountry": 21,
+    "impliedFromCountryFiche": 3171000,
+    "peopleFicheSays": 2800000,
+    "ratio": 0.8830022075055187,
+    "status": "consistent"
+  },
+  {
+    "country": "GNQ",
+    "peopleId": "PPL_NDOWE",
+    "name": "Ndowe",
+    "percentageInCountry": 4,
+    "impliedFromCountryFiche": 76000,
+    "peopleFicheSays": 67000,
+    "ratio": 0.881578947368421,
+    "status": "consistent"
+  },
+  {
+    "country": "LBR",
+    "peopleId": "PPL_DEI",
+    "name": "Dei",
+    "percentageInCountry": 0.3,
+    "impliedFromCountryFiche": 17100,
+    "peopleFicheSays": 15000,
+    "ratio": 0.8771929824561403,
+    "status": "consistent"
+  },
+  {
+    "country": "RWA",
+    "peopleId": "PPL_RWANDAIS_TUTSI",
+    "name": "Tutsi (Rwandais)",
+    "percentageInCountry": 15,
+    "impliedFromCountryFiche": 2190000,
+    "peopleFicheSays": 1900000,
+    "ratio": 0.867579908675799,
+    "status": "consistent"
+  },
+  {
+    "country": "KEN",
+    "peopleId": "PPL_KIKUYU",
+    "name": "Kikuyu",
+    "percentageInCountry": 17.1,
+    "impliedFromCountryFiche": 9832500,
+    "peopleFicheSays": 8500000,
+    "ratio": 0.8644800406814137,
+    "status": "consistent"
+  },
+  {
+    "country": "CIV",
+    "peopleId": "PPL_MANDE_DU_SUD",
+    "name": "Mandé du Sud",
+    "percentageInCountry": 10,
+    "impliedFromCountryFiche": 3270000,
+    "peopleFicheSays": 2800000,
+    "ratio": 0.8562691131498471,
+    "status": "consistent"
+  },
+  {
+    "country": "ETH",
+    "peopleId": "PPL_OROMO",
+    "name": "Oromo",
+    "percentageInCountry": 35.8,
+    "impliedFromCountryFiche": 48509000,
+    "peopleFicheSays": 41500000,
+    "ratio": 0.8555113484095734,
+    "status": "consistent"
+  },
+  {
+    "country": "CAF",
+    "peopleId": "PPL_GBAYA",
+    "name": "Gbaya",
+    "percentageInCountry": 21.4,
+    "impliedFromCountryFiche": 1177000,
+    "peopleFicheSays": 1000000,
+    "ratio": 0.8496176720475785,
+    "status": "consistent"
+  },
+  {
+    "country": "GAB",
+    "peopleId": "PPL_NZEBI",
+    "name": "Nzebi",
+    "percentageInCountry": 9,
+    "impliedFromCountryFiche": 234000,
+    "peopleFicheSays": 198000,
+    "ratio": 0.8461538461538461,
+    "status": "consistent"
+  },
+  {
+    "country": "KEN",
+    "peopleId": "PPL_LUO",
+    "name": "Luo",
+    "percentageInCountry": 10.7,
+    "impliedFromCountryFiche": 6152500,
+    "peopleFicheSays": 5200000,
+    "ratio": 0.8451848841934173,
+    "status": "consistent"
+  },
+  {
+    "country": "KEN",
+    "peopleId": "PPL_KALENJIN",
+    "name": "Kalenjin",
+    "percentageInCountry": 13.4,
+    "impliedFromCountryFiche": 7705000,
+    "peopleFicheSays": 6500000,
+    "ratio": 0.8436080467229072,
+    "status": "consistent"
+  },
+  {
+    "country": "BDI",
+    "peopleId": "PPL_TUTSI_BURUNDI",
+    "name": "Tutsi (Burundi)",
+    "percentageInCountry": 14,
+    "impliedFromCountryFiche": 2016000,
+    "peopleFicheSays": 1700000,
+    "ratio": 0.8432539682539683,
+    "status": "consistent"
+  },
+  {
+    "country": "KEN",
+    "peopleId": "PPL_KAMBA",
+    "name": "Kamba",
+    "percentageInCountry": 9.8,
+    "impliedFromCountryFiche": 5635000,
+    "peopleFicheSays": 4750000,
+    "ratio": 0.8429458740017747,
+    "status": "consistent"
+  },
+  {
+    "country": "LBR",
+    "peopleId": "PPL_GREBO",
+    "name": "Grebo",
+    "percentageInCountry": 10,
+    "impliedFromCountryFiche": 570000,
+    "peopleFicheSays": 480000,
+    "ratio": 0.8421052631578947,
+    "status": "consistent"
+  },
+  {
+    "country": "LBR",
+    "peopleId": "PPL_AMERICANO_LIBERIENS",
+    "name": "Américano-Libériens",
+    "percentageInCountry": 2.5,
+    "impliedFromCountryFiche": 142500,
+    "peopleFicheSays": 120000,
+    "ratio": 0.8421052631578947,
+    "status": "consistent"
+  },
+  {
+    "country": "LBR",
+    "peopleId": "PPL_MANO",
+    "name": "Mano",
+    "percentageInCountry": 7.9,
+    "impliedFromCountryFiche": 450300,
+    "peopleFicheSays": 377000,
+    "ratio": 0.8372196313568732,
+    "status": "consistent"
+  },
+  {
+    "country": "KEN",
+    "peopleId": "PPL_MAASAI",
+    "name": "Maasai",
+    "percentageInCountry": 2.5,
+    "impliedFromCountryFiche": 1437500,
+    "peopleFicheSays": 1200000,
+    "ratio": 0.8347826086956521,
+    "status": "consistent"
+  },
+  {
+    "country": "DJI",
+    "peopleId": "PPL_SOMALI",
+    "name": "Somali",
+    "percentageInCountry": 60,
+    "impliedFromCountryFiche": 720000,
+    "peopleFicheSays": 600000,
+    "ratio": 0.8333333333333334,
+    "status": "consistent"
+  },
+  {
+    "country": "DJI",
+    "peopleId": "PPL_AFAR",
+    "name": "Afar",
+    "percentageInCountry": 35,
+    "impliedFromCountryFiche": 420000,
+    "peopleFicheSays": 350000,
+    "ratio": 0.8333333333333334,
+    "status": "consistent"
+  },
+  {
+    "country": "LBY",
+    "peopleId": "PPL_NAFUSI",
+    "name": "Nafusi",
+    "percentageInCountry": 3.2,
+    "impliedFromCountryFiche": 240000,
+    "peopleFicheSays": 200000,
+    "ratio": 0.8333333333333334,
+    "status": "consistent"
+  },
+  {
+    "country": "MLI",
+    "peopleId": "PPL_SONINKE",
+    "name": "Soninké",
+    "percentageInCountry": 9.8,
+    "impliedFromCountryFiche": 2469600,
+    "peopleFicheSays": 2057000,
+    "ratio": 0.8329284094590217,
+    "status": "consistent"
+  },
+  {
+    "country": "BFA",
+    "peopleId": "PPL_FULA",
+    "name": "Peul / Fulani",
+    "percentageInCountry": 10,
+    "impliedFromCountryFiche": 2410000,
+    "peopleFicheSays": 2000000,
+    "ratio": 0.8298755186721992,
+    "status": "consistent"
+  },
+  {
+    "country": "DZA",
+    "peopleId": "PPL_KABYLE",
+    "name": "Kabyles",
+    "percentageInCountry": 22.2,
+    "impliedFromCountryFiche": 10522800,
+    "peopleFicheSays": 8500000,
+    "ratio": 0.8077697951115672,
+    "status": "consistent"
+  },
+  {
+    "country": "GAB",
+    "peopleId": "PPL_FANG",
+    "name": "Fang",
+    "percentageInCountry": 32,
+    "impliedFromCountryFiche": 832000,
+    "peopleFicheSays": 672000,
+    "ratio": 0.8076923076923077,
+    "status": "consistent"
+  },
+  {
+    "country": "UGA",
+    "peopleId": "PPL_BAGANDA",
+    "name": "Baganda",
+    "percentageInCountry": 17,
+    "impliedFromCountryFiche": 8738000,
+    "peopleFicheSays": 7000000,
+    "ratio": 0.8010986495765622,
+    "status": "consistent"
+  },
+  {
+    "country": "STP",
+    "peopleId": "PPL_FORROS",
+    "name": "Forros",
+    "percentageInCountry": 50,
+    "impliedFromCountryFiche": 100000,
+    "peopleFicheSays": 80000,
+    "ratio": 0.8,
+    "status": "consistent"
+  },
+  {
+    "country": "GIN",
+    "peopleId": "PPL_MALINKE",
+    "name": "Malinké",
+    "percentageInCountry": 29,
+    "impliedFromCountryFiche": 4379000,
+    "peopleFicheSays": 3500000,
+    "ratio": 0.7992692395524092,
+    "status": "consistent"
+  },
+  {
+    "country": "MDG",
+    "peopleId": "PPL_BETSIMISARAKA",
+    "name": "Betsimisaraka",
+    "percentageInCountry": 15,
+    "impliedFromCountryFiche": 4905000,
+    "peopleFicheSays": 3900000,
+    "ratio": 0.7951070336391437,
+    "status": "consistent"
+  },
+  {
+    "country": "MDG",
+    "peopleId": "PPL_MERINA",
+    "name": "Merina",
+    "percentageInCountry": 27,
+    "impliedFromCountryFiche": 8829000,
+    "peopleFicheSays": 7000000,
+    "ratio": 0.7928417714350436,
+    "status": "consistent"
+  },
+  {
+    "country": "KEN",
+    "peopleId": "PPL_MERU",
+    "name": "Meru",
+    "percentageInCountry": 4.2,
+    "impliedFromCountryFiche": 2415000,
+    "peopleFicheSays": 1900000,
+    "ratio": 0.7867494824016563,
+    "status": "consistent"
+  },
+  {
+    "country": "MLI",
+    "peopleId": "PPL_BAMBARA",
+    "name": "Bambara",
+    "percentageInCountry": 33.3,
+    "impliedFromCountryFiche": 8391600,
+    "peopleFicheSays": 6500000,
+    "ratio": 0.7745841079174413,
+    "status": "consistent"
+  },
+  {
+    "country": "SEN",
+    "peopleId": "PPL_WOLOF",
+    "name": "Wolof",
+    "percentageInCountry": 39.7,
+    "impliedFromCountryFiche": 7503300,
+    "peopleFicheSays": 5800000,
+    "ratio": 0.7729932163181533,
+    "status": "consistent"
+  },
+  {
+    "country": "SEN",
+    "peopleId": "PPL_FULA",
+    "name": "Peul / Fulani",
+    "percentageInCountry": 27.5,
+    "impliedFromCountryFiche": 5197500,
+    "peopleFicheSays": 4000000,
+    "ratio": 0.7696007696007696,
+    "status": "consistent"
+  },
+  {
+    "country": "BFA",
+    "peopleId": "PPL_SENUFO",
+    "name": "Senoufo",
+    "percentageInCountry": 3,
+    "impliedFromCountryFiche": 723000,
+    "peopleFicheSays": 550000,
+    "ratio": 0.7607192254495159,
+    "status": "consistent"
+  },
+  {
+    "country": "EGY",
+    "peopleId": "PPL_SIWI",
+    "name": "Siwi",
+    "percentageInCountry": 0.03,
+    "impliedFromCountryFiche": 35520,
+    "peopleFicheSays": 27000,
+    "ratio": 0.7601351351351351,
+    "status": "consistent"
+  },
+  {
+    "country": "GNB",
+    "peopleId": "PPL_BALANTA",
+    "name": "Balante",
+    "percentageInCountry": 30,
+    "impliedFromCountryFiche": 690000,
+    "peopleFicheSays": 520000,
+    "ratio": 0.7536231884057971,
+    "status": "consistent"
+  },
+  {
+    "country": "SYC",
+    "peopleId": "PPL_SINO_SEYCHELLOIS",
+    "name": "Sino-Seychellois",
+    "percentageInCountry": 2,
+    "impliedFromCountryFiche": 2000,
+    "peopleFicheSays": 1500,
+    "ratio": 0.75,
+    "status": "consistent"
+  },
+  {
+    "country": "BFA",
+    "peopleId": "PPL_GOURMANTCHE",
+    "name": "Gourmantché",
+    "percentageInCountry": 7,
+    "impliedFromCountryFiche": 1687000,
+    "peopleFicheSays": 1248000,
+    "ratio": 0.7397747480735033,
+    "status": "consistent"
+  },
+  {
+    "country": "KEN",
+    "peopleId": "PPL_SOMALI",
+    "name": "Somali",
+    "percentageInCountry": 5.8,
+    "impliedFromCountryFiche": 3335000,
+    "peopleFicheSays": 2400000,
+    "ratio": 0.719640179910045,
+    "status": "consistent"
+  },
+  {
+    "country": "MRT",
+    "peopleId": "PPL_ARABES_AFRIQUE",
+    "name": "Maures / Beidhane",
+    "percentageInCountry": 40,
+    "impliedFromCountryFiche": 2120000,
+    "peopleFicheSays": 1500000,
+    "ratio": 0.7075471698113207,
+    "status": "consistent"
+  },
+  {
+    "country": "ETH",
+    "peopleId": "PPL_AMHARA",
+    "name": "Amhara",
+    "percentageInCountry": 24.1,
+    "impliedFromCountryFiche": 32655500,
+    "peopleFicheSays": 23000000,
+    "ratio": 0.7043223959210546,
+    "status": "consistent"
+  },
+  {
+    "country": "LBR",
+    "peopleId": "PPL_GIO",
+    "name": "Gio / Dan",
+    "percentageInCountry": 8,
+    "impliedFromCountryFiche": 456000,
+    "peopleFicheSays": 320000,
+    "ratio": 0.7017543859649122,
+    "status": "consistent"
+  },
+  {
+    "country": "SEN",
+    "peopleId": "PPL_DIOLA",
+    "name": "Diola / Jola",
+    "percentageInCountry": 4.2,
+    "impliedFromCountryFiche": 793800,
+    "peopleFicheSays": 550000,
+    "ratio": 0.6928697404887881,
+    "status": "consistent"
+  },
+  {
+    "country": "CIV",
+    "peopleId": "PPL_AKAN",
+    "name": "Akan",
+    "percentageInCountry": 42,
+    "impliedFromCountryFiche": 13734000,
+    "peopleFicheSays": 9500000,
+    "ratio": 0.691713994466288,
+    "status": "consistent"
+  },
+  {
+    "country": "LBY",
+    "peopleId": "PPL_TUAREG",
+    "name": "Touaregs",
+    "percentageInCountry": 2.9,
+    "impliedFromCountryFiche": 217500,
+    "peopleFicheSays": 150000,
+    "ratio": 0.6896551724137931,
+    "status": "consistent"
+  },
+  {
+    "country": "MLI",
+    "peopleId": "PPL_MALINKE",
+    "name": "Malinké",
+    "percentageInCountry": 8.8,
+    "impliedFromCountryFiche": 2217600,
+    "peopleFicheSays": 1500000,
+    "ratio": 0.6764069264069265,
+    "status": "consistent"
+  },
+  {
+    "country": "MOZ",
+    "peopleId": "PPL_MAKUA",
+    "name": "Makua",
+    "percentageInCountry": 28,
+    "impliedFromCountryFiche": 9968000,
+    "peopleFicheSays": 6700000,
+    "ratio": 0.6721508828250401,
+    "status": "consistent"
+  },
+  {
+    "country": "GIN",
+    "peopleId": "PPL_KPELLE",
+    "name": "Guerzé / Kpelle",
+    "percentageInCountry": 5,
+    "impliedFromCountryFiche": 755000,
+    "peopleFicheSays": 500000,
+    "ratio": 0.6622516556291391,
+    "status": "divergent"
+  },
+  {
+    "country": "BEN",
+    "peopleId": "PPL_FON",
+    "name": "Fon",
+    "percentageInCountry": 38,
+    "impliedFromCountryFiche": 5624000,
+    "peopleFicheSays": 3700000,
+    "ratio": 0.6578947368421053,
+    "status": "divergent"
+  },
+  {
+    "country": "BFA",
+    "peopleId": "PPL_GURMA",
+    "name": "Autres peuples",
+    "percentageInCountry": 10,
+    "impliedFromCountryFiche": 2410000,
+    "peopleFicheSays": 1550000,
+    "ratio": 0.6431535269709544,
+    "status": "divergent"
+  },
+  {
+    "country": "COD",
+    "peopleId": "PPL_LUBA",
+    "name": "Luba",
+    "percentageInCountry": 18,
+    "impliedFromCountryFiche": 20304000,
+    "peopleFicheSays": 13000000,
+    "ratio": 0.64026792750197,
+    "status": "divergent"
+  },
+  {
+    "country": "SLE",
+    "peopleId": "PPL_KRIO",
+    "name": "Krio",
+    "percentageInCountry": 8,
+    "impliedFromCountryFiche": 704000,
+    "peopleFicheSays": 450000,
+    "ratio": 0.6392045454545454,
+    "status": "divergent"
+  },
+  {
+    "country": "GMB",
+    "peopleId": "PPL_MALINKE",
+    "name": "Mandinka",
+    "percentageInCountry": 33.8,
+    "impliedFromCountryFiche": 946400,
+    "peopleFicheSays": 600000,
+    "ratio": 0.6339814032121724,
+    "status": "divergent"
+  },
+  {
+    "country": "COD",
+    "peopleId": "PPL_TSHOKWE",
+    "name": "Tshokwe",
+    "percentageInCountry": 2,
+    "impliedFromCountryFiche": 2256000,
+    "peopleFicheSays": 1423000,
+    "ratio": 0.6307624113475178,
+    "status": "divergent"
+  },
+  {
+    "country": "COD",
+    "peopleId": "PPL_MONGO",
+    "name": "Mongo",
+    "percentageInCountry": 17,
+    "impliedFromCountryFiche": 19176000,
+    "peopleFicheSays": 12000000,
+    "ratio": 0.6257822277847309,
+    "status": "divergent"
+  },
+  {
+    "country": "TGO",
+    "peopleId": "PPL_MINA",
+    "name": "Mina",
+    "percentageInCountry": 9.6,
+    "impliedFromCountryFiche": 931200,
+    "peopleFicheSays": 581000,
+    "ratio": 0.623926116838488,
+    "status": "divergent"
+  },
+  {
+    "country": "NGA",
+    "peopleId": "PPL_EDO",
+    "name": "Edo / Bini",
+    "percentageInCountry": 1.7,
+    "impliedFromCountryFiche": 4037500,
+    "peopleFicheSays": 2500000,
+    "ratio": 0.6191950464396285,
+    "status": "divergent"
+  },
+  {
+    "country": "RWA",
+    "peopleId": "PPL_RWANDAIS_HUTU",
+    "name": "Hutu (Rwandais)",
+    "percentageInCountry": 84,
+    "impliedFromCountryFiche": 12264000,
+    "peopleFicheSays": 7500000,
+    "ratio": 0.6115459882583171,
+    "status": "divergent"
+  },
+  {
+    "country": "LBR",
+    "peopleId": "PPL_KPELLE",
+    "name": "Kpelle",
+    "percentageInCountry": 20.3,
+    "impliedFromCountryFiche": 1157100,
+    "peopleFicheSays": 700000,
+    "ratio": 0.6049606775559588,
+    "status": "divergent"
+  },
+  {
+    "country": "AGO",
+    "peopleId": "PPL_OVIMBUNDU",
+    "name": "Ovimbundu",
+    "percentageInCountry": 37,
+    "impliedFromCountryFiche": 14430000,
+    "peopleFicheSays": 8700000,
+    "ratio": 0.6029106029106029,
+    "status": "divergent"
+  },
+  {
+    "country": "GIN",
+    "peopleId": "PPL_TOMA_LOMA",
+    "name": "Toma / Loma",
+    "percentageInCountry": 3,
+    "impliedFromCountryFiche": 453000,
+    "peopleFicheSays": 270000,
+    "ratio": 0.5960264900662252,
+    "status": "divergent"
+  },
+  {
+    "country": "SOM",
+    "peopleId": "PPL_BANTOUS_SOMALIENS",
+    "name": "Bantous somaliens",
+    "percentageInCountry": 10,
+    "impliedFromCountryFiche": 1970000,
+    "peopleFicheSays": 1170000,
+    "ratio": 0.5939086294416244,
+    "status": "divergent"
+  },
+  {
+    "country": "LBR",
+    "peopleId": "PPL_MENDE",
+    "name": "Mende",
+    "percentageInCountry": 1.3,
+    "impliedFromCountryFiche": 74100,
+    "peopleFicheSays": 44000,
+    "ratio": 0.5937921727395412,
+    "status": "divergent"
+  },
+  {
+    "country": "MLI",
+    "peopleId": "PPL_DOGON",
+    "name": "Dogon",
+    "percentageInCountry": 8.7,
+    "impliedFromCountryFiche": 2192400,
+    "peopleFicheSays": 1300000,
+    "ratio": 0.5929574895092137,
+    "status": "divergent"
+  },
+  {
+    "country": "NGA",
+    "peopleId": "PPL_HAUSA",
+    "name": "Hausa-Fulani",
+    "percentageInCountry": 36,
+    "impliedFromCountryFiche": 85500000,
+    "peopleFicheSays": 50000000,
+    "ratio": 0.5847953216374269,
+    "status": "divergent"
+  },
+  {
+    "country": "BEN",
+    "peopleId": "PPL_BARIBA",
+    "name": "Bariba",
+    "percentageInCountry": 9,
+    "impliedFromCountryFiche": 1332000,
+    "peopleFicheSays": 770000,
+    "ratio": 0.5780780780780781,
+    "status": "divergent"
+  },
+  {
+    "country": "BDI",
+    "peopleId": "PPL_TWA",
+    "name": "Twa",
+    "percentageInCountry": 1,
+    "impliedFromCountryFiche": 144000,
+    "peopleFicheSays": 80000,
+    "ratio": 0.5555555555555556,
+    "status": "divergent"
+  },
+  {
+    "country": "COD",
+    "peopleId": "PPL_HUNDE",
+    "name": "Hunde",
+    "percentageInCountry": 1.5,
+    "impliedFromCountryFiche": 1692000,
+    "peopleFicheSays": 940000,
+    "ratio": 0.5555555555555556,
+    "status": "divergent"
+  },
+  {
+    "country": "TCD",
+    "peopleId": "PPL_ARABES_AFRIQUE",
+    "name": "Arabes tchadiens",
+    "percentageInCountry": 15,
+    "impliedFromCountryFiche": 3150000,
+    "peopleFicheSays": 1750000,
+    "ratio": 0.5555555555555556,
+    "status": "divergent"
+  },
+  {
+    "country": "TGO",
+    "peopleId": "PPL_KABYE",
+    "name": "Kabye",
+    "percentageInCountry": 14.4,
+    "impliedFromCountryFiche": 1396800,
+    "peopleFicheSays": 760000,
+    "ratio": 0.5441008018327605,
+    "status": "divergent"
+  },
+  {
+    "country": "BFA",
+    "peopleId": "PPL_LOBI_BIRIFOR",
+    "name": "Lobi / Birifor",
+    "percentageInCountry": 5,
+    "impliedFromCountryFiche": 1205000,
+    "peopleFicheSays": 627000,
+    "ratio": 0.5203319502074689,
+    "status": "divergent"
+  },
+  {
+    "country": "COD",
+    "peopleId": "PPL_KONGO",
+    "name": "Kongo",
+    "percentageInCountry": 12,
+    "impliedFromCountryFiche": 13536000,
+    "peopleFicheSays": 7000000,
+    "ratio": 0.5171394799054374,
+    "status": "divergent"
+  },
+  {
+    "country": "TGO",
+    "peopleId": "PPL_EWE",
+    "name": "Ewe",
+    "percentageInCountry": 42,
+    "impliedFromCountryFiche": 4074000,
+    "peopleFicheSays": 2100000,
+    "ratio": 0.5154639175257731,
+    "status": "divergent"
+  },
+  {
+    "country": "ZMB",
+    "peopleId": "PPL_TONGA_ZAMBIA",
+    "name": "Tonga",
+    "percentageInCountry": 13.6,
+    "impliedFromCountryFiche": 2978400,
+    "peopleFicheSays": 1500000,
+    "ratio": 0.5036261079774376,
+    "status": "divergent"
+  },
+  {
+    "country": "MDG",
+    "peopleId": "PPL_ANTANDROY",
+    "name": "Antandroy",
+    "percentageInCountry": 8,
+    "impliedFromCountryFiche": 2616000,
+    "peopleFicheSays": 1300000,
+    "ratio": 0.4969418960244648,
+    "status": "divergent"
+  },
+  {
+    "country": "MDG",
+    "peopleId": "PPL_BETSILEO",
+    "name": "Betsileo",
+    "percentageInCountry": 13,
+    "impliedFromCountryFiche": 4251000,
+    "peopleFicheSays": 2100000,
+    "ratio": 0.4940014114326041,
+    "status": "divergent"
+  },
+  {
+    "country": "GHA",
+    "peopleId": "PPL_DAGOMBA",
+    "name": "Mole-Dagbani",
+    "percentageInCountry": 18.5,
+    "impliedFromCountryFiche": 6493500,
+    "peopleFicheSays": 3185000,
+    "ratio": 0.4904904904904905,
+    "status": "divergent"
+  },
+  {
+    "country": "GNQ",
+    "peopleId": "PPL_ANNOBON",
+    "name": "Annobon",
+    "percentageInCountry": 1,
+    "impliedFromCountryFiche": 19000,
+    "peopleFicheSays": 9200,
+    "ratio": 0.4842105263157895,
+    "status": "divergent"
+  },
+  {
+    "country": "CAF",
+    "peopleId": "PPL_SANGO",
+    "name": "Sango",
+    "percentageInCountry": 14.3,
+    "impliedFromCountryFiche": 786500,
+    "peopleFicheSays": 380000,
+    "ratio": 0.4831532104259377,
+    "status": "divergent"
+  },
+  {
+    "country": "MRT",
+    "peopleId": "PPL_SONINKE",
+    "name": "Soninké",
+    "percentageInCountry": 10,
+    "impliedFromCountryFiche": 530000,
+    "peopleFicheSays": 255000,
+    "ratio": 0.4811320754716981,
+    "status": "divergent"
+  },
+  {
+    "country": "CIV",
+    "peopleId": "PPL_SENUFO",
+    "name": "Voltaïques / Gur",
+    "percentageInCountry": 17,
+    "impliedFromCountryFiche": 5559000,
+    "peopleFicheSays": 2500000,
+    "ratio": 0.4497211728728189,
+    "status": "divergent"
+  },
+  {
+    "country": "BFA",
+    "peopleId": "PPL_DAGARA",
+    "name": "Dagara",
+    "percentageInCountry": 4,
+    "impliedFromCountryFiche": 964000,
+    "peopleFicheSays": 420000,
+    "ratio": 0.43568464730290457,
+    "status": "divergent"
+  },
+  {
+    "country": "BEN",
+    "peopleId": "PPL_DENDI",
+    "name": "Dendi",
+    "percentageInCountry": 6,
+    "impliedFromCountryFiche": 888000,
+    "peopleFicheSays": 380000,
+    "ratio": 0.42792792792792794,
+    "status": "divergent"
+  },
+  {
+    "country": "TUN",
+    "peopleId": "PPL_AMAZIGH_MACRO",
+    "name": "Berbères de Tunisie",
+    "percentageInCountry": 2,
+    "impliedFromCountryFiche": 248000,
+    "peopleFicheSays": 100000,
+    "ratio": 0.4032258064516129,
+    "status": "divergent"
+  },
+  {
+    "country": "COD",
+    "peopleId": "PPL_BEMBA",
+    "name": "Bemba",
+    "percentageInCountry": 1,
+    "impliedFromCountryFiche": 1128000,
+    "peopleFicheSays": 450000,
+    "ratio": 0.39893617021276595,
+    "status": "divergent"
+  },
+  {
+    "country": "SDN",
+    "peopleId": "PPL_NUBIENS",
+    "name": "Nubiens",
+    "percentageInCountry": 5,
+    "impliedFromCountryFiche": 2585000,
+    "peopleFicheSays": 1000000,
+    "ratio": 0.38684719535783363,
+    "status": "divergent"
+  },
+  {
+    "country": "BEN",
+    "peopleId": "PPL_LAMBA",
+    "name": "Lamba",
+    "percentageInCountry": 2,
+    "impliedFromCountryFiche": 296000,
+    "peopleFicheSays": 114000,
+    "ratio": 0.38513513513513514,
+    "status": "divergent"
+  },
+  {
+    "country": "DZA",
+    "peopleId": "PPL_MOZABITE",
+    "name": "Mozabites",
+    "percentageInCountry": 1.4,
+    "impliedFromCountryFiche": 663600,
+    "peopleFicheSays": 250000,
+    "ratio": 0.3767329716696805,
+    "status": "divergent"
+  },
+  {
+    "country": "TZA",
+    "peopleId": "PPL_SWAHILI_TANZANIE",
+    "name": "Swahili (Tanzanie)",
+    "percentageInCountry": 5,
+    "impliedFromCountryFiche": 3530000,
+    "peopleFicheSays": 1200000,
+    "ratio": 0.33994334277620397,
+    "status": "divergent"
+  },
+  {
+    "country": "MUS",
+    "peopleId": "PPL_SINO_MAURICIENS",
+    "name": "Sino-Mauriciens",
+    "percentageInCountry": 2.3,
+    "impliedFromCountryFiche": 29900,
+    "peopleFicheSays": 10000,
+    "ratio": 0.33444816053511706,
+    "status": "divergent"
+  },
+  {
+    "country": "BEN",
+    "peopleId": "PPL_ADJA",
+    "name": "Adja-Ewe",
+    "percentageInCountry": 16,
+    "impliedFromCountryFiche": 2368000,
+    "peopleFicheSays": 750000,
+    "ratio": 0.31672297297297297,
+    "status": "divergent"
+  },
+  {
+    "country": "COD",
+    "peopleId": "PPL_TETELA",
+    "name": "Tetela",
+    "percentageInCountry": 7,
+    "impliedFromCountryFiche": 7896000,
+    "peopleFicheSays": 2350000,
+    "ratio": 0.2976190476190476,
+    "status": "divergent"
+  },
+  {
+    "country": "COD",
+    "peopleId": "PPL_RWANDAIS_TUTSI",
+    "name": "Tutsi (Rwandais)",
+    "percentageInCountry": 1.5,
+    "impliedFromCountryFiche": 1692000,
+    "peopleFicheSays": 500000,
+    "ratio": 0.29550827423167847,
+    "status": "divergent"
+  },
+  {
+    "country": "CIV",
+    "peopleId": "PPL_BETE",
+    "name": "Krou",
+    "percentageInCountry": 11,
+    "impliedFromCountryFiche": 3597000,
+    "peopleFicheSays": 994000,
+    "ratio": 0.27634139560745064,
+    "status": "divergent"
+  },
+  {
+    "country": "CAF",
+    "peopleId": "PPL_NGBANDE",
+    "name": "Ngbande",
+    "percentageInCountry": 7.1,
+    "impliedFromCountryFiche": 390500,
+    "peopleFicheSays": 100000,
+    "ratio": 0.2560819462227913,
+    "status": "divergent"
+  },
+  {
+    "country": "ERI",
+    "peopleId": "PPL_TIGRAY",
+    "name": "Tigrinya",
+    "percentageInCountry": 55,
+    "impliedFromCountryFiche": 1980000,
+    "peopleFicheSays": 500000,
+    "ratio": 0.25252525252525254,
+    "status": "divergent"
+  },
+  {
+    "country": "BEN",
+    "peopleId": "PPL_OTAMARI_SOMBA",
+    "name": "Otamari / Somba",
+    "percentageInCountry": 5,
+    "impliedFromCountryFiche": 740000,
+    "peopleFicheSays": 180000,
+    "ratio": 0.24324324324324326,
+    "status": "divergent"
+  },
+  {
+    "country": "BFA",
+    "peopleId": "PPL_BOBO",
+    "name": "Bobo",
+    "percentageInCountry": 4,
+    "impliedFromCountryFiche": 964000,
+    "peopleFicheSays": 220000,
+    "ratio": 0.22821576763485477,
+    "status": "divergent"
+  },
+  {
+    "country": "BFA",
+    "peopleId": "PPL_TUAREG",
+    "name": "Touareg",
+    "percentageInCountry": 1,
+    "impliedFromCountryFiche": 241000,
+    "peopleFicheSays": 50000,
+    "ratio": 0.2074688796680498,
+    "status": "divergent"
+  },
+  {
+    "country": "CIV",
+    "peopleId": "PPL_MALINKE",
+    "name": "Mandé du Nord",
+    "percentageInCountry": 16,
+    "impliedFromCountryFiche": 5232000,
+    "peopleFicheSays": 1000000,
+    "ratio": 0.191131498470948,
+    "status": "divergent"
+  },
+  {
+    "country": "RWA",
+    "peopleId": "PPL_TWA",
+    "name": "Twa",
+    "percentageInCountry": 1,
+    "impliedFromCountryFiche": 146000,
+    "peopleFicheSays": 25000,
+    "ratio": 0.17123287671232876,
+    "status": "divergent"
+  },
+  {
+    "country": "SLE",
+    "peopleId": "PPL_YALUNKA",
+    "name": "Yalunka",
+    "percentageInCountry": 4,
+    "impliedFromCountryFiche": 352000,
+    "peopleFicheSays": 52000,
+    "ratio": 0.14772727272727273,
+    "status": "divergent"
+  },
+  {
+    "country": "CAF",
+    "peopleId": "PPL_AKA",
+    "name": "Aka",
+    "percentageInCountry": 2.9,
+    "impliedFromCountryFiche": 159500,
+    "peopleFicheSays": 20000,
+    "ratio": 0.12539184952978055,
+    "status": "divergent"
+  },
+  {
+    "country": "COD",
+    "peopleId": "PPL_LUNDA",
+    "name": "Lunda",
+    "percentageInCountry": 2,
+    "impliedFromCountryFiche": 2256000,
+    "peopleFicheSays": 259000,
+    "ratio": 0.1148049645390071,
+    "status": "divergent"
+  },
+  {
+    "country": "BEN",
+    "peopleId": "PPL_GURMA",
+    "name": "Autres peuples",
+    "percentageInCountry": 5,
+    "impliedFromCountryFiche": 740000,
+    "peopleFicheSays": 80000,
+    "ratio": 0.10810810810810811,
+    "status": "divergent"
+  },
+  {
+    "country": "MRT",
+    "peopleId": "PPL_HALPULAAR",
+    "name": "Halpulaar",
+    "percentageInCountry": 12,
+    "impliedFromCountryFiche": 636000,
+    "peopleFicheSays": 50000,
+    "ratio": 0.07861635220125786,
+    "status": "divergent"
+  },
+  {
+    "country": "MAR",
+    "peopleId": "PPL_AIT_HDZ",
+    "name": "Aït Yafelman",
+    "percentageInCountry": 3.8,
+    "impliedFromCountryFiche": 1459200,
+    "peopleFicheSays": 50000,
+    "ratio": 0.034265350877192985,
+    "status": "divergent"
+  },
+  {
+    "country": "SOM",
+    "peopleId": "PPL_ARABES_SOMALIENS",
+    "name": "Arabes somaliens",
+    "percentageInCountry": 5,
+    "impliedFromCountryFiche": 985000,
+    "peopleFicheSays": 5000,
+    "ratio": 0.005076142131979695,
+    "status": "divergent"
+  },
+  {
+    "country": "AGO",
+    "peopleId": null,
+    "name": "Autres groupes ethniques",
+    "percentageInCountry": 63,
+    "impliedFromCountryFiche": 24570000,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "BEN",
+    "peopleId": "PPL_FULA",
+    "name": "Peul / Fulani",
+    "percentageInCountry": 7,
+    "impliedFromCountryFiche": 1036000,
+    "status": "absent-from-distributionByCountry"
+  },
+  {
+    "country": "BWA",
+    "peopleId": null,
+    "name": "Autres groupes ethniques",
+    "percentageInCountry": 21,
+    "impliedFromCountryFiche": 546000,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "CAF",
+    "name": "Autres peuples",
+    "percentageInCountry": 21.4,
+    "impliedFromCountryFiche": 1177000,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "CIV",
+    "peopleId": "PPL_DIOLA",
+    "name": "Autres peuples",
+    "percentageInCountry": 4,
+    "impliedFromCountryFiche": 1308000,
+    "status": "absent-from-distributionByCountry"
+  },
+  {
+    "country": "CMR",
+    "peopleId": null,
+    "name": "Autres groupes ethniques",
+    "percentageInCountry": 78,
+    "impliedFromCountryFiche": 23322000,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "COD",
+    "peopleId": "PPL_LINGALA",
+    "name": "Lingala (locuteurs)",
+    "percentageInCountry": 0,
+    "impliedFromCountryFiche": 0,
+    "peopleFicheSays": 34000000,
+    "status": "divergent"
+  },
+  {
+    "country": "COD",
+    "peopleId": null,
+    "name": "Autres groupes ethniques",
+    "percentageInCountry": 34,
+    "impliedFromCountryFiche": 38352000,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "COG",
+    "peopleId": null,
+    "name": "Autres groupes ethniques",
+    "percentageInCountry": 60,
+    "impliedFromCountryFiche": 3900000,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "COM",
+    "peopleId": null,
+    "name": "Autres groupes ethniques",
+    "percentageInCountry": 3,
+    "impliedFromCountryFiche": 27000,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "DJI",
+    "peopleId": null,
+    "name": "Autres groupes ethniques",
+    "percentageInCountry": 2,
+    "impliedFromCountryFiche": 24000,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "EGY",
+    "peopleId": "PPL_COPTES",
+    "name": "Coptes",
+    "percentageInCountry": 10,
+    "impliedFromCountryFiche": 11840000,
+    "peopleFicheSays": 0,
+    "ratio": 0,
+    "status": "divergent"
+  },
+  {
+    "country": "ERI",
+    "name": "Autres peuples",
+    "percentageInCountry": 1,
+    "impliedFromCountryFiche": 36000,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "ETH",
+    "peopleId": "PPL_TIGRE",
+    "name": "Tigréens",
+    "percentageInCountry": 5.7,
+    "impliedFromCountryFiche": 7723500,
+    "status": "absent-from-distributionByCountry"
+  },
+  {
+    "country": "ETH",
+    "peopleId": null,
+    "name": "Autres groupes ethniques",
+    "percentageInCountry": 20,
+    "impliedFromCountryFiche": 27100000,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "GAB",
+    "peopleId": null,
+    "name": "Autres groupes ethniques",
+    "percentageInCountry": 47,
+    "impliedFromCountryFiche": 1222000,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "GHA",
+    "peopleId": "PPL_GURMA",
+    "name": "Gurma",
+    "percentageInCountry": 6.4,
+    "impliedFromCountryFiche": 2246400,
+    "status": "absent-from-distributionByCountry"
+  },
+  {
+    "country": "GHA",
+    "peopleId": null,
+    "name": "Grusi",
+    "percentageInCountry": 2.7,
+    "impliedFromCountryFiche": 947700,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "GHA",
+    "peopleId": null,
+    "name": "Mande",
+    "percentageInCountry": 2,
+    "impliedFromCountryFiche": 702000,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "GHA",
+    "peopleId": null,
+    "name": "Autres groupes ethniques",
+    "percentageInCountry": 1.6,
+    "impliedFromCountryFiche": 561600,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "GIN",
+    "name": "Autres peuples",
+    "percentageInCountry": 4,
+    "impliedFromCountryFiche": 604000,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "GMB",
+    "peopleId": "PPL_FULA",
+    "name": "Fula / Peul",
+    "percentageInCountry": 21.8,
+    "impliedFromCountryFiche": 610400,
+    "status": "absent-from-distributionByCountry"
+  },
+  {
+    "country": "GMB",
+    "peopleId": null,
+    "name": "Autres groupes ethniques",
+    "percentageInCountry": 32,
+    "impliedFromCountryFiche": 896000,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "GNB",
+    "peopleId": "PPL_FULA",
+    "name": "Fula / Peul",
+    "percentageInCountry": 30,
+    "impliedFromCountryFiche": 690000,
+    "status": "absent-from-distributionByCountry"
+  },
+  {
+    "country": "GNB",
+    "peopleId": "PPL_MALINKE",
+    "name": "Mandinka",
+    "percentageInCountry": 13,
+    "impliedFromCountryFiche": 299000,
+    "status": "absent-from-distributionByCountry"
+  },
+  {
+    "country": "GNB",
+    "peopleId": null,
+    "name": "Autres groupes ethniques",
+    "percentageInCountry": 20,
+    "impliedFromCountryFiche": 460000,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "GNQ",
+    "name": "Autres peuples",
+    "percentageInCountry": 9,
+    "impliedFromCountryFiche": 171000,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "KEN",
+    "peopleId": null,
+    "name": "Autres groupes ethniques",
+    "percentageInCountry": 11.4,
+    "impliedFromCountryFiche": 6555000,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "LBR",
+    "peopleId": "PPL_MALINKE",
+    "name": "Mandingo / Mandinka",
+    "percentageInCountry": 3.2,
+    "impliedFromCountryFiche": 182400,
+    "status": "absent-from-distributionByCountry"
+  },
+  {
+    "country": "LBR",
+    "peopleId": null,
+    "name": "Autres groupes ethniques",
+    "percentageInCountry": 8.8,
+    "impliedFromCountryFiche": 501600,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "LBY",
+    "name": "Autres groupes",
+    "percentageInCountry": 2.5,
+    "impliedFromCountryFiche": 187500,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "MDG",
+    "peopleId": null,
+    "name": "Autres groupes ethniques",
+    "percentageInCountry": 32,
+    "impliedFromCountryFiche": 10464000,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "MLI",
+    "peopleId": null,
+    "name": "Autres groupes ethniques",
+    "percentageInCountry": 18.5,
+    "impliedFromCountryFiche": 4662000,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "MOZ",
+    "peopleId": null,
+    "name": "Autres groupes ethniques",
+    "percentageInCountry": 72,
+    "impliedFromCountryFiche": 25632000,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "MRT",
+    "peopleId": "PPL_BAMBARA",
+    "name": "Bambara",
+    "percentageInCountry": 2,
+    "impliedFromCountryFiche": 106000,
+    "status": "absent-from-distributionByCountry"
+  },
+  {
+    "country": "MRT",
+    "peopleId": null,
+    "name": "Autres groupes",
+    "percentageInCountry": 4,
+    "impliedFromCountryFiche": 212000,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "MUS",
+    "peopleId": null,
+    "name": "Autres groupes",
+    "percentageInCountry": 7.7,
+    "impliedFromCountryFiche": 100100,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "MWI",
+    "peopleId": null,
+    "name": "Autres groupes ethniques",
+    "percentageInCountry": 65,
+    "impliedFromCountryFiche": 14430000,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "NAM",
+    "peopleId": null,
+    "name": "Autres groupes ethniques",
+    "percentageInCountry": 50,
+    "impliedFromCountryFiche": 1550000,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "NER",
+    "name": "Autres peuples",
+    "percentageInCountry": 46.5,
+    "impliedFromCountryFiche": 12973500,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "NGA",
+    "peopleId": null,
+    "name": "Autres groupes ethniques",
+    "percentageInCountry": 20.5,
+    "impliedFromCountryFiche": 48687500,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "SDN",
+    "peopleId": null,
+    "name": "Autres groupes",
+    "percentageInCountry": 16.5,
+    "impliedFromCountryFiche": 8530500,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "SEN",
+    "peopleId": null,
+    "name": "Autres groupes ethniques",
+    "percentageInCountry": 12.6,
+    "impliedFromCountryFiche": 2381400,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "SLE",
+    "peopleId": null,
+    "name": "Autres groupes",
+    "percentageInCountry": 20.8,
+    "impliedFromCountryFiche": 1830400,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "SSD",
+    "name": "Autres peuples",
+    "percentageInCountry": 44.6,
+    "impliedFromCountryFiche": 5441200,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "STP",
+    "peopleId": null,
+    "name": "Autres groupes ethniques",
+    "percentageInCountry": 45,
+    "impliedFromCountryFiche": 90000,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "SWZ",
+    "peopleId": null,
+    "name": "Autres groupes ethniques",
+    "percentageInCountry": 3,
+    "impliedFromCountryFiche": 39000,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "SYC",
+    "peopleId": null,
+    "name": "Autres groupes",
+    "percentageInCountry": 2,
+    "impliedFromCountryFiche": 2000,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "TCD",
+    "peopleId": null,
+    "name": "Autres groupes",
+    "percentageInCountry": 60.7,
+    "impliedFromCountryFiche": 12747000,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "TGO",
+    "peopleId": null,
+    "name": "Autres groupes",
+    "percentageInCountry": 34,
+    "impliedFromCountryFiche": 3298000,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "TZA",
+    "peopleId": null,
+    "name": "Autres groupes ethniques",
+    "percentageInCountry": 79,
+    "impliedFromCountryFiche": 55774000,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "UGA",
+    "name": "Autres peuples",
+    "percentageInCountry": 58,
+    "impliedFromCountryFiche": 29812000,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "ZAF",
+    "name": "Africains noirs",
+    "percentageInCountry": 81.4,
+    "impliedFromCountryFiche": 52747200,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "ZAF",
+    "name": "Métis (Coloureds)",
+    "percentageInCountry": 8.2,
+    "impliedFromCountryFiche": 5313600,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "ZAF",
+    "name": "Blancs",
+    "percentageInCountry": 7.3,
+    "impliedFromCountryFiche": 4730400,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "ZAF",
+    "name": "Indiens / Asiatiques",
+    "percentageInCountry": 2.7,
+    "impliedFromCountryFiche": 1749600,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "ZAF",
+    "name": "Autres / Non spécifié",
+    "percentageInCountry": 0.4,
+    "impliedFromCountryFiche": 259200,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "ZMB",
+    "peopleId": null,
+    "name": "Autres groupes ethniques",
+    "percentageInCountry": 65,
+    "impliedFromCountryFiche": 14235000,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "ZWE",
+    "name": "Ndebele (",
+    "percentageInCountry": 14,
+    "impliedFromCountryFiche": 2380000,
+    "status": "no-peopleId"
+  },
+  {
+    "country": "ZWE",
+    "peopleId": null,
+    "name": "Autres groupes ethniques",
+    "percentageInCountry": 4,
+    "impliedFromCountryFiche": 680000,
+    "status": "no-peopleId"
+  }
+]

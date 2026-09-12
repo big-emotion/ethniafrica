@@ -67,15 +67,15 @@ describe("the Nommer pillar", () => {
   // The three numbers that replace a percentage: the gap is published beside
   // the finding, which is the whole reason the band exists.
   // @req REQ-113
-  it("states the undeclared fiches beside the contested ones", () => {
+  it("states the undeclared pages beside the contested ones", () => {
     render(<NommerPillarPage language="fr" />);
 
     expect(screen.getByText(/446 sur 776/)).toBeInTheDocument();
     expect(
-      screen.getByText(/311 fiches ne déclarent rien/)
+      screen.getByText(/311 pages de peuple sur 776 ne déclarent aucun statut/)
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/311 fiches de peuple sur 776 ne déclarent aucun statut/)
+      screen.getByText(/311 pages de peuple sur 776 ne déclarent aucun statut/)
     ).toBeInTheDocument();
   });
 

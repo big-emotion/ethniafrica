@@ -14,10 +14,10 @@ import { getCountryRoute } from "@/lib/routing";
 /**
  * The country globe's panel.
  *
- * The family and people fiches have fed their globe facts since the shell
+ * The family and people pages have fed their globe facts since the shell
  * shipped; the country route passed none, so its panel fell back to naming the
  * country and nothing else. What the mockup puts there is a count and the
- * first entries — and, when the corpus attaches no people to the country, a
+ * first entries — and, when the atlas attaches no people to the country, a
  * sentence saying so rather than a bare zero.
  */
 
@@ -38,15 +38,15 @@ describe("country target facts", () => {
       countryWith([{ name: "Yoruba" }])
     );
     render(<>{facts.NGA?.body}</>);
-    expect(screen.getByText("Peoples declared by the fiche")).toBeVisible();
+    expect(screen.getByText("Peoples declared by the page")).toBeVisible();
     expect(screen.getByText("First entries")).toBeVisible();
   });
 
   // The label says whose count it is. Two surfaces counted this country
-  // differently - the fiche's declared list and the corpus join table - and an
-  // unqualified "au corpus" made them read as one number contradicting itself.
+  // differently - the page's declared list and the corpus join table - and an
+  // unqualified "à l’atlas" made them read as one number contradicting itself.
   // @req REQ-117
-  it("names the country and counts the peoples its own fiche declares", () => {
+  it("names the country and counts the peoples its own page declares", () => {
     const facts = buildCountryTargetFacts(
       "fr",
       countryWith([{ name: "Yoruba" }, { name: "Igbo" }, { name: "Haoussa" }])
@@ -55,7 +55,7 @@ describe("country target facts", () => {
     expect(facts.NGA?.title).toBe("Nigéria");
     render(<>{facts.NGA?.body}</>);
     expect(
-      screen.getByText("Peuples déclarés par la fiche")
+      screen.getByText("Peuples déclarés par la page")
     ).toBeInTheDocument();
     expect(screen.getByText("3")).toBeInTheDocument();
   });
@@ -79,12 +79,12 @@ describe("country target facts", () => {
   // A zero would read as a fact about the country. It is a fact about the
   // corpus, and the panel has to say which.
   // @req REQ-117
-  it("says the corpus is empty rather than showing a bare zero", () => {
+  it("says the atlas is empty rather than showing a bare zero", () => {
     const facts = buildCountryTargetFacts("fr", countryWith(undefined));
 
     render(<>{facts.NGA?.body}</>);
     expect(
-      screen.getByText("Aucun peuple rattaché à ce pays dans le corpus.")
+      screen.getByText("Aucun peuple rattaché à ce pays dans l’atlas.")
     ).toBeInTheDocument();
     expect(screen.queryByText("Premières entrées")).toBeNull();
   });
@@ -120,8 +120,8 @@ describe("country target facts", () => {
 });
 
 /**
- * The fiche's globe offers the whole corpus, so the panel has to answer for
- * countries the fiche says nothing about. It answers from the corpus — how
+ * The fiche's globe offers the whole atlas, so the panel has to answer for
+ * countries the page says nothing about. It answers from the atlas — how
  * many peoples are documented there — and always offers the way in, because a
  * panel that names a country and then strands the reader on someone else's
  * fiche is worse than one that says nothing.
@@ -143,20 +143,20 @@ describe("buildCountryAtlasFacts (REQ-117)", () => {
   }
 
   // @req REQ-117
-  it("keeps the fiche's own country pointed at the reading below, not at a reload", () => {
+  it("keeps the page's own country pointed at the reading below, not at a reload", () => {
     render(<>{facts().NGA?.body}</>);
 
     expect(
-      screen.getByRole("link", { name: /Lire la fiche complète/ })
+      screen.getByRole("link", { name: /Lire la page complète/ })
     ).toHaveAttribute("href", "#fiche");
   });
 
   // @req REQ-117
-  it("sends another country to its own fiche", () => {
+  it("sends another country to its own page", () => {
     render(<>{facts().KEN?.body}</>);
 
     expect(
-      screen.getByRole("link", { name: /Lire la fiche complète/ })
+      screen.getByRole("link", { name: /Lire la page complète/ })
     ).toHaveAttribute("href", getCountryRoute("fr", "KEN"));
   });
 
@@ -173,12 +173,12 @@ describe("buildCountryAtlasFacts (REQ-117)", () => {
 
   // A zero here means the corpus is silent, not that a country is empty.
   // @req REQ-117
-  it("reads an absent count as corpus silence rather than as none", () => {
+  it("reads an absent count as atlas silence rather than as none", () => {
     const kenya = facts({}).KEN;
     render(<>{kenya?.body}</>);
 
     expect(
-      screen.getByText(/Aucun peuple rattaché à ce pays dans le corpus/)
+      screen.getByText(/Aucun peuple rattaché à ce pays dans l’atlas/)
     ).toBeInTheDocument();
     expect(kenya?.description).not.toContain("0 peuple");
     expect(kenya?.description).toMatch(/^KEN ·/);
@@ -299,7 +299,7 @@ describe("buildCountryAtlasFacts (REQ-117)", () => {
   );
 
   // @req REQ-117
-  it("shows the same brief fields for the fiche country and another country", () => {
+  it("shows the same brief fields for the page country and another country", () => {
     const atlasFacts = facts(undefined, {
       NGA: {
         population: 237_527_782,
@@ -333,7 +333,7 @@ describe("what the panel's subtitle states", () => {
   const targets = buildCountryPickerTargets(["NGA"]);
 
   // @req REQ-117
-  it("locates the fiche's own country rather than restating the charter", () => {
+  it("locates the page's own country rather than restating the charter", () => {
     const facts = buildCountryAtlasFacts({
       language: "fr",
       country: countryWith([{ name: "Yoruba" }]),
@@ -351,8 +351,8 @@ describe("what the panel's subtitle states", () => {
 /**
  * Two things the mockup's panel head and body carry that the shipped one did
  * not: the country's flag, and a chip saying where the panel's own numbers come
- * from. The second matters more than it looks — the fiche's own country is
- * answered from what the fiche declares, every other country from the corpus's
+ * from. The second matters more than it looks — the page's own country is
+ * answered from what the page declares, every other country from the atlas's
  * join table, and those count different things. Left unlabelled they read as
  * one number disagreeing with itself.
  */
@@ -378,19 +378,17 @@ describe("what the panel shows it is", () => {
   });
 
   // @req REQ-117
-  it("says the fiche's own figures are the fiche's own", () => {
+  it("says the page's own figures are the fiche's own", () => {
     render(<>{facts().NGA?.body}</>);
 
-    expect(screen.getByText(/Peuples déclarés par la fiche/)).toBeVisible();
-    expect(screen.getByText(/Fiche rédigée/)).toBeVisible();
+    expect(screen.getByText(/Peuples déclarés par la page/)).toBeVisible();
+    expect(screen.getByText(/Page rédigée/)).toBeVisible();
   });
 
   // @req REQ-117
   it("says another country's figures are derived, not declared", () => {
     render(<>{facts().KEN?.body}</>);
 
-    expect(
-      screen.getByText(/Présence dérivée des fiches peuple/)
-    ).toBeVisible();
+    expect(screen.getByText(/Présence dérivée des pages peuple/)).toBeVisible();
   });
 });
