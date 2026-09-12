@@ -2098,20 +2098,25 @@ def portes(cartes, deck, identites=None):
                 f"tableau, et un tableau ne se lit pas à la vitesse du pouce. "
                 f"Coupe la carte en deux")
 
-        # 3 — no internal note in a printed field.
+        # 3 — no internal note in a printed field, and every printed field holds
+        # text. Both checks used to sit *outside* the loop that walks the fields,
+        # so `source` was the only one ever inspected: a note left in a title went
+        # out printed, and a two-term title the migration left as a list reached
+        # the painter and crashed it instead of being refused here, by name.
         for champ in ("titre", "precision", "punchline", "corps", "source"):
             valeur = c.get(champ, "")
-        if valeur is not None and not isinstance(valeur, str):
-            manquantes.append(
-                f"carte {c.get('rang')} : `{champ}` porte "
-                f"{type(valeur).__name__}, pas du texte — {str(valeur)[:40]}. "
-                f"Reste d'un schéma retiré ; relance la migration ou réécris le "
-                f"champ dans `structure`")
-            continue
-        if tk.note_interne(valeur or ""):
+            if valeur is not None and not isinstance(valeur, str):
                 manquantes.append(
-                    f"carte {c['rang']} : « {c[champ]} » est une note à l'opérateur dans un "
-                    f"champ imprimé — tranche-la, elle ne s'imprime pas")
+                    f"carte {c.get('rang')} : `{champ}` porte "
+                    f"{type(valeur).__name__}, pas du texte — {str(valeur)[:40]}. "
+                    f"Reste d'un schéma retiré ; relance la migration ou réécris le "
+                    f"champ dans `structure`")
+                continue
+            if tk.note_interne(valeur or ""):
+                manquantes.append(
+                    f"carte {c['rang']} : `{champ}` porte « {valeur} », une note à "
+                    f"l'opérateur dans un champ imprimé — tranche-la, elle ne "
+                    f"s'imprime pas")
         for champ in ("credit", "depot", "licence"):
             if tk.note_interne(im.get(champ, "")):
                 manquantes.append(

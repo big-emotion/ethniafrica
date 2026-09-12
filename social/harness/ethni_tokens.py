@@ -421,9 +421,16 @@ _LICENCE_RANK = [
 ]
 
 # §7 and §11 — a message to the operator, never a printed field.
+#
+# The « à + verbe » forms are anchored to the end of the field, and that is what
+# separates a note from copy: an operator's note trails what it is about
+# (« licence à nommer »), while the same three words run mid-sentence in
+# published prose — « un seul mot sert encore à nommer tous les peuples ». That
+# sentence is on a card of the Baka lot, and an unanchored marker refuses it.
+# TODO and FIXME need no anchor: they do not occur in reader-facing French.
 _NOTE_INTERNE = re.compile(
-    r"à\s+(nommer|confirmer|compléter|vérifier|sourcer)|"
-    r"\b(TODO|FIXME|à\s+faire)\b", re.I)
+    r"à\s+(?:nommer|confirmer|compléter|vérifier|sourcer|faire)\s*[.…!?»)\]]*$"
+    r"|\b(?:TODO|FIXME)\b", re.I)
 
 
 def licence_sortie(licences):
