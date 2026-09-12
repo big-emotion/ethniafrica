@@ -49,12 +49,16 @@ test.beforeEach(async ({ page }) => {
   await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
 });
 
+// The corpus counts moved from a grid row of their own into the copy column,
+// under the search: they qualify the promise the sentence makes, so a reader
+// who came to search reaches the field first (HomeHero.tsx). Three figures,
+// not five — HomeCorpusCounts.test.tsx holds the class list.
 // @req REQ-112
 test.describe("Search-first home — mobile source of truth (ETNI-1513)", () => {
   test.use({ viewport: MOBILE_VIEWPORT });
 
   // @req REQ-112
-  test("puts search and a material part of the globe in the first 430px fold", async ({
+  test("@smoke puts search and a material part of the globe in the first 430px fold", async ({
     page,
   }) => {
     const hero = page.locator(".home-hero");
@@ -63,11 +67,11 @@ test.describe("Search-first home — mobile source of truth (ETNI-1513)", () => 
     const search = copy.getByRole("search");
     const seeds = copy.getByRole("list", { name: "Exemples de recherche" });
     const globe = inner.locator(".home-hero-globe .home-globe-stage");
-    const counts = inner.locator(".home-hero-counts");
+    const counts = copy.getByTestId("home-corpus-counts");
     const fact = page.getByTestId("home-did-you-know");
 
     await expect(seeds.getByRole("button")).toHaveCount(3);
-    await expect(page.getByTestId(/^home-count-/)).toHaveCount(5);
+    await expect(page.getByTestId(/^home-count-/)).toHaveCount(3);
     await expect(fact).toHaveCount(1);
     await expect(
       page.locator('.home-hero + [data-testid="home-did-you-know"]')
@@ -75,8 +79,8 @@ test.describe("Search-first home — mobile source of truth (ETNI-1513)", () => 
 
     const searchBox = await elementBox(search);
     const seedsBox = await elementBox(seeds);
-    const globeBox = await elementBox(globe);
     const countsBox = await elementBox(counts);
+    const globeBox = await elementBox(globe);
     const factBox = await elementBox(fact);
 
     expect(searchBox.y).toBeGreaterThanOrEqual(0);
@@ -89,29 +93,29 @@ test.describe("Search-first home — mobile source of truth (ETNI-1513)", () => 
 
     // Reading order and the one-column visual order must agree on mobile.
     const copyFlow = await copy
-      .locator('form[role="search"], ul[aria-label="Exemples de recherche"]')
+      .locator(
+        'form[role="search"], ul[aria-label="Exemples de recherche"], [data-testid="home-corpus-counts"]'
+      )
       .evaluateAll((nodes) => nodes.map((node) => node.tagName));
-    expect(copyFlow).toEqual(["FORM", "UL"]);
+    expect(copyFlow).toEqual(["FORM", "UL", "DL"]);
 
     const pageFlow = await page
       .locator(
-        ".home-hero-copy, .home-hero-globe, .home-hero-counts, " +
-          '[data-testid="home-did-you-know"]'
+        '.home-hero-copy, .home-hero-globe, [data-testid="home-did-you-know"]'
       )
       .evaluateAll((nodes) =>
         nodes.map((node) => {
           if (node.classList.contains("home-hero-copy")) return "copy";
           if (node.classList.contains("home-hero-globe")) return "globe";
-          if (node.classList.contains("home-hero-counts")) return "counts";
           return "fact";
         })
       );
-    expect(pageFlow).toEqual(["copy", "globe", "counts", "fact"]);
+    expect(pageFlow).toEqual(["copy", "globe", "fact"]);
 
     expect(seedsBox.y).toBeGreaterThanOrEqual(bottom(searchBox) - 1);
-    expect(globeBox.y).toBeGreaterThanOrEqual(bottom(seedsBox) - 1);
-    expect(countsBox.y).toBeGreaterThanOrEqual(bottom(globeBox) - 1);
-    expect(factBox.y).toBeGreaterThanOrEqual(bottom(countsBox) - 1);
+    expect(countsBox.y).toBeGreaterThanOrEqual(bottom(seedsBox) - 1);
+    expect(globeBox.y).toBeGreaterThanOrEqual(bottom(countsBox) - 1);
+    expect(factBox.y).toBeGreaterThanOrEqual(bottom(globeBox) - 1);
 
     // A content-driven band keeps the same used height when only the viewport
     // height changes. The computed floors also rule out vh/svh/dvh min-size
@@ -167,11 +171,11 @@ test.describe("Search-first home — desktop widening pass (ETNI-1513)", () => {
     const copy = inner.locator(".home-hero-copy");
     const seeds = copy.getByRole("list", { name: "Exemples de recherche" });
     const globe = inner.locator(".home-hero-globe");
-    const counts = inner.locator(".home-hero-counts");
+    const counts = copy.getByTestId("home-corpus-counts");
     const fact = page.getByTestId("home-did-you-know");
 
     await expect(seeds.getByRole("button")).toHaveCount(4);
-    await expect(page.getByTestId(/^home-count-/)).toHaveCount(5);
+    await expect(page.getByTestId(/^home-count-/)).toHaveCount(3);
     await expect(fact).toHaveCount(1);
     await expect(
       page.locator('.home-hero + [data-testid="home-did-you-know"]')
@@ -184,7 +188,7 @@ test.describe("Search-first home — desktop widening pass (ETNI-1513)", () => {
     const countsBox = await elementBox(counts);
     const factBox = await elementBox(fact);
 
-    // Copy/counters form the left column; the globe is the right column.
+    // Copy and counts form the left column; the globe is the right column.
     expect(right(copyBox)).toBeLessThan(globeBox.x);
     expect(globeBox.x).toBeGreaterThan(copyBox.x);
     expect(
@@ -198,7 +202,7 @@ test.describe("Search-first home — desktop widening pass (ETNI-1513)", () => {
     // The fact is the next section, below both columns, and spans their full
     // composition rather than becoming a third card or a right-column tail.
     expect(factBox.y).toBeGreaterThanOrEqual(
-      Math.max(bottom(countsBox), bottom(globeBox)) - 1
+      Math.max(bottom(copyBox), bottom(globeBox)) - 1
     );
     expect(factBox.x).toBeLessThanOrEqual(innerBox.x + 1);
     expect(right(factBox)).toBeGreaterThanOrEqual(right(innerBox) - 1);

@@ -83,9 +83,12 @@ export default defineConfig({
   timeout: 60_000,
   expect: {
     timeout: 10_000,
+    // Committed references live beside the specs. The template used to point
+    // into `_bmad-output/planning-artifacts/`, which #401 deleted: every
+    // visual spec then failed on "snapshot doesn't exist" and wrote its own
+    // render as the missing reference, a parity check with no oracle.
     toHaveScreenshot: {
-      pathTemplate:
-        "_bmad-output/planning-artifacts/module-specs/assets/{arg}{ext}",
+      pathTemplate: "{testDir}/__screenshots__/{arg}{ext}",
     },
   },
   fullyParallel: true,
