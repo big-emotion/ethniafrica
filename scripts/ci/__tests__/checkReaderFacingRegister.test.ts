@@ -284,4 +284,87 @@ describe("editorial rules — reader-facing register", () => {
       )
     ).toEqual([]);
   });
+
+  // The tiering codemod wrote its own reasoning into 5 000 source notes —
+  // which catalogue entry or domain ruling set the tier, or that nobody had
+  // ruled yet. It reads as a sober English sentence and names no path, so the
+  // gate let every one of them through to the reader.
+  const TIER_PROVENANCE_NOTES = [
+    "Tier resolved from the domain ruling for jstor.org.",
+    "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies.",
+    "No URL and no recognisable citation shape; the tier awaits editorial review.",
+    'Tier resolved from the authorized source catalogue entry "ethnologue".',
+    "No domain ruling covers kanaga-at.com; the tier awaits editorial review.",
+    // Curators who followed the codemod wrote the same reasoning by hand.
+    "Resolved from the prior needs_review standing (no URL) once the museum's own announcement was located.",
+    "Catalogued on the French national theses portal; tiered referenced as an identifiable, verifiable academic work.",
+  ];
+
+  // @req REQ-133
+  it("refuses the tiering codemod's provenance sentences in a translated source note", () => {
+    for (const notes of TIER_PROVENANCE_NOTES) {
+      const findings = checkReaderFacingRegister(
+        { id: "MWI", sources: [{ title: "Un titre", notes }] },
+        "dataset/translations/en/pays/MWI.json",
+        INTERNAL_REGISTER_PATTERNS_EN
+      );
+
+      expect(findings, notes).toHaveLength(1);
+      expect(findings[0].message).toContain("sources[0].notes");
+    }
+  });
+
+  // People, country and family fiches keep their sources under `content`, and
+  // the Sources chapter renders them from there. Reading only the top-level
+  // array — where name fiches keep theirs — left 854 fiches unchecked.
+  // @req REQ-133
+  it("reads the sources a people, country or family fiche keeps under content", () => {
+    const findings = checkReaderFacingRegister(
+      {
+        id: "PPL_X",
+        content: {
+          sources: [{ title: "Un titre", notes: TIER_PROVENANCE_NOTES[2] }],
+        },
+      },
+      "dataset/source/afrik/peuples/FLG_X/PPL_X.json"
+    );
+
+    expect(findings).toHaveLength(1);
+    expect(findings[0].message).toContain("content.sources[0].notes");
+  });
+
+  // A French fiche carries these sentences in English: the codemod wrote them
+  // in one language whatever the fiche's own, so reading a French fiche with
+  // the French list alone is how 3 291 of them passed.
+  // @req REQ-133
+  it("refuses an English provenance sentence inside a French source fiche", () => {
+    const findings = checkReaderFacingRegister(
+      {
+        id: "PPL_X",
+        sources: [{ title: "Un titre", notes: TIER_PROVENANCE_NOTES[0] }],
+      },
+      "dataset/source/afrik/peuples/FLG_X/PPL_X.json"
+    );
+
+    expect(findings).toHaveLength(1);
+  });
+
+  // @req REQ-133
+  it("accepts a source note that mentions a domain without ruling on it", () => {
+    expect(
+      checkReaderFacingRegister(
+        {
+          id: "PPL_X",
+          sources: [
+            {
+              title: "Carte ancienne",
+              notes:
+                "Map in the public domain, held and digitised by the Bibliothèque nationale de France.",
+            },
+          ],
+        },
+        "dataset/source/afrik/peuples/FLG_X/PPL_X.json"
+      )
+    ).toEqual([]);
+  });
 });

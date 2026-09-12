@@ -444,6 +444,10 @@ export function readerFacingProseFields(fiche: Fiche): ProseField[] {
   }
 
   pushSources(fiche.sources, "sources");
+  // People, country and family fiches keep their sources here; only name
+  // fiches use the top-level array. Reading one location left the other's
+  // 854 fiches unchecked.
+  pushSources(fiche.content?.sources, "content.sources");
 
   if (Array.isArray(fiche.names)) {
     fiche.names.forEach((entry, i) => {
@@ -487,10 +491,18 @@ export function isCuratorWorksheet(relPath: string): boolean {
   return path.basename(relPath).startsWith("_");
 }
 
+/**
+ * A French fiche is read against both lists: its source notes are often
+ * English — the tiering codemod wrote 5 000 of them in English whatever the
+ * fiche's language — and the French list alone let every one through.
+ */
 export function checkReaderFacingRegister(
   fiche: Fiche,
   file: string,
-  patterns: ReadonlyArray<RegisterPattern> = INTERNAL_REGISTER_PATTERNS
+  patterns: ReadonlyArray<RegisterPattern> = [
+    ...INTERNAL_REGISTER_PATTERNS,
+    ...INTERNAL_REGISTER_PATTERNS_EN,
+  ]
 ): RuleResult[] {
   if (isCuratorWorksheet(file)) return [];
 
