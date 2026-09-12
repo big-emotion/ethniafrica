@@ -55,6 +55,17 @@ describe("mobile text charter (§8.1)", () => {
     );
   });
 
+  // Operator ruling, 2026-09-12: below the globe an atlas record is one
+  // document of rounded chapters, tiles and timelines, each anchored on a left
+  // label. A centred heading over that grid gave every chapter two edges. The
+  // record parchment is exempt as a block, and the exemption lives here — in
+  // the rule's own file — so mobileTextCentring's sweep still finds no surface
+  // contradicting the body default.
+  // @req REQ-091
+  it("keeps an atlas record's parchment on one left edge", () => {
+    expect(phoneBlock()).toMatch(/\.afh-parchment\s*\{\s*text-align:\s*left/);
+  });
+
   // @req REQ-115
   it("offers one named way back to centred prose", () => {
     expect(phoneBlock()).toMatch(
