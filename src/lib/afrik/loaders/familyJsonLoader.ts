@@ -13,6 +13,7 @@ const FAMILIES_PATH = join(
 );
 const familyCache = new Map<string, LanguageFamily>();
 
+// @req REQ-033
 export async function loadLanguageFamily(
   familyId: string
 ): Promise<ParsedFile<LanguageFamily>> {
@@ -43,6 +44,7 @@ export async function loadLanguageFamily(
   }
 }
 
+// @req REQ-033
 export async function loadAllLanguageFamilies(): Promise<LanguageFamily[]> {
   try {
     const files = readdirSync(FAMILIES_PATH).filter(
@@ -65,8 +67,4 @@ export async function loadAllLanguageFamilies(): Promise<LanguageFamily[]> {
     logger.error("Failed to load language families", error);
     return [];
   }
-}
-
-export function clearLanguageFamilyCache(): void {
-  familyCache.clear();
 }
