@@ -20,12 +20,14 @@ interface PublicMedia {
 interface MediaCreditSectionProps {
   peopleId: string;
   language?: Language;
+  embedded?: boolean;
 }
 
 // @req REQ-128
 export function MediaCreditSection({
   peopleId,
   language = FALLBACK_LOCALE,
+  embedded = false,
 }: MediaCreditSectionProps) {
   const copy = peopleCopy[language].media;
   const [media, setMedia] = useState<PublicMedia[]>([]);
@@ -58,7 +60,7 @@ export function MediaCreditSection({
   return (
     <section
       id={chapterAnchorId(copy.title)}
-      data-fiche-section={copy.title}
+      data-fiche-section={embedded ? undefined : copy.title}
       aria-labelledby="media-credit-title"
       className="people-fade-in space-y-3 overflow-hidden rounded-[var(--country-radius-xl)] p-[18px] md:rounded-[20px] md:p-6 xl:rounded-[22px] xl:p-7"
       style={{

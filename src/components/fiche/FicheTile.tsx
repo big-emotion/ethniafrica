@@ -5,7 +5,9 @@ import { CHARTER_FOCUS_RING } from "@/components/ui/charter-motion";
 export interface FicheTileProps {
   title: string;
   closedFact: string;
-  children: ReactNode;
+  closedFactContent?: ReactNode;
+  detailText?: string;
+  children?: ReactNode;
 }
 
 function visibleText(node: ReactNode): string {
@@ -38,9 +40,15 @@ function comparable(text: string): string {
  * without client-side state or motion.
  */
 // @req REQ-153
-export function FicheTile({ title, closedFact, children }: FicheTileProps) {
+export function FicheTile({
+  title,
+  closedFact,
+  closedFactContent,
+  detailText,
+  children,
+}: FicheTileProps) {
   const fact = closedFact.trim();
-  const detail = comparable(visibleText(children));
+  const detail = comparable(detailText ?? visibleText(children));
   const canCollapse =
     fact.length > 0 &&
     detail.length > 0 &&
@@ -54,8 +62,11 @@ export function FicheTile({ title, closedFact, children }: FicheTileProps) {
         className="rounded-afh-lg border border-afh-border bg-afh-surface px-afh-md py-afh-sm"
       >
         <h3 className="text-afh-body font-semibold text-afh-text">{title}</h3>
-        <div className="pt-afh-sm text-afh-body text-afh-text-soft">
-          {children}
+        <div
+          data-closed-fact=""
+          className="pt-afh-sm text-afh-body text-afh-text-soft"
+        >
+          {children ?? closedFactContent ?? fact}
         </div>
       </div>
     );
@@ -70,12 +81,12 @@ export function FicheTile({ title, closedFact, children }: FicheTileProps) {
         className={`min-h-11 cursor-pointer px-afh-md py-afh-sm text-afh-body text-afh-text ${CHARTER_FOCUS_RING}`}
       >
         <span className="font-semibold">{title}</span>
-        <span
+        <div
           data-closed-fact=""
           className="block text-afh-caption text-afh-text-soft md:ml-afh-sm md:inline"
         >
-          {fact}
-        </span>
+          {closedFactContent ?? fact}
+        </div>
       </summary>
       <div className="border-t border-afh-border px-afh-md py-afh-sm text-afh-body text-afh-text-soft">
         {children}

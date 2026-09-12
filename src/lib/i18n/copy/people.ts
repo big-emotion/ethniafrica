@@ -8,26 +8,41 @@ const en = {
     countriesOfPresence: "Countries of documented presence",
     mainLanguage: "Main language",
     linguisticFamily: "Language family",
-    namesReferencedHere: "Names referenced here",
+    namesReferencedHere: "Names borne and referenced here",
     missingData: "Not recorded in the atlas",
     factTier: "Source tier",
+    populationDisagreement: (declared: string, summed: string) =>
+      `The declared total is ${declared} people, while the populations listed by country add up to ${summed}. These figures do not agree.`,
   },
   sections: {
-    naming: "The name borne, the names imposed",
+    naming: "The name and its designations",
     mapGrammar: "Why the map draws no boundary",
     mapDerivation: "Derived from the distribution by country",
     origins: "Origins and formation",
     language: "Language",
     historicalAffiliation: "Historical affiliation",
-    historicalRole: "Historical role",
-    culture: "Culture and spirituality",
+    historicalRole: "History",
+    culture: "Culture and society",
     neighbours: "Neighbouring peoples and organisation",
-    distribution: "Geographic distribution",
+    distribution: "Where this people lives",
+    borneNames: "Names borne",
     referenceYear: "Reference year: 2025",
     fragmentation: "Colonial fragmentation",
     fragmentationNote:
       "Derived from the people's presence in several countries",
+    fragmentationCount: (count: number) => `${count} countries of presence`,
     sources: "Sources",
+  },
+  chapterDetails: {
+    historyChronology: "Historical chronology",
+    historyUndated: "Undated",
+    historyRole: "Historical role",
+    cultureRitesAndSymbols: "Rites and symbols",
+    associatedGroups: (count: number) =>
+      `${count} associated ${count === 1 ? "group" : "groups"}`,
+    documentedRelations: (count: number) =>
+      `${count} documented ${count === 1 ? "relation" : "relations"}`,
+    borneNamesIndex: "Alphabetical index of names borne",
   },
   reportSection: "Report this section",
   naming: {
@@ -40,6 +55,8 @@ const en = {
     pronunciation: (ipa: string) => `Phonetic pronunciation: ${ipa}`,
     collapse: "Show less",
     more: (count: number) => `+${count} more`,
+    exonymCount: (count: number) => `${count} names recorded`,
+    currentUsageAndCritique: "Usage and context",
   },
   field: {
     explanation: (count: number) =>
@@ -95,6 +112,7 @@ const en = {
   },
   countries: {
     offMap: "outside the map",
+    derivedShare: "country populations listed here",
     source: "Source",
     sourceMissing: "Source not recorded",
     reference: "ref.",
@@ -153,25 +171,40 @@ const fr: PeopleCopy = {
     countriesOfPresence: "Pays de présence documentée",
     mainLanguage: "Langue principale",
     linguisticFamily: "Famille linguistique",
-    namesReferencedHere: "Noms référencés ici",
+    namesReferencedHere: "Noms portés référencés ici",
     missingData: "Non renseigné dans l’atlas",
     factTier: "Niveau de source",
+    populationDisagreement: (declared, summed) =>
+      `Le total déclaré est de ${declared} personnes, tandis que les populations indiquées par pays totalisent ${summed}. Ces chiffres ne concordent pas.`,
   },
   sections: {
-    naming: "Le nom porté, les noms subis",
+    naming: "Le nom et ses appellations",
     mapGrammar: "Pourquoi la carte ne trace pas de frontière",
     mapDerivation: "Dérivé de la répartition par pays",
     origins: "Origines & formation",
     language: "Langue",
     historicalAffiliation: "Filiation historique",
-    historicalRole: "Rôle historique",
-    culture: "Culture & spiritualité",
+    historicalRole: "Histoire",
+    culture: "Culture et société",
     neighbours: "Peuples voisins & organisation",
-    distribution: "Répartition géographique",
+    distribution: "Où vit ce peuple",
+    borneNames: "Noms portés",
     referenceYear: "Année de référence : 2025",
     fragmentation: "Fragmentation coloniale",
     fragmentationNote: "Dérivé de la présence du peuple dans plusieurs pays",
+    fragmentationCount: (count) => `${count} pays de présence`,
     sources: "Sources",
+  },
+  chapterDetails: {
+    historyChronology: "Chronologie historique",
+    historyUndated: "Non daté",
+    historyRole: "Rôle historique",
+    cultureRitesAndSymbols: "Rites & symboles",
+    associatedGroups: (count) =>
+      `${count} ${count === 1 ? "groupe associé" : "groupes associés"}`,
+    documentedRelations: (count) =>
+      `${count} ${count === 1 ? "relation documentée" : "relations documentées"}`,
+    borneNamesIndex: "Index alphabétique des noms portés",
   },
   reportSection: "Signaler cette section",
   naming: {
@@ -184,6 +217,8 @@ const fr: PeopleCopy = {
     pronunciation: (ipa) => `Prononciation phonétique : ${ipa}`,
     collapse: "Réduire",
     more: (count) => `+${count} autres`,
+    exonymCount: (count) => `${count} noms relevés`,
+    currentUsageAndCritique: "Usage et contexte",
   },
   field: {
     explanation: (count) =>
@@ -239,6 +274,7 @@ const fr: PeopleCopy = {
   },
   countries: {
     offMap: "hors carte",
+    derivedShare: "populations par pays indiquées ici",
     source: "Source",
     sourceMissing: "Source non renseignée",
     reference: "réf.",

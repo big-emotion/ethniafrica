@@ -9,6 +9,7 @@ import type { Language } from "@/types/shared";
 export interface ExternalRegistryLinksSectionProps {
   identifiers?: ExternalIdentifiersSection | null;
   language?: Language;
+  embedded?: boolean;
 }
 
 /**
@@ -22,6 +23,7 @@ export interface ExternalRegistryLinksSectionProps {
 export function ExternalRegistryLinksSection({
   identifiers,
   language = FALLBACK_LOCALE,
+  embedded = false,
 }: ExternalRegistryLinksSectionProps) {
   const copy = peopleCopy[language].external;
   const links = buildExternalRegistryLinks(identifiers);
@@ -31,7 +33,7 @@ export function ExternalRegistryLinksSection({
   return (
     <section
       id={chapterAnchorId(copy.title)}
-      data-fiche-section={copy.title}
+      data-fiche-section={embedded ? undefined : copy.title}
       aria-labelledby="external-registry-links-title"
       className="people-fade-in space-y-3 overflow-hidden rounded-[var(--country-radius-xl)] p-[18px] md:rounded-[20px] md:p-6 xl:rounded-[22px] xl:p-7"
       style={{

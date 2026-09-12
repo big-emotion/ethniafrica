@@ -11,6 +11,7 @@ import type { Language } from "@/types/shared";
 
 interface PeopleCultureGridProps {
   data: PeopleCultureData;
+  fields?: readonly (keyof PeopleCultureData)[];
   chips?: CultureChips;
   /** One note callout per sourced field, keyed as `chips` is. */
   notes?: Partial<Record<string, ParagraphNoteData>>;
@@ -32,12 +33,14 @@ const FIELDS = [
 // @req REQ-003
 export function PeopleCultureGrid({
   data,
+  fields = FIELDS,
   chips,
   notes,
   language = FALLBACK_LOCALE,
 }: PeopleCultureGridProps) {
   if (!hasCultureContent(data)) return null;
-  const present = FIELDS.filter((key) => Boolean(data[key]));
+  const present = fields.filter((key) => Boolean(data[key]));
+  if (present.length === 0) return null;
   const copy = peopleCopy[language].cultureFields;
 
   return (

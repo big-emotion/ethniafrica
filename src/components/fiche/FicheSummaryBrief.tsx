@@ -8,7 +8,7 @@ import type { Language } from "@/types/shared";
 
 interface MeasuredPopulation {
   value: number;
-  referenceYear: number;
+  referenceYear?: number;
 }
 
 export interface CountrySummaryFigures {
@@ -31,6 +31,7 @@ type FicheSummaryBriefProps = {
   entityId: string;
   name: string;
   language?: Language;
+  embedded?: boolean;
 } & (
   | { kind: "country"; figures: CountrySummaryFigures }
   | { kind: "people"; figures: PeopleSummaryFigures }
@@ -60,7 +61,7 @@ function countryRows(
     {
       label: copy.population,
       value: count(figures.population?.value, language),
-      referenceYear: figures.population
+      referenceYear: figures.population?.referenceYear
         ? copy.referenceYear(figures.population.referenceYear)
         : undefined,
     },
@@ -89,7 +90,7 @@ function peopleRows(
     {
       label: copy.persons,
       value: count(figures.persons?.value, language),
-      referenceYear: figures.persons
+      referenceYear: figures.persons?.referenceYear
         ? copy.referenceYear(figures.persons.referenceYear)
         : undefined,
     },
@@ -110,6 +111,7 @@ export function FicheSummaryBrief({
   name,
   language = FALLBACK_LOCALE,
   figures,
+  embedded = false,
 }: FicheSummaryBriefProps) {
   const copy =
     kind === "country"
@@ -137,8 +139,12 @@ export function FicheSummaryBrief({
       className="fiche-summary-brief"
       aria-label={`${name} ${copy.title}`}
     >
-      <p className="fiche-summary-brief__eyebrow">{copy.title}</p>
-      <h2>{name}</h2>
+      {!embedded && (
+        <>
+          <p className="fiche-summary-brief__eyebrow">{copy.title}</p>
+          <h2>{name}</h2>
+        </>
+      )}
 
       <dl className="fiche-summary-brief__figures">
         {rows.map((row) => (
