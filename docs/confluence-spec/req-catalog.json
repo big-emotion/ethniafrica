@@ -146,7 +146,8 @@
     "REQ-147",
     "REQ-148",
     "REQ-149",
-    "REQ-150"
+    "REQ-150",
+    "REQ-151"
   ],
   "sourceMap": {
     "REQ-001": "FR1",
@@ -291,6 +292,7 @@
     "REQ-147": "Confluence REQ-147 (page 196935681) — a name fiche states the standing of the sources it rests on (best tier, count, AI provenance) and says when it is still being assembled; a name with no source above the unverified tier is kept out of the sitemap and declares noindex, while staying reachable, listed, searchable and counted",
     "REQ-148": "Confluence REQ-148 — a historical political entity carries machine-readable bounds and a typed kind (polity, colonial administration, modern state), and a country that dates its colonial administrations must date its precolonial polities: the reader-facing label stays the editorial prose and is never derived from the bounds",
     "REQ-149": "Confluence REQ-149 — every people reference a country fiche declares resolves to an existing people fiche, and a described people with no reference is reported rather than silently rendered as an unreachable line",
-    "REQ-150": "Confluence REQ-150 (page 190545921) \u2014 visitors can navigate from a people fiche to the peoples associated with it, and reach a next step at the end of the fiche"
+    "REQ-150": "Confluence REQ-150 (page 190545921) \u2014 visitors can navigate from a people fiche to the peoples associated with it, and reach a next step at the end of the fiche",
+    "REQ-151": "Confluence REQ-151 (page 198672385) — a fiche opens on a summary block carrying the counts a reader came for, and every count states its scope in its own label"
   }
 }
