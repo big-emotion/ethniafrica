@@ -4,6 +4,36 @@ import { countryCopy } from "@/lib/i18n/copy/country";
 import { peopleCopy } from "@/lib/i18n/copy/people";
 
 describe("counted fiche summary copy (REQ-151)", () => {
+  // @req REQ-155
+  it("keeps the new people chapter labels in both locale dictionaries", () => {
+    expect(peopleCopy.fr.chapterDetails).toMatchObject({
+      historyChronology: "Chronologie historique",
+      historyUndated: "Non daté",
+      historyRole: "Rôle historique",
+      cultureRitesAndSymbols: "Rites & symboles",
+      borneNamesIndex: "Index alphabétique des noms portés",
+    });
+    expect(peopleCopy.en.chapterDetails).toMatchObject({
+      historyChronology: "Historical chronology",
+      historyUndated: "Undated",
+      historyRole: "Historical role",
+      cultureRitesAndSymbols: "Rites and symbols",
+      borneNamesIndex: "Alphabetical index of names borne",
+    });
+    expect(peopleCopy.fr.chapterDetails.associatedGroups(2)).toBe(
+      "2 groupes associés"
+    );
+    expect(peopleCopy.fr.chapterDetails.documentedRelations(1)).toBe(
+      "1 relation documentée"
+    );
+    expect(peopleCopy.en.chapterDetails.associatedGroups(2)).toBe(
+      "2 associated groups"
+    );
+    expect(peopleCopy.en.chapterDetails.documentedRelations(1)).toBe(
+      "1 documented relation"
+    );
+  });
+
   // @req REQ-151
   it("states the scope of every country count in both locales", () => {
     expect(countryCopy.fr.summary).toMatchObject({
@@ -31,14 +61,14 @@ describe("counted fiche summary copy (REQ-151)", () => {
       countriesOfPresence: "Pays de présence documentée",
       mainLanguage: "Langue principale",
       linguisticFamily: "Famille linguistique",
-      namesReferencedHere: "Noms référencés ici",
+      namesReferencedHere: "Noms portés référencés ici",
     });
     expect(peopleCopy.en.summary).toMatchObject({
       persons: "Persons recorded for this people",
       countriesOfPresence: "Countries of documented presence",
       mainLanguage: "Main language",
       linguisticFamily: "Language family",
-      namesReferencedHere: "Names referenced here",
+      namesReferencedHere: "Names borne and referenced here",
     });
     expect(peopleCopy.fr.summary.title).toBe("En bref");
     expect(peopleCopy.en.summary.title).toBe("In brief");

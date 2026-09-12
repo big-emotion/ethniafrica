@@ -355,6 +355,7 @@ export default async function PeoplesSlugPage({
             notes={notes}
             borneNames={borneNames}
             peopleNameIndex={peopleNameIndex}
+            resolvedFamilyName={languageFamily?.name}
             // Only when something cites it: a bibliography numbered for
             // nobody promises an anchor that does not exist.
             bibliography={notes.count > 0 ? register.entries : undefined}

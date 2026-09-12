@@ -3,8 +3,54 @@ import { describe, expect, it } from "vitest";
 
 import { FicheSection } from "@/components/fiche/FicheSection";
 import { FicheTile } from "@/components/fiche/FicheTile";
+import { AutonymExonymHeading } from "@/components/ui/AutonymExonymHeading";
 
 describe("FicheTile charter (REQ-153)", () => {
+  // @req REQ-153
+  it("allows a language-tagged fact to stay visible in a closed tile", () => {
+    const { container } = render(
+      <FicheTile
+        title="Auto-appellation"
+        closedFact="Yorùbá"
+        closedFactContent={
+          <AutonymExonymHeading
+            variant="card"
+            autonym="Yorùbá"
+            autonymIso639_3="yor"
+          />
+        }
+      />
+    );
+
+    expect(
+      container.querySelector('[data-closed-fact] [lang="yo"]')
+    ).toHaveTextContent("Yorùbá");
+    expect(container.querySelector("[data-fiche-tile]")).toHaveTextContent(
+      "Auto-appellation"
+    );
+  });
+
+  // @req REQ-153
+  it("compares the declared detail text for a composed disclosure", () => {
+    const { container, rerender } = render(
+      <FicheTile
+        title="Exonymes"
+        closedFact="2 noms relevés"
+        detailText="Nago, Aku"
+      >
+        <p data-names="">Nago, Aku</p>
+      </FicheTile>
+    );
+    expect(container.querySelector("details")).not.toBeNull();
+
+    rerender(
+      <FicheTile title="Exonymes" closedFact="Nago, Aku" detailText="Nago, Aku">
+        <p data-names="">Nago, Aku</p>
+      </FicheTile>
+    );
+    expect(container.querySelector("details")).toBeNull();
+  });
+
   // @req REQ-153
   it("teaches a distinct fact before opening and reveals additional detail", () => {
     const { container } = render(

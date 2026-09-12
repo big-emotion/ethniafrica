@@ -9,9 +9,9 @@
  * exonyms carry their badge, full context and a `DoctrineLinkCard`, and
  * `NameSpellingHistory` closes the section.
  *
- * The chapter is printed whether or not the corpus fills it. `appellations`
- * is the first chapter of `public/modele-peuple.json`, so atlas charter §4
- * governs it: an empty chapter of the model is a fact about the corpus and
+ * The content is printed whether or not the corpus fills it. `appellations`
+ * is a rubric of `public/modele-peuple.json`, so atlas charter §4
+ * governs it: an empty rubric of the model is a fact about the corpus and
  * says so, rather than vanishing. UX-DR31's "no empty shell" rule still holds
  * for blocks the model does not declare — that is what a `not-modelled`
  * resolution is for — but it cannot cover a chapter the model does declare.
@@ -40,6 +40,7 @@ import { peopleCopy } from "@/lib/i18n/copy/people";
 export interface PeopleNamesSectionProps {
   data: PeopleNamesData | null;
   language: Language;
+  embedded?: boolean;
 }
 
 function chipFor(
@@ -80,6 +81,7 @@ function NameEntry({
 export function PeopleNamesSection({
   data,
   language,
+  embedded = false,
 }: PeopleNamesSectionProps) {
   const copy = peopleCopy[language].naming;
   const autonym = data?.autonym ?? null;
@@ -96,20 +98,23 @@ export function PeopleNamesSection({
   return (
     <section
       id="noms"
-      data-fiche-section={copy.sectionTitle}
-      aria-labelledby="noms-title"
+      data-fiche-section={embedded ? undefined : copy.sectionTitle}
+      aria-labelledby={embedded ? undefined : "noms-title"}
+      aria-label={embedded ? copy.sectionTitle : undefined}
       className="people-fade-in space-y-3 overflow-hidden rounded-[var(--country-radius-xl)] p-[18px] md:rounded-[20px] md:p-6 xl:rounded-[22px] xl:p-7"
       style={{
         background: "var(--country-card)",
         border: "1px solid var(--country-border)",
       }}
     >
-      <h2
-        id="noms-title"
-        className="text-afh-small font-bold text-[var(--country-text)]"
-      >
-        {copy.sectionTitle}
-      </h2>
+      {!embedded && (
+        <h2
+          id="noms-title"
+          className="text-afh-small font-bold text-[var(--country-text)]"
+        >
+          {copy.sectionTitle}
+        </h2>
+      )}
 
       {isEmpty && <FieldProvenanceMarker state="missing" language={language} />}
 

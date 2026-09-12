@@ -3,6 +3,7 @@ import { afterEach, describe, expect, it } from "vitest";
 
 import { PeopleDetailViewV2 } from "@/components/people/PeopleDetailViewV2";
 import { PeopleFicheTitle } from "@/components/people/PeopleFicheTitle";
+import { FicheSection } from "@/components/fiche/FicheSection";
 import type { PeopleDetail } from "@/types/afrik-frontend";
 
 /**
@@ -103,24 +104,30 @@ describe("people fiche parity with the mockup", () => {
   afterEach(cleanup);
 
   for (const regime of REGIMES) {
-    // @req REQ-115
-    it(`renders the mockup's sections, in order, on ${regime.label}`, () => {
+    // @req REQ-155
+    it(`renders the nine chapters in order on ${regime.label}`, () => {
       const { container } = render(
-        <PeopleDetailViewV2 language="fr" people={regime.people} />
+        <PeopleDetailViewV2
+          language="fr"
+          people={regime.people}
+          onward={<FicheSection title="Poursuivre">Suite</FicheSection>}
+        />
       );
 
       const sections = [
         ...container.querySelectorAll("[data-fiche-section]"),
       ].map((node) => node.getAttribute("data-fiche-section"));
 
-      // The mockup's four prose sections open the fiche, in this order. What
-      // follows them (history, culture, distribution…) is the fiche's own
-      // depth and is not what parity is measured on.
-      expect(sections.slice(0, 4)).toEqual([
-        "Le nom porté, les noms subis",
-        "Pourquoi la carte ne trace pas de frontière",
-        "Origines & formation",
+      expect(sections).toEqual([
+        "En bref",
+        "Où vit ce peuple",
+        "Le nom et ses appellations",
         "Langue",
+        "Histoire",
+        "Noms portés",
+        "Culture et société",
+        "Poursuivre",
+        "Sources",
       ]);
     });
 
@@ -149,6 +156,58 @@ describe("people fiche parity with the mockup", () => {
       expect(container.querySelector("path[stroke]")).toBeNull();
     });
   }
+
+  // @req REQ-155
+  it("draws a derived share from row populations and preserves a declared share", () => {
+    const people = peopleWith([
+      { country: "BDI", population: 12_200_000 },
+      { country: "RWA", population: 5_865_000 },
+    ]);
+    people.demography!.distributionByCountry![1].percentage = 32;
+    const { container } = render(
+      <PeopleDetailViewV2 language="fr" people={people} />
+    );
+    const distribution = container.querySelector(
+      '[data-fiche-section="Où vit ce peuple"]'
+    );
+    expect(distribution?.textContent).toContain("67,5");
+    expect(
+      distribution?.querySelectorAll('[aria-label*="Dérivé"]')
+    ).toHaveLength(1);
+    expect(distribution?.textContent).toContain("32");
+  });
+
+  // @req REQ-155
+  it("states a divergent declared total without turning it into a share denominator", () => {
+    const people = peopleWith([
+      { country: "BDI", population: 12_200_000 },
+      { country: "RWA", population: 5_865_000 },
+    ]);
+    people.demography!.totalPopulation = 10_500_000;
+    const { container } = render(
+      <PeopleDetailViewV2 language="fr" people={people} />
+    );
+    const summary = container.querySelector('[data-fiche-section="En bref"]');
+    expect(summary?.textContent).toContain("10 500 000");
+    expect(summary?.textContent).toContain("18 065 000");
+    expect(summary?.textContent).not.toContain("116 %");
+  });
+
+  // @req REQ-151
+  it("uses the resolved family name in the counted summary", () => {
+    const people = peopleWith([{ country: "BDI", population: 1000 }]);
+    people.languageFamilyName = undefined;
+    const { container } = render(
+      <PeopleDetailViewV2
+        language="fr"
+        people={people}
+        resolvedFamilyName="Bantou"
+      />
+    );
+    expect(
+      container.querySelector('[data-fiche-section="En bref"]')?.textContent
+    ).toContain("Bantou");
+  });
 
   // 316 fiches carry no whyProblematic and 4 record no exonym. The mockup
   // renders both unconditionally; the corpus cannot.
@@ -209,10 +268,9 @@ describe("people fiche — what the corpus does not fill", () => {
       ...container.querySelectorAll("[data-fiche-section]"),
     ].map((node) => node.getAttribute("data-fiche-section"));
 
-    expect(chapters).toContain("Origines & formation");
+    expect(chapters).toContain("Histoire");
     expect(chapters).toContain("Langue");
-    expect(chapters).toContain("Rôle historique");
-    expect(chapters).toContain("Culture & spiritualité");
+    expect(chapters).toContain("Culture et société");
   });
 
   // @req REQ-119
@@ -225,9 +283,9 @@ describe("people fiche — what the corpus does not fill", () => {
       container.querySelector(`[data-fiche-section="${title}"]`)?.textContent ??
       "";
 
-    expect(textOf("Origines & formation")).toContain("Donnée manquante");
+    expect(textOf("Histoire")).toContain("Donnée manquante");
     expect(textOf("Langue")).toContain("Donnée manquante");
-    expect(textOf("Rôle historique")).toContain("Donnée manquante");
+    expect(textOf("Culture et société")).toContain("Donnée manquante");
   });
 
   // A marker beside a value the fiche does declare would report a gap that is

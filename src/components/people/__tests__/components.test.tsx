@@ -395,8 +395,8 @@ describe("PeopleCountriesSection", () => {
     render(<PeopleCountriesSection language="fr" data={data} />);
     expect(screen.getByText("NGA")).toBeTruthy();
     expect(screen.getByText("BEN")).toBeTruthy();
-    expect(screen.getByText("89%")).toBeTruthy();
-    expect(screen.getByText("7%")).toBeTruthy();
+    expect(screen.getByText("89 %")).toBeTruthy();
+    expect(screen.getByText("7 %")).toBeTruthy();
   });
 
   // The roll moved here from the field legend beside the globe, and it must

@@ -78,20 +78,20 @@ describe("PeopleDetailViewV2", () => {
     );
 
     expect(
-      screen.getByRole("heading", { name: "The name borne, the names imposed" })
+      screen.getByRole("heading", { name: "The name and its designations" })
     ).toBeVisible();
     expect(
       screen.getByRole("heading", { name: "Origins and formation" })
     ).toBeVisible();
     expect(
-      screen.getByRole("heading", { name: "Culture and spirituality" })
+      screen.getByRole("heading", { name: "Culture and society" })
     ).toBeVisible();
     expect(
-      screen.getByRole("heading", { name: "Geographic distribution" })
+      screen.getByRole("heading", { name: "Where this people lives" })
     ).toBeVisible();
-    expect(screen.getByText("Self-designation")).toBeVisible();
-    expect(screen.getByText("Ancient origins")).toBeVisible();
-    expect(screen.getByText("Main language")).toBeVisible();
+    expect(screen.getAllByText("Self-designation").length).toBeGreaterThan(0);
+    expect(screen.getByText("Origins and formation")).toBeVisible();
+    expect(screen.getAllByText("Main language").length).toBeGreaterThan(0);
     expect(screen.getByText(/Migrations depuis Notsé/)).toBeVisible();
   });
 
@@ -134,21 +134,17 @@ describe("PeopleDetailViewV2", () => {
     expect(screen.getByText(/Migrations depuis Notsé/)).toBeInTheDocument();
   });
 
-  // The mockup opens on the naming section, before any figure: it is the
-  // fiche's editorial position, not a detail of its identity block.
-  // @req REQ-115
-  it("opens on the name borne and the names imposed", () => {
+  // @req REQ-155
+  it("places naming after the summary and distribution", () => {
     render(<PeopleDetailViewV2 language="fr" people={ewe} />);
 
-    expect(
-      screen.getByText("Le nom porté, les noms subis")
-    ).toBeInTheDocument();
+    expect(screen.getByText("Le nom et ses appellations")).toBeInTheDocument();
     // The hero carries the autonym too, so this asserts presence rather than
     // uniqueness; PeopleNamingBlock's own test pins where it sits.
     expect(screen.getAllByText("Eʋeawo").length).toBeGreaterThan(0);
     expect(screen.getByText(/Ewhe \(graphie coloniale\)/)).toBeInTheDocument();
     expect(
-      screen.getByText(/Pourquoi ces noms posent problème/)
+      screen.getByText(/La graphie « Ewhe » vient des rapports coloniaux/)
     ).toBeInTheDocument();
   });
 
@@ -176,12 +172,10 @@ describe("PeopleDetailViewV2", () => {
       />
     );
 
-    expect(
-      screen.getByText("Le nom porté, les noms subis")
-    ).toBeInTheDocument();
+    expect(screen.getByText("Le nom et ses appellations")).toBeInTheDocument();
     expect(screen.queryByText("Exonymes")).not.toBeInTheDocument();
     expect(
-      screen.queryByText(/Pourquoi ces noms posent problème/)
+      screen.queryByText(/La graphie « Ewhe » vient des rapports coloniaux/)
     ).not.toBeInTheDocument();
   });
 

@@ -4,6 +4,7 @@ import { getAdmin0Name } from "@/lib/atlas/overlays";
 import { getCountryRoute } from "@/lib/routing";
 import type { Language } from "@/types/shared";
 import { peopleCopy } from "@/lib/i18n/copy/people";
+import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
 
 interface PeopleCountriesSectionProps {
   data: PeopleCountriesData;
@@ -33,10 +34,8 @@ export function PeopleCountriesSection({
 
   return (
     <div>
-      {/* No headline population here. The fiche head states it above the globe
-          — "N personnes · réf. Y" — and a second one in the display face read
-          as a competing headline for the same figure. The rows carry their
-          own. */}
+      {/* The headline population belongs to the counted summary. These rows
+          carry their own populations and shares. */}
 
       {/* Distribution rows */}
       <div className="space-y-[8px]">
@@ -44,20 +43,21 @@ export function PeopleCountriesSection({
           // The same resolver the globe draws with, so a country the map
           // omits is marked here rather than silently listed as if drawn.
           const countryName = getAdmin0Name(row.country, language);
+          const share = row.share?.value ?? row.percentage;
           return (
             <div
               key={i}
               className="flex flex-col gap-[3px]"
               data-off-map={countryName ? undefined : "true"}
             >
-              <div className="flex items-center gap-[10px]">
+              <div className="grid grid-cols-[2.75rem_minmax(0,1fr)] items-center gap-x-2 gap-y-1 md:grid-cols-[2.75rem_minmax(5rem,1fr)_minmax(3rem,1fr)_auto]">
                 <Link
                   href={countryHref(row.country)}
                   // The ISO code is the row's link to the country fiche, so it
                   // owes the 44px target rather than the 40×20 box the code
                   // itself occupies. The column keeps its 44px measure so the
                   // share bars beside it stay aligned down the list.
-                  className="text-afh-caption font-bold font-mono w-11 min-h-11 inline-flex items-center shrink-0 hover:underline"
+                  className="text-afh-caption font-bold font-mono w-11 min-h-11 inline-flex items-center hover:underline"
                   style={{ color: "var(--country-terracotta-ink)" }}
                 >
                   {row.country}
@@ -68,7 +68,7 @@ export function PeopleCountriesSection({
                   asset, so its code is all there is — and it is then marked as
                   outside the map rather than left looking like an omission. */}
                 <span
-                  className="text-afh-caption shrink-0"
+                  className="text-afh-caption min-w-0"
                   style={{ color: "var(--country-text)" }}
                 >
                   {countryName ?? (
@@ -80,25 +80,34 @@ export function PeopleCountriesSection({
 
                 {/* Progress bar */}
                 <div
-                  className="flex-1 h-[6px] rounded-full overflow-hidden"
+                  className="col-span-2 h-[6px] rounded-full overflow-hidden md:col-span-1"
                   style={{ background: "var(--country-border)" }}
                 >
                   <div
                     className="h-full rounded-full"
                     style={{
-                      width: `${row.percentage ?? 0}%`,
+                      width: `${Math.max(0, Math.min(100, share ?? 0))}%`,
                       background: "var(--country-terracotta)",
                     }}
                   />
                 </div>
 
-                <div className="flex items-center gap-[6px] shrink-0">
+                <div className="col-span-2 flex flex-wrap items-center gap-2 md:col-span-1">
                   <span
                     className="text-afh-caption font-semibold"
                     style={{ color: "var(--country-text)" }}
                   >
-                    {row.percentage != null ? `${row.percentage}%` : "—"}
+                    {share != null
+                      ? `${new Intl.NumberFormat(language, { maximumFractionDigits: 1 }).format(share)} %`
+                      : "—"}
                   </span>
+                  {row.share?.provenance === "derived" && (
+                    <FieldProvenanceMarker
+                      state="derived"
+                      origin={copy.derivedShare}
+                      language={language}
+                    />
+                  )}
                   {row.populationFormatted && (
                     <span
                       className="text-afh-caption"
