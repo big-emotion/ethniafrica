@@ -1,16 +1,12 @@
 import { describe, it, expect } from "vitest";
 import { render, screen, waitFor } from "@testing-library/react";
 import type { ParagraphChipData } from "../ProseWithChip";
-import { PeopleOriginBlock } from "../PeopleOriginBlock";
 import { PeopleLanguageSection } from "../PeopleLanguageSection";
-import { PeopleHistoryTimeline } from "../PeopleHistoryTimeline";
 import { PeopleCultureGrid } from "../PeopleCultureGrid";
 import { PeopleRelatedPeoplesSection } from "../PeopleRelatedPeoplesSection";
 import { PeopleCountriesSection } from "../PeopleCountriesSection";
 import type {
-  PeopleOriginData,
   PeopleLanguageData,
-  PeopleHistoryData,
   PeopleCultureData,
   PeopleRelatedData,
   PeopleCountriesData,
@@ -27,74 +23,6 @@ const unmatchedGroups = (related: PeopleRelatedData) =>
 // was a teal gradient card — teal is the country accent, and a people fiche
 // is ocre (atlas-charter §2). Its own tests live in PeopleFicheHead.test.tsx.
 // ==========================================
-
-// ==========================================
-// PeopleOriginBlock
-// ==========================================
-
-describe("PeopleOriginBlock", () => {
-  it("returns null when all fields empty", () => {
-    const empty: PeopleOriginData = {
-      migrationRoutes: [],
-      historicalSettlementZones: [],
-    };
-    const { container } = render(<PeopleOriginBlock data={empty} />);
-    expect(container.firstChild).toBeNull();
-  });
-
-  it("renders ancientOrigins when present", () => {
-    const data: PeopleOriginData = {
-      ancientOrigins: "Originaires du pays Yoruba au sud-ouest du Nigeria",
-      migrationRoutes: [],
-      historicalSettlementZones: [],
-    };
-    render(<PeopleOriginBlock data={data} />);
-    expect(
-      screen.getByText("Originaires du pays Yoruba au sud-ouest du Nigeria")
-    ).toBeTruthy();
-  });
-
-  it("renders formationPeriod when present", () => {
-    const data: PeopleOriginData = {
-      formationPeriod: "VIIe–IXe siècle",
-      migrationRoutes: [],
-      historicalSettlementZones: [],
-    };
-    render(<PeopleOriginBlock data={data} />);
-    expect(screen.getByText("VIIe–IXe siècle")).toBeTruthy();
-  });
-
-  it("renders migrationRoutes when non-empty", () => {
-    const data: PeopleOriginData = {
-      migrationRoutes: ["Ile-Ife vers la côte", "Expansions vers le Bénin"],
-      historicalSettlementZones: [],
-    };
-    render(<PeopleOriginBlock data={data} />);
-    expect(screen.getByText("Ile-Ife vers la côte")).toBeTruthy();
-    expect(screen.getByText("Expansions vers le Bénin")).toBeTruthy();
-  });
-
-  it("renders historicalSettlementZones when non-empty", () => {
-    const data: PeopleOriginData = {
-      migrationRoutes: [],
-      historicalSettlementZones: ["Oyo", "Lagos", "Ibadan"],
-    };
-    render(<PeopleOriginBlock data={data} />);
-    expect(screen.getByText("Oyo")).toBeTruthy();
-  });
-
-  it("renders externalInfluences when present", () => {
-    const data: PeopleOriginData = {
-      migrationRoutes: [],
-      historicalSettlementZones: [],
-      externalInfluences: "Contacts avec les Hausa et les Fulani",
-    };
-    render(<PeopleOriginBlock data={data} />);
-    expect(
-      screen.getByText("Contacts avec les Hausa et les Fulani")
-    ).toBeTruthy();
-  });
-});
 
 // ==========================================
 // PeopleLanguageSection
@@ -149,56 +77,6 @@ describe("PeopleLanguageSection", () => {
     render(<PeopleLanguageSection data={data} />);
     expect(
       screen.getByText("Langue véhiculaire au Nigeria du Sud-Ouest")
-    ).toBeTruthy();
-  });
-});
-
-// ==========================================
-// PeopleHistoryTimeline
-// ==========================================
-
-describe("PeopleHistoryTimeline", () => {
-  it("returns null when all fields empty", () => {
-    const empty: PeopleHistoryData = {};
-    const { container } = render(<PeopleHistoryTimeline data={empty} />);
-    expect(container.firstChild).toBeNull();
-  });
-
-  it("renders kingdomsOrChiefdoms when present", () => {
-    const data: PeopleHistoryData = {
-      kingdomsOrChiefdoms: "Empire d'Oyo (XIVe–XIXe siècle)",
-    };
-    render(<PeopleHistoryTimeline data={data} />);
-    expect(screen.getByText("Empire d'Oyo (XIVe–XIXe siècle)")).toBeTruthy();
-  });
-
-  it("renders relationsWithNeighbors when present", () => {
-    const data: PeopleHistoryData = {
-      relationsWithNeighbors: "Relations commerciales avec les Hausa",
-    };
-    render(<PeopleHistoryTimeline data={data} />);
-    expect(
-      screen.getByText("Relations commerciales avec les Hausa")
-    ).toBeTruthy();
-  });
-
-  it("renders conflictsOrAlliances when present", () => {
-    const data: PeopleHistoryData = {
-      conflictsOrAlliances: "Guerres civiles de l'empire d'Oyo (XIXe siècle)",
-    };
-    render(<PeopleHistoryTimeline data={data} />);
-    expect(
-      screen.getByText("Guerres civiles de l'empire d'Oyo (XIXe siècle)")
-    ).toBeTruthy();
-  });
-
-  it("renders diaspora when present", () => {
-    const data: PeopleHistoryData = {
-      diaspora: "Forte communauté yoruba au Brésil (Candomblé)",
-    };
-    render(<PeopleHistoryTimeline data={data} />);
-    expect(
-      screen.getByText("Forte communauté yoruba au Brésil (Candomblé)")
     ).toBeTruthy();
   });
 });
@@ -564,92 +442,6 @@ const sampleChip: ParagraphChipData = {
   assertionStatement: "Assertion de test.",
   sources: [],
 };
-
-describe("PeopleOriginBlock — chip integration", () => {
-  it("renders chip (or fallback) for ancientOrigins when chip provided", async () => {
-    render(
-      <PeopleOriginBlock
-        data={{
-          ancientOrigins: "Texte origines.",
-          migrationRoutes: [],
-          historicalSettlementZones: [],
-        }}
-        chips={{ ancientOrigins: sampleChip }}
-      />
-    );
-    expect(screen.getByText("Texte origines.")).toBeTruthy();
-    await waitFor(() => {
-      const btn = screen.queryByRole("button");
-      const link = screen.queryByText("voir les sources");
-      expect(btn ?? link).toBeTruthy();
-    });
-  });
-
-  it("renders chip for formationPeriod when chip provided", async () => {
-    render(
-      <PeopleOriginBlock
-        data={{
-          formationPeriod: "VIIe siècle.",
-          migrationRoutes: [],
-          historicalSettlementZones: [],
-        }}
-        chips={{ formationPeriod: sampleChip }}
-      />
-    );
-    expect(screen.getByText("VIIe siècle.")).toBeTruthy();
-    await waitFor(() => {
-      expect(
-        screen.queryByRole("button") ?? screen.queryByText("voir les sources")
-      ).toBeTruthy();
-    });
-  });
-
-  it("still renders without chips when no chips prop passed", () => {
-    const { container } = render(
-      <PeopleOriginBlock
-        data={{
-          ancientOrigins: "Sans chip.",
-          migrationRoutes: [],
-          historicalSettlementZones: [],
-        }}
-      />
-    );
-    expect(screen.getByText("Sans chip.")).toBeTruthy();
-    expect(container.querySelector("p.people-section-body")).toBeTruthy();
-  });
-});
-
-describe("PeopleHistoryTimeline — chip integration", () => {
-  it("renders chip for kingdomsOrChiefdoms when chip provided", async () => {
-    render(
-      <PeopleHistoryTimeline
-        data={{ kingdomsOrChiefdoms: "Empire d'Oyo." }}
-        chips={{ kingdomsOrChiefdoms: sampleChip }}
-      />
-    );
-    expect(screen.getByText("Empire d'Oyo.")).toBeTruthy();
-    await waitFor(() => {
-      expect(
-        screen.queryByRole("button") ?? screen.queryByText("voir les sources")
-      ).toBeTruthy();
-    });
-  });
-
-  it("renders chip for diaspora when chip provided", async () => {
-    render(
-      <PeopleHistoryTimeline
-        data={{ diaspora: "Communauté au Brésil." }}
-        chips={{ diaspora: sampleChip }}
-      />
-    );
-    expect(screen.getByText("Communauté au Brésil.")).toBeTruthy();
-    await waitFor(() => {
-      expect(
-        screen.queryByRole("button") ?? screen.queryByText("voir les sources")
-      ).toBeTruthy();
-    });
-  });
-});
 
 describe("PeopleCultureGrid — chip integration", () => {
   // @req REQ-003

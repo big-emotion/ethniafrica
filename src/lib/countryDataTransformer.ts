@@ -36,22 +36,6 @@ export interface HeroData {
   flag: string;
 }
 
-export type TimelineItemType = "kingdom" | "colonial" | "sovereign";
-
-export interface TimelineItem {
-  type: TimelineItemType;
-  era: string;
-  /** The historical name, when the era is written as a "date : Nom" list. */
-  name?: string;
-  /** The era's own words, when it holds no name to extract. */
-  prose?: string;
-}
-
-export interface TimelineData {
-  items: TimelineItem[];
-  gradientStops: { goldEnd: number; colonialEnd: number };
-}
-
 /**
  * The year the atlas reads a demographic figure against when the fiche does
  * not date it. It lived as a literal in two components and as `2025` spelled
@@ -168,7 +152,6 @@ export interface HistoricalFactsData {
 
 export interface CountryPageData {
   hero: HeroData;
-  timeline: TimelineData;
   peoples: PeoplesData;
   kingdoms: KingdomsData;
   historicalFacts?: HistoricalFactsData;
@@ -308,110 +291,6 @@ export function transformHero(country: CountryDetail): HeroData {
     iso,
     flag: flagFromISO3(iso),
   };
-}
-
-// @req REQ-001
-export function transformTimeline(
-  historicalNames?: HistoricalNamesSection,
-  language: Language = "fr"
-): TimelineData {
-  const items: TimelineItem[] = [];
-  const eras = countryCopy[language].generated.eras;
-
-  if (!historicalNames) {
-    return { items, gradientStops: { goldEnd: 100, colonialEnd: 100 } };
-  }
-
-  // Parse each era
-  if (historicalNames.middleAges) {
-    parseEraItems(
-      historicalNames.middleAges,
-      "kingdom",
-      eras.middleAges
-    ).forEach((i) => items.push(i));
-  }
-
-  if (historicalNames.precolonial) {
-    parseEraItems(
-      historicalNames.precolonial,
-      "kingdom",
-      eras.precolonial
-    ).forEach((i) => items.push(i));
-  }
-
-  if (historicalNames.colonization) {
-    parseEraItems(
-      historicalNames.colonization,
-      "colonial",
-      eras.colonization
-    ).forEach((i) => items.push(i));
-  }
-
-  if (historicalNames.contemporary) {
-    parseEraItems(
-      historicalNames.contemporary,
-      "sovereign",
-      eras.contemporary
-    ).forEach((i) => items.push(i));
-  }
-
-  // Remove duplicates (keep unique by name, or by the prose that stands in
-  // for one — two untitled eras are two entries, not one)
-  const seen = new Set<string>();
-  const uniqueItems = items.filter((item) => {
-    const key = (item.name ?? item.prose ?? item.era).toLowerCase();
-    if (seen.has(key)) return false;
-    seen.add(key);
-    return true;
-  });
-
-  // Calculate gradient stops
-  const total = uniqueItems.length || 1;
-  const kingdoms = uniqueItems.filter((i) => i.type === "kingdom").length;
-  const colonials = uniqueItems.filter((i) => i.type === "colonial").length;
-  const goldEnd = Math.round((kingdoms / total) * 100);
-  const colonialEnd = Math.round(((kingdoms + colonials) / total) * 100);
-
-  return {
-    items: uniqueItems,
-    gradientStops: { goldEnd, colonialEnd },
-  };
-}
-
-function parseEraItems(
-  text: string,
-  defaultType: TimelineItemType,
-  eraLabel: string
-): TimelineItem[] {
-  const items: TimelineItem[] = [];
-
-  // Extract named entities from the text
-  // Look for patterns like "XXXX-XXXX : Name" or "Name (dates)"
-  const dateNamePattern = /(\d{4}(?:[–-]\d{4})?)\s*:\s*([^.,(]+)/g;
-  let match;
-
-  while ((match = dateNamePattern.exec(text)) !== null) {
-    items.push({
-      type: defaultType,
-      era: match[1],
-      name: match[2].trim(),
-    });
-  }
-
-  // The era holds no dated list, so it is prose about the period rather than
-  // a name to display. Serving it whole is the point: clipping it into a
-  // title left every fiche showing the same cut sentence twice over.
-  if (items.length === 0) {
-    const dateMatch = text.match(/(\d{4}(?:[–-]\d{4})?)/);
-
-    items.push({
-      type: defaultType,
-      era: dateMatch ? dateMatch[1] : eraLabel,
-      prose: text,
-    });
-  }
-
-  return items;
 }
 
 // @req REQ-001
@@ -845,7 +724,6 @@ export function transformCountryData(
 ): CountryPageData {
   return {
     hero: transformHero(country),
-    timeline: transformTimeline(country.historicalNames, language),
     peoples: transformPeoples(
       country.demographics,
       country.majorPeoples,

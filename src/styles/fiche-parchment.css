@@ -733,6 +733,213 @@
   color: var(--afh-text-soft);
 }
 
+.afh-tile[open][data-body-restates-preview="true"] .afh-tile-preview {
+  display: none;
+}
+
+.afh-tile-kicker {
+  margin: 0;
+  font-family: var(--afh-font-mono);
+  font-size: var(--afh-text-caption);
+  font-weight: 700;
+  color: var(--afh-text-soft);
+}
+
+/* A term inside an opened tile: the name of the rubric a passage comes from. */
+.afh-tile-term {
+  margin: 0 0 4px;
+  font-family: var(--afh-font-mono);
+  font-size: var(--afh-text-caption);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--afh-text-soft);
+}
+
+.afh-tile-body .afh-tile-prose {
+  margin: 0 0 8px;
+  font-size: var(--afh-text-small);
+  line-height: 1.6;
+  color: var(--afh-text-soft);
+}
+
+.afh-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.afh-pills > li {
+  padding: 4px 12px;
+  border: 1px solid var(--afh-border);
+  border-radius: var(--afh-radius-full);
+  background: var(--afh-bg);
+  font-size: var(--afh-text-small);
+  color: var(--afh-text);
+}
+
+/* ── Chronology ───────────────────────────────────────────────────────
+   One timeline for both records (operator ruling, 2026-09-12): a line down
+   the stations, a dot and a rule per station inked by its regime, and in
+   each the period, the title, the preview. Three regimes, three existing
+   inks — gold for a precolonial polity, the colonial ink the atlas keeps for
+   imposed authority, green for the contemporary state. */
+
+.afh-chronology-lead {
+  margin-bottom: 16px;
+}
+
+.afh-chronology-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 16px;
+  padding: 0;
+  list-style: none;
+}
+
+.afh-chronology-legend > li {
+  padding: 4px 12px;
+  border: 1px solid var(--afh-border);
+  border-radius: var(--afh-radius-full);
+  background: var(--afh-surface);
+  font-family: var(--afh-font-mono);
+  font-size: var(--afh-text-caption);
+  font-weight: 700;
+  color: var(--afh-regime-ink);
+}
+
+.afh-chronology-legend > [data-regime="polity"],
+.afh-chronology > [data-regime="polity"] {
+  --afh-regime-ink: var(--afh-gold);
+}
+
+.afh-chronology-legend > [data-regime="colonial"],
+.afh-chronology > [data-regime="colonial"] {
+  --afh-regime-ink: var(--afh-colonial-ink);
+}
+
+.afh-chronology-legend > [data-regime="modern"],
+.afh-chronology > [data-regime="modern"] {
+  --afh-regime-ink: var(--afh-conf-high);
+}
+
+.afh-chronology {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0 0 0 24px;
+  list-style: none;
+}
+
+.afh-chronology-station {
+  position: relative;
+}
+
+/* The line is drawn one segment per station, so it changes ink where the
+   regime does. The segments overlap the 12px gap, which keeps it whole. */
+.afh-chronology-station::before {
+  content: "";
+  position: absolute;
+  left: -16px;
+  top: -8px;
+  bottom: -8px;
+  width: 3px;
+  background: var(--afh-regime-ink);
+}
+
+.afh-chronology-station:first-child::before {
+  top: 24px;
+}
+
+.afh-chronology-station:last-child::before {
+  bottom: calc(100% - 24px);
+}
+
+.afh-chronology-station::after {
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: 18px;
+  width: 11px;
+  height: 11px;
+  border-radius: var(--afh-radius-full);
+  background: var(--afh-regime-ink);
+  box-shadow: 0 0 0 3px var(--afh-bg-warm);
+}
+
+.afh-chronology-station > .afh-tile {
+  border-left: 3px solid var(--afh-regime-ink);
+}
+
+.afh-chronology-station .afh-tile-kicker {
+  color: var(--afh-regime-ink);
+}
+
+/* In a station the label is the entity, so it takes the display face. */
+.afh-chronology-station .afh-tile-label {
+  font-family: var(--afh-font-display);
+  font-size: var(--afh-text-h3);
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--afh-text);
+}
+
+.afh-chronology-station .afh-tile-value {
+  font-family: var(--afh-font-body);
+  font-size: var(--afh-text-small);
+  font-weight: 400;
+}
+
+.afh-chronology-names {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.afh-chronology-name {
+  padding: 2px 12px;
+  border: 1px solid var(--afh-regime-ink);
+  border-radius: var(--afh-radius-full);
+  font-weight: 600;
+  color: var(--afh-text);
+}
+
+.afh-chronology-name-term {
+  font-weight: 400;
+  color: var(--afh-text-soft);
+}
+
+.afh-chronology-passage + .afh-chronology-passage {
+  margin-top: 12px;
+}
+
+.afh-chronology-routes {
+  display: grid;
+  gap: 4px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--afh-text-small);
+  color: var(--afh-text);
+}
+
+.afh-chronology-routes > li::before {
+  content: "→ ";
+  color: var(--afh-regime-ink);
+}
+
+.afh-chronology-centres {
+  margin: 8px 0 0;
+  font-family: var(--afh-font-mono);
+  font-size: var(--afh-text-caption);
+  color: var(--afh-text-soft);
+}
+
 /* ── Callout ──────────────────────────────────────────────────────────
    An aside the section cannot say in its own prose. A rule in the
    surface's accent, never a box, so it reads as part of the same
@@ -856,118 +1063,6 @@
   color: var(--afh-text-soft);
 }
 
-/* ── Timeline ─────────────────────────────────────────────────────────
-   Historical political entities: a period, what the entity was, and the
-   centres it was governed from. Rows separated by a hairline rather than
-   boxed, like every other part of the parchment. */
-
-.afh-parchment-timeline {
-  display: grid;
-  gap: 0;
-}
-
-/* The country chronology keeps dated and undated stations on one visible line. */
-.afh-chronology-spine {
-  margin: 0;
-  padding: 0 0 0 20px;
-  list-style: none;
-  border-left: 2px solid var(--accent-tint);
-}
-
-.afh-chronology-spine > .afh-tl-item {
-  position: relative;
-}
-
-.afh-chronology-spine > .afh-tl-item::before {
-  content: "";
-  position: absolute;
-  left: -26px;
-  top: 20px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--accent-ink);
-}
-
-.afh-tl-item--fact > * {
-  grid-column: 1 / -1;
-}
-
-.afh-tl-item {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 5px;
-  padding: 14px 0;
-  border-bottom: 1px solid var(--afh-border);
-}
-
-.afh-tl-item:last-child {
-  border-bottom: 0;
-}
-
-/* --accent-ink, not --accent: the mockup sets the period in the fill colour,
-   which lands at 2.3:1 on the parchment at caption size. The ink variant is
-   the same hue scaled to clear AA, which is what accent-coloured text takes
-   anywhere on a tinted surface. axe caught this at all three widths. */
-/* Two classes, so a period written as a paragraph — which is what keeps it
-   left of a phone's centre — is not dressed as the account below it by
-   `.afh-tl-item p`. */
-.afh-tl-item .afh-tl-period {
-  margin: 0;
-  font-family: var(--afh-font-mono);
-  font-size: var(--afh-text-caption);
-  font-weight: 700;
-  line-height: 1.5;
-  padding-top: 2px;
-  color: var(--accent-ink);
-}
-
-.afh-tl-item h3 {
-  margin: 0 0 4px;
-  font-family: var(--afh-font-display);
-  font-weight: 700;
-  font-size: var(--afh-text-h3);
-  color: var(--afh-text);
-}
-
-.afh-tl-item p {
-  margin: 0;
-  font-size: var(--afh-text-small);
-  line-height: 1.65;
-  color: var(--afh-text-soft);
-}
-
-/* Soft, not the mockup's muted: this is nano-sized, and muted clears only
-   2.8:1 on the warm ground. The guard in ficheParchmentContrast.test.ts
-   fails the file outright if muted ever appears here. */
-/* Two classes, so it outranks `.afh-tl-item p` — the seat of power rides in a
-   paragraph to keep the left edge a phone would otherwise take from it, and a
-   paragraph is exactly what that rule already dresses. */
-.afh-tl-item .afh-tl-centers {
-  display: block;
-  margin-top: 6px;
-  font-family: var(--afh-font-mono);
-  font-size: var(--afh-text-caption);
-  color: var(--afh-text-soft);
-}
-
-/* The regime inks the period. Three kinds of authority share the corpus's
-   one array of entities, and until now the page showed them in one colour —
-   which is the same as not distinguishing them.
-
-   The colonial ink is the token literally named for it, and it is the ink a
-   documented gap also borrows elsewhere on this surface. That double duty is
-   inherited, not chosen here, and is raised for a ruling rather than settled
-   quietly: a silence in the corpus and a colonial administration are not the
-   same claim and should not end up the same red. */
-.afh-tl-item .afh-tl-period[data-regime="colonial"] {
-  color: var(--country-colonial);
-}
-
-.afh-tl-item .afh-tl-period[data-regime="modern"] {
-  color: var(--country-green);
-}
-
 /* ── Wide layout ──────────────────────────────────────────────────── */
 
 @container (min-width: 760px) {
@@ -981,11 +1076,6 @@
 
   .afh-parchment-section > [data-fiche-section] {
     padding: 32px 24px;
-  }
-
-  .afh-tl-item {
-    grid-template-columns: 96px 1fr;
-    gap: 16px;
   }
 
   /* Side by side only once there is room for two measures. Below this the

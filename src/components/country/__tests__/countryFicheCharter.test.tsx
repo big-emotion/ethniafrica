@@ -107,9 +107,8 @@ describe("country fiche charter", () => {
     expect(screen.getByRole("heading", { name: "Nigéria" })).toBeVisible();
 
     rerender(<CountryRecordView language="en" country={country} />);
-    expect(
-      screen.getByRole("heading", { name: "The name and its history" })
-    ).toBeVisible();
+    // The name's history now opens the History chapter as its first tile.
+    expect(screen.getByText("Where the name comes from")).toBeVisible();
     expect(screen.getByRole("heading", { name: "History" })).toBeVisible();
     expect(
       screen.getByRole("heading", { name: "Culture and society" })
@@ -188,7 +187,7 @@ describe("country fiche charter", () => {
 
   // @req REQ-115
   // @req REQ-154
-  it("publishes the nine chapters in reading order", () => {
+  it("publishes the eight chapters in reading order", () => {
     const { container } = render(
       <CountryRecordView
         language="fr"
@@ -205,7 +204,6 @@ describe("country fiche charter", () => {
     ).toEqual([
       "En bref",
       "Peuples du pays",
-      "Le nom et son histoire",
       "Langues",
       "Histoire",
       "Noms du pays",
@@ -270,16 +268,11 @@ describe("country fiche charter", () => {
       })
     );
     const chapter = container.querySelector('[data-fiche-section="Histoire"]');
-    expect(chapter?.querySelectorAll(".afh-parchment-timeline")).toHaveLength(
-      1
-    );
-    expect(chapter?.querySelector(".afh-parchment-timeline")).toHaveClass(
-      "afh-chronology-spine"
-    );
+    expect(chapter?.querySelectorAll("ol.afh-chronology")).toHaveLength(1);
     expect(chapter).toHaveTextContent("Royaume daté");
     expect(chapter).toHaveTextContent("Administration coloniale attestée.");
     const undated = Array.from(
-      chapter?.querySelectorAll(".afh-tl-item") ?? []
+      chapter?.querySelectorAll("ol.afh-chronology > li") ?? []
     ).find((item) => item.textContent?.includes("Royaume non daté"));
     expect(undated).toHaveTextContent("Précolonial");
     expect(undated?.textContent).not.toMatch(/\d{4}/);
@@ -325,8 +318,8 @@ describe("country fiche charter", () => {
     expect(chapter).toHaveTextContent("République du Burundi");
 
     const regimes = Array.from(
-      chapter?.querySelectorAll(".afh-tl-period") ?? [],
-      (period) => period.getAttribute("data-regime")
+      chapter?.querySelectorAll("ol.afh-chronology > li") ?? [],
+      (station) => station.getAttribute("data-regime")
     );
     expect(regimes).toEqual(["polity", "colonial", "modern"]);
   });
@@ -351,7 +344,7 @@ describe("country fiche charter", () => {
     );
 
     const seats = container.querySelector(
-      '[data-fiche-section="Histoire"] .afh-tl-centers'
+      '[data-fiche-section="Histoire"] .afh-chronology-centres'
     );
     expect(seats).toHaveTextContent("Gitega · Muramvya");
     // A paragraph, because that is what keeps it left of a phone's centre.
@@ -359,25 +352,29 @@ describe("country fiche charter", () => {
   });
 
   // @req REQ-154
-  it("keeps a historical period's first sentence visible while disclosing its longer account", () => {
+  it("keeps an entity's first sentence visible while disclosing its longer account", () => {
     const { container } = renderParchment(
       countryFixture({
-        kingdoms: [],
-        historicalFacts: {
-          colonization:
-            "A protectorate was established. Its institutions changed later.",
-        },
+        kingdoms: [
+          {
+            name: "Protectorat",
+            period: "1900 - 1960",
+            entryType: "colonial",
+            historicalRole:
+              "A protectorate was established. Its institutions changed later.",
+          },
+        ],
       })
     );
     const chapter = container.querySelector('[data-fiche-section="Histoire"]');
-    const tile = chapter?.querySelector("details[data-fiche-tile]");
+    const tile = chapter?.querySelector(
+      "ol.afh-chronology details[data-fiche-tile]"
+    );
     expect(tile?.querySelector("summary")).toHaveTextContent(
       "A protectorate was established."
     );
     expect(tile).toHaveTextContent("Its institutions changed later.");
-    expect(tile?.querySelector("summary + div")).not.toHaveTextContent(
-      "A protectorate was established."
-    );
+    expect(tile).toHaveAttribute("data-body-restates-preview", "true");
   });
 
   // @req REQ-154
@@ -391,16 +388,13 @@ describe("country fiche charter", () => {
         },
       })
     );
+    const chapter = container.querySelector('[data-fiche-section="Histoire"]')!;
+    expect(chapter.textContent!.split("Autre nom (1850–1900)")).toHaveLength(2);
     const stations = Array.from(
-      container.querySelectorAll(
-        '[data-fiche-section="Le nom et son histoire"] .afh-tl-item'
-      ),
-      (node) => node.textContent
+      chapter.querySelectorAll("ol.afh-chronology > li"),
+      (node) => node.textContent ?? ""
     );
-    expect(
-      stations.filter((station) => station?.includes("Ancien nom"))
-    ).toHaveLength(1);
-    expect(stations).toContain("—Autre nom (1850–1900)");
+    expect(stations.at(-1)).toContain("Nigéria");
     expect(stations.at(-1)).toContain("Nom actuel");
   });
 
@@ -413,7 +407,7 @@ describe("country fiche charter", () => {
     );
     const chapter = container.querySelector('[data-fiche-section="Histoire"]');
     expect(chapter).toHaveTextContent("Royaume connu");
-    expect(chapter?.querySelector("[data-fiche-tile]")).toBeNull();
+    expect(chapter?.querySelector("ol.afh-chronology details")).toBeNull();
   });
 
   // @req REQ-154
@@ -464,7 +458,6 @@ describe("country fiche charter", () => {
     ).map((node) => node.textContent);
 
     expect(headings).toContain("Histoire");
-    expect(headings).toContain("Le nom et son histoire");
     expect(headings).toContain("Peuples du pays");
   });
 
@@ -480,9 +473,6 @@ describe("country fiche charter", () => {
 
     expect(
       document.querySelector('[data-fiche-section="Histoire"]')
-    ).toHaveTextContent("Donnée manquante");
-    expect(
-      document.querySelector('[data-fiche-section="Le nom et son histoire"]')
     ).toHaveTextContent("Donnée manquante");
 
     // The chapter the atlas does fill carries no marker: a marker beside a
@@ -511,8 +501,11 @@ describe("country fiche charter", () => {
     // The mockup blames a top-eight cut-off. This page lists every people it
     // has, so that sentence would be false here.
     expect(container.textContent).not.toMatch(/huit premiers/i);
+    // The name's author used to sit in a callout of its own; it now reads
+    // inside the etymology tile, so nothing on the parchment is set apart as
+    // a callout at all.
     expect(container.querySelectorAll(".afh-parchment-callout")).toHaveLength(
-      1
+      0
     );
   });
 
@@ -642,7 +635,6 @@ describe("country fiche — a note only where it adds something", () => {
         `[data-fiche-section="${title}"] .afh-parchment-note`
       );
 
-    expect(noteFor("Le nom et son histoire")).toBeNull();
     expect(noteFor("Peuples du pays")).toBeNull();
     expect(noteFor("Histoire")).toBeNull();
 
@@ -685,12 +677,7 @@ describe("country record view — the chapters the page adds", () => {
 
     // Scoped to the four: the view wraps CountryParchment, whose Sources
     // chapter keeps the one note that still earns its line.
-    for (const title of [
-      "Le nom et son histoire",
-      "Histoire",
-      "Langues",
-      "Culture et société",
-    ]) {
+    for (const title of ["Histoire", "Langues", "Culture et société"]) {
       expect(
         container.querySelector(
           `[data-fiche-section="${title}"] .afh-parchment-note`
@@ -707,7 +694,6 @@ describe("country record view — the chapters the page adds", () => {
       container.querySelectorAll("[data-fiche-section]")
     ).map((node) => node.getAttribute("data-fiche-section"));
 
-    expect(titles).toContain("Le nom et son histoire");
     expect(titles).toContain("Histoire");
     expect(titles).toContain("Langues");
     expect(titles).toContain("Culture et société");

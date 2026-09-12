@@ -19,6 +19,25 @@ const en = {
    * The worded control that closes a tile. Words rather than a glyph, so the
    * reader knows what the press does before making it.
    */
+  /**
+   * The history timeline both records share. A people station is dated by
+   * its regime word, because a people's history carries no date field.
+   */
+  chronology: {
+    label: "Chronology",
+    regime: {
+      polity: "Precolonial",
+      colonial: "Colonial",
+      modern: "Contemporary",
+    },
+    groupedEntities: (count: number) => `${count} political entities`,
+    since: (year: number) => `Since ${year}`,
+    nameAtTheTime: "name",
+    territoryName: "Name of the territory",
+    etymology: "Where the name comes from",
+    otherNames: "Other names the territory has carried",
+    centres: "Centres",
+  },
   tile: {
     more: "+ read more",
     less: "− fold",
@@ -67,6 +86,21 @@ const fr: FicheCopy = {
   sourceTierNote:
     "Chaque source porte son palier — l'autorité qu'on peut lui accorder.",
   contribute: "Contribuer",
+  chronology: {
+    label: "Chronologie",
+    regime: {
+      polity: "Précolonial",
+      colonial: "Colonial",
+      modern: "Contemporain",
+    },
+    groupedEntities: (count) => `${count} entités politiques`,
+    since: (year) => `Depuis ${year}`,
+    nameAtTheTime: "nom",
+    territoryName: "Nom du territoire",
+    etymology: "D'où vient le nom",
+    otherNames: "Autres noms portés par le territoire",
+    centres: "Centres",
+  },
   tile: {
     more: "+ en savoir plus",
     less: "− replier",

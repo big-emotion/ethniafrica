@@ -23,7 +23,8 @@ import {
 import { SourcesFooter } from "@/components/country/SourcesFooter";
 import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
 import { PeopleNamingTiles } from "@/components/people/PeopleNamingTiles";
-import { PeopleHistoryChapter } from "@/components/people/PeopleHistoryChapter";
+import { FicheChronologyChapter } from "@/components/fiche/FicheChronologyChapter";
+import { peopleChronology } from "@/lib/fiche/chronology";
 import { PeopleCultureChapter } from "@/components/people/PeopleCultureChapter";
 import { PeopleNamesChapter } from "@/components/people/PeopleNamesChapter";
 import { PeopleFieldExplainer } from "@/components/people/PeopleFieldExplainer";
@@ -159,6 +160,7 @@ export function PeopleDetailViewV2({
   const sources = bibliography ?? data.sources;
   const distribution = people.demography?.distributionByCountry;
   const relationsPreview = transformSourcedRelationsPreview(relations);
+  const chronology = peopleChronology(data.origin, data.history, language);
   // Self excluded: a fiche whose own name appears among its groups would
   // otherwise offer the reader a link back to the page they are on.
   const associatedGroups = resolveAssociatedPeoples(
@@ -314,13 +316,15 @@ export function PeopleDetailViewV2({
       </FicheSection>
 
       <FicheSection title={copy.sections.historicalRole}>
-        <PeopleHistoryChapter
-          origin={data.origin}
-          history={data.history}
-          originNotes={notes?.origin}
-          historyNotes={notes?.history}
-          language={language}
-        />
+        {chronology.length > 0 ? (
+          <FicheChronologyChapter
+            stations={chronology}
+            notes={{ ...notes?.origin, ...notes?.history }}
+            language={language}
+          />
+        ) : (
+          <FieldProvenanceMarker state="missing" language={language} />
+        )}
         {people.historicalAffiliation && (
           <PeopleHistoricalAffiliationBlock
             data={people.historicalAffiliation}

@@ -16,6 +16,13 @@ export interface FicheTileProps {
   value?: ReactNode;
   detailText?: string;
   children?: ReactNode;
+  /** A line above the label — the period of a chronology station. */
+  kicker?: ReactNode;
+  /**
+   * The body repeats the preview in full, with what plain text cannot carry
+   * (a note call). Opened, the preview steps aside so nothing reads twice.
+   */
+  bodyRestatesPreview?: boolean;
   /** Spans both columns of `FicheTiles`. An odd last tile does so on its own. */
   wide?: boolean;
   language?: Language;
@@ -72,6 +79,8 @@ export function FicheTile({
   value,
   detailText,
   children,
+  kicker,
+  bodyRestatesPreview = false,
   wide = false,
   language = FALLBACK_LOCALE,
 }: FicheTileProps) {
@@ -87,6 +96,7 @@ export function FicheTile({
   if (!canCollapse) {
     return (
       <div data-fiche-tile="" data-wide={wideAttribute} className="afh-tile">
+        {kicker ? <p className="afh-tile-kicker">{kicker}</p> : null}
         <h3 className="afh-tile-label">{title}</h3>
         {value ? (
           <p data-tile-value="" className="afh-tile-value">
@@ -103,8 +113,14 @@ export function FicheTile({
   const copy = ficheCopy[language].tile;
 
   return (
-    <details data-fiche-tile="" data-wide={wideAttribute} className="afh-tile">
+    <details
+      data-fiche-tile=""
+      data-wide={wideAttribute}
+      data-body-restates-preview={bodyRestatesPreview ? "true" : undefined}
+      className="afh-tile"
+    >
       <summary className={`afh-tile-summary ${CHARTER_FOCUS_RING}`}>
+        {kicker ? <span className="afh-tile-kicker">{kicker}</span> : null}
         <span className="afh-tile-label">{title}</span>
         {value ? (
           <span data-tile-value="" className="afh-tile-value">

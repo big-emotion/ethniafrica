@@ -1,4 +1,3 @@
-import { Info } from "lucide-react";
 import { DossierLinks } from "@/components/dossiers/DossierLinks";
 import type { ReactNode } from "react";
 
@@ -11,7 +10,8 @@ import {
   FicheSummaryBrief,
   type CountrySummaryFigures,
 } from "@/components/fiche/FicheSummaryBrief";
-import { CountryChronology } from "@/components/country/CountryChronology";
+import { FicheChronologyChapter } from "@/components/fiche/FicheChronologyChapter";
+import { countryChronology } from "@/lib/fiche/chronology";
 import { FicheAmendBand } from "@/components/fiche/FicheAmendBand";
 import { chapterAnchorId } from "@/lib/ficheChapters";
 import type { ProvenanceState } from "@/lib/fieldProvenance";
@@ -60,14 +60,12 @@ export function CountryParchment({
   onward,
 }: CountryParchmentProps) {
   const copy = countryCopy[language];
-  const etymology = country.etymology?.trim();
-  const nameOriginActor = country.nameOriginActor?.trim();
   const hasPeoples =
     data.peoples.rows.length > 0 ||
     Boolean(data.peoples.totalPopulationFormatted);
+  const chronology = countryChronology(country, language);
   const hasHistory =
-    data.kingdoms.cards.length > 0 ||
-    Boolean(data.historicalFacts?.periods.length);
+    chronology.stations.length > 0 || Boolean(chronology.etymology);
   const figures: CountrySummaryFigures = summaryFigures ?? {
     population:
       country.demographics?.totalPopulation &&
@@ -80,26 +78,6 @@ export function CountryParchment({
     peoples: country.demographics?.peoples?.length,
     languages: data.languages.bubbles.length || null,
   };
-  const remainingFormerNames = (
-    country.historicalNames?.formerNames ?? []
-  ).filter((formerName) => {
-    const normalized = formerName.toLocaleLowerCase(language);
-    const withoutDates = normalized.replace(/\s*\([^)]*\)\s*$/u, "").trim();
-    return !data.timeline.items.some(
-      (item) =>
-        item.name?.toLocaleLowerCase(language) === withoutDates ||
-        item.prose?.toLocaleLowerCase(language).includes(normalized)
-    );
-  });
-  const nameStations = [
-    ...data.timeline.items.filter((item) => item.type !== "sovereign"),
-    ...remainingFormerNames.map((name) => ({
-      era: "—",
-      name,
-      prose: undefined,
-    })),
-    ...data.timeline.items.filter((item) => item.type === "sovereign"),
-  ];
 
   return (
     <div className="afh-parchment" id="fiche">
@@ -127,47 +105,6 @@ export function CountryParchment({
         )}
       </Section>
 
-      <Section title={copy.sections.nameAndHistory}>
-        {etymology || nameOriginActor || nameStations.length > 0 ? (
-          <>
-            {etymology && <p>{etymology}</p>}
-            {nameOriginActor && (
-              <div className="afh-parchment-callout">
-                <Info
-                  className="afh-parchment-callout-icon"
-                  aria-hidden="true"
-                />
-                {nameOriginActor}
-              </div>
-            )}
-            {nameStations.length > 0 && (
-              <ol className="afh-parchment-timeline afh-chronology-spine">
-                {nameStations.map((item, index) => (
-                  <li className="afh-tl-item" key={`${item.era}-${index}`}>
-                    {/* A paragraph for the same reason the chronology's is:
-                        a span here drifts to the middle of its own row on a
-                        phone while the name under it stays left. */}
-                    <p className="afh-tl-period">{item.era}</p>
-                    <div>
-                      {item.name ? <h3>{item.name}</h3> : null}
-                      {item.prose ? <p>{item.prose}</p> : null}
-                    </div>
-                  </li>
-                ))}
-              </ol>
-            )}
-          </>
-        ) : (
-          <FieldProvenanceMarker state="missing" language={language} />
-        )}
-        <DossierLinks
-          language={language}
-          kind="country"
-          id={country.id}
-          section="etymology"
-        />
-      </Section>
-
       <Section
         title={copy.sections.languages}
         note={
@@ -189,14 +126,21 @@ export function CountryParchment({
 
       <Section title={copy.sections.history}>
         {hasHistory ? (
-          <CountryChronology
-            entities={data.kingdoms.cards}
-            accounts={data.historicalFacts}
+          <FicheChronologyChapter
+            stations={chronology.stations}
+            etymology={chronology.etymology}
+            etymologyAnchorId={chapterAnchorId(copy.sections.nameAndHistory)}
             language={language}
           />
         ) : (
           <FieldProvenanceMarker state="missing" language={language} />
         )}
+        <DossierLinks
+          language={language}
+          kind="country"
+          id={country.id}
+          section="etymology"
+        />
       </Section>
 
       {children}

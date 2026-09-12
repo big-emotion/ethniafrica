@@ -8,7 +8,6 @@ import {
   shortenFamily,
   extractKeywords,
   transformHero,
-  transformTimeline,
   transformPeoples,
   transformKingdoms,
   transformLanguages,
@@ -343,81 +342,6 @@ describe("transformHero", () => {
     expect(hero.nameOfficial).toBe(
       "République d'Afrique du Sud (Republic of South Africa, iNingizimu Afrika)"
     );
-  });
-});
-
-describe("transformTimeline", () => {
-  it("produces timeline items for BFA", () => {
-    const result = transformTimeline(bfaCountry.historicalNames);
-    expect(result.items.length).toBeGreaterThan(0);
-
-    const types = result.items.map((i) => i.type);
-    expect(types).toContain("kingdom");
-    expect(types).toContain("colonial");
-    expect(types).toContain("sovereign");
-  });
-
-  it("calculates gradient stops", () => {
-    const result = transformTimeline(bfaCountry.historicalNames);
-    expect(result.gradientStops.goldEnd).toBeGreaterThan(0);
-    expect(result.gradientStops.colonialEnd).toBeGreaterThan(
-      result.gradientStops.goldEnd
-    );
-  });
-
-  it("handles empty historical names", () => {
-    const result = transformTimeline(undefined);
-    expect(result.items).toHaveLength(0);
-  });
-
-  // Most fiches write an era as prose, not as a "date : Nom" list. The prose
-  // is not a name, so it is served whole as the item's prose instead of being
-  // cut into a title — which is what put the same clipped sentence twice on
-  // every country fiche.
-  // @req REQ-092
-  it("keeps a prose era whole instead of clipping it into a title", () => {
-    const prose =
-      "Mosaïque de royaumes et chefferies autonomes : royaumes Akan (Baoulé, Agni, Abron), peuples Krou (Bété, Wé, Dida), Mandé du Nord (Malinké, Dioula), peuples voltaiques (Sénoufo, Lobi, Koulango).";
-
-    const result = transformTimeline({ precolonial: prose });
-
-    expect(result.items).toHaveLength(1);
-    expect(result.items[0].prose).toBe(prose);
-    expect(result.items[0].name).toBeUndefined();
-  });
-
-  // @req REQ-092
-  it("names an era written as a dated list, and gives it no prose", () => {
-    const result = transformTimeline({
-      colonization: "1893-1960 : Colonie de Côte d'Ivoire.",
-    });
-
-    expect(result.items).toHaveLength(1);
-    expect(result.items[0].name).toBe("Colonie de Côte d'Ivoire");
-    expect(result.items[0].era).toBe("1893-1960");
-    expect(result.items[0].prose).toBeUndefined();
-  });
-
-  // @req REQ-092
-  it("clips nothing on any era of a real fiche", () => {
-    const result = transformTimeline(bfaCountry.historicalNames);
-
-    for (const item of result.items) {
-      expect(item.name ?? "").not.toMatch(/\.\.\.$/);
-      expect(item.prose ?? "").not.toMatch(/\.\.\.$/);
-    }
-  });
-
-  // Two prose eras used to collapse into one when both were untitled, because
-  // the de-duplication key read a name that no longer exists.
-  // @req REQ-092
-  it("keeps two distinct prose eras apart", () => {
-    const result = transformTimeline({
-      middleAges: "Développement des royaumes Akan.",
-      precolonial: "Mosaïque de royaumes et chefferies autonomes.",
-    });
-
-    expect(result.items).toHaveLength(2);
   });
 });
 
@@ -1036,7 +960,6 @@ describe("transformCountryData", () => {
   it("produces complete page data for BFA", () => {
     const result = transformCountryData(bfaCountry);
     expect(result.hero.countryName).toBe("Burkina Faso");
-    expect(result.timeline.items.length).toBeGreaterThan(0);
     expect(result.peoples.rows.length).toBeGreaterThan(0);
     expect(result.kingdoms.cards.length).toBeGreaterThan(0);
     expect(result.languages.bubbles.length).toBeGreaterThan(0);
