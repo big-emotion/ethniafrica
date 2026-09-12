@@ -217,7 +217,7 @@ describe("country fiche charter", () => {
    * A page resting on seven unexamined sources out of nine is a fact about
    * the page, and reading nine entries was the only way to learn it. The
    * line counts each standing separately — a census, never the single
-   * verdict `SourcesFooter` refuses, which would make the strongest source
+   * verdict `FicheSources` refuses, which would make the strongest source
    * and the weakest read alike.
    */
   // @req REQ-092

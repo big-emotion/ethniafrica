@@ -9,7 +9,7 @@ import type { FicheSourceEntry } from "@/lib/afrik/ficheSourceLabel";
  * The only reshaping this entity needs is its sources: the service already
  * hands over `id`/`name`/`family`/`speakingPeoples`/`vehicularRole`/
  * `vitalityStatus` in the shape the page renders directly, but its sources
- * carry `title`/`tier`, while `SourcesFooter` (shared by all three fiches)
+ * carry `title`/`tier`, while `FicheSources` (shared by all three fiches)
  * reads `label`/`standing`.
  */
 export interface LanguagePageData {

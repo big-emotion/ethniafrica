@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import { FicheTileChapter } from "@/components/fiche/FicheTileChapter";
 import { countryLanguageTiles } from "@/lib/fiche/languages";
 import { PeoplesSection } from "@/components/country/PeoplesSection";
-import { SourcesFooter } from "@/components/country/SourcesFooter";
+import { FicheSources } from "@/components/fiche/FicheSources";
 import { FicheSection as Section } from "@/components/fiche/FicheSection";
 import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
 import {
@@ -186,10 +186,9 @@ export function CountryParchment({
         id="sources"
       >
         {data.sources.length > 0 ? (
-          <SourcesFooter
+          <FicheSources
             sources={data.sources}
             hasSourceFlag={hasSourceFlag}
-            variant="parchment"
             language={language}
           />
         ) : (

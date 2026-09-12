@@ -7,7 +7,7 @@ import type { LanguagePageData } from "@/lib/languageDataTransformer";
 import { getFamilyRoute, getPeopleRoute } from "@/lib/routing";
 import { FicheSection } from "@/components/fiche/FicheSection";
 import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
-import { SourcesFooter } from "@/components/country/SourcesFooter";
+import { FicheSources } from "@/components/fiche/FicheSources";
 import type { Language } from "@/types/shared";
 import { languageFicheCopy } from "@/lib/i18n/copy/languageFiche";
 import { ficheCopy } from "@/lib/i18n/copy/fiche";
@@ -163,10 +163,9 @@ export function LanguageDetailViewV2({
         id="sources"
       >
         {data.sources.length > 0 ? (
-          <SourcesFooter
+          <FicheSources
             sources={data.sources}
             hasSourceFlag={hasSourceFlag}
-            variant="parchment"
             language={language}
           />
         ) : (

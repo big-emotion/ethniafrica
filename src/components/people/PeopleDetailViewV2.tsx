@@ -16,10 +16,7 @@ import {
   PeopleHistoricalAffiliationBlock,
   PeopleCountriesSection,
 } from "@/components/people";
-// One sources footer for the three fiches. It lives under country/ for
-// historical reasons only — it takes FicheSourceEntry[] and knows nothing
-// about countries.
-import { SourcesFooter } from "@/components/country/SourcesFooter";
+import { FicheSources } from "@/components/fiche/FicheSources";
 import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
 import { PeopleNamingTiles } from "@/components/people/PeopleNamingTiles";
 import { FicheChronologyChapter } from "@/components/fiche/FicheChronologyChapter";
@@ -444,10 +441,9 @@ export function PeopleDetailViewV2({
           embedded
         />
         {sources.length > 0 ? (
-          <SourcesFooter
+          <FicheSources
             sources={[...sources]}
             hasSourceFlag={hasSourceFlag}
-            variant="parchment"
             language={language}
           />
         ) : (

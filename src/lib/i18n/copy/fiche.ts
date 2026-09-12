@@ -9,6 +9,8 @@ const en = {
    * the same invitation would read as three different things to do.
    */
   contribute: "Contribute",
+  /** The tile a record's bibliography folds into. */
+  sourcesList: "The list",
   /**
    * The atlas is young and says so. A reader who has just read a thin chapter
    * is the one person who knows exactly what is missing from it, and the band
@@ -113,6 +115,7 @@ const fr: FicheCopy = {
   sourceTierNote:
     "Chaque source porte son palier — l'autorité qu'on peut lui accorder.",
   contribute: "Contribuer",
+  sourcesList: "La liste",
   languages: {
     main: "Langue principale",
     family: "Famille",

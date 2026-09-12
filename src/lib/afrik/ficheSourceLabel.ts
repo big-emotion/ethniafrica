@@ -94,3 +94,45 @@ export function ficheSourceEntries(
     ];
   });
 }
+
+/**
+ * Clauses the enrichment pipeline wrote into `sources[].notes` about its own
+ * bookkeeping: how a tier was resolved, which domain ruling was missing, that
+ * the tier awaits review. `notes` reaches the reader verbatim, and the
+ * reader-facing register owes them the silence, never the workshop's reason
+ * for it.
+ *
+ * A render-time stop-gap; rewriting the corpus is the curator's work. They are
+ * deliberately not in `INTERNAL_REGISTER_PATTERNS`, whose error severity would
+ * fail every record that still carries them.
+ */
+export const PIPELINE_NOTE_PATTERNS: readonly RegExp[] = [
+  /^Tier (?:resolved|inferred|resolu)\b/i,
+  /^No URL and no recognisable citation shape\b/i,
+  /^No domain ruling covers\b/i,
+  /^the tier awaits editorial review\b/i,
+  /^Resolved from the (?:prior|URL-less)\b/i,
+];
+
+/**
+ * A source note as the reader should see it. Each `;`-separated clause in the
+ * pipeline's register is dropped and the rest kept, because a curated note
+ * sometimes follows the pipeline's clause with the one sentence worth
+ * reading. A note with nothing dropped comes back exactly as written; a note
+ * with nothing left is no note.
+ */
+// @req REQ-092
+export function readerFacingNote(notes?: string | null): string | undefined {
+  const text = notes?.trim();
+  if (!text) return undefined;
+
+  const clauses = text.split(/\s*;\s*/).filter(Boolean);
+  const kept = clauses.filter(
+    (clause) => !PIPELINE_NOTE_PATTERNS.some((pattern) => pattern.test(clause))
+  );
+  if (kept.length === clauses.length) return text;
+  if (kept.length === 0) return undefined;
+
+  const joined = kept.join("; ");
+  return joined.charAt(0).toLocaleUpperCase() + joined.slice(1);
+}

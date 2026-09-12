@@ -5,7 +5,7 @@ import { PeopleDetailViewV2 } from "./PeopleDetailViewV2";
 import type { PeopleDetail } from "@/types/afrik-frontend";
 import { PeopleRelatedPeoplesSection } from "./PeopleRelatedPeoplesSection";
 import { PeopleCountriesSection } from "./PeopleCountriesSection";
-import { SourcesFooter } from "@/components/country/SourcesFooter";
+import { FicheSources } from "@/components/fiche/FicheSources";
 import type { AssociatedGroup } from "@/lib/people/associatedPeopleLinks";
 import type {
   PeopleHeroData,
@@ -284,18 +284,18 @@ export const Countries_Desktop: Story = {
 };
 
 // ==========================================
-// PeopleSourcesFooter — 430 / 720 / 1200
+// FicheSources — 430 / 720 / 1200
 // ==========================================
 
 // @req REQ-115
 export const Sources_Mobile: Story = {
-  name: "PeopleSourcesFooter — 430px",
+  name: "FicheSources — 430px",
   parameters: { viewport: { defaultViewport: "mobile430" } },
   render: () => (
     <div style={{ padding: "12px" }}>
       {/* One source per tier the corpus actually uses, so the story shows
           what a low-confidence fiche looks like next to a well-sourced one. */}
-      <SourcesFooter
+      <FicheSources
         sources={[
           {
             label: "SIL Ethnologue 2025",
@@ -321,14 +321,14 @@ export const Sources_Mobile: Story = {
 
 // @req REQ-115
 export const Sources_Tablet: Story = {
-  name: "PeopleSourcesFooter — 720px",
+  name: "FicheSources — 720px",
   parameters: { viewport: { defaultViewport: "tablet720" } },
   render: Sources_Mobile.render,
 };
 
 // @req REQ-115
 export const Sources_Desktop: Story = {
-  name: "PeopleSourcesFooter — 1200px",
+  name: "FicheSources — 1200px",
   parameters: { viewport: { defaultViewport: "desktop1200" } },
   render: Sources_Mobile.render,
 };

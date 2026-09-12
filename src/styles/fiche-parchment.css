@@ -632,6 +632,97 @@
   color: var(--afh-colonial-ink);
 }
 
+/* ── Source census ─────────────────────────────────────────────────
+   The tally drawn: one segment per standing, as wide as its share of the
+   list. A standing takes the confidence scale's colour, so a record resting
+   on official sources reads that way before a title is read. Awaiting review
+   is not a tier, so it wears a hatch rather than a fill. */
+
+.afh-fiche-sources {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  font-size: var(--afh-text-caption);
+  line-height: 1.6;
+  color: var(--afh-text-soft);
+}
+
+.afh-census {
+  display: flex;
+  height: 10px;
+  overflow: hidden;
+  border: 1px solid var(--afh-border);
+}
+
+.afh-census > span {
+  display: block;
+  height: 100%;
+}
+
+.afh-census > [data-census-standing="official"] {
+  background: var(--afh-conf-high);
+}
+
+.afh-census > [data-census-standing="referenced"] {
+  background: var(--afh-gold);
+}
+
+.afh-census > [data-census-standing="unverified"] {
+  background: var(--afh-conf-low);
+}
+
+.afh-census > [data-census-standing="needs_review"] {
+  background: repeating-linear-gradient(
+    135deg,
+    var(--afh-text-muted) 0 4px,
+    transparent 4px 8px
+  );
+}
+
+.afh-census-legend {
+  margin: 0;
+  font-family: var(--afh-font-mono);
+  color: var(--afh-text-soft);
+}
+
+.afh-fiche-source-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* A corpus title is routinely a URL with no space in it; without this the
+   row grows past the parchment at 430px. */
+.afh-fiche-source-list > li {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.afh-fiche-source-standing {
+  flex: none;
+  padding: 2px 8px;
+  border-radius: var(--afh-radius-full);
+  background: var(--afh-surface);
+  font-size: var(--afh-text-eyebrow);
+  font-weight: 500;
+  color: var(--afh-text-soft);
+}
+
+/* Awaiting review is not a tier, so it does not wear a tier's filled chip. */
+.afh-fiche-source-standing[data-source-standing="needs_review"] {
+  border: 1px solid var(--afh-border);
+  background: transparent;
+}
+
+.afh-fiche-source-note {
+  flex-basis: 100%;
+  font-size: var(--afh-text-eyebrow);
+}
+
 /* ── Tiles ──────────────────────────────────────────────────────────
    The unit every chapter folds its prose into. Two columns from the phone
    up, 12px apart, 16px inside: on production the tiles sat 6px apart with

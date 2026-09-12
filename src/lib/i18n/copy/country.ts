@@ -78,7 +78,6 @@ const en = {
     otherLanguages: (count: number) => `+ ${count} other languages`,
   },
   reportSection: "Report this section",
-  sourcesReferences: "Sources and references",
   /**
    * What the apparatus amounts to, counted by standing. A census, never a
    * verdict: the list still shows each source's own standing, and the point
@@ -207,7 +206,6 @@ const fr: CountryCopy = {
     otherLanguages: (count) => `+ ${count} autres langues`,
   },
   reportSection: "Signaler cette section",
-  sourcesReferences: "Sources & Références",
   sourcesTally: {
     total: (count) => `${count} source${count > 1 ? "s" : ""}`,
     standing: (label, count) => `${label} : ${count}`,
