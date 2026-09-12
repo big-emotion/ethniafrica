@@ -10,6 +10,72 @@ the `1.x` tags predate the changelog and were never accompanied by release notes
 
 ## [Unreleased]
 
+## [4.8.0] - 2026-09-12
+
+### Changed
+
+- **The two most consulted record classes were brought to their reviewed
+  renderings, and they now agree with each other.** A country record and a
+  people record both open on their population in the display face with
+  tabular figures, where the figures previously rendered as body text at two
+  different weights on the same page. A country row in a distribution went
+  from five stacked lines to a three-column grid, so five countries fit one
+  screen on a phone instead of a screen and a half (ETNI-1890, ETNI-1891,
+  #991, #992).
+- The country record's five counts moved onto a stat card **extracted from
+  the family record** and shared between the two, which closes a governance
+  failure rather than a local bug: one set of class names had two React
+  implementations and no test held them together. The people record keeps a
+  definition list, because two of its five slots are a language and a family
+  name rather than counts, and the shared card carries a number.
+- A people record's geographic distribution stopped repeating its provenance
+  once per row, five times over. The sentence is hoisted to the chapter when
+  every row agrees on where its share came from, and kept per row when they
+  differ, because a share can be declared on one row and derived on the next.
+- The history chapter stopped showing the structure it replaced. Requirement
+  REQ-155 merged the origins and the historical role into one chapter, but
+  both retired titles had survived inside it as sub-headings.
+- The people surface gained an accent of its own. It had none, so its
+  distribution bars, country codes, language link and neighbour chips all
+  wore the country surface's terracotta, read straight from a component. Its
+  neutrals deliberately stay shared: an ink, a border and a radius carry no
+  surface identity.
+- The culture chapter became the two-column grid its component name already
+  claimed; it had been rendering a stacked list.
+
+### Fixed
+
+- **A people record opens on the name the people give themselves.** The
+  heading rendered the corpus main name, which on a record such as the
+  Abahutu is the imposed colonial-era form, and never threaded the exonym
+  through — although both fields were already transformed and simply not
+  read.
+- Ten headings for nine chapters. The colonial-fragmentation view rendered a
+  heading whose inline variant landed at the same level as a chapter title,
+  and only for a people straddling two or more countries, which is why it
+  went unnoticed.
+- **Populations are formatted against a locale.** French readers were shown
+  `12.2M` and `500K` beside a correctly spaced `10 500 000`. This took two
+  passes: localising the digits alone still left the unit glued on with no
+  space and a capital K that French does not use for a thousand.
+- A research note stopped reaching the reader. The demography source field
+  was printed verbatim at the foot of a distribution chapter; on the Abahutu
+  record it runs several lines and names Wikipedia twice, which the source
+  policy does not accept as a source at all.
+- The social render engine solves its scrim against the image beneath it
+  rather than cropping the image to a band (#989).
+
+### Notes
+
+- **No Supabase migration.** `v4.7.0` and this release carry the same
+  migration set, so the deploy's schema job has nothing to apply.
+- **This release does not switch the site to English.** `SITE_LOCALE_MODE` is
+  untouched and publication still fails closed to French.
+- Three surfaces change appearance without having been reworked: the family
+  record, whose stat card was extracted; the names surface; and everything
+  consuming the shared fiche primitives. Their suites are green. None was
+  reviewed rendered.
+
 ## [4.7.0] - 2026-09-12
 
 ### Added
@@ -794,7 +860,8 @@ the public API, the data model, and the frontend were all replaced.
 - Duplicate migration prefixes (`008_`, `015_`) resolved.
 - Endonym now takes primacy over exonym in the country page names row.
 
-[Unreleased]: https://github.com/big-emotion/ethniafrica/compare/v4.7.0...HEAD
+[Unreleased]: https://github.com/big-emotion/ethniafrica/compare/v4.8.0...HEAD
+[4.8.0]: https://github.com/big-emotion/ethniafrica/compare/v4.7.0...v4.8.0
 [4.7.0]: https://github.com/big-emotion/ethniafrica/compare/v4.6.0...v4.7.0
 [4.6.0]: https://github.com/big-emotion/ethniafrica/compare/v4.5.0...v4.6.0
 [4.5.0]: https://github.com/big-emotion/ethniafrica/compare/v4.4.0...v4.5.0
