@@ -2,7 +2,7 @@
  * Countries Handler - API handlers for countries
  */
 
-import { DEFAULT_PAGE_SIZE } from "@/api/v2/schemas/pagination";
+import { pageNumberedListEnvelope } from "@/api/v2/handlers/listEnvelope";
 import { getCountries, getCountryById } from "@/api/v2/services/countryService";
 import {
   getCountryPatronymes,
@@ -32,17 +32,7 @@ export async function listCountriesHandler(
   perPage?: number
 ): Promise<ApiEnvelope<Country[]>> {
   const { data, total } = await getCountries(page, perPage);
-  const resolvedPage = page ?? 1;
-  const resolvedPerPage = perPage ?? DEFAULT_PAGE_SIZE;
-
-  return createApiResponse(data, {
-    pagination: {
-      total,
-      page: resolvedPage,
-      perPage: resolvedPerPage,
-      totalPages: Math.ceil(total / resolvedPerPage),
-    },
-  });
+  return pageNumberedListEnvelope(data, { total, page, perPage });
 }
 
 /**

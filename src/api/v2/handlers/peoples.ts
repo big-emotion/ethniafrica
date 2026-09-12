@@ -2,7 +2,7 @@
  * Peoples Handler - API handlers for peoples
  */
 
-import { DEFAULT_PAGE_SIZE } from "@/api/v2/schemas/pagination";
+import { pageNumberedListEnvelope } from "@/api/v2/handlers/listEnvelope";
 import { getPeoples, getPeopleById } from "../services/peopleService";
 import {
   getPatronymesBorneByPeople,
@@ -35,17 +35,7 @@ export async function listPeoplesHandler(
   filters: PeopleQueryFilters = {}
 ): Promise<ApiEnvelope<People[]>> {
   const { data, total } = await getPeoples(page, perPage, filters);
-  const resolvedPage = page ?? 1;
-  const resolvedPerPage = perPage ?? DEFAULT_PAGE_SIZE;
-
-  return createApiResponse(data, {
-    pagination: {
-      total,
-      page: resolvedPage,
-      perPage: resolvedPerPage,
-      totalPages: Math.ceil(total / resolvedPerPage),
-    },
-  });
+  return pageNumberedListEnvelope(data, { total, page, perPage });
 }
 
 /**

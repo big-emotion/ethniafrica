@@ -2,7 +2,7 @@
  * Language Families Handler - API handlers for language families
  */
 
-import { DEFAULT_PAGE_SIZE } from "@/api/v2/schemas/pagination";
+import { pageNumberedListEnvelope } from "@/api/v2/handlers/listEnvelope";
 import {
   getLanguageFamilies,
   getLanguageFamilyById,
@@ -23,17 +23,11 @@ export async function listLanguageFamiliesHandler(
     page,
     perPage
   );
-  const appliedPage = page ?? 1;
-  const appliedPerPage = perPage ?? DEFAULT_PAGE_SIZE;
-
-  return createApiResponse(data, {
-    pagination: {
-      total,
-      page: appliedPage,
-      perPage: appliedPerPage,
-      totalPages: Math.ceil(total / appliedPerPage),
-      unclassifiedPeoplesCount,
-    },
+  return pageNumberedListEnvelope(data, {
+    total,
+    page,
+    perPage,
+    extra: { unclassifiedPeoplesCount },
   });
 }
 
