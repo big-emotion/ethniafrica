@@ -119,12 +119,6 @@ const en = {
       sultanates: "Sultanates & Chiefdoms",
       chiefdoms: "Chiefdoms & Entities",
     },
-    culture: {
-      religion: "Religions",
-      economy: "Economy",
-      social: "Organisation",
-      relations: "Relations",
-    },
     historicalPeriods: {
       ancientPeriods: "Ancient periods",
       middleAges: "Middle Ages",
@@ -246,12 +240,6 @@ const fr: CountryCopy = {
       kingdoms: "Royaumes & Civilisations",
       sultanates: "Sultanats & Chefferies",
       chiefdoms: "Chefferies & Entités",
-    },
-    culture: {
-      religion: "Religions",
-      economy: "Économie",
-      social: "Organisation",
-      relations: "Relations",
     },
     historicalPeriods: {
       ancientPeriods: "Périodes anciennes",

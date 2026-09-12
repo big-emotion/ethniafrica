@@ -42,6 +42,14 @@ function visibleText(node: ReactNode): string {
     .join(" ");
 }
 
+/**
+ * Past this many characters a preview no longer fits its two lines. A tile
+ * whose body restates the preview then still folds: the clamp is what differs
+ * between the closed and the opened tile, and a long country field written as
+ * one sentence would otherwise print whole and open.
+ */
+const PREVIEW_OVERFLOW_CHARS = 90;
+
 function comparable(text: string): string {
   return text
     .trim()
@@ -90,7 +98,8 @@ export function FicheTile({
     fact.length > 0 &&
     detail.length > 0 &&
     comparable(fact) !== comparable(title) &&
-    detail !== comparable(fact);
+    (detail !== comparable(fact) ||
+      (bodyRestatesPreview && fact.length > PREVIEW_OVERFLOW_CHARS));
   const wideAttribute = wide ? "true" : undefined;
 
   if (!canCollapse) {

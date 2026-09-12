@@ -4,7 +4,6 @@ import { PeopleFicheHead } from "./PeopleFicheHead";
 import { PeopleDetailViewV2 } from "./PeopleDetailViewV2";
 import type { PeopleDetail } from "@/types/afrik-frontend";
 import { PeopleLanguageSection } from "./PeopleLanguageSection";
-import { PeopleCultureGrid } from "./PeopleCultureGrid";
 import { PeopleRelatedPeoplesSection } from "./PeopleRelatedPeoplesSection";
 import { PeopleCountriesSection } from "./PeopleCountriesSection";
 import { SourcesFooter } from "@/components/country/SourcesFooter";
@@ -12,7 +11,6 @@ import type { AssociatedGroup } from "@/lib/people/associatedPeopleLinks";
 import type {
   PeopleHeroData,
   PeopleLanguageData,
-  PeopleCultureData,
   PeopleRelatedData,
   PeopleCountriesData,
 } from "@/lib/peopleDataTransformer";
@@ -57,17 +55,6 @@ const language: PeopleLanguageData = {
   dialects: ["Ìjẹ̀bú", "Ẹ̀gbá", "Ẹ̀kìtì", "Ọ̀yọ́", "Ìfẹ̀"],
   vehicularRole:
     "Langue véhiculaire au Nigeria du Sud-Ouest ; enseignée à l'université.",
-};
-
-const culture: PeopleCultureData = {
-  majorRites:
-    "Le culte des orisha structure la vie rituelle : chaque divinité dispose de fêtes annuelles et de pratiques initiatiques. La divination Ifá est inscrite au patrimoine culturel immatériel de l'UNESCO (2005).",
-  symbols:
-    "Les bronzes et sculptures d'Ifè représentent le sommet de l'art classique yoruba. Les tissus aso-oke (brocart tissé) et adire (batik à l'indigo) sont les symboles textiles de l'identité.",
-  artsAndMusic:
-    "Le dundun (tambour parlant), le bata (tambour sacré d'orisha) et le sekere sont les instruments classiques. Le juju, l'afrobeat et le fuji sont des genres modernes d'origine yoruba.",
-  spiritualities:
-    "La religion traditionnelle (Aborisa) reconnaît un Dieu suprême, Olódùmarè, et un panthéon d'orisha. Christianisme et islam coexistent avec ces cultes, souvent chez les mêmes familles.",
 };
 
 const relatedPeoples: PeopleRelatedData = {
@@ -271,35 +258,6 @@ export const Language_Desktop: Story = {
   name: "PeopleLanguageSection — 1200px",
   parameters: { viewport: { defaultViewport: "desktop1200" } },
   render: Language_Mobile.render,
-};
-
-// ==========================================
-// PeopleCultureGrid — 430 / 720 / 1200
-// ==========================================
-
-// @req REQ-115
-export const Culture_Mobile: Story = {
-  name: "PeopleCultureGrid — 430px",
-  parameters: { viewport: { defaultViewport: "mobile430" } },
-  render: () => (
-    <Card>
-      <PeopleCultureGrid data={culture} />
-    </Card>
-  ),
-};
-
-// @req REQ-115
-export const Culture_Tablet: Story = {
-  name: "PeopleCultureGrid — 720px",
-  parameters: { viewport: { defaultViewport: "tablet720" } },
-  render: Culture_Mobile.render,
-};
-
-// @req REQ-115
-export const Culture_Desktop: Story = {
-  name: "PeopleCultureGrid — 1200px",
-  parameters: { viewport: { defaultViewport: "desktop1200" } },
-  render: Culture_Mobile.render,
 };
 
 // ==========================================

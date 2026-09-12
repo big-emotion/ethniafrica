@@ -12,7 +12,6 @@ export { PeopleFieldExplainer } from "./PeopleFieldExplainer";
 export { PeopleFieldLegend } from "./PeopleFieldLegend";
 export { PeopleHistoricalAffiliationBlock } from "./PeopleHistoricalAffiliationBlock";
 export { PeopleLanguageSection } from "./PeopleLanguageSection";
-export { PeopleCultureGrid } from "./PeopleCultureGrid";
 export { PeopleRelatedPeoplesSection } from "./PeopleRelatedPeoplesSection";
 export { PeopleCountriesSection } from "./PeopleCountriesSection";
 export { PeopleDetailViewV2 } from "./PeopleDetailViewV2";

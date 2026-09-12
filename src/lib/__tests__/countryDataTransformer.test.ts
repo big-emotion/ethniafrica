@@ -6,12 +6,10 @@ import {
   extractPejorative,
   shortenRegion,
   shortenFamily,
-  extractKeywords,
   transformHero,
   transformPeoples,
   transformKingdoms,
   transformLanguages,
-  transformCulture,
   transformSources,
   transformHistoricalFacts,
   transformCountryData,
@@ -300,17 +298,6 @@ describe("shortenFamily", () => {
     expect(shortenFamily("Niger-Congo – Gur (FLG_GUR)")).toBe(
       "Niger-Congo Gur"
     );
-  });
-});
-
-describe("extractKeywords", () => {
-  it("extracts up to 5 keywords", () => {
-    const result = extractKeywords(
-      "Islam (majoritaire), christianisme (catholicisme), religions traditionnelles africaines"
-    );
-    expect(result.length).toBeLessThanOrEqual(5);
-    expect(result[0]).toBe("Islam");
-    expect(result[1]).toBe("christianisme");
   });
 });
 
@@ -808,46 +795,6 @@ describe("transformLanguages", () => {
   });
 });
 
-describe("transformCulture", () => {
-  it("produces 4 grid items", () => {
-    const result = transformCulture(bfaCountry.culture);
-    expect(result.items).toHaveLength(4);
-    expect(result.items.map((i) => i.slot)).toEqual([
-      "religion",
-      "economy",
-      "social",
-      "relations",
-    ]);
-  });
-
-  it("extracts religion keywords (capitalized, max 3)", () => {
-    const result = transformCulture(bfaCountry.culture);
-    const religion = result.items.find((i) => i.slot === "religion");
-    expect(religion?.keywords.length).toBeGreaterThan(0);
-    expect(religion?.keywords.length).toBeLessThanOrEqual(3);
-    expect(religion?.keywords[0]).toBe("Islam");
-    // Keywords should be capitalized
-    for (const kw of religion?.keywords || []) {
-      expect(kw[0]).toBe(kw[0].toUpperCase());
-    }
-  });
-
-  /**
-   * The religion tile used to carry a mosque, whatever the country's
-   * religions were, and the same four pictograms stood over every country in
-   * the atlas. One glyph for "Religions" picks the religion; one for
-   * "Organisation" picks the form of authority. The corpus supplies neither
-   * choice, so the page makes neither.
-   */
-  // @req REQ-092
-  it("attaches no pictogram to a culture rubric", () => {
-    const result = transformCulture(bfaCountry.culture);
-    for (const item of result.items) {
-      expect(Object.keys(item)).not.toContain("icon");
-    }
-  });
-});
-
 describe("transformSources", () => {
   // @req REQ-092
   it("keeps every source whole, so each can show its own standing", () => {
@@ -948,12 +895,6 @@ describe("transformCountryData", () => {
   it("localizes generated country-fiche labels in English", () => {
     const result = transformCountryData(bfaCountry, "en");
 
-    expect(result.culture.items.map((item) => item.label)).toEqual([
-      "Religions",
-      "Economy",
-      "Organisation",
-      "Relations",
-    ]);
     expect(result.kingdoms.title).toBe("Kingdoms & Civilisations");
   });
 
@@ -963,7 +904,6 @@ describe("transformCountryData", () => {
     expect(result.peoples.rows.length).toBeGreaterThan(0);
     expect(result.kingdoms.cards.length).toBeGreaterThan(0);
     expect(result.languages.bubbles.length).toBeGreaterThan(0);
-    expect(result.culture.items).toHaveLength(4);
     expect(result.sources).toBeTruthy();
   });
 

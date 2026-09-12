@@ -19,6 +19,19 @@ const en = {
    * The worded control that closes a tile. Words rather than a glyph, so the
    * reader knows what the press does before making it.
    */
+  /** The culture tiles both records share, one short word per rubric. */
+  culture: {
+    rites: "Rites",
+    symbols: "Symbols",
+    arts: "Arts and music",
+    spiritualities: "Spiritualities",
+    organisation: "Organisation",
+    relations: "Relations",
+    groups: "Associated groups",
+    religions: "Religions",
+    lifestyles: "Ways of life",
+    traditions: "Traditions",
+  },
   /**
    * The history timeline both records share. A people station is dated by
    * its regime word, because a people's history carries no date field.
@@ -86,6 +99,18 @@ const fr: FicheCopy = {
   sourceTierNote:
     "Chaque source porte son palier — l'autorité qu'on peut lui accorder.",
   contribute: "Contribuer",
+  culture: {
+    rites: "Rites",
+    symbols: "Symboles",
+    arts: "Arts et musique",
+    spiritualities: "Spiritualités",
+    organisation: "Organisation",
+    relations: "Relations",
+    groups: "Groupes associés",
+    religions: "Religions",
+    lifestyles: "Modes de vie",
+    traditions: "Traditions",
+  },
   chronology: {
     label: "Chronologie",
     regime: {

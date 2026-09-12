@@ -133,16 +133,6 @@ export interface LanguagesData {
   overflowCount: number;
 }
 
-export interface CultureGridItem {
-  slot: "religion" | "economy" | "social" | "relations";
-  label: string;
-  keywords: string[];
-}
-
-export interface CultureGridData {
-  items: CultureGridItem[];
-}
-
 export interface HistoricalFactsData {
   periods: Array<{
     label: string;
@@ -156,7 +146,6 @@ export interface CountryPageData {
   kingdoms: KingdomsData;
   historicalFacts?: HistoricalFactsData;
   languages: LanguagesData;
-  culture: CultureGridData;
   sources: FicheSourceEntry[];
 }
 
@@ -252,30 +241,6 @@ export function shortenFamily(text: string): string {
     .replace(/\s*\(FLG_\w+\)/g, "")
     .replace(/ – /g, " ")
     .trim();
-}
-
-/**
- * Extract keywords from a paragraph.
- */
-// @req REQ-001
-export function extractKeywords(text: string, maxKeywords = 5): string[] {
-  if (!text) return [];
-  // Remove parenthetical content
-  const clean = text.replace(/\([^)]*\)/g, "");
-  const items = clean.split(",").map((i) => i.trim());
-  const keywords: string[] = [];
-  for (const item of items) {
-    const words = item.split(/\s+/).slice(0, 3);
-    const keyword = words
-      .join(" ")
-      .replace(/[.;:]+$/, "")
-      .trim();
-    if (keyword && !keywords.includes(keyword)) {
-      keywords.push(keyword);
-    }
-    if (keywords.length >= maxKeywords) break;
-  }
-  return keywords;
 }
 
 // ==========================================
@@ -641,45 +606,6 @@ export function transformLanguages(culture?: CultureSection): LanguagesData {
 }
 
 // @req REQ-001
-export function transformCulture(
-  culture?: CultureSection,
-  language: Language = "fr"
-): CultureGridData {
-  if (!culture) {
-    return { items: [] };
-  }
-
-  const capKeywords = (text: string) =>
-    extractKeywords(text, 3).map((k) => k.charAt(0).toUpperCase() + k.slice(1));
-  const labels = countryCopy[language].generated.culture;
-
-  const items: CultureGridItem[] = [
-    {
-      slot: "religion",
-      label: labels.religion,
-      keywords: capKeywords(culture.dominantReligions || ""),
-    },
-    {
-      slot: "economy",
-      label: labels.economy,
-      keywords: capKeywords(culture.lifestyles || ""),
-    },
-    {
-      slot: "social",
-      label: labels.social,
-      keywords: capKeywords(culture.socialOrganization || ""),
-    },
-    {
-      slot: "relations",
-      label: labels.relations,
-      keywords: capKeywords(culture.regionalRelations || ""),
-    },
-  ];
-
-  return { items };
-}
-
-// @req REQ-001
 export function transformSources(sources?: FicheSource[]): FicheSourceEntry[] {
   return ficheSourceEntries(sources);
 }
@@ -735,7 +661,6 @@ export function transformCountryData(
       language
     ),
     languages: transformLanguages(country.culture),
-    culture: transformCulture(country.culture, language),
     sources: transformSources(country.sources),
   };
 }

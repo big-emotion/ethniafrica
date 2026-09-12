@@ -25,7 +25,9 @@ import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip"
 import { PeopleNamingTiles } from "@/components/people/PeopleNamingTiles";
 import { FicheChronologyChapter } from "@/components/fiche/FicheChronologyChapter";
 import { peopleChronology } from "@/lib/fiche/chronology";
-import { PeopleCultureChapter } from "@/components/people/PeopleCultureChapter";
+import { FicheCultureChapter } from "@/components/fiche/FicheCultureChapter";
+import { PeopleRelatedPeoplesSection } from "@/components/people/PeopleRelatedPeoplesSection";
+import { peopleCultureTiles } from "@/lib/fiche/culture";
 import { FicheNamesChapter } from "@/components/fiche/FicheNamesChapter";
 import { PeopleFieldExplainer } from "@/components/people/PeopleFieldExplainer";
 import { FicheSection } from "@/components/fiche/FicheSection";
@@ -167,6 +169,16 @@ export function PeopleDetailViewV2({
     data.relatedPeoples.ethnicities,
     peopleNameIndex ?? [],
     data.hero.peopleId
+  );
+  const cultureTiles = peopleCultureTiles(
+    {
+      culture: data.culture,
+      related: data.relatedPeoples,
+      relationsWithNeighbors: data.history.relationsWithNeighbors,
+      associatedGroups,
+      relationNames: relationsPreview.map((relation) => relation.neighborName),
+    },
+    language
   );
 
   return (
@@ -346,13 +358,24 @@ export function PeopleDetailViewV2({
       />
 
       <FicheSection title={copy.sections.culture}>
-        <PeopleCultureChapter
-          culture={data.culture}
-          related={data.relatedPeoples}
-          peopleId={data.hero.peopleId}
-          relationsPreview={relationsPreview}
-          associatedGroups={associatedGroups}
-          cultureNotes={notes?.culture}
+        <FicheCultureChapter
+          tiles={cultureTiles}
+          notes={notes?.culture}
+          extras={
+            relationsPreview.length > 0
+              ? {
+                  relations: (
+                    <PeopleRelatedPeoplesSection
+                      data={{ ethnicities: [] }}
+                      language={language}
+                      peopleId={data.hero.peopleId}
+                      relationsPreview={relationsPreview}
+                      associatedGroups={[]}
+                    />
+                  ),
+                }
+              : undefined
+          }
           language={language}
         />
         <OralNarrativesSection

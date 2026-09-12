@@ -3,7 +3,8 @@ import type { ReactNode } from "react";
 import { DossierLinks } from "@/components/dossiers/DossierLinks";
 import { FlagTarget } from "@/components/flags/FlagTarget";
 import { CountryParchment } from "@/components/country/CountryParchment";
-import { CultureGrid } from "@/components/country";
+import { FicheCultureChapter } from "@/components/fiche/FicheCultureChapter";
+import { countryCultureTiles } from "@/lib/fiche/culture";
 import { FicheSection as Section } from "@/components/fiche/FicheSection";
 import { FicheNamesChapter } from "@/components/fiche/FicheNamesChapter";
 import {
@@ -91,7 +92,10 @@ export function CountryRecordView({
         />
 
         <Section title={copy.sections.culture}>
-          <CultureGrid data={data.culture} />
+          <FicheCultureChapter
+            tiles={countryCultureTiles(country.culture, language)}
+            language={language}
+          />
           <DossierLinks
             kind="country"
             id={country.id}

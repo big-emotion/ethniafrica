@@ -1042,6 +1042,20 @@
   margin-top: 12px;
 }
 
+.afh-tile-passage + .afh-tile-passage {
+  margin-top: 12px;
+}
+
+.afh-pills a {
+  font-weight: 600;
+  color: var(--accent-ink, var(--afh-text));
+  text-decoration: none;
+}
+
+.afh-pills a:hover {
+  text-decoration: underline;
+}
+
 /* ── Callout ──────────────────────────────────────────────────────────
    An aside the section cannot say in its own prose. A rule in the
    surface's accent, never a box, so it reads as part of the same

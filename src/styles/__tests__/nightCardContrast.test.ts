@@ -11,10 +11,6 @@ const historicalFacts = readFileSync(
   resolve(process.cwd(), "src/components/country/HistoricalFactsSection.tsx"),
   "utf8"
 );
-const cultureGrid = readFileSync(
-  resolve(process.cwd(), "src/components/country/CultureGrid.tsx"),
-  "utf8"
-);
 
 function tokenHex(name: string): string {
   const match = colorCss.match(new RegExp(`${name}:\\s*(#[0-9a-f]{6})`, "i"));
@@ -61,13 +57,6 @@ describe("night card contrast", () => {
     );
     expect(historicalFacts).not.toContain(
       'style={{ color: "var(--country-text)" }}'
-    );
-
-    expect(cultureGrid).toContain(
-      'style={{ color: "var(--afh-color-text-soft)" }}'
-    );
-    expect(cultureGrid).not.toContain(
-      'style={{ color: "var(--country-text-soft)" }}'
     );
   });
 

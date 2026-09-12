@@ -2,7 +2,6 @@ import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { PeoplesSection } from "../PeoplesSection";
 import { LanguagesSection } from "../LanguagesSection";
-import { CultureGrid } from "../CultureGrid";
 import { SourcesFooter } from "../SourcesFooter";
 import { HistoricalFactsSection } from "../HistoricalFactsSection";
 import type {
@@ -10,7 +9,6 @@ import type {
   PeoplesData,
   KingdomsData,
   LanguagesData,
-  CultureGridData,
   HistoricalFactsData,
 } from "@/lib/countryDataTransformer";
 // ==========================================
@@ -312,84 +310,6 @@ describe("LanguagesSection", () => {
 });
 
 // ==========================================
-// CultureGrid
-// ==========================================
-
-describe("CultureGrid", () => {
-  it("returns null when items list is empty", () => {
-    const data: CultureGridData = { items: [] };
-    const { container } = render(<CultureGrid data={data} />);
-    expect(container.firstChild).toBeNull();
-  });
-
-  it("renders 4 grid items with labels and icons", () => {
-    const data: CultureGridData = {
-      items: [
-        {
-          slot: "religion",
-          label: "Religions",
-          keywords: ["Islam", "Christianisme"],
-        },
-        {
-          slot: "economy",
-          label: "Économie",
-          keywords: ["Agriculture", "Élevage"],
-        },
-        {
-          slot: "social",
-          label: "Organisation",
-          keywords: ["Chefferies", "Clans"],
-        },
-        {
-          slot: "relations",
-          label: "Relations",
-          keywords: ["CEDEAO", "UA"],
-        },
-      ],
-    };
-    render(<CultureGrid data={data} />);
-    expect(screen.getByText("Religions")).toBeTruthy();
-    expect(screen.getByText("Économie")).toBeTruthy();
-    expect(screen.getByText("Organisation")).toBeTruthy();
-    expect(screen.getByText("Relations")).toBeTruthy();
-  });
-
-  it("renders keywords joined by comma", () => {
-    const data: CultureGridData = {
-      items: [
-        {
-          slot: "religion",
-          label: "Religions",
-          keywords: ["Islam", "Christianisme", "Animisme"],
-        },
-      ],
-    };
-    render(<CultureGrid data={data} />);
-    expect(screen.getByText("Islam, Christianisme, Animisme")).toBeTruthy();
-  });
-
-  /**
-   * The tile carried a pictogram above its own label: a mosque over
-   * "Religions", a crown over "Organisation", a sheaf of wheat over
-   * "Économie". Each picked one religion, one form of authority and one
-   * economy to stand for a whole country's, on a surface whose whole posture
-   * is that the page decides none of those.
-   */
-  // @req REQ-092
-  it("names its rubric without a pictogram standing in for a country", () => {
-    const data: CultureGridData = {
-      items: [
-        { slot: "economy", label: "Économie", keywords: ["Agriculture"] },
-      ],
-    };
-    const { container } = render(<CultureGrid data={data} />);
-
-    expect(screen.getByText("Économie")).toBeTruthy();
-    expect(container.textContent).not.toMatch(/\p{Extended_Pictographic}/u);
-  });
-});
-
-// ==========================================
 // HistoricalFactsSection
 // ==========================================
 
@@ -565,6 +485,5 @@ describe("the country fiche keeps all eight sections", () => {
     // CountryChronology, which the parchment actually renders.
     expect(country.HistoricalFactsSection).toBeDefined();
     expect(country.LanguagesSection).toBeDefined();
-    expect(country.CultureGrid).toBeDefined();
   });
 });
