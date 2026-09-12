@@ -26,9 +26,15 @@ const en = {
   chapterBar: {
     aria: "Page chapters",
     summary: "Contents",
-    toggle: (position: number, count: number, title: string) =>
-      `Page contents — chapter ${position} of ${count}: ${title}`,
+    /**
+     * The label said "chapter 2 of 9". It went with the counter the bar used
+     * to show: a record's chapters are not a sequence anyone walks in order,
+     * and a position out of a total answered a question nobody asked. Naming
+     * the chapter in view is the part that was doing work.
+     */
+    toggle: (title: string) => `Page contents — ${title}`,
     report: "Report",
+    contribute: "Contribute",
   },
 };
 
@@ -60,9 +66,9 @@ const fr: FicheCopy = {
   chapterBar: {
     aria: "Chapitres de la page",
     summary: "Sommaire",
-    toggle: (position, count, title) =>
-      `Sommaire de la page — chapitre ${position} sur ${count} : ${title}`,
+    toggle: (title) => `Sommaire de la page — ${title}`,
     report: "Signaler",
+    contribute: "Contribuer",
   },
 };
 

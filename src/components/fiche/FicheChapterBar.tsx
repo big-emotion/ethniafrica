@@ -31,6 +31,7 @@ import {
 } from "@/lib/ficheChapters";
 import { ficheCopy } from "@/lib/i18n/copy/fiche";
 import { FALLBACK_LOCALE } from "@/lib/locale";
+import { getStaticPageRoute } from "@/lib/routing";
 import type { Language } from "@/types/shared";
 
 const SUMMARY_ID = "fiche-chapter-summary";
@@ -42,11 +43,6 @@ const SUMMARY_ID = "fiche-chapter-summary";
  * fold would count as read and the rail would always name the last one.
  */
 const READING_BAND = "-15% 0px -70% 0px";
-
-/** `3` → `03`, so the readout does not reflow as the reader passes chapter 9. */
-function padded(position: number): string {
-  return String(position).padStart(2, "0");
-}
 
 export interface FicheChapterBarProps {
   /**
@@ -207,15 +203,9 @@ export function FicheChapterBar({
           // The word "Sommaire" is dropped at narrow widths for room, so the
           // control states in full what it is rather than depending on a label
           // the layout is free to hide.
-          aria-label={copy.toggle(position + 1, chapters.length, current.title)}
+          aria-label={copy.toggle(current.title)}
           onClick={() => setSummaryOpen((open) => !open)}
         >
-          <span
-            className="afh-chapter-bar-count"
-            data-testid="fiche-chapter-bar-count"
-          >
-            {padded(position + 1)} / {padded(chapters.length)}
-          </span>
           <span
             className="afh-chapter-bar-current"
             data-testid="fiche-chapter-bar-current"
@@ -262,6 +252,18 @@ export function FicheChapterBar({
             />
           </div>
         ) : null}
+
+        {/* Reporting is what a reader does when the page is wrong;
+            contributing is what they do when it is merely thin, which on an
+            atlas this young is the commoner case. Offering only the first
+            told every reader their options began at "this is an error". */}
+        <a
+          className="afh-chapter-bar-contribute"
+          data-testid="fiche-chapter-bar-contribute"
+          href={getStaticPageRoute(language, "contribute")}
+        >
+          {copy.contribute}
+        </a>
 
         {/* The read rule: how much of the fiche is behind the reader. */}
         <span className="afh-chapter-bar-read" aria-hidden="true" />

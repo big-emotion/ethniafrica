@@ -99,9 +99,26 @@ describe("FicheChapterBar", () => {
       screen.getByRole("navigation", { name: "Page chapters" })
     ).toBeVisible();
     expect(
-      screen.getByRole("button", { name: /Page contents — chapter 1 of 3/ })
+      screen.getByRole("button", { name: /Page contents — Le nom porté/ })
     ).toBeVisible();
     expect(screen.getByText("Contents")).toBeVisible();
+    expect(screen.getByText("Contribute")).toBeVisible();
+  });
+
+  /**
+   * Reporting is what a reader reaches for when the page is wrong.
+   * Contributing is what they reach for when it is merely thin, which on an
+   * atlas this young is the commoner case. With only the report control on
+   * the rail, every reader's options began at "this is an error".
+   */
+  // @req REQ-091
+  it("carries a way to contribute, whatever the rail knows about the fiche", () => {
+    renderFiche(THREE_CHAPTERS);
+
+    expect(screen.getByTestId("fiche-chapter-bar-contribute")).toHaveAttribute(
+      "href",
+      "/fr/contribute"
+    );
   });
   // @req REQ-091
   it("lists every chapter the fiche declares, in reading order", () => {
