@@ -29,9 +29,52 @@ describe("PeopleHistoryChapter", () => {
     expect(within(timeline).getByText(/migrations depuis Notsé/)).toBeVisible();
     expect(within(timeline).getByText(/établissement à Keta/)).toBeVisible();
     expect(within(timeline).getByText(/chefferie à Anlo/)).toBeVisible();
+  });
+
+  // REQ-155: the merge must not resurface either retired chapter title as a
+  // sub-heading one level down.
+  // @req REQ-155
+  it("never shows either retired chapter title as a station name", () => {
+    render(
+      <PeopleHistoryChapter
+        language="fr"
+        origin={{
+          ancientOrigins: "Des migrations depuis Notsé.",
+          formationPeriod: "Vers le XVIIe siècle",
+          migrationRoutes: [],
+          historicalSettlementZones: [],
+        }}
+        history={{ kingdomsOrChiefdoms: "Une chefferie à Anlo." }}
+      />
+    );
+
+    expect(screen.queryByText("Origines & formation")).not.toBeInTheDocument();
+    expect(screen.queryByText("Rôle historique")).not.toBeInTheDocument();
+  });
+
+  // REQ-155: each history topic is its own station on the same spine as the
+  // origin station, not one shared sub-list under a single heading.
+  // @req REQ-155
+  it("gives each declared history topic its own named station", () => {
+    render(
+      <PeopleHistoryChapter
+        language="en"
+        origin={{ migrationRoutes: [], historicalSettlementZones: [] }}
+        history={{
+          kingdomsOrChiefdoms: "A chiefdom at Anlo.",
+          diaspora: "Communities beyond the region.",
+        }}
+      />
+    );
+
+    const timeline = screen.getByRole("list", { name: /chronology/i });
     expect(
-      screen.getByRole("heading", { name: "Rôle historique" })
+      within(timeline).getByRole("heading", { name: "Kingdoms and chiefdoms" })
     ).toBeVisible();
+    expect(
+      within(timeline).getByRole("heading", { name: "Diaspora" })
+    ).toBeVisible();
+    expect(within(timeline).getAllByText("Undated")).toHaveLength(2);
   });
 
   // @req REQ-003

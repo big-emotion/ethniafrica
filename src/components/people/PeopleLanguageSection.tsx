@@ -45,7 +45,7 @@ export function PeopleLanguageSection({
               // navigation target rather than a word in a sentence and owes
               // the 44px floor — it measured 23px tall.
               className="people-section-body inline-flex min-h-11 items-center font-semibold hover:underline"
-              style={{ color: "var(--country-terracotta-ink)" }}
+              style={{ color: "var(--people-accent-ink)" }}
             >
               {data.languageFamilyName ?? data.languageFamilyId}
             </Link>

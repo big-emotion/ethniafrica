@@ -80,9 +80,12 @@ describe("PeopleDetailViewV2", () => {
     expect(
       screen.getByRole("heading", { name: "The name and its designations" })
     ).toBeVisible();
-    expect(
-      screen.getByRole("heading", { name: "Origins and formation" })
-    ).toBeVisible();
+    // REQ-155 merged the origins and the historical role into one chapter,
+    // "History". Both former chapter titles survived inside it as
+    // sub-headings, so the reader still met the old structure one level down;
+    // retiring them is the point of the merge, and this assertion moves to
+    // the chapter the merge produced.
+    expect(screen.getByRole("heading", { name: "History" })).toBeVisible();
     expect(
       screen.getByRole("heading", { name: "Culture and society" })
     ).toBeVisible();
@@ -90,7 +93,9 @@ describe("PeopleDetailViewV2", () => {
       screen.getByRole("heading", { name: "Where this people lives" })
     ).toBeVisible();
     expect(screen.getAllByText("Self-designation").length).toBeGreaterThan(0);
-    expect(screen.getByText("Origins and formation")).toBeVisible();
+    // The origins keep a station of their own on the merged spine, under a
+    // name that is no longer a retired chapter title.
+    expect(screen.getByText("Formation and origins")).toBeVisible();
     expect(screen.getAllByText("Main language").length).toBeGreaterThan(0);
     expect(screen.getByText(/Migrations depuis Notsé/)).toBeVisible();
   });
@@ -140,7 +145,7 @@ describe("PeopleDetailViewV2", () => {
 
     expect(screen.getByText("Le nom et ses appellations")).toBeInTheDocument();
     // The hero carries the autonym too, so this asserts presence rather than
-    // uniqueness; PeopleNamingBlock's own test pins where it sits.
+    // uniqueness; PeopleNamingTiles' own test pins where it sits.
     expect(screen.getAllByText("Eʋeawo").length).toBeGreaterThan(0);
     expect(screen.getByText(/Ewhe \(graphie coloniale\)/)).toBeInTheDocument();
     expect(

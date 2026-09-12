@@ -178,6 +178,23 @@ describe("FragmentationView", () => {
         document.querySelector(".AutonymExonymHeading")
       ).toBeInTheDocument();
     });
+
+    // This heading used to render at the same h2 level as a chapter title
+    // (FicheSection), so the fiche emitted ten headings for nine chapters —
+    // one indistinguishable from a chapter of its own between distribution
+    // and naming. It sits inside a FicheTile (h3), so it belongs below that.
+    // @req REQ-155
+    it("renders its heading below chapter level, not at h2", () => {
+      render(
+        <FragmentationView
+          fragmentation={twoCountryFragmentation}
+          variant="fiche-section"
+        />
+      );
+
+      const heading = screen.getByRole("heading");
+      expect(heading.tagName).not.toBe("H2");
+    });
   });
 
   describe("colonial border annotation", () => {
@@ -235,6 +252,19 @@ describe("FragmentationView", () => {
       );
 
       expect(screen.getByText(/2/)).toBeTruthy();
+    });
+
+    // @req REQ-155
+    it("renders its heading below chapter level, not at h2", () => {
+      render(
+        <FragmentationView
+          fragmentation={twoCountryFragmentation}
+          variant="module-index"
+        />
+      );
+
+      const heading = screen.getByRole("heading");
+      expect(heading.tagName).not.toBe("H2");
     });
 
     // @req REQ-091

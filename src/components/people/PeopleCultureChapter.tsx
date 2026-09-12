@@ -11,7 +11,7 @@ import {
 import type { AssociatedGroup } from "@/lib/people/associatedPeopleLinks";
 import type { Language } from "@/types/shared";
 
-import { PeopleCultureGrid } from "./PeopleCultureGrid";
+import { splitSourcedProse } from "./PeopleCultureGrid";
 import { PeopleRelatedPeoplesSection } from "./PeopleRelatedPeoplesSection";
 import { ProseWithChip } from "./ProseWithChip";
 
@@ -33,12 +33,31 @@ const organisationFields = [
   "religiousAuthority",
 ] as const;
 
-/** Only a sentence already written in the source can serve as a closed fact. */
-function splitSourcedProse(text: string) {
-  const match = text.trim().match(/^([\s\S]{20,}?[.!?])\s+([\s\S]+)$/);
-  return match
-    ? { fact: match[1], detail: match[2] }
-    : { fact: text.trim(), detail: null };
+/**
+ * A field revealed inside an already-open disclosure: plain prose, never
+ * another `FicheTile`. Nesting a second disclosure here would let the
+ * chapter's own tile count drift with whatever `PeopleCultureGrid` renders
+ * internally — this chapter counts its tiles as a hard rule (REQ-097).
+ */
+function CultureDetailField({
+  label,
+  text,
+  note,
+  language,
+}: {
+  label: string;
+  text: string;
+  note?: ParagraphNoteData;
+  language: Language;
+}) {
+  return (
+    <div>
+      <dt className="people-section-label">{label}</dt>
+      <dd className="afh-prose-def">
+        <ProseWithChip text={text} note={note} language={language} />
+      </dd>
+    </div>
+  );
 }
 
 function CultureProseTile({
@@ -132,19 +151,33 @@ export function PeopleCultureChapter({
           closedFactContent={closedRitesNote ? undefined : ritesFact}
         >
           {closedRitesNote ? (
-            <PeopleCultureGrid
-              data={culture}
-              fields={["majorRites", "symbols"]}
-              notes={cultureNotes}
-              language={language}
-            />
+            <dl className="afh-prose-fields space-y-[14px]">
+              {culture.majorRites && (
+                <CultureDetailField
+                  label={copy.cultureFields.majorRites}
+                  text={culture.majorRites}
+                  note={cultureNotes?.majorRites}
+                  language={language}
+                />
+              )}
+              {culture.symbols && (
+                <CultureDetailField
+                  label={copy.cultureFields.symbols}
+                  text={culture.symbols}
+                  note={cultureNotes?.symbols}
+                  language={language}
+                />
+              )}
+            </dl>
           ) : ritesDetail ? (
-            <PeopleCultureGrid
-              data={culture}
-              fields={["symbols"]}
-              notes={cultureNotes}
-              language={language}
-            />
+            <dl className="afh-prose-fields space-y-[14px]">
+              <CultureDetailField
+                label={copy.cultureFields.symbols}
+                text={ritesDetail}
+                note={cultureNotes?.symbols}
+                language={language}
+              />
+            </dl>
           ) : undefined}
         </FicheTile>
       )}

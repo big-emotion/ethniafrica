@@ -156,17 +156,33 @@ export function FicheSummaryBrief({
       ? countryCopy[language].summary
       : peopleCopy[language].summary;
   /*
-   * Two records, two weights, on purpose.
+   * Two records, one weighting, two devices.
    *
-   * A country record leads with its population — the one figure a reader
-   * arrives wanting — and files the four counts of what the atlas holds
-   * beside it. A people record's five slots include two that are names
-   * rather than counts, so none of them leads, and it keeps the even list it
-   * shipped with. The weighting follows the kind rather than a prop because
-   * there is no third answer to invent.
+   * Both lead with their population — the one figure a reader arrives
+   * wanting — and file the rest beside it. What differs is what the rest
+   * are. A country record's four are all counts, so they ride the shared
+   * stat card. A people record's four include two words, its main language
+   * and its family, and the shared card takes a `number | null`, so they
+   * ride the definition list instead, which renders a word as naturally as
+   * a figure.
+   *
+   * This comment used to say a people record led with nothing, because two
+   * of its slots were words. The reviewed rendering answers that: the
+   * population leads and a word value simply renders a step smaller. The
+   * weighting follows the kind rather than a prop because there is no third
+   * answer to invent — but the device should not, and widening the card to
+   * carry a word is what would collapse these two branches into one.
    */
   const counted = kind === "country" ? countryFigures(figures, language) : null;
   const rows = kind === "people" ? peopleRows(figures, language) : null;
+
+  // Reviewed rendering (gabarit parity): the people variant leads with one
+  // headline figure, then four tiles. Country keeps its original uniform
+  // grid, so the modifier only ever lands on the people dl.
+  const figuresClassName =
+    kind === "people"
+      ? "fiche-summary-brief__figures fiche-summary-brief__figures--people"
+      : "fiche-summary-brief__figures";
 
   const matchingFacts = DID_YOU_KNOW_FACTS.filter((fact) =>
     fact.entities.some(
@@ -192,6 +208,20 @@ export function FicheSummaryBrief({
         </>
       )}
 
+      {/* Two records, two shapes, and the shapes are genuinely different.
+
+          A country record's five slots are all counts, so they all ride the
+          shared stat card and the population leads.
+
+          A people record's five include two that are words rather than
+          counts — its main language and its family — and `FicheStatCard`
+          takes a `number | null`, so it cannot carry them. The people panel
+          therefore keeps the definition list, which renders a word as
+          naturally as a figure, and takes its weighting there instead: the
+          population leads across both columns, the four others become tiles.
+
+          Unifying the two on one device means widening the shared card to
+          carry a word value. That is worth doing and is not done here. */}
       {counted ? (
         <div className="fiche-summary-brief__counted">
           {counted.map((figure) => (
@@ -207,9 +237,16 @@ export function FicheSummaryBrief({
           ))}
         </div>
       ) : (
-        <dl className="fiche-summary-brief__figures">
-          {rows.map((row) => (
-            <div key={row.label}>
+        <dl className={figuresClassName}>
+          {rows!.map((row, index) => (
+            <div
+              key={row.label}
+              className={
+                index === 0
+                  ? "fiche-summary-brief__figure--headline"
+                  : "fiche-summary-brief__figure--tile"
+              }
+            >
               <dt>{row.label}</dt>
               <dd>
                 {row.value ?? row.absent}
@@ -278,7 +315,7 @@ export function FicheSummaryBrief({
         .fiche-summary-brief__eyebrow { margin: 0; }
         .fiche-summary-brief h2 {
           margin: 10px 0 18px;
-          font-family: var(--font-fraunces), Georgia, serif;
+          font-family: var(--afh-font-display);
           font-size: var(--afh-text-h3);
           line-height: 1.18;
           color: var(--afh-text);
@@ -312,11 +349,31 @@ export function FicheSummaryBrief({
           font-size: var(--afh-text-small);
           color: var(--afh-fg-muted);
         }
+        .fiche-summary-brief__figures--people .fiche-summary-brief__figure--headline {
+          grid-column: 1 / -1;
+        }
+        /* Fraunces is loaded at 300/500/700/900 only (app/layout.tsx). 600 is
+           not among them and silently resolves to 700 in the browser —
+           displayWeightCharter.test.ts holds every display declaration to
+           [700, 900], so both rules below ask for 700 directly rather than
+           relying on that fallback. */
+        .fiche-summary-brief__figure--headline dd {
+          font-family: var(--afh-font-display);
+          font-weight: 700;
+          font-variant-numeric: tabular-nums;
+          font-size: var(--afh-text-h2);
+        }
+        .fiche-summary-brief__figure--tile dd {
+          font-family: var(--afh-font-display);
+          font-weight: 700;
+          font-variant-numeric: tabular-nums;
+        }
         /* A rule down the left rather than a line across the top. A top rule
            reads as the end of the figures; a left rule reads as a quotation,
            which is what this is — one sourced sentence, not a sixth count.
            The gold role, the same one the search surface gives a sourced
            highlight, so the device means one thing across the site. */
+
         .fiche-summary-brief__fact {
           margin-top: 18px;
           padding-left: 12px;
