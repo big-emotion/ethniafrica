@@ -52,6 +52,7 @@
     "build-storybook": "storybook build",
     "test:a11y": "npx playwright install chromium && tsx scripts/a11y-test.ts",
     "e2e": "playwright test",
+    "e2e:smoke": "playwright test --project=mobile-430 --grep @smoke",
     "e2e:ui": "playwright test --ui",
     "e2e:debug": "playwright test --debug",
     "e2e:headed": "playwright test --headed",

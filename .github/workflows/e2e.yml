@@ -1,18 +1,20 @@
 name: E2E — Playwright
 
 on:
-  # Not a required check on either branch: 27 of its last 33 runs were red, the
-  # most recent with 69 specs failing against 80 passing. A suite that fails
-  # four times out of five reports nothing about the change under review — the
-  # reader learns only that the suite is still broken — while costing every pull
-  # request into `recette` a further ~8 minutes.
+  # Two jobs on two paths.
   #
-  # It runs where its result can still be acted on: nightly against the
-  # integration branch, on the promotion into `main`, and on demand. Restoring
-  # it to the pre-merge path is the right move once it is green again, and is a
-  # deliberate decision rather than a default.
+  # `smoke` runs on every pull request, into `recette` included, and is meant
+  # to be a required check: four reading surfaces rendered and axe-audited on a
+  # built server, French, 430px, a few minutes. It accepts a dependency on the
+  # recette database being reachable, which is the price of asserting against
+  # the real corpus rather than an empty one.
+  #
+  # `e2e` is the full matrix — every viewport project, both locales, the
+  # journeys. It stayed off the pre-merge path because it was red 27 runs out
+  # of 33 and cost ~8 minutes a pull request; it runs nightly against the
+  # integration branch, on the promotion into `main`, and on demand.
   pull_request:
-    branches: [main]
+    branches: [main, recette]
   schedule:
     - cron: "0 3 * * *"
   workflow_dispatch:
@@ -25,12 +27,129 @@ concurrency:
 permissions:
   contents: read
 
-# E2E suite is mobile-first against the reference device profile (ASR-7).
-# Persona thresholds (Amina 10 s, Ngozi 30 s) are SLOs — they assume the
-# CPU + network throttle encoded in playwright.config.ts.
 jobs:
+  smoke:
+    name: Playwright smoke (fr, 430px)
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    env:
+      # NEVER production credentials. Same fallback as the full matrix below:
+      # `TEST_SUPABASE_*` when a dedicated test project exists, recette otherwise.
+      NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.TEST_SUPABASE_URL || secrets.NEXT_PUBLIC_SUPABASE_URL }}
+      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.TEST_SUPABASE_SERVICE_ROLE_KEY || secrets.SUPABASE_SERVICE_ROLE_KEY }}
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.TEST_SUPABASE_ANON_KEY || secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+      CI: "true"
+      # Test-only publication: production remains fail-closed to fr-only.
+      SITE_LOCALE_MODE: bilingual-fr-default
+      NEXT_PUBLIC_FEATURE_QUIZ: "true"
+      # `next start` runs with NODE_ENV=production, and without Upstash
+      # credentials the rate limiter fails closed on a production deployment:
+      # every /api/v2 call answered 500, so the quiz never drew a question and
+      # the search never promoted a pivot — on CI only. This server is a test
+      # deployment, and `VERCEL_ENV` is the one signal `isProductionDeployment`
+      # reads for that.
+      VERCEL_ENV: preview
+      E2E_LOCALE: fr
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Setup Node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install deps
+        run: npm ci
+
+      # A fork or bot PR cannot read repository secrets, so it skips. Anywhere
+      # else a missing secret fails the job: a required check that reports
+      # success without having run is worse than a red one.
+      - name: Check required secrets are present
+        id: secrets
+        env:
+          IS_FORK_PR: ${{ github.event.pull_request.head.repo.fork || false }}
+          IS_BOT: ${{ github.actor == 'dependabot[bot]' }}
+        run: |
+          if [ -n "$NEXT_PUBLIC_SUPABASE_URL" ] && [ -n "$NEXT_PUBLIC_SUPABASE_ANON_KEY" ]; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          elif [ "$IS_FORK_PR" = "true" ] || [ "$IS_BOT" = "true" ]; then
+            echo "present=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Skipping the Playwright smoke set — a fork or bot PR cannot read repository secrets."
+          else
+            echo "::error::No Supabase URL and anon key reached this job, so the smoke set cannot run. Set NEXT_PUBLIC_SUPABASE_URL / NEXT_PUBLIC_SUPABASE_ANON_KEY (or the TEST_SUPABASE_* pair) to arm this gate."
+            exit 1
+          fi
+
+      - name: Restore Playwright browser cache
+        if: steps.secrets.outputs.present == 'true'
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ~/.cache/ms-playwright
+          key: ms-playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+
+      # Chromium only: the smoke set runs in the `mobile-430` project, which is
+      # a Pixel 5 profile. The full matrix below also needs webkit.
+      - name: Install Playwright browser
+        if: steps.secrets.outputs.present == 'true'
+        run: npx playwright install --with-deps chromium
+
+      - name: Restore Next.js build cache
+        if: steps.secrets.outputs.present == 'true'
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .next/cache
+          key: nextjs-${{ hashFiles('package-lock.json') }}-${{ github.sha }}
+          restore-keys: |
+            nextjs-${{ hashFiles('package-lock.json') }}-
+
+      - name: Build app
+        if: steps.secrets.outputs.present == 'true'
+        run: npm run build
+
+      - name: Start app
+        if: steps.secrets.outputs.present == 'true'
+        run: npx next start -p 3000 &
+        env:
+          PORT: 3000
+
+      - name: Wait for app
+        if: steps.secrets.outputs.present == 'true'
+        run: |
+          # The root answers 307 to the default locale (REQ-140); -L follows it.
+          for i in 1 2 3 4 5 6 7 8 9 10 11 12; do
+            if curl -fsSL http://localhost:3000/ > /dev/null; then
+              echo "App ready"; exit 0
+            fi
+            echo "Waiting for app... ($i/12)"; sleep 5
+          done
+          echo "App did not become ready"; exit 1
+
+      - name: Run the smoke set
+        if: steps.secrets.outputs.present == 'true'
+        run: npm run e2e:smoke
+        env:
+          BASE_URL: http://localhost:3000
+          SKIP_WEB_SERVER: "1"
+
+      - name: Upload report
+        if: failure() && steps.secrets.outputs.present == 'true'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: playwright-smoke-report
+          path: playwright-report/
+          retention-days: 7
+
+  # E2E suite is mobile-first against the reference device profile (ASR-7).
+  # Persona thresholds (Amina 10 s, Ngozi 30 s) are SLOs — they assume the
+  # CPU + network throttle encoded in playwright.config.ts.
   e2e:
     name: Playwright (${{ matrix.locale }})
+    if: github.event_name != 'pull_request' || github.base_ref == 'main'
     runs-on: ubuntu-latest
     timeout-minutes: 25
 
@@ -50,16 +169,13 @@ jobs:
       # set. Absent that, the suite runs against **recette** — the
       # pre-production database, which is what these specs want anyway: they
       # read the real corpus, and a project with an empty corpus would assert
-      # nothing. The seventeen specs navigate, measure a11y and search; the
-      # single `.fill()` in the suite types into a search box. Nothing writes.
+      # nothing. The specs navigate, measure a11y and search; the single
+      # `.fill()` in the suite types into a search box. Nothing writes.
       #
       # The service-role key falls back too, because `e2e/global.setup.ts`
       # asserts it before any test runs. No current spec uses it: the write
       # factories (flag, fiche, key) exist, and Playwright fixtures are lazy,
-      # so `supabaseAdmin` is never constructed by the seventeen specs that
-      # ship today. Withholding it bought no isolation either — the same
-      # secret is already handed to `recette-data-sync.yml`. Worth narrowing
-      # the assertion to the specs that need it, which is its own change.
+      # so `supabaseAdmin` is never constructed by the specs that ship today.
       NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.TEST_SUPABASE_URL || secrets.NEXT_PUBLIC_SUPABASE_URL }}
       SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.TEST_SUPABASE_SERVICE_ROLE_KEY || secrets.SUPABASE_SERVICE_ROLE_KEY }}
       NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.TEST_SUPABASE_ANON_KEY || secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
@@ -70,6 +186,9 @@ jobs:
       # (isQuizFeatureEnabled) unless this is set, which would silently skip
       # the quiz e2e specs.
       NEXT_PUBLIC_FEATURE_QUIZ: "true"
+      # A test deployment, not production — see the smoke job above for the
+      # /api/v2 500s this prevents.
+      VERCEL_ENV: preview
       E2E_LOCALE: ${{ matrix.locale }}
 
     steps:
@@ -92,9 +211,8 @@ jobs:
 
       # A fork or bot PR genuinely cannot read repository secrets, so it skips.
       # Anywhere else, absent secrets mean the suite cannot run — and a job that
-      # reports success without running 17 spec files is worse than a red one,
-      # because it is budgeted for as though it works. This step used to treat
-      # both cases alike and concluded success on every run in the repo's history.
+      # reports success without running the spec files is worse than a red one,
+      # because it is budgeted for as though it works.
       - name: Check required secrets are present
         id: secrets
         env:
