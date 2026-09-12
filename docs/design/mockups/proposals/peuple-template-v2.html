@@ -1,0 +1,779 @@
+<title>Gabarit peuple réordonné</title>
+<meta name="description" content="Contrat de surface de la fiche peuple d'EthniAfrica, rendu à 430 px sur les données réelles des Abahutu du Burundi, avec la règle de l'état fermé démontrée tuile par tuile.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Nunito+Sans:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+
+<style>
+  /* Jetons repris de src/styles/tokens/color.css et space.css. L'accent de la
+     fiche peuple est l'ocre, posé une fois par la page. Aucun composant ne le
+     nomme. */
+  :root {
+    --bg: #fbf7f2;
+    --bg-warm: #f5ede0;
+    --surface: #ffffff;
+    --border: #e8dfd3;
+    --ink: #2c2018;
+    --ink-soft: #746557;
+    --ink-muted: #9b8b7d;
+    --accent: #c9821f;
+    --accent-ink: #835514;
+    --accent-tint: #f1d9ae;
+    --terre: #c4573f;
+    --gap-section: 24px;
+    --serif: "Fraunces", Georgia, "Times New Roman", serif;
+    --sans: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #120e0a;
+      --bg-warm: #1d1710;
+      --surface: #271e14;
+      --border: #3a2e20;
+      --ink: #f1e7d8;
+      --ink-soft: #c9b99f;
+      --ink-muted: #8f7f66;
+      --accent: #c9821f;
+      --accent-ink: #e0a24a;
+      --accent-tint: #3a2a10;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #120e0a;
+    --bg-warm: #1d1710;
+    --surface: #271e14;
+    --border: #3a2e20;
+    --ink: #f1e7d8;
+    --ink-soft: #c9b99f;
+    --ink-muted: #8f7f66;
+    --accent: #c9821f;
+    --accent-ink: #e0a24a;
+    --accent-tint: #3a2a10;
+  }
+
+  @media (min-width: 768px) { :root { --gap-section: 32px; } }
+  @media (min-width: 1200px) { :root { --gap-section: 48px; } }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    padding-block: 28px 64px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  a:focus-visible, button:focus-visible, summary:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  .page { max-width: 1180px; margin: 0 auto; display: grid; gap: 32px; }
+  @media (min-width: 1040px) {
+    .page { grid-template-columns: 430px minmax(0, 1fr); align-items: start; gap: 48px; }
+  }
+
+  .masthead { max-width: 62ch; }
+  .masthead p.eyebrow {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--accent-ink); margin: 0 0 10px;
+  }
+  .masthead h1 {
+    font-family: var(--serif); font-weight: 600;
+    font-size: clamp(26px, 6vw, 38px); line-height: 1.12;
+    letter-spacing: -0.015em; margin: 0 0 12px; text-wrap: balance;
+  }
+  .masthead p.standfirst { margin: 0; color: var(--ink-soft); font-size: 15px; }
+
+  .phone {
+    background: var(--bg-warm); border: 1px solid var(--border);
+    border-radius: 10px; overflow: hidden; max-width: 430px; width: 100%;
+    justify-self: center;
+  }
+
+  .rail {
+    position: sticky; top: 0; z-index: 2; display: flex; align-items: center;
+    gap: 10px; padding: 10px 14px; background: var(--bg);
+    border-bottom: 1px solid var(--border);
+  }
+  .rail .pos {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em;
+    color: var(--ink-muted); white-space: nowrap;
+  }
+  .rail .pos b { color: var(--accent-ink); font-weight: 500; }
+  .rail .chapter {
+    font-family: var(--serif); font-size: 15px; font-weight: 500;
+    flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .rail .contribute {
+    font-family: var(--sans); font-size: 12px; font-weight: 700;
+    padding: 6px 11px; border-radius: 6px; border: 1px solid var(--accent);
+    background: var(--accent-tint); color: var(--accent-ink);
+    white-space: nowrap; cursor: pointer;
+  }
+
+  .globe { background: #120e0a; color: #f1e7d8; padding: 22px 18px 26px; text-align: center; }
+  .globe .iso {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em;
+    text-transform: uppercase; color: #8f7f66; margin: 0 0 8px;
+  }
+  .globe h2 {
+    font-family: var(--serif); font-size: 30px; font-weight: 600;
+    margin: 0 0 4px; letter-spacing: -0.015em;
+  }
+  .globe p.exonym { margin: 0 0 16px; color: #c9b99f; font-size: 14px; }
+  .globe .orb {
+    width: 132px; height: 132px; margin: 0 auto; border-radius: 50%;
+    background: radial-gradient(circle at 34% 30%, #6d5220 0%, #46331c 46%, #1c1610 100%);
+    box-shadow: inset -14px -12px 26px rgba(0,0,0,0.55), 0 0 0 1px rgba(201,130,31,0.35);
+    position: relative;
+  }
+  /* Une empreinte, jamais un trait fermé : la charte atlas interdit la
+     frontière sur un peuple. */
+  .globe .orb::after {
+    content: ""; position: absolute; inset: 34% 30% 28% 34%;
+    border-radius: 46% 54% 42% 58%;
+    background: radial-gradient(circle, rgba(201,130,31,0.55) 0%, rgba(201,130,31,0.06) 70%, transparent 100%);
+  }
+
+  .parchment {
+    display: flex; flex-direction: column;
+    gap: var(--gap-section); padding: var(--gap-section) 0;
+    background: var(--bg-warm);
+  }
+
+  section.chapter {
+    background: var(--surface); padding: 20px 16px;
+    border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  }
+  section.chapter > h3 {
+    font-family: var(--serif); font-size: 21px; font-weight: 600;
+    margin: 0 0 14px; letter-spacing: -0.01em; text-wrap: balance;
+  }
+
+  .brief {
+    background: var(--bg-warm); border: 1px solid var(--border);
+    border-left: 3px solid var(--accent); border-radius: 6px;
+    padding: 18px 16px; margin: 0 16px;
+  }
+  .brief .eyebrow {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.11em;
+    text-transform: uppercase; color: var(--accent-ink); margin: 0 0 12px;
+  }
+  .counters {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 12px; margin: 0 0 16px;
+  }
+  .counters .figure:first-child { grid-column: 1 / -1; }
+  .figure dt {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.07em;
+    text-transform: uppercase; color: var(--ink-muted); line-height: 1.35;
+  }
+  .figure dd {
+    margin: 3px 0 0; font-family: var(--serif); font-size: 25px; font-weight: 600;
+    line-height: 1.05; letter-spacing: -0.02em; font-variant-numeric: tabular-nums;
+    color: var(--ink);
+  }
+  .figure dd small {
+    display: block; font-family: var(--sans); font-size: 11px; font-weight: 400;
+    letter-spacing: 0; color: var(--ink-muted); margin-top: 3px; line-height: 1.4;
+  }
+  .figure dd.word { font-size: 19px; }
+
+  .flag {
+    border: 1px solid var(--terre); border-radius: 6px;
+    padding: 9px 11px; margin: 0 0 16px; font-size: 12.5px;
+    line-height: 1.45; color: var(--ink); background: var(--bg);
+  }
+  .flag b { color: var(--terre); }
+
+  .anecdote { border-top: 1px solid var(--border); padding-top: 14px; }
+  .anecdote .label {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.07em;
+    text-transform: uppercase; color: var(--ink-muted); margin: 0 0 6px;
+  }
+  .anecdote p { margin: 0 0 8px; font-size: 14.5px; line-height: 1.5; }
+  .tier {
+    display: inline-block; font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.06em; padding: 2px 7px; border-radius: 999px;
+    border: 1px solid var(--border); background: var(--bg); color: var(--ink-soft);
+  }
+
+  .derived {
+    display: inline-block; font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.05em; color: var(--ink-muted);
+    border: 1px dashed var(--border); border-radius: 4px;
+    padding: 1px 6px; margin-left: 6px; vertical-align: 2px;
+  }
+
+  .country-row {
+    display: grid; grid-template-columns: 38px minmax(0, 1fr) auto;
+    gap: 10px; align-items: baseline; padding: 10px 0;
+    border-top: 1px solid var(--border);
+  }
+  .country-row .iso {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em;
+    color: var(--accent-ink);
+  }
+  .country-row .cname { font-weight: 700; font-size: 15.5px; }
+  .country-row .abs {
+    display: block; font-family: var(--mono); font-size: 10.5px;
+    color: var(--ink-muted); margin-top: 2px;
+  }
+  .country-row .pct {
+    font-family: var(--serif); font-size: 18px; font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+  .track {
+    grid-column: 2 / -1; height: 7px; border-radius: 999px;
+    background: var(--bg-warm); overflow: hidden; margin-top: 6px;
+  }
+  .track span { display: block; height: 100%; background: var(--accent); }
+
+  .tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+
+  /* La règle : l'état fermé porte déjà un fait. Le titre seul est une porte,
+     pas un résumé. */
+  details.tile {
+    border: 1px solid var(--border); border-radius: 8px;
+    background: var(--bg-warm); padding: 12px 11px;
+  }
+  details.tile > summary { cursor: pointer; list-style: none; }
+  details.tile > summary::-webkit-details-marker { display: none; }
+  .tile-label {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.07em;
+    text-transform: uppercase; color: var(--accent-ink); margin: 0 0 5px;
+  }
+  .closed-fact {
+    font-family: var(--serif); font-size: 16px; font-weight: 600;
+    line-height: 1.25; margin: 0; display: block;
+  }
+  .closed-fact em {
+    display: block; font-family: var(--sans); font-size: 12px;
+    font-weight: 400; font-style: normal; color: var(--ink-soft); margin-top: 4px;
+  }
+  details.tile > summary::after {
+    content: "+ en savoir plus"; display: block; margin-top: 8px;
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.04em;
+    color: var(--accent-ink);
+  }
+  details.tile[open] > summary::after { content: "− replier"; }
+  details.tile > .body {
+    margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border);
+    font-size: 14px; line-height: 1.55; color: var(--ink-soft);
+  }
+  details.tile.wide { grid-column: 1 / -1; }
+
+  .spine { margin: 0; padding: 0 0 0 20px; list-style: none; border-left: 2px solid var(--accent-tint); }
+  .spine > li { position: relative; padding: 0 0 16px 4px; }
+  .spine > li:last-child { padding-bottom: 0; }
+  .spine > li::before {
+    content: ""; position: absolute; left: -27px; top: 6px;
+    width: 9px; height: 9px; border-radius: 50%; background: var(--accent);
+  }
+  .spine .years {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em;
+    color: var(--accent-ink); display: block;
+  }
+  .spine .undated { color: var(--ink-muted); }
+  .spine .station { font-weight: 700; font-size: 15.5px; display: block; margin-top: 1px; }
+  .spine .detail {
+    margin: 5px 0 0; font-size: 13.5px; line-height: 1.5; color: var(--ink-soft);
+  }
+
+  .azbar {
+    display: flex; flex-wrap: wrap; gap: 5px; margin: 0 0 12px;
+  }
+  .azbar a {
+    font-family: var(--mono); font-size: 11.5px; padding: 3px 7px;
+    border-radius: 5px; border: 1px solid var(--border);
+    background: var(--bg-warm); color: var(--accent-ink);
+  }
+  .azbar a[aria-disabled="true"] { color: var(--ink-muted); opacity: 0.45; }
+
+  .gapnote {
+    border: 1px dashed var(--border); border-radius: 8px; padding: 12px;
+    font-size: 13.5px; line-height: 1.5; color: var(--ink-soft);
+  }
+
+  .onward { margin: 0; padding: 0; list-style: none; }
+  .onward li { padding: 9px 0; border-bottom: 1px solid var(--border); }
+  .onward li:last-child { border-bottom: 0; }
+  .onward .kind {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.07em;
+    text-transform: uppercase; color: var(--ink-muted); display: block;
+  }
+  .onward .go { font-weight: 700; font-size: 15.5px; color: var(--accent-ink); }
+
+  section.sources { background: var(--bg); }
+  section.sources .src {
+    padding: 9px 0; border-top: 1px solid var(--border);
+    font-size: 13.5px; color: var(--ink-soft); line-height: 1.45;
+  }
+
+  .contribute-block {
+    margin: 0 16px; border: 1px dashed var(--accent); border-radius: 8px;
+    background: var(--accent-tint); padding: 15px 14px;
+  }
+  .contribute-block p { margin: 0 0 10px; font-size: 14px; line-height: 1.5; color: var(--ink); }
+  .contribute-block .btn {
+    display: inline-block; font-weight: 700; font-size: 14px; padding: 9px 16px;
+    border-radius: 6px; background: var(--accent-ink); color: #fbf7f2;
+    cursor: pointer; border: 0;
+  }
+
+  .notes { display: grid; gap: 18px; align-content: start; }
+  .notes > h2 {
+    font-family: var(--serif); font-size: 20px; font-weight: 600;
+    margin: 0; letter-spacing: -0.01em;
+  }
+  .note { border-left: 2px solid var(--border); padding-left: 14px; }
+  .note.rule { border-left-color: var(--accent); }
+  .note.defect { border-left-color: var(--terre); }
+  .note h3 {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.07em;
+    text-transform: uppercase; color: var(--ink-muted); margin: 0 0 5px;
+  }
+  .note.rule h3 { color: var(--accent-ink); }
+  .note.defect h3 { color: var(--terre); }
+  .note p { margin: 0 0 6px; font-size: 14px; line-height: 1.55; color: var(--ink-soft); }
+  .note p:last-child { margin-bottom: 0; }
+  .note strong { color: var(--ink); }
+
+  table.measures { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 6px; }
+  table.measures th, table.measures td {
+    text-align: left; padding: 5px 8px 5px 0;
+    border-bottom: 1px solid var(--border); color: var(--ink-soft);
+  }
+  table.measures th {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--ink-muted); font-weight: 400;
+  }
+  table.measures td.num {
+    font-variant-numeric: tabular-nums; text-align: right;
+    color: var(--ink); font-weight: 600;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+</style>
+
+<div class="page">
+  <div class="masthead" style="grid-column: 1 / -1">
+    <p class="eyebrow">Contrat de surface · fiche peuple · 430 px</p>
+    <h1>Le gabarit peuple, réordonné</h1>
+    <p class="standfirst">
+      Données réelles des Abahutu du Burundi. Chaque tuile fermée porte déjà un
+      fait ; l'ouvrir en apprend davantage. La spécification complète est dans
+      <code>docs/design/people-template-spec.md</code>.
+    </p>
+  </div>
+
+  <div class="phone">
+    <div class="rail">
+      <span class="pos"><b>01</b> / 09</span>
+      <span class="chapter">En bref</span>
+      <button class="contribute" type="button">Compléter</button>
+    </div>
+
+    <div class="globe">
+      <p class="iso">PPL_HUTU_BURUNDI · peuple · bantou</p>
+      <h2>Abahutu</h2>
+      <p class="exonym">Hutu (Burundi)</p>
+      <div class="orb" role="img" aria-label="L'empreinte des Abahutu sur le globe, sans frontière tracée"></div>
+    </div>
+
+    <div class="parchment">
+      <div class="brief">
+        <p class="eyebrow">En bref</p>
+        <dl class="counters">
+          <div class="figure">
+            <dt>Personnes recensées dans l'atlas</dt>
+            <dd>18,1 M<small>somme des 5 pays documentés · réf. 2025</small></dd>
+          </div>
+          <div class="figure">
+            <dt>Pays où il vit</dt>
+            <dd>5<small>référencés ici</small></dd>
+          </div>
+          <div class="figure">
+            <dt>Langue principale</dt>
+            <dd class="word">Kirundi<small>ikirundi · code run</small></dd>
+          </div>
+          <div class="figure">
+            <dt>Famille</dt>
+            <dd class="word">Bantou</dd>
+          </div>
+          <div class="figure">
+            <dt>Noms portés référencés</dt>
+            <dd>—<small>aucun nom n'est encore rattaché à ce peuple</small></dd>
+          </div>
+        </dl>
+        <p class="flag">
+          <b>Deux chiffres divergent.</b> La fiche déclare aussi un total de
+          10,5 M, quand les cinq pays qu'elle liste totalisent 18,1 M. L'atlas
+          affiche la somme des pays et signale l'écart plutôt que de choisir.
+        </p>
+        <div class="anecdote">
+          <p class="label">À savoir</p>
+          <p>
+            Personne ne s'accorde sur ce que veut dire Hutu, et une
+            administration en a fait une race.
+          </p>
+          <span class="tier">Source référencée</span>
+        </div>
+      </div>
+
+      <section class="chapter">
+        <h3>Où vit ce peuple <span class="derived">parts déduites</span></h3>
+        <div class="country-row">
+          <span class="iso">BDI</span>
+          <span><span class="cname">Burundi</span><span class="abs">12 200 000 · environ 85 % des Burundais</span></span>
+          <span class="pct">67,5 %</span>
+          <span class="track"><span style="width: 67.5%"></span></span>
+        </div>
+        <div class="country-row">
+          <span class="iso">COD</span>
+          <span><span class="cname">RD Congo</span><span class="abs">2 000 000 · Nord-Kivu, estimation 2019</span></span>
+          <span class="pct">11,1 %</span>
+          <span class="track"><span style="width: 11.1%"></span></span>
+        </div>
+        <div class="country-row">
+          <span class="iso">TZA</span>
+          <span><span class="cname">Tanzanie</span><span class="abs">1 865 000 · réfugiés et communautés installées</span></span>
+          <span class="pct">10,3 %</span>
+          <span class="track"><span style="width: 10.3%"></span></span>
+        </div>
+        <div class="country-row">
+          <span class="iso">UGA</span>
+          <span><span class="cname">Ouganda</span><span class="abs">1 500 000 · Bafumbira et réfugiés</span></span>
+          <span class="pct">8,3 %</span>
+          <span class="track"><span style="width: 8.3%"></span></span>
+        </div>
+        <div class="country-row">
+          <span class="iso">RWA</span>
+          <span><span class="cname">Rwanda</span><span class="abs">500 000 · réfugiés et résidents</span></span>
+          <span class="pct">2,8 %</span>
+          <span class="track"><span style="width: 2.8%"></span></span>
+        </div>
+
+        <div class="tiles" style="margin-top: 14px">
+          <details class="tile">
+            <summary>
+              <p class="tile-label">La carte</p>
+              <span class="closed-fact">Aucune frontière fermée<em>5 pays traversés</em></span>
+            </summary>
+            <div class="body">
+              Un peuple ne reçoit jamais de trait fermé sur cette carte. Une
+              frontière dessinée autour d'un groupe humain affirme une limite que
+              le corpus ne connaît pas. L'atlas montre une empreinte, dégradée
+              vers ses bords.
+            </div>
+          </details>
+          <details class="tile">
+            <summary>
+              <p class="tile-label">Fragmentation coloniale</p>
+              <span class="closed-fact">Réparti sur 5 États<em>dont 4 issus du tracé colonial</em></span>
+            </summary>
+            <div class="body">
+              Les Abahutu vivent de part et d'autre de frontières fixées par la
+              Conférence de Berlin puis par les tutelles allemande et belge. La
+              répartition ci-dessus est autant une carte des États qu'une carte
+              du peuple.
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section class="chapter">
+        <h3>Le nom et ses appellations</h3>
+        <div class="tiles">
+          <details class="tile">
+            <summary>
+              <p class="tile-label">Auto-appellation</p>
+              <span class="closed-fact" lang="run">Abahutu<em>le nom qu'ils se donnent</em></span>
+            </summary>
+            <div class="body">
+              Préfixe <i>aba-</i> du kirundi, marque du pluriel humain. Le
+              singulier est <i lang="run">Umuhutu</i>.
+            </div>
+          </details>
+          <details class="tile">
+            <summary>
+              <p class="tile-label">Exonymes</p>
+              <span class="closed-fact">Bahutu · Wahutu<em>+ 1 autre</em></span>
+            </summary>
+            <div class="body">
+              Bahutu et Wahutu sont des variantes de transcription coloniale.
+              Barundi désigne génériquement les habitants du Burundi et ne
+              distingue aucun des trois peuples.
+            </div>
+          </details>
+          <details class="tile wide">
+            <summary>
+              <p class="tile-label">D'où vient ce nom</p>
+              <span class="closed-fact">Terme d'origine interne<em>il désignait un métier avant de désigner un peuple</em></span>
+            </summary>
+            <div class="body">
+              Le terme Hutu est d'origine interne. Il désignait historiquement
+              les agriculteurs sédentaires, par opposition aux Tutsi éleveurs.
+            </div>
+          </details>
+          <details class="tile wide">
+            <summary>
+              <p class="tile-label">Pourquoi il pose problème</p>
+              <span class="closed-fact">Figé par l'administration, années 1920<em>d'une catégorie sociale à une identité rigide</em></span>
+            </summary>
+            <div class="body">
+              Sous la colonisation belge, le terme fut inscrit sur des cartes
+              d'identité ethniques obligatoires, cristallisant une distinction
+              sociale fluide en identité ethnique irréversible.
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section class="chapter">
+        <h3>Langue</h3>
+        <div class="tiles">
+          <details class="tile wide">
+            <summary>
+              <p class="tile-label">Langue principale</p>
+              <span class="closed-fact">Kirundi · code run<em>partagé par les trois peuples du Burundi</em></span>
+            </summary>
+            <div class="body">
+              Le kirundi est la langue nationale et officielle du Burundi. Hutu,
+              Tutsi et Twa la parlent sans distinction, ce qui est rare pour un
+              pays dont les catégories ethniques ont été administrées.
+            </div>
+          </details>
+          <details class="tile wide">
+            <summary>
+              <p class="tile-label">Parlers apparentés</p>
+              <span class="closed-fact">3 parlers<em>kinyarwanda · kinyabwisha · kifumbira</em></span>
+            </summary>
+            <div class="body">
+              Le kinyarwanda est la variante rwandaise du rwanda-rundi,
+              intercompréhensible avec le kirundi. Le kinyabwisha est parlé par
+              les Banyarwanda du Nord-Kivu, le kifumbira par les Bafumbira
+              d'Ouganda.
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section class="chapter">
+        <h3>Histoire</h3>
+        <ul class="spine">
+          <li>
+            <span class="years undated">Période non datée</span>
+            <span class="station">Agriculteurs des hautes terres</span>
+            <p class="detail">Le corpus ne date pas cette formation. La station reste visible et non datée.</p>
+          </li>
+          <li>
+            <span class="years">XVIe siècle – 1885</span>
+            <span class="station">Royaume du Burundi</span>
+            <p class="detail">Monarchie sacrée du mwami, chefferies hiérarchisées, distinctions sociales complexes entre Hutu, Tutsi et Twa.</p>
+          </li>
+          <li>
+            <span class="years">Années 1920</span>
+            <span class="station">Cartes d'identité ethniques</span>
+            <p class="detail">L'administration belge fixe la distinction Hutu-Tutsi et la rend administrativement irréversible.</p>
+          </li>
+          <li>
+            <span class="years">1962 – aujourd'hui</span>
+            <span class="station">Burundi indépendant</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="chapter">
+        <h3>Noms portés</h3>
+        <nav class="azbar" aria-label="Index alphabétique des noms">
+          <a href="#" aria-disabled="true">A</a><a href="#" aria-disabled="true">B</a>
+          <a href="#" aria-disabled="true">C</a><a href="#" aria-disabled="true">D</a>
+          <a href="#" aria-disabled="true">E</a><a href="#" aria-disabled="true">F</a>
+          <a href="#" aria-disabled="true">G</a><a href="#" aria-disabled="true">H</a>
+        </nav>
+        <p class="gapnote">
+          L'atlas ne rattache encore aucun nom à ce peuple. La dimension des noms
+          vient d'ouvrir et ne couvre qu'une petite part de l'atlas.
+        </p>
+      </section>
+
+      <section class="chapter">
+        <h3>Culture &amp; société</h3>
+        <div class="tiles">
+          <details class="tile">
+            <summary>
+              <p class="tile-label">Rites</p>
+              <span class="closed-fact">Ukubandwa<em>initiation, funérailles, semailles</em></span>
+            </summary>
+            <div class="body">
+              Cérémonies d'initiation des jeunes, funérailles avec veillée et
+              prières à Imana, cérémonies agricoles liées aux semailles et aux
+              récoltes. L'umuganuro marquait la fête des semences.
+            </div>
+          </details>
+          <details class="tile">
+            <summary>
+              <p class="tile-label">Symboles</p>
+              <span class="closed-fact">La vache et le tambour<em>inka · karyenda</em></span>
+            </summary>
+            <div class="body">
+              L'inka porte la richesse, le prestige, la dot et le sacrifice
+              rituel. Le karyenda, tambour royal, est le symbole suprême de la
+              royauté burundaise.
+            </div>
+          </details>
+          <details class="tile">
+            <summary>
+              <p class="tile-label">Organisation</p>
+              <span class="closed-fact">Clans patrilinéaires<em>ubwoko · inzu</em></span>
+            </summary>
+            <div class="body">
+              Organisation en clans patrilinéaires et en familles étendues.
+              Les principaux lignages hutu incluent les Abahanza, Abasigwa et
+              Abasanze. L'appartenance clanique détermine les alliances
+              matrimoniales.
+            </div>
+          </details>
+          <details class="tile">
+            <summary>
+              <p class="tile-label">Relations</p>
+              <span class="closed-fact">Tutsi, Twa, Banyarwanda<em>une langue commune, trois peuples</em></span>
+            </summary>
+            <div class="body">
+              Les abashingantahe, sages garants de la justice, constituent une
+              autorité morale traditionnelle transversale aux trois peuples.
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <div class="contribute-block">
+        <p>
+          Vous connaissez un nom, une date ou une source que cette page n'a pas ?
+          Elle est faite pour être complétée.
+        </p>
+        <button class="btn" type="button">Compléter cette page</button>
+      </div>
+
+      <section class="chapter">
+        <h3>Poursuivre</h3>
+        <ul class="onward">
+          <li><span class="kind">Pays</span><a class="go" href="#">Burundi →</a></li>
+          <li><span class="kind">Famille linguistique</span><a class="go" href="#">Bantou →</a></li>
+          <li><span class="kind">Peuple</span><a class="go" href="#">Abatutsi →</a></li>
+          <li><span class="kind">Peuple</span><a class="go" href="#">Abatwa →</a></li>
+          <li><span class="kind">Peuple</span><a class="go" href="#">Banyarwanda →</a></li>
+        </ul>
+      </section>
+
+      <section class="chapter sources">
+        <h3>Sources</h3>
+        <p class="src">UNFPA — Estimations de population, Burundi 2025 · Officielle</p>
+        <p class="src">United States Holocaust Memorial Museum — Divided by Ethnicity: Rwanda · Référencée</p>
+        <p class="src">Ethnologue — Kirundi (run) · Officielle</p>
+      </section>
+    </div>
+  </div>
+
+  <div class="notes">
+    <h2>Ce que ce contrat tranche</h2>
+
+    <div class="note">
+      <h3>Le relevé de départ</h3>
+      <p>
+        Mesuré sur la production le 12 septembre 2026, à 430 px, vingt secondes
+        après le chargement du globe.
+      </p>
+      <table class="measures">
+        <tr><th>Hauteur de la page</th><td class="num">15 487 px</td></tr>
+        <tr><th>Chapitres</th><td class="num">13</td></tr>
+        <tr><th>Où commence « Répartition géographique »</th><td class="num">11 343 px</td></tr>
+        <tr><th>Écart entre deux chapitres</th><td class="num">0 px</td></tr>
+        <tr><th>Chapitres consacrés au nom</th><td class="num">3</td></tr>
+      </table>
+    </div>
+
+    <div class="note rule">
+      <h3>La règle de l'état fermé</h3>
+      <p>
+        <strong>Une tuile fermée apprend déjà quelque chose. L'ouvrir en apprend
+        davantage.</strong> Une tuile dont le libellé n'est que son titre est une
+        porte, pas un résumé : le lecteur doit toutes les ouvrir pour savoir
+        laquelle contient quoi, ce qui est plus lent que le défilement qu'elle
+        remplace.
+      </p>
+      <p>
+        Trois obligations : l'état fermé porte une donnée et non une catégorie ;
+        l'ouverture ajoute et ne répète jamais ; un chapitre ne se replie pas,
+        seul son contenu le fait.
+      </p>
+    </div>
+
+    <div class="note defect">
+      <h3>Le seul graphique de la page est vide</h3>
+      <p>
+        Chaque barre de part est rendue à <strong>width: 0 %</strong> et la
+        colonne affiche un tiret. Ce que l'on prend pour une barre sur une
+        capture est le rail vide.
+      </p>
+      <table class="measures">
+        <tr><th>Fiches peuple avec une répartition</th><td class="num">776</td></tr>
+        <tr><th>dont les lignes déclarent une part</th><td class="num">29</td></tr>
+        <tr><th>dont la part est déductible</th><td class="num">773</td></tr>
+      </table>
+      <p>
+        La part manque sur 96 % du corpus et se déduit sur 99,6 %, à une division
+        d'une donnée que la fiche imprime déjà.
+      </p>
+    </div>
+
+    <div class="note defect">
+      <h3>Le corpus déclare la démographie deux fois</h3>
+      <p>
+        Sur cette fiche, le total déclaré est 10,5 M et les cinq pays totalisent
+        18,1 M, soit un rapport de <strong>1,72</strong>. Diviser par le total
+        déclaré mettrait le Burundi seul à 116 %.
+      </p>
+      <p>
+        Le dénominateur est donc la somme des lignes. Sur 774 fiches qui
+        déclarent les deux, <strong>33 divergent de plus de 10 %</strong>.
+        L'arbitrage éditorial revient au curateur, pas au gabarit.
+      </p>
+    </div>
+
+    <div class="note rule">
+      <h3>Neuf chapitres au lieu de treize</h3>
+      <p>
+        Trois chapitres parlaient du nom pour 2 484 px : ils fusionnent. Origines
+        et rôle historique font 3 333 px de chronologie en deux endroits : ils
+        fusionnent sur un éperon daté. Culture et voisins fusionnent en une
+        grille de quatre tuiles.
+      </p>
+      <p>
+        Lu titre à titre, le sommaire doit faire un argument : où il vit, comment
+        il se nomme, ce qu'il parle, d'où il vient, ce qu'il porte, comment il
+        vit, où aller ensuite.
+      </p>
+    </div>
+
+    <div class="note rule">
+      <h3>Ce qui ne change pas</h3>
+      <p>
+        « Poursuivre » reste des liens simples, la charte atlas l'impose et un
+        test de contrat le tient. Les sources restent en pied, détachées. Le
+        globe ne montre aucune frontière fermée autour d'un peuple.
+      </p>
+    </div>
+  </div>
+</div>

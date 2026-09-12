@@ -96,6 +96,13 @@ the same kind — a name group, a kingdom, a historical period. A chapter headin
 its lede, and any count it states stay open. This is what the `Culture et
 société` treatment must become; it is not what it is today (§4.6).
 
+**And a closed tile already teaches. Opening it teaches more.** A tile whose
+label is only its own title is a door, not a summary: the reader must open every
+one to discover which holds what, which is slower than the scroll it replaced.
+`3 entités politiques · XVIe – aujourd'hui`, never `Histoire`. The rule is
+written once, with its three obligations and its gate, in
+`people-template-spec.md` §3, and it binds both templates.
+
 ---
 
 ## 4. The proposed order, chapter by chapter
