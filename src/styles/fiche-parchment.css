@@ -939,3 +939,61 @@
     gap: 16px 24px;
   }
 }
+
+/* ── The page saying it can be amended ─────────────────────────────── */
+
+/* An ocre tint rather than a card: the parchment boxes nothing, and this is
+   the record speaking about itself rather than another chapter of it. The
+   tint is mixed from the accent so a record scoped to a different accent
+   carries the band in its own hue instead of importing the country's. */
+.afh-amend-band {
+  margin: 0 20px 22px;
+  padding: 18px;
+  border: 1px solid var(--accent);
+  border-radius: var(--afh-radius-lg);
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+}
+
+.afh-amend-band-lead {
+  margin: 0;
+  font-family: var(--afh-font-display);
+  font-weight: 700;
+  font-size: var(--afh-text-h3);
+  line-height: 1.2;
+  color: var(--afh-text);
+}
+
+.afh-amend-band-hint {
+  margin: 6px 0 14px;
+  font-size: var(--afh-text-small);
+  color: var(--afh-text-soft);
+}
+
+.afh-amend-band-action {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding-inline: var(--afh-space-4xl);
+  border: 1px solid var(--accent);
+  border-radius: var(--afh-radius-base);
+  background: var(--afh-surface);
+  font-size: var(--afh-text-small);
+  font-weight: 600;
+  color: var(--accent-ink);
+  text-decoration: none;
+}
+
+.afh-amend-band-action:hover {
+  text-decoration: underline;
+}
+
+.afh-amend-band-action:focus-visible {
+  outline: none;
+  box-shadow: var(--afh-ring-focus);
+}
+
+@container (min-width: 760px) {
+  .afh-amend-band {
+    margin-inline: 40px;
+  }
+}

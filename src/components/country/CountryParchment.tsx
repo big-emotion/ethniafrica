@@ -12,6 +12,7 @@ import {
   type CountrySummaryFigures,
 } from "@/components/fiche/FicheSummaryBrief";
 import { CountryChronology } from "@/components/country/CountryChronology";
+import { FicheAmendBand } from "@/components/fiche/FicheAmendBand";
 import { chapterAnchorId } from "@/lib/ficheChapters";
 import type { ProvenanceState } from "@/lib/fieldProvenance";
 import type { CountryPageData } from "@/lib/countryDataTransformer";
@@ -195,6 +196,11 @@ export function CountryParchment({
       </Section>
 
       {children}
+
+      {/* After the chapters, before the way onward: the reader who has just
+          finished a thin chapter is the one who knows what is missing from
+          it, and asking once they have gone is asking nobody. */}
+      <FicheAmendBand language={language} />
 
       {/* Before the bibliography, not after it: the reader this block exists
           for is the one who finished the reading, and almost none of them

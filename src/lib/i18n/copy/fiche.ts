@@ -9,6 +9,16 @@ const en = {
    * the same invitation would read as three different things to do.
    */
   contribute: "Contribute",
+  /**
+   * The atlas is young and says so. A reader who has just read a thin chapter
+   * is the one person who knows exactly what is missing from it, and the band
+   * is where the page admits that out loud rather than leaving them to guess
+   * whether corrections are wanted.
+   */
+  amendable: {
+    lead: "This page can be amended.",
+    hint: "Correct a fact, report an error, add a source.",
+  },
   archivedCapture: (version: number) =>
     `This content is an archived capture (v${version}) and will never be changed.`,
   unreadableField:
@@ -49,6 +59,10 @@ const fr: FicheCopy = {
   sourceTierNote:
     "Chaque source porte son palier — l'autorité qu'on peut lui accorder.",
   contribute: "Contribuer",
+  amendable: {
+    lead: "Cette page est amendable.",
+    hint: "Corriger un fait, signaler une erreur, ajouter une source.",
+  },
   archivedCapture: (version) =>
     `Ce contenu est une capture archivée (v${version}) et ne sera jamais modifié.`,
   unreadableField:

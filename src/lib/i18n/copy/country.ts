@@ -77,6 +77,16 @@ const en = {
   },
   reportSection: "Report this section",
   sourcesReferences: "Sources and references",
+  /**
+   * What the apparatus amounts to, counted by standing. A census, never a
+   * verdict: the list still shows each source's own standing, and the point
+   * of counting them is that a reader can see a page resting on seven
+   * unexamined sources without reading all seven first.
+   */
+  sourcesTally: {
+    total: (count: number) => `${count} source${count > 1 ? "s" : ""}`,
+    standing: (label: string, count: number) => `${label}: ${count}`,
+  },
   targetFacts: {
     written: "Page authored",
     derived: "Presence derived from people pages",
@@ -201,6 +211,10 @@ const fr: CountryCopy = {
   },
   reportSection: "Signaler cette section",
   sourcesReferences: "Sources & Références",
+  sourcesTally: {
+    total: (count) => `${count} source${count > 1 ? "s" : ""}`,
+    standing: (label, count) => `${label} : ${count}`,
+  },
   targetFacts: {
     written: "Page rédigée",
     derived: "Présence dérivée des pages peuple",

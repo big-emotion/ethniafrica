@@ -328,25 +328,21 @@ describe("CultureGrid", () => {
       items: [
         {
           slot: "religion",
-          icon: "🙏",
           label: "Religions",
           keywords: ["Islam", "Christianisme"],
         },
         {
           slot: "economy",
-          icon: "🌾",
           label: "Économie",
           keywords: ["Agriculture", "Élevage"],
         },
         {
           slot: "social",
-          icon: "👑",
           label: "Organisation",
           keywords: ["Chefferies", "Clans"],
         },
         {
           slot: "relations",
-          icon: "🌍",
           label: "Relations",
           keywords: ["CEDEAO", "UA"],
         },
@@ -364,7 +360,6 @@ describe("CultureGrid", () => {
       items: [
         {
           slot: "religion",
-          icon: "🙏",
           label: "Religions",
           keywords: ["Islam", "Christianisme", "Animisme"],
         },
@@ -374,19 +369,24 @@ describe("CultureGrid", () => {
     expect(screen.getByText("Islam, Christianisme, Animisme")).toBeTruthy();
   });
 
-  it("renders icons", () => {
+  /**
+   * The tile carried a pictogram above its own label: a mosque over
+   * "Religions", a crown over "Organisation", a sheaf of wheat over
+   * "Économie". Each picked one religion, one form of authority and one
+   * economy to stand for a whole country's, on a surface whose whole posture
+   * is that the page decides none of those.
+   */
+  // @req REQ-092
+  it("names its rubric without a pictogram standing in for a country", () => {
     const data: CultureGridData = {
       items: [
-        {
-          slot: "economy",
-          icon: "🌾",
-          label: "Économie",
-          keywords: ["Agriculture"],
-        },
+        { slot: "economy", label: "Économie", keywords: ["Agriculture"] },
       ],
     };
-    render(<CultureGrid data={data} />);
-    expect(screen.getByText("🌾")).toBeTruthy();
+    const { container } = render(<CultureGrid data={data} />);
+
+    expect(screen.getByText("Économie")).toBeTruthy();
+    expect(container.textContent).not.toMatch(/\p{Extended_Pictographic}/u);
   });
 });
 

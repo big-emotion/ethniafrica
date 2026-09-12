@@ -908,10 +908,19 @@ describe("transformCulture", () => {
     }
   });
 
-  it("uses mosque icon for religion", () => {
+  /**
+   * The religion tile used to carry a mosque, whatever the country's
+   * religions were, and the same four pictograms stood over every country in
+   * the atlas. One glyph for "Religions" picks the religion; one for
+   * "Organisation" picks the form of authority. The corpus supplies neither
+   * choice, so the page makes neither.
+   */
+  // @req REQ-092
+  it("attaches no pictogram to a culture rubric", () => {
     const result = transformCulture(bfaCountry.culture);
-    const religion = result.items.find((i) => i.slot === "religion");
-    expect(religion?.icon).toBe("☪️");
+    for (const item of result.items) {
+      expect(Object.keys(item)).not.toContain("icon");
+    }
   });
 });
 

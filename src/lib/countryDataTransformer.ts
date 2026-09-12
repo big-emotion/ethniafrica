@@ -151,7 +151,6 @@ export interface LanguagesData {
 
 export interface CultureGridItem {
   slot: "religion" | "economy" | "social" | "relations";
-  icon: string;
   label: string;
   keywords: string[];
 }
@@ -778,25 +777,21 @@ export function transformCulture(
   const items: CultureGridItem[] = [
     {
       slot: "religion",
-      icon: "☪️",
       label: labels.religion,
       keywords: capKeywords(culture.dominantReligions || ""),
     },
     {
       slot: "economy",
-      icon: "🌾",
       label: labels.economy,
       keywords: capKeywords(culture.lifestyles || ""),
     },
     {
       slot: "social",
-      icon: "👑",
       label: labels.social,
       keywords: capKeywords(culture.socialOrganization || ""),
     },
     {
       slot: "relations",
-      icon: "🌍",
       label: labels.relations,
       keywords: capKeywords(culture.regionalRelations || ""),
     },
