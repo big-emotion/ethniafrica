@@ -214,6 +214,21 @@ describe("the peoples facet — what it reads", () => {
     expect(screen.getByText("Akanfoɔ")).toBeInTheDocument();
   });
 
+  // Its two sibling hubs caught a failed read and said so; this one let it
+  // reach the error boundary. A read failure is not an empty corpus either,
+  // so the page must never answer it with "0 peuples".
+  // @req REQ-139
+  it("states unavailability on a read failure rather than an empty corpus", async () => {
+    mockGetPage.mockRejectedValueOnce(new Error("database unavailable"));
+
+    render(await renderRoute());
+
+    const status = screen.getByRole("status");
+    expect(status.textContent).toMatch(/indisponibles/i);
+    expect(status.textContent).not.toMatch(/aucun/i);
+    expect(screen.queryByRole("link")).not.toBeInTheDocument();
+  });
+
   // The row is one anchor, and the classification badge used to render its
   // own link to the doctrine inside it. The HTML parser closes the outer
   // anchor when it meets the inner one, so the server markup could never

@@ -16,7 +16,7 @@ import { FacetLetterRail } from "@/components/hubs/facets/FacetLetterRail";
 import { FacetPagination } from "@/components/hubs/facets/FacetPagination";
 import { AutonymExonymHeading } from "@/components/ui/AutonymExonymHeading";
 import { ClassificationBadge } from "@/components/ui/classification-badge";
-import { buildFacetCountryIndex } from "@/lib/hubs/facetHub";
+import { buildFacetCountryIndex, readFacet } from "@/lib/hubs/facetHub";
 import { definedFilter, getFacetRoute } from "@/lib/hubs/facets";
 import { PAGE_SIZE_PARAM, resolvePageSize } from "@/lib/hubs/pagination";
 import { getPeopleRoute, resolvePeopleDeepLink } from "@/lib/routing";
@@ -155,11 +155,27 @@ export default async function PeuplesHubPage({
     PEOPLES_FACET_PAGE_SIZES
   );
 
-  const [choices, reading, index] = await Promise.all([
-    getPeoplesFacetChoices(),
-    getPeoplesFacetPage(requestedPage, filters, pageSize),
-    getPeoplesFacetCountryIndex(filters),
-  ]);
+  const facetReading = await readFacet(() =>
+    Promise.all([
+      getPeoplesFacetChoices(),
+      getPeoplesFacetPage(requestedPage, filters, pageSize),
+      getPeoplesFacetCountryIndex(filters),
+    ])
+  );
+
+  // A failed read is not an empty corpus: say so rather than print
+  // "0 peuples dans cette sélection" about a count nobody measured.
+  if (facetReading === null) {
+    return (
+      <div className="afh-facet-reading">
+        <p role="status" className="afh-facet-reading-lede">
+          {copy.unavailable}
+        </p>
+      </div>
+    );
+  }
+
+  const [choices, reading, index] = facetReading;
 
   // Narrowing by country from the map keeps the family and the letter the
   // reader had already set: the rest of the filters ride along.
