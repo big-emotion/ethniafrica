@@ -23,18 +23,35 @@ describe("FicheSummaryBrief", () => {
     );
 
     const panel = screen.getByRole("region", { name: /Test country/ });
-    expect(within(panel).getByText("Population du pays")).toBeVisible();
+    expect(within(panel).getByText("habitants")).toBeVisible();
     expect(within(panel).getAllByRole("definition")[0]).toHaveTextContent(
       /12\s?000\s?000/
     );
     expect(within(panel).getByText("Année de référence : 2025")).toBeVisible();
-    expect(within(panel).getByText("Peuples documentés ici")).toBeVisible();
-    expect(within(panel).getByText("Langues documentées ici")).toBeVisible();
-    expect(
-      within(panel).getByText("Familles linguistiques documentées ici")
-    ).toBeVisible();
-    expect(within(panel).getByText("Noms référencés ici")).toBeVisible();
+    expect(within(panel).getByText("peuples")).toBeVisible();
+    expect(within(panel).getByText("langues")).toBeVisible();
+    expect(within(panel).getByText("familles linguistiques")).toBeVisible();
+    expect(within(panel).getByText("noms")).toBeVisible();
     expect(within(panel).getByText("23")).toBeVisible();
+
+    // Population is the one figure a reader arrives wanting; the other four
+    // are the reach of what the atlas holds. One lead plate, four tiles.
+    expect(within(panel).getByTestId("stat-card-population")).toHaveAttribute(
+      "data-emphasis",
+      "lead"
+    );
+    expect(
+      within(panel)
+        .getAllByTestId(/^stat-card-/)
+        .filter((card) => card.dataset.emphasis === "tile")
+    ).toHaveLength(4);
+
+    // The scope the label used to carry now sits under the count.
+    expect(
+      within(within(panel).getByTestId("stat-card-peoples")).getByText(
+        "documentés ici"
+      )
+    ).toBeVisible();
   });
 
   // @req REQ-151
@@ -65,8 +82,17 @@ describe("FicheSummaryBrief", () => {
     expect(screen.getByText("Names borne and referenced here")).toBeVisible();
   });
 
+  /**
+   * The panel used to write "Non renseigné dans l'atlas" into the slot where
+   * the number goes, five times over, and a reader scanning it met the same
+   * sentence in every slot. A dash occupies that slot without pretending to
+   * be a measurement, and the note underneath still says the silence in
+   * words — so the reader is told exactly as much as before, in the place
+   * they look for it. Never a zero: zero is a total the atlas can hold, and
+   * an absence is a different statement.
+   */
   // @req REQ-151
-  it("states a gap for missing figures without displaying a fabricated zero", () => {
+  it("marks a missing figure with a dash and states the silence beneath it", () => {
     render(
       <FicheSummaryBrief
         kind="country"
@@ -77,9 +103,39 @@ describe("FicheSummaryBrief", () => {
       />
     );
 
-    expect(screen.getAllByText("Non renseigné dans l’atlas")).toHaveLength(5);
+    const panel = screen.getByRole("region", { name: /Test country/ });
+    expect(within(panel).getAllByText("—")).toHaveLength(5);
+    expect(within(panel).getByText("aucun peuple documenté ici")).toBeVisible();
+    expect(
+      within(panel).getByText("aucune langue documentée ici")
+    ).toBeVisible();
+    expect(within(panel).getByText("population non renseignée")).toBeVisible();
     expect(screen.queryByText("0")).toBeNull();
     expect(screen.queryByText("NaN")).toBeNull();
+  });
+
+  /**
+   * A line across the top read as the end of the figures. The fact is not a
+   * sixth count — it is one sourced sentence — so it takes the rule down its
+   * left that the search surface already gives a sourced highlight, in the
+   * same gold role, and the device means one thing in both places.
+   */
+  // @req REQ-151
+  it("quotes its fact against a left rule rather than under a top one", () => {
+    const { container } = render(
+      <FicheSummaryBrief
+        kind="country"
+        entityId="LBR"
+        name="Liberia"
+        language="fr"
+        figures={{}}
+      />
+    );
+
+    const dress = container.querySelector("style")!.textContent;
+    const rule = dress.match(/\.fiche-summary-brief__fact \{([^}]*)\}/)![1];
+    expect(rule).toMatch(/border-left:\s*3px solid var\(--afh-gold\)/);
+    expect(rule).not.toMatch(/border-top/);
   });
 
   // @req REQ-151
@@ -250,7 +306,7 @@ describe("FicheSummaryBrief", () => {
   });
 
   // @req REQ-155
-  it("leaves the country variant's uniform two-column grid untouched", () => {
+  it("keeps the two records' devices from bleeding into one another", () => {
     const { container } = render(
       <FicheSummaryBrief
         kind="country"
@@ -267,14 +323,24 @@ describe("FicheSummaryBrief", () => {
       />
     );
 
-    const list = container.querySelector("dl.fiche-summary-brief__figures");
-    expect(list).not.toBeNull();
-    expect(list!.className).not.toContain("--people");
+    // This assertion used to read the country variant's definition list.
+    // It has none any more: the country record moved to the shared stat
+    // card, whose five slots are all counts. What still has to hold is that
+    // the two records do not bleed into one another — the people modifier
+    // never lands here, and the definition list is the people branch alone.
+    // The stat card is itself a definition list, so the check has to name
+    // the people branch's own list rather than any dl on the page.
+    expect(
+      container.querySelector("dl.fiche-summary-brief__figures")
+    ).toBeNull();
+    // On an element, not in the markup string: the people rules live in
+    // the panel's stylesheet and are emitted for both kinds, so a raw
+    // innerHTML match finds them and proves nothing.
+    expect(container.querySelector('[class*="--people"]')).toBeNull();
 
-    const rows = Array.from(list!.children);
-    expect(rows).toHaveLength(5);
-    for (const row of rows) {
-      expect(row.className).toBe("");
-    }
+    const cards = container.querySelectorAll(
+      ".fiche-summary-brief__counted > *"
+    );
+    expect(cards).toHaveLength(5);
   });
 });

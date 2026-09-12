@@ -254,12 +254,60 @@ premier bloc est couvert quoi qu'il soit, bandeau comme titre. C'est ce qui rend
 règle indépendante de l'ordre des blocs.
 
 **Vérification :** le profil de luminance de ligne doit être monotone décroissant, ou
-son excursion rester sous 25 niveaux. Une carte **en bande** (cartouche, mot plein
-cadre) garde sa plaque de bandeau : son texte est sur un aplat, il n'y a pas de second
-voile avec lequel entrer en collision.
+son excursion rester sous 25 niveaux. **Ce contrôle ne porte que sur A.**
+
+> **L'image va au plein cadre sur les trois dispositions.** Le cartouche et le mot plein
+> cadre recadraient l'image en bande et posaient leur texte sur le fond de la carte.
+> Mesuré sur la carte de clôture du carrousel Dioula : à partir de 36 % de la hauteur,
+> **la variation horizontale du fond est de 0,00** sur tout le reste de la carte. Un
+> aplat pur. Aucune opacité n'aurait pu y révéler une photographie qui n'y était pas
+> dessinée — c'est la correction demandée par l'opérateur le 12 septembre 2026, et sa
+> forme littérale, « baisser l'opacité », n'aurait rien changé sur la carte qu'il
+> montrait.
+>
+> Ces deux dispositions gardent leur plaque de bandeau, parce que le bandeau vit en haut
+> de carte, loin de la colonne, et qu'il lui faut un fond. La trouée claire entre la
+> plaque et la colonne est licite **pour la raison exacte qui la rend licite en vidéo**
+> (§9 bis) : aucun texte n'y vit, et ce qu'on y voit est la photographie, qui est le
+> sujet. Le contrôle qui remplace la monotonie est donc celui de la vidéo — **aucun
+> bloc de texte ne tombe dans la trouée**.
+
+### Le voile se résout, il ne se règle pas
+
+**L'alpha n'est plus une constante, et la table ci-dessous est devenu son plafond.**
+
+La table est calibrée sur le document le plus pâle du corpus. Appliquée telle quelle à
+une photographie sombre, elle dépense du contraste qu'aucun texte ne réclame : mesuré
+sur le carrousel Dioula du 12 septembre 2026, **9,26:1 là où la règle en demande 4,5**,
+et la photographie disparue derrière sa propre légende pour rien.
+
+Le moteur mesure donc l'image **réellement dessinée**, bloc par bloc, et résout le plus
+petit alpha qui porte chaque texte à son seuil :
+
+| | |
+| --- | --- |
+| Cible | le seuil du bloc × **1,12** — la marge absorbe le bruit JPEG et l'anticrénelage |
+| Échantillon | le **92ᵉ centile** de la zone, jamais sa moyenne |
+| Plancher | **0,55** |
+| Plafond | **0,95**, la valeur de la table |
+
+**L'échantillon est un centile haut et c'est le cœur de la règle.** Une légende qui
+traverse une seule branche ensoleillée échoue sur cette branche, et une moyenne la
+cache. Sur une gravure pâle la résolution remonte d'elle-même vers le plafond, sans que
+personne ait à y penser.
+
+**Le prédicat est une conjonction, et il faut qu'il le reste :** « le fond est plus
+sombre que l'encre **et** le rapport franchit le seuil ». Sans sa première moitié le
+rapport redescend à 1:1 quand le fond croise l'encre puis remonte, la fonction n'est
+plus monotone, et une dichotomie s'arrête du mauvais côté du creux en rendant un voile
+trop léger.
+
+**La rampe se met à l'échelle du même facteur, elle ne se résout pas à part.** Elle doit
+finir exactement là où l'aplat commence ; résolues séparément, les deux se rejoindraient
+à deux alphas différents et dessineraient un trait de coupe en travers de la carte.
 
 **Les alphas utiles, mesurés sur le document le plus pâle du corpus** (luminance 0,985 ;
-Ogilby monte à 0,999) :
+Ogilby monte à 0,999) — **plafonds, désormais, et non réglages** :
 
 | Texte | Luminance | Seuil | Alpha nécessaire |
 | --- | --- | --- | --- |
@@ -323,27 +371,31 @@ dans le calcul de contraste : c'est le voile qui doit atteindre 4,5:1.
   plaque, c'est le voile qui est mal réglé — ou l'image qui ne convient pas.
 - **Le crédit est dans la même colonne flex** que le corps, gouttière 20 —
   jamais deux ancrages absolus indépendants (ils se télescopent).
-- **A est la disposition par défaut**, et celle qui doit dominer une série : c'est la
-  seule où l'image occupe tout le cadre. Un carrousel où l'image est réduite à une
-  bande carte après carte n'est plus un carrousel d'images.
+- **A est la disposition par défaut**, et celle qui doit dominer une série : c'est celle
+  où l'image reste le plus visible. Elle n'est plus la seule à porter l'image au plein
+  cadre — les trois le font depuis que la bande a disparu — mais c'est la seule où le
+  texte se groupe en bas et laisse la photographie respirer sur les deux tiers hauts.
+  Un carrousel où le texte couvre la moitié de la carte fiche après fiche n'est plus un
+  carrousel d'images, et c'est ce que le quota de §6 protège.
 
 ### B — Mot plein cadre
 *Ouverture et bascule. Le mot frappe, la ligne explique.*
 
-- Bande d'image en haut, **37 % de la hauteur** (502 px en 4:5, 714 px en 9:16),
-  dégradé propre vers le fond dans son dernier tiers.
-- Colonne centrée entre la bande et le pied : mot Anton 170–186 (`text-shadow:
+- **Image plein cadre**, comme partout. Le contenu s'accroche à **37 % de la hauteur**
+  (502 px en 4:5, 714 px en 9:16) : c'est une ligne d'ancrage, plus une ligne où la
+  photographie s'arrête. Le voile adaptatif de §4 la couvre à partir de là.
+- Colonne centrée entre l'ancre et le pied : mot Anton 170–186 (`text-shadow:
   0 6px 40px rgba(18,14,10,.85)`) → précision 34–38 maj. interlettre .06em encre 2 →
   filet → corps 40–44 / 800.
 - Crédit + logo épinglés en bas.
 
 ### C — Cartouche
-*Chiffre, ou corps de plus de 110 signes. L'image ne porte aucun texte.*
+*Chiffre, ou corps de plus de 110 signes. Le haut de l'image ne porte aucun texte.*
 
-- Bande d'image en haut : **49 % de la hauteur de la carte**, dans les deux formats.
-  Aucun texte dessus hormis le bandeau. Elle descend à **42 %** quand la carte porte
-  un bloc de paire, et à **30 %** quand la bande de sous-titre est active en 9:16 :
-  **le texte prime sur l'image, jamais l'inverse.**
+- **Image plein cadre.** Le contenu s'accroche à **49 % de la hauteur de la carte**,
+  dans les deux formats. Au-dessus de cette ligne, aucun texte hormis le bandeau. Elle
+  descend à **42 %** quand la carte porte un bloc de paire, et à **30 %** quand la bande
+  de sous-titre est active en 9:16 : **le texte prime sur l'image, jamais l'inverse.**
 
 > **La bande est la seule variable d'ajustement de C.** Dans un aplat, aucun enfant ne
 > peut se comprimer : tout est `flex: 0 1 auto` avec `min-height: auto`, et l'espaceur
@@ -359,16 +411,22 @@ dans le calcul de contraste : c'est le voile qui doit atteindre 4,5:1.
 - Aplat de fond en dessous, texte dedans : titre Anton 110–124 → précision 34–38 →
   filet supérieur 2 px `rgba(232,185,106,.35)` → corps 42–46 / 800.
 - Crédit + logo épinglés en bas.
-- **C absorbe la différence de hauteur entre 4:5 et 9:16** : la bande garde sa
-  proportion, et tout le surplus de hauteur va à l'aplat, qui n'a aucune contrainte
+- **C absorbe la différence de hauteur entre 4:5 et 9:16** : l'ancre garde sa
+  proportion, et tout le surplus de hauteur va au texte, qui n'a aucune contrainte
   de composition. Le cadrage de l'image est identique dans les deux formats — c'est
   la carte qui s'allonge, pas la photographie qui se recompose. C'est la disposition
   la plus stable entre formats.
 
-> **Une bande se mesure en pourcentage de la carte, jamais en pixels fixes.** Une
+> **Une ancre se mesure en pourcentage de la carte, jamais en pixels fixes.** Une
 > hauteur fixe donnerait 42 % en 4:5 et 29 % en 9:16 : la même carte ne se
 > reconnaîtrait pas d'un format à l'autre, ce qui annule la raison d'être d'un
 > système unique. B tient 37 % pour le même motif.
+>
+> **Elle se lit sur `plan.ancre`, plus sur la hauteur du bloc image.** Tant que
+> l'image s'arrêtait à l'ancre, les deux se confondaient. L'image couvrant désormais
+> la carte sur les trois dispositions, un test qui mesurerait encore le bloc image
+> comparerait 100 % à 100 % et vaudrait pour n'importe quelle ancre — c'est exactement
+> ce qu'il a fait pendant le temps d'une exécution, avant d'être redirigé.
 
 ---
 

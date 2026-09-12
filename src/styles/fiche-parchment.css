@@ -47,6 +47,56 @@
   color: var(--afh-text);
 }
 
+/* The names and the invitation to amend them. Stacked on a phone, where the
+   head's composition is a centred title and a control pulled up beside it
+   would take that centring away; side by side from the tablet floor, which is
+   the same floor `mobile-text.css` uses, so the two rules cannot disagree. */
+.afh-parchment-head-title {
+  display: flex;
+  flex-direction: column;
+  gap: var(--afh-space-lg);
+}
+
+@media (min-width: 768px) {
+  .afh-parchment-head-title {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--afh-space-4xl);
+  }
+}
+
+.afh-parchment-contribute {
+  align-self: center;
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding-inline: var(--afh-space-4xl);
+  border: 1px solid var(--afh-gold);
+  border-radius: var(--afh-radius-base);
+  background: var(--afh-color-gold-bg);
+  font-size: var(--afh-text-small);
+  font-weight: 600;
+  color: var(--afh-gold);
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .afh-parchment-contribute {
+    align-self: flex-start;
+  }
+}
+
+.afh-parchment-contribute:hover {
+  text-decoration: underline;
+}
+
+.afh-parchment-contribute:focus-visible {
+  outline: none;
+  box-shadow: var(--afh-ring-focus);
+}
+
 .afh-parchment-head h1 {
   margin: 0;
   font-family: var(--afh-font-display);
@@ -291,17 +341,55 @@
   gap: 11px;
 }
 
+/* A definition list, so the pair keeps the left edge a phone would otherwise
+   take from it — see the markup note in FicheStatCard. The browser's own
+   margins on dl and dd are reset here rather than fought with elsewhere. */
 .afh-stat-card {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
   background: var(--afh-surface);
   border: 1px solid var(--afh-border);
   border-radius: var(--afh-radius-md);
   padding: 14px 15px;
 }
 
+.afh-stat-card dd {
+  margin: 0;
+}
+
+.afh-stat-card-mark {
+  margin-top: 8px;
+}
+
+/* The provenance marker says nothing about a field the fiche declares. Its
+   silence should not still cost the card a row of margin. */
+.afh-stat-card-mark:empty {
+  display: none;
+}
+
+/* Two weights of the same card. A record leads with the one figure a reader
+   came for and files the rest beside it; the family record, which leads with
+   none of its four, passes neither and keeps the even dress above. */
+.afh-stat-card[data-emphasis="lead"] {
+  background: var(--afh-bg-warm);
+}
+
+.afh-stat-card[data-emphasis="tile"] {
+  padding: 10px 12px;
+}
+
+.afh-stat-card[data-emphasis="tile"] .afh-stat-card-n {
+  font-size: var(--afh-text-h3);
+  line-height: 1.2;
+}
+
+/* Written after its name, painted before it: the figure is what the eye
+   comes for, the name is what a screen reader needs first. */
 .afh-stat-card-n {
-  display: block;
+  order: -1;
   font-family: var(--afh-font-mono);
-  font-size: 26px;
+  font-size: var(--afh-figure-lead);
   font-weight: 700;
   line-height: 1.1;
   color: var(--afh-text);
@@ -309,7 +397,6 @@
 }
 
 .afh-stat-card-k {
-  display: block;
   margin-top: 5px;
   font-size: var(--afh-text-caption);
   letter-spacing: 0.1em;
@@ -327,6 +414,21 @@
   line-height: 1.6;
 }
 
+/* What a count covers, said by the surface that owns it. Running text rather
+   than an interface label, so it stays in the body face and sentence case —
+   a second uppercase line under the first would read as a second heading. */
+.afh-stat-card-scope {
+  display: block;
+  margin-top: 3px;
+  font-size: var(--afh-text-caption);
+  line-height: 1.35;
+  color: var(--afh-text-soft);
+}
+
+.afh-stat-card-scope[data-caveat] {
+  color: var(--afh-color-colonial);
+}
+
 /* Driven by the computed provenance, never by a hard-coded label: the day the
    corpus is loaded these cards fill in and stop being marked. */
 .afh-stat-card[data-provenance="missing"] {
@@ -336,7 +438,7 @@
 
 .afh-stat-card[data-provenance="missing"] .afh-stat-card-n {
   color: var(--afh-color-colonial);
-  font-size: 19px;
+  font-size: var(--afh-figure-gap);
 }
 
 .afh-parchment-gap {
@@ -700,7 +802,11 @@
    which lands at 2.3:1 on the parchment at caption size. The ink variant is
    the same hue scaled to clear AA, which is what accent-coloured text takes
    anywhere on a tinted surface. axe caught this at all three widths. */
-.afh-tl-period {
+/* Two classes, so a period written as a paragraph — which is what keeps it
+   left of a phone's centre — is not dressed as the account below it by
+   `.afh-tl-item p`. */
+.afh-tl-item .afh-tl-period {
+  margin: 0;
   font-family: var(--afh-font-mono);
   font-size: var(--afh-text-caption);
   font-weight: 700;
@@ -727,12 +833,32 @@
 /* Soft, not the mockup's muted: this is nano-sized, and muted clears only
    2.8:1 on the warm ground. The guard in ficheParchmentContrast.test.ts
    fails the file outright if muted ever appears here. */
-.afh-tl-centers {
+/* Two classes, so it outranks `.afh-tl-item p` — the seat of power rides in a
+   paragraph to keep the left edge a phone would otherwise take from it, and a
+   paragraph is exactly what that rule already dresses. */
+.afh-tl-item .afh-tl-centers {
   display: block;
   margin-top: 6px;
   font-family: var(--afh-font-mono);
   font-size: var(--afh-text-caption);
   color: var(--afh-text-soft);
+}
+
+/* The regime inks the period. Three kinds of authority share the corpus's
+   one array of entities, and until now the page showed them in one colour —
+   which is the same as not distinguishing them.
+
+   The colonial ink is the token literally named for it, and it is the ink a
+   documented gap also borrows elsewhere on this surface. That double duty is
+   inherited, not chosen here, and is raised for a ruling rather than settled
+   quietly: a silence in the corpus and a colonial administration are not the
+   same claim and should not end up the same red. */
+.afh-tl-item .afh-tl-period[data-regime="colonial"] {
+  color: var(--country-colonial);
+}
+
+.afh-tl-item .afh-tl-period[data-regime="modern"] {
+  color: var(--country-green);
 }
 
 /* ── Wide layout ──────────────────────────────────────────────────── */
@@ -815,5 +941,63 @@
   .afh-onward {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px 24px;
+  }
+}
+
+/* ── The page saying it can be amended ─────────────────────────────── */
+
+/* An ocre tint rather than a card: the parchment boxes nothing, and this is
+   the record speaking about itself rather than another chapter of it. The
+   tint is mixed from the accent so a record scoped to a different accent
+   carries the band in its own hue instead of importing the country's. */
+.afh-amend-band {
+  margin: 0 20px 22px;
+  padding: 18px;
+  border: 1px solid var(--accent);
+  border-radius: var(--afh-radius-lg);
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+}
+
+.afh-amend-band-lead {
+  margin: 0;
+  font-family: var(--afh-font-display);
+  font-weight: 700;
+  font-size: var(--afh-text-h3);
+  line-height: 1.2;
+  color: var(--afh-text);
+}
+
+.afh-amend-band-hint {
+  margin: 6px 0 14px;
+  font-size: var(--afh-text-small);
+  color: var(--afh-text-soft);
+}
+
+.afh-amend-band-action {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding-inline: var(--afh-space-4xl);
+  border: 1px solid var(--accent);
+  border-radius: var(--afh-radius-base);
+  background: var(--afh-surface);
+  font-size: var(--afh-text-small);
+  font-weight: 600;
+  color: var(--accent-ink);
+  text-decoration: none;
+}
+
+.afh-amend-band-action:hover {
+  text-decoration: underline;
+}
+
+.afh-amend-band-action:focus-visible {
+  outline: none;
+  box-shadow: var(--afh-ring-focus);
+}
+
+@container (min-width: 760px) {
+  .afh-amend-band {
+    margin-inline: 40px;
   }
 }

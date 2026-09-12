@@ -16,13 +16,36 @@ const en = {
   },
   summary: {
     title: "In brief",
-    population: "Country population",
     referenceYear: (year: number) => `Reference year: ${year}`,
-    peoplesDocumentedHere: "Peoples documented here",
-    languagesDocumentedHere: "Languages documented here",
-    familiesDocumentedHere: "Language families documented here",
-    namesReferencedHere: "Names referenced here",
-    missingData: "Not recorded in the atlas",
+    /**
+     * Each count is a name, the reach of what is counted, and what to say
+     * when nothing is counted. Folded into one label the way it used to be
+     * — "Peoples documented here" over the number 3 — the reach read as a
+     * heading and the silence had nowhere to go but the figure's own slot.
+     */
+    figures: {
+      population: { label: "inhabitants", absent: "population not recorded" },
+      peoples: {
+        label: "peoples",
+        scope: "documented here",
+        absent: "no people documented here",
+      },
+      languages: {
+        label: "languages",
+        scope: "documented here",
+        absent: "no language documented here",
+      },
+      families: {
+        label: "language families",
+        scope: "documented here",
+        absent: "no language family documented here",
+      },
+      names: {
+        label: "names",
+        scope: "referenced here",
+        absent: "no name referenced here",
+      },
+    },
     factTier: "Source tier",
   },
   sections: {
@@ -54,6 +77,16 @@ const en = {
   },
   reportSection: "Report this section",
   sourcesReferences: "Sources and references",
+  /**
+   * What the apparatus amounts to, counted by standing. A census, never a
+   * verdict: the list still shows each source's own standing, and the point
+   * of counting them is that a reader can see a page resting on seven
+   * unexamined sources without reading all seven first.
+   */
+  sourcesTally: {
+    total: (count: number) => `${count} source${count > 1 ? "s" : ""}`,
+    standing: (label: string, count: number) => `${label}: ${count}`,
+  },
   targetFacts: {
     written: "Page authored",
     derived: "Presence derived from people pages",
@@ -120,13 +153,33 @@ const fr: CountryCopy = {
   },
   summary: {
     title: "En bref",
-    population: "Population du pays",
     referenceYear: (year) => `Année de référence : ${year}`,
-    peoplesDocumentedHere: "Peuples documentés ici",
-    languagesDocumentedHere: "Langues documentées ici",
-    familiesDocumentedHere: "Familles linguistiques documentées ici",
-    namesReferencedHere: "Noms référencés ici",
-    missingData: "Non renseigné dans l’atlas",
+    figures: {
+      population: {
+        label: "habitants",
+        absent: "population non renseignée",
+      },
+      peoples: {
+        label: "peuples",
+        scope: "documentés ici",
+        absent: "aucun peuple documenté ici",
+      },
+      languages: {
+        label: "langues",
+        scope: "documentées ici",
+        absent: "aucune langue documentée ici",
+      },
+      families: {
+        label: "familles linguistiques",
+        scope: "documentées ici",
+        absent: "aucune famille documentée ici",
+      },
+      names: {
+        label: "noms",
+        scope: "référencés ici",
+        absent: "aucun nom référencé ici",
+      },
+    },
     factTier: "Niveau de source",
   },
   sections: {
@@ -158,6 +211,10 @@ const fr: CountryCopy = {
   },
   reportSection: "Signaler cette section",
   sourcesReferences: "Sources & Références",
+  sourcesTally: {
+    total: (count) => `${count} source${count > 1 ? "s" : ""}`,
+    standing: (label, count) => `${label} : ${count}`,
+  },
   targetFacts: {
     written: "Page rédigée",
     derived: "Présence dérivée des pages peuple",

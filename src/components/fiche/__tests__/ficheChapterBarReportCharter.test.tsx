@@ -132,6 +132,22 @@ describe("The reading rail's report control", () => {
     expect(rail).toContainElement(trigger);
   });
 
+  /**
+   * The rail offered reporting alone, so every reader's options began at
+   * "this is an error". An atlas this young is more often thin than wrong,
+   * and the gesture for thin is contributing. The two stand together.
+   */
+  // @req REQ-012
+  it("stands beside a way to contribute, not alone", () => {
+    renderFiche(SOUTH_AFRICA);
+
+    const rail = screen.getByTestId("fiche-chapter-bar");
+    expect(rail).toContainElement(reportTrigger());
+    expect(rail).toContainElement(
+      screen.getByTestId("fiche-chapter-bar-contribute")
+    );
+  });
+
   // @req REQ-012
   it("names the gesture rather than leaving the reader an unlabelled glyph", () => {
     renderFiche(SOUTH_AFRICA);

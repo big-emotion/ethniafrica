@@ -1,6 +1,5 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
-import { HistoryTimeline } from "../HistoryTimeline";
 import { PeoplesSection } from "../PeoplesSection";
 import { LanguagesSection } from "../LanguagesSection";
 import { CultureGrid } from "../CultureGrid";
@@ -15,82 +14,6 @@ import type {
   CultureGridData,
   HistoricalFactsData,
 } from "@/lib/countryDataTransformer";
-// ==========================================
-// HistoryTimeline
-// ==========================================
-
-describe("HistoryTimeline", () => {
-  it("returns null when items list is empty", () => {
-    const data: TimelineData = {
-      items: [],
-      gradientStops: { goldEnd: 100, colonialEnd: 100 },
-    };
-    const { container } = render(<HistoryTimeline data={data} />);
-    expect(container.firstChild).toBeNull();
-  });
-
-  it("renders timeline item names", () => {
-    const data: TimelineData = {
-      items: [
-        { type: "kingdom", era: "XIIe siècle", name: "Empire Mossi" },
-        { type: "colonial", era: "1919", name: "Haute-Volta" },
-        { type: "sovereign", era: "1984", name: "Burkina Faso" },
-      ],
-      gradientStops: { goldEnd: 33, colonialEnd: 66 },
-    };
-    render(<HistoryTimeline data={data} />);
-    expect(screen.getByText("Empire Mossi")).toBeTruthy();
-    expect(screen.getByText("Haute-Volta")).toBeTruthy();
-    expect(screen.getByText(/Burkina Faso/)).toBeTruthy();
-  });
-
-  it("marks colonial items with data-type attribute", () => {
-    const data: TimelineData = {
-      items: [{ type: "colonial", era: "1919", name: "Haute-Volta" }],
-      gradientStops: { goldEnd: 0, colonialEnd: 100 },
-    };
-    const { container } = render(<HistoryTimeline data={data} />);
-    const colonialItem = container.querySelector('[data-type="colonial"]');
-    expect(colonialItem).toBeTruthy();
-  });
-
-  // A colonial name is shown, never struck. The strike read as a rendering
-  // fault rather than an editorial verdict — the same name sits unstruck in
-  // KingdomsTimeline two blocks above — and it carried no accessible text, so
-  // the nuance existed for sighted readers only. The era colour, the dot and
-  // the gradient still mark the regime.
-  // @req REQ-092
-  it("shows a colonial name without striking it through", () => {
-    const data: TimelineData = {
-      items: [
-        { type: "colonial", era: "1830-1962", name: "Algérie française" },
-      ],
-      gradientStops: { goldEnd: 0, colonialEnd: 100 },
-    };
-
-    render(<HistoryTimeline data={data} />);
-
-    const name = screen.getByText("Algérie française");
-    expect(name.style.textDecoration).toBe("");
-  });
-
-  // An era the fiche writes as prose carries no name to crown, so it is
-  // rendered as the paragraph it is, in full.
-  // @req REQ-092
-  it("renders an untitled era as its full prose", () => {
-    const prose =
-      "Mosaïque de royaumes et chefferies autonomes : royaumes mossi (Wogodogo, Yatenga, Tenkodogo, Fada N'Gourma), chefferies gourmantché et peuples lobi.";
-    const data: TimelineData = {
-      items: [{ type: "kingdom", era: "Époque précoloniale", prose }],
-      gradientStops: { goldEnd: 100, colonialEnd: 100 },
-    };
-
-    render(<HistoryTimeline data={data} />);
-
-    expect(screen.getByText(prose)).toBeTruthy();
-  });
-});
-
 // ==========================================
 // PeoplesSection
 // ==========================================
@@ -405,25 +328,21 @@ describe("CultureGrid", () => {
       items: [
         {
           slot: "religion",
-          icon: "🙏",
           label: "Religions",
           keywords: ["Islam", "Christianisme"],
         },
         {
           slot: "economy",
-          icon: "🌾",
           label: "Économie",
           keywords: ["Agriculture", "Élevage"],
         },
         {
           slot: "social",
-          icon: "👑",
           label: "Organisation",
           keywords: ["Chefferies", "Clans"],
         },
         {
           slot: "relations",
-          icon: "🌍",
           label: "Relations",
           keywords: ["CEDEAO", "UA"],
         },
@@ -441,7 +360,6 @@ describe("CultureGrid", () => {
       items: [
         {
           slot: "religion",
-          icon: "🙏",
           label: "Religions",
           keywords: ["Islam", "Christianisme", "Animisme"],
         },
@@ -451,19 +369,24 @@ describe("CultureGrid", () => {
     expect(screen.getByText("Islam, Christianisme, Animisme")).toBeTruthy();
   });
 
-  it("renders icons", () => {
+  /**
+   * The tile carried a pictogram above its own label: a mosque over
+   * "Religions", a crown over "Organisation", a sheaf of wheat over
+   * "Économie". Each picked one religion, one form of authority and one
+   * economy to stand for a whole country's, on a surface whose whole posture
+   * is that the page decides none of those.
+   */
+  // @req REQ-092
+  it("names its rubric without a pictogram standing in for a country", () => {
     const data: CultureGridData = {
       items: [
-        {
-          slot: "economy",
-          icon: "🌾",
-          label: "Économie",
-          keywords: ["Agriculture"],
-        },
+        { slot: "economy", label: "Économie", keywords: ["Agriculture"] },
       ],
     };
-    render(<CultureGrid data={data} />);
-    expect(screen.getByText("🌾")).toBeTruthy();
+    const { container } = render(<CultureGrid data={data} />);
+
+    expect(screen.getByText("Économie")).toBeTruthy();
+    expect(container.textContent).not.toMatch(/\p{Extended_Pictographic}/u);
   });
 });
 
@@ -637,7 +560,10 @@ describe("the country fiche keeps all eight sections", () => {
   it("still exports the four sections the mockup leaves out of frame", async () => {
     const country = await import("@/components/country");
 
-    expect(country.HistoryTimeline).toBeDefined();
+    // The history timeline is not among them any more. It was one of three
+    // renderings of one chronology, two of which were never wired to a page;
+    // what it encoded — a period inked by its regime — now lives in
+    // CountryChronology, which the parchment actually renders.
     expect(country.HistoricalFactsSection).toBeDefined();
     expect(country.LanguagesSection).toBeDefined();
     expect(country.CultureGrid).toBeDefined();

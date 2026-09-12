@@ -143,55 +143,77 @@ def test_layout_A_keeps_the_credit_in_the_narration_column():
     assert credit.x == corps.x, "le crédit de A n'est pas dans la colonne du corps"
 
 
-def test_layout_B_keeps_the_image_band_at_37_percent_of_the_card():
-    """§5B — of the card's height, in both formats, or the card stops being one card."""
+def test_the_image_runs_to_the_full_frame_on_every_layout():
+    """§4 — the photograph is never cropped to a band, whatever the layout.
+
+    A cartouche and a full-frame word used to stop the image at their anchor and
+    lay the text on the card's own ground. Measured on the Dioula closing card,
+    the background under the text varied by 0,00 across the lower two thirds: a
+    flat, with nothing behind it that any opacity could have revealed.
+    """
+    for disposition in ("A", "B", "C"):
+        for fmt in FORMATS:
+            plan = gab.plan(carte(disposition=disposition), DECK, fmt,
+                            image=image_test(3000, 4000))
+            bande = next(b for b in plan.blocs if b.nom == "bande-image")
+            assert bande.h == tk.fmt(fmt)["h"], (
+                f"{disposition} {fmt} : l'image s'arrête à "
+                f"{bande.h / tk.fmt(fmt)['h']:.0%} de la carte")
+
+
+def test_layout_B_hangs_its_content_at_37_percent_of_the_card():
+    """§5B — of the card's height, in both formats, or the card stops being one card.
+
+    Read off `plan.ancre` and no longer off the image block. The image now covers
+    the card on every layout, so its height stopped carrying the proportion — and
+    a test still measuring it would agree with anything.
+    """
     for fmt in ("carrousel", "reel"):
         plan = gab.plan(carte(disposition="B"), DECK, fmt, image=image_test(3000, 4000))
-        bande = next(b for b in plan.blocs if b.nom == "bande-image")
-        part = bande.h / tk.fmt(fmt)["h"]
-        assert abs(part - 0.37) < 0.01, f"{fmt} : bande à {part:.0%} au lieu de 37 %"
+        assert abs(plan.ancre - 0.37) < 0.01, (
+            f"{fmt} : contenu accroché à {plan.ancre:.0%} au lieu de 37 %")
 
 
 def test_layout_C_keeps_one_proportion_across_formats():
     """§5C — 49 % of the card's height, in every format.
 
-    The earlier 42/49 split was itself the defect: a band that changes proportion
-    changes the card. All the surplus height goes to the flat, which carries no
-    composition constraint.
+    The earlier 42/49 split was itself the defect: an anchor that changes
+    proportion changes the card. All the surplus height goes to the text, which
+    carries no composition constraint.
     """
     for fmt in FORMATS:
         plan = gab.plan(carte(disposition="C"), DECK, fmt, image=image_test(3000, 4000))
-        bande = next(b for b in plan.blocs if b.nom == "bande-image")
-        part = bande.h / tk.fmt(fmt)["h"]
-        assert abs(part - 0.49) < 0.01, f"{fmt} : bande à {part:.0%} au lieu de 49 %"
+        assert abs(plan.ancre - 0.49) < 0.01, (
+            f"{fmt} : contenu accroché à {plan.ancre:.0%} au lieu de 49 %")
 
 
-def test_layout_C_gives_the_image_up_to_the_subtitle():
-    """§5C — 30 % when the subtitle band is active in 9:16. Text wins over image."""
+def test_layout_C_gives_the_text_more_room_under_a_subtitle():
+    """§5C — the anchor climbs to 30 % when the subtitle band is active in 9:16."""
     sans = gab.plan(carte(disposition="C"), DECK, "reel",
                     image=image_test(3000, 4000), sous_titre=False)
     avec = gab.plan(carte(disposition="C"), DECK, "reel",
                     image=image_test(3000, 4000), sous_titre=True)
 
-    part = lambda p: next(b for b in p.blocs if b.nom == "bande-image").h / 1920
-    assert abs(part(sans) - 0.49) < 0.01
-    assert abs(part(avec) - 0.30) < 0.01, (
-        f"avec sous-titre la bande doit descendre à 30 %, mesurée {part(avec):.0%}")
+    assert abs(sans.ancre - 0.49) < 0.01
+    assert abs(avec.ancre - 0.30) < 0.01, (
+        f"avec sous-titre le contenu doit remonter à 30 %, mesuré {avec.ancre:.0%}")
 
 
-def test_a_band_is_never_a_fixed_pixel_height():
+def test_an_anchor_is_never_a_fixed_pixel_height():
     """The rule the spec states as a rule, held for both banded layouts.
 
     A fixed height reads as one proportion in 4:5 and another in 9:16, and the
     same card stops being recognisable between the two.
+
+    Measured on `plan.ancre`. While this read the image block it compared 100 % to
+    100 % on all three formats and would have agreed with any anchor at all.
     """
     for disposition, attendu in (("B", 0.37), ("C", 0.49)):
-        parts = []
-        for fmt in FORMATS:
-            p = gab.plan(carte(disposition=disposition), DECK, fmt, image=image_test(3000, 4000))
-            parts.append(next(b for b in p.blocs if b.nom == "bande-image").h / tk.fmt(fmt)["h"])
+        parts = [gab.plan(carte(disposition=disposition), DECK, fmt,
+                          image=image_test(3000, 4000)).ancre
+                 for fmt in FORMATS]
         assert max(parts) - min(parts) < 0.01, (
-            f"{disposition} : la bande varie de {min(parts):.0%} à {max(parts):.0%} "
+            f"{disposition} : l'ancre varie de {min(parts):.0%} à {max(parts):.0%} "
             f"entre formats — elle doit tenir {attendu:.0%} partout")
 
 

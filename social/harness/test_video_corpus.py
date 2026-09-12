@@ -74,7 +74,13 @@ def test_the_interface_line_holds_on_every_frame_not_just_the_first():
 
 
 def test_the_subtitle_band_never_pushes_the_foot():
-    """§5C — with a band active the image gives up height, never the foot."""
+    """§5C — with a band active the content gives up height, never the foot.
+
+    The image no longer gives anything up: it covers the card on all three
+    layouts, so its block is the full frame whether a subtitle is active or not.
+    What still has to yield is the anchor the content hangs from, and that is what
+    `plan.ancre` reports — 49 % without a subtitle band, 30 % with one.
+    """
     fautes = []
     for dossier, deck in decks():
         for carte in deck["cartes"]:
@@ -88,10 +94,10 @@ def test_the_subtitle_band_never_pushes_the_foot():
                 fautes.append(f"{dossier.name} carte {carte['rang']} : "
                               f"pied à {pied(sans)} puis {pied(avec)}")
 
-            bande = lambda p: next(b.h for b in p.blocs if b.nom == "bande-image")
-            if avec.disposition == "C" and bande(avec) >= bande(sans):
+            if avec.disposition == "C" and avec.ancre >= sans.ancre:
                 fautes.append(f"{dossier.name} carte {carte['rang']} : "
-                              f"la bande d'image n'a pas cédé sa hauteur")
+                              f"l'ancre n'a pas cédé sa hauteur — "
+                              f"{sans.ancre:.0%} puis {avec.ancre:.0%}")
     assert not fautes, "\n  " + "\n  ".join(fautes[:10])
 
 

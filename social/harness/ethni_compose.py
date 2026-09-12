@@ -99,6 +99,22 @@ RAMPE = 300
 RAMPE_ARRETS = ((0.00, 0.00), (0.20, 0.06), (0.55, 0.20), (0.78, 0.50), (1.00, 0.92))
 COLONNE_ARRETS = ((0.00, 0.92), (0.40, 0.94), (1.00, 0.95))
 
+# §4 — **these two are now the ceiling, not the setting.** The table they come
+# from is calibrated on the palest engraving of the corpus, luminance 0,985.
+# Applied as a constant to a dark 1892 photograph it measured 9,26:1 where the
+# rule asks 4,5:1: five points of contrast spent darkening something already
+# dark, and the photograph lost behind its own caption. The scrim is solved per
+# card and per format instead, between these bounds.
+VOILE_PLANCHER = 0.55     # a scrim lighter than this stops being a ground at all
+VOILE_PLAFOND = 0.95      # the old constant, kept as the ceiling
+VOILE_MARGE = 1.12        # aim past the threshold: JPEG noise and anti-aliasing
+VOILE_PERCENTILE = 92     # protect the bright tail of the region, never its mean
+
+# §4 — the two thresholds, and which blocks answer to the looser one.
+SEUIL_AFFICHAGE = 3.0
+SEUIL_COURANT = 4.5
+AFFICHAGE = frozenset({"titre", "punchline", "chiffre"})
+
 # §4 and §3 — tracking, expressed as the width it adds. PIL draws no tracking, so
 # this is what the measure has to allow for.
 BANDEAU_INTERLETTRE = 0.16
@@ -187,6 +203,12 @@ class Plan:
     # Whether the column had to give up type to fit. §6 reads it: a column that
     # only holds once shrunk did not hold.
     comprime: bool = False
+    # §5B and §5C — the line the content hangs from, as a fraction of the card.
+    # It used to be readable off the image block, back when the image stopped
+    # there. The image now runs to the full frame, so the proportion the two
+    # banded layouts are defined by would otherwise stop being observable, and the
+    # tests that hold them to 37 % and 49 % would pass against anything.
+    ancre: float = 1.0
 
     def bloc(self, nom):
         return next((b for b in self.blocs if b.nom == nom), None)
@@ -431,7 +453,14 @@ def plan(carte, deck, fmt_key, *, image, sous_titre=False, disposition=None):
         bande_h = round(H * BANDE_B)
     else:
         bande_h = round(H * (BANDE_C_SOUS_TITRE if sous_titre_actif else BANDE_C))
-    p.blocs.append(Bloc("bande-image", 0, 0, W, bande_h))
+    # §4 — **the image covers the card, whatever the layout.** `bande_h` remains
+    # the line the content hangs from; it is no longer where the photograph stops.
+    # A banded card used to crop the image to that line and lay its text on the
+    # card's own ground. Measured on the Dioula closing card: the background under
+    # the text varied by 0,00 across the whole lower two thirds — a pure flat. No
+    # opacity could ever have revealed a photograph that was never drawn there.
+    p.ancre = bande_h / H
+    p.blocs.append(Bloc("bande-image", 0, 0, W, H))
 
     # ── 2. the banner plate, on banded layouts only ──────────────────────────
     # §4 — **a full-frame card carries ONE scrim, never two.** A banner plate and
@@ -445,8 +474,8 @@ def plan(carte, deck, fmt_key, *, image, sous_titre=False, disposition=None):
     # second scrim for it to collide with.
     if disposition != "A":
         p.blocs.append(Bloc("voile-bandeau", 0, 0, W, VOILE_BANDEAU[H]))
-    if disposition == "B":
-        p.blocs.append(Bloc("voile-bande", 0, round(bande_h * 0.66), W, round(bande_h * 0.34)))
+    # `voile-bande` is gone with the band it darkened: the photograph now runs
+    # under the content, where the column scrim is the one that carries the text.
 
     # ── 3. banner and rank ───────────────────────────────────────────────────
     # §5A — on a full-frame card they are the column's first row, so they sit
@@ -589,12 +618,19 @@ def plan(carte, deck, fmt_key, *, image, sous_titre=False, disposition=None):
     # wrong for a five-line title whose first line lands 290 px higher at alpha
     # 0,07; then anchored on a hand-summed content top, invalidated by the very
     # edit that added a row to the column — 278 px out in 9:16, banner at 1,09:1.
-    if disposition == "A":
-        haut_colonne = min((b.y for b in p.blocs if b.texte), default=H)
-        p.blocs.append(Bloc("voile-colonne", 0, haut_colonne, W, H - haut_colonne))
-        rampe_h = round(RAMPE * k)
-        p.blocs.append(Bloc("voile-rampe", 0, max(0, haut_colonne - rampe_h), W,
-                            min(rampe_h, haut_colonne)))
+    #
+    # Every layout gets this scrim now, not just A. On a banded layout the banner
+    # and the rank keep their own plate at the top of the card, so the column
+    # hangs from the **content** and not from the topmost text: anchored on the
+    # banner instead, it would start at the very top and darken the whole card,
+    # which is the band this change exists to remove.
+    ancres = [b.y for b in p.blocs
+              if b.texte and (disposition == "A" or not b.nom.startswith("entete-"))]
+    haut_colonne = min(ancres, default=H)
+    p.blocs.append(Bloc("voile-colonne", 0, haut_colonne, W, H - haut_colonne))
+    rampe_h = round(RAMPE * k)
+    p.blocs.append(Bloc("voile-rampe", 0, max(0, haut_colonne - rampe_h), W,
+                        min(rampe_h, haut_colonne)))
 
     if bande_st:
         p.blocs.append(Bloc("bande-sous-titre", marge, pied_y - round(GOUTTIERE_CREDIT * k) - bande_st,
@@ -1584,6 +1620,87 @@ def composer(carte, deck, fmt_key, *, image, sous_titre=False, epreuve=None,
                     texte=True, epreuve=epreuve, instant=instant, duree=duree)
 
 
+def _alpha_pour_bloc(zone, couleur, seuil, base):
+    """§4 — the lightest alpha that carries `couleur` to `seuil` over these pixels.
+
+    Solved by bisection rather than read from a table, because the answer depends
+    on the photograph and a table cannot. The predicate is « the ground is darker
+    than the ink **and** the ratio clears the threshold », and that conjunction is
+    what makes it monotone in alpha: without the first half the ratio dips to 1:1
+    as the ground crosses the ink and climbs again, so a bisection would settle on
+    the wrong side of the dip and return a scrim that is too light.
+
+    The sample is a high percentile, not a mean. A caption crossing one sunlit
+    branch fails on that branch, and an average hides it.
+    """
+    plats = zone.reshape(-1, 3)
+    if not len(plats):
+        return VOILE_PLANCHER
+    vif = np.percentile(plats, VOILE_PERCENTILE, axis=0)
+    lum_encre = _luminance(_rgb(couleur))
+    vise = seuil * VOILE_MARGE
+
+    bas, haut = 0.0, 1.0
+    for _ in range(24):
+        a = (bas + haut) / 2
+        lum_fond = _luminance(tuple(vif[i] * (1 - a) + base[i] * a for i in range(3)))
+        tient = lum_fond <= lum_encre and (lum_encre + 0.05) / (lum_fond + 0.05) >= vise
+        bas, haut = (bas, a) if tient else (a, haut)
+    return haut
+
+
+def _besoin(im, blocs, base, seuil_de):
+    """The heaviest alpha any of these blocks asks for, over the drawn image."""
+    pixels = np.asarray(im.convert("RGB"), dtype=float)
+    besoin = VOILE_PLANCHER
+    for b in blocs:
+        zone = pixels[max(0, b.y):b.y + max(b.h, 1), max(0, b.x):b.x + max(b.w, 1)]
+        besoin = max(besoin, _alpha_pour_bloc(zone, b.couleur, seuil_de(b), base))
+    return min(VOILE_PLAFOND, max(VOILE_PLANCHER, besoin))
+
+
+def _seuil(bloc):
+    """§4 — display text answers to 3:1, everything a reader reads to 4,5:1."""
+    return SEUIL_AFFICHAGE if bloc.nom in AFFICHAGE else SEUIL_COURANT
+
+
+def _voile_resolu(im, p, deck):
+    """§4 — the column scrim and its ramp, solved against the image drawn.
+
+    Returns the old constants untouched when there is no column, so a layout that
+    never had one cannot be changed by accident.
+
+    The ramp is scaled by the same factor rather than resolved on its own. §4
+    requires it to end exactly where the flat begins; solved separately the two
+    would meet at different alphas and draw a cut line across the card.
+    """
+    colonne = p.bloc("voile-colonne")
+    if colonne is None:
+        return COLONNE_ARRETS, RAMPE_ARRETS
+
+    base = _rgb(_fond(deck))
+    concernes = [b for b in p.blocs
+                 if b.texte and getattr(b, "couleur", None)
+                 and not b.nom.startswith("entete-")
+                 and b.y + b.h > colonne.y]
+    plat = _besoin(im, concernes, base, _seuil)
+
+    monte = lambda d: min(VOILE_PLAFOND, round(plat + d, 4))  # noqa: E731
+    colonne_arrets = ((0.00, plat), (0.40, monte(0.02)), (1.00, monte(0.03)))
+    facteur = plat / COLONNE_ARRETS[0][1]
+    rampe_arrets = tuple((pos, round(a * facteur, 4)) for pos, a in RAMPE_ARRETS)
+    return colonne_arrets, rampe_arrets
+
+
+def _alpha_bandeau(im, plaque, p, deck):
+    """The plate's alpha, solved for the banner and the rank it has to carry."""
+    entete = [b for b in p.blocs
+              if b.texte and getattr(b, "couleur", None) and b.nom.startswith("entete-")]
+    if not entete:
+        return COLONNE_ARRETS[0][1]
+    return _besoin(im, entete, _rgb(_fond(deck)), lambda _b: SEUIL_COURANT)
+
+
 def _peindre(carte, deck, fmt_key, *, image, sous_titre, texte, epreuve=None,
              instant=None, duree=None, plan_donne=None):
     p = plan_donne if plan_donne is not None else plan(
@@ -1612,24 +1729,35 @@ def _peindre(carte, deck, fmt_key, *, image, sous_titre, texte, epreuve=None,
     # that order and touching: the ramp ends at 0,92 exactly where the flat begins,
     # so the composited alpha climbs and never comes back down. Nothing here is a
     # hand-written ordinate — both blocks were placed from the column itself.
+    #
+    # The alpha is no longer a constant. §4's table is calibrated on the palest
+    # engraving of the corpus, and applied unchanged to a dark photograph it spent
+    # five points of contrast darkening something already dark — 9,26:1 measured
+    # where the rule asks 4,5:1, the picture gone behind its own caption. The
+    # scrim is now solved against the image actually drawn, per card and per
+    # format, and the table becomes the ceiling rather than the setting.
+    arrets_colonne, arrets_rampe = _voile_resolu(im, p, deck)
     if p.bloc("voile-colonne") is not None:
-        poser(p.bloc("voile-rampe"), RAMPE_ARRETS)
-        poser(p.bloc("voile-colonne"), COLONNE_ARRETS)
-    else:
-        # A banded card: the flat under the band carries the text, and the plate
-        # over the band carries the banner. No two scrims meet, so none cancel.
-        poser(p.bloc("voile-bande"), ((0.0, 0.0), (1.0, 0.92)))
+        poser(p.bloc("voile-rampe"), arrets_rampe)
+        poser(p.bloc("voile-colonne"), arrets_colonne)
 
-        # §4 — the plate holds its full 0,92 through the header row and only fades
-        # below it. Fading from the very top left the banner sitting at 0,42 on a
-        # pale engraving, which measures 2,78:1 where the alpha table asks 0,92.
-        # The turn is read off the row, never written as a fraction.
-        plaque = p.bloc("voile-bandeau")
-        if plaque is not None and plaque.h > 0:
-            entete = [b for b in p.blocs if b.nom.startswith("entete-")]
-            bas = max((b.y + b.h for b in entete), default=0)
-            palier = min(0.9, max(0.1, (bas - plaque.y) / plaque.h)) if bas else 0.4
-            poser(plaque, ((0.0, 0.92), (palier, 0.92), (1.0, 0.0)))
+    # §4 — the plate holds its full alpha through the header row and only fades
+    # below it. Fading from the very top left the banner sitting at 0,42 on a
+    # pale engraving, which measures 2,78:1 where the alpha table asks 0,92.
+    # The turn is read off the row, never written as a fraction.
+    #
+    # It survives on a banded layout even though the image is now full frame: the
+    # banner sits at the top of the card, far above the column, and needs a ground
+    # of its own. The bright gap this leaves between plate and column is licit for
+    # the same reason §9 bis makes it licit in video — no text lives in it, and
+    # what shows there is the photograph, which is the subject.
+    plaque = p.bloc("voile-bandeau")
+    if plaque is not None and plaque.h > 0:
+        entete = [b for b in p.blocs if b.nom.startswith("entete-")]
+        bas = max((b.y + b.h for b in entete), default=0)
+        palier = min(0.9, max(0.1, (bas - plaque.y) / plaque.h)) if bas else 0.4
+        haut = _alpha_bandeau(im, plaque, p, deck)
+        poser(plaque, ((0.0, haut), (palier, haut), (1.0, 0.0)))
 
     # §5A — no plate and no box behind the narration block. A rounded flat over an
     # already-scrimmed photograph darkens twice and reads as a window stuck onto the

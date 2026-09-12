@@ -1,3 +1,4 @@
+import { FicheStatCard } from "@/components/fiche/FicheStatCard";
 import { DID_YOU_KNOW_FACTS } from "@/lib/home/didYouKnowFacts";
 import { localizeDidYouKnowFact } from "@/lib/home/didYouKnowLocalization";
 import { anecdotesCopy } from "@/lib/i18n/copy/anecdotes";
@@ -40,6 +41,8 @@ type FicheSummaryBriefProps = {
 interface FigureRow {
   label: string;
   value: string | null;
+  /** What the record says in the value's place when it has no value. */
+  absent: string;
   referenceYear?: string;
 }
 
@@ -52,32 +55,63 @@ function count(
     : new Intl.NumberFormat(language).format(value);
 }
 
-function countryRows(
+/**
+ * One counted figure of a country record, with the words that go around it.
+ *
+ * `scope` is what the count covers when there is a count, and what is absent
+ * when there is not — one line, two jobs, because a reader looking under a
+ * figure for its reach is looking in the same place either way.
+ */
+interface CountedFigure {
+  id: string;
+  label: string;
+  value: number | null;
+  scope: string;
+  emphasis: "lead" | "tile";
+}
+
+function countryFigures(
   figures: CountrySummaryFigures,
   language: Language
-): FigureRow[] {
+): CountedFigure[] {
   const copy = countryCopy[language].summary;
+  const words = copy.figures;
+  const population = figures.population?.value ?? null;
+  const year = figures.population?.referenceYear;
+
+  const counted = (
+    id: keyof typeof words,
+    value: number | null | undefined
+  ): CountedFigure => {
+    const measured = value != null && Number.isFinite(value);
+    const entry = words[id];
+    // Population states its reach as a year rather than a reach, so it is the
+    // one count in the dictionary with no scope of its own.
+    const reach = "scope" in entry ? entry.scope : "";
+    return {
+      id,
+      label: entry.label,
+      value: measured ? value : null,
+      scope: measured ? reach : entry.absent,
+      emphasis: "tile",
+    };
+  };
+
+  const lead = counted("population", population);
+
   return [
     {
-      label: copy.population,
-      value: count(figures.population?.value, language),
-      referenceYear: figures.population?.referenceYear
-        ? copy.referenceYear(figures.population.referenceYear)
-        : undefined,
+      ...lead,
+      // The reference year is this figure's whole scope line: population is
+      // the one count on the panel a reader can date, and an undated
+      // population is a weaker claim than a dated one.
+      scope: lead.value != null && year ? copy.referenceYear(year) : lead.scope,
+      emphasis: "lead",
     },
-    {
-      label: copy.peoplesDocumentedHere,
-      value: count(figures.peoples, language),
-    },
-    {
-      label: copy.languagesDocumentedHere,
-      value: count(figures.languages, language),
-    },
-    {
-      label: copy.familiesDocumentedHere,
-      value: count(figures.families, language),
-    },
-    { label: copy.namesReferencedHere, value: count(figures.names, language) },
+    counted("peoples", figures.peoples),
+    counted("languages", figures.languages),
+    counted("families", figures.families),
+    counted("names", figures.names),
   ];
 }
 
@@ -86,7 +120,7 @@ function peopleRows(
   language: Language
 ): FigureRow[] {
   const copy = peopleCopy[language].summary;
-  return [
+  const rows = [
     {
       label: copy.persons,
       value: count(figures.persons?.value, language),
@@ -102,6 +136,10 @@ function peopleRows(
     { label: copy.linguisticFamily, value: figures.family?.trim() || null },
     { label: copy.namesReferencedHere, value: count(figures.names, language) },
   ];
+  // One sentence for all five slots, which is what this record still says.
+  // Carried on the row rather than read off the copy at render time, so the
+  // two records' wordings never have to be told apart in the markup.
+  return rows.map((row) => ({ ...row, absent: copy.missingData }));
 }
 
 // @req REQ-151
@@ -117,10 +155,26 @@ export function FicheSummaryBrief({
     kind === "country"
       ? countryCopy[language].summary
       : peopleCopy[language].summary;
-  const rows =
-    kind === "country"
-      ? countryRows(figures, language)
-      : peopleRows(figures, language);
+  /*
+   * Two records, one weighting, two devices.
+   *
+   * Both lead with their population — the one figure a reader arrives
+   * wanting — and file the rest beside it. What differs is what the rest
+   * are. A country record's four are all counts, so they ride the shared
+   * stat card. A people record's four include two words, its main language
+   * and its family, and the shared card takes a `number | null`, so they
+   * ride the definition list instead, which renders a word as naturally as
+   * a figure.
+   *
+   * This comment used to say a people record led with nothing, because two
+   * of its slots were words. The reviewed rendering answers that: the
+   * population leads and a word value simply renders a step smaller. The
+   * weighting follows the kind rather than a prop because there is no third
+   * answer to invent — but the device should not, and widening the card to
+   * carry a word is what would collapse these two branches into one.
+   */
+  const counted = kind === "country" ? countryFigures(figures, language) : null;
+  const rows = kind === "people" ? peopleRows(figures, language) : null;
 
   // Reviewed rendering (gabarit parity): the people variant leads with one
   // headline figure, then four tiles. Country keeps its original uniform
@@ -154,28 +208,56 @@ export function FicheSummaryBrief({
         </>
       )}
 
-      <dl className={figuresClassName}>
-        {rows.map((row, index) => (
-          <div
-            key={row.label}
-            className={
-              kind === "people"
-                ? index === 0
+      {/* Two records, two shapes, and the shapes are genuinely different.
+
+          A country record's five slots are all counts, so they all ride the
+          shared stat card and the population leads.
+
+          A people record's five include two that are words rather than
+          counts — its main language and its family — and `FicheStatCard`
+          takes a `number | null`, so it cannot carry them. The people panel
+          therefore keeps the definition list, which renders a word as
+          naturally as a figure, and takes its weighting there instead: the
+          population leads across both columns, the four others become tiles.
+
+          Unifying the two on one device means widening the shared card to
+          carry a word value. That is worth doing and is not done here. */}
+      {counted ? (
+        <div className="fiche-summary-brief__counted">
+          {counted.map((figure) => (
+            <FicheStatCard
+              key={figure.id}
+              id={figure.id}
+              label={figure.label}
+              value={figure.value}
+              scope={figure.scope || undefined}
+              emphasis={figure.emphasis}
+              language={language}
+            />
+          ))}
+        </div>
+      ) : (
+        <dl className={figuresClassName}>
+          {rows!.map((row, index) => (
+            <div
+              key={row.label}
+              className={
+                index === 0
                   ? "fiche-summary-brief__figure--headline"
                   : "fiche-summary-brief__figure--tile"
-                : undefined
-            }
-          >
-            <dt>{row.label}</dt>
-            <dd>
-              {row.value ?? copy.missingData}
-              {row.value !== null && row.referenceYear ? (
-                <small>{row.referenceYear}</small>
-              ) : null}
-            </dd>
-          </div>
-        ))}
-      </dl>
+              }
+            >
+              <dt>{row.label}</dt>
+              <dd>
+                {row.value ?? row.absent}
+                {row.value !== null && row.referenceYear ? (
+                  <small>{row.referenceYear}</small>
+                ) : null}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      )}
 
       {fact ? (
         <aside
@@ -238,6 +320,17 @@ export function FicheSummaryBrief({
           line-height: 1.18;
           color: var(--afh-text);
         }
+        .fiche-summary-brief__counted {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 10px;
+        }
+        /* The lead figure takes the whole row. A tile beside it would read as
+           its equal, and the four tiles count what the atlas holds while the
+           lead counts the country itself. */
+        .fiche-summary-brief__counted > [data-emphasis="lead"] {
+          grid-column: 1 / -1;
+        }
         .fiche-summary-brief__figures {
           display: grid;
           grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -275,10 +368,16 @@ export function FicheSummaryBrief({
           font-weight: 700;
           font-variant-numeric: tabular-nums;
         }
+        /* A rule down the left rather than a line across the top. A top rule
+           reads as the end of the figures; a left rule reads as a quotation,
+           which is what this is — one sourced sentence, not a sixth count.
+           The gold role, the same one the search surface gives a sourced
+           highlight, so the device means one thing across the site. */
+
         .fiche-summary-brief__fact {
           margin-top: 18px;
-          padding-top: 16px;
-          border-top: 1px solid var(--afh-border);
+          padding-left: 12px;
+          border-left: 3px solid var(--afh-gold);
         }
         .fiche-summary-brief__fact p { margin: 0 0 8px; line-height: 1.5; }
         .fiche-summary-brief__tier {
