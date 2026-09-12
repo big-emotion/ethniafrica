@@ -723,6 +723,16 @@
   font-size: var(--afh-text-eyebrow);
 }
 
+/* The share of a country no people accounts for, drawn rather than left as
+   empty track: the same hatch the source census gives what awaits review. */
+[data-demo-unassigned] {
+  background: repeating-linear-gradient(
+    135deg,
+    var(--afh-border) 0 5px,
+    transparent 5px 10px
+  );
+}
+
 /* ── Tiles ──────────────────────────────────────────────────────────
    The unit every chapter folds its prose into. Two columns from the phone
    up, 12px apart, 16px inside: on production the tiles sat 6px apart with

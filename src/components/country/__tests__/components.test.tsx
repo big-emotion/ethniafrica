@@ -40,7 +40,7 @@ describe("PeoplesSection", () => {
     render(<PeoplesSection language="en" data={data} />);
 
     expect(screen.getByText("inhabitants")).toBeVisible();
-    expect(screen.getByText("2+ peoples")).toBeVisible();
+    expect(screen.getByText("2 peoples")).toBeVisible();
     expect(
       screen.getByText(/represent 80% of the country's population/)
     ).toBeVisible();

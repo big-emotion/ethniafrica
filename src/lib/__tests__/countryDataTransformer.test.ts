@@ -1,7 +1,6 @@
 import { describe, it, expect } from "vitest";
 import {
   flagFromISO3,
-  formatPopulation,
   extractEndonym,
   extractPejorative,
   shortenRegion,
@@ -228,24 +227,6 @@ describe("flagFromISO3", () => {
   });
 });
 
-describe("formatPopulation", () => {
-  it("formats millions", () => {
-    expect(formatPopulation(23000000)).toBe("23M");
-  });
-
-  it("formats millions with decimal", () => {
-    expect(formatPopulation(11500000)).toBe("11.5M");
-  });
-
-  it("formats thousands", () => {
-    expect(formatPopulation(920000)).toBe("920K");
-  });
-
-  it("formats small numbers", () => {
-    expect(formatPopulation(500)).toBe("500");
-  });
-});
-
 describe("extractEndonym", () => {
   it("extracts endonym from parenthetical format", () => {
     expect(extractEndonym("Moaga (singulier), Moose (pluriel)")).toBe(
@@ -345,7 +326,7 @@ describe("transformPeoples", () => {
     });
 
     expect(result.totalPopulation).toBe(29900000);
-    expect(result.totalPopulationFormatted).toBe("29.9M");
+    expect(result.totalPopulationFormatted).toMatch(/^29,9\sM$/);
     expect(result.totalPopulationIsNational).toBe(true);
     expect(result.everyPeopleDeclaresPopulation).toBe(false);
     expect(result.populationReferenceYear).toBe(2025);
@@ -363,7 +344,7 @@ describe("transformPeoples", () => {
     );
 
     expect(result.totalPopulation).toBe(500000);
-    expect(result.totalPopulationFormatted).toBe("500K");
+    expect(result.totalPopulationFormatted).toMatch(/^500\sk$/);
     expect(result.everyPeopleDeclaresPopulation).toBe(true);
     expect(result.populationReferenceYear).toBe(2025);
   });
@@ -374,9 +355,30 @@ describe("transformPeoples", () => {
       bfaCountry.majorPeoples
     );
     expect(result.totalPopulation).toBe(20700000);
-    expect(result.totalPopulationFormatted).toBe("20.7M");
-    expect(result.peopleCount).toBe(10);
+    expect(result.totalPopulationFormatted).toMatch(/^20,7\sM$/);
+    // This fixture links none of its rows to a people record, so it counts
+    // no people: the count is of records a reader can open, not of rows.
+    expect(result.peopleCount).toBe(0);
     expect(result.rows.length).toBeGreaterThan(0);
+  });
+
+  // "10+ peoples" counted every row, a group with no record of its own
+  // included, and claimed more with its plus sign. A row counts when it
+  // carries an id, or when majorPeoples resolves one for its name.
+  // @req REQ-154
+  it("counts only the peoples linked to a record", () => {
+    const result = transformPeoples(
+      {
+        peoples: [
+          { name: "Ovambo", percentageInCountry: 50, peopleId: "PPL_OVAMBO" },
+          { name: "Herero", percentageInCountry: 7 },
+          { name: "Groupe sans fiche", percentageInCountry: 5 },
+        ],
+      } as never,
+      [{ name: "Herero", peopleId: "PPL_HERERO" }] as never
+    );
+
+    expect(result.peopleCount).toBe(2);
   });
 
   it("sorts by percentage descending", () => {
@@ -452,7 +454,7 @@ describe("transformPeoples", () => {
       ],
     });
 
-    expect(result.totalPopulationFormatted).toBe("7.7M");
+    expect(result.totalPopulationFormatted).toMatch(/^7,7\sM$/);
     expect(result.everyPeopleDeclaresPopulation).toBe(false);
   });
 

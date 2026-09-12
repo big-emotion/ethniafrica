@@ -43,15 +43,17 @@ export function PeoplesSection({ data, language }: PeoplesSectionProps) {
           )}
         </div>
         {data.rows.length > 0 ? (
-          <div
-            className="text-afh-h3 font-bold"
-            style={{
-              fontFamily: "var(--country-font-display)",
-              color: "var(--country-text)",
-            }}
-          >
-            {countryCopy[language].peoples.count(data.peopleCount)}
-          </div>
+          data.peopleCount > 0 ? (
+            <div
+              className="text-afh-h3 font-bold"
+              style={{
+                fontFamily: "var(--country-font-display)",
+                color: "var(--country-text)",
+              }}
+            >
+              {countryCopy[language].peoples.count(data.peopleCount)}
+            </div>
+          ) : null
         ) : (
           <FieldProvenanceMarker state="missing" language={language} />
         )}
@@ -110,11 +112,14 @@ function populationCaption(data: PeoplesData, language: Language): string {
  * fill the bar. Under flex-grow the bar always reached the right-hand
  * edge, so a country whose documented peoples account for 60% of it read
  * exactly like one fully accounted for — the FR28 shortfall was being
- * hidden by the very chart meant to show it. The remainder is left empty
- * and named underneath.
+ * hidden by the very chart meant to show it. The remainder is drawn as a
+ * hatch, so the share no people accounts for is a visible part of the
+ * country rather than an empty stretch of track, and named underneath.
  */
 function DemoBar({ rows }: { rows: PeopleRow[] }) {
   const declared = declaredShare(rows);
+  const assigned = rows.reduce((total, row) => total + rowShare(row), 0);
+  const unassigned = Math.round((100 - assigned) * 10) / 10;
 
   return (
     <div
@@ -127,22 +132,32 @@ function DemoBar({ rows }: { rows: PeopleRow[] }) {
         <div
           key={i}
           style={{
-            width: `${row.percentage}%`,
+            width: `${rowShare(row)}%`,
             background: getDemoColor(row.colorIndex),
           }}
           title={`${row.name} — ${row.percentage}%`}
         />
       ))}
+      {unassigned > 0 ? (
+        <div data-demo-unassigned="" style={{ width: `${unassigned}%` }} />
+      ) : null}
     </div>
   );
+}
+
+/**
+ * The share of the country one row stands for. A grouped row folds peoples
+ * that each declare the same share, and carries that share once, so it
+ * stands for it as many times as it names peoples.
+ */
+function rowShare(row: PeopleRow): number {
+  return (row.percentage || 0) * (row.groupedNames?.length ?? 1);
 }
 
 /** How much of the country the fiche's peoples actually account for. */
 // @req REQ-092
 export function declaredShare(rows: PeopleRow[]): number {
-  return Math.round(
-    rows.reduce((total, row) => total + (row.percentage || 0), 0)
-  );
+  return Math.round(rows.reduce((total, row) => total + rowShare(row), 0));
 }
 
 /**

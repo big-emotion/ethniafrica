@@ -135,7 +135,7 @@ describe("country fiche charter", () => {
       '[data-fiche-section="Peuples du pays"]'
     );
 
-    expect(section).toHaveTextContent("32.7M");
+    expect(section).toHaveTextContent(/32,7\sM/);
     expect(section).toHaveTextContent("Donnée manquante");
   });
 

@@ -22,6 +22,9 @@ import type {
 } from "@/types/afrik";
 import { flagFromISO3 as countryFlag, NEUTRAL_FLAG } from "@/lib/countryFlag";
 import { countryCopy } from "@/lib/i18n/copy/country";
+// One population formatter for both records. The country kept an English
+// one of its own, which printed "3.1M" beside "habitants".
+import { formatPeoplePopulation } from "@/lib/peopleDataTransformer";
 import type { Language } from "@/types/shared";
 
 // ==========================================
@@ -151,23 +154,6 @@ export function flagFromISO3(iso3: string): string {
 }
 
 /**
- * Format population number: 23000000 → "23M", 920000 → "920K"
- */
-// @req REQ-001
-export function formatPopulation(n: number): string {
-  if (n >= 1_000_000) {
-    const m = n / 1_000_000;
-    const formatted = m % 1 === 0 ? `${m}M` : `${m.toFixed(1)}M`;
-    return formatted.replace(".0M", "M");
-  }
-  if (n >= 1_000) {
-    const k = Math.round(n / 1_000);
-    return `${k}K`;
-  }
-  return String(n);
-}
-
-/**
  * Extract endonym from self-appellation text.
  * "Moaga (singulier), Moose (pluriel)" → "Moaga · Moose"
  */
@@ -258,7 +244,7 @@ export function transformPeoples(
     return {
       totalPopulation: nationalPopulation,
       totalPopulationFormatted: totalPopulationIsNational
-        ? formatPopulation(nationalPopulation)
+        ? formatPeoplePopulation(nationalPopulation, language)
         : undefined,
       totalPopulationIsNational,
       everyPeopleDeclaresPopulation: false,
@@ -343,7 +329,7 @@ export function transformPeoples(
       percentage: p.percentageInCountry || 0,
       population: p.population > 0 ? p.population : undefined,
       populationFormatted:
-        p.population > 0 ? formatPopulation(p.population) : undefined,
+        p.population > 0 ? formatPeoplePopulation(p.population, language) : undefined,
       region: p.region ? shortenRegion(p.region) : undefined,
       languageFamily: p.languageFamily
         ? shortenFamily(p.languageFamily)
@@ -362,13 +348,15 @@ export function transformPeoples(
     totalPopulation,
     totalPopulationFormatted:
       totalPopulationIsNational || counted.length > 0
-        ? formatPopulation(totalPopulation)
+        ? formatPeoplePopulation(totalPopulation, language)
         : undefined,
     totalPopulationIsNational,
     everyPeopleDeclaresPopulation:
       filtered.length > 0 && counted.length === filtered.length,
     populationReferenceYear,
-    peopleCount: sorted.length,
+    // The peoples the atlas links to a record. Rows naming a group with no
+    // record of its own are shares, not peoples the reader can open.
+    peopleCount: rows.filter((row) => row.peopleId).length,
     rows: groupedRows,
   };
 }
@@ -409,7 +397,7 @@ function groupSamePercentage(
         population: rows[i].population,
         populationFormatted:
           rows[i].population > 0
-            ? `${formatPopulation(rows[i].population)} ${countryCopy[language].generated.each}`
+            ? `${formatPeoplePopulation(rows[i].population, language)} ${countryCopy[language].generated.each}`
             : undefined,
         colorIndex: rows[i].colorIndex,
         groupedNames: names,

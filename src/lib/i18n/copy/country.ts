@@ -69,7 +69,7 @@ const en = {
   peoples: {
     inhabitants: "inhabitants",
     documentedInhabitants: "documented inhabitants",
-    count: (count: number) => `${count}+ peoples`,
+    count: (count: number) => `${count} ${count === 1 ? "people" : "peoples"}`,
     groupedCount: (count: number) => `${count} peoples`,
     coverage: (share: number) =>
       `The peoples documented here represent ${share}% of the country's population. The remainder is not yet distributed in the atlas.`,
@@ -197,7 +197,7 @@ const fr: CountryCopy = {
   peoples: {
     inhabitants: "habitants",
     documentedInhabitants: "habitants documentés",
-    count: (count) => `${count}+ peuples`,
+    count: (count) => `${count} peuple${count > 1 ? "s" : ""}`,
     groupedCount: (count) => `${count} peuples`,
     coverage: (share) =>
       `Les peuples documentés ici représentent ${share}\u00a0% de la population du pays. Le reste n'est pas encore réparti dans l’atlas.`,
