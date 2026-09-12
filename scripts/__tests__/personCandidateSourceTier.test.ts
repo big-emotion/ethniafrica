@@ -1,7 +1,7 @@
 // @req REQ-126
 import { describe, expect, it } from "vitest";
 
-import { resolvePersonSourceTier } from "../lib/personCandidateSourceTier";
+import { resolveInheritedSourceTier as resolvePersonSourceTier } from "../lib/peopleProseCandidates";
 import type { FicheSource } from "../lib/personCandidateTypes";
 import type { SourceTier } from "../../src/types/sources";
 

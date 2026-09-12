@@ -8,18 +8,12 @@
  * Usage: npx tsx scripts/extractClanNames.ts [output-path]
  */
 
-import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "fs";
 import path from "path";
 
-import type {
-  ClanNameCandidate,
-  ClanNameReviewArtifact,
-  FicheSource,
-  LoadedPeopleFiche,
-} from "./lib/clanNameTypes";
+import type { ClanNameReviewArtifact } from "./lib/clanNameTypes";
 import { detectClanNameCandidates } from "./lib/clanNameDetection";
 import { buildCoverageByFamily } from "./lib/clanNameReview";
-import { resolveClanNameSourceTier } from "./lib/clanNameSourceTier";
+import { writeCandidateArtifact } from "./lib/peopleProseCandidates";
 
 const DEFAULT_PEOPLE_ROOT = path.join(
   __dirname,
@@ -41,101 +35,21 @@ export interface ExtractClanNamesResult {
   artifact: ClanNameReviewArtifact;
 }
 
-function assertOutputPathIsSafe(peopleRoot: string, outputPath: string): void {
-  const afrikRoot = path.resolve(peopleRoot, "..");
-  const resolvedOutput = path.resolve(outputPath);
-
-  if (
-    resolvedOutput === afrikRoot ||
-    resolvedOutput.startsWith(`${afrikRoot}${path.sep}`)
-  ) {
-    throw new Error(
-      `extractClanNames: refusing to write inside the AFRIK corpus (${afrikRoot})`
-    );
-  }
-}
-
-function walkPeopleFiles(root: string): string[] {
-  const files: string[] = [];
-
-  for (const entry of readdirSync(root, { withFileTypes: true })) {
-    const fullPath = path.join(root, entry.name);
-    if (entry.isDirectory()) {
-      files.push(...walkPeopleFiles(fullPath));
-    } else if (
-      entry.isFile() &&
-      entry.name.startsWith("PPL_") &&
-      entry.name.endsWith(".json")
-    ) {
-      files.push(fullPath);
-    }
-  }
-
-  return files.sort((left, right) => left.localeCompare(right));
-}
-
-function readPeopleFiches(peopleRoot: string): LoadedPeopleFiche[] {
-  return walkPeopleFiles(peopleRoot).map((filePath) => {
-    const fiche = JSON.parse(readFileSync(filePath, "utf8"));
-    return {
-      id: fiche.id,
-      languageFamilyId: fiche.languageFamilyId,
-      content: fiche.content ?? {},
-    };
-  });
-}
-
-function readFicheSources(fiche: LoadedPeopleFiche): FicheSource[] {
-  const sources = fiche.content.sources;
-  if (!Array.isArray(sources)) return [];
-
-  return sources.filter(
-    (source): source is FicheSource =>
-      source !== null &&
-      typeof source === "object" &&
-      typeof (source as Record<string, unknown>).title === "string"
-  );
-}
-
-function extractCandidates(fiches: LoadedPeopleFiche[]): ClanNameCandidate[] {
-  const candidates = fiches.flatMap((fiche) => {
-    const sourceResolution = resolveClanNameSourceTier(readFicheSources(fiche));
-
-    return detectClanNameCandidates(fiche).map((candidate) => ({
-      ...candidate,
-      ...sourceResolution,
-    }));
-  });
-
-  return candidates.sort((left, right) =>
-    left.candidateId.localeCompare(right.candidateId, "en")
-  );
-}
-
-/**
- * Walk the people corpus and write a deterministic review artifact.
- * Detection and provenance enrichment are composed into this shell by the
- * dependent ETNI-1456 sub-tasks.
- */
+/** Walk the people corpus and write a deterministic review artifact. */
 export function extractClanNamesToArtifact(
   options: ExtractClanNamesOptions = {}
 ): ExtractClanNamesResult {
-  const peopleRoot = options.peopleRoot ?? DEFAULT_PEOPLE_ROOT;
-  const outputPath = options.outputPath ?? DEFAULT_OUTPUT_PATH;
-  assertOutputPathIsSafe(peopleRoot, outputPath);
-
-  const fiches = readPeopleFiches(peopleRoot);
-  const candidates = extractCandidates(fiches);
-  const artifact: ClanNameReviewArtifact = {
-    schemaVersion: 1,
-    candidates,
-    coverageByFamily: buildCoverageByFamily(fiches, candidates),
-  };
-
-  mkdirSync(path.dirname(outputPath), { recursive: true });
-  writeFileSync(outputPath, `${JSON.stringify(artifact, null, 2)}\n`, "utf8");
-
-  return { fichesScanned: fiches.length, outputPath, artifact };
+  return writeCandidateArtifact({
+    commandName: "extractClanNames",
+    peopleRoot: options.peopleRoot ?? DEFAULT_PEOPLE_ROOT,
+    outputPath: options.outputPath ?? DEFAULT_OUTPUT_PATH,
+    detect: detectClanNameCandidates,
+    buildArtifact: (fiches, candidates): ClanNameReviewArtifact => ({
+      schemaVersion: 1,
+      candidates,
+      coverageByFamily: buildCoverageByFamily(fiches, candidates),
+    }),
+  });
 }
 
 function main(): void {

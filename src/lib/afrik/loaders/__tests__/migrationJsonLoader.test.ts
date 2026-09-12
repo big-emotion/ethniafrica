@@ -579,4 +579,34 @@ describe("migrationJsonLoader", () => {
       warnSpy.mockRestore();
     });
   });
+
+  // The loaders once carried private copies of the same writers; these pin the
+  // row each one actually sends, so a shared writer cannot quietly widen or
+  // narrow a payload.
+  describe("provenance rows", () => {
+    // @req REQ-080
+    it("sends no author column on the source and publishes an unstamped version-1 revision", async () => {
+      const database = createSupabaseDouble();
+      writeMigrationFile(
+        tmpDir,
+        "MGR_TEST_EXPANSION_01.json",
+        validMigrationFile()
+      );
+      const records = loadAllMigrationFiles(tmpDir);
+
+      await loadMigrations(database.client as never, records);
+
+      expect(Object.keys(database.sources[0]).sort()).toEqual([
+        "added_at",
+        "id",
+        "notes",
+        "tier",
+        "title",
+        "url",
+        "year",
+      ]);
+      expect(database.ficheRevisions[0]).not.toHaveProperty("published_at");
+      expect(database.ficheRevisions[0].content_snapshot).toEqual(records[0]);
+    });
+  });
 });
