@@ -105,6 +105,23 @@ describe("pii-scrubber", () => {
     it("should handle invalid IP formats gracefully", () => {
       expect(truncateIpToSlash24("not-an-ip")).toBe("not-an-ip");
     });
+
+    // A proxied request carries the whole chain in X-Forwarded-For. The
+    // anchored pattern matched only a lone address, so a chain went to Sentry
+    // untouched — the client's full address first in line.
+    // @req REQ-057
+    it("truncates every address of a forwarded-for chain", () => {
+      expect(truncateIpToSlash24("203.0.113.42, 10.1.2.3")).toBe(
+        "203.0.113.0, 10.1.2.0"
+      );
+    });
+
+    // @req REQ-057
+    it("truncates a chain mixing IPv4 and IPv6", () => {
+      expect(truncateIpToSlash24("203.0.113.42, 2001:db8::8a2e:370:7334")).toBe(
+        "203.0.113.0, 2001:db8::8a2e:370:0"
+      );
+    });
   });
 
   describe("beforeSend", () => {
@@ -190,6 +207,111 @@ describe("pii-scrubber", () => {
       expect(result?.breadcrumbs?.[1]?.message).toBe(
         "Request from IP 10.0.0.0"
       );
+    });
+
+    // @req REQ-057
+    it("redacts credential-bearing headers whatever their casing", () => {
+      const event: Event = {
+        request: {
+          headers: {
+            Authorization: "Bearer pub_live_secretkey",
+            cookie: "sb-access-token=eyJhbGciOi",
+            "Set-Cookie": "ethni-locale=fr; Path=/",
+            accept: "application/json",
+          },
+        },
+      };
+
+      const headers = beforeSend(event)?.request?.headers;
+
+      expect(headers?.Authorization).toBe("[REDACTED]");
+      expect(headers?.cookie).toBe("[REDACTED]");
+      expect(headers?.["Set-Cookie"]).toBe("[REDACTED]");
+      expect(headers?.accept).toBe("application/json");
+    });
+
+    // @req REQ-057
+    it("truncates a forwarded-for chain in the request headers", () => {
+      const event: Event = {
+        request: {
+          headers: { "x-forwarded-for": "203.0.113.42, 10.1.2.3" },
+        },
+      };
+
+      expect(beforeSend(event)?.request?.headers?.["x-forwarded-for"]).toBe(
+        "203.0.113.0, 10.1.2.0"
+      );
+    });
+
+    // Cookies carry session tokens, the body carries whatever a reader typed
+    // into a report form, and the query string of the auth callback carries a
+    // one-time sign-in code. None of it is needed to diagnose an error.
+    // @req REQ-057
+    it("redacts request cookies, body and query string", () => {
+      const event: Event = {
+        request: {
+          url: "https://ethniafrica.com/api/auth/callback?code=one-time-code",
+          cookies: { "sb-access-token": "eyJhbGciOi" },
+          data: { email: "reader@example.org", message: "hello" },
+          query_string: "code=one-time-code&redirect=/fr/admin",
+        },
+      };
+
+      const request = beforeSend(event)?.request;
+      const serialized = JSON.stringify(request);
+
+      expect(serialized).not.toContain("eyJhbGciOi");
+      expect(serialized).not.toContain("reader@example.org");
+      expect(serialized).not.toContain("one-time-code");
+      expect(request?.url).toBe("https://ethniafrica.com/api/auth/callback");
+    });
+
+    // @req REQ-057
+    it("scrubs string values nested in extra and contexts", () => {
+      const event: Event = {
+        extra: {
+          reporter: "reader@example.org",
+          nested: { clientIp: "Seen from 198.51.100.77", count: 3 },
+          list: ["mod@example.org"],
+        },
+        contexts: {
+          submission: { contact: "someone@example.org" },
+        },
+      };
+
+      const result = beforeSend(event);
+
+      expect(result?.extra?.reporter).toBe("[EMAIL_REDACTED]");
+      expect(result?.extra?.nested).toEqual({
+        clientIp: "Seen from 198.51.100.0",
+        count: 3,
+      });
+      expect(result?.extra?.list).toEqual(["[EMAIL_REDACTED]"]);
+      expect(result?.contexts?.submission).toEqual({
+        contact: "[EMAIL_REDACTED]",
+      });
+    });
+
+    // @req REQ-057
+    it("scrubs breadcrumb data", () => {
+      const event: Event = {
+        breadcrumbs: [
+          {
+            category: "fetch",
+            data: {
+              url: "/api/v2/flags?contact=reader@example.org",
+              from: "198.51.100.77",
+            },
+          } as Breadcrumb,
+        ],
+      };
+
+      const data = beforeSend(event)?.breadcrumbs?.[0]?.data;
+
+      expect(data).toEqual({
+        url: "/api/v2/flags?contact=[EMAIL_REDACTED]",
+        from: "198.51.100.0",
+      });
     });
 
     it("should handle breadcrumbs without messages", () => {

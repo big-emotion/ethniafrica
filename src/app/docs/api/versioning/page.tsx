@@ -231,8 +231,8 @@ Link: <https://ethniafrica.com/docs/api/versioning>; rel="sunset"`}
                 Les deux premiers en-têtes sont présents sur{" "}
                 <strong>toutes</strong> les réponses de{" "}
                 <code className="font-mono">/api/v2</code>, y compris les
-                erreurs — une 401 sans clé valide et une 429 de limitation de
-                débit les portent aussi.
+                erreurs — une 401 sur une clé refusée et une 429 de limitation
+                de débit les portent aussi.
               </p>
             </div>
           </div>

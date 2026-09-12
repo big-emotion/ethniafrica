@@ -54,6 +54,25 @@ export async function hashApiKey(rawKey: string): Promise<string> {
   return `pbkdf2v1:${PBKDF2_ITERATIONS}:${saltB64}:${hash}`;
 }
 
+/**
+ * Equality that visits every character whatever differs, so the time taken
+ * says nothing about how much of a candidate hash was right — `===` returns at
+ * the first mismatch.
+ *
+ * Written out rather than taken from `node:crypto`: this module is imported by
+ * `src/middleware.ts`, which Next compiles into the edge bundle, where Node
+ * built-ins do not exist. Importing `timingSafeEqual` built cleanly and then
+ * failed every request with a 500 at runtime.
+ */
+function constantTimeEqual(a: string, b: string): boolean {
+  if (a.length !== b.length) return false;
+  let difference = 0;
+  for (let index = 0; index < a.length; index++) {
+    difference |= a.charCodeAt(index) ^ b.charCodeAt(index);
+  }
+  return difference === 0;
+}
+
 async function verifyHashedKey(
   rawKey: string,
   storedHash: string
@@ -66,7 +85,7 @@ async function verifyHashedKey(
   if (!iterations || !saltB64 || !expectedHex) return false;
   const salt = Uint8Array.from(atob(saltB64), (c) => c.charCodeAt(0));
   const computed = await pbkdf2Derive(rawKey, salt, iterations);
-  return computed === expectedHex;
+  return constantTimeEqual(computed, expectedHex);
 }
 
 /** Canonical api_keys.tier values (migration 013 CHECK constraint). */
