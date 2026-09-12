@@ -126,6 +126,11 @@ ENTREE_TRANSLATION = 28          # px at k = 1, upward
 # the honest answer is a shorter sentence rather than smaller type.
 SOUS_TITRE_PLANCHER = 30
 
+# §9 — the plate's horizontal padding around the caption. Named because the
+# flush-left video layout has to put the plate's own edge on the margin, which
+# means offsetting the text by exactly this much.
+SOUS_TITRE_PLAQUE_MARGE = 32
+
 # §9 — the subtitle band, when a reel carries burned captions.
 BANDE_SOUS_TITRE = 190
 
@@ -1345,7 +1350,7 @@ def _v_empiler(p, blocs, haut_slot, h_slot, nom_slot):
 
 
 def peindre_video(carte, deck, *, image, sous_titre=False, plan_donne=None,
-                  instant=None, duree=None):
+                  instant=None, duree=None, epreuve=None):
     """§9 bis — draw a video keyframe.
 
     The image is full frame on every keyframe: a band with a flat under it makes a
@@ -1411,9 +1416,14 @@ def peindre_video(carte, deck, *, image, sous_titre=False, plan_donne=None,
             vus += len(ligne.split())
             y += bloc.corps * bloc.interligne
 
-    _peindre_sous_titre(im, p, deck, sous_titre)
+    _peindre_sous_titre(im, p, deck, sous_titre, ferre_a_gauche=True)
     _peindre_appel(im, p, deck)
     _peindre_filigrane_video(im, p, deck)
+    # An empty list is still a proof: the lot failed, this frame's own card just
+    # has nothing to list. The band goes on regardless — it is what tells a
+    # viewer the file is not publishable, and the list is only the how-to.
+    if epreuve is not None:
+        _tamponner_epreuve(im, epreuve, deck, p)
     return im.convert("RGB")
 
 
@@ -1688,6 +1698,11 @@ def _tamponner_epreuve(im, manquantes, deck, p):
     im.alpha_composite(bande.rotate(-24, expand=True, resample=Image.BICUBIC),
                        (-W // 3, H // 3))
 
+    # The band alone, when this frame's card has nothing to answer for. A header
+    # over an empty list is furniture that says less than the band already did.
+    if not manquantes:
+        return
+
     fp = fonte("nunito", round(H * 0.016), 700)
     lignes = ["Portes non franchies :"]
     for m in manquantes:
@@ -1733,7 +1748,7 @@ def _plaque_fond(im, boite, deck, rayon=16):
     im.alpha_composite(couche)
 
 
-def _peindre_sous_titre(im, p, deck, sous_titre):
+def _peindre_sous_titre(im, p, deck, sous_titre, *, ferre_a_gauche=False):
     """§9 — the spoken line, on its plate, in the band the plan reserved.
 
     It follows the audio, so nothing here consults the cadence.
@@ -1779,15 +1794,25 @@ def _peindre_sous_titre(im, p, deck, sous_titre):
     largeur = max(_mesureur.textlength(l, font=f) for l in lignes)
     hauteur = _hauteur(lignes, t["corps"], t["interligne"])
 
-    x0 = bande.x + (bande.w - largeur) / 2
+    # §9 bis — « ferré à gauche, toujours » in video, where the carousel is free
+    # to centre. What lands on the margin is the plate, not the text inside its
+    # padding, exactly as the vision block is measured by its plate. A centred
+    # plate here put two alignments on a card that §11 forbids, and it went
+    # unmeasured for a montage because the plate is painted off-plan.
+    if ferre_a_gauche:
+        x0 = bande.x + SOUS_TITRE_PLAQUE_MARGE
+    else:
+        x0 = bande.x + (bande.w - largeur) / 2
     y0 = bande.y + (bande.h - hauteur) / 2
-    _plaque_fond(im, (x0 - 32, y0 - 22, x0 + largeur + 32, y0 + hauteur + 22), deck)
+    _plaque_fond(im, (x0 - SOUS_TITRE_PLAQUE_MARGE, y0 - 22,
+                      x0 + largeur + SOUS_TITRE_PLAQUE_MARGE, y0 + hauteur + 22), deck)
 
     d = ImageDraw.Draw(im)
     pivot = (sous_titre.get("pivot") or "").strip()
     y = y0
     for ligne in lignes:
-        x = bande.x + (bande.w - _mesureur.textlength(ligne, font=f)) / 2
+        x = (x0 if ferre_a_gauche
+             else bande.x + (bande.w - _mesureur.textlength(ligne, font=f)) / 2)
         # One pivot word per scene takes the accent. Drawn piece by piece so a
         # second occurrence cannot quietly take it too.
         if pivot and pivot in ligne:
@@ -1998,6 +2023,25 @@ class Verdict:
     # Things worth a second look that do not stop a lot. Kept apart from
     # `manquantes` so a remark can never be read as a refusal, nor the reverse.
     remarques: list = field(default_factory=list)
+
+
+_PORTE_D_UNE_CARTE = re.compile(r"^carte \d+ : ")
+
+
+def portes_de_la_carte(manquantes, carte):
+    """The gates this one card has to answer for, plus those naming no card.
+
+    A video frame shows a single card for seconds at a time, so stamping the
+    whole lot's gates on it repeats one sentence once per card and buries the
+    composition the proof exists to let somebody look at. Measured on Azande:
+    eight identical gates filled two thirds of a 1080×1920 frame.
+
+    A gate with no card prefix — the output licence, say — is about the lot and
+    belongs on every frame. The prefix is the one written by `portes` above.
+    """
+    prefixe = f"carte {carte['rang']} : "
+    return [m for m in manquantes
+            if m.startswith(prefixe) or not _PORTE_D_UNE_CARTE.match(m)]
 
 
 def portes(cartes, deck, identites=None):
