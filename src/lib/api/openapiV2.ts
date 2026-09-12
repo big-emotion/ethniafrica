@@ -12,6 +12,10 @@ const options: swaggerJsdoc.Options = {
       version: "2.3.0",
       description:
         "API publique v2 basée sur la méthodologie AFRIK. Identifiants stables (FLG_*, PPL_*, codes ISO 3166-1 alpha-3) et format de réponse standardisé avec pagination. Cette API fournit un accès structuré aux données ethnographiques et linguistiques de l'Afrique.\n\n" +
+        "## Authentication and rate limits\n\n" +
+        "No key is required. A request without an `Authorization` header is served on the **anonymous** tier, metered at 60 requests per minute per client IP.\n\n" +
+        "An API key passed as `Authorization: Bearer <key>` selects a larger quota: `public` keys 600 requests per minute, `partner` keys 6,000, `admin` keys unmetered. A key that is present but unknown, revoked or expired is refused with `401 invalid_api_key` rather than served anonymously, so a broken integration fails loudly instead of silently dropping to the anonymous quota.\n\n" +
+        "Metered responses carry `X-RateLimit-Limit`, `X-RateLimit-Remaining` and `X-RateLimit-Reset`; an exhausted quota answers `429` with `Retry-After`. The figures above are the deployment defaults. The `/api/v2/keys` self-service endpoints are the exception to all of this: they authenticate a signed-in contributor's session instead.\n\n" +
         "## Response envelope\n\n" +
         "Every `/api/v2/*` response uses the Module #0 envelope: `{ data, meta: { license, attribution, pagination?, confidence?, pinned_url?, translation? }, errors }`. License and attribution are always present (AR8); `errors` is empty on success and populated on non-2xx responses. List endpoints place their pagination values under `meta.pagination`.\n\n" +
         "## 2.3.0 — translated records (additive)\n\n" +
@@ -375,7 +379,7 @@ const options: swaggerJsdoc.Options = {
           scheme: "bearer",
           bearerFormat: "API Key",
           description:
-            "API key issued via /api/v2/keys/issue (public tier) or the admin UI (partner/admin tiers). Pass as Authorization: Bearer <key>.",
+            "Optional. API key issued via /api/v2/keys/issue (public tier) or the admin UI (partner/admin tiers). Omit it to use the anonymous tier (60 requests per minute per client IP); pass it as Authorization: Bearer <key> to use its own tier's quota. A present but invalid key is refused with 401.",
         },
         SupabaseJwtAuth: {
           type: "http",
@@ -4010,7 +4014,9 @@ const options: swaggerJsdoc.Options = {
         },
       },
     },
-    security: [{ BearerAuth: [] }],
+    // The empty requirement is OpenAPI for "or no authentication": the key
+    // selects a quota, it does not gate access.
+    security: [{ BearerAuth: [] }, {}],
   },
   apis: ["./src/app/api/v2/**/*.ts"],
 };

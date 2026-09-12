@@ -7,6 +7,57 @@ vi.mock("@/lib/supabase/admin", () => ({
 
 import { createAdminClient } from "@/lib/supabase/admin";
 
+function singleKeyRow(keyHash: string) {
+  const updateMock = vi.fn().mockReturnValue({
+    eq: vi.fn().mockResolvedValue({ error: null }),
+  });
+  let calls = 0;
+  const from = vi.fn(() => {
+    calls++;
+    if (calls > 1) return { update: updateMock };
+    return {
+      select: vi.fn().mockReturnValue({
+        eq: vi.fn().mockReturnValue({
+          eq: vi.fn().mockReturnValue({
+            limit: vi.fn().mockResolvedValue({
+              data: [
+                {
+                  id: "uuid-timing",
+                  key_hash: keyHash,
+                  revoked_at: null,
+                  expires_at: null,
+                  tier: "public",
+                },
+              ],
+              error: null,
+            }),
+          }),
+        }),
+      }),
+    };
+  });
+  (createAdminClient as ReturnType<typeof vi.fn>).mockReturnValue({ from });
+}
+
+describe("validateApiKey hash comparison", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
+  // timingSafeEqual throws on buffers of unequal length; a corrupted or
+  // truncated stored hash must read as a refusal, not as a 500.
+  // @req REQ-034
+  it("refuses a key whose stored hash has the wrong length without throwing", async () => {
+    const stored = await hashApiKey("timing-key");
+    singleKeyRow(stored.slice(0, -2));
+
+    await expect(validateApiKey("timing-key")).resolves.toEqual({
+      valid: false,
+      reason: "invalid_api_key",
+    });
+  });
+});
+
 describe("hashApiKey", () => {
   it("should return a pbkdf2v1 formatted hash string", async () => {
     const hash = await hashApiKey("test-key-123");
