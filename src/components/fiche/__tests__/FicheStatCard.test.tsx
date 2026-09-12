@@ -104,6 +104,32 @@ describe("FicheStatCard", () => {
     expect(within(card).queryByText("Donnée manquante")).toBeNull();
   });
 
+  // A people panel carries two words among its counts — a main language and a
+  // family. They ride the same card, marked so the stylesheet can set them a
+  // step smaller than a figure.
+  // @req REQ-151
+  it("marks a word value, and only a word value", () => {
+    const { rerender } = render(
+      <FicheStatCard
+        id="langue"
+        label="langue"
+        value="Oshiwambo"
+        language="fr"
+      />
+    );
+    expect(screen.getByTestId("stat-card-langue")).toHaveAttribute(
+      "data-kind",
+      "word"
+    );
+
+    rerender(
+      <FicheStatCard id="langue" label="langue" value={3} language="fr" />
+    );
+    expect(screen.getByTestId("stat-card-langue")).not.toHaveAttribute(
+      "data-kind"
+    );
+  });
+
   // @req REQ-119
   it("falls back to the app's one wording for an absent field", () => {
     render(

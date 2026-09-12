@@ -346,8 +346,8 @@
   margin: 0;
   background: var(--afh-surface);
   border: 1px solid var(--afh-border);
-  border-radius: var(--afh-radius-md);
-  padding: 14px 15px;
+  border-radius: var(--afh-radius-lg);
+  padding: 16px;
 }
 
 .afh-stat-card dd {
@@ -368,11 +368,21 @@
    came for and files the rest beside it; the family record, which leads with
    none of its four, passes neither and keeps the even dress above. */
 .afh-stat-card[data-emphasis="lead"] {
-  background: var(--afh-bg-warm);
+  background: var(--afh-surface);
 }
 
 .afh-stat-card[data-emphasis="tile"] {
-  padding: 10px 12px;
+  padding: 12px 16px;
+}
+
+/* A people panel carries two words among its counts — a main language, a
+   family. They ride the same card a step smaller than a figure, in the face a
+   name takes on this surface. */
+.afh-stat-card[data-kind="word"] .afh-stat-card-n {
+  font-family: var(--afh-font-display);
+  font-weight: 700;
+  font-size: var(--afh-text-h3);
+  line-height: 1.2;
 }
 
 .afh-stat-card[data-emphasis="tile"] .afh-stat-card-n {
@@ -1070,6 +1080,79 @@
 
 .afh-tile-value a:hover {
   text-decoration: underline;
+}
+
+/* ── Summary panel ────────────────────────────────────────────────────
+   The panel that opens both records. It takes the chapter's width: an inline
+   stylesheet once capped it at min(100% − 1rem, 44rem), which is what left
+   "En bref" narrower than every chapter under it. */
+
+.fiche-summary-brief {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.fiche-summary-brief__eyebrow {
+  margin: 0;
+  font-family: var(--afh-font-mono);
+  font-size: var(--afh-text-eyebrow);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--afh-text-soft);
+}
+
+.fiche-summary-brief h2 {
+  margin: 8px 0 16px;
+  font-family: var(--afh-font-display);
+  font-weight: 700;
+  font-size: var(--afh-text-h2);
+  line-height: 1.15;
+  color: var(--afh-text);
+}
+
+.fiche-summary-brief__counted {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+/* The lead figure takes the whole row. A tile beside it would read as its
+   equal, and the four tiles count what the atlas holds while the lead counts
+   the country or the people itself. */
+.fiche-summary-brief__counted > [data-emphasis="lead"] {
+  grid-column: 1 / -1;
+  border-left: 4px solid var(--accent);
+}
+
+/* A rule down the left rather than a line across the top. A top rule reads
+   as the end of the figures; a left rule reads as a quotation, which is what
+   this is — one sourced sentence, not a sixth count. The gold role, the same
+   one the search surface gives a sourced highlight. */
+.fiche-summary-brief__fact {
+  margin-top: 16px;
+  padding: 12px 16px;
+  border-left: 3px solid var(--afh-gold);
+  border-radius: 0 var(--afh-radius-lg) var(--afh-radius-lg) 0;
+  background: var(--afh-surface);
+}
+
+.fiche-summary-brief__fact p {
+  margin: 0 0 8px;
+  line-height: 1.5;
+}
+
+.fiche-summary-brief__tier {
+  display: inline-block;
+  padding: 4px 8px;
+  border: 1px solid var(--afh-border);
+  font-size: var(--afh-text-small);
+  color: var(--afh-text-soft);
+}
+
+.fiche-summary-brief__source {
+  margin: 8px 0 0;
+  font-size: var(--afh-text-small);
+  color: var(--afh-text-soft);
 }
 
 /* ── Callout ──────────────────────────────────────────────────────────

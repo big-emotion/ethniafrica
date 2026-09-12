@@ -16,6 +16,8 @@ const en = {
   },
   summary: {
     title: "In brief",
+    /** The country's summary prose, folded behind its first sentence. */
+    portrait: "Portrait",
     referenceYear: (year: number) => `Reference year: ${year}`,
     /**
      * Each count is a name, the reach of what is counted, and what to say
@@ -147,6 +149,7 @@ const fr: CountryCopy = {
   },
   summary: {
     title: "En bref",
+    portrait: "Portrait",
     referenceYear: (year) => `Année de référence : ${year}`,
     figures: {
       population: {

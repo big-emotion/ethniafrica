@@ -1,7 +1,15 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+
 import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import { FicheSummaryBrief } from "@/components/fiche/FicheSummaryBrief";
+
+const parchmentCss = readFileSync(
+  join(process.cwd(), "src/styles/fiche-parchment.css"),
+  "utf8"
+);
 
 describe("FicheSummaryBrief", () => {
   // @req REQ-151
@@ -72,14 +80,14 @@ describe("FicheSummaryBrief", () => {
       />
     );
 
-    expect(screen.getByText("Persons recorded for this people")).toBeVisible();
+    expect(screen.getByText("People recorded")).toBeVisible();
     expect(screen.getByText("Reference year: 2025")).toBeVisible();
-    expect(screen.getByText("Countries of documented presence")).toBeVisible();
+    expect(screen.getByText("Countries of presence")).toBeVisible();
     expect(screen.getByText("Main language")).toBeVisible();
     expect(screen.getByText("Test language")).toBeVisible();
     expect(screen.getByText("Language family")).toBeVisible();
     expect(screen.getByText("Test family")).toBeVisible();
-    expect(screen.getByText("Names borne and referenced here")).toBeVisible();
+    expect(screen.getByText("Linked names")).toBeVisible();
   });
 
   /**
@@ -122,7 +130,7 @@ describe("FicheSummaryBrief", () => {
    */
   // @req REQ-151
   it("quotes its fact against a left rule rather than under a top one", () => {
-    const { container } = render(
+    render(
       <FicheSummaryBrief
         kind="country"
         entityId="LBR"
@@ -132,8 +140,10 @@ describe("FicheSummaryBrief", () => {
       />
     );
 
-    const dress = container.querySelector("style")!.textContent;
-    const rule = dress.match(/\.fiche-summary-brief__fact \{([^}]*)\}/)![1];
+    expect(screen.getByTestId("fiche-summary-fact")).toBeVisible();
+    const rule = parchmentCss.match(
+      /\.fiche-summary-brief__fact\s*\{([^}]*)\}/
+    )![1];
     expect(rule).toMatch(/border-left:\s*3px solid var\(--afh-gold\)/);
     expect(rule).not.toMatch(/border-top/);
   });
@@ -225,8 +235,8 @@ describe("FicheSummaryBrief", () => {
   });
 
   // @req REQ-155
-  it("gives the people variant a headline figure spanning both columns, ahead of four tiles", () => {
-    const { container } = render(
+  it("leads the people panel with its population across both columns, ahead of four tiles", () => {
+    render(
       <FicheSummaryBrief
         kind="people"
         entityId="PPL_NOT_IN_BANK"
@@ -242,72 +252,42 @@ describe("FicheSummaryBrief", () => {
       />
     );
 
-    const list = container.querySelector("dl.fiche-summary-brief__figures");
-    expect(list).not.toBeNull();
-    const rows = Array.from(list!.children);
-    expect(rows).toHaveLength(5);
-
-    const [headline, ...tiles] = rows;
-    expect(headline.className).toContain(
-      "fiche-summary-brief__figure--headline"
+    // One device for both records: a people panel draws the shared stat
+    // card too, a word value riding it like a count.
+    expect(screen.getByTestId("stat-card-persons")).toHaveAttribute(
+      "data-emphasis",
+      "lead"
     );
-    expect(tiles).toHaveLength(4);
-    for (const tile of tiles) {
-      expect(tile.className).toContain("fiche-summary-brief__figure--tile");
-      expect(tile.className).not.toContain("headline");
-    }
-
-    // dl/dt/dd stay the markup: only the wrapping div gains a class.
-    expect(headline.tagName).toBe("DIV");
-    expect(headline.querySelector("dt")).not.toBeNull();
-    expect(headline.querySelector("dd")).not.toBeNull();
-
-    const stylesheet = container.querySelector("style")?.textContent ?? "";
-    expect(stylesheet).toMatch(
-      /\.fiche-summary-brief__figure--headline\s*\{[^}]*grid-column:\s*1\s*\/\s*-1/
+    expect(
+      screen
+        .getAllByTestId(/^stat-card-/)
+        .filter((card) => card.dataset.emphasis === "tile")
+    ).toHaveLength(4);
+    expect(screen.getByTestId("stat-card-mainLanguage")).toHaveAttribute(
+      "data-kind",
+      "word"
+    );
+    expect(parchmentCss).toMatch(
+      /\.fiche-summary-brief__counted\s*>\s*\[data-emphasis="lead"\]\s*\{[^}]*grid-column:\s*1\s*\/\s*-1/
     );
   });
 
   // @req REQ-155
-  it("renders the people headline and tile figures in the display face at weight 700, never 600", () => {
-    const { container } = render(
-      <FicheSummaryBrief
-        kind="people"
-        entityId="PPL_NOT_IN_BANK"
-        name="Test people"
-        language="fr"
-        figures={{
-          persons: { value: 1_250_000, referenceYear: 2025 },
-          countries: 3,
-          mainLanguage: "Test language",
-          family: "Test family",
-          names: 5,
-        }}
-      />
-    );
-
-    const stylesheet = container.querySelector("style")?.textContent ?? "";
-    const figureRules = stylesheet.match(
-      /\.fiche-summary-brief__figure--(?:headline|tile)\s+dd\s*\{[^}]*\}/g
-    );
-    expect(figureRules).not.toBeNull();
-    expect(figureRules!.length).toBeGreaterThan(0);
-    for (const rule of figureRules!) {
-      // The semantic token, not the font loader's own variable. Only
-      // `var(--afh-font-display)` is swept by displayWeightCharter, so a
-      // declaration written against `--font-fraunces` evades the weight gate
-      // instead of satisfying it — which is how this panel's own h2 sat
-      // outside that charter for the whole life of the file.
-      expect(rule).toMatch(/font-family:\s*var\(--afh-font-display\)/);
-      expect(rule).toMatch(/font-weight:\s*700/);
-      expect(rule).not.toMatch(/font-weight:\s*600/);
-      expect(rule).toMatch(/font-variant-numeric:\s*tabular-nums/);
-    }
+  it("sets a word value in the display face at weight 700, one step smaller than a count", () => {
+    const rule = parchmentCss.match(
+      /\.afh-stat-card\[data-kind="word"\]\s+\.afh-stat-card-n\s*\{([^}]*)\}/
+    )![1];
+    // The semantic token, not the font loader's own variable: only
+    // `var(--afh-font-display)` is swept by displayWeightCharter.
+    expect(rule).toMatch(/font-family:\s*var\(--afh-font-display\)/);
+    expect(rule).toMatch(/font-weight:\s*700/);
+    expect(rule).not.toMatch(/font-weight:\s*600/);
+    expect(rule).toMatch(/font-size:\s*var\(--afh-text-h3\)/);
   });
 
   // @req REQ-155
-  it("keeps the two records' devices from bleeding into one another", () => {
-    const { container } = render(
+  it("draws both records at the chapter's width, with no dress of its own", () => {
+    const { container, rerender } = render(
       <FicheSummaryBrief
         kind="country"
         entityId="ZZZ"
@@ -322,25 +302,37 @@ describe("FicheSummaryBrief", () => {
         }}
       />
     );
-
-    // This assertion used to read the country variant's definition list.
-    // It has none any more: the country record moved to the shared stat
-    // card, whose five slots are all counts. What still has to hold is that
-    // the two records do not bleed into one another — the people modifier
-    // never lands here, and the definition list is the people branch alone.
-    // The stat card is itself a definition list, so the check has to name
-    // the people branch's own list rather than any dl on the page.
+    expect(container.querySelector("style")).toBeNull();
     expect(
-      container.querySelector("dl.fiche-summary-brief__figures")
-    ).toBeNull();
-    // On an element, not in the markup string: the people rules live in
-    // the panel's stylesheet and are emitted for both kinds, so a raw
-    // innerHTML match finds them and proves nothing.
-    expect(container.querySelector('[class*="--people"]')).toBeNull();
+      container.querySelectorAll(".fiche-summary-brief__counted > *")
+    ).toHaveLength(5);
 
-    const cards = container.querySelectorAll(
-      ".fiche-summary-brief__counted > *"
+    rerender(
+      <FicheSummaryBrief
+        kind="people"
+        entityId="PPL_NOT_IN_BANK"
+        name="Test people"
+        language="fr"
+        figures={{
+          persons: { value: 1_250_000, referenceYear: 2025 },
+          countries: 3,
+          mainLanguage: "Test language",
+          family: "Test family",
+          names: 5,
+        }}
+      />
     );
-    expect(cards).toHaveLength(5);
+    expect(container.querySelector("style")).toBeNull();
+    expect(
+      container.querySelectorAll(".fiche-summary-brief__counted > *")
+    ).toHaveLength(5);
+
+    // The panel used to cap itself at min(100% - 1rem, 44rem) and sit
+    // narrower than the chapter it belongs to.
+    const panel = parchmentCss.match(
+      /\n\.fiche-summary-brief\s*\{([^}]*)\}/
+    )![1];
+    expect(panel).not.toMatch(/max-width/);
+    expect(panel).not.toMatch(/(^|[\s;])width:/);
   });
 });

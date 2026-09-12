@@ -14,6 +14,8 @@ import {
 import { FicheChronologyChapter } from "@/components/fiche/FicheChronologyChapter";
 import { countryChronology } from "@/lib/fiche/chronology";
 import { FicheAmendBand } from "@/components/fiche/FicheAmendBand";
+import { FicheTile } from "@/components/fiche/FicheTile";
+import { splitLeadSentence } from "@/lib/fiche/prose";
 import { chapterAnchorId } from "@/lib/ficheChapters";
 import type { ProvenanceState } from "@/lib/fieldProvenance";
 import type { CountryPageData } from "@/lib/countryDataTransformer";
@@ -103,7 +105,17 @@ export function CountryParchment({
           language={language}
           figures={figures}
         />
-        {country.summary?.trim() ? <p>{country.summary}</p> : null}
+        {country.summary?.trim() ? (
+          <FicheTile
+            language={language}
+            title={copy.summary.portrait}
+            closedFact={splitLeadSentence(country.summary).lead}
+            detailText={country.summary}
+            bodyRestatesPreview
+          >
+            <p className="afh-tile-prose">{country.summary.trim()}</p>
+          </FicheTile>
+        ) : null}
       </section>
 
       <Section title={copy.sections.peoples}>

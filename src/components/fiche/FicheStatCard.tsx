@@ -94,6 +94,7 @@ export function FicheStatCard({
       data-testid={`stat-card-${id}`}
       data-provenance={provenance}
       data-emphasis={emphasis}
+      data-kind={typeof value === "string" ? "word" : undefined}
       data-missing={missing || undefined}
     >
       <dt className="afh-stat-card-k">{label}</dt>

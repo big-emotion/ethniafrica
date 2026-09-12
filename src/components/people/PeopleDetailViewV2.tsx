@@ -226,7 +226,8 @@ export function PeopleDetailViewV2({
                   }
                 : null,
             countries: data.countries.distributions.length,
-            mainLanguage: data.language.mainLanguage,
+            // The summary names the language; its gloss stays in the chapter.
+            mainLanguage: data.language.mainLanguage?.split(/\s+[—–]\s+/u)[0],
             family: resolvedFamilyName ?? data.hero.languageFamilyName,
             names: borneNames?.length ? borneNames.length : null,
           }}

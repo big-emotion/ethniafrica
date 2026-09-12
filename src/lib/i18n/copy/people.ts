@@ -3,12 +3,12 @@ import type { Language } from "@/types/shared";
 const en = {
   summary: {
     title: "In brief",
-    persons: "Persons recorded for this people",
+    persons: "People recorded",
     referenceYear: (year: number) => `Reference year: ${year}`,
-    countriesOfPresence: "Countries of documented presence",
+    countriesOfPresence: "Countries of presence",
     mainLanguage: "Main language",
     linguisticFamily: "Language family",
-    namesReferencedHere: "Names borne and referenced here",
+    namesReferencedHere: "Linked names",
     missingData: "Not recorded in the atlas",
     factTier: "Source tier",
     populationDisagreement: (declared: string, summed: string) =>
@@ -168,12 +168,12 @@ type PeopleCopy = typeof en;
 const fr: PeopleCopy = {
   summary: {
     title: "En bref",
-    persons: "Personnes déclarées pour ce peuple",
+    persons: "Personnes recensées",
     referenceYear: (year) => `Année de référence : ${year}`,
-    countriesOfPresence: "Pays de présence documentée",
+    countriesOfPresence: "Pays de présence",
     mainLanguage: "Langue principale",
     linguisticFamily: "Famille linguistique",
-    namesReferencedHere: "Noms portés référencés ici",
+    namesReferencedHere: "Noms rattachés",
     missingData: "Non renseigné dans l’atlas",
     factTier: "Niveau de source",
     populationDisagreement: (declared, summed) =>

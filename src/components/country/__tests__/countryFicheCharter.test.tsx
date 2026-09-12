@@ -509,6 +509,28 @@ describe("country fiche charter", () => {
     );
   });
 
+  // The country's summary is prose, and prose on a record folds behind its
+  // first sentence like every other field (operator ruling, 2026-09-12).
+  // @req REQ-151
+  it("folds the country portrait behind its first sentence in En bref", () => {
+    const { container } = renderParchment(
+      countryFixture({
+        summary:
+          "Le Nigéria porte le nom du fleuve Niger. Il compte de nombreux peuples.",
+      })
+    );
+    const brief = container.querySelector('[data-fiche-section="En bref"]')!;
+    const tile = Array.from(brief.querySelectorAll("[data-fiche-tile]")).find(
+      (node) =>
+        node.querySelector(".afh-tile-label")?.textContent === "Portrait"
+    );
+    expect(tile?.tagName).toBe("DETAILS");
+    expect(tile?.querySelector("[data-closed-fact]")).toHaveTextContent(
+      "Le Nigéria porte le nom du fleuve Niger."
+    );
+    expect(tile).toHaveTextContent("Il compte de nombreux peuples.");
+  });
+
   // @req REQ-092
   it("gives each source its own standing, and never the retired Tier scale", () => {
     const { container } = renderParchment(countryFixture());
