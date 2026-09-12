@@ -481,6 +481,41 @@ def test_an_internal_note_blocks():
     assert any("interne" in m.lower() or "note" in m.lower() for m in verdict.manquantes)
 
 
+def test_gate_three_reads_every_printed_field_not_only_the_last():
+    """`source` was the only field ever inspected, and nothing said so.
+
+    The loop assigned the field and the two checks sat outside it, so a note left
+    in a title went out printed. The deck this was found on carried one in `corps`.
+    """
+    for champ in ("titre", "precision", "punchline", "corps"):
+        verdict = gab.portes([carte(**{champ: "à confirmer"})], DECK)
+        assert not verdict.passe, f"une note dans `{champ}` doit bloquer"
+        assert any(champ in m or "note" in m.lower() for m in verdict.manquantes)
+
+
+def test_a_printed_field_that_is_not_text_blocks_and_names_itself():
+    """A two-term title survived the migration as a list and the painter crashed.
+
+    The gate has to name the field: « le titre porte une liste » is actionable,
+    a stack trace inside the composition is not.
+    """
+    verdict = gab.portes([carte(titre=["Lesotho", "Botswana"])], DECK)
+    assert not verdict.passe
+    assert any("titre" in m for m in verdict.manquantes)
+
+
+def test_prose_that_merely_contains_the_words_is_not_an_internal_note():
+    """« sert encore à nommer tous les peuples » is copy, not a note.
+
+    The marker is unanchored, so the first version of the wider gate refused a
+    published sentence. A note is the field, or it trails it — never its middle.
+    """
+    verdict = gab.portes(
+        [carte(corps="Un seul mot sert encore à nommer tous les peuples "
+                     "des forêts d'Afrique.")], DECK)
+    assert verdict.passe, verdict.manquantes
+
+
 def test_a_clean_lot_passes_and_computes_its_output_licence():
     verdict = gab.portes([carte()], DECK)
     assert verdict.passe, verdict.manquantes
