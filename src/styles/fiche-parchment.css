@@ -291,15 +291,53 @@
   gap: 11px;
 }
 
+/* A definition list, so the pair keeps the left edge a phone would otherwise
+   take from it — see the markup note in FicheStatCard. The browser's own
+   margins on dl and dd are reset here rather than fought with elsewhere. */
 .afh-stat-card {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
   background: var(--afh-surface);
   border: 1px solid var(--afh-border);
   border-radius: var(--afh-radius-md);
   padding: 14px 15px;
 }
 
+.afh-stat-card dd {
+  margin: 0;
+}
+
+.afh-stat-card-mark {
+  margin-top: 8px;
+}
+
+/* The provenance marker says nothing about a field the fiche declares. Its
+   silence should not still cost the card a row of margin. */
+.afh-stat-card-mark:empty {
+  display: none;
+}
+
+/* Two weights of the same card. A record leads with the one figure a reader
+   came for and files the rest beside it; the family record, which leads with
+   none of its four, passes neither and keeps the even dress above. */
+.afh-stat-card[data-emphasis="lead"] {
+  background: var(--afh-bg-warm);
+}
+
+.afh-stat-card[data-emphasis="tile"] {
+  padding: 10px 12px;
+}
+
+.afh-stat-card[data-emphasis="tile"] .afh-stat-card-n {
+  font-size: var(--afh-text-h3);
+  line-height: 1.2;
+}
+
+/* Written after its name, painted before it: the figure is what the eye
+   comes for, the name is what a screen reader needs first. */
 .afh-stat-card-n {
-  display: block;
+  order: -1;
   font-family: var(--afh-font-mono);
   font-size: var(--afh-figure-lead);
   font-weight: 700;
@@ -309,7 +347,6 @@
 }
 
 .afh-stat-card-k {
-  display: block;
   margin-top: 5px;
   font-size: var(--afh-text-caption);
   letter-spacing: 0.1em;

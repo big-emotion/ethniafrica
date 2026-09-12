@@ -29,7 +29,7 @@ import type { Language } from "@/types/shared";
  */
 
 /** The stand-in for a count nothing fills, when the caller names none. */
-export const ABSENT_FIGURE = "—";
+const ABSENT_FIGURE = "—";
 
 interface FicheStatCardProps {
   /** Suffix of the card's test id, and its identity within a row of cards. */
@@ -45,6 +45,12 @@ interface FicheStatCardProps {
    * absent when it is absent. Supplying it replaces the generic marker.
    */
   scope?: string;
+  /**
+   * How much of the card's row this figure is owed. A record that leads with
+   * one figure marks it `lead` and files the others as `tile`; a surface
+   * where all the figures weigh the same passes neither.
+   */
+  emphasis?: "lead" | "tile";
   language: Language;
 }
 
@@ -64,41 +70,50 @@ export function FicheStatCard({
   value,
   emptyValue = ABSENT_FIGURE,
   scope,
+  emphasis,
   language,
 }: FicheStatCardProps) {
   const provenance = classifyFieldProvenance(value).state;
   const missing = provenance === "missing";
 
   return (
-    <div
+    /* A label and its value ride in a definition list because that is what
+       they are, and because below the tablet floor `mobile-text.css` centres
+       everything the atlas renders except `p`, `blockquote`, `dt` and `dd`.
+       Carried in spans, a figure and its name drifted to the middle of their
+       own card. The fix belongs in the markup: a stylesheet re-declaring
+       `text-align` on this surface is refused by `mobileTextCentring`, and
+       the sweep exists because one band exempting itself is how the home
+       stopped agreeing with the rest of the site.
+
+       The name is written first and painted second. A reader hears "peuples,
+       three" rather than "three, peuples", while the eye still meets the
+       figure first — `.afh-stat-card-n` is pulled above its `dt` in CSS. */
+    <dl
       className="afh-stat-card"
       data-testid={`stat-card-${id}`}
       data-provenance={provenance}
+      data-emphasis={emphasis}
       data-missing={missing || undefined}
     >
-      <span className="afh-stat-card-n">
+      <dt className="afh-stat-card-k">{label}</dt>
+      <dd className="afh-stat-card-n">
         {missing ? emptyValue : figureText(value, language)}
-      </span>
-      <span className="afh-stat-card-k">{label}</span>
+      </dd>
       {/* A surface that says in its own words what its count covers has
           already said what the marker would say; printing both would state
           one absence twice, in two vocabularies. Where no surface speaks, the
           app's single wording for an absent field does — it lives in
           FieldProvenanceMarker and nowhere else. */}
       {scope ? (
-        <span
-          className="afh-stat-card-scope"
-          data-caveat={missing || undefined}
-        >
+        <dd className="afh-stat-card-scope" data-caveat={missing || undefined}>
           {scope}
-        </span>
+        </dd>
       ) : (
-        <FieldProvenanceMarker
-          state={provenance}
-          language={language}
-          className="mt-2"
-        />
+        <dd className="afh-stat-card-mark">
+          <FieldProvenanceMarker state={provenance} language={language} />
+        </dd>
       )}
-    </div>
+    </dl>
   );
 }

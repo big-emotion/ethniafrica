@@ -34,16 +34,21 @@ describe("FicheSummaryBrief", () => {
     expect(within(panel).getByText("noms")).toBeVisible();
     expect(within(panel).getByText("23")).toBeVisible();
 
-    // Population is the one figure a reader came for; the other four are the
-    // reach of what the atlas holds. One lead plate, four tiles.
-    expect(within(panel).getByTestId("fiche-summary-lead")).toBeVisible();
-    expect(within(panel).getAllByTestId(/^fiche-summary-tile-/)).toHaveLength(
-      4
+    // Population is the one figure a reader arrives wanting; the other four
+    // are the reach of what the atlas holds. One lead plate, four tiles.
+    expect(within(panel).getByTestId("stat-card-population")).toHaveAttribute(
+      "data-emphasis",
+      "lead"
     );
+    expect(
+      within(panel)
+        .getAllByTestId(/^stat-card-/)
+        .filter((card) => card.dataset.emphasis === "tile")
+    ).toHaveLength(4);
 
     // The scope the label used to carry now sits under the count.
     expect(
-      within(within(panel).getByTestId("fiche-summary-tile-peoples")).getByText(
+      within(within(panel).getByTestId("stat-card-peoples")).getByText(
         "documentés ici"
       )
     ).toBeVisible();

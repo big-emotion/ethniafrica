@@ -16,6 +16,26 @@ describe("FicheStatCard", () => {
     expect(card).toHaveAttribute("data-provenance", "declared");
   });
 
+  /**
+   * Below the tablet floor the atlas centres everything except `p`,
+   * `blockquote`, `dt` and `dd`, and no surface may exempt itself in CSS —
+   * `mobileTextCentring` sweeps for that. So the markup is what holds the
+   * figure and its name against the left edge, and a refactor that swapped
+   * this pair back to spans would move the whole card to the middle with
+   * nothing turning red. This is that red.
+   */
+  // @req REQ-091
+  it("carries the pair in a definition list, which is what keeps it left", () => {
+    render(
+      <FicheStatCard id="peuples" label="peuples" value={3} language="fr" />
+    );
+
+    const card = screen.getByTestId("stat-card-peuples");
+    expect(card.tagName).toBe("DL");
+    expect(within(card).getByText("peuples").tagName).toBe("DT");
+    expect(within(card).getByText("3").tagName).toBe("DD");
+  });
+
   // A list and a record are both counted by their size: the card asks how
   // many, and a caller should not have to compute that twice.
   // @req REQ-151
