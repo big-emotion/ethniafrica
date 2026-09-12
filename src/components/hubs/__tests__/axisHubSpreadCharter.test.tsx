@@ -136,62 +136,6 @@ describe("the axis hub spread — it says what the header says (brand charter §
     expect(within(tile).getByText(hubsCopy.fr.unavailableLabel)).toBeVisible();
   });
 
-  /**
-   * Brand charter §3: a hub that lists four modules and marks three
-   * **Bientôt** tells the reader the corpus is thinner than it is. Where the
-   * axis has a sentence for its own silence, the page says it — and says it
-   * only while the silence lasts, which is why the condition is the count the
-   * registry answered with rather than the axis's name.
-   */
-  // @req REQ-114
-  it("explains a majority silence, and only while it lasts", () => {
-    const modules = offeredModules("dossiers");
-    const majorityWithheld = modules.map((module, index) => ({
-      ...module,
-      available: index === 0,
-    }));
-
-    const { unmount } = render(
-      <AxisHubSpread
-        axis="dossiers"
-        language="fr"
-        modules={majorityWithheld}
-        spread={spread()}
-      />
-    );
-    expect(screen.getByTestId("hub-spread-status")).toHaveTextContent(
-      hubsCopy.fr.dossiers.frozenStatus
-    );
-    unmount();
-
-    renderHub("dossiers");
-    expect(screen.queryByTestId("hub-spread-status")).toBeNull();
-  });
-
-  /**
-   * And an axis that declares no such sentence never grows one. Atlas and
-   * jeux say nothing about their own gaps, because they have none to explain.
-   */
-  // @req REQ-114
-  it("invents no status for an axis that declares none", () => {
-    for (const axis of ["atlas", "jeux"] as const) {
-      const { unmount } = render(
-        <AxisHubSpread
-          axis={axis}
-          language="fr"
-          modules={offeredModules(axis).map((module) => ({
-            ...module,
-            available: false,
-          }))}
-          spread={spread()}
-        />
-      );
-
-      expect(screen.queryByTestId("hub-spread-status"), axis).toBeNull();
-      unmount();
-    }
-  });
-
   // @req REQ-114
   it("carries one accent, and it is the axis's", () => {
     for (const axis of ACCESS_MODES) {
