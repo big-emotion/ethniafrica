@@ -1,3 +1,4 @@
+import { CORPUS_AGGREGATE_REVALIDATE_SECONDS } from "@/api/v2/services/corpusCache";
 import { unstable_cache } from "next/cache";
 
 import { getAfrikLanguageFamilyRoster } from "@/lib/supabase/queries/afrik/languageFamilies";
@@ -41,5 +42,5 @@ export const getLanguageFamilyPresence = unstable_cache(
     }));
   },
   ["language-family-presence"],
-  { revalidate: 3600 }
+  { revalidate: CORPUS_AGGREGATE_REVALIDATE_SECONDS }
 );

@@ -99,39 +99,38 @@
       {
         "title": "Encyclopaedia Britannica — Griqua",
         "url": "https://www.britannica.com/topic/Griqua",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       },
       {
         "title": "Encyclopaedia Britannica — Baster",
         "url": "https://www.britannica.com/topic/Baster",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       },
       {
         "title": "IWGIA — The Indigenous World 2024: South Africa",
         "url": "https://iwgia.org/en/south-africa/5358-iw-2024-southafrica.html",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"iwgia\"."
+        "tier": "official"
       },
       {
         "title": "South African History Online — Rehoboth",
         "url": "https://sahistory.org.za/place/rehoboth",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for sahistory.org.za."
+        "tier": "referenced"
       },
       {
         "title": "Namibia Safari Tours — The Rehoboth Basters and their culture",
         "url": "https://namibiasafaritours.com/the-rehoboth-basters-and-their-culture/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers namibiasafaritours.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "UCT Humanities — Coloured is not an Identity",
         "url": "https://humanities.uct.ac.za/apc/coloured-not-identity-learning-speak-my-ancestors-tongue-again",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for humanities.uct.ac.za."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

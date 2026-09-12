@@ -105,33 +105,33 @@
       {
         "title": "SIL Ethnologue — Akan language (aka)",
         "url": "https://www.ethnologue.com/language/aka/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "TOTA World — Akan Geography",
         "url": "https://www.tota.world/article/803/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers tota.world; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "CIA World Factbook — Ghana",
         "url": "https://www.cia.gov/the-world-factbook/countries/ghana/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+        "tier": "official"
       },
       {
         "title": "CIA World Factbook — Cote d'Ivoire",
         "url": "https://www.cia.gov/the-world-factbook/countries/cote-divoire/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+        "tier": "official"
       },
       {
         "title": "African American Registry — The Akan African Community",
         "url": "https://aaregistry.org/story/the-akan-african-community-a-story/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for aaregistry.org."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

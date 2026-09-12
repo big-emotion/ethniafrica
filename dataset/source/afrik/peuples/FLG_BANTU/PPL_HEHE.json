@@ -94,45 +94,43 @@
       {
         "title": "Britannica - Hehe",
         "url": "https://www.britannica.com/topic/Hehe",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       },
       {
         "title": "Glottolog - Hehe",
         "url": "https://glottolog.org/resource/languoid/id/hehe1240",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "Omniglot - Hehe language",
         "url": "https://www.omniglot.com/writing/hehe.htm",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for omniglot.com."
+        "tier": "unverified"
       },
       {
         "title": "Mkwawa Memorial",
         "url": "https://mkwawa.com/chiefmkwawa",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers mkwawa.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "101 Last Tribes - Hehe people",
         "url": "https://www.101lasttribes.com/tribes/hehe.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       },
       {
         "title": "Joshua Project - Hehe in Tanzania",
         "url": "https://joshuaproject.net/people_groups/12078",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "African Union Library - Mkwawa and the Hehe Wars",
         "url": "https://library.au.int/mkwawa-and-hehe-wars-2",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"african-union\" (au.int), matched as a parent of library.au.int."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

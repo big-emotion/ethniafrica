@@ -71,27 +71,28 @@
       {
         "title": "K'abeena in Ethiopia – Joshua Project, 2025",
         "url": "https://joshuaproject.net/people_groups/print/21539/ET",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Kebena of Ethiopia – Horn of Africa Evangelical Mission, 2019",
         "url": "https://hornofafrica.org/wp-content/uploads/2019/12/Kabena.pdf",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for hornofafrica.org."
+        "tier": "unverified"
       },
       {
         "title": "K'abeena phonology – Macrolinguistics and Microlinguistics, Yibekal Aemero, 2024",
         "url": "https://mami.nyc/index.php/journal/article/view/31",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers mami.nyc; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Cushitic Language Groups – Ethiopia Country Studies / Library of Congress",
         "url": "https://countrystudies.us/ethiopia/50.htm",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for countrystudies.us."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

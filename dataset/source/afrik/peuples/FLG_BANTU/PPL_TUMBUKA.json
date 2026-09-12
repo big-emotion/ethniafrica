@@ -113,27 +113,28 @@
       {
         "title": "UNESCO — Vimbuza healing dance (inscrit 2008)",
         "url": "https://ich.unesco.org/en/RL/vimbuza-healing-dance-00158",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of ich.unesco.org."
+        "tier": "official"
       },
       {
         "title": "SIL Ethnologue — Tumbuka (tum)",
         "url": "https://www.ethnologue.com/language/tum/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Qiraat Africa — The Tumbuka People of Africa (2025)",
         "url": "https://qiraatafrican.com/en/15125/the-tumbuka-people-of-africa/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
+        "tier": "unverified"
       },
       {
         "title": "Encyclopaedia Britannica — Tumbuka",
         "url": "https://www.britannica.com/topic/Tumbuka",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

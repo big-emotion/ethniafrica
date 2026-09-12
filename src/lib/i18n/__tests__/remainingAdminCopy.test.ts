@@ -13,8 +13,6 @@ describe("remaining bilingual administration copy", () => {
     expect(adminCopy.fr.signIn.submit).toBe("Recevoir un lien de connexion");
     expect(adminCopy.en.apiKeys.createTitle).toBe("Create a key");
     expect(adminCopy.fr.apiKeys.createTitle).toBe("Créer une clé");
-    expect(adminCopy.en.revision.confirmationWord).toBe("PUBLISH");
-    expect(adminCopy.fr.revision.confirmationWord).toBe("PUBLIER");
   });
 
   // @req REQ-140

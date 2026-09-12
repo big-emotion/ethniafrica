@@ -75,33 +75,33 @@
       {
         "title": "Dorze in Ethiopia – Joshua Project, 2025",
         "url": "https://joshuaproject.net/people_groups/11614",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Dorze language (DOZ) – Ethnologue / SIL International, 2025",
         "url": "https://www.ethnologue.com/language/doz/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Glottolog : Dorze (dorz1235) – Hammarstrom et al., 2025",
         "url": "https://glottolog.org/resource/languoid/id/dorz1235",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "Experience Traditional Dorze Village Life in Ethiopia – Hoblets On The Go, 2025",
         "url": "https://hobletsonthego.com/where-weve-been/africa/ethiopia/dorze-village/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers hobletsonthego.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "A Tour of The Omo Valley: Meet Southern Ethiopia's Cotton Weavers – Absolute Ethiopia Tours, 2025",
         "url": "https://absoluteethiopia.com/a-tour-of-the-omo-valley-meet-southern-ethiopias-cotton-weavers/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for absoluteethiopia.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: none of the 776 people records has an English sidecar, so translating this one alone would make it the atlas's only English people record. It follows the people corpus's first translation pass."
+    }
   }
 }

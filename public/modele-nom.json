@@ -25,7 +25,7 @@
           "year": 0,
           "url": "<URL résolvable>",
           "tier": "official | referenced | unverified",
-          "notes": "<Provenance du tier. Si la source a été atteinte via Wikipédia : les versions linguistiques croisées, pour que la chaîne reste auditable.>"
+          "notes": "<Faits de provenance publiés tels quels au lecteur : éditeur, édition, institution, ce qui a été lu ou recoupé — jamais la raison pour laquelle le tier a été attribué. Si la source a été atteinte via Wikipédia : les versions linguistiques croisées, pour que la chaîne reste auditable.>"
         }
       ]
     }

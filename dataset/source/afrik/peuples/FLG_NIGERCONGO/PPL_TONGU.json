@@ -73,33 +73,33 @@
       {
         "title": "Ewe Association of Georgia – History of the Ewes",
         "url": "https://ewaga.org/about-us/history-of-the-ewes/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers ewaga.org; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "GhanaWeb – Volta Region: Tongu chiefs create a unitary traditional state, 2024",
         "url": "https://www.ghanaweb.com/GhanaHomePage/NewsArchive/Volta-Region-Tongu-chiefs-create-a-unitary-traditional-state-1947608",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for ghanaweb.com."
+        "tier": "referenced"
       },
       {
         "title": "Ghana Statistical Service – 2021 Population and Housing Census",
         "url": "https://census2021.statsghana.gov.gh/",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for census2021.statsghana.gov.gh."
+        "tier": "official"
       },
       {
         "title": "CityPopulation – North Tongu District",
         "url": "https://www.citypopulation.de/en/ghana/admin/volta/0412__north_tongu/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for citypopulation.de."
+        "tier": "referenced"
       },
       {
         "title": "Localizely – Ewe language code",
         "url": "https://localizely.com/language-code/ewe/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for localizely.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

@@ -74,21 +74,23 @@
       {
         "title": "Joshua Project – Logba in Ghana",
         "url": "https://joshuaproject.net/people_groups/13083",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "International Development Publications – Serendipitous Socio-Cultural Dynamics of Logba Traditional Musical Ensembles in Ghana, 2015",
         "url": "https://www.idpublications.org/wp-content/uploads/2014/12/SERENDIPITOUS-SOCIO-CULTURAL-DYNAMICS-OF-LOGBA-TRADITIONAL-MUSICAL-ENSEMBLES-IN-GHANA.pdf",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers idpublications.org; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Rosetta Panglossia – Logba Language lgq",
         "url": "https://rosettapanglossia.longnow.org/index.php?title=Logba_Language_%28lgq%29",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for rosettapanglossia.longnow.org."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

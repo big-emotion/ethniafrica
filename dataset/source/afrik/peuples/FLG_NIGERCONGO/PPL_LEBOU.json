@@ -86,21 +86,23 @@
       {
         "title": "Senegal Shuttle — Ndeup: exploring Lebou culture",
         "url": "https://www.senegal-shuttle.com/ndeup-in-senegal/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers senegal-shuttle.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "NBC News — Senegal tribe swaps fishing boats for surfboards",
         "url": "https://www.nbcnews.com/id/wbna9503277",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers nbcnews.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Glottolog — Lebu Wolof",
         "url": "https://glottolog.org/resource/languoid/id/lebu1234",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

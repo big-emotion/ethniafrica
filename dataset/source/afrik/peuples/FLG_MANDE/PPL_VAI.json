@@ -91,45 +91,43 @@
       {
         "title": "Joshua Project — Vai in Liberia",
         "url": "https://www.joshuaproject.net/people-profile.php?peo3=15762&rog3=LI",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Joshua Project — Vai in Sierra Leone",
         "url": "https://joshuaproject.net/people_groups/15762/SL",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Omniglot — Vai Syllabary",
         "url": "https://www.omniglot.com/writing/vaisyllabary.htm",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for omniglot.com."
+        "tier": "unverified"
       },
       {
         "title": "SIL Ethnologue — Vai language (vai)",
         "url": "https://www.ethnologue.com/language/vai/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Rosetta Panglossia — Vai Language (vai)",
         "url": "https://rosettapanglossia.longnow.org/index.php?title=Vai_Language_%28vai%29",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for rosettapanglossia.longnow.org."
+        "tier": "referenced"
       },
       {
         "title": "Massaquoi, Momolu. Vai History and Oral Traditions. Liberia National Archives",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Kelly, Piers. The Vai script — origin and development. Annual Review of Linguistics, 2018",
         "url": "https://www.annualreviews.org/doi/abs/10.1146/annurev-linguistics-011718-012348",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for annualreviews.org."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

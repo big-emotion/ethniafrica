@@ -7,7 +7,6 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import ErrorPage from "@/app/[lang]/error";
 import NotFound from "@/app/[lang]/not-found";
 import ForbiddenPageComponent from "@/app/forbidden/page-component";
-import { LoadingState } from "@/components/ui/LoadingState";
 import ApiDocsLayout from "@/app/docs/api/layout";
 import { EmptyState } from "@/components/ui/EmptyState";
 
@@ -221,36 +220,14 @@ describe("Empty state (EmptyState)", () => {
   });
 });
 
-describe("Loading state (LoadingState — used as a Suspense fallback)", () => {
+describe("Loading state", () => {
   // REQ-046 forbids a route-level src/app/[lang]/loading.tsx (it would wrap
-  // every localized route in one global Suspense boundary). LoadingState is
-  // the charter-token equivalent, passed explicitly to <Suspense fallback>.
+  // every localized route in one global Suspense boundary).
   // @req REQ-099
   it("does not reintroduce a global [lang] loading boundary", () => {
     expect(
       existsSync(resolve(process.cwd(), "src/app/[lang]/loading.tsx"))
     ).toBe(false);
-  });
-
-  // @req REQ-099
-  it("renders token-based skeletons, not a medallion", () => {
-    const { container } = render(<LoadingState />);
-    expect(
-      container.querySelectorAll('[data-testid="state-medallion"]')
-    ).toHaveLength(0);
-    const skeletons = container.querySelectorAll(".afh-shimmer");
-    expect(skeletons.length).toBeGreaterThan(0);
-    skeletons.forEach((el) => {
-      expect(el.className).toContain("bg-afh-bg-warm");
-    });
-  });
-
-  // @req REQ-099
-  it("reserves a fixed-height shell to avoid layout shift", () => {
-    const { container } = render(<LoadingState />);
-    const shell = container.querySelector('[data-testid="loading-state"]');
-    expect(shell).toBeTruthy();
-    expect(shell!.className).toMatch(/min-h-\[60vh\]/);
   });
 });
 

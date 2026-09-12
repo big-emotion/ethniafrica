@@ -98,51 +98,48 @@
       {
         "title": "Ethnologue — Shilluk (SHK)",
         "url": "https://www.ethnologue.com/language/shk/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "ASJP Database — Shilluk",
         "url": "https://asjp.clld.org/languages/SHILLUK_2",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for asjp.clld.org."
+        "tier": "referenced"
       },
       {
         "title": "Graeber, David. The divine kingship of the Shilluk: On violence, utopia, and the human condition. HAU: Journal of Ethnographic Theory, 2011",
         "url": "https://www.journals.uchicago.edu/doi/full/10.14318/hau1.1.002",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers journals.uchicago.edu; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Seligman, C.G. The Shilluk of the Upper Nile. 1911. Études anthropologiques fondatrices",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Frazer, James George. The Golden Bough. 3e édition, 1922 (analyse de la royauté sacrée shilluk)",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "eHRAF World Cultures — Shilluk",
         "url": "https://ehrafworldcultures.yale.edu/cultures/fj23/summary",
-        "tier": "referenced",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ehraf\"."
+        "tier": "referenced"
       },
       {
         "title": "CIA World Factbook — South Sudan",
         "url": "https://www.cia.gov/the-world-factbook/countries/south-sudan/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+        "tier": "official"
       },
       {
         "title": "UN Peacekeeping — Fashoda history",
         "url": "https://peacekeeping.un.org/en/sign-of-peace-past-british-and-french-ambassadors-visit-historical-town-where-peace-deal-was-reached",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of peacekeeping.un.org."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

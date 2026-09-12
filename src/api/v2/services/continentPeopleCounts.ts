@@ -1,3 +1,4 @@
+import { CORPUS_AGGREGATE_REVALIDATE_SECONDS } from "@/api/v2/services/corpusCache";
 import { unstable_cache } from "next/cache";
 
 import { getPeopleCountsByCountry } from "@/lib/supabase/queries/afrik/peopleCountryCounts";
@@ -18,5 +19,5 @@ export const getContinentPeopleCounts = unstable_cache(
   async (): Promise<Record<CountryId, number>> =>
     Object.fromEntries(await getPeopleCountsByCountry()),
   ["continent-people-counts"],
-  { revalidate: 3600 }
+  { revalidate: CORPUS_AGGREGATE_REVALIDATE_SECONDS }
 );

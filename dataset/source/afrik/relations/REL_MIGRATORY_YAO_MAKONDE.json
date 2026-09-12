@@ -28,9 +28,14 @@
       "title": "Kupilikula: Governance and the Invisible Realm in Mozambique",
       "author": "Harry G. West",
       "year": 2005,
-      "url": "https://press.uchicago.edu/ucp/books/book/chicago/K/bo3615616.html",
+      "url": "https://archive.org/details/kupilikulagovern0000west",
       "tier": "referenced",
-      "notes": "Vérifié via Wikipedia EN « Makonde people », qui cite directement West (2005). L'ouvrage documente l'absorption par les communautés makonde du plateau de Mueda de réfugiés d'origine yao et makua fuyant les violences de la traite. Éditeur : University of Chicago Press, 2005 ; page confirmée accessible."
+      "notes": "Vérifié via Wikipedia EN « Makonde people », qui cite directement West (2005). L'ouvrage documente l'absorption par les communautés makonde du plateau de Mueda de réfugiés d'origine yao et makua fuyant les violences de la traite. Éditeur : University of Chicago Press, 2005 (ISBN 978-0-226-89405-8) ; notice de l'exemplaire conservé par Internet Archive."
     }
-  ]
+  ],
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: none of the 12 relation records has an English sidecar, so translating this one alone would make it the atlas's only English relation record. It follows the relation corpus's first translation pass."
+    }
+  }
 }

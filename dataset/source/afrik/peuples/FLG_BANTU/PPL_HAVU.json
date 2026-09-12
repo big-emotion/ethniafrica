@@ -89,27 +89,28 @@
       {
         "title": "Joshua Project – Havu in Congo DRC",
         "url": "https://joshuaproject.net/people_groups/12071",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "SIL Ethnologue – Havu (hav)",
         "url": "https://www.ethnologue.com/language/hav/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Newbury, David S. – Kings and Clans: Ijwi Island and the Lake Kivu Rift, 1780-1840. Madison: University of Wisconsin Press, 1991",
         "url": "https://archive.org/details/kingsclansijwiis0000newb",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for archive.org."
+        "tier": "referenced"
       },
       {
         "title": "PeopleGroups.org – Havu (hav)",
         "url": "https://peoplegroups.org/language/hav/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

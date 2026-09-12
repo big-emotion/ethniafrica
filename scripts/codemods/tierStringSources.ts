@@ -13,6 +13,13 @@
  * verbatim in `notes` whenever the cleaned title alone would not carry all of
  * it back.
  *
+ * `notes` carries nothing else. It is published to the reader verbatim, and an
+ * earlier version wrote its reasoning there — "Tier resolved from the domain
+ * ruling for jstor.org." — into 5 000 notes that told visitors how the
+ * workshop tiers a source. No source model offers an unrendered field for that
+ * reasoning, and the catalogue and rulings files already record it, so it is
+ * not written at all (docs/editorial/reader-facing-register.md).
+ *
  * Usage: npx tsx scripts/codemods/tierStringSources.ts [--dry-run] [root]
  */
 import fs from "fs";
@@ -32,12 +39,7 @@ export interface StructuredSource {
   title: string;
   url: string | null;
   tier: ResolvedTier;
-  notes: string;
-}
-
-interface TierResolution {
-  tier: ResolvedTier;
-  provenance: string;
+  notes?: string;
 }
 
 const DEFAULT_ROOT = "dataset/source/afrik";
@@ -69,38 +71,21 @@ function matchesDomain(hostname: string, domain: string): boolean {
  * the `unfpa.org` one. The catalogue wins over the rulings table wherever a
  * domain appears in both (domain-tier-rulings.json, `_meta.precedence`).
  */
-export function resolveTierForUrl(url: string): TierResolution | null {
+export function resolveTierForUrl(url: string): SourceTier | null {
   const hostname = hostnameOf(url);
   if (hostname === null) return null;
 
   for (const entry of catalog.entries) {
-    const matched = entry.matchDomains
-      .filter((domain) => matchesDomain(hostname, domain))
-      .sort((left, right) => right.length - left.length)[0];
-    if (!matched) continue;
-
-    return {
-      tier: entry.tier as SourceTier,
-      provenance:
-        hostname === matched
-          ? `Tier resolved from the authorized source catalogue entry "${entry.key}".`
-          : `Tier resolved from the authorized source catalogue entry "${entry.key}" (${matched}), matched as a parent of ${hostname}.`,
-    };
+    if (entry.matchDomains.some((domain) => matchesDomain(hostname, domain))) {
+      return entry.tier as SourceTier;
+    }
   }
 
   const ruling = rulings.rulings
     .filter((candidate) => matchesDomain(hostname, candidate.domain))
     .sort((left, right) => right.domain.length - left.domain.length)[0];
 
-  if (!ruling) return null;
-
-  return {
-    tier: ruling.tier as SourceTier,
-    provenance:
-      hostname === ruling.domain
-        ? `Tier resolved from the domain ruling for ${ruling.domain}.`
-        : `Tier resolved from the domain ruling for ${ruling.domain}, matched as a parent of ${hostname}.`,
-  };
+  return ruling ? (ruling.tier as SourceTier) : null;
 }
 
 const PUBLICATION_YEAR = /\b(1[4-9]\d{2}|20[0-3]\d)\b/;
@@ -186,34 +171,20 @@ export function transformSourceEntry(entry: unknown): unknown {
   }
   const title = tidyTitle(remainder);
 
-  const resolution = url ? resolveTierForUrl(url) : null;
-  const resolved: TierResolution =
-    resolution ??
+  const tier: ResolvedTier =
+    (url ? resolveTierForUrl(url) : null) ??
     (url === null && looksLikePublishedCitation(entry)
-      ? {
-          tier: "referenced",
-          provenance:
-            "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies.",
-        }
-      : {
-          tier: "needs_review",
-          provenance: url
-            ? `No domain ruling covers ${hostnameOf(url) ?? url}; the tier awaits editorial review.`
-            : "No URL and no recognisable citation shape; the tier awaits editorial review.",
-        });
+      ? "referenced"
+      : "needs_review");
 
   const lossy =
     title.length === 0 || urls.length > 1 || !isTitleLossless(remainder, title);
 
-  const notes = lossy
-    ? `${resolved.provenance} Original entry: ${JSON.stringify(entry)}`
-    : resolved.provenance;
-
   return {
     title: title.length > 0 ? title : entry,
     url,
-    tier: resolved.tier,
-    notes,
+    tier,
+    ...(lossy ? { notes: `Original entry: ${JSON.stringify(entry)}` } : {}),
   } satisfies StructuredSource;
 }
 

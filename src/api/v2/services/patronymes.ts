@@ -16,6 +16,7 @@
  */
 
 import { logger } from "@/lib/api/logger";
+import { walkRanges } from "@/lib/supabase/queries/walkRanges";
 import { readAlliances } from "@/lib/patronymes/content";
 import { createServerClient } from "@/lib/supabase/server";
 import type { TranslationLocale } from "@/lib/i18n/translationLocale";
@@ -169,33 +170,36 @@ export async function getPatronymeIdsLinkedTo(
   value: string
 ): Promise<string[]> {
   const supabase = createServerClient();
-  const patronymeIds: string[] = [];
 
-  for (let page = 0; page < PATRONYME_FACET_MAX_PAGES; page++) {
-    const start = page * PATRONYME_FACET_WALK_SIZE;
-    const { data, error } = await supabase
-      .from(table)
-      .select("patronyme_id")
-      .eq(column, value)
-      .range(start, start + PATRONYME_FACET_WALK_SIZE - 1);
+  const walk = await walkRanges(
+    async (from, to) => {
+      const { data, error } = await supabase
+        .from(table)
+        .select("patronyme_id")
+        .eq(column, value)
+        .range(from, to);
 
-    if (error) {
-      logger.error(
-        `Error fetching patronyme ids for ${column} ${value}`,
-        error
-      );
-      throw error;
+      if (error) {
+        logger.error(
+          `Error fetching patronyme ids for ${column} ${value}`,
+          error
+        );
+        throw error;
+      }
+      return (data ?? []) as Array<{ patronyme_id: string }>;
+    },
+    {
+      pageSize: PATRONYME_FACET_WALK_SIZE,
+      maxPages: PATRONYME_FACET_MAX_PAGES,
     }
-
-    const rows = (data ?? []) as Array<{ patronyme_id: string }>;
-    for (const row of rows) patronymeIds.push(row.patronyme_id);
-    if (rows.length < PATRONYME_FACET_WALK_SIZE) return patronymeIds;
-  }
-
-  logger.error(
-    `Patronyme ids for ${column} ${value} exceeded ${PATRONYME_FACET_MAX_PAGES} pages — the list is truncated`
   );
-  return patronymeIds;
+
+  if (walk.truncated) {
+    logger.error(
+      `Patronyme ids for ${column} ${value} exceeded ${PATRONYME_FACET_MAX_PAGES} pages — the list is truncated`
+    );
+  }
+  return walk.rows.map((row) => row.patronyme_id);
 }
 
 /**
@@ -455,45 +459,46 @@ export async function getPatronymeCountryIndex(
   if (scopedIds && scopedIds.length === 0) return [];
 
   const supabase = createServerClient();
-  const rows: PatronymeCountryIndexRow[] = [];
 
-  for (let page = 0; page < PATRONYME_FACET_MAX_PAGES; page++) {
-    const start = page * PATRONYME_FACET_WALK_SIZE;
-    const { data, error } = await withPatronymeFilters(
-      supabase
-        .from("afrik_patronymes")
-        .select("id, name_main, afrik_patronyme_countries(country_id)"),
-      filters,
-      scopedIds
-    ).range(start, start + PATRONYME_FACET_WALK_SIZE - 1);
+  const walk = await walkRanges(
+    async (from, to) => {
+      const { data, error } = await withPatronymeFilters(
+        supabase
+          .from("afrik_patronymes")
+          .select("id, name_main, afrik_patronyme_countries(country_id)"),
+        filters,
+        scopedIds
+      ).range(from, to);
 
-    if (error) {
-      logger.error("Error fetching the patronyme country index", error);
-      throw error;
+      if (error) {
+        logger.error("Error fetching the patronyme country index", error);
+        throw error;
+      }
+      return (data ?? []) as Array<{
+        id: string;
+        name_main: string | null;
+        afrik_patronyme_countries: Array<{ country_id: string }> | null;
+      }>;
+    },
+    {
+      pageSize: PATRONYME_FACET_WALK_SIZE,
+      maxPages: PATRONYME_FACET_MAX_PAGES,
     }
+  );
 
-    const page_ = (data ?? []) as Array<{
-      id: string;
-      name_main: string | null;
-      afrik_patronyme_countries: Array<{ country_id: string }> | null;
-    }>;
-
-    for (const row of page_) {
-      rows.push({
-        id: row.id,
-        nameMain: row.name_main ?? "",
-        countryIds: (row.afrik_patronyme_countries ?? []).map(
-          (link) => link.country_id
-        ),
-      });
-    }
-    if (page_.length < PATRONYME_FACET_WALK_SIZE) return rows;
+  if (walk.truncated) {
+    logger.error(
+      `The patronyme country index exceeded ${PATRONYME_FACET_MAX_PAGES} pages — the list is truncated`
+    );
   }
 
-  logger.error(
-    `The patronyme country index exceeded ${PATRONYME_FACET_MAX_PAGES} pages — the list is truncated`
-  );
-  return rows;
+  return walk.rows.map((row) => ({
+    id: row.id,
+    nameMain: row.name_main ?? "",
+    countryIds: (row.afrik_patronyme_countries ?? []).map(
+      (link) => link.country_id
+    ),
+  }));
 }
 
 /**

@@ -7,10 +7,6 @@ const colorCss = readFileSync(
   resolve(process.cwd(), "src/styles/tokens/color.css"),
   "utf8"
 );
-const historicalFacts = readFileSync(
-  resolve(process.cwd(), "src/components/country/HistoricalFactsSection.tsx"),
-  "utf8"
-);
 const cultureGrid = readFileSync(
   resolve(process.cwd(), "src/components/country/CultureGrid.tsx"),
   "utf8"
@@ -56,13 +52,6 @@ describe("night card contrast", () => {
    */
   // @req REQ-092
   it("pairs fixed country-card tints with fixed parchment inks", () => {
-    expect(historicalFacts).toContain(
-      'style={{ color: "var(--afh-color-text)" }}'
-    );
-    expect(historicalFacts).not.toContain(
-      'style={{ color: "var(--country-text)" }}'
-    );
-
     expect(cultureGrid).toContain(
       'style={{ color: "var(--afh-color-text-soft)" }}'
     );

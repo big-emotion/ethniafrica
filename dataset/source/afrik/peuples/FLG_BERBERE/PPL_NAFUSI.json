@@ -91,57 +91,53 @@
       {
         "title": "Ethnologue — Nafusi (jbn)",
         "url": "https://www.ethnologue.com/language/jbn/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Joshua Project — Berber, Jabal Nafusah in Libya",
         "url": "https://joshuaproject.net/people_groups/12306",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Britannica — Libya : People",
         "url": "https://www.britannica.com/place/Libya/People",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       },
       {
         "title": "Reuters — Berber culture reborn in Libya revolt",
         "url": "https://www.reuters.com/article/libya-berber-idAFLDE76A1HS20110711",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for reuters.com."
+        "tier": "referenced"
       },
       {
         "title": "CEDS — ISO 639-3 code jbn (Nafusi)",
         "url": "https://ceds.ed.gov/iso639-3LanguageCodev7.aspx",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for ceds.ed.gov."
+        "tier": "official"
       },
       {
         "title": "The Monsoon Diaries — The Jebel Alliance Take the Nafusa Mountains",
         "url": "https://monsoondiaries.com/2024/04/17/jebel-nafusa/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers monsoondiaries.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Ibadica.org — The Role of Amazigh Libyan Civil Society in the Tamazgha Spring",
         "url": "https://ibadica.org/s/bibliographie/item/46983",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers ibadica.org; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Ibn Khaldoun, Abd ar-Rahman. Kitab al-Ibar (Histoire des Berbères). 14e siècle",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Beguinot, Francesco. Il berbero nefusi di Fassato. Roma, 1931",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

@@ -85,7 +85,7 @@ describe("GET /api/v2/migrations", () => {
   });
 
   // @req REQ-101
-  it("returns 200 with the summaries envelope and Cache-Control s-maxage=86400, immutable", async () => {
+  it("returns 200 with the summaries envelope and the shared Cache-Control s-maxage=3600", async () => {
     vi.mocked(listMigrationsHandler).mockResolvedValue({
       ok: true,
       envelope: listEnvelope,
@@ -100,9 +100,9 @@ describe("GET /api/v2/migrations", () => {
     expect(response.status).toBe(200);
     expect(body.data).toHaveLength(1);
     expect(body.data[0].geometry).toBeUndefined();
-    expect(response.headers.get("Cache-Control")).toBe(
-      "s-maxage=86400, immutable"
-    );
+    // Migration events are re-loaded from the corpus on every sync; `immutable`
+    // told shared caches never to revalidate a record that does change.
+    expect(response.headers.get("Cache-Control")).toBe("s-maxage=3600");
   });
 
   // @req REQ-101
@@ -196,7 +196,7 @@ describe("GET /api/v2/migrations/[id]", () => {
   });
 
   // @req REQ-101
-  it("returns 200 with the detail envelope (geometry, peoples, sources, confidence) and Cache-Control s-maxage=86400, immutable", async () => {
+  it("returns 200 with the detail envelope (geometry, peoples, sources, confidence) and the shared Cache-Control s-maxage=3600", async () => {
     vi.mocked(getMigrationDetailHandler).mockResolvedValue({
       ok: true,
       envelope: detailEnvelope,
@@ -218,9 +218,9 @@ describe("GET /api/v2/migrations/[id]", () => {
     expect(body.data.peoples).toEqual(detail.peoples);
     expect(body.data.sources).toEqual(detail.sources);
     expect(body.meta.confidence).toBe(73);
-    expect(response.headers.get("Cache-Control")).toBe(
-      "s-maxage=86400, immutable"
-    );
+    // Migration events are re-loaded from the corpus on every sync; `immutable`
+    // told shared caches never to revalidate a record that does change.
+    expect(response.headers.get("Cache-Control")).toBe("s-maxage=3600");
   });
 
   // @req REQ-101

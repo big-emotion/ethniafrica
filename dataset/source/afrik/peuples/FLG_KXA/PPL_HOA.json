@@ -95,39 +95,38 @@
       {
         "title": "Glottolog — Amkoe (ǂHoan) language entry (huc)",
         "url": "https://glottolog.org/resource/languoid/id/hoaa1235",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "Heine, Bernd & Honken, Henry (2010). The Kx'a Family: A New Khoisan Genealogy. Journal of Asian and African Studies 79: 5-36",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Batibo, Herman M. (2005). Language Decline and Death in Africa. Multilingual Matters. (cite dans Glottolog)",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Moumakwa, Tshiamiso V. & Monaka, Kemmonye C. (2017). Speakers living and languages dying: The endangerment of !Xoo and oHua in Botswana. University of Namibia Repository",
         "url": "https://repository.unam.edu.na/bitstreams/9844648c-ce29-49ac-9a94-2ae8e4594fd1/download",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for repository.unam.edu.na."
+        "tier": "referenced"
       },
       {
         "title": "Complex Ancient Genetic Structure and Cultural Transitions in Southern African Populations. PMC5223510",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5223510/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for pmc.ncbi.nlm.nih.gov."
+        "tier": "referenced"
       },
       {
         "title": "SIL Ethnologue — Kx'a language subgroup",
         "url": "https://www.ethnologue.com/subgroup/4285/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

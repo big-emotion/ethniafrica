@@ -84,45 +84,43 @@
       {
         "title": "SIL Ethnologue – Gbodjibo language (gbb)",
         "url": "https://www.ethnologue.com/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Glottolog – Classification des langues krou",
         "url": "https://glottolog.org/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "Language Science Press – Classification of Guébie within Kru (inclut données sur Gbodjibo)",
         "url": "https://langsci-press.org/catalog/view/120/277/1090-2",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for langsci-press.org."
+        "tier": "referenced"
       },
       {
         "title": "UC Berkeley Linguistics – Guébie (Côte d'Ivoire) Language Snapshot",
         "url": "https://lx.berkeley.edu/publications/gu%C3%A9bie-c%C3%B4te-d%E2%80%99ivoire-ivory-coast-language-snapshot",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers lx.berkeley.edu; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Minority Rights Group – Krou in Côte d'Ivoire",
         "url": "https://minorityrights.org/communities/krou/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+        "tier": "referenced"
       },
       {
         "title": "Joshua Project – Côte d'Ivoire people groups",
         "url": "https://joshuaproject.net/countries/iv",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "SearchWorks Stanford – Dynamique des institutions coutumières dida de Côte d'Ivoire",
         "url": "https://searchworks.stanford.edu/view/11373252",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for searchworks.stanford.edu."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

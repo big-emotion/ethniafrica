@@ -105,33 +105,33 @@
       {
         "title": "SIL Ethnologue — Tswana (tsn)",
         "url": "https://www.ethnologue.com/language/tsn/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Namibia Tourism Board — Tswana people in Namibia (2025)",
         "url": "https://www.facebook.com/NamibiaTourismBoard/posts/the-smallest-cultural-group-in-namibia",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for facebook.com."
+        "tier": "unverified"
       },
       {
         "title": "CIA World Factbook — Botswana",
         "url": "https://www.cia.gov/the-world-factbook/countries/botswana/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+        "tier": "official"
       },
       {
         "title": "CIA World Factbook — South Africa",
         "url": "https://www.cia.gov/the-world-factbook/countries/south-africa/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+        "tier": "official"
       },
       {
         "title": "Academia.edu — Setswana Dialects and Inter-Dialectical Variation in Botswana",
         "url": "https://www.academia.edu/41715929/Setswana_Dialects_and_Inter_Dialectical_Variation_in_the_Republic_of_Botswana",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for academia.edu."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

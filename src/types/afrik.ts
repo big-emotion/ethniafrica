@@ -587,7 +587,7 @@ export interface HistoricalAffiliationSection {
  * corpus, which is why the culture chapter rendered on no people fiche at all.
  *
  * Restoring the nesting is a corpus and strict-model change, not a rendering
- * one; `scripts/audit/gapAnalyzer.ts` already tracks it as a source-parser gap.
+ * one.
  */
 export interface DetailedCultureSection {
   /** Rites of passage, initiation, funerary and divinatory practice. */
@@ -635,76 +635,6 @@ export interface LanguageReference {
 }
 
 // ==========================================
-// RELATIONS (many-to-many)
-// ==========================================
-
-export interface PeopleCountryRelation {
-  peopleId: PeopleId;
-  countryId: CountryId;
-  population?: number;
-  percentageInCountry?: number;
-  percentageInAfrica?: number;
-  region?: string;
-}
-
-export interface PeopleLanguageRelation {
-  peopleId: PeopleId;
-  languageId: LanguageId;
-  isPrimary: boolean;
-}
-
-export interface LanguageFamilyPeopleRelation {
-  languageFamilyId: LanguageFamilyId;
-  peopleId: PeopleId;
-}
-
-// ==========================================
-// DEMOGRAPHICS (critical data in columns)
-// ==========================================
-
-export interface CountryDemography {
-  countryId: CountryId;
-  year: number;
-  population: number;
-  source: string;
-}
-
-export interface PeopleDemography {
-  peopleId: PeopleId;
-  year: number;
-  totalPopulation: number;
-  source: string;
-}
-
-export interface PeopleCountryDemography {
-  peopleId: PeopleId;
-  countryId: CountryId;
-  year: number;
-  population: number;
-  percentageInCountry: number;
-  percentageInAfrica?: number;
-  source: string;
-}
-
-// ==========================================
-// NAME RECORDS (transversal table)
-// ==========================================
-
-export interface NameRecord {
-  id: string;
-  entityType: "country" | "people" | "language" | "languageFamily";
-  entityId: string; // CountryId | PeopleId | LanguageId | LanguageFamilyId
-  nameType:
-    "official" | "self-appellation" | "exonym" | "historical" | "colonial";
-  name: string;
-  language?: string; // Language in which the name is used
-  period?: string; // Historical period
-  isDerogatory?: boolean;
-  isPrimary?: boolean;
-  notes?: string; // Why problematic, origin, etc.
-}
-
-// ==========================================
 // API TYPES
 // ==========================================
 
@@ -718,27 +648,6 @@ export interface PaginationMeta {
    * silently omitted (REQ-108). Only populated on the language-families list.
    */
   unclassifiedPeoplesCount?: number;
-}
-
-export interface ApiResponse<T> {
-  data: T;
-  meta?: PaginationMeta;
-}
-
-export interface SearchFilters {
-  type?: "country" | "people" | "language" | "languageFamily";
-  query?: string;
-  languageFamilyId?: LanguageFamilyId;
-  countryId?: CountryId;
-}
-
-export interface SearchResult {
-  type: "country" | "people" | "language" | "languageFamily";
-  id: string;
-  name: string;
-  snippet?: string;
-  relevance?: number;
-  data?: Country | People | Language | LanguageFamily;
 }
 
 // ETNI-38 — /v2/search FTS params (websearch_to_tsquery, confidence boost)
@@ -950,34 +859,6 @@ export interface FtsSearchResponse {
 }
 
 // ==========================================
-// CSV TYPES
-// ==========================================
-
-export interface LanguageFamilyCsvRow {
-  id: LanguageFamilyId;
-  name: string;
-  population: number;
-  year: number;
-  source: string;
-}
-
-export interface PeopleDemographyCsvRow {
-  id: PeopleId;
-  name: string;
-  totalPopulation: number;
-  year: number;
-  source: string;
-}
-
-export interface CountryDemographyCsvRow {
-  id: CountryId;
-  name: string;
-  population: number;
-  year: number;
-  source: string;
-}
-
-// ==========================================
 // PARSER TYPES
 // ==========================================
 
@@ -999,13 +880,4 @@ export interface ParseWarning {
   type: "missing_optional_section" | "unknown_section" | "deprecated_format";
   message: string;
   section?: string;
-}
-
-/**
- * Parser options for evolutivity
- */
-export interface ParserOptions {
-  strictMode?: boolean; // If true, fail on unknown sections; if false, store them
-  validateReferences?: boolean; // Validate that referenced IDs exist
-  includeUnknownSections?: boolean; // Include unknown sections in JSONB
 }

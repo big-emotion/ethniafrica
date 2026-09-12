@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowLeft, CalendarClock, GitBranch, Info } from "lucide-react";
 
 import { Card } from "@/components/ui/card";
+import { apiVersioningCopy } from "@/lib/i18n/copy/apiVersioning";
 
 // @req REQ-037
 export const metadata: Metadata = {
@@ -230,9 +231,8 @@ Link: <https://ethniafrica.com/docs/api/versioning>; rel="sunset"`}
               <p className="text-afh-small text-muted-foreground">
                 Les deux premiers en-têtes sont présents sur{" "}
                 <strong>toutes</strong> les réponses de{" "}
-                <code className="font-mono">/api/v2</code>, y compris les
-                erreurs — une 401 sans clé valide et une 429 de limitation de
-                débit les portent aussi.
+                <code className="font-mono">/api/v2</code>
+                {apiVersioningCopy.fr.responseHeadersErrorSuffix}
               </p>
             </div>
           </div>

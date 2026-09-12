@@ -95,33 +95,33 @@
       {
         "title": "SIL Ethnologue — Kwanyama (kua)",
         "url": "https://www.ethnologue.com/language/kua",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "SIL Ethnologue — Ndonga (ndo)",
         "url": "https://www.ethnologue.com/language/ndo",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "CIA World Factbook — Namibia",
         "url": "https://www.cia.gov/the-world-factbook/countries/namibia/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+        "tier": "official"
       },
       {
         "title": "South African History Archive — The Namibian struggle for independence 1966-1990",
         "url": "https://sahistory.org.za/article/namibian-struggle-independence-1966-1990-historical-background",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for sahistory.org.za."
+        "tier": "referenced"
       },
       {
         "title": "Namibia Statistics Agency — Population and Housing Census 2011",
         "url": "https://nsa.org.na",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for nsa.org.na."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

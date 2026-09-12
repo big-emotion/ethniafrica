@@ -107,25 +107,24 @@
         "title": "Glottolog 5.3 — Bassa (bsq)",
         "url": "https://glottolog.org/resource/languoid/id/nucl1418",
         "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry for Glottolog; supports the Kru classification."
+        "notes": "Supports the Kru classification."
       },
       {
         "title": "SIL Ethnologue — Bassa (bsq)",
         "url": "https://www.ethnologue.com/language/bsq/",
         "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\". ethnologue.com returns HTTP 403 to automated fetches, so the 18th-edition (2015) speaker figures and dialect-cluster names used in this proposal (demography, languages.dialects) were read from its data as relayed in the infobox of the English Wikipedia article \"Bassa language\", crossed on 2026-09-05."
+        "notes": "Ethnologue's page could not be consulted directly, so the 18th-edition (2015) speaker figures and dialect-cluster names cited here were read from its data as relayed in the infobox of the English Wikipedia article \"Bassa language\", crossed on 2026-09-05."
       },
       {
         "title": "West Africa Democracy Radio — The Bassa Tribe of Liberia (2023)",
         "url": "https://wadr.org/the-bassa-tribe-of-liberia/",
         "tier": "referenced",
-        "notes": "Resolved from \"needs_review\": WADR is a named, editorially staffed West African regional public radio outlet; a byline article on its own site is press coverage, which the corpus's tier table places at referenced. Le corps de l'article a disparu du site ; la version archivée le 21 septembre 2023 tient en deux paragraphes sur la population et les scarifications, et ne dit rien de l'origine du nom."
+        "notes": "WADR is a named, editorially staffed West African regional public radio outlet, and this is a bylined article on its own site. Le corps de l'article a disparu du site ; la version archivée le 21 septembre 2023 tient en deux paragraphes sur la population et les scarifications, et ne dit rien de l'origine du nom."
       },
       {
         "title": "Minority Rights Group — Liberia",
         "url": "https://minorityrights.org/country/liberia/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+        "tier": "referenced"
       },
       {
         "title": "Sage Reference — Encyclopedia of African Religion, Bassa",
@@ -137,7 +136,7 @@
         "title": "Liberia Institute of Statistics and Geo-Information Services (LISGIS) — 2022 Population and Housing Census, Final Results Report",
         "url": "https://www.lisgis.gov.lr/document/LiberiaCensus2022Report.pdf",
         "tier": "official",
-        "notes": "Resolved from the URL-less \"needs_review\" entry: national statistics office, official tier. The document itself could not be fetched (connection reset) during this research pass, so only the national total population is used here (corroborated independently below); its ethnic-group breakdown table was not verified."
+        "notes": "Report of the national statistics office. The document itself could not be opened, so only the national total population is drawn from it here (corroborated independently below); its ethnic-group breakdown table was not verified."
       },
       {
         "title": "UN Liberia — Liberia announces provisional results of its 5th National Population and Housing Census (2022)",
@@ -148,8 +147,7 @@
       {
         "title": "StudyGuides.com — Bassa (People)",
         "url": "https://studyguides.com/study-methods/study-guide/cmfwvocp53ouk016qheb0w9jc",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for studyguides.com."
+        "tier": "unverified"
       },
       {
         "title": "Everson, Michael & Riley, Charles (2010) — Final proposal for encoding the Bassa Vah script in the SMP of the UCS",

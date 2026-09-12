@@ -153,8 +153,10 @@ describe("getCountryIdsByLanguageFamily", () => {
     expect(presence.get("FLG_MANDE")).toEqual(["MLI"]);
   });
 
+  // A short page is also what a server whose max-rows sits below the page size
+  // answers every time, so only an empty page proves the end of a table.
   // @req REQ-110
-  it("stops at the first short page instead of querying past the end of a table", async () => {
+  it("stops at the first empty page instead of querying past the end of a table", async () => {
     const chains = mockTableWalks({
       afrik_peoples: [[{ id: "PPL_SHONA", language_family_id: "FLG_BANTU" }]],
       afrik_people_countries: [[{ people_id: "PPL_SHONA", country_id: "ZWE" }]],
@@ -162,8 +164,8 @@ describe("getCountryIdsByLanguageFamily", () => {
 
     await getCountryIdsByLanguageFamily();
 
-    expect(chains.afrik_peoples.range).toHaveBeenCalledTimes(1);
-    expect(chains.afrik_people_countries.range).toHaveBeenCalledTimes(1);
+    expect(chains.afrik_peoples.range).toHaveBeenCalledTimes(2);
+    expect(chains.afrik_people_countries.range).toHaveBeenCalledTimes(2);
   });
 });
 

@@ -83,39 +83,38 @@
       {
         "title": "SIL Ethnologue — amkoe / huc language",
         "url": "https://www.ethnologue.com/language/huc/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "IWGIA — Indigenous World 2024, Botswana chapter",
         "url": "https://www.iwgia.org/en/botswana",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"iwgia\"."
+        "tier": "official"
       },
       {
         "title": "Survival International — Bushmen of the Kalahari",
         "url": "https://www.survivalinternational.org/tribes/bushmen",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for survivalinternational.org."
+        "tier": "referenced"
       },
       {
         "title": "Pmc.ncbi — The genomic prehistory of peoples speaking Khoisan languages (2021)",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8117426/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for pmc.ncbi.nlm.nih.gov."
+        "tier": "referenced"
       },
       {
         "title": "Cultural Survival Quarterly — Land, Language, and Leadership (2010)",
         "url": "https://www.culturalsurvival.org/publications/cultural-survival-quarterly/land-language-and-leadership",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for culturalsurvival.org."
+        "tier": "referenced"
       },
       {
         "title": "UNESCO — Atlas des langues en danger du monde",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

@@ -83,33 +83,33 @@
       {
         "title": "Ethnologue – Aizi subgroup",
         "url": "https://www.ethnologue.com/subgroup/938/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Ethnologue – Aizi Tiagbamrin (ahi)",
         "url": "https://www.ethnologue.com/language/ahi/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Pete Eric – Aizi et Eotile : deux peuples lagunaires aux liens historiques anciens, Revue Akofena, janvier 2025",
         "url": "https://www.revue-akofena.com/wp-content/uploads/2025/01/07-ActColl-Eric-PETE_077-088.pdf",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for revue-akofena.com."
+        "tier": "referenced"
       },
       {
         "title": "Azagni Blath Esther – Les betibe et la formation des villages aizi de langue lelou (XIIIe-debut XXe siecles), Ziglôbitha",
         "url": "https://www.ziglobitha.org/wp-content/uploads/2021/11/03-Blath-Esther-AZAGNI-pp31-52.pdf",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for ziglobitha.org."
+        "tier": "referenced"
       },
       {
         "title": "Joshua Project – Cote d'Ivoire people groups",
         "url": "https://joshuaproject.net/countries/iv",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

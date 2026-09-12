@@ -99,33 +99,33 @@
       {
         "title": "SaoTomeExpert — The Forro Population of São Tomé and Príncipe",
         "url": "https://www.saotomeexpert.pt/en/sao-tome-and-principe-forro-population/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for saotomeexpert.pt."
+        "tier": "unverified"
       },
       {
         "title": "SaoTomeExpert — Creole Society and Forros",
         "url": "https://www.saotomeexpert.pt/en/sao-tome-and-principe-creole-society-and-forros/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for saotomeexpert.pt."
+        "tier": "unverified"
       },
       {
         "title": "Britannica — Forros, people of São Tomé and Príncipe",
         "url": "https://www.britannica.com/topic/Forros",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       },
       {
         "title": "Navetur — Our Population",
         "url": "https://navetur.st/index.php/guide/population",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers navetur.st; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "SOAS — Forro in the European Diaspora",
         "url": "https://glocal.soas.ac.uk/comela2020-5/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for glocal.soas.ac.uk."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

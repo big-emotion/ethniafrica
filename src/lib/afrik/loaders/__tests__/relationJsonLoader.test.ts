@@ -447,4 +447,38 @@ describe("relationJsonLoader", () => {
       warnSpy.mockRestore();
     });
   });
+
+  // The loaders once carried private copies of the same writers; these pin the
+  // row each one actually sends, so a shared writer cannot quietly widen or
+  // narrow a payload.
+  describe("provenance rows", () => {
+    // @req REQ-032
+    it("sends author and year on the source and publishes the record as an unstamped version-1 revision", async () => {
+      const database = createSupabaseDouble();
+      writeRelationFile(
+        tmpDir,
+        "REL_TEST_COMMERCIAL_01.json",
+        validRelationFile()
+      );
+      const records = loadAllRelationFiles(tmpDir);
+
+      await loadRelations(database.client as never, records);
+
+      expect(Object.keys(database.sources[0]).sort()).toEqual([
+        "added_at",
+        "author",
+        "id",
+        "notes",
+        "tier",
+        "title",
+        "url",
+        "year",
+      ]);
+      expect(database.ficheRevisions[0]).not.toHaveProperty("published_at");
+      expect(database.ficheRevisions[0].content_snapshot).toEqual(records[0]);
+      expect(database.assertions[0]).toMatchObject({
+        fiche_revision_id: database.ficheRevisions[0].id,
+      });
+    });
+  });
 });

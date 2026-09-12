@@ -89,33 +89,33 @@
       {
         "title": "Joshua Project - Berber Chenoua in Algeria",
         "url": "https://joshuaproject.net/people_groups/11321",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Ethnologue SIL International - Chenoua (cnu)",
         "url": "https://www.ethnologue.com/language/cnu/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "The Tribal Society - The Chenouis",
         "url": "https://thetribalsociety.com/the-chenouis/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for thetribalsociety.com."
+        "tier": "unverified"
       },
       {
         "title": "Glottolog - Shenwa (chen1266)",
         "url": "https://glottolog.org/resource/languoid/id/chen1266",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "UNESCO World Heritage - Tipaza",
         "url": "https://whc.unesco.org/en/list/193/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of whc.unesco.org."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

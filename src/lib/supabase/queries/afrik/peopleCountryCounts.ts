@@ -1,5 +1,6 @@
 import { createServerClient } from "@/lib/supabase/server";
 import { logger } from "@/lib/api/logger";
+import { walkRanges } from "@/lib/supabase/queries/walkRanges";
 
 /**
  * Continent-scale counts over the afrik_people_countries join table.
@@ -38,31 +39,33 @@ const PEOPLE_COUNTRY_MAX_PAGES = 40;
 // @req REQ-110
 export async function getPeopleCountsByCountry(): Promise<Map<string, number>> {
   const supabase = createServerClient();
-  const counts = new Map<string, number>();
 
-  for (let page = 0; page < PEOPLE_COUNTRY_MAX_PAGES; page++) {
-    const start = page * PEOPLE_COUNTRY_PAGE_SIZE;
-    const { data, error } = await supabase
-      .from("afrik_people_countries")
-      .select("country_id")
-      .range(start, start + PEOPLE_COUNTRY_PAGE_SIZE - 1);
+  const walk = await walkRanges(
+    async (from, to) => {
+      const { data, error } = await supabase
+        .from("afrik_people_countries")
+        .select("country_id")
+        .range(from, to);
 
-    if (error) {
-      logger.error("Error fetching people counts by country", error);
-      throw error;
-    }
+      if (error) {
+        logger.error("Error fetching people counts by country", error);
+        throw error;
+      }
+      return data || [];
+    },
+    { pageSize: PEOPLE_COUNTRY_PAGE_SIZE, maxPages: PEOPLE_COUNTRY_MAX_PAGES }
+  );
 
-    const rows = data || [];
-    for (const row of rows) {
-      const countryId = row.country_id as string;
-      counts.set(countryId, (counts.get(countryId) || 0) + 1);
-    }
-
-    if (rows.length < PEOPLE_COUNTRY_PAGE_SIZE) return counts;
+  if (walk.truncated) {
+    logger.error(
+      `People-country relations exceeded ${PEOPLE_COUNTRY_MAX_PAGES} pages — counts are truncated`
+    );
   }
 
-  logger.error(
-    `People-country relations exceeded ${PEOPLE_COUNTRY_MAX_PAGES} pages — counts are truncated`
-  );
+  const counts = new Map<string, number>();
+  for (const row of walk.rows) {
+    const countryId = row.country_id as string;
+    counts.set(countryId, (counts.get(countryId) || 0) + 1);
+  }
   return counts;
 }
