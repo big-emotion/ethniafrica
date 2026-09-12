@@ -105,17 +105,52 @@ describe("checkSourceTierCoverage", () => {
       content: { sources: [{ title: "a", tier: "needs_review" }] },
     });
 
-    expect(checkSourceTierCoverage(datasetRoot, 1).ok).toBe(true);
+    const result = checkSourceTierCoverage(datasetRoot, 1);
+
+    expect(result.ok).toBe(true);
+    expect(result.error).toBeNull();
+  });
+
+  // A ceiling left above the real count is room to regress into without a red
+  // run, so an improvement fails too until the number is lowered with it.
+  // @req REQ-032
+  it("fails when the untiered count drops below the threshold, naming the line to lower", () => {
+    writeFiche("peuples/PPL_A.json", {
+      id: "PPL_A",
+      content: { sources: [{ title: "a", tier: "needs_review" }] },
+    });
+
+    const result = checkSourceTierCoverage(datasetRoot, 3);
+
+    expect(result.ok).toBe(false);
+    expect(result.error).toContain(
+      "lower NEEDS_REVIEW_RATCHET to 1 in scripts/ci/checkSourceTierCoverage.ts"
+    );
   });
 
   // @req REQ-032
-  it("holds the live corpus at or below the committed ratchet", () => {
+  it("names the regression, and forbids raising the ratchet, when the count climbs", () => {
+    writeFiche("peuples/PPL_A.json", {
+      id: "PPL_A",
+      content: { sources: [{ title: "a" }, { title: "b" }] },
+    });
+
+    const result = checkSourceTierCoverage(datasetRoot, 1);
+
+    expect(result.error).toContain(
+      "2 untiered sources exceed the ratchet of 1"
+    );
+    expect(result.error).toContain("do not raise the ratchet");
+  });
+
+  // @req REQ-032
+  it("holds the live corpus exactly at the committed ratchet", () => {
     const live = checkSourceTierCoverage(
       "dataset/source/afrik",
       NEEDS_REVIEW_RATCHET
     );
 
+    expect(live.count).toBe(NEEDS_REVIEW_RATCHET);
     expect(live.ok).toBe(true);
-    expect(live.count).toBeLessThanOrEqual(NEEDS_REVIEW_RATCHET);
   });
 });
