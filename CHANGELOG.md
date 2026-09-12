@@ -10,6 +10,70 @@ the `1.x` tags predate the changelog and were never accompanied by release notes
 
 ## [Unreleased]
 
+## [4.7.0] - 2026-09-12
+
+### Added
+
+- **The fiche template is reworked end to end, and the two most consulted record
+  classes now lead with what the reader came for.** A country record opens with
+  its peoples after a counted summary (ETNI-1890, #984), and a people record
+  opens with a scoped summary and its geographic distribution, which moves from
+  the thirteenth screen to the second (ETNI-1891, #987). The distribution chart
+  stops rendering nothing: a share is derived from the declared populations when
+  a row states no percentage and is marked as derived, while a row that declares
+  its own share keeps it untouched. Where a declared total and the sum of its
+  rows disagree, the record states the disagreement in the reader's terms rather
+  than silently preferring either figure. Underneath both sit two new
+  primitives, a disclosure tile that states a fact before it is opened
+  (ETNI-1887, #979) and a counted summary panel (ETNI-1888, #983), with chapters
+  separated by a single spacing token and no other value (ETNI-1886, #982).
+- A wallpaper library publishing the scale ladder, served through the image
+  optimizer and offered as a direct download (#973).
+- The about page now opens with what the atlas sets out to change (#972).
+- Search analytics reporting what a query returned and where it led (#958).
+- The social render engine, its tooling and the publication chain are versioned
+  in this repository rather than living only in the private workspace (#976).
+- A CI gate refusing absolute local filesystem paths in a public repository, and
+  mirroring the social gabarit specification (#969).
+
+### Changed
+
+- **Reader-facing copy no longer says "fiche" or "corpus".** The workshop's own
+  vocabulary was reaching visitors; the site now speaks the register the social
+  cards use (#974).
+- Corpus editorial work across forty records. The Senegal etymology gains its
+  endogenous half, and the country etymologies and the sanankuya pact are
+  sourced (`SEN`, `BEN`, `BWA`, `LSO`, `MWI`, `NER`, `TCD`; #960, #962, #963).
+  The word "zombie" and the Mami Wata etymology are anchored on the records that
+  can carry them (`FLG_CREOLE`, `PPL_AYISYEN`, `PPL_DUALA`, `PPL_SAWA`,
+  `PPL_BAKWERI`; #966, #967, #968). Twelve patronymic records gain sourced
+  content (`PAT_BAGAYOKO`, `PAT_CAMARA`, `PAT_COULIBALY`, `PAT_DIABATE`,
+  `PAT_DIARRA`, `PAT_DOUMBIA`, `PAT_FOFANA`, `PAT_KEITA`, `PAT_SANGARE`,
+  `PAT_SIDIBE`, `PAT_SOW`, `PAT_TRAORE`). Nineteen English translation records
+  accompany them; publication still fails closed to French, so they stay silent.
+- The two production skills moved out of the public repository (#970).
+- The Plausible collector is routed under a BIG EMOTION hostname as well (#959).
+
+### Fixed
+
+- **Campaign tagging survives a deep-link redirect.** A legacy address that
+  resolved to a record was dropping the reader's whole query string; only the
+  identifier the target now states in its path is spent, and everything else
+  rides along (#961).
+- The two Bassa ethnonyms are sourced rather than attributed to an invented
+  missionary (`PPL_BASSA`, `PPL_BASSA_CAM`; #964).
+- The social render engine inspects every printed field at its third gate rather
+  than only the last, and stamps video proofs with the narration plate flushed
+  left (#977, #980).
+
+### Notes
+
+- **This release does not switch the site to English.** `SITE_LOCALE_MODE` is
+  untouched and still fails closed to French. The English translation records
+  shipped here are content readiness, not publication.
+- No Supabase migration is introduced. Both `v4.6.0` and this release carry the
+  same 87 migration files, so the deploy's `migrate` job has nothing to apply.
+
 ## [4.6.0] - 2026-09-07
 
 ### Added
@@ -730,7 +794,8 @@ the public API, the data model, and the frontend were all replaced.
 - Duplicate migration prefixes (`008_`, `015_`) resolved.
 - Endonym now takes primacy over exonym in the country page names row.
 
-[Unreleased]: https://github.com/big-emotion/ethniafrica/compare/v4.6.0...HEAD
+[Unreleased]: https://github.com/big-emotion/ethniafrica/compare/v4.7.0...HEAD
+[4.7.0]: https://github.com/big-emotion/ethniafrica/compare/v4.6.0...v4.7.0
 [4.6.0]: https://github.com/big-emotion/ethniafrica/compare/v4.5.0...v4.6.0
 [4.5.0]: https://github.com/big-emotion/ethniafrica/compare/v4.4.0...v4.5.0
 [4.4.0]: https://github.com/big-emotion/ethniafrica/compare/v4.3.1...v4.4.0
