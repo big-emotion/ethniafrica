@@ -112,7 +112,7 @@
         "title": "Bokamba, E.G. — Lingala as a Supranational Language in DRC. CERECK, 2019",
         "url": "https://cereck.org/wp-content/uploads/2021/08/Kami-Export-EGBokamba-2019-PRFNL-DRAFt-2-LINGALA-AS-A-SUPRANATIONAL-LANGUAGE-IN-D.R.-CONGO_.pdf",
         "tier": "referenced",
-        "notes": "Tier resolved from a first review of cereck.org: the Center for Research on the Congo-Kinshasa hosts an identifiable, attributable academic paper by linguist E.G. Bokamba; no prior domain ruling existed for cereck.org."
+        "notes": "Academic paper by the linguist E.G. Bokamba, hosted by the Center for Research on the Congo-Kinshasa."
       },
       {
         "title": "Ugent Biblio — The linguistic features of Bangala before Lingala",
@@ -128,7 +128,7 @@
         "title": "MustGo — Lingala Language",
         "url": "https://www.mustgo.com/worldlanguages/lingala/",
         "tier": "unverified",
-        "notes": "Tier resolved from a first review of mustgo.com: a general-reference language site with no identifiable authorship or institutional backing; no prior domain ruling existed for mustgo.com."
+        "notes": "General-reference language site; no author or institution is identified."
       },
       {
         "title": "Joshua Project — Bangala in DRC",
@@ -144,7 +144,7 @@
         "title": "Glottolog 5.3 — Bangala [bang1353]",
         "url": "https://glottolog.org/resource/languoid/id/bang1353",
         "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"; used to correct the language's ISO 639-3 code (bxg, previously misrecorded as lol, the code for Mongo) and to confirm its Bantu Zone C / Bangi-Ntomba classification and non-endangered status."
+        "notes": "Supports the language's ISO 639-3 code bxg (not lol, the code for Mongo), its Bantu Zone C / Bangi-Ntomba classification and its non-endangered status."
       },
       {
         "title": "Meeuwis, M. — Redeeming a killer language: Protestant missionaries' engagements with Bangala and Lingala in the Belgian Congo, 1900–1935. Canadian Journal of African Studies, 58(3), 2024",

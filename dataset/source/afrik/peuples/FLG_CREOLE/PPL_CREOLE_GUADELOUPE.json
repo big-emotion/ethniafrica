@@ -99,14 +99,13 @@
       {
         "title": "Insee - L'essentiel sur... la Guadeloupe",
         "url": "https://www.insee.fr/fr/statistiques/4481456",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry — institut national de la statistique."
+        "tier": "official"
       },
       {
         "title": "Ministère de la Culture - créole guadeloupéen (portail des langues de France)",
         "url": "https://www.culture.gouv.fr/fr/Thematiques/portail-langues-en-france/langues/creole-guadeloupeen",
         "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry — domaine ministériel gouvernemental (culture.gouv.fr) ; contenu (auto-désignation « Kréyòl Gwadloup », statut de langue régionale) confirmé par indexation moteur de recherche, la récupération directe de la page étant bloquée par une protection anti-robot."
+        "notes": "Auto-désignation « Kréyòl Gwadloup » et statut de langue régionale, relevés dans l'index d'un moteur de recherche : la page elle-même n'a pas pu être consultée directement."
       },
       {
         "title": "Glottolog 5.3 - Guadeloupean Creole French (guad1243)",

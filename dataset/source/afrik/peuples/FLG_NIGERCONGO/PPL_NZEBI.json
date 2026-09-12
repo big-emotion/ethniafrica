@@ -139,19 +139,19 @@
         "title": "Les Amis du musée du quai Branly – Jacques Chirac — \"Un rare masque nzebi offert au musée grâce au dîner de gala des Amis\" (3 juillet 2018)",
         "url": "https://www.amisquaibranly.fr/un-rare-masque-nzebi-offert-au-musee-grace-au-diner-de-gala-des-amis/",
         "tier": "referenced",
-        "notes": "Resolved from the prior needs_review standing (no URL) once the museum's own announcement was located. Tiered referenced, following the corpus precedent for museum sources (the Metropolitan Museum of Art is tiered referenced on PPL_FANG, not official)."
+        "notes": "The museum's own announcement of the acquisition."
       },
       {
         "title": "Georges Dupré — Koto, l'égalité nécessaire : savoir et pouvoir dans une société clanique : les Nzèbi du Congo et du Gabon (L'Harmattan, 2019)",
         "url": "https://searchworks.stanford.edu/view/13386359",
         "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for searchworks.stanford.edu (library catalogue record for an identifiable, verifiable academic monograph by a specialist of Central African lineage societies)."
+        "notes": "Library catalogue record of an academic monograph by a specialist of Central African lineage societies."
       },
       {
         "title": "Nestor Ide Righou — Les Nzèbi du Gabon, des origines à 1915 : essai d'étude historique (doctoral thesis, Université Paris 1, 2005, dir. Claude-Hélène Perrot)",
         "url": "https://theses.fr/2005PA010542",
         "tier": "referenced",
-        "notes": "Catalogued on the French national theses portal; tiered referenced as an identifiable, verifiable academic work, consistent with the searchworks.stanford.edu precedent for a library/thesis catalogue record."
+        "notes": "Catalogued on the French national theses portal."
       },
       {
         "title": "Gérard Collomb — \"Les sept fils de Nzèbi. Un mythe cosmogonique des Banzèbi du Gabon\", Journal des africanistes, vol. 49, fasc. 2 (1979), p. 89-134",
@@ -163,7 +163,7 @@
         "title": "Glottolog 5.x — Njebi [njeb1242]",
         "url": "https://glottolog.org/resource/languoid/id/njeb1242",
         "tier": "official",
-        "notes": "Confirms glottocode njeb1242 and ISO 639-3 nzb, consistent with the fiche's existing languages.isoCodes."
+        "notes": "Confirms glottocode njeb1242 and ISO 639-3 nzb."
       },
       {
         "title": "CIA World Factbook — Gabon, People and Society (ethnic groups)",
@@ -175,7 +175,7 @@
         "title": "Wikidata — Nzabi (Q2882351)",
         "url": "https://www.wikidata.org/wiki/Q2882351",
         "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for wikidata.org (openly edited tertiary reference). Cited only to document the externalIdentifiers.wikidataId cross-reference — confirmed instance-of \"ethnic group\" with associated countries Gabon and Republic of the Congo — not as evidence for any narrative claim."
+        "notes": "Openly edited reference, cited only for the Wikidata identifier — an item described as an ethnic group associated with Gabon and the Republic of the Congo — and not as evidence for any narrative claim."
       }
     ]
   },
