@@ -1,7 +1,11 @@
 #!/usr/bin/env tsx
 
+import { execFile } from "node:child_process";
 import { readFileSync, readdirSync } from "node:fs";
 import path from "node:path";
+import { promisify } from "node:util";
+
+const execFileAsync = promisify(execFile);
 
 const COMMIT_SHA_PATTERN = /^[0-9a-f]{40}$/;
 
@@ -95,28 +99,27 @@ export async function findUnresolvablePins(
 }
 
 /**
- * 404 and 422 are GitHub's two answers for "no such commit". Anything else —
- * a rate limit above all — throws, because reporting an unchecked pin as
+ * Asked through `gh`, which carries its own authentication — the operator's
+ * login locally, `GH_TOKEN` on a runner — so this script handles no credential.
+ * 404 and 422 are GitHub's two answers for "no such commit". Anything else — a
+ * rate limit, a missing login — throws, because reporting an unchecked pin as
  * present is the silent pass this mode exists to remove.
  */
 const githubCommitExists: CommitExists = async (repository, sha) => {
-  const headers: Record<string, string> = {
-    Accept: "application/vnd.github+json",
-    "User-Agent": "ethniafrica-check-action-pins",
-  };
-  if (process.env.GITHUB_TOKEN) {
-    headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
+  try {
+    await execFileAsync("gh", [
+      "api",
+      `repos/${repository}/commits/${sha}`,
+      "--silent",
+    ]);
+    return true;
+  } catch (error) {
+    const stderr = String((error as { stderr?: unknown }).stderr ?? "");
+    if (/\(HTTP (404|422)\)/.test(stderr)) return false;
+    throw new Error(
+      `gh api could not check ${repository}@${sha}: ${stderr.trim() || String(error)}`
+    );
   }
-
-  const response = await fetch(
-    `https://api.github.com/repos/${repository}/commits/${sha}`,
-    { headers }
-  );
-  if (response.ok) return true;
-  if (response.status === 404 || response.status === 422) return false;
-  throw new Error(
-    `GitHub answered ${response.status} for ${repository}@${sha}; set GITHUB_TOKEN if this is a rate limit`
-  );
 };
 
 async function runCli(): Promise<void> {

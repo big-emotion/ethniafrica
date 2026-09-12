@@ -114,9 +114,10 @@ jobs:
       # --resolve also asks GitHub whether each pinned commit exists. A pin with
       # a perfect shape and an invented hash failed the Storybook deploy fifteen
       # times on main while this step, checking the shape only, stayed green.
+      # The check asks through the preinstalled `gh`, which reads GH_TOKEN.
       - run: npm run check:action-pins -- --resolve
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # A `run:` block is shell source that YAML validation never parses, so a
       # quoting mistake in one only surfaces as a red run, minutes later, with
