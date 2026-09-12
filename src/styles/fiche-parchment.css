@@ -47,6 +47,56 @@
   color: var(--afh-text);
 }
 
+/* The names and the invitation to amend them. Stacked on a phone, where the
+   head's composition is a centred title and a control pulled up beside it
+   would take that centring away; side by side from the tablet floor, which is
+   the same floor `mobile-text.css` uses, so the two rules cannot disagree. */
+.afh-parchment-head-title {
+  display: flex;
+  flex-direction: column;
+  gap: var(--afh-space-lg);
+}
+
+@media (min-width: 768px) {
+  .afh-parchment-head-title {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--afh-space-4xl);
+  }
+}
+
+.afh-parchment-contribute {
+  align-self: center;
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding-inline: var(--afh-space-4xl);
+  border: 1px solid var(--afh-gold);
+  border-radius: var(--afh-radius-base);
+  background: var(--afh-color-gold-bg);
+  font-size: var(--afh-text-small);
+  font-weight: 600;
+  color: var(--afh-gold);
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .afh-parchment-contribute {
+    align-self: flex-start;
+  }
+}
+
+.afh-parchment-contribute:hover {
+  text-decoration: underline;
+}
+
+.afh-parchment-contribute:focus-visible {
+  outline: none;
+  box-shadow: var(--afh-ring-focus);
+}
+
 .afh-parchment-head h1 {
   margin: 0;
   font-family: var(--afh-font-display);

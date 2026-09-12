@@ -3,6 +3,12 @@ import type { Language } from "@/types/shared";
 const en = {
   sourceTierNote:
     "Each source carries its tier — the authority it may be given.",
+  /**
+   * One word for one gesture, across every place a record offers it: the head,
+   * the reading rail, and the band that closes the page. Three spellings of
+   * the same invitation would read as three different things to do.
+   */
+  contribute: "Contribute",
   archivedCapture: (version: number) =>
     `This content is an archived capture (v${version}) and will never be changed.`,
   unreadableField:
@@ -34,7 +40,6 @@ const en = {
      */
     toggle: (title: string) => `Page contents — ${title}`,
     report: "Report",
-    contribute: "Contribute",
   },
 };
 
@@ -43,6 +48,7 @@ type FicheCopy = typeof en;
 const fr: FicheCopy = {
   sourceTierNote:
     "Chaque source porte son palier — l'autorité qu'on peut lui accorder.",
+  contribute: "Contribuer",
   archivedCapture: (version) =>
     `Ce contenu est une capture archivée (v${version}) et ne sera jamais modifié.`,
   unreadableField:
@@ -68,7 +74,6 @@ const fr: FicheCopy = {
     summary: "Sommaire",
     toggle: (title) => `Sommaire de la page — ${title}`,
     report: "Signaler",
-    contribute: "Contribuer",
   },
 };
 

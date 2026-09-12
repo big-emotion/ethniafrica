@@ -114,6 +114,30 @@ describe("FicheSummaryBrief", () => {
     expect(screen.queryByText("NaN")).toBeNull();
   });
 
+  /**
+   * A line across the top read as the end of the figures. The fact is not a
+   * sixth count — it is one sourced sentence — so it takes the rule down its
+   * left that the search surface already gives a sourced highlight, in the
+   * same gold role, and the device means one thing in both places.
+   */
+  // @req REQ-151
+  it("quotes its fact against a left rule rather than under a top one", () => {
+    const { container } = render(
+      <FicheSummaryBrief
+        kind="country"
+        entityId="LBR"
+        name="Liberia"
+        language="fr"
+        figures={{}}
+      />
+    );
+
+    const dress = container.querySelector("style")!.textContent;
+    const rule = dress.match(/\.fiche-summary-brief__fact \{([^}]*)\}/)![1];
+    expect(rule).toMatch(/border-left:\s*3px solid var\(--afh-gold\)/);
+    expect(rule).not.toMatch(/border-top/);
+  });
+
   // @req REQ-151
   it("shows one existing fact matched on both entity kind and id, with its tier", () => {
     render(

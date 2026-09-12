@@ -262,7 +262,7 @@ export function FicheChapterBar({
           data-testid="fiche-chapter-bar-contribute"
           href={getStaticPageRoute(language, "contribute")}
         >
-          {copy.contribute}
+          {ficheCopy[language].contribute}
         </a>
 
         {/* The read rule: how much of the fiche is behind the reader. */}

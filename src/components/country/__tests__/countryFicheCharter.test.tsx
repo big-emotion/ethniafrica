@@ -81,6 +81,22 @@ function renderTitle(
 }
 
 describe("country fiche charter", () => {
+  /**
+   * A reader decides a record is thin in the first screen. That was also the
+   * screen with no way to say so: the word "contribuer" existed in the
+   * navigation, the footer, the site tree and on the contribute page itself,
+   * and nowhere on the record it was about. The actions charter asks a click
+   * to take a shape, so this is a link to a real address, not a mood.
+   */
+  // @req REQ-091
+  it("offers a way to amend the record from the record's own head", () => {
+    renderTitle(countryFixture());
+
+    const contribute = screen.getByTestId("country-contribute");
+    expect(contribute).toHaveTextContent("Contribuer");
+    expect(contribute).toHaveAttribute("href", "/fr/contribute");
+  });
+
   // @req REQ-145
   it("renders country fiche chrome in English while preserving corpus values", () => {
     const country = countryFixture();

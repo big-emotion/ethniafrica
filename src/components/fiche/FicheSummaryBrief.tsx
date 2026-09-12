@@ -312,10 +312,15 @@ export function FicheSummaryBrief({
           font-size: var(--afh-text-small);
           color: var(--afh-fg-muted);
         }
+        /* A rule down the left rather than a line across the top. A top rule
+           reads as the end of the figures; a left rule reads as a quotation,
+           which is what this is — one sourced sentence, not a sixth count.
+           The gold role, the same one the search surface gives a sourced
+           highlight, so the device means one thing across the site. */
         .fiche-summary-brief__fact {
           margin-top: 18px;
-          padding-top: 16px;
-          border-top: 1px solid var(--afh-border);
+          padding-left: 12px;
+          border-left: 3px solid var(--afh-gold);
         }
         .fiche-summary-brief__fact p { margin: 0 0 8px; line-height: 1.5; }
         .fiche-summary-brief__tier {
