@@ -17,10 +17,7 @@ import { describe, expect, it } from "vitest";
  */
 const STYLES = join(__dirname, "..");
 const TYPE_CSS = readFileSync(join(STYLES, "tokens", "type.css"), "utf8");
-const PARCHMENT_CSS = readFileSync(
-  join(STYLES, "fiche-parchment.css"),
-  "utf8"
-);
+const PARCHMENT_CSS = readFileSync(join(STYLES, "fiche-parchment.css"), "utf8");
 
 const LEAD_TOKEN = "--afh-figure-lead";
 const GAP_TOKEN = "--afh-figure-gap";

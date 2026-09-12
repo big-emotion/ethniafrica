@@ -56,10 +56,15 @@ export function CountryChronology({
         <li className="afh-tl-item" key={`${entity.name}-${entity.period}`}>
           {/* The regime inks the period, never the entity's name: the claim
               is about what kind of authority held the years, and writing the
-              name in colonial red would read as a judgement on the place. */}
-          <span className="afh-tl-period" data-regime={entity.entryType}>
+              name in colonial red would read as a judgement on the place.
+
+              A paragraph, not a span. Below the tablet floor the row stacks
+              and the atlas centres everything but `p`, `blockquote`, `dt` and
+              `dd` — so as a span a date drifted to the middle of its own row
+              while the account under it stayed left. */}
+          <p className="afh-tl-period" data-regime={entity.entryType}>
             {entity.period ?? "—"}
-          </span>
+          </p>
           {entity.historicalRole || entity.centers?.length ? (
             <FicheTile
               title={entity.name}

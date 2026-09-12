@@ -69,7 +69,11 @@
      step as `--afh-text-h3` today and is still written out, because a
      heading role and a figure state answer to different decisions and
      aliasing one to the other would hide the day they part. */
-  --afh-figure-gap: clamp(1.1875rem, 1.067rem + 0.494vw, 1.4375rem); /* 19 → 23 */
+  --afh-figure-gap: clamp(
+    1.1875rem,
+    1.067rem + 0.494vw,
+    1.4375rem
+  ); /* 19 → 23 */
 
   /* ─── Line-heights, paired by role ────────────────────────── */
   --afh-leading-hero: 1.05;

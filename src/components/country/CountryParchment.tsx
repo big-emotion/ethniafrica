@@ -143,7 +143,10 @@ export function CountryParchment({
               <ol className="afh-parchment-timeline afh-chronology-spine">
                 {nameStations.map((item, index) => (
                   <li className="afh-tl-item" key={`${item.era}-${index}`}>
-                    <span className="afh-tl-period">{item.era}</span>
+                    {/* A paragraph for the same reason the chronology's is:
+                        a span here drifts to the middle of its own row on a
+                        phone while the name under it stays left. */}
+                    <p className="afh-tl-period">{item.era}</p>
                     <div>
                       {item.name ? <h3>{item.name}</h3> : null}
                       {item.prose ? <p>{item.prose}</p> : null}
