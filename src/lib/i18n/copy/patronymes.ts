@@ -80,9 +80,8 @@ const en = {
       "The atlas does not yet attach any name to this people. The names dimension has just opened and covers only a small part of the atlas.",
     peopleUnavailable:
       "The names borne could not be loaded. The problem is on our side, not an empty atlas.",
-    countryTitle: "Attested names",
-    countryNote:
-      "Two distinct registers: what a source attests in this country, and what the peoples who live there bear.",
+    countryTitle: "Names of the country",
+    countryAlphabeticalIndexLabel: "Alphabetical index",
     attestedLabel: "Attested in the country",
     reachLabel: "Borne by the country's peoples, with no attestation here",
     reachViaPrefix: "via",
@@ -195,9 +194,8 @@ const fr: PatronymesCopy = {
       "L’atlas ne rattache encore aucun nom à ce peuple. La dimension des noms vient d'ouvrir et ne couvre qu'une petite part de l'atlas.",
     peopleUnavailable:
       "Les noms portés n'ont pas pu être chargés. Le problème vient de notre côté, pas d'un atlas vide.",
-    countryTitle: "Noms attestés",
-    countryNote:
-      "Deux registres distincts : ce qu'une source atteste dans ce pays, et ce que portent les peuples qui y vivent.",
+    countryTitle: "Noms du pays",
+    countryAlphabeticalIndexLabel: "Index alphabétique",
     attestedLabel: "Attestés dans le pays",
     // Says both halves of the inference in the label itself — whose
     // names these are, and that no source places them here. A label

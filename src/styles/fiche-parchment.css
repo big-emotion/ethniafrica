@@ -657,6 +657,33 @@
   gap: 0;
 }
 
+/* The country chronology keeps dated and undated stations on one visible line. */
+.afh-chronology-spine {
+  margin: 0;
+  padding: 0 0 0 20px;
+  list-style: none;
+  border-left: 2px solid var(--accent-tint);
+}
+
+.afh-chronology-spine > .afh-tl-item {
+  position: relative;
+}
+
+.afh-chronology-spine > .afh-tl-item::before {
+  content: "";
+  position: absolute;
+  left: -26px;
+  top: 20px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent-ink);
+}
+
+.afh-tl-item--fact > * {
+  grid-column: 1 / -1;
+}
+
 .afh-tl-item {
   display: grid;
   grid-template-columns: 1fr;

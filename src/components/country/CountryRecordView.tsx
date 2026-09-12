@@ -1,45 +1,23 @@
 import type { ReactNode } from "react";
 
 import { DossierLinks } from "@/components/dossiers/DossierLinks";
-import { getCountryRoute, getPeopleRoute } from "@/lib/routing";
 import { FlagTarget } from "@/components/flags/FlagTarget";
 import { CountryParchment } from "@/components/country/CountryParchment";
-import {
-  HistoryTimeline,
-  HistoricalFactsSection,
-  LanguagesSection,
-  CultureGrid,
-} from "@/components/country";
+import { CultureGrid } from "@/components/country";
 import { FicheSection as Section } from "@/components/fiche/FicheSection";
-import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
 import { CountryAttestedNamesSection } from "@/components/patronymes/CountryAttestedNamesSection";
-import { transformCountryData } from "@/lib/countryDataTransformer";
+import {
+  transformCountryData,
+  transformLanguages,
+} from "@/lib/countryDataTransformer";
+import type { CountryLanguagesFact } from "@/lib/countryLanguagesFact";
+import type { CountrySummaryFigures } from "@/components/fiche/FicheSummaryBrief";
 import type { CountryPatronymes } from "@/api/v2/services/patronymeFicheLinks";
 import type { CountryDetail } from "@/types/afrik-frontend";
 import type { Language } from "@/types/shared";
 import { countryCopy } from "@/lib/i18n/copy/country";
 
-/**
- * The country fiche's dossier, server-rendered.
- *
- * `CountryDetailViewV2` fetched its own fiche from the browser even though the
- * route had already awaited it, and laid the sections out as rounded cards —
- * the shape this page shipped with before the atlas charter existed. This is
- * its counterpart on the parchment, fed by the route, the way
- * `LanguageFamilyDetailViewV2` and `PeopleDetailViewV2` already are.
- *
- * The mockup frames four sections. The other four are out of frame, not
- * removed: it models the fiche's opening argument, not its whole contents, and
- * "the mockup does not draw it" is no reason to drop shipped, sourced content —
- * least of all the culture section's FlagTarget, which a requirement asks for.
- *
- * Those four were hand-rolled `<section class="afh-parchment-section">` blocks
- * with their own heading and note. They now go through `FicheSection` like
- * every other chapter of every other fiche, which is what puts them under
- * `data-fiche-section` — and therefore in reach of a contract test. One of them
- * carried a provenance note naming a JSON path for as long as it did precisely
- * because nothing could see it.
- */
+/** The country record binds server data to the ordered parchment chapters. */
 
 export interface CountryRecordViewProps {
   country: CountryDetail;
@@ -58,6 +36,9 @@ export interface CountryRecordViewProps {
    * here, which the chapter states rather than hides.
    */
   patronymes?: CountryPatronymes | null;
+  summaryFigures?: CountrySummaryFigures;
+  /** Null means the derived-language read failed, not that the corpus is empty. */
+  countryLanguages?: CountryLanguagesFact | null;
   /** The way out of the fiche, composed by the route and passed straight down. */
   onward?: ReactNode;
   /** Cloudflare Turnstile public site key; without it the flag control is inert. */
@@ -68,13 +49,19 @@ export function CountryRecordView({
   country,
   language,
   hasSourceFlag,
-  fromPeopleName,
-  fromPeopleId,
   patronymes = null,
+  summaryFigures,
+  countryLanguages,
   onward,
 }: CountryRecordViewProps) {
   const copy = countryCopy[language];
   const data = transformCountryData(country, language);
+  if (countryLanguages) {
+    data.languages = transformLanguages({
+      ...country.culture,
+      mainLanguages: countryLanguages.value,
+    });
+  }
 
   return (
     <div data-testid="country-record-view">
@@ -83,32 +70,14 @@ export function CountryRecordView({
         country={country}
         language={language}
         hasSourceFlag={hasSourceFlag}
+        summaryFigures={summaryFigures}
+        languagesState={
+          countryLanguages === null
+            ? "unavailable"
+            : countryLanguages?.provenance
+        }
         onward={onward}
       >
-        <Section title={copy.sections.namesHistory}>
-          {data.timeline.items.length > 0 ? (
-            <HistoryTimeline data={data.timeline} />
-          ) : (
-            <FieldProvenanceMarker state="missing" language={language} />
-          )}
-        </Section>
-
-        <Section title={copy.sections.historicalFacts}>
-          {data.historicalFacts ? (
-            <HistoricalFactsSection data={data.historicalFacts} />
-          ) : (
-            <FieldProvenanceMarker state="missing" language={language} />
-          )}
-        </Section>
-
-        <Section title={copy.sections.languages}>
-          {data.languages.bubbles.length > 0 ? (
-            <LanguagesSection data={data.languages} language={language} />
-          ) : (
-            <FieldProvenanceMarker state="missing" language={language} />
-          )}
-        </Section>
-
         {/* After the languages, not beside "Noms à travers l'histoire": that
             chapter and "Étymologie du nom" are about what the *country* has
             been called, and this one about the names its inhabitants bear.
