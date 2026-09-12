@@ -5,28 +5,23 @@
 
 import { z } from "zod";
 
+// @req REQ-084
 export const languageFamilyTreeParamSchema = z.object({
   id: z.string().regex(/^FLG_[A-Z_]+$/, {
     message: "Invalid language family id format (expected FLG_*)",
   }),
 });
 
-export type LanguageFamilyTreeParam = z.infer<
-  typeof languageFamilyTreeParamSchema
->;
-
+// @req REQ-084
 export const languageFamilyTreeBranchParamSchema = z.object({
   id: z.string().regex(/^FLG_[A-Z_]+$/, {
     message: "Invalid language family id format (expected FLG_*)",
   }),
 });
 
-export type LanguageFamilyTreeBranchParam = z.infer<
-  typeof languageFamilyTreeBranchParamSchema
->;
-
 const isoLanguageRegex = /^[a-z]{3}$/;
 
+// @req REQ-084
 export const languageFamilyTreeBranchQuerySchema = z
   .object({
     language: z
@@ -43,10 +38,7 @@ export const languageFamilyTreeBranchQuerySchema = z
     message: "Exactly one of `language` or `group=unlinked` is required",
   });
 
-export type LanguageFamilyTreeBranchQuery = z.infer<
-  typeof languageFamilyTreeBranchQuerySchema
->;
-
+// @req REQ-084
 export const familyTreeBranchNodeSchema = z.object({
   id: z.string(),
   nameMain: z.string(),

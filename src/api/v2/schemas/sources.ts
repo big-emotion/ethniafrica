@@ -91,5 +91,3 @@ export type ListSourcesQuery = z.infer<typeof listSourcesQuerySchema>;
 export const sourceIdParamSchema = z.object({
   id: z.uuid({ error: "Invalid source id format (uuid expected)" }),
 });
-
-export type SourceIdParam = z.infer<typeof sourceIdParamSchema>;

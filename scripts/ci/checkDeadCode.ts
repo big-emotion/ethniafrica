@@ -75,7 +75,11 @@ export const DEAD_CODE_CEILINGS: Readonly<Record<DeadCodeCategory, number>> = {
   // 50 -> 49 when the bilingual glossary's vocabulary file started keying
   // the patronyme labels by `PatronymeNameSystem`, which the parsers file
   // exported and nothing read.
-  types: 49,
+  //
+  // 49 -> 32 when the seventeen `z.infer` param/query aliases under
+  // `src/api/v2/schemas/` were deleted: every route parses with the schema
+  // itself, so the aliases named shapes no caller ever held.
+  types: 32,
   duplicates: 0,
 };
 

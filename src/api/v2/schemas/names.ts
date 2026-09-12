@@ -16,8 +16,6 @@ export const peopleNamesParamSchema = z.object({
   }),
 });
 
-export type PeopleNamesParam = z.infer<typeof peopleNamesParamSchema>;
-
 // @req REQ-057
 export const nameRecordTypeSchema = z.enum([
   "endonym",
@@ -159,8 +157,6 @@ export const nameFormBearerSchema = z.object({
   id: z.string(),
   name: z.string(),
 });
-
-export type NameFormBearer = z.infer<typeof nameFormBearerSchema>;
 
 /**
  * One entry of the Appellations nomenclature: a name, and everyone who bears

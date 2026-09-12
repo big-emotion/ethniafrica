@@ -8,6 +8,7 @@
 
 import { z } from "zod";
 
+// @req REQ-097
 export const relationTypeSchema = z.enum([
   "migratory",
   "commercial",
@@ -45,14 +46,14 @@ function booleanQueryParam(defaultValue: boolean) {
 }
 
 // GET /api/v2/peoples/{id}/relations
+// @req REQ-097
 export const egoNetworkParamSchema = z.object({
   id: z.string().regex(/^PPL_[A-Z0-9_]+$/, {
     message: "Invalid people id format (expected PPL_*)",
   }),
 });
 
-export type EgoNetworkParam = z.infer<typeof egoNetworkParamSchema>;
-
+// @req REQ-097
 export const egoNetworkQuerySchema = z.object({
   types: csvRelationTypes,
   includeDerived: booleanQueryParam(true),
@@ -62,15 +63,15 @@ export const egoNetworkQuerySchema = z.object({
 export type EgoNetworkQuery = z.infer<typeof egoNetworkQuerySchema>;
 
 // GET /api/v2/relations/{id}
+// @req REQ-097
 export const relationDetailParamSchema = z.object({
   id: z.string().regex(/^REL_[A-Z0-9_]+$/, {
     message: "Invalid relation id format (expected REL_*)",
   }),
 });
 
-export type RelationDetailParam = z.infer<typeof relationDetailParamSchema>;
-
 // GET /api/v2/relations
+// @req REQ-097
 export const listRelationsQuerySchema = z
   .object({
     types: csvRelationTypes,

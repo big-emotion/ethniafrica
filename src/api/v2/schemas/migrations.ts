@@ -7,8 +7,10 @@
 import { z } from "zod";
 import { MIGRATION_EVENT_TYPES } from "@/lib/afrik/migrationEventTypes";
 
+// @req REQ-098
 export const migrationEventTypeSchema = z.enum(MIGRATION_EVENT_TYPES);
 
+// @req REQ-098
 export const migrationClassificationStatusSchema = z.enum([
   "consensual",
   "contested",
@@ -17,15 +19,15 @@ export const migrationClassificationStatusSchema = z.enum([
 ]);
 
 // GET /api/v2/migrations/{id}
+// @req REQ-098
 export const migrationDetailParamSchema = z.object({
   id: z.string().regex(/^MGR_[A-Z0-9_]+$/, {
     message: "Invalid migration id format (expected MGR_*)",
   }),
 });
 
-export type MigrationDetailParam = z.infer<typeof migrationDetailParamSchema>;
-
 // GET /api/v2/migrations
+// @req REQ-098
 export const listMigrationsQuerySchema = z
   .object({
     from: z.coerce.number().int().optional(),
@@ -50,5 +52,3 @@ export const listMigrationsQuerySchema = z
       path: ["from"],
     }
   );
-
-export type ListMigrationsQuery = z.infer<typeof listMigrationsQuerySchema>;
