@@ -18,27 +18,31 @@ import { parseSkillName } from "./skillParity";
 export const AUDIENCE_REPORT_DIR = "docs/audience";
 
 /**
- * The producer's name, not a skill this repository holds.
+ * The producer, which this repository holds again.
  *
- * `audience-audit` moved to the private production workspace on 2026-09-10,
- * along with `content-strategist`, because a public repository carries no
- * production skills. The report it writes stays here — it is built from this
- * repository's own URL inventory — so the handoff still crosses this directory
- * and is still worth guarding.
+ * It left for the private workspace on 2026-09-10, on the rule that a public
+ * repository carries no production skills, and came back on 2026-09-11 when that
+ * rule was reversed: an engine and a chain nobody can read the history of are an
+ * engine and a chain nobody can repair. What did *not* come back is the output —
+ * renders, per-subject cards and sources stay in the library, addressed by
+ * `ETHNIAFRICA_SOCIAL_PROJECTS`.
  *
- * What this contract can no longer check: that the producer exists, is named
- * correctly, and actually writes a dated report. That half of the guarantee now
- * lives in the workspace. Saying so here is the point; a contract that quietly
- * checks less than its name suggests is worse than one that checks nothing.
+ * So the contract can check the whole handoff again, producer included, rather
+ * than half of it.
  */
-export const AUDIENCE_PRODUCER = "audience-audit";
+export const AUDIENCE_PRODUCER = "ethniafrica-audience-audit";
 
 /**
- * Consumers that live in this repository. `content-strategist` was the second
- * entry and moved out with the producer; `experience-optimizer` acts on the
- * site's own pages, so it stayed.
+ * Both consumers are back in this repository too. `ethniafrica-content-strategist`
+ * decides what ships; `ethniafrica-experience-optimizer` acts on the site's own
+ * pages. Each must still open the dated report rather than guess — a consumer
+ * edited until it no longer reads the report keeps running and silently reverts
+ * to taste.
  */
-export const AUDIENCE_CONSUMERS = ["ethniafrica-experience-optimizer"] as const;
+export const AUDIENCE_CONSUMERS = [
+  "ethniafrica-content-strategist",
+  "ethniafrica-experience-optimizer",
+] as const;
 
 export interface SkillContractIssue {
   skill: string;
@@ -64,6 +68,26 @@ export function checkAudienceSkillContract(
   overrides: SkillMarkdownOverrides = {}
 ): SkillContractIssue[] {
   const issues: SkillContractIssue[] = [];
+
+  const producer = skillMarkdown(projectRoot, AUDIENCE_PRODUCER, overrides);
+  if (producer === null) {
+    issues.push({ skill: AUDIENCE_PRODUCER, detail: "SKILL.md is missing" });
+  } else {
+    const declaredName = parseSkillName(producer);
+    if (declaredName !== AUDIENCE_PRODUCER) {
+      issues.push({
+        skill: AUDIENCE_PRODUCER,
+        detail: `frontmatter name is ${JSON.stringify(declaredName)}, expected ${JSON.stringify(AUDIENCE_PRODUCER)}`,
+      });
+    }
+
+    if (!producer.includes(`${AUDIENCE_REPORT_DIR}/`)) {
+      issues.push({
+        skill: AUDIENCE_PRODUCER,
+        detail: `does not write the audit report to ${AUDIENCE_REPORT_DIR}/`,
+      });
+    }
+  }
 
   for (const skill of AUDIENCE_CONSUMERS) {
     const markdown = skillMarkdown(projectRoot, skill, overrides);

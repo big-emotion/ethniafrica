@@ -1,0 +1,60 @@
+/* ============================================================
+   EthniAfrica — Motion tokens
+   Lifted from src/styles/tokens/motion.css (ETNI-21 · UX-DR6).
+
+   The contract callers rely on: under prefers-reduced-motion,
+   every duration collapses to 0.01ms and transforms are
+   neutralised — only opacity transitions remain.
+   ============================================================ */
+
+:root {
+  /* Durations */
+  --afh-duration-instant: 0.01ms; /* @kind other */
+  --afh-duration-fast: 120ms; /* @kind other */
+  --afh-duration-base: 200ms; /* @kind other */
+  --afh-duration-slow: 320ms; /* @kind other */
+  --afh-duration-fade: 400ms; /* @kind other */
+  --afh-duration-pageload: 600ms; /* @kind other */
+
+  /* Easings */
+  --afh-ease-linear: linear; /* @kind other */
+  --afh-ease-in: cubic-bezier(0.4, 0, 1, 1); /* @kind other */
+  --afh-ease-out: cubic-bezier(0, 0, 0.2, 1); /* @kind other */
+  --afh-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1); /* @kind other */
+  --afh-ease-default: ease; /* @kind other */
+  /* Reserved for things ARRIVING on screen — panel, sheet, drawer,
+     card. State changes keep the flat curves above: a spring on a
+     colour change reads as a glitch, not as an arrival. */
+  --afh-ease-spring: cubic-bezier(0.22, 1, 0.36, 1); /* @kind other */
+
+  /* Composed transitions */
+  --afh-transition-color:
+    color var(--afh-duration-base) var(--afh-ease-in-out),
+    background-color var(--afh-duration-base) var(--afh-ease-in-out),
+    border-color var(--afh-duration-base) var(--afh-ease-in-out); /* @kind other */
+  --afh-transition-opacity: opacity var(--afh-duration-base)
+    var(--afh-ease-in-out); /* @kind other */
+  --afh-transition-transform: transform var(--afh-duration-base)
+    var(--afh-ease-in-out); /* @kind other */
+  --afh-transition-all: all var(--afh-duration-base) var(--afh-ease-in-out); /* @kind other */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --afh-duration-instant: 0.01ms; /* @kind other */
+    --afh-duration-fast: 0.01ms; /* @kind other */
+    --afh-duration-base: 0.01ms; /* @kind other */
+    --afh-duration-slow: 0.01ms; /* @kind other */
+    --afh-duration-fade: 0.01ms; /* @kind other */
+    --afh-duration-pageload: 0.01ms; /* @kind other */
+
+    /* A spring overshoots and comes back, which stays visible for any
+       caller that pairs the curve with a duration of its own. */
+    --afh-ease-spring: linear; /* @kind other */
+
+    --afh-transition-color: opacity 0.01ms linear; /* @kind other */
+    --afh-transition-opacity: opacity 0.01ms linear; /* @kind other */
+    --afh-transition-transform: opacity 0.01ms linear; /* @kind other */
+    --afh-transition-all: opacity 0.01ms linear; /* @kind other */
+  }
+}

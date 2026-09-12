@@ -4,6 +4,7 @@ import {
   auditEnvExample,
   collectDocumented,
   collectReferences,
+  isTestFile,
 } from "../checkEnvExample";
 
 describe("collectReferences", () => {
@@ -19,6 +20,55 @@ describe("collectReferences", () => {
     expect(
       collectReferences([{ path: "a.ts", source: "process.envelope.thing" }])
     ).toEqual(new Set());
+  });
+
+  // @req REQ-032
+  it("finds a Python env read", () => {
+    // The render engine is Python and reads its output root from the
+    // environment. Seen only through `process.env`, that variable would be
+    // undocumentable: adding it to `.env.example` would fail the gate as unread,
+    // and leaving it out would hide it from whoever configures a machine.
+    expect(
+      collectReferences([
+        {
+          path: "social/harness/ethni_paths.py",
+          source: 'os.environ.get("ETHNIAFRICA_SOCIAL_PROJECTS", "")',
+        },
+      ])
+    ).toEqual(new Set(["ETHNIAFRICA_SOCIAL_PROJECTS"]));
+  });
+
+  // @req REQ-032
+  it("finds a Python env read through subscript and getenv", () => {
+    expect(
+      collectReferences([
+        { path: "a.py", source: 'os.environ["HF_WORKFLOWS"]' },
+        { path: "b.py", source: "os.getenv('SOME_FLAG')" },
+      ])
+    ).toEqual(new Set(["HF_WORKFLOWS", "SOME_FLAG"]));
+  });
+});
+
+describe("isTestFile", () => {
+  // @req REQ-032
+  it("recognises the suites of all three languages in the repository", () => {
+    // The classification decides whether a variable is a deployment requirement
+    // or a fixture. It knew only `.test.ts`, so the render engine's `.mjs` and
+    // Python suites were read as production code and their fixture names were
+    // demanded in `.env.example` — where, being read by nothing a deployment
+    // runs, the other direction would then have reported them as dead.
+    expect(isTestFile("src/lib/a.test.ts")).toBe(true);
+    expect(isTestFile("src/lib/__tests__/a.ts")).toBe(true);
+    expect(isTestFile("social/tools/paths.test.mjs")).toBe(true);
+    expect(isTestFile("social/harness/test_ethni_env.py")).toBe(true);
+  });
+
+  // @req REQ-032
+  it("does not mistake production code for a suite", () => {
+    expect(isTestFile("social/tools/paths.mjs")).toBe(false);
+    expect(isTestFile("social/harness/ethni_env.py")).toBe(false);
+    // The word appears in the path, but nothing here is a suite.
+    expect(isTestFile("src/lib/latest/index.ts")).toBe(false);
   });
 });
 
