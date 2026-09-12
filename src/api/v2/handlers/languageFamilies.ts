@@ -2,6 +2,7 @@
  * Language Families Handler - API handlers for language families
  */
 
+import { DEFAULT_PAGE_SIZE } from "@/api/v2/schemas/pagination";
 import {
   getLanguageFamilies,
   getLanguageFamilyById,
@@ -23,7 +24,7 @@ export async function listLanguageFamiliesHandler(
     perPage
   );
   const appliedPage = page ?? 1;
-  const appliedPerPage = perPage ?? 20;
+  const appliedPerPage = perPage ?? DEFAULT_PAGE_SIZE;
 
   return createApiResponse(data, {
     pagination: {

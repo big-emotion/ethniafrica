@@ -7,6 +7,7 @@
  * v1 only populates entity_type='people'.
  */
 
+import { pageSizeSchema } from "@/api/v2/schemas/pagination";
 import { z } from "zod";
 
 // @req REQ-057
@@ -145,7 +146,7 @@ export const listNamesQuerySchema = z.object({
     .string()
     .length(1, { message: "letter must be exactly one character" })
     .optional(),
-  limit: z.coerce.number().int().min(1).max(100).default(20),
+  limit: pageSizeSchema,
   offset: z.coerce.number().int().min(0).default(0),
 });
 

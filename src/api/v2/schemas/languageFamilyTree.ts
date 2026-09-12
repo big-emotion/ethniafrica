@@ -3,6 +3,7 @@
  * GET /v2/language-families/{id}/tree/branch (Epic 7, FR48).
  */
 
+import { pageSizeSchema } from "@/api/v2/schemas/pagination";
 import { z } from "zod";
 
 // @req REQ-084
@@ -31,7 +32,7 @@ export const languageFamilyTreeBranchQuerySchema = z
       })
       .optional(),
     group: z.literal("unlinked").optional(),
-    limit: z.coerce.number().int().min(1).max(100).default(20),
+    limit: pageSizeSchema,
     offset: z.coerce.number().int().min(0).default(0),
   })
   .refine((data) => (data.language ? 1 : 0) + (data.group ? 1 : 0) === 1, {

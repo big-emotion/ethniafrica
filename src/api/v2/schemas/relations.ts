@@ -6,6 +6,7 @@
  * PublicRelationRecord), following the precedent already set by Story 11.6.
  */
 
+import { pageSizeSchema } from "@/api/v2/schemas/pagination";
 import { z } from "zod";
 
 // @req REQ-097
@@ -83,7 +84,7 @@ export const listRelationsQuerySchema = z
       .optional(),
     periodFrom: z.coerce.number().int().optional(),
     periodTo: z.coerce.number().int().optional(),
-    limit: z.coerce.number().int().min(1).max(100).default(20),
+    limit: pageSizeSchema,
     offset: z.coerce.number().int().min(0).default(0),
   })
   .refine(

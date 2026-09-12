@@ -8,6 +8,7 @@
  * item shape.
  */
 
+import { DEFAULT_PAGE_SIZE } from "@/api/v2/schemas/pagination";
 import {
   getEgoNetworkOrNotFound,
   listRelations,
@@ -99,7 +100,7 @@ export async function listRelationsHandler(
   // optional in the inferred output even though they're always present at
   // runtime post-parse — the `??` fallbacks satisfy the type checker without
   // changing behavior.
-  const limit = query.limit ?? 20;
+  const limit = query.limit ?? DEFAULT_PAGE_SIZE;
   const offset = query.offset ?? 0;
   const { data, total } = await listRelations({ ...query, limit, offset });
 

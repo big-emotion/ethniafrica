@@ -2,6 +2,7 @@
  * Language Family Service - Business logic for language families
  */
 
+import { DEFAULT_PAGE_SIZE } from "@/api/v2/schemas/pagination";
 import {
   getAllAfrikLanguageFamilies,
   getAfrikLanguageFamilyById,
@@ -61,7 +62,7 @@ export interface LanguageFamilyListOptions {
 // @req REQ-110
 export async function getLanguageFamilies(
   page: number = 1,
-  perPage: number = 20,
+  perPage: number = DEFAULT_PAGE_SIZE,
   options: LanguageFamilyListOptions = {}
 ): Promise<LanguageFamiliesResult> {
   const [families, total, peopleCounts, roster] = await Promise.all([

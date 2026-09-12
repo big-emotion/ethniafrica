@@ -4,6 +4,7 @@
  * (Epic 12, Story 12.5, ETNI-518).
  */
 
+import { DEFAULT_PAGE_SIZE } from "@/api/v2/schemas/pagination";
 import {
   listMigrations,
   getMigrationById,
@@ -31,7 +32,7 @@ export async function listMigrationsHandler(
     // optional in the inferred output even though they're always present at
     // runtime post-parse — the `??` fallbacks satisfy the type checker
     // without changing behavior.
-    const limit = query.limit ?? 20;
+    const limit = query.limit ?? DEFAULT_PAGE_SIZE;
     const offset = query.offset ?? 0;
     const { data, total } = await listMigrations({ ...query, limit, offset });
 

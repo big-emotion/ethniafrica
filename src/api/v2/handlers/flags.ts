@@ -1,3 +1,4 @@
+import { pageSizeSchema } from "@/api/v2/schemas/pagination";
 import { z } from "zod";
 import {
   createFlag,
@@ -137,7 +138,7 @@ const flagListSchema = z.object({
   kind: z.enum(FLAG_KINDS).optional(),
   target_type: trimmedRequiredString.optional(),
   cursor: trimmedRequiredString.optional(),
-  limit: z.coerce.number().int().min(1).max(100).default(20),
+  limit: pageSizeSchema,
 });
 
 const flagDetailSchema = z.object({

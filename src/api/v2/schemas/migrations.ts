@@ -4,6 +4,7 @@
  * interfaces in `@/types/migrations` (MigrationSummary, MigrationDetailRecord).
  */
 
+import { pageSizeSchema } from "@/api/v2/schemas/pagination";
 import { z } from "zod";
 import { MIGRATION_EVENT_TYPES } from "@/lib/afrik/migrationEventTypes";
 
@@ -41,7 +42,7 @@ export const listMigrationsQuerySchema = z
       .optional(),
     classificationStatus: migrationClassificationStatusSchema.optional(),
     group: z.string().optional(),
-    limit: z.coerce.number().int().min(1).max(100).default(20),
+    limit: pageSizeSchema,
     offset: z.coerce.number().int().min(0).default(0),
   })
   .refine(

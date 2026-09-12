@@ -16,6 +16,7 @@
  * breaking release.
  */
 
+import { pageSizeSchema } from "@/api/v2/schemas/pagination";
 import { z } from "zod";
 import {
   sourceKindSchema,
@@ -74,7 +75,7 @@ export type Source = z.infer<typeof sourceSchema>;
 // @req REQ-092
 export const listSourcesQuerySchema = z.object({
   page: z.coerce.number().int().min(1).default(1),
-  perPage: z.coerce.number().int().min(1).max(100).default(20),
+  perPage: pageSizeSchema,
   q: z.string().trim().min(1).optional(),
   tier: z.union([sourceTierSchema, z.literal("needs_review")]).optional(),
   sourceKind: sourceKindSchema.optional(),
