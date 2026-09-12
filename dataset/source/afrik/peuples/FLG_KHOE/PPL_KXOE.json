@@ -119,51 +119,48 @@
       {
         "title": "Glottolog 5.3 — Kxoe (kxoe1243), ISO 639-3 : xuu",
         "url": "https://glottolog.org/resource/languoid/id/kxoe1243",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "Joshua Project — Kxoe, Xun in Botswana",
         "url": "https://joshuaproject.net/people_groups/10676/BC",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Kilian-Hatz, Christa. Khwe Dictionary. Koln : Rudiger Koppe Verlag, 2003",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Kilian-Hatz, Christa & Naude, David. Khwe Folktales. Koln, 1999",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "IWGIA — The Indigenous World 2025 : Namibia",
         "url": "https://iwgia.org/en/namibia/5634-iw-2025-namibia.html",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"iwgia\"."
+        "tier": "official"
       },
       {
         "title": "UNESCO — Tsodilo Hills World Heritage Site",
         "url": "https://whc.unesco.org/en/list/1021/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of whc.unesco.org."
+        "tier": "official"
       },
       {
         "title": "Brenzinger, Matthias. Language endangerment in Africa. In Encyclopedia of Language and Linguistics, 2011",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "SciELO — The case of Khoisan languages of Botswana",
         "url": "http://www.scielo.org.za/scielo.php?script=sci_arttext&pid=S2224-33802019000300012",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for scielo.org.za."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

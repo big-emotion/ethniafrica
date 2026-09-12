@@ -78,39 +78,38 @@
       {
         "title": "Glottolog — El Molo (elmo1238)",
         "url": "https://glottolog.org/resource/languoid/id/elmo1238",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "Endangered Languages Project — El Molo",
         "url": "https://endangeredlanguages.com/elp-language/4124",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for endangeredlanguages.com."
+        "tier": "referenced"
       },
       {
         "title": "Dyson, W.S. and Fuchs, V.E. (1937). The Elmolo. Journal of the Royal Anthropological Institute of Great Britain and Ireland, 67, 327-338",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Heine, Bernd (1980). Elmolo. In The Non-Bantu Languages of Kenya, 173-218. Berlin: Dietrich Reimer",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Pawankafund — On the trail of the vanishing El-Molo language",
         "url": "https://pawankafund.org/ano/2017/on-the-trail-of-the-vanishing-el-molo-language/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers pawankafund.org; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Kenya National Bureau of Statistics — Population and Housing Census 2019",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

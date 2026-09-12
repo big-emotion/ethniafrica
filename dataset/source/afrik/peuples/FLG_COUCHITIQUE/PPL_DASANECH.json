@@ -123,51 +123,48 @@
       {
         "title": "Mursi Online — Daasanach",
         "url": "https://www.mursi.org/neighbours/daasanach",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for mursi.org."
+        "tier": "referenced"
       },
       {
         "title": "101 Last Tribes — Dassanech",
         "url": "https://www.101lasttribes.com/tribes/dassanech.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       },
       {
         "title": "Joshua Project — Daasanach in Ethiopia",
         "url": "https://joshuaproject.net/people_groups/14549/ET",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Joshua Project — Daasanach in Kenya",
         "url": "https://joshuaproject.net/people_groups/14549/KE",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "SIL Ethnologue — Daasanach language (dsh)",
         "url": "https://www.ethnologue.com/language/dsh/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Begin North Adventures — The Daasanach Tribe",
         "url": "https://beginnorthadventures.com/daasanach-tribe/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for beginnorthadventures.com."
+        "tier": "unverified"
       },
       {
         "title": "Daasanach – Glottolog 5.2",
         "url": "https://glottolog.org/resource/languoid/id/daas1238",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "Daasanach of Ethiopia – Horn of Africa Evangelical Mission",
         "url": "https://hornofafrica.org/wp-content/uploads/2019/12/Daasanach.pdf",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for hornofafrica.org."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

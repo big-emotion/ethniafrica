@@ -8,7 +8,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 The codebase is **bilingual — English and French — while publication fails closed to French-only** (ARCH-021, REQ-140). `Language = "en" | "fr"` is derived from `LOCALES` in `src/lib/locale.ts`, and `[lang]` resolves to either only when `SITE_LOCALE_MODE` publishes both. Missing or invalid configuration means `fr-only`; `bilingual-fr-default` publishes both while keeping `/` on French, and `bilingual-en-default` is the later explicit English-default launch. A reader's explicit choice is remembered in the `ethni-locale` cookie; only the language switcher writes that cookie. `/fr/*` resolves unchanged. English URLs carry **English slugs** (`/en/atlas/peoples/...`) that `src/middleware.ts` rewrites onto the French route folders under `src/app/[lang]/` (DEC-049), so a route rename is two slug entries in `src/lib/routing.ts`, never a second folder tree. There is no third locale: `es`/`pt` and any other two-letter segment 308 to the configured default. An `en` branch is expected wherever a locale is switched on; a `["fr"].includes(lang)` guard is the retired shape.
 
-The public REST API is **v2 only** (`/api/v2/*`). V1 (regions/ethnicities) was removed; anything referring to `regions` or `ethnicities` as entities is stale, including most of `README.md`.
+The public REST API is **v2 only** (`/api/v2/*`). V1 (regions/ethnicities) was removed; anything referring to `regions` or `ethnicities` as entities is stale.
 
 ## Commands
 
@@ -17,7 +17,7 @@ npm run dev                 # dev server on :3000
 npm run build               # production build
 make check                  # full local gate: lint + typecheck + format:check + all tests (must stay < 5 min)
 
-npm run lint                # eslint . (flat config; `next lint` is deliberately NOT used — see eslint.config.mjs)
+npm run lint                # eslint over src + scripts, content-cached (flat config; `next lint` is deliberately NOT used — see eslint.config.mjs)
 npm run typecheck           # tsc --noEmit
 npm run format              # prettier --write .
 
@@ -45,7 +45,7 @@ npm run check:workflow-shell        # every workflow `run:` block must parse und
 npm run check:env-example           # .env.example and the code agree, both directions
 npm run check:local-paths           # no local filesystem path in a public repo
 npm run test:social-tools           # the social/ Node utilities (in `make check`)
-npm run test:social-engine          # the ten Python suites of the render engine
+npm run test:social-engine          # every test_*.py suite of the render engine
 npm run check:migration-files       # no duplicate version or name, no hole in the sequence
 npm run check:dead                  # knip: unreferenced files, exports, dependencies (ratcheted ceilings)
 npm run test:charter-contracts      # aggregated design-charter contract suite
@@ -75,7 +75,7 @@ Shared: `src/api/v2/utils/{validation,response}.ts`, `src/api/v2/schemas/` (zod)
 The corpus lives as JSON files in git, **not** only in the database:
 
 ```
-dataset/source/afrik/           # ~890 .json fiches — the editorial source of truth
+dataset/source/afrik/           # the .json fiches — the editorial source of truth (count: git ls-files)
   famille_linguistique/FLG_*.json
   peuples/FLG_*/PPL_*.json
   pays/*.json
@@ -101,7 +101,7 @@ Loading the corpus is `scripts/migrateAfrikToDatabase.ts --target=recette|produc
 
 **The browser never reads the corpus from Supabase.** There used to be a third client — `client.ts`, anon key, browser — and this file described it for months after its last caller went away. Every read now goes through `/api/v2`, which is the better architecture, but it was only ever true in the code. The dead chain (`client.ts` ← `flags-client.ts` ← nobody) was removed rather than documented. `src/lib/supabase/auth-client.ts` is a separate, living thing: the browser authenticates directly, it just does not query.
 
-Migrations are numbered and sequential in `supabase/migrations/` (081 at last count). A merge into `recette` applies the pending ones there automatically (`migrate-recette.yml`, needs the `RECETTE_SUPABASE_DB_URL` secret), and publishing a Release applies production's the same way (`deploy-production.yml`'s `migrate` job, needs `PRODUCTION_SUPABASE_DB_URL` — a Postgres connection string, not the PostgREST endpoint `PRODUCTION_SUPABASE_URL`). **That DDL runs through an SSH tunnel, and there is no DB URL secret.** Production's Postgres is self-hosted and its port is not published — measured 2026-09-03, the host answers on 443 and refuses 5432 — so the `migrate` job forwards to the **`supabase-db` container** over SSH (`SUPABASE_OVH_SSH_*`, five secrets, pointing at the **Supabase** VPS, a different machine from the app's), reads `POSTGRES_PASSWORD` from the stack's own `.env`, and runs `db push` on the runner against the loopback. Host port 5432 is **Supavisor**, not Postgres — a pooler a migration does not need, and which cost two deploys (it wants a tenant in the username, and authenticates with a password copy that `--force-recreate` does not refresh). A stored connection string was removed because it disagreed with the machine five times running. Production used to be manual on purpose; it stopped being so once the ledger became measurable, because a step performed by hand before every deploy is a step that gets skipped. `npm run migrations:diff` shows what a database is missing, `npm run check:migration-state` fails on anything pending, orphaned or edited-after-applying. Which of them are live on which project is tracked in `docs/runbooks/migration-state.md` — the ledger records some under timestamp versions rather than filenames, so a tool comparing version strings reports applied migrations as pending. **Both Supabase projects label their environment "production"** — a Supabase project has exactly one environment and Supabase names it "production", so the label describes the project, not the application it serves. `shmrjtnfbqzceovroqjj` serves **recette**. **Production is not a hosted project at all** — it is a **self-hosted** stack at `https://supabase.ethniafrica.com` on the OVH VPS, which is why the MCP cannot see it: this repo's token lists exactly one project. `jajggbeimfudpzcxytbb` is the **retired** hosted project, still alive enough to answer and therefore still able to mislead — this file named it as production for weeks, and a secret left pointing at it is what blocked the v4.1.1 deploy. Its **ledger** is readable all the same: migration `042` exposes `applied_migrations()` to `service_role`, so `npm run check:migration-state:production` measures it over PostgREST. Only **DDL** needs the direct Postgres connection. Conflating the two is what kept production's schema state a claim in a runbook for thirty-two migrations. Every migration is a two-step rollout: recette first, prod second. Applying one and calling it done has already left a corpus loaded on one and missing on the other.
+Migrations are numbered and sequential in `supabase/migrations/` — the directory is the count, and `check:migration-files` keeps it free of holes and duplicates, so no number is quoted here. A merge into `recette` applies the pending ones there automatically (`migrate-recette.yml`, needs the `RECETTE_SUPABASE_DB_URL` secret), and publishing a Release applies production's the same way (`deploy-production.yml`'s `migrate` job). **That DDL runs through an SSH tunnel, and there is no DB URL secret.** Production's Postgres is self-hosted and its port is not published — measured 2026-09-03, the host answers on 443 and refuses 5432 — so the `migrate` job forwards to the **`supabase-db` container** over SSH (`SUPABASE_OVH_SSH_*`, five secrets, pointing at the **Supabase** VPS, a different machine from the app's), reads `POSTGRES_PASSWORD` from the stack's own `.env`, and runs `db push` on the runner against the loopback. Host port 5432 is **Supavisor**, not Postgres — a pooler a migration does not need, and which cost two deploys (it wants a tenant in the username, and authenticates with a password copy that `--force-recreate` does not refresh). A stored connection string was removed because it disagreed with the machine five times running. Production used to be manual on purpose; it stopped being so once the ledger became measurable, because a step performed by hand before every deploy is a step that gets skipped. `npm run migrations:diff` shows what a database is missing, `npm run check:migration-state` fails on anything pending, orphaned or edited-after-applying. Which of them are live on which project is tracked in `docs/runbooks/migration-state.md` — the ledger records some under timestamp versions rather than filenames, so a tool comparing version strings reports applied migrations as pending. **Both Supabase projects label their environment "production"** — a Supabase project has exactly one environment and Supabase names it "production", so the label describes the project, not the application it serves. `shmrjtnfbqzceovroqjj` serves **recette**. **Production is not a hosted project at all** — it is a **self-hosted** stack at `https://supabase.ethniafrica.com` on the OVH VPS, which is why the MCP cannot see it: this repo's token lists exactly one project. `jajggbeimfudpzcxytbb` is the **retired** hosted project, still alive enough to answer and therefore still able to mislead — this file named it as production for weeks, and a secret left pointing at it is what blocked the v4.1.1 deploy. Its **ledger** is readable all the same: migration `042` exposes `applied_migrations()` to `service_role`, so `npm run check:migration-state:production` measures it over PostgREST. Only **DDL** needs the direct Postgres connection. Conflating the two is what kept production's schema state a claim in a runbook for thirty-two migrations. Every migration is a two-step rollout: recette first, prod second. Applying one and calling it done has already left a corpus loaded on one and missing on the other.
 
 ### Frontend
 
@@ -118,9 +118,12 @@ Migrations are numbered and sequential in `supabase/migrations/` (081 at last co
 Every carousel and short the project publishes is drawn by Python under
 `social/harness`, with Node utilities beside it in `social/tools`. The spec they
 obey is `docs/design/gabarits-social/GABARITS-SOCIAL.md`, versioned here with the
-tokens it reads — it used to be a derived copy of a file in the private
-workspace, marked "do not edit here", and it was a section behind its source
-within a day.
+tokens it reads, and **this file is the source — edit it here**, in the same
+change as the engine code it constrains. It used to be a derived copy of a file
+in the private workspace, marked "do not edit here", and it was a section behind
+its source within a day; when the engine moved in (#976) the copy became the
+source and the workspace's sync tool was deleted. No sync script exists, so
+nothing will overwrite an edit made here.
 
 **The code is versioned; the productions are not, and two variables draw the
 line.** Both name a directory outright, because deriving either one is what tied
@@ -153,7 +156,7 @@ directory that does not exist reports zero subjects, not an error.
 
 ```bash
 make social-tools     # node --test, cheap, part of `make check`
-make social-engine    # the ten Python suites, needs the venv and the corpus
+make social-engine    # the Python suites, needs the venv; corpus suites need the workshop
 ```
 
 The engine's virtualenv is gitignored and rebuilt from
@@ -271,18 +274,6 @@ version was not, matched every `src/lib/home/...` import in the codebase, and
 buried the three real leaks under 84 files of noise. `--selftest` holds ten
 fixture lines, half of them the false positives that made that version unusable.
 
-### The social gabarit spec is a derived copy
-
-`docs/design/gabarits-social/` carries `GABARITS-SOCIAL.md` and the two token
-files that the social carousel and reel templates are built from. The spec is
-here because it documents the product's own style; the tokens because the
-application uses them.
-
-**It is generated, never edited here.** The source lives in the private
-production workspace, and a sync script rewrites this copy with the workspace's
-own shelf names stripped. Editing this copy makes the two diverge silently, and
-the workspace is the one that wins. Fix the source, re-sync.
-
 ### Dead code (`npm run check:dead`, CI-blocking)
 
 `knip` (config in `knip.json`) tallies unreferenced files, exports, types and
@@ -391,7 +382,7 @@ A `content.kingdoms[]` entry carries `entryType` (`polity | colonial | modern`) 
 
 Two gates. `REQ-148 Kingdom time ranges` in `validateAfrikData.ts` holds the shape and refuses a range sharing no time with its own label. `chronology-symmetry` in `checkEditorialRules.ts` refuses the asymmetry that made this necessary: **a country that dates its colonial administrations must date its precolonial polities**, because the atlas was showing "1894 - 1962" for the protectorate and "Précolonial" for the five kingdoms above it. It is not a completeness check — a country that dates nothing passes.
 
-96 entries still violate it, held by `UNDATED_POLITY_CEILING`, a ratchet that fails in both directions like `DEAD_CODE_CEILINGS`. Each editorial pass lowers it in the same change; at zero the ratchet is deleted and the findings become errors. `scripts/afrik/backfillKingdomTimeRange.ts` (dry-run by default) prints the queue by country and **never invents a bound** — an entry whose label names an era rather than a date stays undated and visible to the gate.
+The entries that still violate it are held by `UNDATED_POLITY_CEILING` in `scripts/ci/checkEditorialRules.ts` — read the constant for the current number; a copy of it here is the kind that drifts — a ratchet that fails in both directions like `DEAD_CODE_CEILINGS`. Each editorial pass lowers it in the same change; at zero the ratchet is deleted and the findings become errors. `scripts/afrik/backfillKingdomTimeRange.ts` (dry-run by default) prints the queue by country and **never invents a bound** — an entry whose label names an era rather than a date stays undated and visible to the gate.
 
 ### Archive → JSON restoration
 

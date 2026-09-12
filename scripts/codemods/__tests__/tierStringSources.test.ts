@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { violatesReaderRegister } from "@/lib/editorial/readerRegister";
 import {
   looksLikePublishedCitation,
   replaceSourceArrays,
@@ -23,8 +24,6 @@ describe("transformSourceEntry", () => {
       title: "SIL Ethnologue — Bilen language (byn)",
       url: "https://www.ethnologue.com/language/byn/",
       tier: "official",
-      notes:
-        'Tier resolved from the authorized source catalogue entry "ethnologue".',
     });
   });
 
@@ -50,7 +49,6 @@ describe("transformSourceEntry", () => {
     );
 
     expect(entry.tier).toBe("unverified");
-    expect(entry.notes).toContain("101lasttribes.com");
   });
 
   // @req REQ-092
@@ -60,8 +58,6 @@ describe("transformSourceEntry", () => {
     );
 
     expect(entry.tier).toBe("official");
-    expect(entry.notes).toContain("wcaro.unfpa.org");
-    expect(entry.notes).toContain("unfpa.org");
   });
 
   // @req REQ-092
@@ -82,11 +78,11 @@ describe("transformSourceEntry", () => {
     );
 
     expect(entry.url).toBe("https://langsci-press.org/catalog/book/190");
-    expect(entry.notes).not.toContain("Original entry");
+    expect(entry).not.toHaveProperty("notes");
   });
 
   // @req REQ-092
-  it("tiers a URL-less published citation as referenced and records why", () => {
+  it("tiers a URL-less published citation as referenced", () => {
     const entry = transformSourceEntry(
       "Ehret, Christopher (2001) – *A Historical-Comparative Reconstruction of Nilo-Saharan*. Cologne: Rüdiger Köppe Verlag."
     );
@@ -96,8 +92,6 @@ describe("transformSourceEntry", () => {
         "Ehret, Christopher (2001) – *A Historical-Comparative Reconstruction of Nilo-Saharan*. Cologne: Rüdiger Köppe Verlag",
       url: null,
       tier: "referenced",
-      notes:
-        "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies.",
     });
   });
 
@@ -107,7 +101,6 @@ describe("transformSourceEntry", () => {
 
     expect(entry.tier).toBe("needs_review");
     expect(entry.url).toBeNull();
-    expect(entry.notes).toContain("editorial review");
   });
 
   // @req REQ-092
@@ -117,7 +110,6 @@ describe("transformSourceEntry", () => {
     );
 
     expect(entry.tier).toBe("needs_review");
-    expect(entry.notes).toContain("kanaga-at.com");
   });
 
   // @req REQ-092
@@ -128,6 +120,26 @@ describe("transformSourceEntry", () => {
     expect(entry.title).toBe(original);
     expect(entry.url).toBe(original);
     expect(entry.notes).toContain(original);
+  });
+
+  // `notes` is published to the reader verbatim. Which catalogue entry or
+  // domain ruling set the tier is how the workshop decided, not what the atlas
+  // knows — the tier itself already says how far to trust the source.
+  // @req REQ-133
+  it("never writes how the tier was decided into the reader-facing notes", () => {
+    const fixtures = [
+      "SIL Ethnologue — Bilen language (byn). https://www.ethnologue.com/language/byn/",
+      "The Tonga: Left High and Dry – The New Humanitarian, 2007 (https://www.thenewhumanitarian.org/report/74139/zambia-zimbabwe-tonga-left-high-and-dry)",
+      "Ehret, Christopher (2001) – *A Historical-Comparative Reconstruction of Nilo-Saharan*. Cologne: Rüdiger Köppe Verlag.",
+      "Recensements nationaux sud-africains",
+      "Kanaga Africa Tours – The powerful Talensi fetishes in the Tongo Hills: https://www.kanaga-at.com/en/trip-info/ghana-en/the-powerful-talensi-fetishes-in-the-tongo-hills/",
+      "The DHS Program / ICF – Nigeria Demographic and Health Survey 2018 https://dhsprogram.com/pubs/pdf/FR359/FR359.pdf et la fiche pays https://www.unfpa.org/data/world-population/NG",
+    ];
+
+    for (const fixture of fixtures) {
+      const { notes } = transformSourceEntry(fixture);
+      expect(violatesReaderRegister(notes ?? ""), fixture).toBe(false);
+    }
   });
 
   // @req REQ-092

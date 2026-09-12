@@ -87,51 +87,48 @@
       {
         "title": "Ethnologue SIL – Tera language (ttr)",
         "url": "https://www.ethnologue.com/language/ttr/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Joshua Project – Tera in Nigeria",
         "url": "https://joshuaproject.net/people_groups/15440",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "101 Last Tribes – Tera people",
         "url": "https://101lasttribes.com/tribes/tera.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       },
       {
         "title": "Triumph Newspapers – Ngwarda annual harvesting festival of Tera people, 2024",
         "url": "https://triumphnewspapers.ng/ngwarda-annual-harvesting-festival-of-tera-people-in-zambuk-gombe-state/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers triumphnewspapers.ng; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Tench, Paul. A New Orthography in Tera",
         "url": "https://www.paultenchdocs.co.uk/wp-content/uploads/2014/02/A-New-Orthography-in-Tera.pdf",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers paultenchdocs.co.uk; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "GRN Journal – A Case Study of Tera (Nymalti) Language of North-East, Nigeria",
         "url": "https://www.grnjournal.us/index.php/STEM/article/download/5681/5052/10074",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers grnjournal.us; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Blench, Roger. 2006. Afro-Asiatic Languages. Cambridge University Press",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Peoplegroups.org – Tera in Nigeria, population 2024",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

@@ -25,7 +25,7 @@ jobs:
 
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
-          node-version: "20"
+          node-version: "22"
           cache: "npm"
 
       - name: Install dependencies
@@ -87,7 +87,7 @@ jobs:
 
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
-          node-version: "20"
+          node-version: "22"
           cache: "npm"
 
       - name: Install dependencies
@@ -99,6 +99,13 @@ jobs:
         # translated corpus has produced a playable bank.
         run: npx tsx scripts/generateQuizQuestions.ts --check
         env:
+          # The script reaches src/lib/supabase/admin.ts, whose `server-only`
+          # import throws unless resolved under the `react-server` condition —
+          # the condition Next itself builds server code with. Setting it here
+          # keeps the guard intact in the app instead of stubbing it out.
+          # scripts/__tests__/generateQuizQuestionsModuleGraph.test.ts runs the
+          # script with this exact value.
+          NODE_OPTIONS: "--conditions=react-server"
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
 
@@ -116,7 +123,7 @@ jobs:
 
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
-          node-version: "20"
+          node-version: "22"
           cache: "npm"
 
       - name: Install dependencies

@@ -125,33 +125,33 @@
       {
         "title": "SIL Ethnologue — Fulfulde dialects",
         "url": "https://www.ethnologue.com/language/ful/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Joshua Project — Fulani, Maasina in Mali",
         "url": "https://joshuaproject.net/people_groups/11773/ml",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "ScienceDirect — Population history and admixture of the Fulani people from the Sahel (2025)",
         "url": "https://www.sciencedirect.com/science/article/pii/S0002929724004579",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for sciencedirect.com."
+        "tier": "referenced"
       },
       {
         "title": "UNFPA — Sahel population data",
         "url": "https://www.unfpa.org/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"unfpa\"."
+        "tier": "official"
       },
       {
         "title": "Riesman, Paul — Freedom in Fulani Social Life. University of Chicago Press, 1977",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

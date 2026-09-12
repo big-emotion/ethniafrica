@@ -8,12 +8,12 @@ import { LOCALE } from "./support/locale";
  *
  * This file used to walk the theme directory: pick a theme from the select,
  * land on its page, follow the canonical dossier. Every step of that walk now
- * ends on a 404, so the spec asserts the freeze instead — and keeps the
- * responsive coverage, which is about the hub and survives the withdrawal.
+ * ends on a 404, so the spec asserts what stands instead — the hub, the one
+ * reading still offered, and the addresses that serve nothing.
  */
-test.describe("Dossiers under the freeze @cross-viewport", () => {
+test.describe("Dossiers while the readings are withdrawn @cross-viewport", () => {
   // @req REQ-140
-  test("states the freeze in English, and leads to the anecdotes", async ({
+  test("names the hub in English, and leads to the anecdotes", async ({
     page,
   }) => {
     test.skip(LOCALE !== "en", "English copy assertion");
@@ -23,10 +23,10 @@ test.describe("Dossiers under the freeze @cross-viewport", () => {
     await expect(
       page.getByRole("heading", { name: "The dossiers", exact: true })
     ).toBeVisible();
-    await expect(page.getByRole("status")).toContainText("being rewritten");
-    await expect(
-      page.getByRole("link", { name: "Read the anecdotes" })
-    ).toHaveAttribute("href", getLocalizedRoute(LOCALE, "anecdotes"));
+    await expect(page.getByTestId("hub-tile-anecdotes")).toHaveAttribute(
+      "href",
+      getLocalizedRoute(LOCALE, "anecdotes")
+    );
   });
 
   for (const width of [320, 375, 430, 768, 1199, 1200, 1440]) {
@@ -41,15 +41,6 @@ test.describe("Dossiers under the freeze @cross-viewport", () => {
       await expect(
         page.getByRole("heading", { name: "Les dossiers", exact: true })
       ).toBeVisible();
-      await expect(page.getByRole("status")).toContainText(
-        "en cours de réécriture"
-      );
-
-      // Both controls filter an empty catalogue while the axis is frozen, so
-      // neither is offered — the reader is not invited to refine a search that
-      // cannot succeed.
-      await expect(page.getByRole("searchbox")).toHaveCount(0);
-      await expect(page.getByTestId("dossier-theme-grid")).toHaveCount(0);
 
       expect(
         await page.evaluate(

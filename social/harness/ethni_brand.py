@@ -1,6 +1,6 @@
 """The EthniAfrica lockup, drawn once and shared by the card and the video.
 
-One module, imported by `ethni_card.py` and `ethni_render.py`, because the mark on
+One module, imported by `ethni_compose.py` and `ethni_render.py`, because the mark on
 a post image and the mark on a video frame have to be the same thing — and two
 implementations of "the same thing" are two implementations that drift.
 

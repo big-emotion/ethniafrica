@@ -95,27 +95,28 @@
       {
         "title": "Joshua Project, Fur/Forok in Sudan – Joshua Project 2024",
         "url": "https://joshuaproject.net/people_groups/11779/SU",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Ethnologue, Fur (fvr) – SIL International 2024",
         "url": "https://www.ethnologue.com/language/fvr/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "UK Government, Country policy and information note: non-Arab Darfuris – GOV.UK, aout 2024",
         "url": "https://www.gov.uk/government/publications/sudan-country-policy-and-information-notes/country-policy-and-information-note-non-arab-darfuri-august-2024-accessible",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers gov.uk; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Jorg Adelberger, Vom Sultanat zur Republik : Veranderungen in der Sozialorganisation der Fur (Sudan) – F. Steiner, Stuttgart, 1990 (ISBN 3515055126)",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

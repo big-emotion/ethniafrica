@@ -107,45 +107,43 @@
       {
         "title": "Britannica — Tutsi",
         "url": "https://www.britannica.com/topic/Tutsi",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       },
       {
         "title": "Joshua Project — Tutsi in Burundi",
         "url": "https://joshuaproject.net/people_groups/15663/BY",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "UNFPA — Rwanda Population 2025",
         "url": "https://www.unfpa.org/data/world-population/RW",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"unfpa\"."
+        "tier": "official"
       },
       {
         "title": "UNFPA — Burundi Population 2025",
         "url": "https://www.unfpa.org/data/world-population/BI",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"unfpa\"."
+        "tier": "official"
       },
       {
         "title": "World Population Review — Burundi 2025",
         "url": "https://worldpopulationreview.com/countries/burundi",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for worldpopulationreview.com."
+        "tier": "unverified"
       },
       {
         "title": "YouTube — From royal courts to modern Rwanda : The story of iconic Inyambo",
         "url": "https://www.youtube.com/watch?v=zl5Z7JNW19Y",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for youtube.com."
+        "tier": "unverified"
       },
       {
         "title": "SIL Ethnologue — Kirundi (run)",
         "url": "https://www.ethnologue.com/language/run",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

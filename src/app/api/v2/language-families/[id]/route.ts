@@ -56,95 +56,25 @@
  *               $ref: '#/components/schemas/ApiErrorEnvelope'
  */
 
-import { NextRequest } from "next/server";
 import { getLanguageFamilyHandler } from "@/api/v2/handlers/languageFamilies";
-import { createApiError } from "@/api/v2/utils/response";
-import {
-  validateLang,
-  validateLanguageFamilyId,
-} from "@/api/v2/utils/validation";
-import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
-import { logger } from "@/lib/api/logger";
+import { corpusDetailRoute, orNotFound } from "@/api/v2/utils/corpusRoute";
+import { validateLanguageFamilyId } from "@/api/v2/utils/validation";
+import { corsOptionsResponse } from "@/lib/api/cors";
 
 // @req REQ-084
-export async function GET(
-  request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
-) {
-  const startTime = Date.now();
-  try {
-    const { id } = await params;
-
-    logger.info("GET /api/v2/language-families/[id]", { id });
-
-    // Validate FLG_ ID format
-    if (!validateLanguageFamilyId(id)) {
-      logger.warn("Invalid language family ID format", { id });
-      return jsonWithCors(
-        createApiError({
-          code: "VALIDATION_ERROR",
-          message: "Invalid language family ID format",
-          field: "id",
-        }),
-        { status: 400 }
-      );
-    }
-
-    const lang = validateLang(request.nextUrl.searchParams.get("lang"));
-    if (lang === null) {
-      logger.warn("Unsupported lang requested", {
-        id,
-        lang: request.nextUrl.searchParams.get("lang"),
-      });
-      return jsonWithCors(
-        createApiError({
-          code: "VALIDATION_ERROR",
-          message: "Unsupported lang: expected fr or en",
-          field: "lang",
-        }),
-        { status: 400 }
-      );
-    }
-
-    const envelope = await getLanguageFamilyHandler(id, lang);
-
-    if (!envelope) {
-      logger.warn("Language family not found", { id });
-      return jsonWithCors(
-        createApiError({
-          code: "NOT_FOUND",
-          message: "Language family not found",
-        }),
-        { status: 404 }
-      );
-    }
-
-    const response = jsonWithCors(envelope);
-
-    const duration = Date.now() - startTime;
-    logger.info("GET /api/v2/language-families/[id] completed", {
-      id,
-      duration,
-      status: 200,
-    });
-
-    return response;
-  } catch (error) {
-    const { id } = await params;
-    const duration = Date.now() - startTime;
-    logger.error(`Error in GET /api/v2/language-families/${id}`, error, {
-      id,
-      duration,
-    });
-    return jsonWithCors(
-      createApiError({
-        code: "INTERNAL_ERROR",
-        message: "Internal server error",
-      }),
-      { status: 500 }
-    );
-  }
-}
+export const GET = corpusDetailRoute({
+  path: "/api/v2/language-families/[id]",
+  param: "id",
+  isValidId: validateLanguageFamilyId,
+  invalidIdMessage: "Invalid language family ID format",
+  servesLang: true,
+  rejectedLog: "Language family not found",
+  resolve: async (id, lang) =>
+    orNotFound(
+      await getLanguageFamilyHandler(id, lang),
+      "Language family not found"
+    ),
+});
 
 // @req REQ-084
 export function OPTIONS() {

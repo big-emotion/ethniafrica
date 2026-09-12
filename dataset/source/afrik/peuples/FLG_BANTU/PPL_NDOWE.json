@@ -84,33 +84,33 @@
       {
         "title": "Ndowe people – 101 Last Tribes",
         "url": "https://www.101lasttribes.com/tribes/ndowe.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       },
       {
         "title": "Ndowe Tribe : History, Culture and Legacy – Rumbo Malabo",
         "url": "https://rumbomalabo.com/en/ndowe/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for rumbomalabo.com."
+        "tier": "unverified"
       },
       {
         "title": "Benga language and alphabet – Omniglot",
         "url": "https://www.omniglot.com/writing/benga.htm",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for omniglot.com."
+        "tier": "unverified"
       },
       {
         "title": "What are the different tribes of Equatorial Guinea – SAIGA Tours",
         "url": "https://www.saigatours.com/article/what-are-the-different-tribes-of-equatorial-guinea",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers saigatours.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Equatorial Guinea – South African History Online",
         "url": "https://sahistory.org.za/place/equatorial-guinea",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for sahistory.org.za."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

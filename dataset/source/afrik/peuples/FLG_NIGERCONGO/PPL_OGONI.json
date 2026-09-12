@@ -88,39 +88,38 @@
       {
         "title": "Joshua Project – Ogoni in Nigeria",
         "url": "https://joshuaproject.net/people_groups/19639",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Oyinlade, A. Olu et Vincent, Jeffery M. – The Ogoni of Nigeria, University of Nebraska-Lincoln, 2016",
         "url": "https://digitalcommons.unl.edu/anthropologyfacpub/113/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for digitalcommons.unl.edu."
+        "tier": "referenced"
       },
       {
         "title": "Right Livelihood – Ken Saro-Wiwa / MOSOP",
         "url": "https://rightlivelihood.org/the-change-makers/find-a-laureate/ken-saro-wiwa-movement-for-the-survival-of-the-ogoni-people/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers rightlivelihood.org; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Human Rights Watch – Nigeria 1995",
         "url": "https://www.hrw.org/reports/1995/Nigeria.htm",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for hrw.org."
+        "tier": "referenced"
       },
       {
         "title": "UNEP – Environmental Assessment of Ogoniland, 2011",
         "url": "https://www.unep.org/explore-topics/disasters-conflicts/where-we-work/nigeria/environmental-assessment-ogoniland",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers unep.org; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "USC Scalar – Ken Saro-Wiwa, MOSOP and the International Response",
         "url": "https://scalar.usc.edu/works/niger-delta-black-gold-blues/15-the-1990s-ken-saro-wiwa-mosop-and-the-international-response-rachel",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers scalar.usc.edu; the tier awaits editorial review."
+        "tier": "needs_review"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

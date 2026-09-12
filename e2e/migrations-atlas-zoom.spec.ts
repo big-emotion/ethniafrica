@@ -1,5 +1,6 @@
 import { test, expect } from "./support/fixtures";
 import { getLocalizedRoute } from "@/lib/routing";
+import { isModulePublished } from "@/lib/hubs/moduleOffer";
 import { LOCALE } from "./support/locale";
 
 // English UI copy lands per translation wave (REQ-142 to REQ-146). Until it
@@ -9,6 +10,14 @@ import { LOCALE } from "./support/locale";
 test.skip(
   LOCALE !== "fr",
   "English copy lands per wave — this spec reads French UI copy"
+);
+
+// The route calls `notFound()` while the registry declares `frise` a draft,
+// so there is no atlas to drive. Asked of the same declaration the route
+// reads: publishing the module re-arms this spec with no edit here.
+test.skip(
+  !isModulePublished("frise"),
+  "The migrations atlas is withdrawn (moduleRegistry: frise is a draft), so its route answers 404"
 );
 
 // ETNI-523 (12.10) AC3 — 200% text zoom at the three reference viewports

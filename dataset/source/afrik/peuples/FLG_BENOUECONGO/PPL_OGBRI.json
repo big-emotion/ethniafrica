@@ -87,21 +87,23 @@
       {
         "title": "Lawson-Ikuru, M. (2024). Barter In Ogbia And Nembe: An Indigenous Language Preservation And Promotion System. IOSR Journal of Humanities and Social Science, 29(9), 39-44",
         "url": "http://iosrjournals.org/iosr-jhss/papers/Vol.29-Issue9/Ser-13/F2909133944.pdf",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers iosrjournals.org; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Joshua Project, Ogbia Ogbinya in Nigeria",
         "url": "https://joshuaproject.net/people_groups/14124",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "WALS Online, Language Ogbia (ISO 639-3: ogb)",
         "url": "https://wals.info/languoid/lect/wals_code_ogb",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"wals\"."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

@@ -8,9 +8,10 @@ Refresh the numbers each session; the structure is what does not change.
 
 It is split, and the split is the point.
 
-**The engine is here**, versioned: `social/harness/` renders — `ethni_render.py`
-for video, `ethni_card.py` for images, `ethni_brand.py` for the mark, all sharing
-one visual language — and `docs/design/gabarits-social/` is the spec they read.
+**The engine is here**, versioned: `social/harness/` renders — `ethni_montage.py`
+for video, `ethni_carrousel2.py` for carousels, both composed by
+`ethni_compose.py` with `ethni_brand.py` for the mark — and
+`docs/design/gabarits-social/` is the spec they read.
 
 **The productions are not**, and never will be. They live in the production
 library, outside version control, at whatever path
@@ -35,8 +36,10 @@ and both have a written prompt in `prompts-production-2026-09-09.md`:
 1. **The video template.** The intro, the outro, the mark and the gold captions
    are approved. The text card and the on-screen plate do not exist as a shared
    grammar — every project still places raw items by hand.
-2. **Carousel mode.** `ethni_card.py` renders one card per subject. A carousel
-   needs six to eight, ordered, each on its own licence-verified photograph.
+2. **Carousel mode.** The engine of that date rendered one card per subject. A
+   carousel needs six to eight, ordered, each on its own licence-verified
+   photograph. (Since shipped as `ethni_carrousel2.py`; the one-card renderer is
+   deleted.)
 
 ## What shipped before, and the one lesson the numbers taught
 

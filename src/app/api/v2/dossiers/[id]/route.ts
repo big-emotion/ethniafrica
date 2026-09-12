@@ -54,72 +54,25 @@
  *               $ref: '#/components/schemas/ApiErrorEnvelope'
  */
 
-import { NextRequest } from "next/server";
-
 import { getDossierHandler } from "@/api/v2/handlers/dossiers";
 import { dossierIdParamSchema } from "@/api/v2/schemas/dossiers";
-import { createApiError } from "@/api/v2/utils/response";
-import { corsOptionsResponse, jsonWithCors } from "@/lib/api/cors";
-import { logger } from "@/lib/api/logger";
-
-const CACHE_CONTROL = "s-maxage=3600";
+import {
+  CORPUS_CACHE_CONTROL,
+  corpusDetailRoute,
+} from "@/api/v2/utils/corpusRoute";
+import { corsOptionsResponse } from "@/lib/api/cors";
 
 // @req REQ-114
-export async function GET(
-  _request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
-) {
-  const startTime = Date.now();
-  const { id } = await params;
-
-  try {
-    logger.info("GET /api/v2/dossiers/[id]", { id });
-
-    if (!dossierIdParamSchema.safeParse(id).success) {
-      logger.warn("Invalid dossier ID format", { id });
-      return jsonWithCors(
-        createApiError({
-          code: "VALIDATION_ERROR",
-          message: "Invalid dossier ID format",
-          field: "id",
-        }),
-        { status: 400 }
-      );
-    }
-
-    const result = await getDossierHandler(id);
-
-    if (result.ok === false) {
-      logger.warn("Dossier request rejected", { id, code: result.code });
-      return jsonWithCors(
-        createApiError({ code: result.code, message: result.message }),
-        { status: 404 }
-      );
-    }
-
-    logger.info("GET /api/v2/dossiers/[id] completed", {
-      id,
-      duration: Date.now() - startTime,
-      status: 200,
-    });
-
-    return jsonWithCors(result.envelope, {
-      headers: { "Cache-Control": CACHE_CONTROL },
-    });
-  } catch (error) {
-    logger.error(`Error in GET /api/v2/dossiers/${id}`, error, {
-      id,
-      duration: Date.now() - startTime,
-    });
-    return jsonWithCors(
-      createApiError({
-        code: "INTERNAL_ERROR",
-        message: "Internal server error",
-      }),
-      { status: 500 }
-    );
-  }
-}
+export const GET = corpusDetailRoute({
+  path: "/api/v2/dossiers/[id]",
+  param: "id",
+  isValidId: (id) => dossierIdParamSchema.safeParse(id).success,
+  invalidIdMessage: "Invalid dossier ID format",
+  servesLang: false,
+  cacheControl: CORPUS_CACHE_CONTROL,
+  rejectedLog: "Dossier request rejected",
+  resolve: (id) => getDossierHandler(id),
+});
 
 // @req REQ-114
 export function OPTIONS() {

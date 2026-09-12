@@ -100,7 +100,7 @@ export function DossierDirectory({
    * query is a search that found nothing, and an empty result under no query
    * is an axis with nothing in it. The two owe the reader different sentences
    * — "aucun dossier ne correspond" sends them back to refine a search that
-   * cannot succeed — and telling them apart is what the freeze needs.
+   * cannot succeed — so an empty catalogue gets no count and no controls.
    */
   const catalogueIsEmpty =
     getDossiers({ language }, availability).length === 0 &&
@@ -135,15 +135,15 @@ export function DossierDirectory({
         aria-label={english ? "Dossiers to read" : "Dossiers à lire"}
         className={styles.results}
       >
-        <p role="status" className={styles.status}>
-          {catalogueIsEmpty
-            ? getTranslation(language).hubs.dossiers.frozenStatus
-            : matches.length === 0
+        {catalogueIsEmpty ? null : (
+          <p role="status" className={styles.status}>
+            {matches.length === 0
               ? english
                 ? "No dossiers match this search."
                 : "Aucun dossier ne correspond à cette recherche."
               : `${matches.length} dossier${matches.length > 1 ? "s" : ""} ${english ? "to read" : "à lire"}`}
-        </p>
+          </p>
+        )}
         {shown.map((dossier) => (
           <article key={dossier.key} className={styles.dossier}>
             <p className={styles.eyebrow}>{dossier.eyebrow}</p>

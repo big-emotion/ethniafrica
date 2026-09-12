@@ -58,13 +58,13 @@
           "title": "Ansari-Pour, N. et al., « Palenque de San Basilio in Colombia: genetic data support an oral history of a paternal ancestry in Congo »",
           "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4822459/",
           "tier": "referenced",
-          "notes": "Article publie dans Proceedings of the Royal Society B: Biological Sciences (2016) ; tier fonde sur la nature academique et evaluee par les pairs de la revue."
+          "notes": "Article publie dans Proceedings of the Royal Society B: Biological Sciences (2016), revue academique evaluee par les pairs."
         },
         {
           "title": "Schwegler, A., « On the African origin(s) of Palenquero »",
           "url": "https://benjamins.com/catalog/coll.54.02sch",
           "tier": "referenced",
-          "notes": "Chapitre academique publie chez John Benjamins Publishing, etablissant le kikongo comme substrat africain dominant du palenquero a partir de donnees lexicales, phonologiques et morphosyntaxiques. Tier fonde sur la nature academique et identifiable de la publication."
+          "notes": "Chapitre academique publie chez John Benjamins Publishing, etablissant le kikongo comme substrat africain dominant du palenquero a partir de donnees lexicales, phonologiques et morphosyntaxiques."
         }
       ]
     },
@@ -97,20 +97,24 @@
         "title": "DANE — Poblacion Negra, Afrocolombiana, Raizal y Palenquera",
         "url": "https://www.dane.gov.co/index.php/estadisticas-por-tema/enfoque-diferencial-e-interseccional/autorreconocimiento-etnico/poblacion-negra-afrocolombiana-raizal-y-palenquera",
         "tier": "official",
-        "notes": "Institut national de statistique de la Colombie (DANE) ; tier fonde sur le statut d'institut national de statistique reconnu par la doctrine des sources du corpus."
+        "notes": "Institut national de statistique de la Colombie (DANE)."
       },
       {
         "title": "UNESCO — El espacio cultural de Palenque de San Basilio (Patrimonio Cultural Inmaterial)",
         "url": "https://ich.unesco.org/es/RL/el-espacio-cultural-de-palenque-de-san-basilio-00102",
         "tier": "official",
-        "notes": "Fiche d'inscription de l'UNESCO sur la Liste representative du patrimoine culturel immateriel de l'humanite ; tier fonde sur le catalogue de domaines autorises (unesco.org)."
+        "notes": "Fiche d'inscription de l'UNESCO sur la Liste representative du patrimoine culturel immateriel de l'humanite."
       },
       {
         "title": "SIL Ethnologue — Palenquero language (pln)",
         "url": "https://www.ethnologue.com/language/pln/",
-        "tier": "official",
-        "notes": "Tier fonde sur le catalogue de domaines autorises (ethnologue.com)."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: none of the 776 people records has an English sidecar, so translating this one alone would make it the atlas's only English people record. It follows the people corpus's first translation pass."
+    }
   }
 }

@@ -60,86 +60,22 @@
  *               $ref: '#/components/schemas/ApiErrorEnvelope'
  */
 
-import { NextRequest } from "next/server";
 import { getPeopleHandler } from "@/api/v2/handlers/peoples";
-import { validateLang, validatePeopleId } from "@/api/v2/utils/validation";
-import { createApiError } from "@/api/v2/utils/response";
-import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
-import { logger } from "@/lib/api/logger";
+import { corpusDetailRoute, orNotFound } from "@/api/v2/utils/corpusRoute";
+import { validatePeopleId } from "@/api/v2/utils/validation";
+import { corsOptionsResponse } from "@/lib/api/cors";
 
 // @req REQ-084
-export async function GET(
-  request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
-) {
-  const startTime = Date.now();
-  try {
-    const { id } = await params;
-
-    logger.info("GET /api/v2/peoples/[id]", { id });
-
-    // Validate PPL_ ID format
-    if (!validatePeopleId(id)) {
-      logger.warn("Invalid people ID format", { id });
-      return jsonWithCors(
-        createApiError({
-          code: "VALIDATION_ERROR",
-          message: "Invalid people ID format",
-          field: "id",
-        }),
-        { status: 400 }
-      );
-    }
-
-    const lang = validateLang(request.nextUrl.searchParams.get("lang"));
-    if (lang === null) {
-      logger.warn("Unsupported lang requested", {
-        id,
-        lang: request.nextUrl.searchParams.get("lang"),
-      });
-      return jsonWithCors(
-        createApiError({
-          code: "VALIDATION_ERROR",
-          message: "Unsupported lang: expected fr or en",
-          field: "lang",
-        }),
-        { status: 400 }
-      );
-    }
-
-    const envelope = await getPeopleHandler(id, lang);
-
-    if (!envelope) {
-      logger.warn("People not found", { id });
-      return jsonWithCors(
-        createApiError({ code: "NOT_FOUND", message: "People not found" }),
-        { status: 404 }
-      );
-    }
-
-    const response = jsonWithCors(envelope);
-
-    const duration = Date.now() - startTime;
-    logger.info("GET /api/v2/peoples/[id] completed", {
-      id,
-      duration,
-      status: 200,
-    });
-
-    return response;
-  } catch (error) {
-    const { id } = await params;
-    const duration = Date.now() - startTime;
-    logger.error(`Error in GET /api/v2/peoples/${id}`, error, { id, duration });
-    return jsonWithCors(
-      createApiError({
-        code: "INTERNAL_ERROR",
-        message: "Internal server error",
-      }),
-      { status: 500 }
-    );
-  }
-}
+export const GET = corpusDetailRoute({
+  path: "/api/v2/peoples/[id]",
+  param: "id",
+  isValidId: validatePeopleId,
+  invalidIdMessage: "Invalid people ID format",
+  servesLang: true,
+  rejectedLog: "People not found",
+  resolve: async (id, lang) =>
+    orNotFound(await getPeopleHandler(id, lang), "People not found"),
+});
 
 // @req REQ-084
 export function OPTIONS() {

@@ -30,15 +30,6 @@ describe("the dossiers hub while the axis is frozen", () => {
     expect(screen.queryByTestId("dossier-theme-grid")).not.toBeInTheDocument();
   });
 
-  // @req REQ-114
-  it("says the readings are being reworked, rather than reporting no results", () => {
-    render(<DossierDirectory />);
-
-    const status = screen.getByRole("status");
-    expect(status).toHaveTextContent(/en cours de réécriture/i);
-    expect(status).not.toHaveTextContent(/recherche/i);
-  });
-
   // The rubric still leads somewhere: the anecdotes are why the hub is worth
   // opening at all while the dossiers are away.
   // @req REQ-114
@@ -51,10 +42,9 @@ describe("the dossiers hub while the axis is frozen", () => {
   });
 
   // @req REQ-140
-  it("states the same thing in English", () => {
+  it("keeps the anecdotes as the way out in English", () => {
     render(<DossierDirectory language="en" />);
 
-    expect(screen.getByRole("status")).toHaveTextContent(/being rewritten/i);
     expect(
       screen.getByRole("link", { name: "Read the anecdotes" })
     ).toHaveAttribute("href", getLocalizedRoute("en", "anecdotes"));

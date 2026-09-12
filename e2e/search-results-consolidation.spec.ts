@@ -160,17 +160,12 @@ test.describe("SERP dominant-answer panel rule (ETNI-1796)", () => {
     expect(await noHorizontalScroll(page)).toBe(true);
   });
 
-  // NOTE on the ticket's originally-cited "bottom sheet" below the
-  // breakpoint: this worktree's RecherchePageContent (ETNI-1807, see its
-  // unit test "hides the complementary answer below 720px and reveals it at
-  // that breakpoint") hides the panel outright below 720px rather than
-  // re-mounting its facts as a bottom sheet — no such component exists
-  // anywhere in src/. This assertion documents the shipped behaviour rather
-  // than the ticket's original description; the discrepancy is flagged back
-  // to the parent ticket rather than silently asserting a sheet that was
-  // never built.
+  // Atlas charter §5: one component, two anchorings. Below 760px the panel
+  // stays in flow under the results as a bottom sheet — it used to be hidden
+  // there, which dropped the facts from the phone entirely, and this spec
+  // asserted that hiding for as long as it shipped.
   // @req REQ-124
-  test("hides the panel below the tablet breakpoint (no bottom sheet exists in this build)", async ({
+  test("keeps the panel in flow under the results below the tablet breakpoint", async ({
     page,
   }) => {
     await page.setViewportSize({ width: 430, height: 812 });
@@ -178,7 +173,20 @@ test.describe("SERP dominant-answer panel rule (ETNI-1796)", () => {
     await expect(page.getByTestId("search-pivot")).toBeVisible();
 
     const panel = page.getByTestId("dominant-answer-panel-wrapper");
-    await expect(panel).toBeHidden();
+    await expect(panel).toBeVisible();
+
+    const main = page.getByTestId("search-results-main");
+    const [panelBox, mainBox, position] = await Promise.all([
+      panel.boundingBox(),
+      main.boundingBox(),
+      panel.evaluate((el) => getComputedStyle(el).position),
+    ]);
+    expect(panelBox).not.toBeNull();
+    expect(mainBox).not.toBeNull();
+    expect(panelBox!.y).toBeGreaterThanOrEqual(
+      mainBox!.y + mainBox!.height - 1
+    );
+    expect(position).not.toBe("sticky");
     expect(await noHorizontalScroll(page)).toBe(true);
   });
 });

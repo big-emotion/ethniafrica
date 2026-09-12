@@ -18,6 +18,7 @@
  */
 
 import { logger } from "@/lib/api/logger";
+import { walkRanges } from "@/lib/supabase/queries/walkRanges";
 import { createServerClient } from "@/lib/supabase/server";
 import type { PatronymeNameSystem } from "@/api/v2/schemas/patronymes";
 import {
@@ -71,32 +72,33 @@ function uniqueStrings(values: string[]): string[] {
  */
 async function getPeopleIdsInCountry(countryId: string): Promise<string[]> {
   const supabase = createServerClient();
-  const peopleIds: string[] = [];
 
-  for (let page = 0; page < PATRONYME_FACET_MAX_PAGES; page++) {
-    const start = page * PATRONYME_FACET_WALK_SIZE;
-    const { data, error } = await supabase
-      .from("afrik_people_countries")
-      .select("people_id")
-      .eq("country_id", countryId)
-      .range(start, start + PATRONYME_FACET_WALK_SIZE - 1);
+  const walk = await walkRanges(
+    async (from, to) => {
+      const { data, error } = await supabase
+        .from("afrik_people_countries")
+        .select("people_id")
+        .eq("country_id", countryId)
+        .range(from, to);
 
-    if (error) {
-      logger.error(`Error fetching peoples of country ${countryId}`, error);
-      throw error;
+      if (error) {
+        logger.error(`Error fetching peoples of country ${countryId}`, error);
+        throw error;
+      }
+      return (data ?? []) as Array<{ people_id: string }>;
+    },
+    {
+      pageSize: PATRONYME_FACET_WALK_SIZE,
+      maxPages: PATRONYME_FACET_MAX_PAGES,
     }
-
-    const rows = (data ?? []) as Array<{ people_id: string }>;
-    for (const row of rows) peopleIds.push(row.people_id);
-    if (rows.length < PATRONYME_FACET_WALK_SIZE) {
-      return uniqueStrings(peopleIds);
-    }
-  }
-
-  logger.error(
-    `Peoples of country ${countryId} exceeded ${PATRONYME_FACET_MAX_PAGES} pages — the list is truncated`
   );
-  return uniqueStrings(peopleIds);
+
+  if (walk.truncated) {
+    logger.error(
+      `Peoples of country ${countryId} exceeded ${PATRONYME_FACET_MAX_PAGES} pages — the list is truncated`
+    );
+  }
+  return uniqueStrings(walk.rows.map((row) => row.people_id));
 }
 
 /**
@@ -112,41 +114,42 @@ async function getPatronymeSummaries(
   if (ids.length === 0) return [];
 
   const supabase = createServerClient();
-  const summaries: PatronymeLinkSummary[] = [];
 
-  for (let page = 0; page < PATRONYME_FACET_MAX_PAGES; page++) {
-    const start = page * PATRONYME_FACET_WALK_SIZE;
-    const { data, error } = await supabase
-      .from("afrik_patronymes")
-      .select("id, name_main, name_system")
-      .in("id", ids)
-      .order("name_main")
-      .range(start, start + PATRONYME_FACET_WALK_SIZE - 1);
+  const walk = await walkRanges(
+    async (from, to) => {
+      const { data, error } = await supabase
+        .from("afrik_patronymes")
+        .select("id, name_main, name_system")
+        .in("id", ids)
+        .order("name_main")
+        .range(from, to);
 
-    if (error) {
-      logger.error("Error fetching patronyme summaries", error);
-      throw error;
+      if (error) {
+        logger.error("Error fetching patronyme summaries", error);
+        throw error;
+      }
+      return (data ?? []) as Array<{
+        id: string;
+        name_main: string | null;
+        name_system: PatronymeNameSystem;
+      }>;
+    },
+    {
+      pageSize: PATRONYME_FACET_WALK_SIZE,
+      maxPages: PATRONYME_FACET_MAX_PAGES,
     }
-
-    const rows = (data ?? []) as Array<{
-      id: string;
-      name_main: string | null;
-      name_system: PatronymeNameSystem;
-    }>;
-    for (const row of rows) {
-      summaries.push({
-        id: row.id,
-        nameMain: row.name_main ?? "",
-        nameSystem: row.name_system,
-      });
-    }
-    if (rows.length < PATRONYME_FACET_WALK_SIZE) return summaries;
-  }
-
-  logger.error(
-    `Patronyme summaries exceeded ${PATRONYME_FACET_MAX_PAGES} pages — the list is truncated`
   );
-  return summaries;
+
+  if (walk.truncated) {
+    logger.error(
+      `Patronyme summaries exceeded ${PATRONYME_FACET_MAX_PAGES} pages — the list is truncated`
+    );
+  }
+  return walk.rows.map((row) => ({
+    id: row.id,
+    nameMain: row.name_main ?? "",
+    nameSystem: row.name_system,
+  }));
 }
 
 /** Just the label, for the peoples named in a reach entry. */

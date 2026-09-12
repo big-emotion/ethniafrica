@@ -99,33 +99,33 @@
       {
         "title": "Britannica – Gabon",
         "url": "https://www.britannica.com/place/Gabon",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       },
       {
         "title": "Fang people – 101 Last Tribes",
         "url": "https://www.101lasttribes.com/tribes/fang.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       },
       {
         "title": "Joshua Project – Fang in Gabon",
         "url": "https://joshuaproject.net/people_groups/11187/GB",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Institut Pasteur – Histoire migratoire des peuples Bantous, 2017",
         "url": "https://www.pasteur.fr/fr/espace-presse/documents-presse/histoire-migratoire-peuples-bantous",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for pasteur.fr."
+        "tier": "referenced"
       },
       {
         "title": "CNRS Editions – Langue et histoire des Bantu",
         "url": "https://books.openedition.org/editionscnrs/3955",
-        "tier": "referenced",
-        "notes": "Tier resolved from the authorized source catalogue entry \"openedition\" (openedition.org), matched as a parent of books.openedition.org."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

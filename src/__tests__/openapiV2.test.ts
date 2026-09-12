@@ -52,6 +52,33 @@ describe("OpenAPI v2 spec - BearerAuth security", () => {
     expect(security.some((s) => "BearerAuth" in s)).toBe(true);
   });
 
+  // The operator made /api/v2 public: a key selects a tier, it does not grant
+  // access. An empty requirement object is how OpenAPI says "or no auth".
+  // @req REQ-084
+  it("makes the API key optional at the global level", () => {
+    const spec = swaggerSpecV2 as Record<string, unknown>;
+    const security = spec.security as Array<Record<string, unknown>>;
+
+    expect(security).toContainEqual({ BearerAuth: [] });
+    expect(security).toContainEqual({});
+  });
+
+  // @req REQ-084
+  it("documents the anonymous tier and its quota", () => {
+    const spec = swaggerSpecV2 as Record<string, unknown>;
+    const info = spec.info as Record<string, string>;
+    const components = spec.components as Record<string, unknown>;
+    const schemes = components.securitySchemes as Record<
+      string,
+      Record<string, string>
+    >;
+
+    expect(info.description).toContain("## Authentication and rate limits");
+    expect(info.description).toMatch(/anonymous/i);
+    expect(info.description).toContain("60 requests per minute");
+    expect(schemes.BearerAuth.description).toMatch(/optional/i);
+  });
+
   it("should include API v2 - Keys tag", () => {
     const spec = swaggerSpecV2 as Record<string, unknown>;
     const tags = spec.tags as Array<{ name: string }>;

@@ -41,16 +41,18 @@ Three variables are required to run:
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | browser-safe anon key                                    |
 | `SUPABASE_SERVICE_ROLE_KEY`     | **server-only** — never let this reach the client bundle |
 
-Everything else is optional and inert when unset: Upstash (rate limiting), Sentry, Plausible,
-Turnstile, the quiz feature flag. `.env.example` is annotated and authoritative;
+`ANTIBOT_HMAC_SECRET` is required for reporting to work at all: unset, the anti-robot challenge
+answers 503 and every report dialog fails while the build stays green. Sentry, Plausible and the
+quiz feature flag are optional. Upstash (rate limiting) is optional locally but mandatory in
+production, where rate limiting fails closed. `.env.example` is annotated and authoritative;
 `npm run check:env-example` keeps it honest against what the code actually reads.
 
 ---
 
 ## The data model
 
-The corpus lives as **~890 JSON fiches in git**, under `dataset/source/afrik/` — not only in
-the database. The files are the editorial source of truth; Supabase is a projection of them.
+The corpus lives as **JSON fiches in git**, under `dataset/source/afrik/` — not only in the
+database (`git ls-files 'dataset/source/afrik/**/*.json' | wc -l` counts them). The files are the editorial source of truth; Supabase is a projection of them.
 
 ```
 linguistic family  →  language  →  people  →  country
@@ -68,10 +70,10 @@ dataset/source/afrik/
   afrik_countries · afrik_people_countries
 ```
 
-Each fiche's shape is fixed by one of the 16 strict models in `public/modele-*.json`: peuple,
-pays, linguistique, langue, media, relation, source, migration, recit-oral, frontiere-coloniale,
-and the six name models (nom, nom-jamu, nom-nisba, nom-patronyme, nom-patronymique,
-nom-totemique). Never skip, rename or invent a section.
+Each fiche's shape is fixed by one of the strict models in `public/modele-*.json` — the
+directory is the list: dossier, peuple, pays, linguistique, langue, media, relation, source,
+migration, recit-oral, frontiere-coloniale, and the six name models (nom, nom-jamu, nom-nisba,
+nom-patronyme, nom-patronymique, nom-totemique). Never skip, rename or invent a section.
 
 Every `sources` entry carries a tier, and `scripts/validateAfrikData.ts` enforces it. Editorial
 work on fiches has its own guidance in `.claude/skills/afrik-curator/`; the rules the validator
@@ -135,6 +137,10 @@ touches before pushing:
 | `npm run check:action-pins`                 | every third-party GitHub Action is SHA-pinned                                                                         |
 | `npm run check:jira-template`               | the ticket template still exists and matches                                                                          |
 | `npm run test:charter-contracts`            | the design-charter contract suite                                                                                     |
+| `npm run check:translation-parity`          | French and English content carry each other, or an explicit deferral                                                  |
+| `npm run check:local-paths`                 | no workstation path in this public repository                                                                         |
+| `npm run check:dead`                        | unreferenced files, exports and dependencies, against ratcheted ceilings                                              |
+| `npm run check:migration-files`             | no duplicate or missing number in `supabase/migrations/`                                                              |
 | `npx tsx scripts/validateAfrikData.ts`      | AFRIK corpus integrity                                                                                                |
 | `npx tsx scripts/ci/checkEditorialRules.ts` | decolonial editorial rules on fiches                                                                                  |
 
@@ -155,6 +161,10 @@ nullability here — **the tests are the real gate.** Write the failing test fir
 `recette` is the integration branch, `main` is the base. Both are protected: branch and open a
 pull request, never push directly. Conventional commits (commitlint on `commit-msg`).
 `recette ↔ main` sync PRs need a **merge commit**, not a squash.
+
+**Publishing a GitHub Release is the only thing that deploys production**, to an OVH VPS. A push
+deploys nothing and neither does a tag; Vercel builds only the recette preview, and only when
+someone runs that workflow by hand. See [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md).
 
 Requirements, decisions and architecture live on **Confluence**, not in this repository — see
 [`docs/adr/README.md`](docs/adr/README.md) for where and why. Tickets are in the Jira project
@@ -190,10 +200,12 @@ tablet `md` 720px · desktop `xl` 800px.
 | [`docs/adr/README.md`](docs/adr/README.md)                             | where architecture decisions live now                                                     |
 | [`CHANGELOG.md`](CHANGELOG.md)                                         | release history                                                                           |
 
-**Operators, read this first:** both Supabase projects label their environment "production",
-because a Supabase project has exactly one environment and Supabase names it that — the label
-describes the project, not the application it serves. `shmrjtnfbqzceovroqjj` backs recette; a
-second project backs production. Every migration is a two-step rollout, recette first. Applying
+**Operators, read this first:** a hosted Supabase project labels its only environment
+"production" — the label describes the project, not the application it serves.
+`shmrjtnfbqzceovroqjj` backs **recette**. Production is not a hosted project at all: it is a
+self-hosted Supabase stack on an OVH VPS, which the Supabase dashboard and MCP cannot see.
+`jajggbeimfudpzcxytbb` is a retired hosted project that still answers — never point a secret at
+it. Every migration is a two-step rollout, recette first. Applying
 one and calling it done has already left a corpus loaded on one database and missing on the
 other.
 

@@ -1,18 +1,20 @@
 name: Lighthouse CI — Mobile Performance
 
 on:
-  # This audit is not a required check on either branch, and 32 of its last 32
-  # runs were red. On every pull request into `recette` it spent ~16 minutes
-  # measuring 21 URLs × 3 runs and blocked nothing — roughly 8 h of runner time
-  # a day whose only visible effect was a pull request page that could not turn
-  # green. A budget nobody can act on is not a gate, it is noise, and thirty-two
-  # consecutive reds is how a real regression would now go unnoticed.
+  # Two jobs on two paths, the same split as e2e.yml.
   #
-  # Mobile performance is a property of the integrated branch rather than of any
-  # single pull request, so it is measured where that statement is true: nightly
-  # against `recette`, on the (rare) promotion into `main`, and on demand.
+  # `gate` runs on every pull request, into `recette` included, and is meant to
+  # be a required check: four routes, one run each, asserting accessibility and
+  # best practices as errors and printing performance as warnings (see
+  # `.lighthouserc.gate.js` for why the performance half cannot block here).
+  #
+  # `lighthouse` is the full matrix: 29 URLs × 3 runs, ~16 minutes. It used to
+  # run on every pull request into `recette`, blocked nothing and was red 32
+  # runs out of 32, so it moved to the integrated branch — nightly, on the
+  # promotion into `main`, and on demand — where its budgets are now set to
+  # what that branch measures (see `.lighthouserc.js`).
   pull_request:
-    branches: [main]
+    branches: [main, recette]
   schedule:
     - cron: "0 3 * * *"
   workflow_dispatch:
@@ -27,13 +29,103 @@ permissions:
   pull-requests: write
 
 jobs:
+  gate:
+    name: Lighthouse gate (4 routes)
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      # Test-only publication: production remains fail-closed to fr-only.
+      SITE_LOCALE_MODE: bilingual-fr-default
+      NEXT_TELEMETRY_DISABLED: 1
+      NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+      NEXT_PUBLIC_FEATURE_QUIZ: "true"
+      # A test deployment: without Upstash credentials a production one
+      # answers 500 on every /api/v2 call, and the console errors that follow
+      # are exactly what the best-practices category reads.
+      VERCEL_ENV: preview
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Setup Node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+
+      # A fork or bot PR cannot read repository secrets, so it skips. Anywhere
+      # else a missing secret fails the job: a required check that reports
+      # success without having audited anything is worse than a red one.
+      - name: Check required secrets are present
+        id: secrets
+        env:
+          IS_FORK_PR: ${{ github.event.pull_request.head.repo.fork || false }}
+          IS_BOT: ${{ github.actor == 'dependabot[bot]' }}
+        run: |
+          if [ -n "$NEXT_PUBLIC_SUPABASE_URL" ] && [ -n "$NEXT_PUBLIC_SUPABASE_ANON_KEY" ]; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          elif [ "$IS_FORK_PR" = "true" ] || [ "$IS_BOT" = "true" ]; then
+            echo "present=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Skipping the Lighthouse gate — a fork or bot PR cannot read repository secrets."
+          else
+            echo "::error::No Supabase URL and anon key reached this job, so the Lighthouse gate cannot run. Set NEXT_PUBLIC_SUPABASE_URL / NEXT_PUBLIC_SUPABASE_ANON_KEY to arm it."
+            exit 1
+          fi
+
+      - name: Restore Next.js build cache
+        if: steps.secrets.outputs.present == 'true'
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .next/cache
+          key: nextjs-${{ hashFiles('package-lock.json') }}-${{ github.sha }}
+          restore-keys: |
+            nextjs-${{ hashFiles('package-lock.json') }}-
+
+      - name: Build Next.js app
+        if: steps.secrets.outputs.present == 'true'
+        run: npm run build
+
+      - name: Start Next.js server
+        if: steps.secrets.outputs.present == 'true'
+        run: npm run start &
+
+      - name: Wait for server to be ready
+        if: steps.secrets.outputs.present == 'true'
+        run: npx wait-on http://localhost:3000 --timeout 60000
+
+      # Pinned: an unpinned global install is a different auditor on the day a
+      # release changes an audit's scoring, and the gate would move with it.
+      - name: Install @lhci/cli
+        if: steps.secrets.outputs.present == 'true'
+        run: npm install -g @lhci/cli@0.15.1 --legacy-peer-deps
+
+      - name: Install Chromium for Lighthouse
+        if: steps.secrets.outputs.present == 'true'
+        run: |
+          npx playwright install --with-deps chromium
+          node -e 'console.log("CHROME_PATH=" + require("playwright").chromium.executablePath())' >> "$GITHUB_ENV"
+
+      - name: Run the Lighthouse gate
+        if: steps.secrets.outputs.present == 'true'
+        run: lhci autorun --config=./.lighthouserc.gate.js
+
   lighthouse:
     name: Lighthouse Mobile Audit
+    if: github.event_name != 'pull_request' || github.base_ref == 'main'
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:
       # Test-only publication: production remains fail-closed to fr-only.
       SITE_LOCALE_MODE: bilingual-fr-default
+      # A test deployment — see the gate job above.
+      VERCEL_ENV: preview
 
     steps:
       - name: Checkout
@@ -113,7 +205,7 @@ jobs:
 
       - name: Install @lhci/cli
         if: steps.secrets.outputs.present == 'true'
-        run: npm install -g @lhci/cli --legacy-peer-deps
+        run: npm install -g @lhci/cli@0.15.1 --legacy-peer-deps
 
       - name: Install Chromium for Lighthouse
         if: steps.secrets.outputs.present == 'true'
@@ -164,7 +256,7 @@ jobs:
             const body = [
               '## Lighthouse CI — Mobile Performance ' + status,
               '',
-              '**Thresholds:** Performance ≥ 85 | Accessibility = 100 | Best Practices ≥ 95',
+              '**Budgets:** see `.lighthouserc.js` — accessibility = 100 and best practices ≥ 95 everywhere; performance, LCP and TBT per route regime.',
               '',
               '**Routes audited:**',
               routes,

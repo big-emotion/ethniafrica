@@ -17,6 +17,7 @@
 
 import { createServerClient } from "@/lib/supabase/server";
 import { logger } from "@/lib/api/logger";
+import { walkRanges, type RangeWalk } from "@/lib/supabase/queries/walkRanges";
 import {
   getConfidenceMap,
   getFlagsSummaryMap,
@@ -198,20 +199,29 @@ async function readAllPages<T>(
   label: string,
   page: (from: number, to: number) => PromiseLike<PageResult<T>>
 ): Promise<T[]> {
-  const rows: T[] = [];
-  for (let index = 0; index < MAX_PAGES; index += 1) {
-    const from = index * PAGE_SIZE;
-    const { data, error } = await page(from, from + PAGE_SIZE - 1);
-    if (error) {
-      logger.error(`quizService.${label} failed`, error);
-      return rows;
-    }
-    const batch = data ?? [];
-    rows.push(...batch);
-    if (batch.length < PAGE_SIZE) return rows;
+  // A failed page yields nothing rather than the pages read before it: a
+  // partial bank would size a scope, or re-validate a draw, against rows the
+  // corpus never narrowed to.
+  let walk: RangeWalk<T>;
+  try {
+    walk = await walkRanges(
+      async (from, to) => {
+        const { data, error } = await page(from, to);
+        if (error) throw error;
+        return data ?? [];
+      },
+      { pageSize: PAGE_SIZE, maxPages: MAX_PAGES }
+    );
+  } catch (error) {
+    logger.error(`quizService.${label} failed`, error);
+    return [];
   }
-  logger.error(`quizService.${label} exceeded ${MAX_PAGES} pages — truncated`);
-  return rows;
+  if (walk.truncated) {
+    logger.error(
+      `quizService.${label} exceeded ${MAX_PAGES} pages — truncated`
+    );
+  }
+  return walk.rows;
 }
 
 /** Questions held per content theme, for one track. */

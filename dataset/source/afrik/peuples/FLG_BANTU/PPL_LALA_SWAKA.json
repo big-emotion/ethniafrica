@@ -70,27 +70,28 @@
       {
         "title": "Swaka of Zambia – PeopleGroups.org, PGID PG015635",
         "url": "https://peoplegroups.org/people_groups/pg015635/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+        "tier": "unverified"
       },
       {
         "title": "Chipimpi, Vulgar Clans, and Lala-Lamba Ethnohistory – Brian Siegel, Furman University, 2008",
         "url": "https://scholarexchange.furman.edu/cgi/viewcontent.cgi?article=1001&context=ant-publications",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for scholarexchange.furman.edu."
+        "tier": "referenced"
       },
       {
         "title": "Ichibwela Mushi – Luano Town Council",
         "url": "https://www.luanocouncil.gov.zm/?page_id=2517",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers luanocouncil.gov.zm; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Chief Chitina of the Lala-Swaka people of Mkushi District – QFM Zambia, 2025",
         "url": "https://www.facebook.com/qfmzambia/videos/chief-chitina-of-the-lala-swaka-people-of-mkushi-district-central-province-has-p/2234345853678729/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for facebook.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

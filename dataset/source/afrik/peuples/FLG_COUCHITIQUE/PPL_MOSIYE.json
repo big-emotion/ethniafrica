@@ -85,39 +85,38 @@
       {
         "title": "Harlow, Erika – Phonology of Mosiye (these, Trinity Western University / Arca), 2013",
         "url": "https://arcabc.ca/islandora/object/twu:319",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for arcabc.ca."
+        "tier": "referenced"
       },
       {
         "title": "Mosiye in Ethiopia – Joshua Project, 2025",
         "url": "https://joshuaproject.net/people_groups/11581",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Mosiye 2 Profile – Wycliffe Bible Translators, 2020-2023",
         "url": "https://www.wycliffe.org/Main%20Uploads/Projects/PDF/Mosiye%202%20Profile%20WEB.pdf",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for wycliffe.org."
+        "tier": "unverified"
       },
       {
         "title": "Dobase of Ethiopia – PeopleGroups.org",
         "url": "https://peoplegroups.org/people_groups/pg011570/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+        "tier": "unverified"
       },
       {
         "title": "ISO 639-3: dox (Bussa/Mositacha) – SIL International / Ethnologue",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Appendix: ISO 639-3 codes/Africa – Wiktionary",
         "url": "https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for en.wiktionary.org."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

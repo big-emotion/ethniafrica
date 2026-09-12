@@ -284,4 +284,199 @@ describe("editorial rules — reader-facing register", () => {
       )
     ).toEqual([]);
   });
+
+  // The tiering codemod wrote its own reasoning into 5 000 source notes —
+  // which catalogue entry or domain ruling set the tier, or that nobody had
+  // ruled yet. It reads as a sober English sentence and names no path, so the
+  // gate let every one of them through to the reader.
+  const TIER_PROVENANCE_NOTES = [
+    "Tier resolved from the domain ruling for jstor.org.",
+    "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies.",
+    "No URL and no recognisable citation shape; the tier awaits editorial review.",
+    'Tier resolved from the authorized source catalogue entry "ethnologue".',
+    "No domain ruling covers kanaga-at.com; the tier awaits editorial review.",
+    // Curators who followed the codemod wrote the same reasoning by hand.
+    "Resolved from the prior needs_review standing (no URL) once the museum's own announcement was located.",
+    "Catalogued on the French national theses portal; tiered referenced as an identifiable, verifiable academic work.",
+  ];
+
+  // @req REQ-133
+  it("refuses the tiering codemod's provenance sentences in a translated source note", () => {
+    for (const notes of TIER_PROVENANCE_NOTES) {
+      const findings = checkReaderFacingRegister(
+        { id: "MWI", sources: [{ title: "Un titre", notes }] },
+        "dataset/translations/en/pays/MWI.json",
+        INTERNAL_REGISTER_PATTERNS_EN
+      );
+
+      expect(findings, notes).toHaveLength(1);
+      expect(findings[0].message).toContain("sources[0].notes");
+    }
+  });
+
+  // People, country and family fiches keep their sources under `content`, and
+  // the Sources chapter renders them from there. Reading only the top-level
+  // array — where name fiches keep theirs — left 854 fiches unchecked.
+  // @req REQ-133
+  it("reads the sources a people, country or family fiche keeps under content", () => {
+    const findings = checkReaderFacingRegister(
+      {
+        id: "PPL_X",
+        content: {
+          sources: [{ title: "Un titre", notes: TIER_PROVENANCE_NOTES[2] }],
+        },
+      },
+      "dataset/source/afrik/peuples/FLG_X/PPL_X.json"
+    );
+
+    expect(findings).toHaveLength(1);
+    expect(findings[0].message).toContain("content.sources[0].notes");
+  });
+
+  // A chapter can carry its own sources — `content.historicalAffiliation`
+  // does — and the Sources chapter renders them all. An enumerated list of
+  // locations missed every one of them.
+  // @req REQ-133
+  it("reads a sources array wherever a fiche nests it", () => {
+    const findings = checkReaderFacingRegister(
+      {
+        id: "PPL_X",
+        content: {
+          historicalAffiliation: {
+            sources: [
+              {
+                title: "Smithsonian Magazine",
+                notes:
+                  "Tier resolved from the domain ruling for established press/magazine journalism; article names its historical sources (Joseph Opala, Cynthia Schmidt) and dates (1933, 1990).",
+              },
+            ],
+          },
+        },
+      },
+      "dataset/source/afrik/peuples/FLG_CREOLE/PPL_X.json"
+    );
+
+    expect(findings).toHaveLength(1);
+    expect(findings[0].message).toContain(
+      "content.historicalAffiliation.sources[0].notes"
+    );
+  });
+
+  // The same reasoning, written in French by hand — with and without accents,
+  // since one curation batch wrote it unaccented.
+  // @req REQ-133
+  it("refuses French tier reasoning in a source note", () => {
+    for (const notes of [
+      "Non listée au catalogue de domaines officiels ; tier inféré de la forme éditoriale (entrée signée, adossement universitaire).",
+      "Encyclopédie académique à entrées signées. Tier inféré de la forme de citation (auteure nommée, institution).",
+      "Tier résolu par le domaine unfpa.org, agence onusienne (catalogue de sources autorisées).",
+      "Tier resolu depuis le catalogue des sources autorisees (entree « ethnologue »).",
+      "Institut national de statistique du Bresil (IBGE) ; tier fonde sur le statut d'institut national de statistique reconnu par la doctrine des sources du corpus.",
+      "Article publie dans Proceedings of the Royal Society B (2016) ; tier fonde sur la nature academique et evaluee par les pairs de la revue.",
+    ]) {
+      const findings = checkReaderFacingRegister(
+        { id: "PPL_X", content: { sources: [{ title: "T", notes }] } },
+        "dataset/source/afrik/peuples/FLG_CREOLE/PPL_X.json"
+      );
+
+      expect(findings, notes).toHaveLength(1);
+    }
+  });
+
+  // @req REQ-133
+  it("refuses English tier reasoning that names no ruling", () => {
+    const findings = checkReaderFacingRegister(
+      {
+        id: "PPL_X",
+        content: {
+          sources: [
+            {
+              title: "T",
+              notes:
+                "Tier resolved as a peer-reviewed academic journal article; used for the confessional split in naming practice.",
+            },
+          ],
+        },
+      },
+      "dataset/source/afrik/peuples/FLG_X/PPL_X.json"
+    );
+
+    expect(findings).toHaveLength(1);
+  });
+
+  // A ticket number tells the reader which work queue produced a sentence.
+  // @req REQ-133
+  it("refuses a ticket identifier in a source note", () => {
+    const findings = checkReaderFacingRegister(
+      {
+        id: "PPL_X",
+        content: {
+          sources: [
+            {
+              title: "T",
+              notes:
+                "Plafonnée volontairement à « referenced » pour cette fiche (voir ETNI-1388).",
+            },
+          ],
+        },
+      },
+      "dataset/source/afrik/peuples/FLG_X/PPL_X.json"
+    );
+
+    expect(findings).toHaveLength(1);
+  });
+
+  // What an institution is, and which catalogue confirmed a book, is
+  // provenance the reader is owed.
+  // @req REQ-133
+  it("accepts French provenance that says what a source is", () => {
+    for (const notes of [
+      "Encyclopédie académique adossée à l'Institute for Southern Studies (University of South Carolina).",
+      "L'imprimé est vérifié au catalogue de la Bibliothèque nationale de France ; le passage lui-même n'a pas été lu.",
+      "Catalogue de référence linguistique de SIL International, qui documente les langues vivantes du Ghana et leur statut.",
+    ]) {
+      expect(
+        checkReaderFacingRegister(
+          { id: "PPL_X", content: { sources: [{ title: "T", notes }] } },
+          "dataset/source/afrik/peuples/FLG_X/PPL_X.json"
+        ),
+        notes
+      ).toEqual([]);
+    }
+  });
+
+  // A French fiche carries these sentences in English: the codemod wrote them
+  // in one language whatever the fiche's own, so reading a French fiche with
+  // the French list alone is how 3 291 of them passed.
+  // @req REQ-133
+  it("refuses an English provenance sentence inside a French source fiche", () => {
+    const findings = checkReaderFacingRegister(
+      {
+        id: "PPL_X",
+        sources: [{ title: "Un titre", notes: TIER_PROVENANCE_NOTES[0] }],
+      },
+      "dataset/source/afrik/peuples/FLG_X/PPL_X.json"
+    );
+
+    expect(findings).toHaveLength(1);
+  });
+
+  // @req REQ-133
+  it("accepts a source note that mentions a domain without ruling on it", () => {
+    expect(
+      checkReaderFacingRegister(
+        {
+          id: "PPL_X",
+          sources: [
+            {
+              title: "Carte ancienne",
+              notes:
+                "Map in the public domain, held and digitised by the Bibliothèque nationale de France.",
+            },
+          ],
+        },
+        "dataset/source/afrik/peuples/FLG_X/PPL_X.json"
+      )
+    ).toEqual([]);
+  });
 });

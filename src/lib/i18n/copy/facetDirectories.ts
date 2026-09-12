@@ -33,6 +33,8 @@ const en = {
     empty: "No atlas people matches this selection.",
     reset: "Return to all peoples",
     listLabel: "Peoples",
+    unavailable:
+      "The atlas's peoples are temporarily unavailable. Try again in a moment.",
   },
   families: {
     plural: "families",
@@ -121,6 +123,8 @@ const fr: FacetDirectoriesCopy = {
     empty: "Aucun peuple de l’atlas ne répond à cette sélection.",
     reset: "Revenir à tous les peuples",
     listLabel: "Peuples",
+    unavailable:
+      "Les peuples de l’atlas sont momentanément indisponibles. Réessayez dans un instant.",
   },
   families: {
     plural: "familles",

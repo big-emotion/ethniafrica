@@ -5,6 +5,8 @@ import {
   DEAD_CODE_CATEGORIES,
   DEAD_CODE_CEILINGS,
   evaluateDeadCode,
+  evaluateProductionDeadCode,
+  PRODUCTION_DEAD_CODE_CEILINGS,
   tallyKnipReport,
 } from "../ci/checkDeadCode";
 
@@ -127,5 +129,68 @@ describe("the shipped ceilings", () => {
     for (const category of ADVISORY_CATEGORIES) {
       expect(DEAD_CODE_CATEGORIES, category).toContain(category);
     }
+  });
+});
+
+// The default tally counts tests and stories as entry points, so a file whose
+// only importer is its own test reads as used. The production tally is the one
+// that sees it.
+describe("evaluateProductionDeadCode", () => {
+  const ceilings = { files: 3, dependencies: 0 } as const;
+
+  // @req REQ-085
+  it("passes when production files and dependencies sit on their ceilings", () => {
+    const verdict = evaluateProductionDeadCode(
+      { files: 3, dependencies: 0 },
+      { ceilings }
+    );
+
+    expect(verdict.ok).toBe(true);
+  });
+
+  // @req REQ-085
+  it("fails when a file becomes reachable only from tests", () => {
+    const verdict = evaluateProductionDeadCode(
+      { files: 4, dependencies: 0 },
+      { ceilings }
+    );
+
+    expect(verdict.ok).toBe(false);
+    expect(verdict.errors.join("\n")).toMatch(/production files: 4/);
+  });
+
+  // @req REQ-085
+  it("fails when the count drops, naming the production ceiling to lower", () => {
+    const verdict = evaluateProductionDeadCode(
+      { files: 1, dependencies: 0 },
+      { ceilings }
+    );
+
+    expect(verdict.ok).toBe(false);
+    expect(verdict.errors.join("\n")).toContain(
+      "lower PRODUCTION_DEAD_CODE_CEILINGS.files to 1"
+    );
+  });
+
+  // Production mode still reports exports and types, but the default tally
+  // already ratchets those; counting them twice would make every export change
+  // a two-line edit for no extra signal.
+  // @req REQ-085
+  it("ignores every category other than files and dependencies", () => {
+    const verdict = evaluateProductionDeadCode(
+      { files: 3, dependencies: 0, exports: 40, types: 12 },
+      { ceilings }
+    );
+
+    expect(verdict.ok).toBe(true);
+    expect(verdict.errors).toEqual([]);
+  });
+
+  // @req REQ-085
+  it("ships a ceiling for exactly the production files and dependencies", () => {
+    expect(Object.keys(PRODUCTION_DEAD_CODE_CEILINGS).sort()).toEqual([
+      "dependencies",
+      "files",
+    ]);
   });
 });

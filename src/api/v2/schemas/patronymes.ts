@@ -24,8 +24,6 @@ export const patronymeIdParamSchema = z.object({
   }),
 });
 
-export type PatronymeIdParam = z.infer<typeof patronymeIdParamSchema>;
-
 // @req REQ-133
 export const patronymeNameSystemSchema = z.enum([
   "clan_name",

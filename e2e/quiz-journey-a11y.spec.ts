@@ -227,11 +227,15 @@ test.describe("@nfr-a11y quiz session — keyboard-only journey", () => {
 
     await expect(page.getByTestId("quiz-score-screen")).toBeVisible();
 
-    const playAgainButton = page.getByRole("button", { name: "Rejouer" });
-    const reachedPlayAgain = await tabUntilFocused(page, playAgainButton, 10);
+    // The in-session score offers its way onward as links; « Rejouer » lives
+    // on the shareable score page, not here.
+    const backToPicker = page.getByRole("link", {
+      name: "Choisir autre chose",
+    });
+    const reachedPicker = await tabUntilFocused(page, backToPicker, 10);
     expect(
-      reachedPlayAgain,
-      "Rejouer button never receives focus via Tab"
+      reachedPicker,
+      "the way back to the picker never receives focus via Tab"
     ).toBe(true);
   });
 });
