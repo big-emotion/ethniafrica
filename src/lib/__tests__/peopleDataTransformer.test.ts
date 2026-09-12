@@ -130,15 +130,15 @@ const minimalPeople: PeopleDetail = {
 describe("formatPeoplePopulation", () => {
   // @req REQ-003
   it("formats whole millions", () => {
-    expect(formatPeoplePopulation(40000000, "fr")).toBe("40M");
+    expect(formatPeoplePopulation(40000000, "fr")).toMatch(/^40\s?M$/);
   });
 
   it("formats millions with decimal", () => {
-    expect(formatPeoplePopulation(35000000, "fr")).toBe("35M");
+    expect(formatPeoplePopulation(35000000, "fr")).toMatch(/^35\s?M$/);
   });
 
   it("formats thousands", () => {
-    expect(formatPeoplePopulation(500000, "fr")).toBe("500K");
+    expect(formatPeoplePopulation(500000, "fr")).toMatch(/^500\s?k$/);
   });
 
   it("formats small numbers", () => {
@@ -149,12 +149,15 @@ describe("formatPeoplePopulation", () => {
     expect(formatPeoplePopulation(0, "fr")).toBe("0");
   });
 
-  // French readers used to see "3.5M" — a period, from a hardcoded suffix —
+  // French readers used to see "3.5M", then "3,5M": first the separator was
+  // wrong, then the unit was glued on with no space and a capital K that
+  // French does not use. The locale now carries both, so the shape is
+  // asserted rather than one exact space character —
   // beside a correctly-spaced "10 500 000" produced elsewhere by
   // Intl.NumberFormat. The decimal separator must follow the given locale.
   // @req REQ-155
   it("formats fractional millions with the locale's own decimal separator", () => {
-    expect(formatPeoplePopulation(3500000, "fr")).toBe("3,5M");
+    expect(formatPeoplePopulation(3500000, "fr")).toMatch(/^3,5\s?M$/);
     expect(formatPeoplePopulation(3500000, "en")).toBe("3.5M");
   });
 });
@@ -522,7 +525,7 @@ describe("transformPeopleCountries", () => {
   it("extracts total population and formats it", () => {
     const result = transformPeopleCountries(yorubaPeople.demography);
     expect(result.totalPopulation).toBe(40000000);
-    expect(result.totalPopulationFormatted).toBe("40M");
+    expect(result.totalPopulationFormatted).toMatch(/^40\s?M$/);
   });
 
   it("maps distribution entries with formatted population", () => {
@@ -531,7 +534,7 @@ describe("transformPeopleCountries", () => {
     const nga = result.distributions.find((d) => d.country === "NGA");
     expect(nga).toBeDefined();
     expect(nga!.population).toBe(35000000);
-    expect(nga!.populationFormatted).toBe("35M");
+    expect(nga!.populationFormatted).toMatch(/^35\s?M$/);
     expect(nga!.percentage).toBe(87.5);
   });
 
@@ -563,8 +566,8 @@ describe("transformPeopleCountries", () => {
       totalPopulation: 3500000,
       distributionByCountry: [{ country: "COD", population: 3500000 }],
     });
-    expect(result.totalPopulationFormatted).toBe("3,5M");
-    expect(result.distributions[0].populationFormatted).toBe("3,5M");
+    expect(result.totalPopulationFormatted).toMatch(/^3,5\s?M$/);
+    expect(result.distributions[0].populationFormatted).toMatch(/^3,5\s?M$/);
   });
 
   // @req REQ-155

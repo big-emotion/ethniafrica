@@ -120,6 +120,16 @@ describe("people surface charter", () => {
 
     expect(signature).not.toBeNull();
     expect(signature![1]).toMatch(/language/);
+
+    // Taking a language is half the job. Localising only the digits left
+    // French readers `12,2M` and `500K`: the comma was right, the unit had
+    // no space before it and `K` is not a French abbreviation. The unit has
+    // to come from the locale too, so no suffix may be glued on by hand.
+    const body = transformer.slice(
+      transformer.indexOf("function formatPeoplePopulation")
+    );
+    const gluedSuffix = body.slice(0, 600).match(/\}[A-Za-z]\s*`/g);
+    expect(gluedSuffix).toBeNull();
   });
 
   /**

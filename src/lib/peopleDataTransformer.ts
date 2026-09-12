@@ -194,15 +194,15 @@ export interface PeoplePageData {
  */
 // @req REQ-003
 export function formatPeoplePopulation(n: number, language: Language): string {
-  if (n >= 1_000_000) {
-    const millions = n / 1_000_000;
-    return `${new Intl.NumberFormat(language, { maximumFractionDigits: 1 }).format(millions)}M`;
-  }
-  if (n >= 1_000) {
-    const thousands = Math.round(n / 1_000);
-    return `${new Intl.NumberFormat(language).format(thousands)}K`;
-  }
-  return new Intl.NumberFormat(language).format(n);
+  // Compact notation, not a hand-glued suffix. Localising only the digits
+  // left French readers `12,2M` and `500K`: the comma was right, but the
+  // unit had no space before it and `K` is not a French abbreviation for a
+  // thousand. `Intl` carries both the separator and the unit for each
+  // locale, so there is no suffix here to get wrong.
+  return new Intl.NumberFormat(language, {
+    notation: "compact",
+    maximumFractionDigits: 1,
+  }).format(n);
 }
 
 /**
