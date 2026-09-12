@@ -99,9 +99,26 @@ describe("FicheChapterBar", () => {
       screen.getByRole("navigation", { name: "Page chapters" })
     ).toBeVisible();
     expect(
-      screen.getByRole("button", { name: /Page contents — chapter 1 of 3/ })
+      screen.getByRole("button", { name: /Page contents — Le nom porté/ })
     ).toBeVisible();
     expect(screen.getByText("Contents")).toBeVisible();
+    expect(screen.getByText("Contribute")).toBeVisible();
+  });
+
+  /**
+   * Reporting is what a reader reaches for when the page is wrong.
+   * Contributing is what they reach for when it is merely thin, which on an
+   * atlas this young is the commoner case. With only the report control on
+   * the rail, every reader's options began at "this is an error".
+   */
+  // @req REQ-091
+  it("carries a way to contribute, whatever the rail knows about the fiche", () => {
+    renderFiche(THREE_CHAPTERS);
+
+    expect(screen.getByTestId("fiche-chapter-bar-contribute")).toHaveAttribute(
+      "href",
+      "/fr/contribute"
+    );
   });
   // @req REQ-091
   it("lists every chapter the fiche declares, in reading order", () => {
@@ -142,14 +159,20 @@ describe("FicheChapterBar", () => {
     );
   });
 
+  // The bar used to read "02 / 03". The chapters of a record are not a
+  // sequence a reader walks in order — they open the one they came for — so a
+  // position out of a total told them how far through a queue they were when
+  // there is no queue. The chapter name, the anchor, the summary toggle and
+  // the report control all stay; only the counting goes.
   // @req REQ-091
-  it("counts the reader's position through the fiche", () => {
+  it("does not count the reader's position, the chapters being no sequence", () => {
     renderFiche(THREE_CHAPTERS);
 
     enter(["chapitre-langue"]);
 
-    expect(screen.getByTestId("fiche-chapter-bar-count")).toHaveTextContent(
-      "02 / 03"
+    expect(screen.queryByTestId("fiche-chapter-bar-count")).toBeNull();
+    expect(screen.getByTestId("fiche-chapter-bar-current")).toHaveTextContent(
+      "Langue"
     );
   });
 
@@ -197,21 +220,20 @@ describe("FicheChapterBar", () => {
       "beforeend",
       chapter("Voix & récits", "chapitre-voix-recits")
     );
-    await vi.waitFor(() =>
-      expect(screen.getByTestId("fiche-chapter-bar-count")).toHaveTextContent(
-        "/ 04"
-      )
-    );
-
+    // The total used to be the signal that the bar had noticed. With the
+    // counter gone, the summary list is what a reader sees change, so that is
+    // what the contract waits on.
     openSummary();
-    expect(
-      within(screen.getByTestId("fiche-chapter-bar-summary")).getByRole(
-        "link",
-        {
-          name: "Voix & récits",
-        }
-      )
-    ).toBeInTheDocument();
+    await vi.waitFor(() =>
+      expect(
+        within(screen.getByTestId("fiche-chapter-bar-summary")).getByRole(
+          "link",
+          {
+            name: "Voix & récits",
+          }
+        )
+      ).toBeInTheDocument()
+    );
   });
 
   // @req REQ-091

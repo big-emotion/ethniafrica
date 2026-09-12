@@ -119,15 +119,40 @@
   background: var(--afh-bg-warm);
 }
 
-.afh-chapter-bar-count {
+/* The rail used to open with "02 / 09". It went with the idea it implied:
+   that the record's chapters are a sequence a reader walks in order, when
+   they open the one they came for. The bar names the chapter in view, which
+   is the part that was doing work. */
+
+/* The rail's other half of the pair. Reporting is for a page that is wrong;
+   contributing is for one that is merely thin, which on an atlas this young
+   is the commoner case — and the rail offered only the first.
+
+   A link in the accent ink rather than the filled block the reviewed
+   rendering gives it. That rendering puts the pair in a bar of its own at
+   the foot of the screen, where a filled block has room; this rail is 48px
+   tall, carries an ellipsizing chapter title, and follows the reader down
+   the whole page. A filled block there competes with the page it sits on. */
+.afh-chapter-bar-contribute {
   flex: none;
-  font-family: var(--afh-font-mono);
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--afh-chapter-bar-height);
+  padding-inline: var(--afh-space-lg);
   font-size: var(--afh-text-caption);
-  letter-spacing: 0.08em;
-  /* Tabular figures: the readout must not shift as the count changes under a
-     reader who is scrolling, or the whole bar appears to twitch. */
-  font-variant-numeric: tabular-nums;
+  font-weight: 700;
   color: var(--accent-ink, var(--accent));
+  text-decoration: none;
+}
+
+.afh-chapter-bar-contribute:hover {
+  text-decoration: underline;
+}
+
+.afh-chapter-bar-contribute:focus-visible {
+  outline: none;
+  box-shadow: var(--afh-ring-focus);
+  border-radius: var(--afh-radius-sm);
 }
 
 .afh-chapter-bar-current {
@@ -159,8 +184,8 @@
 
 /* The report control keeps its width at every breakpoint, including 430px.
    Which word gives way when the rail runs out of room is a decision, and this
-   is the opposite one from the summary's: "Sommaire" names a control the count
-   and the caret already explain, so it can go, while "Signaler" names a gesture
+   is the opposite one from the summary's: "Sommaire" names a control the
+   caret already explains, so it can go, while "Signaler" names a gesture
    a reader cannot guess from anything else on the rail. What yields instead is
    the chapter title, which ellipsizes — it is also the one thing on the rail
    the reader can read off the page itself. */

@@ -76,7 +76,14 @@ export function PeopleFicheHead({
           crowding out the one slot that names this subject. The doctrine is
           not lost — the globe's legend states it once, over the borderless
           mark it actually explains. */}
-      <AutonymExonymHeading variant="parchment" autonym={hero.nameMain} />
+      {/* `nameMain` is often the imposed name itself (Abahutu's fiche opens
+          on "Hutu du Burundi"), so it stands in for the autonym only when the
+          fiche declares no self-appellation of its own — never the reverse. */}
+      <AutonymExonymHeading
+        variant="parchment"
+        autonym={hero.selfAppellation ?? hero.nameMain}
+        exonym={hero.exonyms[0]}
+      />
 
       {hero.historicalRegion && (
         <p className="afh-parchment-lede">{hero.historicalRegion}</p>

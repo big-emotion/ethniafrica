@@ -49,12 +49,16 @@ function CultureGridCell({ item }: { item: CultureGridItem }) {
   const { bg, labelColor } = SLOT_STYLES[item.slot];
 
   return (
+    /* No emoji, and no centring. The tile carried a pictogram above its own
+       label — a mosque over "Religions", a crown over "Organisation" — which
+       picked one religion and one form of authority to stand for a whole
+       country's, on a surface whose posture is that neither is decided by the
+       page. What is left is what the tile actually knows: the rubric and the
+       words the corpus files under it. */
     <div
-      className="p-3 md:p-4 xl:p-[18px] rounded-[var(--country-radius-base)] xl:rounded-[14px] text-center"
+      className="p-3 md:p-4 xl:p-[18px] rounded-[var(--country-radius-base)] xl:rounded-[14px]"
       style={{ background: bg }}
     >
-      <div className="text-afh-h2 mb-1">{item.icon}</div>
-
       <div
         className="text-afh-eyebrow font-bold uppercase tracking-[0.08em] mb-1"
         style={{ color: labelColor }}

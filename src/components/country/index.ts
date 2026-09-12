@@ -1,4 +1,3 @@
-export { HistoryTimeline } from "./HistoryTimeline";
 export { PeoplesSection } from "./PeoplesSection";
 export { LanguagesSection } from "./LanguagesSection";
 export { CultureGrid } from "./CultureGrid";

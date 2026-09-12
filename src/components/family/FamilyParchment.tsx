@@ -9,6 +9,7 @@ import { getCountryRoute, getPeopleRoute } from "@/lib/routing";
 import { classifyFieldProvenance } from "@/lib/fieldProvenance";
 import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
 import { FicheSection as Section } from "@/components/fiche/FicheSection";
+import { FicheStatCard } from "@/components/fiche/FicheStatCard";
 import {
   MEMBER_PEOPLES_SHOWN,
   rankFootprint,
@@ -24,7 +25,6 @@ import type { FamilyPageData } from "@/lib/familyDataTransformer";
 import { ficheSourceLabel } from "@/lib/afrik/ficheSourceLabel";
 import { sourceStandingLabel } from "@/lib/glossaire/vocabularies";
 import { isSourceTier } from "@/types/sources";
-import { formatNumber } from "@/lib/languageTag";
 import type { Language } from "@/types/shared";
 import { familyCopy } from "@/lib/i18n/copy/family";
 import { ficheCopy } from "@/lib/i18n/copy/fiche";
@@ -85,64 +85,30 @@ export interface FamilyParchmentProps {
 /**
  * One figure, and whether the fiche declares it.
  *
- * The card carried a third line naming the rubric the figure was read from —
- * "Informations générales · total de locuteurs" under a card already headed
- * "Locuteurs". That was the mockup's field annotation, twice translated: first
- * out of the JSON key a developer would grep for, then into French. Neither
- * spelling was ever addressed to a reader, and the marker below the figure is
- * what actually tells them whether to trust it.
- *
- * `provenance` is computed, never hard-coded. The mockup writes "vide" into
- * the branches and distribution cards because that is what the recette
- * database holds; every fiche in this repository's corpus already declares
- * both. A card that stated the empty case as a constant would keep saying
- * "vide" after the corpus is loaded — a page asserting a gap that no longer
- * exists, in a project whose whole posture is the transparency of its
- * sources, and no test would have caught it.
+ * The device itself is shared with the country record — see `FicheStatCard`,
+ * which carries the reasoning. What stays here is this surface's own word for
+ * an absent figure: the family record says "vide" where the country record
+ * stands a dash, and neither should silently inherit the other's.
  */
 function StatCard({
   id,
   label,
   value,
-  emptyValue,
   language,
 }: {
   id: string;
   label: string;
   value: unknown;
-  emptyValue?: string;
   language: Language;
 }) {
-  const provenance = classifyFieldProvenance(value).state;
-  const missing = provenance === "missing";
-  const shown = missing
-    ? (emptyValue ?? familyCopy[language].parchment.empty)
-    : Array.isArray(value)
-      ? formatNumber(language, value.length)
-      : typeof value === "object" && value !== null
-        ? formatNumber(language, Object.keys(value).length)
-        : typeof value === "number"
-          ? formatNumber(language, value)
-          : String(value);
-
   return (
-    <div
-      className="afh-stat-card"
-      data-testid={`stat-card-${id}`}
-      data-provenance={provenance}
-      data-missing={missing || undefined}
-    >
-      <span className="afh-stat-card-n">{shown}</span>
-      <span className="afh-stat-card-k">{label}</span>
-      {/* The app has one wording for an absent field, and it lives in
-          FieldProvenanceMarker. Writing a second one here would let the two
-          drift and leave readers with two vocabularies for one idea. */}
-      <FieldProvenanceMarker
-        state={provenance}
-        language={language}
-        className="mt-2"
-      />
-    </div>
+    <FicheStatCard
+      id={id}
+      label={label}
+      value={value}
+      emptyValue={familyCopy[language].parchment.empty}
+      language={language}
+    />
   );
 }
 

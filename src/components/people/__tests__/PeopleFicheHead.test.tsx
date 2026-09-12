@@ -192,4 +192,50 @@ describe("PeopleFicheHead (REQ-115)", () => {
     const title = screen.getByRole("heading", { level: 1 });
     expect(title.textContent?.trim()).toBe("Yoruba");
   });
+
+  /**
+   * ETNI-1359. The Abahutu record opened on "Hutu du Burundi" — `nameMain`,
+   * the colonial-era exonym — passed to `AutonymExonymHeading` as if it were
+   * the autonym, with no exonym threaded at all. The self-designation
+   * "Abahutu" never reached the heading it is supposed to open on.
+   */
+  describe("autonym/exonym pairing", () => {
+    // @req REQ-155
+    it("opens on the self-appellation with the imposed name beside it", () => {
+      render(
+        <PeopleFicheHead
+          language="fr"
+          hero={{
+            ...hero,
+            nameMain: "Hutu du Burundi",
+            selfAppellation: "Abahutu",
+            exonyms: ["Bahutu", "Wahutu"],
+          }}
+          countries={countries}
+        />
+      );
+
+      const title = screen.getByRole("heading", { level: 1 });
+      expect(title.textContent).toContain("Abahutu");
+      expect(title.textContent).toContain("Bahutu");
+      // Endonym-first: the self-appellation leads, the imposed name follows.
+      expect(title.textContent!.indexOf("Abahutu")).toBeLessThan(
+        title.textContent!.indexOf("Bahutu")
+      );
+    });
+
+    // @req REQ-155
+    it("falls back to nameMain as the autonym when the fiche declares no self-appellation", () => {
+      render(
+        <PeopleFicheHead
+          language="fr"
+          hero={{ ...hero, selfAppellation: undefined, exonyms: [] }}
+          countries={countries}
+        />
+      );
+
+      const title = screen.getByRole("heading", { level: 1 });
+      expect(title.textContent?.trim()).toBe("Yoruba");
+    });
+  });
 });

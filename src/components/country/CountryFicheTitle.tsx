@@ -4,9 +4,10 @@ import {
   transformCountryData,
 } from "@/lib/countryDataTransformer";
 import { backLinkLabel } from "@/lib/navigation/deriveTrail";
-import { getPeopleRoute } from "@/lib/routing";
+import { getPeopleRoute, getStaticPageRoute } from "@/lib/routing";
 import type { Language } from "@/types/shared";
 import { countryCopy } from "@/lib/i18n/copy/country";
+import { ficheCopy } from "@/lib/i18n/copy/fiche";
 
 /**
  * The band a country fiche opens on, above the globe.
@@ -62,10 +63,27 @@ export function CountryFicheTitle({
           {hero.iso} · {copy.ficheCountry}
           {hasPeoples && ` · ${copy.reference} ${DEMOGRAPHIC_REFERENCE_YEAR}`}
         </p>
-        <h1>{hero.countryName}</h1>
-        {statesTwoNames && (
-          <p className="afh-parchment-lede">{hero.nameOfficial}</p>
-        )}
+        {/* The invitation stands with the name of the page rather than only at
+            the foot of it. A reader decides a record is thin in the first
+            screen, which is also the screen where the way to fill it was
+            missing. Below the names on a phone, beside them from the tablet
+            floor up: the head's composition is a centred title, and a control
+            pulled up next to it would take that centring away. */}
+        <div className="afh-parchment-head-title">
+          <div className="min-w-0">
+            <h1>{hero.countryName}</h1>
+            {statesTwoNames && (
+              <p className="afh-parchment-lede">{hero.nameOfficial}</p>
+            )}
+          </div>
+          <a
+            className="afh-parchment-contribute"
+            data-testid="country-contribute"
+            href={getStaticPageRoute(language, "contribute")}
+          >
+            {ficheCopy[language].contribute}
+          </a>
+        </div>
       </header>
     </>
   );

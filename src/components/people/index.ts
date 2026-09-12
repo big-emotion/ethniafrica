@@ -8,7 +8,6 @@ export type {
   LanguageChips,
 } from "./ProseWithChip";
 export { PeopleFicheHead } from "./PeopleFicheHead";
-export { PeopleNamingBlock } from "./PeopleNamingBlock";
 export { PeopleFieldExplainer } from "./PeopleFieldExplainer";
 export { PeopleFieldLegend } from "./PeopleFieldLegend";
 export { PeopleOriginBlock } from "./PeopleOriginBlock";

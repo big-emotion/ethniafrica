@@ -34,21 +34,60 @@ describe("counted fiche summary copy (REQ-151)", () => {
     );
   });
 
+  /**
+   * The scope used to be folded into the label, so every count read as a
+   * sentence: "Peuples documentés ici" above the number 3. Under a figure
+   * that is a name, and a name wants to be short. The qualification moves to
+   * a line of its own beneath, which is where a reader looks for it, and
+   * which leaves room to say something different when the count is absent.
+   */
   // @req REQ-151
-  it("states the scope of every country count in both locales", () => {
-    expect(countryCopy.fr.summary).toMatchObject({
-      population: "Population du pays",
-      peoplesDocumentedHere: "Peuples documentés ici",
-      languagesDocumentedHere: "Langues documentées ici",
-      familiesDocumentedHere: "Familles linguistiques documentées ici",
-      namesReferencedHere: "Noms référencés ici",
+  it("splits every country count into a name, its scope and its silence", () => {
+    expect(countryCopy.fr.summary.figures).toMatchObject({
+      population: { label: "habitants", absent: "population non renseignée" },
+      peoples: {
+        label: "peuples",
+        scope: "documentés ici",
+        absent: "aucun peuple documenté ici",
+      },
+      languages: {
+        label: "langues",
+        scope: "documentées ici",
+        absent: "aucune langue documentée ici",
+      },
+      families: {
+        label: "familles linguistiques",
+        scope: "documentées ici",
+        absent: "aucune famille documentée ici",
+      },
+      names: {
+        label: "noms",
+        scope: "référencés ici",
+        absent: "aucun nom référencé ici",
+      },
     });
-    expect(countryCopy.en.summary).toMatchObject({
-      population: "Country population",
-      peoplesDocumentedHere: "Peoples documented here",
-      languagesDocumentedHere: "Languages documented here",
-      familiesDocumentedHere: "Language families documented here",
-      namesReferencedHere: "Names referenced here",
+    expect(countryCopy.en.summary.figures).toMatchObject({
+      population: { label: "inhabitants", absent: "population not recorded" },
+      peoples: {
+        label: "peoples",
+        scope: "documented here",
+        absent: "no people documented here",
+      },
+      languages: {
+        label: "languages",
+        scope: "documented here",
+        absent: "no language documented here",
+      },
+      families: {
+        label: "language families",
+        scope: "documented here",
+        absent: "no language family documented here",
+      },
+      names: {
+        label: "names",
+        scope: "referenced here",
+        absent: "no name referenced here",
+      },
     });
     expect(countryCopy.fr.summary.title).toBe("En bref");
     expect(countryCopy.en.summary.title).toBe("In brief");
@@ -89,16 +128,26 @@ describe("counted fiche summary copy (REQ-151)", () => {
       "Reference year: 2025"
     );
 
-    expect(countryCopy.fr.summary.missingData).toBe(
-      "Non renseigné dans l’atlas"
-    );
-    expect(countryCopy.en.summary.missingData).toBe(
-      "Not recorded in the atlas"
-    );
+    // The people record still states its silence as one sentence for all five
+    // slots. The country record now says it once per count, in words that fit
+    // the count, which is why only one of the two keeps this key.
     expect(peopleCopy.fr.summary.missingData).toBe(
       "Non renseigné dans l’atlas"
     );
     expect(peopleCopy.en.summary.missingData).toBe("Not recorded in the atlas");
+
+    for (const summary of [peopleCopy.fr.summary, peopleCopy.en.summary]) {
+      expect(summary.missingData).toBeTruthy();
+      expect(summary.missingData).not.toMatch(/\b(?:0|undefined|unknown)\b/i);
+    }
+
+    // Whatever a count's silence is called, it never reads as a measurement.
+    for (const locale of [countryCopy.fr, countryCopy.en]) {
+      for (const figure of Object.values(locale.summary.figures)) {
+        expect(figure.absent).toBeTruthy();
+        expect(figure.absent).not.toMatch(/\b(?:0|undefined|unknown)\b/i);
+      }
+    }
 
     for (const summary of [
       countryCopy.fr.summary,
@@ -106,9 +155,7 @@ describe("counted fiche summary copy (REQ-151)", () => {
       peopleCopy.fr.summary,
       peopleCopy.en.summary,
     ]) {
-      expect(summary.missingData).toBeTruthy();
       expect(summary.factTier).toBeTruthy();
-      expect(summary.missingData).not.toMatch(/\b(?:0|undefined|unknown)\b/i);
     }
   });
 });

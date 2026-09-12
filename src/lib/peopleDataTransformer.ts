@@ -34,6 +34,7 @@ import {
   type PopulationTotalDiscrepancy,
   type ProvenancedValue,
 } from "@/lib/supabase/queries/afrik/peopleCountryShare";
+import type { Language } from "@/types/shared";
 
 // ==========================================
 // OUTPUT TYPES
@@ -183,20 +184,25 @@ export interface PeoplePageData {
 // ==========================================
 
 /**
- * Format population number: 40000000 → "40M", 500000 → "500K"
+ * Format population number: 40000000 → "40M", 500000 → "500K".
+ *
+ * REQ-155: this used to hardcode a period as the decimal separator, so a
+ * French reader saw "12.2M" beside a correctly-spaced "10 500 000" produced
+ * elsewhere by `Intl.NumberFormat`. The abbreviation suffix ("M"/"K") stays
+ * Latin either way — the atlas has no French convention for it — but the
+ * decimal separator and digit grouping now follow the reader's own locale.
  */
 // @req REQ-003
-export function formatPeoplePopulation(n: number): string {
-  if (n >= 1_000_000) {
-    const m = n / 1_000_000;
-    const formatted = m % 1 === 0 ? `${m}M` : `${m.toFixed(1)}M`;
-    return formatted.replace(".0M", "M");
-  }
-  if (n >= 1_000) {
-    const k = Math.round(n / 1_000);
-    return `${k}K`;
-  }
-  return String(n);
+export function formatPeoplePopulation(n: number, language: Language): string {
+  // Compact notation, not a hand-glued suffix. Localising only the digits
+  // left French readers `12,2M` and `500K`: the comma was right, but the
+  // unit had no space before it and `K` is not a French abbreviation for a
+  // thousand. `Intl` carries both the separator and the unit for each
+  // locale, so there is no suffix here to get wrong.
+  return new Intl.NumberFormat(language, {
+    notation: "compact",
+    maximumFractionDigits: 1,
+  }).format(n);
 }
 
 /**
@@ -389,7 +395,8 @@ export function transformSourcedRelationsPreview(
 
 // @req REQ-003
 export function transformPeopleCountries(
-  demography?: GlobalDemographySection
+  demography?: GlobalDemographySection,
+  language: Language = "fr"
 ): PeopleCountriesData {
   const totalPopulation = demography?.totalPopulation ?? 0;
   const { shares, discrepancy } = derivePeopleCountryShares(demography ?? {});
@@ -400,7 +407,9 @@ export function transformPeopleCountries(
     country: d.country,
     population: d.population,
     populationFormatted:
-      d.population != null ? formatPeoplePopulation(d.population) : undefined,
+      d.population != null
+        ? formatPeoplePopulation(d.population, language)
+        : undefined,
     percentage: d.percentage,
     share: shares[index].share,
     note: d.note,
@@ -408,7 +417,7 @@ export function transformPeopleCountries(
 
   return {
     totalPopulation,
-    totalPopulationFormatted: formatPeoplePopulation(totalPopulation),
+    totalPopulationFormatted: formatPeoplePopulation(totalPopulation, language),
     referenceYear: demography?.referenceYear,
     distributions,
     discrepancy,
@@ -506,7 +515,8 @@ export async function fetchPeopleNamesDossier(
 // @req REQ-003
 export function transformPeopleData(
   raw: PeopleDetail,
-  namesDossier?: PeopleNamesDossier | null
+  namesDossier?: PeopleNamesDossier | null,
+  language: Language = "fr"
 ): PeoplePageData {
   const sources = ficheSourceEntries(raw.sources);
 
@@ -524,7 +534,7 @@ export function transformPeopleData(
       raw.ethnicities,
       raw.organization
     ),
-    countries: transformPeopleCountries(raw.demography),
+    countries: transformPeopleCountries(raw.demography, language),
     sources,
     names: transformPeopleNames(namesDossier),
   };

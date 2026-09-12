@@ -34,7 +34,7 @@ const GROUP_CHIP_CLASS =
   "px-[10px] py-[6px] rounded-[var(--country-radius-md)] border";
 
 const GROUP_CHIP_STYLE = {
-  background: "var(--country-earth-bg)",
+  background: "var(--people-accent-tint)",
   borderColor: "var(--country-border)",
 } as const;
 

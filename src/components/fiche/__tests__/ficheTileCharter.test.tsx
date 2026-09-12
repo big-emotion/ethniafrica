@@ -143,6 +143,33 @@ describe("FicheTile charter (REQ-153)", () => {
     expect(disclosure).not.toHaveAttribute("open");
   });
 
+  /**
+   * The native triangle is a few pixels wide and says nothing about being
+   * pressable. It is replaced by a circle at the 44px floor the reading
+   * surface owes a thumb — and, because nothing here may turn, the open state
+   * is carried by swapping the glyph rather than rotating it. Two glyphs, one
+   * shown at a time, no transform for a reduced-motion setting to fight.
+   */
+  // @req REQ-153
+  it("replaces the native marker with a thumb-sized round control", () => {
+    const { container } = render(
+      <FicheTile title="Royaumes" closedFact="3 entités politiques">
+        <p>Des sources datent chaque entité.</p>
+      </FicheTile>
+    );
+
+    const summary = container.querySelector("summary")!;
+    expect(summary.className).toContain("list-none");
+
+    const control = container.querySelector("[data-fiche-tile-chevron]")!;
+    expect(control).toHaveAttribute("aria-hidden", "true");
+    expect(control.className).toContain("h-11");
+    expect(control.className).toContain("w-11");
+    expect(control.className).toContain("rounded-afh-full");
+    // One glyph for closed, one for open, rather than one glyph turned.
+    expect(control.querySelectorAll("svg")).toHaveLength(2);
+  });
+
   // @req REQ-153
   it("reaches the same content without any transform animation", () => {
     const { container } = render(

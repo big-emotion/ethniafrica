@@ -10,6 +10,39 @@
    already or fixed by design.
    ============================================================ */
 
+/* ------------------------------------------------------------
+   The surface's own accent, posted once.
+
+   The atlas charter scopes one accent per surface. This one had
+   none: the distribution bars and the country codes read
+   --country-terracotta straight from a component, so the people
+   record silently wore the country record's hue. Nothing
+   disagreed, because nothing had ever said what this surface's
+   accent was.
+
+   The neutrals below deliberately stay on the country sheet. An
+   ink, a border and a radius carry no surface identity, and
+   renaming forty of them would move no pixel. An accent does,
+   which is the whole reason the charter scopes one.
+
+   Swept by peopleSurfaceCharter.test.ts.
+   ------------------------------------------------------------ */
+:root {
+  --people-accent: var(--afh-cat-ocre);
+  --people-accent-ink: var(--afh-cat-ocre-ink);
+  --people-accent-tint: var(--afh-cat-ocre-tint);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --people-accent-ink: var(--afh-cat-ocre-ink-night);
+  }
+}
+
+:root[data-theme="dark"] {
+  --people-accent-ink: var(--afh-cat-ocre-ink-night);
+}
+
 /* Section typography utilities (reuse --country-* / --afh-* tokens) */
 .people-section-label {
   font-size: var(--afh-text-eyebrow);
