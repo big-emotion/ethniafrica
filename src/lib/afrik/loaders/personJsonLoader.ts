@@ -1,6 +1,6 @@
 /**
  * Person JSON loader — reads dataset/source/afrik/personnes/*.json and writes
- * each fiche's sources, assertion and person row (plus its people/country
+ * each fiche's sources, revision, assertion and person row (plus its people/country
  * joins) into the Module 0 fabric + persons schema (ARCH-018, migration 057).
  * See ETNI-1382/ETNI-1586.
  */
@@ -113,6 +113,44 @@ async function upsertSource(
   return { id: data.id as string };
 }
 
+// @req REQ-137
+async function findOrCreateFicheRevision(
+  supabase: AdminClient,
+  dossier: PersonDossier
+): Promise<{ id: string } | { error: string }> {
+  const { data: existing, error: selectError } = await supabase
+    .from("fiche_revisions")
+    .select("id")
+    .eq("entity_type", "person")
+    .eq("entity_id", dossier.id)
+    .order("version", { ascending: false })
+    .limit(1)
+    .maybeSingle();
+
+  if (selectError) {
+    return { error: errorMessage(selectError) };
+  }
+  if (existing) {
+    return { id: existing.id as string };
+  }
+
+  const { data: inserted, error: insertError } = await supabase
+    .from("fiche_revisions")
+    .insert({
+      entity_type: "person",
+      entity_id: dossier.id,
+      version: 1,
+      content_snapshot: dossier,
+    })
+    .select("id")
+    .single();
+
+  if (insertError || !inserted) {
+    return { error: errorMessage(insertError) };
+  }
+  return { id: inserted.id as string };
+}
+
 /**
  * assertions has no unique constraint on (entity_type, entity_id,
  * field_path), so idempotency on re-run is enforced here via
@@ -123,7 +161,8 @@ async function findOrCreateAssertion(
   supabase: AdminClient,
   entityId: string,
   statement: string,
-  sourceIds: string[]
+  sourceIds: string[],
+  ficheRevisionId: string
 ): Promise<{ id: string } | { error: string }> {
   const fieldPath = "person";
   const { data: existing, error: selectError } = await supabase
@@ -158,6 +197,7 @@ async function findOrCreateAssertion(
       field_path: fieldPath,
       statement,
       source_ids: sourceIds,
+      fiche_revision_id: ficheRevisionId,
     })
     .select("id")
     .single();
@@ -225,11 +265,20 @@ async function upsertPersonDossier(
     sourceIds.push(result.id);
   }
 
+  const ficheRevision = await findOrCreateFicheRevision(supabase, dossier);
+  if ("error" in ficheRevision) {
+    report.errors.push(
+      `${dossier.id}: fiche_revisions — ${ficheRevision.error}`
+    );
+    return;
+  }
+
   const assertion = await findOrCreateAssertion(
     supabase,
     dossier.id,
     dossier.fullName,
-    sourceIds
+    sourceIds,
+    ficheRevision.id
   );
   if ("error" in assertion) {
     report.errors.push(`${dossier.id}: assertion — ${assertion.error}`);
@@ -273,7 +322,7 @@ async function upsertPersonDossier(
 
 /**
  * Loads every non-illustrative dataset/source/afrik/personnes/*.json fiche
- * and writes sources -> assertion -> persons + person_peoples +
+ * and writes sources -> fiche_revisions -> assertion -> persons + person_peoples +
  * person_countries for each (ARCH-018, Module 0 fabric). Trigger rejections
  * (sourceless assertions, defense in depth against enforce_person_sources())
  * are logged and skipped; remaining fiches still load.

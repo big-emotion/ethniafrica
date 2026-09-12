@@ -64,6 +64,15 @@ interface AssertionRow {
   field_path: string;
   statement?: string;
   source_ids?: string[];
+  fiche_revision_id?: string;
+}
+
+interface FicheRevisionRow {
+  id: string;
+  entity_type: string;
+  entity_id: string;
+  version: number;
+  content_snapshot: PersonDossier;
 }
 
 interface PersonRow {
@@ -93,6 +102,7 @@ interface SupabaseDoubleOptions {
 
 function createSupabaseDouble(options: SupabaseDoubleOptions = {}) {
   const sources: SourceRow[] = [];
+  const ficheRevisions: FicheRevisionRow[] = [];
   const assertions: AssertionRow[] = [];
   const persons: PersonRow[] = [];
   const personPeoples: PersonPeopleRow[] = [];
@@ -101,6 +111,43 @@ function createSupabaseDouble(options: SupabaseDoubleOptions = {}) {
   const nextId = (prefix: string) => `${prefix}-${++idCounter}`;
 
   const from = vi.fn((table: string) => {
+    if (table === "fiche_revisions") {
+      return {
+        select: vi.fn(() => {
+          const filters: Record<string, unknown> = {};
+          const builder = {
+            eq: vi.fn((col: string, value: unknown) => {
+              filters[col] = value;
+              return builder;
+            }),
+            order: vi.fn(() => builder),
+            limit: vi.fn(() => builder),
+            maybeSingle: vi.fn(async () => ({
+              data:
+                ficheRevisions
+                  .filter(
+                    (revision) =>
+                      revision.entity_type === filters.entity_type &&
+                      revision.entity_id === filters.entity_id
+                  )
+                  .sort((a, b) => b.version - a.version)[0] ?? null,
+              error: null,
+            })),
+          };
+          return builder;
+        }),
+        insert: vi.fn((row: Omit<FicheRevisionRow, "id">) => ({
+          select: vi.fn(() => ({
+            single: vi.fn(async () => {
+              const created = { id: nextId("revision"), ...row };
+              ficheRevisions.push(created);
+              return { data: { id: created.id }, error: null };
+            }),
+          })),
+        })),
+      };
+    }
+
     if (table === "sources") {
       return {
         upsert: vi.fn((row: Omit<SourceRow, "id">) => ({
@@ -151,6 +198,17 @@ function createSupabaseDouble(options: SupabaseDoubleOptions = {}) {
         insert: vi.fn((row: Omit<AssertionRow, "id">) => ({
           select: vi.fn(() => ({
             single: vi.fn(async () => {
+              if (
+                !row.fiche_revision_id ||
+                !ficheRevisions.some((r) => r.id === row.fiche_revision_id)
+              ) {
+                return {
+                  data: null,
+                  error: {
+                    message: "fiche_revision_id violates migration 020",
+                  },
+                };
+              }
               const created = { id: nextId("assert"), ...row };
               assertions.push(created);
               return { data: { id: created.id }, error: null };
@@ -224,6 +282,7 @@ function createSupabaseDouble(options: SupabaseDoubleOptions = {}) {
   return {
     client: { from },
     sources,
+    ficheRevisions,
     assertions,
     persons,
     personPeoples,
@@ -325,6 +384,44 @@ describe("personJsonLoader", () => {
   });
 
   describe("loadPersons", () => {
+    // @req REQ-137
+    it("stores a parsed person with a required revision and reuses it on reload", async () => {
+      writePersonneFile(tmpDir, "PER_DELAFOSSE.json", validPersonFile());
+      const dossiers = loadAllPersonDossiers(tmpDir);
+      const database = createSupabaseDouble();
+
+      expect(dossiers).toHaveLength(1);
+      expect(
+        await loadPersons(database.client as never, dossiers)
+      ).toMatchObject({
+        inserted: 1,
+        errors: [],
+      });
+      expect(database.ficheRevisions).toHaveLength(1);
+      expect(database.ficheRevisions[0]).toMatchObject({
+        entity_type: "person",
+        entity_id: dossiers[0].id,
+        version: 1,
+        content_snapshot: dossiers[0],
+      });
+      expect(database.assertions).toHaveLength(1);
+      expect(database.assertions[0].fiche_revision_id).toBe(
+        database.ficheRevisions[0].id
+      );
+      expect(database.persons).toHaveLength(1);
+      expect(database.persons[0].assertion_id).toBe(database.assertions[0].id);
+
+      expect(
+        await loadPersons(database.client as never, dossiers)
+      ).toMatchObject({
+        inserted: 1,
+        errors: [],
+      });
+      expect(database.ficheRevisions).toHaveLength(1);
+      expect(database.assertions).toHaveLength(1);
+      expect(database.persons).toHaveLength(1);
+    });
+
     // @req REQ-137
     it("writes sources, one assertion, the person row and its joins", async () => {
       const database = createSupabaseDouble();
