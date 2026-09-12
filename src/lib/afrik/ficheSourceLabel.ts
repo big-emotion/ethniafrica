@@ -25,26 +25,7 @@ export function ficheSourceLabel(
   return label.length > 0 ? label : null;
 }
 
-/**
- * The same entries as a single line, in fiche order, with malformed ones
- * dropped.
- */
-// @req REQ-001
-export function ficheSourceLine(
-  sources?: Array<FicheSource | string> | null
-): string {
-  if (!sources || sources.length === 0) return "";
-  return sources
-    .map(ficheSourceLabel)
-    .filter((label): label is string => label !== null)
-    .join(" · ");
-}
-
-/**
- * One fiche source, kept whole. `ficheSourceLine` flattens the same
- * entries to a single string, which is all the people fiche needs; a
- * surface that shows each source's standing needs the parts instead.
- */
+/** One fiche source, kept whole, with the standing its surface shows. */
 export interface FicheSourceEntry {
   label: string;
   url: string | null;
@@ -65,8 +46,8 @@ export interface FicheSourceEntry {
 }
 
 /**
- * The same entries as `ficheSourceLine`, in fiche order and with the same
- * malformed ones dropped, but structured. A legacy bare string carries no
+ * Every entry `ficheSourceLabel` can read, in fiche order with malformed ones
+ * dropped, structured. A legacy bare string carries no
  * standing of its own, so it reads as awaiting review rather than being
  * asserted to be unverified.
  */

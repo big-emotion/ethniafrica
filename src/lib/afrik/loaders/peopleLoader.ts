@@ -5,5 +5,4 @@ export {
   loadPeople,
   loadAllPeoples,
   loadPeoplesByLanguageFamily,
-  clearPeopleCache,
 } from "./peopleJsonLoader";

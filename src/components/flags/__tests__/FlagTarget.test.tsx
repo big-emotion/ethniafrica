@@ -5,7 +5,6 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import { FlagTarget } from "../FlagTarget";
 import { createBrowserSupabaseClient } from "@/lib/supabase/auth-client";
 import { useToast } from "@/hooks/use-toast";
-import { useOptionalConsent } from "@/hooks/use-consent";
 
 vi.mock("@/lib/supabase/auth-client", () => ({
   createBrowserSupabaseClient: vi.fn(),
@@ -13,10 +12,6 @@ vi.mock("@/lib/supabase/auth-client", () => ({
 
 vi.mock("@/hooks/use-toast", () => ({
   useToast: vi.fn(),
-}));
-
-vi.mock("@/hooks/use-consent", () => ({
-  useOptionalConsent: vi.fn(),
 }));
 
 /**
@@ -111,18 +106,6 @@ describe("FlagTarget", () => {
       toast: toastMock,
       dismiss: vi.fn(),
       toasts: [],
-    } as never);
-    vi.mocked(useOptionalConsent).mockReturnValue({
-      consentState: {
-        hasConsented: true,
-        preferences: { essential: true, analytics: true, functional: true },
-        consentDate: new Date().toISOString(),
-      },
-      acceptAll: vi.fn(),
-      rejectAll: vi.fn(),
-      updatePreferences: vi.fn(),
-      showBanner: false,
-      setShowBanner: vi.fn(),
     } as never);
     window.plausible = vi.fn();
     vi.stubGlobal(

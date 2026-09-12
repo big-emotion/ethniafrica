@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { resolveClanNameSourceTier } from "../lib/clanNameSourceTier";
+import { resolveInheritedSourceTier as resolveClanNameSourceTier } from "../lib/peopleProseCandidates";
 import type { FicheSource } from "../lib/clanNameTypes";
 import type { SourceTier } from "../../src/types/sources";
 

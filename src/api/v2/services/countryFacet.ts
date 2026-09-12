@@ -1,3 +1,4 @@
+import { CORPUS_AGGREGATE_REVALIDATE_SECONDS } from "@/api/v2/services/corpusCache";
 import { unstable_cache } from "next/cache";
 
 import { getContinentPeopleCounts } from "@/api/v2/services/continentPeopleCounts";
@@ -74,7 +75,7 @@ const getCachedFamilyIdsByCountry = unstable_cache(
   async (): Promise<Record<string, string[]>> =>
     Object.fromEntries(await getLanguageFamilyIdsByCountry()),
   ["country-facet-language-families"],
-  { revalidate: 3600 }
+  { revalidate: CORPUS_AGGREGATE_REVALIDATE_SECONDS }
 );
 
 /**

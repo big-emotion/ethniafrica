@@ -1,13 +1,18 @@
 /**
- * Writing the sources → fiche_revisions → assertions fabric for one fiche,
- * whatever kind of fiche it is.
+ * Writing the sources → fiche_revisions → assertions fabric, whatever kind of
+ * fiche or record it is.
  *
- * Extracted from `peopleProvenanceLoader` when countries needed the same thing.
- * Every step here is about the Module 0 fabric and none of it is about peoples:
- * what a fiche *claims* is the caller's business, and it hands the claims in as
- * `targets`. Duplicating this for a second entity type would have meant two
- * places for the idempotence rules to drift, and those rules are the reason a
- * re-run is safe.
+ * Extracted from `peopleProvenanceLoader` when countries needed the same thing,
+ * then again when the name-record, relation, migration, person and patronyme
+ * loaders were found carrying five private copies of the same three writers.
+ * Every step here is about the Module 0 fabric and none of it is about one
+ * entity: what a record *claims* is the caller's business. One copy is the
+ * point — the idempotence rules are the reason a re-run is safe, and five
+ * copies were five places for them to drift.
+ *
+ * What genuinely differs between callers is a parameter, never a branch on the
+ * entity type: which source columns a model carries, whether a revision is
+ * stamped, and whether an assertion is anchored to a revision at all.
  */
 
 import { logger } from "@/lib/api/logger";
@@ -16,6 +21,8 @@ import { ficheSourceEntries } from "@/lib/afrik/ficheSourceLabel";
 import { isSourceTier } from "@/types/sources";
 
 export type AdminClient = ReturnType<typeof createAdminClient>;
+
+type WriteResult = { id: string } | { error: string };
 
 /** One claim a fiche makes, bound to the field path the surfaces read it from. */
 export interface AssertionTarget {
@@ -40,122 +47,229 @@ export function emptyProvenanceReport(): ProvenanceReport {
   };
 }
 
-function errorMessage(error: unknown): string {
-  if (error && typeof error === "object" && "message" in error) {
-    return String((error as { message?: unknown }).message);
+/**
+ * Reads the message off a PostgREST error, a thrown Error, or nothing at all.
+ * PostgREST can answer with neither data nor error, which is why a fallback
+ * exists rather than a non-null assertion.
+ */
+// @req REQ-121
+export function supabaseErrorMessage(value: unknown): string {
+  if (
+    typeof value === "object" &&
+    value !== null &&
+    "message" in value &&
+    typeof value.message === "string"
+  ) {
+    return value.message;
   }
-  return "unknown error";
+  return value instanceof Error ? value.message : "unknown Supabase error";
 }
 
+/** A `sources` row exactly as one fiche model maps it; `title` is the key. */
+export type SourceRow = { title: string } & Record<string, unknown>;
+
 /**
- * `sources.tier` accepts the three tiers or NULL. `needs_review` is not a tier
- * and must not be stored as one: folding it onto `unverified` would state a
- * judgement nobody has made, so it goes in with no tier at all.
+ * Upserts on `title`, adding only `added_at`. The caller owns the column list
+ * on purpose: an upsert leaves a column it does not send untouched, so a model
+ * with no author field must not send `author: null` over the author another
+ * model recorded for the same title.
  */
-async function upsertFicheSource(
+// @req REQ-121
+export async function upsertSource(
   supabase: AdminClient,
-  source: {
-    label: string;
-    url: string | null;
-    standing: string;
-    notes?: string;
-  }
-): Promise<{ id: string } | { error: string }> {
+  row: SourceRow
+): Promise<WriteResult> {
   const { data, error } = await supabase
     .from("sources")
     .upsert(
-      {
-        title: source.label,
-        url: source.url,
-        tier: isSourceTier(source.standing) ? source.standing : null,
-        notes: source.notes ?? null,
-        added_at: new Date().toISOString(),
-      },
+      { ...row, added_at: new Date().toISOString() },
       { onConflict: "title" }
     )
     .select("id")
     .single();
 
-  if (error || !data) return { error: errorMessage(error) };
+  if (error || !data) return { error: supabaseErrorMessage(error) };
   return { id: data.id as string };
 }
 
+export interface VersionOneRevision {
+  entityType: string;
+  entityId: string;
+  /** Stored verbatim as the snapshot the assertions point at. */
+  snapshot: unknown;
+  /**
+   * The patronyme loader stamps `published_at` on every run; the others leave
+   * the column to whatever the row already holds. Kept apart rather than
+   * unified because unifying would rewrite existing rows either way.
+   */
+  stampPublishedAt?: boolean;
+}
+
 /**
- * Migration 020 made `assertions.fiche_revision_id` a NOT NULL FK, so every
- * assertion has to point at a published snapshot. The unique key
- * (entity_type, entity_id, version) keeps this idempotent across re-runs.
+ * Migration 020 made `assertions.fiche_revision_id` a NOT NULL FK so every
+ * assertion is traceable to a published snapshot, and seeded version-1
+ * placeholders for the assertions that already existed. Nothing then taught
+ * the loaders to create one, so every assertion insert failed against a real
+ * database. This publishes the record as version 1 on that same precedent; the
+ * unique key (entity_type, entity_id, version) keeps it idempotent.
  */
-async function findOrCreateFicheRevision(
+// @req REQ-121
+export async function upsertVersionOneRevision(
   supabase: AdminClient,
-  entityType: string,
-  entityId: string,
-  snapshot: unknown
-): Promise<{ id: string } | { error: string }> {
+  revision: VersionOneRevision
+): Promise<WriteResult> {
   const { data, error } = await supabase
     .from("fiche_revisions")
     .upsert(
       {
-        entity_type: entityType,
-        entity_id: entityId,
+        entity_type: revision.entityType,
+        entity_id: revision.entityId,
         version: 1,
-        content_snapshot: snapshot,
+        content_snapshot: revision.snapshot,
+        ...(revision.stampPublishedAt
+          ? { published_at: new Date().toISOString() }
+          : {}),
       },
       { onConflict: "entity_type,entity_id,version" }
     )
     .select("id")
     .single();
 
-  if (error || !data) return { error: errorMessage(error) };
+  if (error || !data) return { error: supabaseErrorMessage(error) };
   return { id: data.id as string };
 }
 
 /**
- * `assertions` carries no unique constraint on (entity_type, entity_id,
- * field_path), so re-runs are made idempotent here by reading before writing —
- * the same compromise the relation loader makes.
+ * For a record that annotates an entity rather than being one — a name dossier
+ * attached to a people, say. That entity's revisions belong to moderation
+ * (migration 051), so this attaches to the latest one and only stands up a
+ * version-1 placeholder when none exists. Upserting version 1 instead would
+ * overwrite a moderated snapshot with the placeholder.
  */
-async function findOrCreateAssertion(
+// @req REQ-121
+export async function findLatestOrCreatePlaceholderRevision(
   supabase: AdminClient,
   entityType: string,
   entityId: string,
-  target: AssertionTarget,
-  sourceIds: string[],
-  ficheRevisionId: string
-): Promise<{ id: string } | { error: string }> {
+  placeholderSnapshot: unknown
+): Promise<WriteResult> {
   const { data: existing, error: selectError } = await supabase
-    .from("assertions")
+    .from("fiche_revisions")
     .select("id")
     .eq("entity_type", entityType)
     .eq("entity_id", entityId)
-    .eq("field_path", target.fieldPath)
+    .order("version", { ascending: false })
+    .limit(1)
     .maybeSingle();
 
-  if (selectError) return { error: errorMessage(selectError) };
+  if (selectError) return { error: supabaseErrorMessage(selectError) };
+  if (existing) return { id: existing.id as string };
+
+  const { data: inserted, error: insertError } = await supabase
+    .from("fiche_revisions")
+    .insert({
+      entity_type: entityType,
+      entity_id: entityId,
+      version: 1,
+      content_snapshot: placeholderSnapshot,
+      published_at: new Date().toISOString(),
+    })
+    .select("id")
+    .single();
+
+  if (insertError || !inserted) {
+    return { error: supabaseErrorMessage(insertError) };
+  }
+  return { id: inserted.id as string };
+}
+
+export interface AssertionWrite {
+  entityType: string;
+  entityId: string;
+  fieldPath: string;
+  statement: string;
+  sourceIds: string[];
+  /**
+   * `null` sends no revision at all. Only the person loader does this, and the
+   * column has been NOT NULL since migration 020 — it is a defect carried over
+   * unchanged, not a supported mode.
+   */
+  ficheRevisionId: string | null;
+}
+
+/**
+ * `assertions` carries no unique constraint on (entity_type, entity_id,
+ * field_path), so re-runs are made idempotent by reading before writing. An
+ * existing assertion keeps the revision it was first anchored to.
+ */
+// @req REQ-121
+export async function findOrCreateAssertion(
+  supabase: AdminClient,
+  assertion: AssertionWrite
+): Promise<WriteResult> {
+  const { data: existing, error: selectError } = await supabase
+    .from("assertions")
+    .select("id")
+    .eq("entity_type", assertion.entityType)
+    .eq("entity_id", assertion.entityId)
+    .eq("field_path", assertion.fieldPath)
+    .maybeSingle();
+
+  if (selectError) return { error: supabaseErrorMessage(selectError) };
 
   if (existing) {
     const { error: updateError } = await supabase
       .from("assertions")
-      .update({ statement: target.statement, source_ids: sourceIds })
+      .update({
+        statement: assertion.statement,
+        source_ids: assertion.sourceIds,
+      })
       .eq("id", existing.id);
-    if (updateError) return { error: errorMessage(updateError) };
+    if (updateError) return { error: supabaseErrorMessage(updateError) };
     return { id: existing.id as string };
   }
 
   const { data: inserted, error: insertError } = await supabase
     .from("assertions")
     .insert({
-      entity_type: entityType,
-      entity_id: entityId,
-      field_path: target.fieldPath,
-      statement: target.statement,
-      source_ids: sourceIds,
-      fiche_revision_id: ficheRevisionId,
+      entity_type: assertion.entityType,
+      entity_id: assertion.entityId,
+      field_path: assertion.fieldPath,
+      statement: assertion.statement,
+      source_ids: assertion.sourceIds,
+      ...(assertion.ficheRevisionId === null
+        ? {}
+        : { fiche_revision_id: assertion.ficheRevisionId }),
     })
     .select("id")
     .single();
 
-  if (insertError || !inserted) return { error: errorMessage(insertError) };
+  if (insertError || !inserted) {
+    return { error: supabaseErrorMessage(insertError) };
+  }
   return { id: inserted.id as string };
+}
+
+/**
+ * `recompute_confidence` is polymorphic across entity types and no per-INSERT
+ * trigger calls it, so the loaders seed `confidence_scores` themselves. A
+ * failure is logged rather than rolled back, so a human can re-run the job.
+ */
+// @req REQ-121
+export async function reseedConfidence(
+  supabase: AdminClient,
+  entityType: string,
+  entityId: string
+): Promise<void> {
+  const { error } = await supabase.rpc("recompute_confidence", {
+    p_entity_type: entityType,
+    p_entity_id: entityId,
+  });
+  if (error) {
+    logger.warn(`recompute_confidence failed for ${entityId}`, {
+      reason: supabaseErrorMessage(error),
+    });
+  }
 }
 
 export interface FicheProvenance {
@@ -194,7 +308,14 @@ export async function writeFicheProvenance(
 
   const sourceIds: string[] = [];
   for (const source of sources) {
-    const result = await upsertFicheSource(supabase, source);
+    // `needs_review` is not a tier and must not be stored as one: folding it
+    // onto `unverified` would state a judgement nobody has made.
+    const result = await upsertSource(supabase, {
+      title: source.label,
+      url: source.url,
+      tier: isSourceTier(source.standing) ? source.standing : null,
+      notes: source.notes ?? null,
+    });
     if ("error" in result) {
       report.errors.push(
         `${fiche.entityId}: source "${source.label}" — ${result.error}`
@@ -204,26 +325,25 @@ export async function writeFicheProvenance(
     sourceIds.push(result.id);
   }
 
-  const revision = await findOrCreateFicheRevision(
-    supabase,
-    fiche.entityType,
-    fiche.entityId,
-    fiche.snapshot
-  );
+  const revision = await upsertVersionOneRevision(supabase, {
+    entityType: fiche.entityType,
+    entityId: fiche.entityId,
+    snapshot: fiche.snapshot,
+  });
   if ("error" in revision) {
     report.errors.push(`${fiche.entityId}: fiche revision — ${revision.error}`);
     return;
   }
 
   for (const target of fiche.targets) {
-    const assertion = await findOrCreateAssertion(
-      supabase,
-      fiche.entityType,
-      fiche.entityId,
-      target,
+    const assertion = await findOrCreateAssertion(supabase, {
+      entityType: fiche.entityType,
+      entityId: fiche.entityId,
+      fieldPath: target.fieldPath,
+      statement: target.statement,
       sourceIds,
-      revision.id
-    );
+      ficheRevisionId: revision.id,
+    });
     if ("error" in assertion) {
       report.errors.push(
         `${fiche.entityId}: assertion ${target.fieldPath} — ${assertion.error}`
@@ -233,19 +353,5 @@ export async function writeFicheProvenance(
     report.assertionsWritten += 1;
   }
 
-  // No per-INSERT trigger exists; the loader seeds confidence_scores itself,
-  // exactly as the relation loader does. A failure is logged rather than
-  // rolled back, so a human can re-run the recompute job.
-  const { error: confidenceError } = await supabase.rpc(
-    "recompute_confidence",
-    {
-      p_entity_type: fiche.entityType,
-      p_entity_id: fiche.entityId,
-    }
-  );
-  if (confidenceError) {
-    logger.warn(`recompute_confidence failed for ${fiche.entityId}`, {
-      reason: errorMessage(confidenceError),
-    });
-  }
+  await reseedConfidence(supabase, fiche.entityType, fiche.entityId);
 }

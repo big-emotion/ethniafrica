@@ -6,7 +6,7 @@
  * lives in one place.
  */
 
-import type { SourceTier } from "@/types/sources";
+import { isAuthoritativeSourceTier, type SourceTier } from "@/types/sources";
 
 export interface QuizAssertionSource {
   tier: SourceTier;
@@ -99,9 +99,7 @@ export function getQuizMinConfidence(): number {
  * through `SOURCE_TIER_LABELS`, so a reader sees what an answer rests on.
  */
 function hasEligibleSource(sources: QuizAssertionSource[]): boolean {
-  return sources.some(
-    (source) => source.tier === "official" || source.tier === "referenced"
-  );
+  return sources.some((source) => isAuthoritativeSourceTier(source.tier));
 }
 
 /**

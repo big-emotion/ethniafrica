@@ -8,7 +8,9 @@ vi.mock("@/lib/api/auth", () => ({
 // Rate limiting is exercised by its own test file; here it must always
 // pass-through so the auth branch is the only thing under test.
 vi.mock("@/lib/api/rate-limit", () => ({
-  applyRateLimit: vi.fn().mockResolvedValue(null),
+  evaluateRateLimit: vi
+    .fn()
+    .mockResolvedValue({ rejection: null, headers: {} }),
   applyIpRateLimit: vi.fn().mockResolvedValue(null),
 }));
 
@@ -67,7 +69,7 @@ vi.mock("@supabase/ssr", () => ({
 }));
 
 import { validateApiKey } from "@/lib/api/auth";
-import { applyIpRateLimit, applyRateLimit } from "@/lib/api/rate-limit";
+import { applyIpRateLimit, evaluateRateLimit } from "@/lib/api/rate-limit";
 import { middleware } from "../middleware";
 
 function createMockRequest(url: string, headers: Record<string, string> = {}) {
@@ -79,13 +81,16 @@ function createMockRequest(url: string, headers: Record<string, string> = {}) {
   } as unknown as Parameters<typeof middleware>[0];
 }
 
+function forwardedRequestHeaders(): Headers | undefined {
+  return mockNextResponseNext.mock.calls[0]?.[0]?.request?.headers;
+}
+
 describe("middleware - /api/v2/* authentication", () => {
   beforeEach(() => {
     mockResponseHeaders.clear();
     vi.clearAllMocks();
-    // The auth gate is intentionally disabled outside production (devBypass).
-    // Pin NODE_ENV=production so this suite exercises the real gate rather
-    // than the dev fail-open.
+    // Pinned so no environment-dependent branch can make these pass: the
+    // anonymous tier is the production behaviour, not a development courtesy.
     vi.stubEnv("NODE_ENV", "production");
   });
 
@@ -93,29 +98,139 @@ describe("middleware - /api/v2/* authentication", () => {
     vi.unstubAllEnvs();
   });
 
-  it("should return 401 with missing_api_key when no Authorization header", async () => {
-    const request = createMockRequest("https://example.com/api/v2/countries");
-    await middleware(request);
+  describe("anonymous tier (no key)", () => {
+    // @req REQ-059
+    it("serves a keyless request carrying no Origin or Referer", async () => {
+      const request = createMockRequest("https://example.com/api/v2/countries");
+      await middleware(request);
 
-    expect(mockNextResponseJson).toHaveBeenCalledWith(
-      { error: "missing_api_key" },
-      { status: 401 }
-    );
-  });
-
-  it("should return 401 with missing_api_key when Authorization header is not Bearer", async () => {
-    const request = createMockRequest("https://example.com/api/v2/countries", {
-      authorization: "Basic abc123",
+      expect(mockNextResponseJson).not.toHaveBeenCalled();
+      expect(mockNextResponseNext).toHaveBeenCalled();
+      expect(validateApiKey).not.toHaveBeenCalled();
     });
-    await middleware(request);
 
-    expect(mockNextResponseJson).toHaveBeenCalledWith(
-      { error: "missing_api_key" },
-      { status: 401 }
-    );
+    // @req REQ-059
+    it("answers a keyless request with the rate-limit headers of its bucket", async () => {
+      vi.mocked(evaluateRateLimit).mockResolvedValueOnce({
+        rejection: null,
+        headers: {
+          "X-RateLimit-Limit": "60",
+          "X-RateLimit-Remaining": "59",
+          "X-RateLimit-Reset": "1700000000000",
+        },
+      });
+
+      const request = createMockRequest("https://example.com/api/v2/countries");
+      await middleware(request);
+
+      expect(mockResponseHeaders.get("X-RateLimit-Limit")).toBe("60");
+      expect(mockResponseHeaders.get("X-RateLimit-Remaining")).toBe("59");
+      expect(mockResponseHeaders.get("X-RateLimit-Reset")).toBe(
+        "1700000000000"
+      );
+    });
+
+    // @req REQ-059
+    it("rate limits a keyless request in the per-IP bucket, without a tier", async () => {
+      const request = createMockRequest("https://example.com/api/v2/countries");
+      await middleware(request);
+
+      expect(evaluateRateLimit).toHaveBeenCalledWith(request);
+      expect(evaluateRateLimit).toHaveBeenCalledTimes(1);
+      // The IP pre-limit bounds key validation; with no key there is nothing
+      // to bound, and charging it too would halve the anonymous quota.
+      expect(applyIpRateLimit).not.toHaveBeenCalled();
+    });
+
+    // @req REQ-059
+    it("returns the 429 of the anonymous bucket", async () => {
+      vi.mocked(evaluateRateLimit).mockResolvedValueOnce({
+        rejection: { status: 429, headers: new Headers() } as never,
+        headers: {},
+      });
+
+      const request = createMockRequest("https://example.com/api/v2/countries");
+      const response = await middleware(request);
+
+      expect(response.status).toBe(429);
+    });
+
+    // @req REQ-059
+    it("treats a forged same-origin Referer exactly like no header at all", async () => {
+      await middleware(
+        createMockRequest("https://example.com/api/v2/countries")
+      );
+      const bare = {
+        json: mockNextResponseJson.mock.calls.length,
+        rateLimit: vi.mocked(evaluateRateLimit).mock.calls[0]?.slice(1),
+        keyId: forwardedRequestHeaders()?.get("x-api-key-id") ?? null,
+      };
+
+      vi.clearAllMocks();
+      mockResponseHeaders.clear();
+
+      await middleware(
+        createMockRequest("https://example.com/api/v2/countries", {
+          referer: "https://example.com/fr",
+          origin: "https://example.com",
+        })
+      );
+      const forged = {
+        json: mockNextResponseJson.mock.calls.length,
+        rateLimit: vi.mocked(evaluateRateLimit).mock.calls[0]?.slice(1),
+        keyId: forwardedRequestHeaders()?.get("x-api-key-id") ?? null,
+      };
+
+      expect(forged).toEqual(bare);
+      expect(forged.keyId).toBeNull();
+    });
+
+    // @req REQ-059
+    it("serves a cross-origin keyless request the same way", async () => {
+      const request = createMockRequest(
+        "https://example.com/api/v2/countries",
+        { origin: "https://attacker.example" }
+      );
+      await middleware(request);
+
+      expect(mockNextResponseJson).not.toHaveBeenCalled();
+      expect(mockNextResponseNext).toHaveBeenCalled();
+    });
+
+    // @req REQ-059
+    it("treats a non-Bearer Authorization header as no key", async () => {
+      const request = createMockRequest(
+        "https://example.com/api/v2/countries",
+        {
+          authorization: "Basic abc123",
+        }
+      );
+      await middleware(request);
+
+      expect(validateApiKey).not.toHaveBeenCalled();
+      expect(mockNextResponseJson).not.toHaveBeenCalled();
+      expect(mockNextResponseNext).toHaveBeenCalled();
+    });
+
+    // A key id is the middleware's word about who called. Nothing reads it
+    // today, but a client-sent one must never reach a handler as if it had
+    // been validated.
+    // @req REQ-059
+    it("drops a client-sent x-api-key-id on an anonymous request", async () => {
+      const request = createMockRequest(
+        "https://example.com/api/v2/countries",
+        {
+          "x-api-key-id": "forged-partner-id",
+        }
+      );
+      await middleware(request);
+
+      expect(forwardedRequestHeaders()?.get("x-api-key-id")).toBeNull();
+    });
   });
 
-  it("should return 401 with invalid_api_key when key fails validation", async () => {
+  // @req REQ-034
+  it("rejects a present but invalid Bearer key with 401 invalid_api_key", async () => {
     vi.mocked(validateApiKey).mockResolvedValue({
       valid: false,
       reason: "invalid_api_key",
@@ -123,6 +238,25 @@ describe("middleware - /api/v2/* authentication", () => {
 
     const request = createMockRequest("https://example.com/api/v2/peoples", {
       authorization: "Bearer bad-key",
+    });
+    await middleware(request);
+
+    expect(mockNextResponseJson).toHaveBeenCalledWith(
+      { error: "invalid_api_key" },
+      { status: 401 }
+    );
+  });
+
+  // @req REQ-034
+  it("does not let a same-origin Origin mask an invalid Bearer key", async () => {
+    vi.mocked(validateApiKey).mockResolvedValue({
+      valid: false,
+      reason: "invalid_api_key",
+    });
+
+    const request = createMockRequest("https://example.com/api/v2/countries", {
+      authorization: "Bearer bad-key",
+      origin: "https://example.com",
     });
     await middleware(request);
 
@@ -147,10 +281,29 @@ describe("middleware - /api/v2/* authentication", () => {
     expect(mockNextResponseJson).not.toHaveBeenCalled();
     expect(mockNextResponseNext).toHaveBeenCalled();
 
-    const passedHeaders: Headers =
-      mockNextResponseNext.mock.calls[0][0]?.request?.headers;
+    const passedHeaders = forwardedRequestHeaders();
     expect(passedHeaders).toBeDefined();
     expect(passedHeaders.get("x-api-key-id")).toBe("key-uuid-123");
+  });
+
+  // @req REQ-059
+  it("answers a keyed request with the rate-limit headers of its tier", async () => {
+    vi.mocked(validateApiKey).mockResolvedValue({
+      valid: true,
+      apiKeyId: "partner-id",
+      tier: "partner",
+    });
+    vi.mocked(evaluateRateLimit).mockResolvedValueOnce({
+      rejection: null,
+      headers: { "X-RateLimit-Limit": "6000" },
+    });
+
+    const request = createMockRequest("https://example.com/api/v2/countries", {
+      authorization: "Bearer partner-key",
+    });
+    await middleware(request);
+
+    expect(mockResponseHeaders.get("X-RateLimit-Limit")).toBe("6000");
   });
 
   it("should skip auth for /api/v2/keys/issue (public endpoint)", async () => {
@@ -207,90 +360,6 @@ describe("middleware - /api/v2/* authentication", () => {
     expect(mockNextResponseNext).toHaveBeenCalled();
   });
 
-  describe("same-origin bypass", () => {
-    it("bypasses API key requirement when Origin matches request host", async () => {
-      const request = createMockRequest(
-        "https://example.com/api/v2/countries",
-        {
-          origin: "https://example.com",
-        }
-      );
-      await middleware(request);
-
-      expect(mockNextResponseJson).not.toHaveBeenCalled();
-      expect(mockNextResponseNext).toHaveBeenCalled();
-
-      const passedHeaders: Headers =
-        mockNextResponseNext.mock.calls[0][0]?.request?.headers;
-      expect(passedHeaders?.get("x-api-key-id")).toBe("same-origin");
-    });
-
-    it("bypasses API key requirement when Referer matches request host", async () => {
-      const request = createMockRequest(
-        "https://example.com/api/v2/language-families",
-        {
-          referer: "https://example.com/fr",
-        }
-      );
-      await middleware(request);
-
-      expect(mockNextResponseJson).not.toHaveBeenCalled();
-      expect(mockNextResponseNext).toHaveBeenCalled();
-    });
-
-    it("returns 401 when Origin is cross-origin", async () => {
-      const request = createMockRequest(
-        "https://example.com/api/v2/countries",
-        {
-          origin: "https://attacker.com",
-        }
-      );
-      await middleware(request);
-
-      expect(mockNextResponseJson).toHaveBeenCalledWith(
-        { error: "missing_api_key" },
-        { status: 401 }
-      );
-    });
-
-    it("returns 401 when Referer is cross-origin", async () => {
-      const request = createMockRequest(
-        "https://example.com/api/v2/countries",
-        {
-          referer: "https://attacker.com/page",
-        }
-      );
-      await middleware(request);
-
-      expect(mockNextResponseJson).toHaveBeenCalledWith(
-        { error: "missing_api_key" },
-        { status: 401 }
-      );
-    });
-
-    it("still validates Bearer token when both API key and same-origin headers are present", async () => {
-      vi.mocked(validateApiKey).mockResolvedValue({
-        valid: false,
-        reason: "invalid_api_key",
-      });
-
-      const request = createMockRequest(
-        "https://example.com/api/v2/countries",
-        {
-          authorization: "Bearer bad-key",
-          origin: "https://example.com",
-        }
-      );
-      await middleware(request);
-
-      // Bearer key wins: a present-but-invalid key must not be masked by same-origin
-      expect(mockNextResponseJson).toHaveBeenCalledWith(
-        { error: "invalid_api_key" },
-        { status: 401 }
-      );
-    });
-  });
-
   it("should extract the Bearer token and pass it to validateApiKey", async () => {
     vi.mocked(validateApiKey).mockResolvedValue({
       valid: true,
@@ -311,7 +380,7 @@ describe("middleware - /api/v2/* authentication", () => {
 
   describe("rate limiting uses the DB-validated tier", () => {
     // @req REQ-059
-    it("passes the partner tier from validateApiKey into applyRateLimit", async () => {
+    it("passes the partner tier from validateApiKey into evaluateRateLimit", async () => {
       vi.mocked(validateApiKey).mockResolvedValue({
         valid: true,
         apiKeyId: "partner-id",
@@ -324,11 +393,11 @@ describe("middleware - /api/v2/* authentication", () => {
       );
       await middleware(request);
 
-      expect(applyRateLimit).toHaveBeenCalledWith(request, "partner");
+      expect(evaluateRateLimit).toHaveBeenCalledWith(request, "partner");
     });
 
     // @req REQ-059
-    it("falls back to the public tier for an invalid key", async () => {
+    it("falls back to the public tier bucket for an invalid key", async () => {
       vi.mocked(validateApiKey).mockResolvedValue({
         valid: false,
         reason: "invalid_api_key",
@@ -340,26 +409,17 @@ describe("middleware - /api/v2/* authentication", () => {
       );
       await middleware(request);
 
-      expect(applyRateLimit).toHaveBeenCalledWith(request, "public");
+      expect(evaluateRateLimit).toHaveBeenCalledWith(request, "public");
     });
 
     // @req REQ-059
-    it("does not call validateApiKey before rate limiting a missing-key request", async () => {
-      const request = createMockRequest("https://example.com/api/v2/countries");
-      await middleware(request);
-
-      expect(applyRateLimit).toHaveBeenCalledWith(request);
-      expect(validateApiKey).not.toHaveBeenCalled();
-    });
-
-    // @req REQ-059
-    it("rate limits /api/v2/keys/issue without a tier (no key validation)", async () => {
+    it("rate limits /api/v2/keys/issue in the anonymous bucket (no key validation)", async () => {
       const request = createMockRequest(
         "https://example.com/api/v2/keys/issue"
       );
       await middleware(request);
 
-      expect(applyRateLimit).toHaveBeenCalledWith(request);
+      expect(evaluateRateLimit).toHaveBeenCalledWith(request);
       expect(validateApiKey).not.toHaveBeenCalled();
     });
   });
@@ -402,29 +462,6 @@ describe("middleware - /api/v2/* authentication", () => {
 
       expect(validateApiKey).not.toHaveBeenCalled();
       expect(response.status).toBe(429);
-    });
-
-    // @req REQ-059
-    it("does not apply the IP pre-limit for the dev bypass", async () => {
-      vi.stubEnv("NODE_ENV", "development");
-
-      const request = createMockRequest("https://example.com/api/v2/countries");
-      await middleware(request);
-
-      expect(applyIpRateLimit).not.toHaveBeenCalled();
-      expect(validateApiKey).not.toHaveBeenCalled();
-    });
-
-    // @req REQ-059
-    it("does not apply the IP pre-limit for the same-origin bypass", async () => {
-      const request = createMockRequest(
-        "https://example.com/api/v2/countries",
-        { origin: "https://example.com" }
-      );
-      await middleware(request);
-
-      expect(applyIpRateLimit).not.toHaveBeenCalled();
-      expect(validateApiKey).not.toHaveBeenCalled();
     });
   });
 });

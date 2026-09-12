@@ -5,20 +5,42 @@ import { logger } from "@/lib/api/logger";
 const SIGN_IN_PATH = "/fr/admin/connexion";
 const DEFAULT_DESTINATION = "/fr/admin";
 
+// Unroutable by construction (RFC 6761). Only its origin matters: anything
+// that resolves elsewhere is leaving the site.
+const DESTINATION_BASE = "https://callback.invalid";
+
 /**
  * Where the callback is allowed to send someone.
  *
  * The parameter used to be followed as given, on the one route that has just
  * established a session — so `?redirect=https://evil.example` handed that
- * session's landing page to another origin. Only a same-site absolute path is
- * accepted now, and `//host` is rejected too: the browser reads it as a
- * protocol-relative URL and leaves the site.
+ * session's landing page to another origin. A prefix check on `//` came next
+ * and still let `/\evil.example` through: browsers parse the backslash as a
+ * slash, so the string a check reads and the URL a browser follows were two
+ * different things.
+ *
+ * So the destination is resolved the way a browser resolves it, and what is
+ * returned is the resolved path rather than the raw string. A resolved path
+ * starting `//` is refused too, since joining it to the origin later would
+ * make it protocol-relative again.
  */
 function safeDestination(raw: string | null): string {
-  if (!raw || !raw.startsWith("/") || raw.startsWith("//")) {
+  if (!raw) return DEFAULT_DESTINATION;
+
+  let resolved: URL;
+  try {
+    resolved = new URL(raw, DESTINATION_BASE);
+  } catch {
     return DEFAULT_DESTINATION;
   }
-  return raw;
+
+  if (
+    resolved.origin !== DESTINATION_BASE ||
+    resolved.pathname.startsWith("//")
+  ) {
+    return DEFAULT_DESTINATION;
+  }
+  return `${resolved.pathname}${resolved.search}${resolved.hash}`;
 }
 
 /**

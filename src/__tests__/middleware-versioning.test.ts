@@ -9,7 +9,8 @@ import {
 } from "vitest";
 import { NextRequest, NextResponse } from "next/server";
 
-import { applyRateLimit } from "@/lib/api/rate-limit";
+import { validateApiKey } from "@/lib/api/auth";
+import { evaluateRateLimit } from "@/lib/api/rate-limit";
 import { createServerClient } from "@supabase/ssr";
 import { middleware } from "../middleware";
 
@@ -17,10 +18,14 @@ vi.mock("@supabase/ssr", () => ({
   createServerClient: vi.fn(),
 }));
 
+vi.mock("@/lib/api/auth", () => ({
+  validateApiKey: vi.fn(),
+}));
+
 // Rate limiting has its own suite; here it passes through except where a test
 // deliberately makes it reject, to prove a 429 still states its API version.
 vi.mock("@/lib/api/rate-limit", () => ({
-  applyRateLimit: vi.fn().mockResolvedValue(null),
+  evaluateRateLimit: vi.fn(),
   applyIpRateLimit: vi.fn().mockResolvedValue(null),
 }));
 
@@ -32,7 +37,10 @@ const versionHeaders = (response: Response) => ({
 describe("versioning headers in middleware", () => {
   beforeEach(() => {
     vi.clearAllMocks();
-    vi.mocked(applyRateLimit).mockResolvedValue(null);
+    vi.mocked(evaluateRateLimit).mockResolvedValue({
+      rejection: null,
+      headers: {},
+    });
 
     (createServerClient as Mock).mockReturnValue({
       auth: {
@@ -62,13 +70,16 @@ describe("versioning headers in middleware", () => {
   });
 
   // @req REQ-035
-  it("states it on the 401 an unauthenticated caller receives", async () => {
-    // The auth gate fails open outside production, so the real gate only runs
-    // with NODE_ENV pinned.
-    vi.stubEnv("NODE_ENV", "production");
+  it("states it on the 401 a caller with a refused key receives", async () => {
+    vi.mocked(validateApiKey).mockResolvedValue({
+      valid: false,
+      reason: "invalid_api_key",
+    });
 
     const response = await middleware(
-      new NextRequest("http://localhost:3000/api/v2/countries")
+      new NextRequest("http://localhost:3000/api/v2/countries", {
+        headers: { authorization: "Bearer bad-key" },
+      })
     );
 
     expect(response.status).toBe(401);
@@ -77,9 +88,10 @@ describe("versioning headers in middleware", () => {
 
   // @req REQ-035
   it("states it on a 429, the response a client most needs to attribute", async () => {
-    vi.mocked(applyRateLimit).mockResolvedValue(
-      NextResponse.json({ error: "rate_limited" }, { status: 429 })
-    );
+    vi.mocked(evaluateRateLimit).mockResolvedValue({
+      rejection: NextResponse.json({ error: "rate_limited" }, { status: 429 }),
+      headers: {},
+    });
 
     const response = await middleware(
       new NextRequest("http://localhost:3000/api/v2/peoples")

@@ -1,7 +1,11 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 import { validateApiKey } from "@/lib/api/auth";
-import { applyIpRateLimit, applyRateLimit } from "@/lib/api/rate-limit";
+import {
+  applyIpRateLimit,
+  evaluateRateLimit,
+  type RateLimitDecision,
+} from "@/lib/api/rate-limit";
 import { applyVersioningHeaders } from "@/lib/api/versioning";
 import {
   DEEP_LINK_QUERY_KEYS,
@@ -49,10 +53,10 @@ const isPublicLocalizedPage = (pathname: string) =>
 const isDeveloperPortalPage = (pathname: string) =>
   pathname === "/docs/api" || pathname.startsWith("/docs/api/");
 
-// Strict routes allow the two fixed Next.js 16 runtime <style> payloads by
-// exact hash because the framework does not propagate the request nonce.
 const SUPABASE_ORIGIN_FALLBACK = "https://supabase.ethniafrica.com";
 
+// Strict routes allow the two fixed Next.js 16 runtime <style> payloads by
+// exact hash because the framework does not propagate the request nonce.
 const NEXT_RUNTIME_STYLE_HASHES = [
   "'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU='",
   "'sha256-CIxDM5jnsGiKqXs2v7NKCY5MzdR9gu6TtiMJrDw29AY='",
@@ -74,26 +78,68 @@ const MEDIA_SRC_HOSTS = ["https://images.prismic.io"].join(" ");
 // and stays a deliberate host-by-host allowlist once REQ-128 names a host.
 const FRAME_SRC_HOSTS: string[] = [];
 /**
- * The self-hosted Supabase origin the browser is allowed to reach.
+ * The Supabase origin the browser is allowed to reach: the one the app is
+ * configured against, and no other.
  *
- * `*.supabase.co` covers every hosted project, but production runs its own
- * Supabase behind a custom domain, which that wildcard does not match. Baking
- * one deployment's hostname into the policy meant any other deployment — a
- * self-hosted staging, a branch database, a fork — had its Supabase calls
- * blocked by the browser with no server-side error to find. Derived from
- * NEXT_PUBLIC_SUPABASE_URL so it follows the database the app is actually
- * pointed at, with the production host as the fallback.
+ * Baking one deployment's hostname into the policy meant any other deployment
+ * — a self-hosted staging, a branch database, a fork — had its Supabase calls
+ * blocked with no server-side error to find, so the origin is derived from
+ * NEXT_PUBLIC_SUPABASE_URL. It used to sit beside `*.supabase.co`, which
+ * admitted every hosted project, anyone's. The derived origin covers both
+ * hostings on its own: a hosted project by its subdomain, production's
+ * self-hosted stack by its custom domain. The fallback is production's, so an
+ * unusable value still yields a policy under which the atlas works.
  */
-function selfHostedSupabaseOrigin(): string {
+function supabaseOrigin(): string {
   const configured = process.env.NEXT_PUBLIC_SUPABASE_URL?.trim();
   if (!configured) return SUPABASE_ORIGIN_FALLBACK;
   try {
     const { origin } = new URL(configured);
-    return origin.endsWith(".supabase.co") ? "" : origin;
+    return origin === "null" ? SUPABASE_ORIGIN_FALLBACK : origin;
   } catch {
     return SUPABASE_ORIGIN_FALLBACK;
   }
 }
+
+/**
+ * The Sentry ingest origin of the browser DSN, or "" when none is configured.
+ *
+ * With next.config's tunnel route the browser SDK posts to `/monitoring`,
+ * which 'self' already covers; the ingest origin is what it reaches when the
+ * tunnel is not in play. Derived rather than written as
+ * `*.ingest.de.sentry.io`, which admitted every Sentry organisation's project.
+ * `origin` drops the DSN's public key along with its path.
+ */
+function sentryIngestOrigin(): string {
+  const dsn = process.env.NEXT_PUBLIC_SENTRY_DSN?.trim();
+  if (!dsn) return "";
+  try {
+    const { origin } = new URL(dsn);
+    return origin === "null" ? "" : origin;
+  } catch {
+    return "";
+  }
+}
+
+// Features the atlas never asks for, denied to the page and to every frame it
+// embeds, so injected script cannot ask for them either. Clipboard writing
+// and the share sheet are deliberately absent: the citation block, the
+// comparer and the quiz score page use both.
+const PERMISSIONS_POLICY = [
+  "accelerometer=()",
+  "bluetooth=()",
+  "camera=()",
+  "display-capture=()",
+  "geolocation=()",
+  "gyroscope=()",
+  "hid=()",
+  "magnetometer=()",
+  "microphone=()",
+  "midi=()",
+  "payment=()",
+  "serial=()",
+  "usb=()",
+].join(", ");
 
 /**
  * The Plausible script/collector origin, or "" when analytics is off.
@@ -114,7 +160,7 @@ function plausibleOrigin(): string {
 }
 
 function applySecurityHeaders(
-  response: NextResponse,
+  response: Response,
   nonce: string,
   pathname: string
 ) {
@@ -124,6 +170,7 @@ function applySecurityHeaders(
   );
   response.headers.set("X-Content-Type-Options", "nosniff");
   response.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
+  response.headers.set("Permissions-Policy", PERMISSIONS_POLICY);
 
   const publicLocalizedPage = isPublicLocalizedPage(pathname);
   const allowsInlineStyleElements =
@@ -149,7 +196,11 @@ function applySecurityHeaders(
     // relaxation above is only for public pages, these two are for all of them.
     "base-uri 'self'",
     "form-action 'self'",
-    `connect-src 'self' https://*.supabase.co ${selfHostedSupabaseOrigin()} https://*.ingest.de.sentry.io https://*.upstash.io${plausibleSrc ? ` ${plausibleSrc}` : ""}`,
+    // No Upstash host: rate limiting runs server-side, in this middleware, and
+    // the browser never calls it.
+    ["connect-src 'self'", supabaseOrigin(), sentryIngestOrigin(), plausibleSrc]
+      .filter(Boolean)
+      .join(" "),
   ].join("; ");
   response.headers.set("Content-Security-Policy", csp);
 }
@@ -547,28 +598,18 @@ export function resolveRelocatedPath(
   return { path: `/${locale}/${destination}${tail}`, spentDeepLink: false };
 }
 
-// True when the request originates from the deployment itself — i.e. the
-// browser tab or server worker serving our own frontend. Used to let the
-// site call its own /api/v2/* without baking an API key into the bundle.
-// External clients (curl, partners, other origins) must still bring a key.
-function isSameOriginRequest(request: NextRequest): boolean {
-  const host = request.headers.get("host");
-  if (!host) return false;
-  for (const header of ["origin", "referer"] as const) {
-    const value = request.headers.get(header);
-    if (!value) continue;
-    try {
-      if (new URL(value).host === host) return true;
-    } catch {
-      // Malformed Origin/Referer — ignore and fall through to require a key.
-    }
-  }
-  return false;
-}
-
 // @req REQ-052
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+  const nonce = btoa(crypto.randomUUID());
+
+  // Every response leaves through here, the redirects and refusals this
+  // middleware answers itself included: HSTS on a 308 still protects the next
+  // visit, and a 401 is still a document a browser holds.
+  const secured = <ResponseType extends Response>(response: ResponseType) => {
+    applySecurityHeaders(response, nonce, pathname);
+    return response;
+  };
   const localeMode = getLocalePublicationMode();
   const defaultLocale = getDefaultLocale(localeMode);
 
@@ -585,7 +626,7 @@ export async function middleware(request: NextRequest) {
       307
     );
     home.headers.set("Vary", "Cookie");
-    return home;
+    return secured(home);
   }
 
   // Six rewrites, one redirect.
@@ -700,9 +741,11 @@ export async function middleware(request: NextRequest) {
     const search = spentDeepLink
       ? searchWithoutSpentIdentifier(request.nextUrl.searchParams)
       : request.nextUrl.search;
-    return NextResponse.redirect(
-      new URL(`${canonicalPath}${search}`, request.nextUrl.origin),
-      temporaryLocaleContainment ? 307 : 308
+    return secured(
+      NextResponse.redirect(
+        new URL(`${canonicalPath}${search}`, request.nextUrl.origin),
+        temporaryLocaleContainment ? 307 : 308
+      )
     );
   }
 
@@ -718,24 +761,23 @@ export async function middleware(request: NextRequest) {
   // /api/entities.
   const versioned = <ResponseType extends Response>(response: ResponseType) =>
     applyVersioningHeaders(response, pathname);
+  const guarded = <ResponseType extends Response>(response: ResponseType) =>
+    versioned(secured(response));
+
   // The whole /api/v2/keys subtree sits outside api_keys Bearer auth: /issue
   // is anonymous, and the self-service list/create/revoke endpoints (ETNI-81)
   // authenticate a Supabase session access token themselves inside the route
   // handler (see @/api/v2/services/keyService.getAuthenticatedUser) rather
   // than through this gate — a session JWT is not an api_keys row and would
   // otherwise be rejected here as an invalid API key before ever reaching it.
-  const requiresApiKeyAuth = isApiV2 && !pathname.startsWith("/api/v2/keys");
-
-  // Rate limit routes that never validate an API key (e.g. /api/v2/keys/issue)
-  // up front, since there is no DB-validated tier to wait for. Routes that do
-  // validate a key are rate-limited below, once the tier is known, so a single
-  // request only ever consumes one rate-limit bucket.
-  if (isApiV2 && !requiresApiKeyAuth) {
-    const rateLimitResponse = await applyRateLimit(request);
-    if (rateLimitResponse) return versioned(rateLimitResponse);
+  // It is metered in the anonymous bucket and continues to the session
+  // refresh below.
+  const isKeySelfService = isApiV2 && pathname.startsWith("/api/v2/keys");
+  if (isKeySelfService) {
+    const { rejection } = await evaluateRateLimit(request);
+    if (rejection) return guarded(rejection);
   }
 
-  const nonce = btoa(crypto.randomUUID());
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set("x-nonce", nonce);
 
@@ -765,76 +807,72 @@ export async function middleware(request: NextRequest) {
         )
       : NextResponse.next({ request: { headers: requestHeaders } });
 
-  // --- API v2 authentication ---
-  if (requiresApiKeyAuth) {
-    const authHeader = request.headers.get("Authorization") ?? "";
-    const rawKey = authHeader.startsWith("Bearer ")
-      ? authHeader.slice("Bearer ".length).trim()
+  // --- API v2: public, a key selects the quota ---
+  //
+  // The operator made /api/v2 public (audit D1-2). The site's own browser
+  // calls used to be let through on their Origin or Referer — headers any
+  // client can forge — while every other keyless caller got a 401, so the
+  // check turned away only the callers honest enough not to forge them.
+  // Access is no longer decided by where a request says it came from.
+  //
+  // A keyless request is metered in the per-IP bucket (RATE_LIMIT_IP_RPM, 60
+  // a minute by default). That is exactly the bucket the same-origin bypass
+  // charged — the "public" tier it passed was ignored for want of a key — so
+  // the site's own readers are throttled no harder than before. Server
+  // components read the services directly and never call /api/v2 over HTTP,
+  // so no container address pools every reader into one bucket.
+  if (isApiV2 && !isKeySelfService) {
+    const authorization = request.headers.get("Authorization") ?? "";
+    const rawKey = authorization.startsWith("Bearer ")
+      ? authorization.slice("Bearer ".length).trim()
       : "";
 
-    // Fail open in non-production so the same-origin frontend can call
-    // /api/v2/* without an API key during local development.
-    const devBypass = !rawKey && process.env.NODE_ENV !== "production";
+    // The key id is this middleware's statement of who called; a client can
+    // send the header too.
+    requestHeaders.delete("x-api-key-id");
 
-    // Same-origin bypass: the deployment's own frontend calling /api/v2/* is
-    // implicitly authorized. IP-based rate limiting still applies. A present
-    // (even if invalid) Bearer key takes precedence so that bad tokens are
-    // rejected loudly rather than silently masked.
-    const sameOriginBypass = !rawKey && isSameOriginRequest(request);
-
-    if (!rawKey && !devBypass && !sameOriginBypass) {
-      const rateLimitResponse = await applyRateLimit(request);
-      if (rateLimitResponse) return versioned(rateLimitResponse);
-      return versioned(
-        NextResponse.json({ error: "missing_api_key" }, { status: 401 })
-      );
-    }
-
-    // Validate before rate limiting so the DB-canonical tier (api_keys.tier)
-    // — not a raw key matched against an env list — drives quota selection.
-    // Invalid/bypass attempts still consume the "public" bucket rather than
-    // going unmetered.
-    let result;
-    if (devBypass) {
-      result = { valid: true, apiKeyId: "dev-bypass", tier: "public" } as const;
-    } else if (sameOriginBypass) {
-      result = {
-        valid: true,
-        apiKeyId: "same-origin",
-        tier: "public",
-      } as const;
+    let decision: RateLimitDecision;
+    if (!rawKey) {
+      // No IP pre-limit: it bounds key validation, of which there is none
+      // here, and charging the address twice would halve the anonymous quota.
+      decision = await evaluateRateLimit(request);
+      if (decision.rejection) return guarded(decision.rejection);
     } else {
       // IP pre-limit, distinct from the tier-based bucket below: bounds the
       // DB lookup + PBKDF2 comparison inside validateApiKey so a flood of
       // distinct/invalid keys from one IP can't run that expensive check
       // unbounded before a tier is known.
-      const ipRateLimitResponse = await applyIpRateLimit(request);
-      if (ipRateLimitResponse) return versioned(ipRateLimitResponse);
-      result = await validateApiKey(rawKey);
-    }
+      const ipRejection = await applyIpRateLimit(request);
+      if (ipRejection) return guarded(ipRejection);
 
-    const tier = result.valid ? result.tier : "public";
-    const rateLimitResponse = await applyRateLimit(request, tier);
-    if (rateLimitResponse) return versioned(rateLimitResponse);
-
-    if (result.valid === false) {
-      return versioned(
-        NextResponse.json({ error: result.reason }, { status: 401 })
+      // Validate before rate limiting so the DB-canonical tier (api_keys.tier)
+      // drives quota selection. An invalid key still consumes the "public"
+      // bucket rather than going unmetered, and it is refused rather than
+      // downgraded to anonymous: a caller who sends a key means to use it, and
+      // a silent fallback would hide a revoked or mistyped key behind a
+      // smaller quota until it started failing for another reason.
+      const validation = await validateApiKey(rawKey);
+      decision = await evaluateRateLimit(
+        request,
+        validation.valid ? validation.tier : "public"
       );
+      if (decision.rejection) return guarded(decision.rejection);
+
+      if (validation.valid === false) {
+        return guarded(
+          NextResponse.json({ error: validation.reason }, { status: 401 })
+        );
+      }
+      requestHeaders.set("x-api-key-id", validation.apiKeyId);
     }
 
-    const requestWithKey = NextResponse.next({
-      request: {
-        headers: new Headers({
-          ...Object.fromEntries(request.headers),
-          "x-nonce": nonce,
-          "x-api-key-id": result.apiKeyId,
-        }),
-      },
+    const apiResponse = NextResponse.next({
+      request: { headers: requestHeaders },
     });
-
-    applySecurityHeaders(requestWithKey, nonce, pathname);
-    return versioned(requestWithKey);
+    for (const [name, value] of Object.entries(decision.headers)) {
+      apiResponse.headers.set(name, value);
+    }
+    return guarded(apiResponse);
   }
 
   // --- Admin route protection ---
@@ -882,11 +920,10 @@ export async function middleware(request: NextRequest) {
   if (isAdminRoute && !user) {
     const signInUrl = new URL(signInPath!, request.url);
     signInUrl.searchParams.set("redirect", pathname);
-    return NextResponse.redirect(signInUrl);
+    return secured(NextResponse.redirect(signInUrl));
   }
 
-  applySecurityHeaders(supabaseResponse, nonce, pathname);
-  return versioned(supabaseResponse);
+  return guarded(supabaseResponse);
 }
 
 // @req REQ-052

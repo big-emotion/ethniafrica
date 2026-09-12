@@ -26,6 +26,17 @@ const config: StorybookConfig = {
       ...(config.resolve.alias ?? {}),
       "@": path.resolve(__dirname, "../src"),
     };
+    // Stories render without a connected database; use inert client values
+    // so modules that initialize Supabase at import time can still load.
+    config.define = {
+      ...config.define,
+      "process.env.NEXT_PUBLIC_SUPABASE_URL": JSON.stringify(
+        "https://placeholder.supabase.co"
+      ),
+      "process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY": JSON.stringify(
+        "placeholder-anon-key"
+      ),
+    };
     return config;
   },
 };

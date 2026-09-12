@@ -75,7 +75,6 @@ const en = {
     "Only public or historical figures appear here, along with persons who have recognised themselves in this name. The list documents the name: it allows no inference about the ethnic origin of anyone who bears it.",
   roleCategoryFallback: "Role not recorded",
   onFiche: {
-    peopleTitle: "Names borne",
     peopleEmpty:
       "The atlas does not yet attach any name to this people. The names dimension has just opened and covers only a small part of the atlas.",
     peopleUnavailable:
@@ -189,7 +188,6 @@ const fr: PatronymesCopy = {
   // questions, and only the wording keeps a reader from reading the
   // second as an attestation the corpus never made.
   onFiche: {
-    peopleTitle: "Noms portés",
     peopleEmpty:
       "L’atlas ne rattache encore aucun nom à ce peuple. La dimension des noms vient d'ouvrir et ne couvre qu'une petite part de l'atlas.",
     peopleUnavailable:

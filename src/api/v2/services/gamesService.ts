@@ -51,16 +51,6 @@ interface CountryRow {
   content: Record<string, unknown> | null;
 }
 
-function section(
-  content: Record<string, unknown> | null,
-  key: string
-): Record<string, unknown> | null {
-  const value = content?.[key];
-  return value && typeof value === "object"
-    ? (value as Record<string, unknown>)
-    : null;
-}
-
 function asString(value: unknown): string | null {
   return typeof value === "string" && value.length > 0 ? value : null;
 }
@@ -69,10 +59,6 @@ function asStringArray(value: unknown): string[] {
   return Array.isArray(value)
     ? value.filter((entry): entry is string => typeof entry === "string")
     : [];
-}
-
-function asNumber(value: unknown): number | null {
-  return typeof value === "number" && Number.isFinite(value) ? value : null;
 }
 
 function mapKingdoms(value: unknown): GameKingdom[] {

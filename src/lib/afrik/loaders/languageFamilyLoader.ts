@@ -4,5 +4,4 @@
 export {
   loadLanguageFamily,
   loadAllLanguageFamilies,
-  clearLanguageFamilyCache,
 } from "./familyJsonLoader";

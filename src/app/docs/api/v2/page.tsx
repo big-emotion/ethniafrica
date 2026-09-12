@@ -77,18 +77,10 @@ export default function ApiDocsV2Page() {
           </div>
         </div>
 
-        {/* Version selector */}
         <Card className="p-4 bg-muted/50">
-          <div className="flex items-center justify-between">
-            <p className="text-afh-small text-muted-foreground">
-              Vous consultez la documentation de l&apos;API v2 (AFRIK)
-            </p>
-            <Link href="/docs/api/v1">
-              <Button variant="outline" size="sm">
-                Voir l&apos;API v1
-              </Button>
-            </Link>
-          </div>
+          <p className="text-afh-small text-muted-foreground">
+            Vous consultez la documentation de l&apos;API v2 (AFRIK)
+          </p>
         </Card>
 
         {/* Quick Links */}

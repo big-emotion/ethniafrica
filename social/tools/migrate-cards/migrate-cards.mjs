@@ -15,6 +15,13 @@ import fs from "node:fs";
 import path from "node:path";
 
 import { imageSize } from "./image-size.mjs";
+import {
+  ACCENT_PAR_PILIER,
+  PILIER_DEFAUT,
+  decomposerCredit,
+  dossiersASujet,
+  lireArguments,
+} from "../deck-migration.mjs";
 import { productionsRoot } from "../paths.mjs";
 
 const PROJETS = productionsRoot();
@@ -52,38 +59,8 @@ const ROLES = {
 const CHIFFRE =
   /^\s*\d|\b\d[\d\s,.]*\s*(?:%|km²|km2|m²|millions?|milliards?|fois|siècles?)\b/i;
 
-const PILIER_DEFAUT = "L'atlas";
-const ACCENT_PAR_PILIER = {
-  "L'atlas": "ocre",
-  "Les dossiers": "teal",
-  Jouer: "perv",
-};
-
 function estMigre(deck) {
   return Array.isArray(deck.cartes);
-}
-
-/** The credit lines the retired shape carried, split into the fields §10 names. */
-function decomposerCredit(lignes) {
-  const LICENCE =
-    /(CC0|CC BY-SA \d(?:\.\d)?|CC BY-ND[\w.\- ]*|CC BY-NC[\w.\- ]*|CC BY \d(?:\.\d)?|domaine public|public domain|licence ouverte|open licence)/i;
-
-  const texte = (lignes ?? []).join(" · ");
-  const licence = texte.match(LICENCE)?.[1] ?? null;
-
-  // The first line described the work, the last named its holder and licence.
-  // Anything else is left in `credit` rather than split on a guess.
-  const [premiere, ...reste] = lignes ?? [];
-  const derniere = reste.length ? reste[reste.length - 1] : "";
-
-  return {
-    credit: (premiere ?? "").trim(),
-    depot: derniere
-      .replace(LICENCE, "")
-      .replace(/[·,\s]+$/, "")
-      .trim(),
-    licence,
-  };
 }
 
 function convertirCarte(carte, assets, rapport) {
@@ -258,9 +235,7 @@ function migrerProjet(dossier, essai, rapport) {
   }
 }
 
-const args = process.argv.slice(2);
-const essai = args.includes("--essai");
-const sujet = args.find((a) => !a.startsWith("--"));
+const { essai, sujet } = lireArguments(process.argv.slice(2));
 
 const rapport = {
   migres: [],

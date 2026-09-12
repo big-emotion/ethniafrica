@@ -228,6 +228,23 @@ describe("sources facet service", () => {
 
   describe("getSourcesFacetChoices", () => {
     /**
+     * The counting read walks to an empty page, so its double has to answer
+     * `.range(from, to)` out of a table the way PostgREST does. A double that
+     * returned the same rows for every range would never run dry.
+     */
+    function buildTable(rows: Array<Record<string, unknown>>): FakeQuery {
+      const query = buildQuery(rows, rows.length);
+      query.range = vi.fn((from: number, to: number) =>
+        Promise.resolve({
+          data: rows.slice(from, to + 1),
+          error: null,
+          count: rows.length,
+        })
+      );
+      return query;
+    }
+
+    /**
      * The one that bit silently. PostgREST stops a select at a thousand rows
      * with no error, and asking for a wider range does not lift it — measured:
      * the directory said "4 395 sources" from the count while its facets
@@ -244,14 +261,13 @@ describe("sources facet service", () => {
       }));
       const tail = [{ tier: "referenced", source_kind: null, year: null }];
 
-      const first = buildQuery(full);
-      const second = buildQuery(tail);
-      fromMock.mockReturnValueOnce(first).mockReturnValueOnce(second);
+      const table = buildTable([...full, ...tail]);
+      fromMock.mockReturnValue(table);
 
       const choices = await getSourcesFacetChoices();
 
-      expect(first.range).toHaveBeenCalledWith(0, 999);
-      expect(second.range).toHaveBeenCalledWith(1000, 1999);
+      expect(table.range).toHaveBeenCalledWith(0, 999);
+      expect(table.range).toHaveBeenCalledWith(1000, 1999);
       expect(choices.total).toBe(1001);
       expect(choices.standings).toEqual([
         { id: "official", label: "Officielle", count: 1000 },
@@ -274,28 +290,28 @@ describe("sources facet service", () => {
       expect(query.order).toHaveBeenCalledWith("id");
     });
 
+    // A short page is also what a server capping below the page size answers,
+    // so a corpus that fits in one page still costs the empty read that
+    // proves the end.
     // @req REQ-114
-    it("stops after one read when the corpus fits in a single page", async () => {
-      const query = buildQuery([
+    it("stops on the empty read that follows a corpus fitting in a single page", async () => {
+      const query = buildTable([
         { tier: "official", source_kind: null, year: null },
       ]);
       fromMock.mockReturnValue(query);
 
       await getSourcesFacetChoices();
 
-      expect(query.range).toHaveBeenCalledTimes(1);
+      expect(query.range).toHaveBeenCalledTimes(2);
     });
 
     // @req REQ-114
     it("offers only the standings the corpus actually holds, with their counts", async () => {
-      const query = buildQuery(
-        [
-          { tier: "official", source_kind: null, year: 2024 },
-          { tier: "official", source_kind: null, year: null },
-          { tier: null, source_kind: "ai_generated", year: null },
-        ],
-        3
-      );
+      const query = buildTable([
+        { tier: "official", source_kind: null, year: 2024 },
+        { tier: "official", source_kind: null, year: null },
+        { tier: null, source_kind: "ai_generated", year: null },
+      ]);
       fromMock.mockReturnValue(query);
 
       const choices = await getSourcesFacetChoices();
@@ -310,15 +326,12 @@ describe("sources facet service", () => {
 
     // @req REQ-114
     it("groups years into decades and leaves undated sources out of them", async () => {
-      const query = buildQuery(
-        [
-          { tier: "official", source_kind: null, year: 1994 },
-          { tier: "official", source_kind: null, year: 1999 },
-          { tier: "official", source_kind: null, year: 2024 },
-          { tier: "official", source_kind: null, year: null },
-        ],
-        4
-      );
+      const query = buildTable([
+        { tier: "official", source_kind: null, year: 1994 },
+        { tier: "official", source_kind: null, year: 1999 },
+        { tier: "official", source_kind: null, year: 2024 },
+        { tier: "official", source_kind: null, year: null },
+      ]);
       fromMock.mockReturnValue(query);
 
       const choices = await getSourcesFacetChoices();

@@ -1,19 +1,8 @@
-import { z } from "zod";
 import {
   evaluateSourceUrl,
   type SourceKind,
 } from "@/lib/sources/authorized-source-catalog";
 import type { SourceTier } from "@/types/sources";
-
-// @req REQ-092
-export const contributionTypeSchema = z.enum([
-  "new_people",
-  "update_people",
-  "new_country",
-  "update_country",
-  "new_language_family",
-  "update_language_family",
-]);
 
 export interface ContributionSourceCitation {
   url: string;

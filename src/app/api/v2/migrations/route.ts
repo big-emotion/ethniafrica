@@ -67,7 +67,7 @@
  *               $ref: '#/components/schemas/MigrationListResponse'
  *         headers:
  *           Cache-Control:
- *             description: "s-maxage=86400, immutable"
+ *             description: "s-maxage=3600 (people-data class, AR18)"
  *             schema:
  *               type: string
  *       422:
@@ -87,12 +87,12 @@
 import { NextRequest } from "next/server";
 import { listMigrationsHandler } from "@/api/v2/handlers/migrations";
 import { listMigrationsQuerySchema } from "@/api/v2/schemas/migrations";
+import { CORPUS_CACHE_CONTROL as CACHE_CONTROL } from "@/api/v2/utils/corpusRoute";
 import { createApiError } from "@/api/v2/utils/response";
 import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
 import { logger } from "@/lib/api/logger";
 
-const CACHE_CONTROL = "s-maxage=86400, immutable";
-
+// @req REQ-084
 export async function GET(request: NextRequest) {
   const startTime = Date.now();
 
@@ -157,6 +157,7 @@ export async function GET(request: NextRequest) {
   }
 }
 
+// @req REQ-084
 export function OPTIONS() {
   return corsOptionsResponse();
 }

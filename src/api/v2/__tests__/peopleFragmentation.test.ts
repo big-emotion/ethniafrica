@@ -442,7 +442,9 @@ describe("listPeopleFragmentations", () => {
     await listPeopleFragmentations();
 
     const calledTables = fromMock.mock.calls.map((call) => call[0]);
-    expect(calledTables.filter((t) => t === "afrik_peoples")).toHaveLength(1);
+    // One page of candidates and the empty page that proves the end — a count
+    // set by the sweep's pages, never by the number of candidates.
+    expect(calledTables.filter((t) => t === "afrik_peoples")).toHaveLength(2);
     expect(calledTables.filter((t) => t === "afrik_countries")).toHaveLength(1);
     expect(calledTables.filter((t) => t === "assertions")).toHaveLength(1);
   });
@@ -463,12 +465,40 @@ describe("listPeopleFragmentations", () => {
     const result = await listPeopleFragmentations(CANDIDATE_PAGE_SIZE + 1);
 
     expect(sweep.order).toHaveBeenCalledWith("id", { ascending: true });
-    expect(sweep.range.mock.calls.length).toBe(2);
+    // Two pages of rows, then the empty page that proves the end.
+    expect(sweep.range.mock.calls.length).toBe(3);
     // The row past the first page is in the result, not silently dropped.
     expect(result).toHaveLength(CANDIDATE_PAGE_SIZE + 1);
     expect(result.map((f) => f.peopleId)).toContain(
       `PPL_${String(CANDIDATE_PAGE_SIZE).padStart(4, "0")}`
     );
+  });
+
+  /**
+   * A server whose max-rows sits below the page size answers every page
+   * short. A walk that read a short page as the last one stopped after the
+   * first, and every fragmented people past it was dropped without an error.
+   */
+  // @req REQ-091
+  it("sweeps the whole corpus when the server caps a page below the size asked for", async () => {
+    const serverMaxRows = 200;
+    const rows = Array.from({ length: 450 }, (_u, index) =>
+      candidate(`PPL_${String(index).padStart(4, "0")}`, ["GHA", "TGO"])
+    );
+    const sweep = mockListTables({ rows });
+    sweep.range.mockImplementation((start: unknown, end: unknown) =>
+      Promise.resolve({
+        data: rows.slice(
+          start as number,
+          Math.min((end as number) + 1, (start as number) + serverMaxRows)
+        ),
+        error: null,
+      })
+    );
+
+    const result = await listPeopleFragmentations(rows.length);
+
+    expect(result).toHaveLength(rows.length);
   });
 
   // @req REQ-091 FR90

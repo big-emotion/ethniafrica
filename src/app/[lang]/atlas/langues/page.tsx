@@ -9,14 +9,11 @@ import {
   type LanguagesFacetFilters,
 } from "@/api/v2/services/languagesFacet";
 import { PublishFacetCountryIndex } from "@/components/hubs/facets/FacetCountryIndex";
-import type {
-  FacetCountryIndex,
-  FacetCountryNarrowing,
-} from "@/components/hubs/facets/FacetCountryIndex";
 import { FacetFilterBar } from "@/components/hubs/facets/FacetFilterBar";
 import type { FacetActiveFilter } from "@/components/hubs/facets/FacetFilterBar";
 import { FacetLetterRail } from "@/components/hubs/facets/FacetLetterRail";
 import { FacetPagination } from "@/components/hubs/facets/FacetPagination";
+import { buildFacetCountryIndex, readFacet } from "@/lib/hubs/facetHub";
 import { definedFilter, getFacetRoute } from "@/lib/hubs/facets";
 import { PAGE_SIZE_PARAM, resolvePageSize } from "@/lib/hubs/pagination";
 import { getLanguageRoute, getLocalizedRoute } from "@/lib/routing";
@@ -149,52 +146,31 @@ export default async function LanguesHubPage({
     LANGUAGES_FACET_PAGE_SIZES
   );
 
-  let choices = { families: [], countries: [] } as Awaited<
-    ReturnType<typeof getLanguagesFacetChoices>
-  >;
-  let reading = { languages: [], page: 1, total: 0, totalPages: 1 } as Awaited<
-    ReturnType<typeof getLanguagesFacetPage>
-  >;
-  let index: Awaited<ReturnType<typeof getLanguagesFacetCountryIndex>> = [];
-  let unavailable = false;
-
-  try {
-    [choices, reading, index] = await Promise.all([
+  const facetReading = await readFacet(() =>
+    Promise.all([
       getLanguagesFacetChoices(),
       getLanguagesFacetPage(requestedPage, filters, pageSize),
       getLanguagesFacetCountryIndex(filters),
-    ]);
-  } catch {
-    // Zero is a valid total; a failed read is not. The unavailability state
-    // below must never render as an empty (0-result) corpus.
-    unavailable = true;
+    ])
+  );
+
+  if (facetReading === null) {
+    return (
+      <div className="afh-facet-reading">
+        <p role="status" className="afh-facet-reading-lede">
+          {t.unavailable}
+        </p>
+      </div>
+    );
   }
 
-  const countryIndex: FacetCountryIndex = {};
-  /**
-   * Built from the index's own keys, so the map can never offer a narrowing
-   * that lands on an empty list: a country is addressable here exactly when
-   * the current selection places a language in it.
-   */
-  const narrowing: FacetCountryNarrowing = {};
-  for (const row of index) {
-    for (const countryId of row.countryIds) {
-      const key = countryId as CountryId;
-      const rows = countryIndex[key] ?? [];
-      rows.push({
-        id: row.id,
-        label: row.name,
-        href: getLanguageRoute(language, row.id),
-      });
-      countryIndex[key] = rows;
-      narrowing[key] ??= facetHref(
-        language,
-        { ...filters, countryId },
-        null,
-        pageSize
-      );
-    }
-  }
+  const [choices, reading, index] = facetReading;
+  const { index: countryIndex, narrowing } = buildFacetCountryIndex(index, {
+    label: (row) => row.name,
+    href: (row) => getLanguageRoute(language, row.id),
+    narrowHref: (countryId) =>
+      facetHref(language, { ...filters, countryId }, null, pageSize),
+  });
 
   const familyLabels = new Map(
     choices.families.map((family) => [family.id, family.label])
@@ -246,16 +222,6 @@ export default async function LanguesHubPage({
   );
 
   const lede = copy.lede(count(reading.total), reading.total === 1);
-
-  if (unavailable) {
-    return (
-      <div className="afh-facet-reading">
-        <p role="status" className="afh-facet-reading-lede">
-          {t.unavailable}
-        </p>
-      </div>
-    );
-  }
 
   return (
     <>

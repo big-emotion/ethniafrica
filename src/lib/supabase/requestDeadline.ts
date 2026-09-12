@@ -33,7 +33,8 @@ export const SUPABASE_REQUEST_TIMEOUT_MS = positiveIntFromEnv(
 );
 
 /**
- * Two minutes, for a batch run rather than a page.
+ * Two minutes by default, for a batch run rather than a page. Operators can
+ * raise the deadline for a slower recette connection without changing code.
  *
  * The reasoning above holds only for a request whose answer a reader is
  * waiting on. The corpus loader is the other case: it reads whole content
@@ -49,7 +50,10 @@ export const SUPABASE_REQUEST_TIMEOUT_MS = positiveIntFromEnv(
  * make.
  */
 // @req REQ-110
-export const SUPABASE_BATCH_REQUEST_TIMEOUT_MS = 120_000;
+export const SUPABASE_BATCH_REQUEST_TIMEOUT_MS = positiveIntFromEnv(
+  process.env.SUPABASE_BATCH_REQUEST_TIMEOUT_MS,
+  120_000
+);
 
 /**
  * Builds a `fetch` bound to one deadline.

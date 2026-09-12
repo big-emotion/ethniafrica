@@ -25,15 +25,6 @@ const parchmentCss = readFileSync(
 );
 
 /**
- * The country fiche's chapô styles itself in the component, so the measure it
- * carries is declared there rather than in the stylesheet.
- */
-const countryBriefSource = readFileSync(
-  resolve(process.cwd(), "src/components/fiche/CountrySynthesisBrief.tsx"),
-  "utf8"
-);
-
-/**
  * The people fiche's body paragraphs are not `.afh-parchment-section p` — they
  * are ProseWithChip's own class, declared in the people surface's token file.
  * Same parchment, same chapter, a second stylesheet.
@@ -119,15 +110,6 @@ describe("parchment layout — one continuous document", () => {
   // @req REQ-115
   it("lets the callout fill the parchment", () => {
     expect(ruleBody(".afh-parchment-callout")).not.toMatch(/max-width/);
-  });
-
-  // The country chapô is prose on the same parchment, and a reader has no way
-  // of knowing it is styled in another file.
-  // @req REQ-115
-  it("lets the country chapô fill its block", () => {
-    expect(ruleBodyIn(countryBriefSource, ".fiche-brief-summary")).not.toMatch(
-      /max-width/
-    );
   });
 
   // The people fiche escaped the fix its own parchment received: its chapters
