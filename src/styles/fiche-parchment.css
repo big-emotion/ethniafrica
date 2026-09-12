@@ -622,6 +622,117 @@
   color: var(--afh-colonial-ink);
 }
 
+/* ── Tiles ──────────────────────────────────────────────────────────
+   The unit every chapter folds its prose into. Two columns from the phone
+   up, 12px apart, 16px inside: on production the tiles sat 6px apart with
+   their text against the border, and each chapter chose its own gap. An odd
+   last tile takes the whole row rather than leaving a hole beside it. */
+
+.afh-tiles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.afh-tiles > [data-wide="true"],
+.afh-tiles > :last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+.afh-tile {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--afh-border);
+  border-radius: var(--afh-radius-lg);
+  background: var(--afh-surface);
+  text-align: start;
+}
+
+.afh-tile-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.afh-tile-summary::-webkit-details-marker {
+  display: none;
+}
+
+.afh-tile-label {
+  margin: 0;
+  font-family: var(--afh-font-mono);
+  font-size: var(--afh-text-caption);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-ink, var(--afh-text-soft));
+}
+
+.afh-tile-value {
+  margin: 0;
+  font-family: var(--afh-font-display);
+  font-weight: 700;
+  font-size: var(--afh-text-h3);
+  line-height: 1.25;
+  color: var(--afh-text);
+  overflow-wrap: anywhere;
+}
+
+/* Two lines, then the control. The clamp is the whole of "a preview": the
+   sentence is all there, and opening the tile lifts the clamp rather than
+   printing it a second time. */
+.afh-tile-preview {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  font-size: var(--afh-text-small);
+  line-height: 1.5;
+  color: var(--afh-text-soft);
+}
+
+.afh-tile[open] .afh-tile-preview {
+  display: block;
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+
+.afh-tile-control {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-family: var(--afh-font-mono);
+  font-size: var(--afh-text-caption);
+  color: var(--accent-ink, var(--afh-text-soft));
+}
+
+.afh-tile-control [data-when="open"],
+.afh-tile[open] .afh-tile-control [data-when="closed"] {
+  display: none;
+}
+
+.afh-tile[open] .afh-tile-control [data-when="open"] {
+  display: inline;
+}
+
+.afh-tile-body {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--afh-border);
+  font-size: var(--afh-text-small);
+  line-height: 1.6;
+  color: var(--afh-text-soft);
+}
+
+.afh-tile-fact {
+  margin-top: 4px;
+  font-size: var(--afh-text-small);
+  line-height: 1.6;
+  color: var(--afh-text-soft);
+}
+
 /* ── Callout ──────────────────────────────────────────────────────────
    An aside the section cannot say in its own prose. A rule in the
    surface's accent, never a box, so it reads as part of the same

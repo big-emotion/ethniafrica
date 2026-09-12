@@ -15,6 +15,14 @@ const en = {
    * is where the page admits that out loud rather than leaving them to guess
    * whether corrections are wanted.
    */
+  /**
+   * The worded control that closes a tile. Words rather than a glyph, so the
+   * reader knows what the press does before making it.
+   */
+  tile: {
+    more: "+ read more",
+    less: "− fold",
+  },
   amendable: {
     lead: "This page can be amended.",
     hint: "Correct a fact, report an error, add a source.",
@@ -59,6 +67,10 @@ const fr: FicheCopy = {
   sourceTierNote:
     "Chaque source porte son palier — l'autorité qu'on peut lui accorder.",
   contribute: "Contribuer",
+  tile: {
+    more: "+ en savoir plus",
+    less: "− replier",
+  },
   amendable: {
     lead: "Cette page est amendable.",
     hint: "Corriger un fait, signaler une erreur, ajouter une source.",

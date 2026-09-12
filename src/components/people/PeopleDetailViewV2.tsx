@@ -29,7 +29,7 @@ import { PeopleNamesChapter } from "@/components/people/PeopleNamesChapter";
 import { PeopleFieldExplainer } from "@/components/people/PeopleFieldExplainer";
 import { FicheSection } from "@/components/fiche/FicheSection";
 import { FicheSummaryBrief } from "@/components/fiche/FicheSummaryBrief";
-import { FicheTile } from "@/components/fiche/FicheTile";
+import { FicheTile, FicheTiles } from "@/components/fiche/FicheTile";
 import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
 import { FragmentationView } from "@/components/colonization/FragmentationView";
 import { OralNarrativesSection } from "@/components/people/OralNarrativesSection";
@@ -237,9 +237,10 @@ export function PeopleDetailViewV2({
               fromPeopleId={data.hero.peopleId}
               fromPeopleName={data.hero.nameMain}
             />
-            <div className="grid grid-cols-1 gap-afh-sm md:grid-cols-2">
+            <FicheTiles>
               {distribution && distribution.length > 0 && (
                 <FicheTile
+                  language={language}
                   title={copy.sections.mapGrammar}
                   closedFact={copy.atlas.noBoundary}
                   detailText={copy.field.explanation(distribution.length)}
@@ -254,6 +255,7 @@ export function PeopleDetailViewV2({
                 fragmentation.countryCount > 1 &&
                 fragmentation.countries.length > 1 && (
                   <FicheTile
+                    language={language}
                     title={copy.sections.fragmentation}
                     closedFact={copy.sections.fragmentationCount(
                       fragmentation.countryCount
@@ -269,7 +271,7 @@ export function PeopleDetailViewV2({
                     />
                   </FicheTile>
                 )}
-            </div>
+            </FicheTiles>
           </div>
         ) : (
           <FieldProvenanceMarker state="missing" language={language} />

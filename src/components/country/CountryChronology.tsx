@@ -67,6 +67,7 @@ export function CountryChronology({
           </p>
           {entity.historicalRole || entity.centers?.length ? (
             <FicheTile
+              language={language}
               title={entity.name}
               closedFact={entity.period ?? copy.historyDateMissing}
             >
@@ -93,7 +94,11 @@ export function CountryChronology({
         return (
           <li className="afh-tl-item afh-tl-item--fact" key={period.label}>
             {remainder ? (
-              <FicheTile title={period.label} closedFact={lead}>
+              <FicheTile
+                language={language}
+                title={period.label}
+                closedFact={lead}
+              >
                 <p>{remainder}</p>
               </FicheTile>
             ) : (

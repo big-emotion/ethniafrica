@@ -3,7 +3,7 @@ import {
   type PeopleCultureData,
 } from "@/lib/peopleDataTransformer";
 import type { ParagraphNoteData } from "@/components/people/peopleFicheNotes";
-import { FicheTile } from "@/components/fiche/FicheTile";
+import { FicheTile, FicheTiles } from "@/components/fiche/FicheTile";
 import { ProseWithChip } from "./ProseWithChip";
 import type { CultureChips, ParagraphChipData } from "./ProseWithChip";
 import { peopleCopy } from "@/lib/i18n/copy/people";
@@ -63,6 +63,7 @@ function CultureFieldTile({
   const { fact, detail } = splitSourcedProse(text);
   return (
     <FicheTile
+      language={language}
       title={title}
       closedFact={fact}
       detailText={detail ?? undefined}
@@ -105,7 +106,7 @@ export function PeopleCultureGrid({
   const copy = peopleCopy[language].cultureFields;
 
   return (
-    <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
+    <FicheTiles>
       {present.map((key) => (
         <CultureFieldTile
           key={key}
@@ -116,6 +117,6 @@ export function PeopleCultureGrid({
           language={language}
         />
       ))}
-    </div>
+    </FicheTiles>
   );
 }

@@ -1,14 +1,24 @@
-import { ChevronDown, ChevronUp } from "lucide-react";
 import { Children, isValidElement, type ReactNode } from "react";
 
 import { CHARTER_FOCUS_RING } from "@/components/ui/charter-motion";
+import { ficheCopy } from "@/lib/i18n/copy/fiche";
+import { FALLBACK_LOCALE } from "@/lib/locale";
+import type { Language } from "@/types/shared";
 
 export interface FicheTileProps {
   title: string;
   closedFact: string;
   closedFactContent?: ReactNode;
+  /**
+   * A datum set in the display face above the preview — a count, a name. The
+   * preview under it stays the sentence the reader decides on.
+   */
+  value?: ReactNode;
   detailText?: string;
   children?: ReactNode;
+  /** Spans both columns of `FicheTiles`. An odd last tile does so on its own. */
+  wide?: boolean;
+  language?: Language;
 }
 
 function visibleText(node: ReactNode): string {
@@ -34,19 +44,36 @@ function comparable(text: string): string {
 }
 
 /**
+ * The grid every chapter lays its tiles out in: two columns from the phone up,
+ * 12px apart. The column count is the stylesheet's, not each caller's, which
+ * is how the chapters ended up at three different gaps before this existed.
+ */
+// @req REQ-153
+export function FicheTiles({ children }: { children: ReactNode }) {
+  return <div className="afh-tiles">{children}</div>;
+}
+
+/**
  * A disclosure inside a fiche chapter, never the chapter itself. Nommer's
  * ChapterTile navigates because its destination is a page; this tile deploys
  * additional prose, so the same rule permits it to open in place (DEC-048).
  * Native details supplies keyboard operation and announced expanded state
  * without client-side state or motion.
+ *
+ * Closed, it shows its label, an optional value, and a preview clamped to two
+ * lines, then a worded control. Open, the clamp lifts and the body follows.
+ * The long text is folded, never dropped (operator ruling, 2026-09-12).
  */
 // @req REQ-153
 export function FicheTile({
   title,
   closedFact,
   closedFactContent,
+  value,
   detailText,
   children,
+  wide = false,
+  language = FALLBACK_LOCALE,
 }: FicheTileProps) {
   const fact = closedFact.trim();
   const detail = comparable(detailText ?? visibleText(children));
@@ -55,63 +82,51 @@ export function FicheTile({
     detail.length > 0 &&
     comparable(fact) !== comparable(title) &&
     detail !== comparable(fact);
+  const wideAttribute = wide ? "true" : undefined;
 
   if (!canCollapse) {
     return (
-      <div
-        data-fiche-tile=""
-        className="rounded-afh-lg border border-afh-border bg-afh-surface px-afh-md py-afh-sm"
-      >
-        <h3 className="text-afh-body font-semibold text-afh-text">{title}</h3>
-        <div
-          data-closed-fact=""
-          className="pt-afh-sm text-afh-body text-afh-text-soft"
-        >
+      <div data-fiche-tile="" data-wide={wideAttribute} className="afh-tile">
+        <h3 className="afh-tile-label">{title}</h3>
+        {value ? (
+          <p data-tile-value="" className="afh-tile-value">
+            {value}
+          </p>
+        ) : null}
+        <div data-closed-fact="" className="afh-tile-fact">
           {children ?? closedFactContent ?? fact}
         </div>
       </div>
     );
   }
 
-  return (
-    <details
-      data-fiche-tile=""
-      className="group rounded-afh-lg border border-afh-border bg-afh-surface"
-    >
-      {/* The native triangle is replaced by a circle the size of a thumb.
-          It does not turn: the tile charter greps this markup for a rotation,
-          a transform transition or a motion-safe variant and fails on any of
-          them, and a 44px control that spins is exactly the kind of motion
-          that rule exists to keep off a reading surface.
+  const copy = ficheCopy[language].tile;
 
-          So the state is said with two glyphs rather than one turned glyph —
-          swapped by the `open` attribute, which costs no script and no
-          motion, and reads the same to someone who has asked the system for
-          less animation. */}
-      <summary
-        className={`flex min-h-11 cursor-pointer list-none items-center gap-afh-md px-afh-md py-afh-sm text-afh-body text-afh-text [&::-webkit-details-marker]:hidden ${CHARTER_FOCUS_RING}`}
-      >
-        <span className="min-w-0 flex-1">
-          <span className="font-semibold">{title}</span>
-          <span
-            data-closed-fact=""
-            className="block text-afh-caption text-afh-text-soft md:ml-afh-sm md:inline"
-          >
-            {closedFactContent ?? fact}
+  return (
+    <details data-fiche-tile="" data-wide={wideAttribute} className="afh-tile">
+      <summary className={`afh-tile-summary ${CHARTER_FOCUS_RING}`}>
+        <span className="afh-tile-label">{title}</span>
+        {value ? (
+          <span data-tile-value="" className="afh-tile-value">
+            {value}
           </span>
+        ) : null}
+        <span data-closed-fact="" className="afh-tile-preview">
+          {closedFactContent ?? fact}
         </span>
+        {/* Words rather than a glyph, and both labels in the markup: the
+            `open` attribute picks the one that shows, so nothing turns and
+            nothing transitions. The tile charter greps for a transform. */}
         <span
           aria-hidden="true"
-          data-fiche-tile-chevron=""
-          className="grid h-11 w-11 shrink-0 place-items-center rounded-afh-full border border-afh-border text-afh-text-soft group-open:border-[color:var(--accent)] group-open:text-[color:var(--accent-ink)]"
+          data-fiche-tile-control=""
+          className="afh-tile-control"
         >
-          <ChevronDown className="h-4 w-4 group-open:hidden" />
-          <ChevronUp className="hidden h-4 w-4 group-open:block" />
+          <span data-when="closed">{copy.more}</span>
+          <span data-when="open">{copy.less}</span>
         </span>
       </summary>
-      <div className="border-t border-afh-border px-afh-md py-afh-sm text-afh-body text-afh-text-soft">
-        {children}
-      </div>
+      <div className="afh-tile-body">{children}</div>
     </details>
   );
 }

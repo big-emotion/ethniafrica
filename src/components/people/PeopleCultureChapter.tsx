@@ -1,6 +1,6 @@
 import type { ParagraphNoteData } from "@/components/people/peopleFicheNotes";
 import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
-import { FicheTile } from "@/components/fiche/FicheTile";
+import { FicheTile, FicheTiles } from "@/components/fiche/FicheTile";
 import { peopleCopy } from "@/lib/i18n/copy/people";
 import {
   hasRelatedContent,
@@ -74,6 +74,7 @@ function CultureProseTile({
   const { fact, detail } = splitSourcedProse(text);
   return (
     <FicheTile
+      language={language}
       title={title}
       closedFact={fact}
       detailText={detail ?? undefined}
@@ -142,9 +143,10 @@ export function PeopleCultureChapter({
     .join(" ");
 
   return (
-    <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
+    <FicheTiles>
       {hasRitesAndSymbols && (
         <FicheTile
+          language={language}
           title={tileCopy.cultureRitesAndSymbols}
           closedFact={ritesFact}
           detailText={closedRitesNote ? undefined : ritesDetail}
@@ -199,6 +201,7 @@ export function PeopleCultureChapter({
       )}
       {hasNeighbours && (
         <FicheTile
+          language={language}
           title={copy.sections.neighbours}
           closedFact={organisationFact}
           detailText={organisationDetailText}
@@ -214,6 +217,6 @@ export function PeopleCultureChapter({
           ) : undefined}
         </FicheTile>
       )}
-    </div>
+    </FicheTiles>
   );
 }

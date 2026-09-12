@@ -1,4 +1,4 @@
-import { FicheTile } from "@/components/fiche/FicheTile";
+import { FicheTile, FicheTiles } from "@/components/fiche/FicheTile";
 import { AutonymExonymHeading } from "@/components/ui/AutonymExonymHeading";
 import { peopleCopy } from "@/lib/i18n/copy/people";
 import { FALLBACK_LOCALE } from "@/lib/locale";
@@ -31,8 +31,9 @@ export function PeopleNamingTiles({
   const names = exonyms?.filter(Boolean) ?? [];
 
   return (
-    <div className="grid grid-cols-1 gap-afh-sm md:grid-cols-2">
+    <FicheTiles>
       <FicheTile
+        language={language}
         title={copy.selfDesignation}
         closedFact={autonym}
         closedFactContent={
@@ -46,6 +47,7 @@ export function PeopleNamingTiles({
 
       {names.length > 0 && (
         <FicheTile
+          language={language}
           title={copy.exonyms}
           closedFact={copy.exonymCount(names.length)}
           detailText={names.join(", ")}
@@ -62,11 +64,16 @@ export function PeopleNamingTiles({
       )}
 
       {originOfExonyms && (
-        <FicheTile title={copy.origin} closedFact={originOfExonyms} />
+        <FicheTile
+          language={language}
+          title={copy.origin}
+          closedFact={originOfExonyms}
+        />
       )}
 
       {(contemporaryUsage || whyProblematic) && (
         <FicheTile
+          language={language}
           title={copy.currentUsageAndCritique}
           closedFact={contemporaryUsage || whyProblematic || ""}
         >
@@ -77,6 +84,6 @@ export function PeopleNamingTiles({
           ) : null}
         </FicheTile>
       )}
-    </div>
+    </FicheTiles>
   );
 }

@@ -26,9 +26,10 @@ describe("PeopleCultureGrid", () => {
       />
     );
 
+    // The column count belongs to FicheTiles and its stylesheet rule, so every
+    // chapter lays its tiles out on the same grid.
     const grid = container.firstElementChild;
-    expect(grid?.className).toMatch(/grid-cols-1/);
-    expect(grid?.className).toMatch(/md:grid-cols-2/);
+    expect(grid).toHaveClass("afh-tiles");
 
     const tiles = container.querySelectorAll("[data-fiche-tile]");
     expect(tiles).toHaveLength(4);
