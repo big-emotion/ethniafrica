@@ -23,18 +23,30 @@ describe("FicheSummaryBrief", () => {
     );
 
     const panel = screen.getByRole("region", { name: /Test country/ });
-    expect(within(panel).getByText("Population du pays")).toBeVisible();
+    expect(within(panel).getByText("habitants")).toBeVisible();
     expect(within(panel).getAllByRole("definition")[0]).toHaveTextContent(
       /12\s?000\s?000/
     );
     expect(within(panel).getByText("Année de référence : 2025")).toBeVisible();
-    expect(within(panel).getByText("Peuples documentés ici")).toBeVisible();
-    expect(within(panel).getByText("Langues documentées ici")).toBeVisible();
-    expect(
-      within(panel).getByText("Familles linguistiques documentées ici")
-    ).toBeVisible();
-    expect(within(panel).getByText("Noms référencés ici")).toBeVisible();
+    expect(within(panel).getByText("peuples")).toBeVisible();
+    expect(within(panel).getByText("langues")).toBeVisible();
+    expect(within(panel).getByText("familles linguistiques")).toBeVisible();
+    expect(within(panel).getByText("noms")).toBeVisible();
     expect(within(panel).getByText("23")).toBeVisible();
+
+    // Population is the one figure a reader came for; the other four are the
+    // reach of what the atlas holds. One lead plate, four tiles.
+    expect(within(panel).getByTestId("fiche-summary-lead")).toBeVisible();
+    expect(within(panel).getAllByTestId(/^fiche-summary-tile-/)).toHaveLength(
+      4
+    );
+
+    // The scope the label used to carry now sits under the count.
+    expect(
+      within(within(panel).getByTestId("fiche-summary-tile-peoples")).getByText(
+        "documentés ici"
+      )
+    ).toBeVisible();
   });
 
   // @req REQ-151
@@ -65,8 +77,17 @@ describe("FicheSummaryBrief", () => {
     expect(screen.getByText("Names borne and referenced here")).toBeVisible();
   });
 
+  /**
+   * The panel used to write "Non renseigné dans l'atlas" into the slot where
+   * the number goes, five times over, and a reader scanning it met the same
+   * sentence in every slot. A dash occupies that slot without pretending to
+   * be a measurement, and the note underneath still says the silence in
+   * words — so the reader is told exactly as much as before, in the place
+   * they look for it. Never a zero: zero is a total the atlas can hold, and
+   * an absence is a different statement.
+   */
   // @req REQ-151
-  it("states a gap for missing figures without displaying a fabricated zero", () => {
+  it("marks a missing figure with a dash and states the silence beneath it", () => {
     render(
       <FicheSummaryBrief
         kind="country"
@@ -77,7 +98,13 @@ describe("FicheSummaryBrief", () => {
       />
     );
 
-    expect(screen.getAllByText("Non renseigné dans l’atlas")).toHaveLength(5);
+    const panel = screen.getByRole("region", { name: /Test country/ });
+    expect(within(panel).getAllByText("—")).toHaveLength(5);
+    expect(within(panel).getByText("aucun peuple documenté ici")).toBeVisible();
+    expect(
+      within(panel).getByText("aucune langue documentée ici")
+    ).toBeVisible();
+    expect(within(panel).getByText("population non renseignée")).toBeVisible();
     expect(screen.queryByText("0")).toBeNull();
     expect(screen.queryByText("NaN")).toBeNull();
   });

@@ -56,6 +56,21 @@
   --afh-text-caption: 0.8125rem;
   --afh-text-eyebrow: 0.75rem;
 
+  /* ─── Figure steps · the size of a number, not of a text role ─ */
+  /* The counted figure of a fiche summary card. It is not a tenth entry in
+     the scale above: that scale sizes classes of text, this sizes a single
+     measurement, and the charter holds the `--afh-text-*` namespace to nine
+     roles. It lives here rather than on a surface because the country record
+     and the family record draw the same card, and the size was a pixel
+     literal in each of them. */
+  --afh-figure-lead: clamp(1.625rem, 1.35rem + 1.1vw, 2rem); /* 26 → 32 */
+  /* The same figure when the corpus fills nothing. Smaller on purpose: an
+     absence must not shout louder than a measurement. It lands on the same
+     step as `--afh-text-h3` today and is still written out, because a
+     heading role and a figure state answer to different decisions and
+     aliasing one to the other would hide the day they part. */
+  --afh-figure-gap: clamp(1.1875rem, 1.067rem + 0.494vw, 1.4375rem); /* 19 → 23 */
+
   /* ─── Line-heights, paired by role ────────────────────────── */
   --afh-leading-hero: 1.05;
   --afh-leading-h1: 1.1;

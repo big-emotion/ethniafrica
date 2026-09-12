@@ -301,7 +301,7 @@
 .afh-stat-card-n {
   display: block;
   font-family: var(--afh-font-mono);
-  font-size: 26px;
+  font-size: var(--afh-figure-lead);
   font-weight: 700;
   line-height: 1.1;
   color: var(--afh-text);
@@ -327,6 +327,21 @@
   line-height: 1.6;
 }
 
+/* What a count covers, said by the surface that owns it. Running text rather
+   than an interface label, so it stays in the body face and sentence case —
+   a second uppercase line under the first would read as a second heading. */
+.afh-stat-card-scope {
+  display: block;
+  margin-top: 3px;
+  font-size: var(--afh-text-caption);
+  line-height: 1.35;
+  color: var(--afh-text-soft);
+}
+
+.afh-stat-card-scope[data-caveat] {
+  color: var(--afh-color-colonial);
+}
+
 /* Driven by the computed provenance, never by a hard-coded label: the day the
    corpus is loaded these cards fill in and stop being marked. */
 .afh-stat-card[data-provenance="missing"] {
@@ -336,7 +351,7 @@
 
 .afh-stat-card[data-provenance="missing"] .afh-stat-card-n {
   color: var(--afh-color-colonial);
-  font-size: 19px;
+  font-size: var(--afh-figure-gap);
 }
 
 .afh-parchment-gap {
