@@ -60,6 +60,7 @@ import {
 } from "@/api/v2/utils/corpusRoute";
 import { corsOptionsResponse } from "@/lib/api/cors";
 
+// @req REQ-084
 export const GET = corpusDetailRoute({
   path: "/api/v2/migrations/[id]",
   param: "id",
@@ -72,6 +73,7 @@ export const GET = corpusDetailRoute({
   resolve: (id) => getMigrationDetailHandler(id),
 });
 
+// @req REQ-084
 export function OPTIONS() {
   return corsOptionsResponse();
 }

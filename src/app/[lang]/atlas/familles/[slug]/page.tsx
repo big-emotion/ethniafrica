@@ -35,7 +35,6 @@ import {
   getAdmin0Name,
 } from "@/lib/atlas/overlays";
 import { mapLanguageFamilyDetail } from "@/lib/afrikDetailMapper";
-import { getLanguageFamilyById } from "@/api/v2/services/languageFamilyService";
 import {
   getPeoplesByIds,
   getPeoplesByLanguageFamily,

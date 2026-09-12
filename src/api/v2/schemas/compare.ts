@@ -35,5 +35,3 @@ export const compareQuerySchema = z.object({
   type: compareEntityTypeSchema,
   ids: compareIdsSchema,
 });
-
-export type CompareQuery = z.infer<typeof compareQuerySchema>;

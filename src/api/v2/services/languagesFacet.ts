@@ -1,3 +1,4 @@
+import { CORPUS_AGGREGATE_REVALIDATE_SECONDS } from "@/api/v2/services/corpusCache";
 import { unstable_cache } from "next/cache";
 
 import { getCountryIndex } from "@/api/v2/services/countryService";
@@ -124,7 +125,7 @@ export const getLanguagePresence = unstable_cache(
     }));
   },
   ["language-presence"],
-  { revalidate: 3600 }
+  { revalidate: CORPUS_AGGREGATE_REVALIDATE_SECONDS }
 );
 
 /** The facet's filters in the shape the query layer names them. */

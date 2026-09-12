@@ -57,6 +57,7 @@ import { languageFamilyTreeParamSchema } from "@/api/v2/schemas/languageFamilyTr
 import { corpusDetailRoute } from "@/api/v2/utils/corpusRoute";
 import { corsOptionsResponse } from "@/lib/api/cors";
 
+// @req REQ-084
 export const GET = corpusDetailRoute({
   path: "/api/v2/language-families/[id]/tree",
   param: "id",
@@ -70,6 +71,7 @@ export const GET = corpusDetailRoute({
   resolve: (id) => getLanguageFamilyTreeHandler(id),
 });
 
+// @req REQ-084
 export function OPTIONS() {
   return corsOptionsResponse();
 }

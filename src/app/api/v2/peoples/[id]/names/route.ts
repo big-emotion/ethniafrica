@@ -61,6 +61,7 @@ import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
 import { CORPUS_CACHE_CONTROL as CACHE_CONTROL } from "@/api/v2/utils/corpusRoute";
 import { logger } from "@/lib/api/logger";
 
+// @req REQ-084
 export async function GET(
   _request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
@@ -119,6 +120,7 @@ export async function GET(
   }
 }
 
+// @req REQ-084
 export function OPTIONS() {
   return corsOptionsResponse();
 }

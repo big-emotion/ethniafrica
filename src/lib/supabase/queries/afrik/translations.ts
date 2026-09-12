@@ -7,6 +7,7 @@
  */
 
 import { logger } from "@/lib/api/logger";
+import { walkRanges } from "@/lib/supabase/queries/walkRanges";
 import type {
   TranslationEntityType,
   TranslationKind,
@@ -48,37 +49,38 @@ export async function getAfrikTranslationIds(
   lang: TranslationLocale
 ): Promise<string[]> {
   const supabase = createServerClient();
-  const ids: string[] = [];
 
-  for (let page = 0; page < TRANSLATION_ID_MAX_PAGES; page++) {
-    const start = page * TRANSLATION_ID_PAGE_SIZE;
-    const { data, error } = (await supabase
-      .from("afrik_translations")
-      .select("entity_id")
-      .eq("entity_type", entityType)
-      .eq("lang", lang)
-      .order("entity_id")
-      .range(start, start + TRANSLATION_ID_PAGE_SIZE - 1)) as unknown as {
-      data: { entity_id: string }[] | null;
-      error: unknown;
-    };
+  const walk = await walkRanges(
+    async (from, to) => {
+      const { data, error } = (await supabase
+        .from("afrik_translations")
+        .select("entity_id")
+        .eq("entity_type", entityType)
+        .eq("lang", lang)
+        .order("entity_id")
+        .range(from, to)) as unknown as {
+        data: { entity_id: string }[] | null;
+        error: unknown;
+      };
 
-    if (error) {
-      logger.error(
-        `Error fetching AFRIK translation ids ${entityType}/${lang}`,
-        error
-      );
-      throw error;
-    }
-
-    const rows = data ?? [];
-    ids.push(...rows.map((row) => row.entity_id));
-    if (rows.length < TRANSLATION_ID_PAGE_SIZE) return ids;
-  }
-
-  throw new Error(
-    `AFRIK translation ids ${entityType}/${lang} exceeded ${TRANSLATION_ID_MAX_PAGES} pages`
+      if (error) {
+        logger.error(
+          `Error fetching AFRIK translation ids ${entityType}/${lang}`,
+          error
+        );
+        throw error;
+      }
+      return data ?? [];
+    },
+    { pageSize: TRANSLATION_ID_PAGE_SIZE, maxPages: TRANSLATION_ID_MAX_PAGES }
   );
+
+  if (walk.truncated) {
+    throw new Error(
+      `AFRIK translation ids ${entityType}/${lang} exceeded ${TRANSLATION_ID_MAX_PAGES} pages`
+    );
+  }
+  return walk.rows.map((row) => row.entity_id);
 }
 
 // @req REQ-142

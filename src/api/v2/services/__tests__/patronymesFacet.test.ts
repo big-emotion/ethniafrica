@@ -46,9 +46,17 @@ function buildChain(result: unknown, calls: Call[]) {
   for (const method of ["select", "order", "textSearch", "ilike", "eq", "in"]) {
     query[method] = vi.fn(record(method));
   }
+  // Answers the range it is asked for. The relation walks end on an empty
+  // page, so a double serving every row to every range would never run dry.
   query.range = vi.fn((...args: unknown[]) => {
     calls.push(["range", args]);
-    return Promise.resolve(result);
+    const [from, to] = args as [number, number];
+    const answer = result as { data?: unknown };
+    return Promise.resolve(
+      Array.isArray(answer?.data)
+        ? { ...answer, data: answer.data.slice(from, to + 1) }
+        : result
+    );
   });
   // The real builder is thenable, so a chain that ends on `.in()` or `.eq()`
   // resolves without a terminal call. A double that only resolves on `.range()`

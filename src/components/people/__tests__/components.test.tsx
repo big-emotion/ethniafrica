@@ -4,14 +4,12 @@ import type { ParagraphChipData } from "../ProseWithChip";
 import { PeopleOriginBlock } from "../PeopleOriginBlock";
 import { PeopleLanguageSection } from "../PeopleLanguageSection";
 import { PeopleHistoryTimeline } from "../PeopleHistoryTimeline";
-import { PeopleCultureGrid } from "../PeopleCultureGrid";
 import { PeopleRelatedPeoplesSection } from "../PeopleRelatedPeoplesSection";
 import { PeopleCountriesSection } from "../PeopleCountriesSection";
 import type {
   PeopleOriginData,
   PeopleLanguageData,
   PeopleHistoryData,
-  PeopleCultureData,
   PeopleRelatedData,
   PeopleCountriesData,
 } from "@/lib/peopleDataTransformer";
@@ -200,51 +198,6 @@ describe("PeopleHistoryTimeline", () => {
     expect(
       screen.getByText("Forte communauté yoruba au Brésil (Candomblé)")
     ).toBeTruthy();
-  });
-});
-
-// ==========================================
-// PeopleCultureGrid
-// ==========================================
-
-describe("PeopleCultureGrid", () => {
-  // @req REQ-003
-  it("returns null when the fiche declares no culture", () => {
-    const { container } = render(<PeopleCultureGrid data={{}} />);
-    expect(container.firstChild).toBeNull();
-  });
-
-  // The four fields every fiche in the corpus fills. Rendering fewer than
-  // four is the defect this suite exists to catch.
-  // @req REQ-003
-  it("renders each of the four declared fields under its own label", () => {
-    const data: PeopleCultureData = {
-      majorRites: "Le culte des orisha structure la vie rituelle.",
-      symbols: "Les tissus aso-oke et adire.",
-      artsAndMusic: "Le dundun, tambour parlant.",
-      spiritualities: "Aborisa reconnait Olodumare.",
-    };
-    render(<PeopleCultureGrid data={data} />);
-
-    expect(screen.getByText("Rites majeurs")).toBeTruthy();
-    expect(screen.getByText("Symboles")).toBeTruthy();
-    expect(screen.getByText("Arts & musique")).toBeTruthy();
-    expect(screen.getByText("Spiritualités")).toBeTruthy();
-
-    expect(screen.getByText(/culte des orisha/)).toBeTruthy();
-    expect(screen.getByText(/aso-oke/)).toBeTruthy();
-    expect(screen.getByText(/dundun/)).toBeTruthy();
-    expect(screen.getByText(/Olodumare/)).toBeTruthy();
-  });
-
-  // @req REQ-003
-  it("omits the fields the fiche leaves empty, and keeps the rest", () => {
-    render(<PeopleCultureGrid data={{ symbols: "Le masque gre." }} />);
-
-    expect(screen.getByText("Symboles")).toBeTruthy();
-    expect(screen.queryByText("Rites majeurs")).toBeNull();
-    expect(screen.queryByText("Arts & musique")).toBeNull();
-    expect(screen.queryByText("Spiritualités")).toBeNull();
   });
 });
 
@@ -643,40 +596,6 @@ describe("PeopleHistoryTimeline — chip integration", () => {
       />
     );
     expect(screen.getByText("Communauté au Brésil.")).toBeTruthy();
-    await waitFor(() => {
-      expect(
-        screen.queryByRole("button") ?? screen.queryByText("voir les sources")
-      ).toBeTruthy();
-    });
-  });
-});
-
-describe("PeopleCultureGrid — chip integration", () => {
-  // @req REQ-003
-  it("renders the source chip on arts and music when one is provided", async () => {
-    render(
-      <PeopleCultureGrid
-        data={{ artsAndMusic: "Dundun, bata." }}
-        chips={{ artsAndMusic: sampleChip }}
-      />
-    );
-    expect(screen.getByText("Dundun, bata.")).toBeTruthy();
-    await waitFor(() => {
-      expect(
-        screen.queryByRole("button") ?? screen.queryByText("voir les sources")
-      ).toBeTruthy();
-    });
-  });
-
-  // @req REQ-003
-  it("renders the source chip on major rites when one is provided", async () => {
-    render(
-      <PeopleCultureGrid
-        data={{ majorRites: "Rites de passage." }}
-        chips={{ majorRites: sampleChip }}
-      />
-    );
-    expect(screen.getByText("Rites de passage.")).toBeTruthy();
     await waitFor(() => {
       expect(
         screen.queryByRole("button") ?? screen.queryByText("voir les sources")

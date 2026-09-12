@@ -92,6 +92,7 @@ import { createApiError } from "@/api/v2/utils/response";
 import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
 import { logger } from "@/lib/api/logger";
 
+// @req REQ-084
 export async function GET(request: NextRequest) {
   const startTime = Date.now();
 
@@ -156,6 +157,7 @@ export async function GET(request: NextRequest) {
   }
 }
 
+// @req REQ-084
 export function OPTIONS() {
   return corsOptionsResponse();
 }

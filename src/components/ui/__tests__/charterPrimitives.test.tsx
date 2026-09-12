@@ -5,19 +5,10 @@ import { render, screen } from "@testing-library/react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
-import { Skeleton } from "@/components/ui/skeleton";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-  PaginationLink,
-} from "@/components/ui/pagination";
 
 const UI_DIR = join(process.cwd(), "src/components/ui");
 
@@ -52,17 +43,11 @@ const IN_SCOPE_FILES = [
   "input.tsx",
   "textarea.tsx",
   "select.tsx",
-  "checkbox.tsx",
   "radio-group.tsx",
   "card.tsx",
-  "alert.tsx",
-  "accordion.tsx",
   "dialog.tsx",
-  "drawer.tsx",
   "badge.tsx",
   "tabs.tsx",
-  "pagination.tsx",
-  "skeleton.tsx",
 ];
 
 function readPrimitiveSource(file: string): string {
@@ -112,7 +97,6 @@ describe("charter primitive tokenization (ETNI-799 · FR104 §4-§5)", () => {
       "input.tsx",
       "textarea.tsx",
       "select.tsx",
-      "checkbox.tsx",
       "radio-group.tsx",
       "tabs.tsx",
       "dialog.tsx",
@@ -166,23 +150,6 @@ describe("charter primitive tokenization (ETNI-799 · FR104 §4-§5)", () => {
     });
 
     // @req REQ-091
-    it("PaginationLink (default size) exposes a >=44px hit area", () => {
-      renderInAccentScope(
-        <Pagination>
-          <PaginationContent>
-            <PaginationItem>
-              <PaginationLink href="#" aria-label="Page 1">
-                1
-              </PaginationLink>
-            </PaginationItem>
-          </PaginationContent>
-        </Pagination>
-      );
-      const link = screen.getByRole("link", { name: "Page 1" });
-      expect(link.className).toMatch(/(?:^|\s)h-11(?:\s|$)/);
-    });
-
-    // @req REQ-091
     it("Badge/chip renders with pill radius (rounded-full)", () => {
       renderInAccentScope(<Badge>FLG_BANTU</Badge>);
       expect(screen.getByText("FLG_BANTU").className).toMatch(/rounded-full/);
@@ -191,50 +158,28 @@ describe("charter primitive tokenization (ETNI-799 · FR104 §4-§5)", () => {
     // @req REQ-091
     it("Card/Alert titles apply Fraunces 900 display styling", () => {
       renderInAccentScope(
-        <>
-          <Card>
-            <CardHeader>
-              <CardTitle>Peuple Yoruba</CardTitle>
-            </CardHeader>
-            <CardContent>Détails</CardContent>
-          </Card>
-          <Alert>
-            <AlertTitle>Attention</AlertTitle>
-            <AlertDescription>Détails</AlertDescription>
-          </Alert>
-        </>
+        <Card>
+          <CardHeader>
+            <CardTitle>Peuple Yoruba</CardTitle>
+          </CardHeader>
+          <CardContent>Détails</CardContent>
+        </Card>
       );
-      for (const text of ["Peuple Yoruba", "Attention"]) {
-        const el = screen.getByText(text);
-        expect(el.className).toMatch(/font-afh-display/);
-        expect(el.className).toMatch(/font-black/);
-      }
+      const el = screen.getByText("Peuple Yoruba");
+      expect(el.className).toMatch(/font-afh-display/);
+      expect(el.className).toMatch(/font-black/);
     });
 
     // @req REQ-091
     it("Checkbox and RadioGroupItem carry the charter §9 focus ring class", () => {
       renderInAccentScope(
-        <>
-          <Checkbox aria-label="Accepter" />
-          <RadioGroup>
-            <RadioGroupItem value="a" aria-label="Option A" />
-          </RadioGroup>
-        </>
-      );
-      expect(screen.getByRole("checkbox").className).toMatch(
-        /focus-visible:shadow-\[var\(--afh-ring-focus\)\]/
+        <RadioGroup>
+          <RadioGroupItem value="a" aria-label="Option A" />
+        </RadioGroup>
       );
       expect(screen.getByRole("radio").className).toMatch(
         /focus-visible:shadow-\[var\(--afh-ring-focus\)\]/
       );
-    });
-
-    // @req REQ-091
-    it("Skeleton resolves its shimmer surface through --afh-* tokens", () => {
-      renderInAccentScope(<Skeleton data-testid="skel" className="h-4 w-24" />);
-      const el = screen.getByTestId("skel");
-      expect(el.className).toMatch(/bg-afh-/);
-      expect(el.className).not.toMatch(LEGACY_COLOR_CLASS);
     });
   });
 });

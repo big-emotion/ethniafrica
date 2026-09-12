@@ -2,6 +2,7 @@
  * People Service - Business logic for peoples
  */
 
+import { DEFAULT_PAGE_SIZE } from "@/api/v2/schemas/pagination";
 import {
   getAfrikPeopleById,
   getAfrikPeoplesByIds,
@@ -23,7 +24,7 @@ import { attachTranslation, type TranslatedEntity } from "./translations";
 // @req REQ-033
 export async function getPeoples(
   page: number = 1,
-  perPage: number = 20,
+  perPage: number = DEFAULT_PAGE_SIZE,
   filters: PeopleQueryFilters = {}
 ): Promise<PaginatedResult<People>> {
   return getPaginatedAfrikPeoples(page, perPage, filters);
