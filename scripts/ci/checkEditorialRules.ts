@@ -88,6 +88,9 @@ export interface Fiche {
     decolonialHeader?: { selfAppellation?: string | null };
     sources?: unknown[];
     kingdoms?: unknown[];
+    // Chapters beyond the ones the rules name — historicalAffiliation carries
+    // its own sources, which the register rule reads.
+    [chapter: string]: unknown;
   };
   [key: string]: unknown;
 }
@@ -412,26 +415,19 @@ export interface ProseField {
  * `gaps[].reason` is rendered by `FieldProvenanceMarker` and the `sources[]`
  * entries by the Sources chapter, neither of which draws a curation/reader
  * distinction: whatever the corpus holds in these three fields is what the
- * visitor reads. Name fiches nest their sources one level deeper.
+ * visitor reads.
  *
- * Every other string in a fiche — `_meta.directives` included — is authoring
+ * Sources are found by walking the fiche, not by listing where they live. An
+ * enumerated list was wrong twice: it read `sources` and `names[].sources` but
+ * not `content.sources`, where 854 people, country and family fiches keep
+ * theirs, and then not `content.historicalAffiliation.sources`, where a
+ * chapter keeps its own.
+ *
+ * Every `_`-prefixed key — `_meta.directives`, `_translation` — is authoring
  * metadata that no surface renders, and stays the curator's to write.
  */
 export function readerFacingProseFields(fiche: Fiche): ProseField[] {
   const fields: ProseField[] = [];
-
-  const pushSources = (sources: unknown, prefix: string): void => {
-    if (!Array.isArray(sources)) return;
-    sources.forEach((source, i) => {
-      if (!isRecord(source)) return;
-      for (const key of ["title", "notes"] as const) {
-        const value = source[key];
-        if (typeof value === "string" && value.trim() !== "") {
-          fields.push({ path: `${prefix}[${i}].${key}`, text: value });
-        }
-      }
-    });
-  };
 
   if (Array.isArray(fiche.gaps)) {
     fiche.gaps.forEach((gap, i) => {
@@ -443,18 +439,31 @@ export function readerFacingProseFields(fiche: Fiche): ProseField[] {
     });
   }
 
-  pushSources(fiche.sources, "sources");
-  // People, country and family fiches keep their sources here; only name
-  // fiches use the top-level array. Reading one location left the other's
-  // 854 fiches unchecked.
-  pushSources(fiche.content?.sources, "content.sources");
+  const walk = (value: unknown, path: string): void => {
+    if (Array.isArray(value)) {
+      value.forEach((item, i) => walk(item, `${path}[${i}]`));
+      return;
+    }
+    if (!isRecord(value)) return;
 
-  if (Array.isArray(fiche.names)) {
-    fiche.names.forEach((entry, i) => {
-      if (!isRecord(entry)) return;
-      pushSources(entry.sources, `names[${i}].sources`);
-    });
-  }
+    for (const [key, child] of Object.entries(value)) {
+      if (key.startsWith("_")) continue;
+      const childPath = path ? `${path}.${key}` : key;
+      if (key === "sources" && Array.isArray(child)) {
+        child.forEach((source, i) => {
+          if (!isRecord(source)) return;
+          for (const field of ["title", "notes"] as const) {
+            const text = source[field];
+            if (typeof text === "string" && text.trim() !== "") {
+              fields.push({ path: `${childPath}[${i}].${field}`, text });
+            }
+          }
+        });
+      }
+      walk(child, childPath);
+    }
+  };
+  walk(fiche, "");
 
   return fields;
 }

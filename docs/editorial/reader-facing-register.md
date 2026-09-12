@@ -44,11 +44,20 @@ the work.
 - **Tier provenance.** _Tier resolved from the domain ruling for…_, _Tier
   inferred from published-citation shape_, _the tier awaits editorial review_,
   _authorized source catalogue entry_, _resolved from the prior needs_review
-  standing_. How a source's tier was decided is the workshop's reasoning; the
-  tier badge already tells the reader how far to trust the source. A tiering
-  codemod wrote one such sentence into more than 5 000 notes, in English, into
-  French fiches too, and the gate read neither `content.sources` nor French
-  fiches against the English list — so all of them reached the reader.
+  standing_, _tier resolved as…_; in French _tier inféré de la forme
+  éditoriale_, _tier résolu depuis le catalogue_, _tier fondé sur la nature
+  académique_, _non listée au catalogue de domaines officiels_, _doctrine des
+  sources du corpus_ — accented or not. How a source's tier was decided is the
+  workshop's reasoning; the tier badge already tells the reader how far to trust
+  the source. A tiering codemod wrote one such sentence into more than 5 000
+  notes, in English, into French fiches too, and the gate read neither
+  `content.sources`, nor the sources a chapter keeps for itself
+  (`content.historicalAffiliation.sources`), nor French fiches against the
+  English list — so all of them reached the reader. What the source _is_ stays:
+  _encyclopédie adossée à l'Institute for Southern Studies_, _vérifié au
+  catalogue de la BnF_.
+- **Ticket identifiers.** `ETNI-1388`. A ticket number tells the reader which
+  work queue produced a sentence.
 
 The governing sentence: **the reader is owed the silence itself, never the reason
 the workshop has not filled it yet.**
@@ -82,10 +91,13 @@ order to understand that no bearer is documented.
 
 `checkEditorialRules.ts` enforces this as the `reader-facing-register` rule, at
 `error` severity, on every fiche in `dataset/source/afrik/` and every English
-sidecar in `dataset/translations/en/`. It reads sources wherever a fiche keeps
-them — `sources[]`, `names[].sources[]` and `content.sources[]` — and reads a
-French fiche against the English list as well, because a French fiche's source
-notes are often English. It runs in CI through
+sidecar in `dataset/translations/en/`. It walks the fiche and reads every
+`sources[]` array wherever it sits — `sources[]`, `names[].sources[]`,
+`content.sources[]`, `content.historicalAffiliation.sources[]` — rather than a
+list of locations, which missed a new one each time a chapter gained sources.
+`_`-prefixed keys are skipped. It reads a French fiche against the English list
+as well, because a French fiche's source notes are often English. It runs in CI
+through
 `.github/workflows/editorial-rules.yml`:
 
 ```bash
@@ -110,9 +122,10 @@ Paste this into any agent session that writes or edits fiches.
 **Register rule — mandatory.**
 
 Three fields of an AFRIK fiche are published to the reader word for word:
-`gaps[].reason`, `sources[].title`, `sources[].notes` (and
-`names[].sources[].*` on name fiches). There is no sanitising layer between what
-you write in them and what a visitor reads on the site.
+`gaps[].reason`, `sources[].title`, `sources[].notes` — wherever a fiche nests a
+`sources` array (`names[].sources[]`, `content.sources[]`,
+`content.historicalAffiliation.sources[]`). There is no sanitising layer between
+what you write in them and what a visitor reads on the site.
 
 In those three fields you must never write:
 
@@ -125,8 +138,12 @@ In those three fields you must never write:
   _cette passe_, _protocole de recherche_, _revue claim-level_, _tier hérité_,
   _hors corpus_, _plan de couverture_, _vague N_, _Piste :_, _Recherche :_;
 - how a source's tier was decided — _domain ruling_, _citation shape_,
-  _authorized source catalogue_, _awaits editorial review_, _needs_review_ —
-  in any language: set `tier`, and let the badge speak;
+  _authorized source catalogue_, _awaits editorial review_, _needs_review_,
+  _tier inféré_, _tier résolu_, _tier fondé sur…_, _catalogue de domaines
+  officiels_ — in any language, accented or not: set `tier`, and let the badge
+  speak; keep what the source is (publisher, edition, institution, what was read
+  or cross-checked, the Wikipedia language chain);
+- a ticket number (`ETNI-…`);
 - `Corpus AFRIK — …` as a source title.
 
 Write instead what the atlas knows or does not know, in French, addressed to a
