@@ -1,18 +1,25 @@
 /**
  * A fiche's parchment: the reading below the globe band.
  *
- * Sections alternate between the two page grounds and keep a bottom hairline,
- * with the section-gap token between chapters. The fiche is one
- * document, and boxing each section would make it read as a dashboard of
- * unrelated widgets rather than as a text with parts.
+ * Every chapter sits on the same warm ground, rounded, at one width, and the
+ * section-gap token is the only thing between two of them (operator ruling,
+ * 2026-09-12). The alternating grounds this replaced made the seam the only
+ * separator, so anything that was not a section — the amend band, the
+ * country's summary — fell out of the rhythm and measured 0, 22 or 24px.
  *
  * Mobile first throughout: the base rules are the 430px layout, and the
  * container query raises the type and the gutters from the band's own
  * breakpoint so the parchment and the globe change shape at the same width.
  */
 
+/* The gap belongs to the container, not to a margin on the second sibling: a
+   flex gap cannot skip a child that forgot a class. */
 .afh-parchment {
   container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  gap: var(--afh-section-gap);
+  padding: var(--afh-section-gap) var(--afh-space-lg);
   background: var(--afh-bg);
   color: var(--afh-text);
 }
@@ -160,33 +167,23 @@
   color: var(--afh-color-colonial);
 }
 
+/* One ground for every chapter. The page ground shows only in the gaps, which
+   is what separates two chapters now that no hairline or change of ground
+   does. 24px of block padding and a 16px gutter, both on the spacing ramp. */
 .afh-parchment-section {
-  padding: 26px 20px;
-  border-bottom: 1px solid var(--afh-border);
+  padding: 24px 16px;
+  border-radius: var(--afh-radius-lg);
+  background: var(--afh-bg-warm);
 }
 
-.afh-parchment
-  > :is([data-fiche-section], .afh-parchment-section)
-  + :is([data-fiche-section], .afh-parchment-section) {
-  margin-block-start: var(--afh-section-gap);
-}
-
-/* Three family chapters use a wrapper for their background. Their chapter
-   box must meet the wrapper's edge so the measured gap stays the token. */
+/* Three family chapters use a wrapper for their ground. Their chapter box
+   must meet the wrapper's edge so the padding is not counted twice. */
 .afh-parchment-section:has(> [data-fiche-section]) {
   padding: 0;
-  border-bottom: 0;
 }
 
 .afh-parchment-section > [data-fiche-section] {
-  padding: 26px 20px;
-  border-bottom: 1px solid var(--afh-border);
-}
-
-/* Alternating grounds: the seam between two sections is the change of ground,
-   which is why neither needs a card around it. */
-.afh-parchment-section:nth-of-type(even) {
-  background: var(--afh-bg-warm);
+  padding: 24px 16px;
 }
 
 .afh-parchment-section h2 {
@@ -217,12 +214,11 @@
   color: var(--afh-text-soft);
 }
 
-/* The confidence chip opens the people fiche above its first section. It is
-   not a section itself, so it states the gutter rather than inheriting one —
-   and it must state the same gutter, or the fiche's first line sits left of
-   every heading under it. */
+/* The confidence chip rides inside the people fiche's "En bref" chapter, under
+   its heading. It declares no gutter of its own: it takes the chapter's, which
+   is the only way the two can never drift apart again. */
 .afh-parchment-confidence {
-  padding: 20px 20px 0;
+  margin-bottom: var(--afh-space-lg);
 }
 
 /* ConfidenceChip pads itself by 4px so its focus ring is not clipped where it
@@ -864,22 +860,21 @@
 /* ── Wide layout ──────────────────────────────────────────────────── */
 
 @container (min-width: 760px) {
-  .afh-parchment-head,
-  .afh-parchment-section {
+  .afh-parchment-head {
     padding: 34px 40px;
   }
 
+  .afh-parchment-section {
+    padding: 32px 24px;
+  }
+
   .afh-parchment-section > [data-fiche-section] {
-    padding: 34px 40px;
+    padding: 32px 24px;
   }
 
   .afh-tl-item {
     grid-template-columns: 96px 1fr;
     gap: 16px;
-  }
-
-  .afh-parchment-confidence {
-    padding: 26px 40px 0;
   }
 
   /* Side by side only once there is room for two measures. Below this the
@@ -950,8 +945,11 @@
    the record speaking about itself rather than another chapter of it. The
    tint is mixed from the accent so a record scoped to a different accent
    carries the band in its own hue instead of importing the country's. */
+/* A direct child of the parchment, so the flex gap spaces it and the column
+   gives it the chapter's width. It used to carry its own margins, which is
+   what left it 40px narrower than the chapters and flush against the one
+   above. */
 .afh-amend-band {
-  margin: 0 20px 22px;
   padding: 18px;
   border: 1px solid var(--accent);
   border-radius: var(--afh-radius-lg);
@@ -994,10 +992,4 @@
 .afh-amend-band-action:focus-visible {
   outline: none;
   box-shadow: var(--afh-ring-focus);
-}
-
-@container (min-width: 760px) {
-  .afh-amend-band {
-    margin-inline: 40px;
-  }
 }

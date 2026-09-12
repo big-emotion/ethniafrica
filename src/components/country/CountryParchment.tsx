@@ -104,6 +104,7 @@ export function CountryParchment({
   return (
     <div className="afh-parchment" id="fiche">
       <section
+        className="afh-parchment-section"
         data-fiche-section={copy.summary.title}
         id={chapterAnchorId(copy.summary.title)}
         aria-label={copy.summary.title}

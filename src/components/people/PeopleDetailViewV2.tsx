@@ -169,26 +169,24 @@ export function PeopleDetailViewV2({
 
   return (
     <div className="afh-parchment" id="fiche">
-      {/* The head and the trail moved above the globe (PeopleFicheTitle), so
-          a reader arriving on the fiche is told which fiche it is before the
-          band fills their screen.
-
-          The confidence chip did not go with them: it cites this document's
-          sources and links to their footer, so it belongs inside the document
-          that owns that anchor rather than in the band above it. */}
-      <div className="afh-parchment-confidence">
-        <ConfidenceChip
-          language={language}
-          confidenceScore={null}
-          sourceCount={data.sources.length || null}
-          lastHumanAuditAt={null}
-          variant="hero"
-          id={data.hero.peopleId}
-          ariaSuffix={copy.ficheHead.sourceAria(data.hero.nameMain)}
-        />
-      </div>
-
       <FicheSection title={copy.summary.title}>
+        {/* The head and the trail moved above the globe (PeopleFicheTitle).
+            The confidence chip did not go with them: it cites this document's
+            sources and links to their footer, so it belongs inside the
+            document that owns that anchor. It rides in the first chapter
+            rather than above it, so the parchment has no child off the
+            chapter ground. */}
+        <div className="afh-parchment-confidence">
+          <ConfidenceChip
+            language={language}
+            confidenceScore={null}
+            sourceCount={data.sources.length || null}
+            lastHumanAuditAt={null}
+            variant="hero"
+            id={data.hero.peopleId}
+            ariaSuffix={copy.ficheHead.sourceAria(data.hero.nameMain)}
+          />
+        </div>
         <FicheSummaryBrief
           kind="people"
           entityId={data.hero.peopleId}
