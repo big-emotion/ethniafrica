@@ -1,6 +1,17 @@
 import type { Language } from "@/types/shared";
 
 const en = {
+  summary: {
+    title: "In brief",
+    persons: "Persons recorded for this people",
+    referenceYear: (year: number) => `Reference year: ${year}`,
+    countriesOfPresence: "Countries of documented presence",
+    mainLanguage: "Main language",
+    linguisticFamily: "Language family",
+    namesReferencedHere: "Names referenced here",
+    missingData: "Not recorded in the atlas",
+    factTier: "Source tier",
+  },
   sections: {
     naming: "The name borne, the names imposed",
     mapGrammar: "Why the map draws no boundary",
@@ -135,6 +146,17 @@ const en = {
 type PeopleCopy = typeof en;
 
 const fr: PeopleCopy = {
+  summary: {
+    title: "En bref",
+    persons: "Personnes déclarées pour ce peuple",
+    referenceYear: (year) => `Année de référence : ${year}`,
+    countriesOfPresence: "Pays de présence documentée",
+    mainLanguage: "Langue principale",
+    linguisticFamily: "Famille linguistique",
+    namesReferencedHere: "Noms référencés ici",
+    missingData: "Non renseigné dans l’atlas",
+    factTier: "Niveau de source",
+  },
   sections: {
     naming: "Le nom porté, les noms subis",
     mapGrammar: "Pourquoi la carte ne trace pas de frontière",

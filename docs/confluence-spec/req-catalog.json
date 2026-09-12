@@ -147,6 +147,7 @@
     "REQ-148",
     "REQ-149",
     "REQ-150",
+    "REQ-151",
     "REQ-152",
     "REQ-153"
   ],
@@ -294,6 +295,7 @@
     "REQ-148": "Confluence REQ-148 — a historical political entity carries machine-readable bounds and a typed kind (polity, colonial administration, modern state), and a country that dates its colonial administrations must date its precolonial polities: the reader-facing label stays the editorial prose and is never derived from the bounds",
     "REQ-149": "Confluence REQ-149 — every people reference a country fiche declares resolves to an existing people fiche, and a described people with no reference is reported rather than silently rendered as an unreachable line",
     "REQ-150": "Confluence REQ-150 (page 190545921) \u2014 visitors can navigate from a people fiche to the peoples associated with it, and reach a next step at the end of the fiche",
+    "REQ-151": "Confluence REQ-151 (page 198672385) — a fiche opens on a summary block carrying the counts a reader came for, and every count states its scope in its own label",
     "REQ-152": "Confluence REQ-152 (page 198672385) — two consecutive fiche chapters are separated by --afh-section-gap and by no other value",
     "REQ-153": "Confluence REQ-153 (page 198672385) — a collapsed tile states a fact before it is opened, opening adds content, and a chapter never itself collapses"
   }
