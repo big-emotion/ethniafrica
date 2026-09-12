@@ -14,7 +14,30 @@ interface PeopleHistoryTimelineProps {
   language?: Language;
 }
 
-// @req REQ-003
+/**
+ * The four topics `content.history` declares, in the order the strict model
+ * lists them.
+ */
+const FIELDS = [
+  "kingdomsOrChiefdoms",
+  "relationsWithNeighbors",
+  "conflictsOrAlliances",
+  "diaspora",
+] as const satisfies ReadonlyArray<keyof PeopleHistoryData>;
+
+/**
+ * Renders each declared topic as its own station on the chronology spine
+ * `PeopleHistoryChapter` owns — not a sub-list grouped under one shared
+ * label. `content.history` carries no date field at all (unlike
+ * `content.origins.formationPeriod`), so every station here reads its period
+ * as undated; that is the corpus's honest ceiling, not a rendering gap, and
+ * REQ-148 already treats an undated station the same way for a country's
+ * polities.
+ *
+ * Returns bare `<li>` elements, no wrapping list of its own: the caller's
+ * `<ol>` is the single spine, and a second list here would split it in two.
+ */
+// @req REQ-003 REQ-155
 export function PeopleHistoryTimeline({
   data,
   chips,
@@ -22,71 +45,34 @@ export function PeopleHistoryTimeline({
   language = FALLBACK_LOCALE,
 }: PeopleHistoryTimelineProps) {
   const copy = peopleCopy[language].historyFields;
-  const hasContent =
-    data.kingdomsOrChiefdoms ||
-    data.relationsWithNeighbors ||
-    data.conflictsOrAlliances ||
-    data.diaspora;
+  const undated = peopleCopy[language].chapterDetails.historyUndated;
+  const present = FIELDS.filter((key) => Boolean(data[key]));
 
-  if (!hasContent) return null;
+  if (present.length === 0) return null;
+
+  const labels: Record<(typeof FIELDS)[number], string> = {
+    kingdomsOrChiefdoms: copy.kingdoms,
+    relationsWithNeighbors: copy.neighbours,
+    conflictsOrAlliances: copy.conflicts,
+    diaspora: copy.diaspora,
+  };
 
   return (
-    <dl className="afh-prose-fields space-y-[14px]">
-      {data.kingdomsOrChiefdoms && (
-        <div>
-          <dt className="people-section-label">{copy.kingdoms}</dt>
-          <dd className="afh-prose-def">
+    <>
+      {present.map((key) => (
+        <li className="afh-tl-item" key={key}>
+          <span className="afh-tl-period">{undated}</span>
+          <div>
+            <h3>{labels[key]}</h3>
             <ProseWithChip
               language={language}
-              text={data.kingdomsOrChiefdoms}
-              chip={chips?.kingdomsOrChiefdoms}
-              note={notes?.kingdomsOrChiefdoms}
+              text={data[key] as string}
+              chip={chips?.[key]}
+              note={notes?.[key]}
             />
-          </dd>
-        </div>
-      )}
-
-      {data.relationsWithNeighbors && (
-        <div>
-          <dt className="people-section-label">{copy.neighbours}</dt>
-          <dd className="afh-prose-def">
-            <ProseWithChip
-              language={language}
-              text={data.relationsWithNeighbors}
-              chip={chips?.relationsWithNeighbors}
-              note={notes?.relationsWithNeighbors}
-            />
-          </dd>
-        </div>
-      )}
-
-      {data.conflictsOrAlliances && (
-        <div>
-          <dt className="people-section-label">{copy.conflicts}</dt>
-          <dd className="afh-prose-def">
-            <ProseWithChip
-              language={language}
-              text={data.conflictsOrAlliances}
-              chip={chips?.conflictsOrAlliances}
-              note={notes?.conflictsOrAlliances}
-            />
-          </dd>
-        </div>
-      )}
-
-      {data.diaspora && (
-        <div>
-          <dt className="people-section-label">{copy.diaspora}</dt>
-          <dd className="afh-prose-def">
-            <ProseWithChip
-              language={language}
-              text={data.diaspora}
-              chip={chips?.diaspora}
-              note={notes?.diaspora}
-            />
-          </dd>
-        </div>
-      )}
-    </dl>
+          </div>
+        </li>
+      ))}
+    </>
   );
 }

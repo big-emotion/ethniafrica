@@ -20,8 +20,16 @@ export interface PeopleHistoryChapterProps {
   language: Language;
 }
 
-/** A single reading path across the fiche's origins and historical role. */
-// @req REQ-003
+/**
+ * A single reading path across the fiche's origins and historical role.
+ *
+ * REQ-155 merged the two former chapters — "Origines & formation" and "Rôle
+ * historique" — into one "Histoire" chapter. The merge happens here, at the
+ * spine: every entry is its own station (a period, the station's name, its
+ * prose beneath), never a sub-heading that quietly restores either retired
+ * title one level down.
+ */
+// @req REQ-003 REQ-155
 export function PeopleHistoryChapter({
   origin,
   history,
@@ -54,7 +62,7 @@ export function PeopleHistoryChapter({
             )}
           </div>
           <div>
-            <h3>{peopleCopy[language].sections.origins}</h3>
+            <h3>{copy.historyOriginStation}</h3>
             <PeopleOriginBlock
               data={originWithoutPeriod}
               notes={originNotes}
@@ -63,18 +71,18 @@ export function PeopleHistoryChapter({
           </div>
         </li>
       )}
+      {/*
+        content.history carries no date field of its own (unlike
+        content.origins.formationPeriod above), so every topic below is its
+        own undated station rather than one shared "undated" tag over a
+        grouped sub-list — see PeopleHistoryTimeline.
+      */}
       {hasHistory && (
-        <li className="afh-tl-item">
-          <span className="afh-tl-period">{copy.historyUndated}</span>
-          <div>
-            <h3>{copy.historyRole}</h3>
-            <PeopleHistoryTimeline
-              data={history}
-              notes={historyNotes}
-              language={language}
-            />
-          </div>
-        </li>
+        <PeopleHistoryTimeline
+          data={history}
+          notes={historyNotes}
+          language={language}
+        />
       )}
     </ol>
   );

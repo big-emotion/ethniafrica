@@ -37,6 +37,10 @@ const en = {
     historyChronology: "Historical chronology",
     historyUndated: "Undated",
     historyRole: "Historical role",
+    /** REQ-155: the merged Histoire chapter's origin station — distinct
+     * wording from the retired "Origins and formation" chapter title, so the
+     * merge does not resurface it one level down. */
+    historyOriginStation: "Formation and origins",
     cultureRitesAndSymbols: "Rites and symbols",
     associatedGroups: (count: number) =>
       `${count} associated ${count === 1 ? "group" : "groups"}`,
@@ -199,6 +203,7 @@ const fr: PeopleCopy = {
     historyChronology: "Chronologie historique",
     historyUndated: "Non daté",
     historyRole: "Rôle historique",
+    historyOriginStation: "Formation et origines",
     cultureRitesAndSymbols: "Rites & symboles",
     associatedGroups: (count) =>
       `${count} ${count === 1 ? "groupe associé" : "groupes associés"}`,

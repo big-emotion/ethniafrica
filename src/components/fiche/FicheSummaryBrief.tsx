@@ -122,6 +122,14 @@ export function FicheSummaryBrief({
       ? countryRows(figures, language)
       : peopleRows(figures, language);
 
+  // Reviewed rendering (gabarit parity): the people variant leads with one
+  // headline figure, then four tiles. Country keeps its original uniform
+  // grid, so the modifier only ever lands on the people dl.
+  const figuresClassName =
+    kind === "people"
+      ? "fiche-summary-brief__figures fiche-summary-brief__figures--people"
+      : "fiche-summary-brief__figures";
+
   const matchingFacts = DID_YOU_KNOW_FACTS.filter((fact) =>
     fact.entities.some(
       (entity) => entity.kind === kind && entity.id === entityId
@@ -146,9 +154,18 @@ export function FicheSummaryBrief({
         </>
       )}
 
-      <dl className="fiche-summary-brief__figures">
-        {rows.map((row) => (
-          <div key={row.label}>
+      <dl className={figuresClassName}>
+        {rows.map((row, index) => (
+          <div
+            key={row.label}
+            className={
+              kind === "people"
+                ? index === 0
+                  ? "fiche-summary-brief__figure--headline"
+                  : "fiche-summary-brief__figure--tile"
+                : undefined
+            }
+          >
             <dt>{row.label}</dt>
             <dd>
               {row.value ?? copy.missingData}
@@ -216,7 +233,7 @@ export function FicheSummaryBrief({
         .fiche-summary-brief__eyebrow { margin: 0; }
         .fiche-summary-brief h2 {
           margin: 10px 0 18px;
-          font-family: var(--font-fraunces), Georgia, serif;
+          font-family: var(--afh-font-display);
           font-size: var(--afh-text-h3);
           line-height: 1.18;
           color: var(--afh-text);
@@ -238,6 +255,25 @@ export function FicheSummaryBrief({
           display: block;
           font-size: var(--afh-text-small);
           color: var(--afh-fg-muted);
+        }
+        .fiche-summary-brief__figures--people .fiche-summary-brief__figure--headline {
+          grid-column: 1 / -1;
+        }
+        /* Fraunces is loaded at 300/500/700/900 only (app/layout.tsx). 600 is
+           not among them and silently resolves to 700 in the browser —
+           displayWeightCharter.test.ts holds every display declaration to
+           [700, 900], so both rules below ask for 700 directly rather than
+           relying on that fallback. */
+        .fiche-summary-brief__figure--headline dd {
+          font-family: var(--afh-font-display);
+          font-weight: 700;
+          font-variant-numeric: tabular-nums;
+          font-size: var(--afh-text-h2);
+        }
+        .fiche-summary-brief__figure--tile dd {
+          font-family: var(--afh-font-display);
+          font-weight: 700;
+          font-variant-numeric: tabular-nums;
         }
         .fiche-summary-brief__fact {
           margin-top: 18px;

@@ -428,17 +428,121 @@ describe("PeopleCountriesSection", () => {
   });
 
   // @req REQ-115
-  it("renders referenceYear on the source line rather than as a headline", () => {
+  it("renders referenceYear on the footer line", () => {
     const data: PeopleCountriesData = {
       totalPopulation: 45000000,
       totalPopulationFormatted: "45M",
       referenceYear: 2025,
-      source: "UNFPA",
       distributions: [{ country: "NGA", percentage: 89 }],
     };
     render(<PeopleCountriesSection language="fr" data={data} />);
-    expect(screen.getByText(/UNFPA/)).toBeTruthy();
     expect(screen.getByText(/2025/)).toBeTruthy();
+  });
+
+  // `demography.source` is a research note, not a citation — on the Abahutu
+  // record it runs several lines and names Wikipedia twice. The reader is
+  // owed the atlas's own provenance, never the workshop's working note.
+  // @req REQ-155
+  it("never prints the demography research note, even when one is recorded", () => {
+    const data: PeopleCountriesData = {
+      totalPopulation: 45000000,
+      totalPopulationFormatted: "45M",
+      referenceYear: 2025,
+      source:
+        "Voir Wikipédia (fr) et Wikipédia (en) pour le recoupement des chiffres.",
+      distributions: [{ country: "NGA", percentage: 89 }],
+    };
+    render(<PeopleCountriesSection language="fr" data={data} />);
+    expect(screen.queryByText(/Wikip/)).toBeNull();
+    expect(screen.getByText(/2025/)).toBeTruthy();
+  });
+
+  // The sentence used to print once per row, identically, regardless of
+  // whether the rows agreed on where their share came from.
+  // @req REQ-155
+  it("states the provenance once for the chapter when every row's share is derived", () => {
+    const data: PeopleCountriesData = {
+      totalPopulation: 18065000,
+      totalPopulationFormatted: "18M",
+      distributions: [
+        {
+          country: "BDI",
+          population: 12200000,
+          share: { value: 67.5, provenance: "derived", from: ["x"] },
+        },
+        {
+          country: "RWA",
+          population: 5865000,
+          share: { value: 32.5, provenance: "derived", from: ["x"] },
+        },
+      ],
+    };
+    render(<PeopleCountriesSection language="fr" data={data} />);
+    expect(screen.getAllByText(/Dérivé/)).toHaveLength(1);
+  });
+
+  // @req REQ-155
+  it("keeps a marker on every derived row when the rows' provenance differs", () => {
+    const data: PeopleCountriesData = {
+      totalPopulation: 20065000,
+      totalPopulationFormatted: "20M",
+      distributions: [
+        {
+          country: "BDI",
+          population: 12200000,
+          share: { value: 61, provenance: "derived", from: ["x"] },
+        },
+        {
+          country: "RWA",
+          population: 5865000,
+          share: { value: 29.3, provenance: "derived", from: ["x"] },
+        },
+        {
+          country: "COD",
+          population: 2000000,
+          share: { value: 32, provenance: "declared" },
+        },
+      ],
+    };
+    render(<PeopleCountriesSection language="fr" data={data} />);
+    expect(screen.getAllByText(/Dérivé/)).toHaveLength(2);
+  });
+
+  // Five countries must fit a 430px screen, not a screen and a half: the
+  // identifier, the name with its population and note, and the share sit in
+  // three cells, with the progress track spanning beneath as a fourth.
+  // @req REQ-155
+  it("renders a compact three-column row with the track spanning beneath", () => {
+    const data: PeopleCountriesData = {
+      totalPopulation: 45000000,
+      totalPopulationFormatted: "45M",
+      distributions: [
+        {
+          country: "NGA",
+          population: 40000000,
+          populationFormatted: "40M",
+          percentage: 89,
+          note: "Sud-ouest : Lagos, Ibadan.",
+        },
+      ],
+    };
+    const { container } = render(
+      <PeopleCountriesSection language="fr" data={data} />
+    );
+    const row = container.querySelector('[data-country-row="NGA"]');
+    expect(row).toBeTruthy();
+    expect(row!.children).toHaveLength(4);
+
+    const nameCell = row!.children[1];
+    expect(nameCell.textContent).toContain("Nigeria");
+    expect(nameCell.textContent).toContain("40M");
+    expect(nameCell.textContent).toContain("Sud-ouest");
+
+    const shareCell = row!.children[2];
+    expect(shareCell.textContent).toContain("89");
+
+    const track = row!.children[3];
+    expect(track.className).toMatch(/col-span-3/);
   });
 });
 

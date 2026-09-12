@@ -130,27 +130,32 @@ const minimalPeople: PeopleDetail = {
 describe("formatPeoplePopulation", () => {
   // @req REQ-003
   it("formats whole millions", () => {
-    expect(formatPeoplePopulation(40000000)).toBe("40M");
+    expect(formatPeoplePopulation(40000000, "fr")).toBe("40M");
   });
 
   it("formats millions with decimal", () => {
-    expect(formatPeoplePopulation(35000000)).toBe("35M");
-  });
-
-  it("formats fractional millions", () => {
-    expect(formatPeoplePopulation(3500000)).toBe("3.5M");
+    expect(formatPeoplePopulation(35000000, "fr")).toBe("35M");
   });
 
   it("formats thousands", () => {
-    expect(formatPeoplePopulation(500000)).toBe("500K");
+    expect(formatPeoplePopulation(500000, "fr")).toBe("500K");
   });
 
   it("formats small numbers", () => {
-    expect(formatPeoplePopulation(999)).toBe("999");
+    expect(formatPeoplePopulation(999, "fr")).toBe("999");
   });
 
   it("formats zero", () => {
-    expect(formatPeoplePopulation(0)).toBe("0");
+    expect(formatPeoplePopulation(0, "fr")).toBe("0");
+  });
+
+  // French readers used to see "3.5M" — a period, from a hardcoded suffix —
+  // beside a correctly-spaced "10 500 000" produced elsewhere by
+  // Intl.NumberFormat. The decimal separator must follow the given locale.
+  // @req REQ-155
+  it("formats fractional millions with the locale's own decimal separator", () => {
+    expect(formatPeoplePopulation(3500000, "fr")).toBe("3,5M");
+    expect(formatPeoplePopulation(3500000, "en")).toBe("3.5M");
   });
 });
 
@@ -551,6 +556,29 @@ describe("transformPeopleCountries", () => {
     expect(result.distributions[0].populationFormatted).toBeUndefined();
     expect(result.distributions[0].percentage).toBe(100);
   });
+
+  // @req REQ-155
+  it("defaults population formatting to French when no language is given", () => {
+    const result = transformPeopleCountries({
+      totalPopulation: 3500000,
+      distributionByCountry: [{ country: "COD", population: 3500000 }],
+    });
+    expect(result.totalPopulationFormatted).toBe("3,5M");
+    expect(result.distributions[0].populationFormatted).toBe("3,5M");
+  });
+
+  // @req REQ-155
+  it("formats populations against the given language", () => {
+    const result = transformPeopleCountries(
+      {
+        totalPopulation: 3500000,
+        distributionByCountry: [{ country: "COD", population: 3500000 }],
+      },
+      "en"
+    );
+    expect(result.totalPopulationFormatted).toBe("3.5M");
+    expect(result.distributions[0].populationFormatted).toBe("3.5M");
+  });
 });
 
 // ==========================================
@@ -785,5 +813,18 @@ describe("transformPeopleData", () => {
     const result = transformPeopleData(yorubaPeople, dinkaNamesDossier);
     expect(result.names).not.toBeNull();
     expect(result.names!.endonyms).toHaveLength(1);
+  });
+
+  // @req REQ-155
+  it("threads the language argument into the countries chapter's population formatting", () => {
+    const fractionalMillions: PeopleDetail = {
+      ...minimalPeople,
+      demography: {
+        totalPopulation: 3500000,
+        distributionByCountry: [{ country: "COD", population: 3500000 }],
+      },
+    };
+    const result = transformPeopleData(fractionalMillions, undefined, "en");
+    expect(result.countries.totalPopulationFormatted).toBe("3.5M");
   });
 });

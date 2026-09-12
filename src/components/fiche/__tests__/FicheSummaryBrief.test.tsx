@@ -167,4 +167,114 @@ describe("FicheSummaryBrief", () => {
     expect(screen.queryByTestId("fiche-summary-fact")).toBeNull();
     expect(screen.queryByText("Niveau de source")).toBeNull();
   });
+
+  // @req REQ-155
+  it("gives the people variant a headline figure spanning both columns, ahead of four tiles", () => {
+    const { container } = render(
+      <FicheSummaryBrief
+        kind="people"
+        entityId="PPL_NOT_IN_BANK"
+        name="Test people"
+        language="fr"
+        figures={{
+          persons: { value: 1_250_000, referenceYear: 2025 },
+          countries: 3,
+          mainLanguage: "Test language",
+          family: "Test family",
+          names: 5,
+        }}
+      />
+    );
+
+    const list = container.querySelector("dl.fiche-summary-brief__figures");
+    expect(list).not.toBeNull();
+    const rows = Array.from(list!.children);
+    expect(rows).toHaveLength(5);
+
+    const [headline, ...tiles] = rows;
+    expect(headline.className).toContain(
+      "fiche-summary-brief__figure--headline"
+    );
+    expect(tiles).toHaveLength(4);
+    for (const tile of tiles) {
+      expect(tile.className).toContain("fiche-summary-brief__figure--tile");
+      expect(tile.className).not.toContain("headline");
+    }
+
+    // dl/dt/dd stay the markup: only the wrapping div gains a class.
+    expect(headline.tagName).toBe("DIV");
+    expect(headline.querySelector("dt")).not.toBeNull();
+    expect(headline.querySelector("dd")).not.toBeNull();
+
+    const stylesheet = container.querySelector("style")?.textContent ?? "";
+    expect(stylesheet).toMatch(
+      /\.fiche-summary-brief__figure--headline\s*\{[^}]*grid-column:\s*1\s*\/\s*-1/
+    );
+  });
+
+  // @req REQ-155
+  it("renders the people headline and tile figures in the display face at weight 700, never 600", () => {
+    const { container } = render(
+      <FicheSummaryBrief
+        kind="people"
+        entityId="PPL_NOT_IN_BANK"
+        name="Test people"
+        language="fr"
+        figures={{
+          persons: { value: 1_250_000, referenceYear: 2025 },
+          countries: 3,
+          mainLanguage: "Test language",
+          family: "Test family",
+          names: 5,
+        }}
+      />
+    );
+
+    const stylesheet = container.querySelector("style")?.textContent ?? "";
+    const figureRules = stylesheet.match(
+      /\.fiche-summary-brief__figure--(?:headline|tile)\s+dd\s*\{[^}]*\}/g
+    );
+    expect(figureRules).not.toBeNull();
+    expect(figureRules!.length).toBeGreaterThan(0);
+    for (const rule of figureRules!) {
+      // The semantic token, not the font loader's own variable. Only
+      // `var(--afh-font-display)` is swept by displayWeightCharter, so a
+      // declaration written against `--font-fraunces` evades the weight gate
+      // instead of satisfying it — which is how this panel's own h2 sat
+      // outside that charter for the whole life of the file.
+      expect(rule).toMatch(/font-family:\s*var\(--afh-font-display\)/);
+      expect(rule).toMatch(/font-weight:\s*700/);
+      expect(rule).not.toMatch(/font-weight:\s*600/);
+      expect(rule).toMatch(/font-variant-numeric:\s*tabular-nums/);
+    }
+  });
+
+  // @req REQ-155
+  it("leaves the country variant's uniform two-column grid untouched", () => {
+    const { container } = render(
+      <FicheSummaryBrief
+        kind="country"
+        entityId="ZZZ"
+        name="Test country"
+        language="fr"
+        figures={{
+          population: { value: 12_000_000, referenceYear: 2025 },
+          peoples: 3,
+          languages: 4,
+          families: 2,
+          names: 23,
+        }}
+      />
+    );
+
+    const list = container.querySelector("dl.fiche-summary-brief__figures");
+    expect(list).not.toBeNull();
+    expect(list!.className).not.toContain("--people");
+
+    const rows = Array.from(list!.children);
+    expect(rows).toHaveLength(5);
+    for (const row of rows) {
+      expect(row.className).toBe("");
+    }
+  });
 });

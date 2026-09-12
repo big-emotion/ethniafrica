@@ -127,10 +127,14 @@ export function FragmentationView({
   if (variant === "module-index") {
     return (
       <div className="FragmentationView FragmentationView--module-index">
+        {/* "card" (h3), not "inline" (h2): this heading sits inside a
+            FicheTile, itself an h3 under the chapter's own h2 — "inline"
+            put it at the same level as a chapter title, so the fiche read
+            as ten chapters instead of nine. */}
         <AutonymExonymHeading
           autonym={headingAutonym}
           exonym={headingExonym}
-          variant="inline"
+          variant="card"
         />
         <p className="text-afh-caption text-[color:var(--afh-text-soft,var(--country-text-soft,#7A6B5D))]">
           {copy.countryCount(fragmentation.countryCount)}
@@ -141,10 +145,12 @@ export function FragmentationView({
 
   return (
     <div className="FragmentationView FragmentationView--fiche-section">
+      {/* See the module-index branch above: "card" keeps this below the
+          chapter (FicheSection, h2) and its FicheTile (h3). */}
       <AutonymExonymHeading
         autonym={headingAutonym}
         exonym={headingExonym}
-        variant="inline"
+        variant="card"
       />
       <table className="w-full border-collapse">
         <caption className="text-left text-afh-caption mb-2 text-[color:var(--afh-text-soft,var(--country-text-soft,#7A6B5D))]">
