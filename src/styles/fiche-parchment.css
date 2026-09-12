@@ -1357,55 +1357,36 @@
 
 /* ── The page saying it can be amended ─────────────────────────────── */
 
-/* An ocre tint rather than a card: the parchment boxes nothing, and this is
-   the record speaking about itself rather than another chapter of it. The
-   tint is mixed from the accent so a record scoped to a different accent
-   carries the band in its own hue instead of importing the country's. */
 /* A direct child of the parchment, so the flex gap spaces it and the column
    gives it the chapter's width. It used to carry its own margins, which is
    what left it 40px narrower than the chapters and flush against the one
-   above. */
+   above.
+
+   A dashed frame rather than a chapter's ground: this is the record speaking
+   about itself, and a dashed edge reads as a space left open. The tint is
+   mixed from the accent into the chapter ground, so a record scoped to a
+   different accent carries the band in its own hue. */
 .afh-amend-band {
-  padding: 18px;
-  border: 1px solid var(--accent);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 18px 16px;
+  border: 1.5px dashed var(--accent);
   border-radius: var(--afh-radius-lg);
-  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  background: color-mix(in srgb, var(--accent) 12%, var(--afh-bg-warm));
 }
 
 .afh-amend-band-lead {
   margin: 0;
-  font-family: var(--afh-font-display);
-  font-weight: 700;
-  font-size: var(--afh-text-h3);
-  line-height: 1.2;
+  line-height: 1.5;
   color: var(--afh-text);
 }
 
-.afh-amend-band-hint {
-  margin: 6px 0 14px;
-  font-size: var(--afh-text-small);
-  color: var(--afh-text-soft);
-}
-
+/* The accent button sets its own fill, radius and focus ring. The label is
+   a sentence-length verb, so it may wrap on a phone rather than overflow. */
 .afh-amend-band-action {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  padding-inline: var(--afh-space-4xl);
-  border: 1px solid var(--accent);
-  border-radius: var(--afh-radius-base);
-  background: var(--afh-surface);
-  font-size: var(--afh-text-small);
-  font-weight: 600;
-  color: var(--accent-ink);
+  font-weight: 700;
   text-decoration: none;
-}
-
-.afh-amend-band-action:hover {
-  text-decoration: underline;
-}
-
-.afh-amend-band-action:focus-visible {
-  outline: none;
-  box-shadow: var(--afh-ring-focus);
+  white-space: normal;
 }

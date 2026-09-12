@@ -30,6 +30,7 @@ import { PeopleRelatedPeoplesSection } from "@/components/people/PeopleRelatedPe
 import { peopleCultureTiles } from "@/lib/fiche/culture";
 import { FicheNamesChapter } from "@/components/fiche/FicheNamesChapter";
 import { PeopleFieldExplainer } from "@/components/people/PeopleFieldExplainer";
+import { FicheAmendBand } from "@/components/fiche/FicheAmendBand";
 import { FicheSection } from "@/components/fiche/FicheSection";
 import { FicheSummaryBrief } from "@/components/fiche/FicheSummaryBrief";
 import { FicheTile, FicheTiles } from "@/components/fiche/FicheTile";
@@ -411,6 +412,11 @@ export function PeopleDetailViewV2({
           />
         </div>
       </FicheSection>
+
+      {/* After the chapters, before the way onward: the reader who has just
+          finished a thin chapter is the one who knows what is missing from
+          it, and asking once they have gone is asking nobody. */}
+      <FicheAmendBand language={language} />
 
       {/* The way out sits before the bibliography, not after it. The reader
           this block exists for is the one who finished the reading, and

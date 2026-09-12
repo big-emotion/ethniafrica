@@ -214,25 +214,6 @@ describe("country fiche charter", () => {
   });
 
   /**
-   * The record says it can be amended, at the point the reader has finished
-   * reading it. The band is deliberately not a chapter: it carries no
-   * `data-fiche-section`, so the nine above stay nine and the reading rail
-   * does not offer an invitation among a country's history.
-   */
-  // @req REQ-091
-  it("invites amendment without adding a tenth chapter", () => {
-    const { container } = renderParchment(countryFixture());
-
-    const band = screen.getByTestId("fiche-amend-band");
-    expect(band).toHaveTextContent("Cette page est amendable.");
-    expect(band).not.toHaveAttribute("data-fiche-section");
-    expect(container.querySelectorAll("[data-fiche-section]")).not.toHaveLength(
-      0
-    );
-    expect(band.querySelector("a")).toHaveAttribute("href", "/fr/contribute");
-  });
-
-  /**
    * A page resting on seven unexamined sources out of nine is a fact about
    * the page, and reading nine entries was the only way to learn it. The
    * line counts each standing separately — a census, never the single

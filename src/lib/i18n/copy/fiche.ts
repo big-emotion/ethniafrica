@@ -70,8 +70,8 @@ const en = {
     less: "− fold",
   },
   amendable: {
-    lead: "This page can be amended.",
-    hint: "Correct a fact, report an error, add a source.",
+    lead: "Know a name, a date or a source this page is missing? It is made to be completed.",
+    action: "Complete this page",
   },
   archivedCapture: (version: number) =>
     `This content is an archived capture (v${version}) and will never be changed.`,
@@ -156,8 +156,8 @@ const fr: FicheCopy = {
     less: "− replier",
   },
   amendable: {
-    lead: "Cette page est amendable.",
-    hint: "Corriger un fait, signaler une erreur, ajouter une source.",
+    lead: "Vous connaissez un nom, une date ou une source que cette page n'a pas ? Elle est faite pour être complétée.",
+    action: "Compléter cette page",
   },
   archivedCapture: (version) =>
     `Ce contenu est une capture archivée (v${version}) et ne sera jamais modifié.`,
