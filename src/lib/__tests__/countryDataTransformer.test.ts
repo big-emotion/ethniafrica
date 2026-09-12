@@ -381,6 +381,45 @@ describe("transformPeoples", () => {
     expect(result.peopleCount).toBe(2);
   });
 
+  // Every country fiche files its peoples' families by identifier, and the
+  // row under each people printed "Plateaux · FLG_BANTU" on all 54 records.
+  // The route resolves the name from the family roster; a family it cannot
+  // name is left out rather than printed as its identifier.
+  // @req REQ-154
+  it("names a people's family from the roster, never by its identifier", () => {
+    const demographics = {
+      peoples: [
+        {
+          name: "Hutu",
+          percentageInCountry: 85,
+          region: "Plateaux",
+          languageFamily: "FLG_BANTU",
+        },
+        {
+          name: "Twa",
+          percentageInCountry: 1,
+          languageFamily: "FLG_INCONNUE",
+        },
+      ],
+    } as never;
+
+    const named = transformPeoples(
+      demographics,
+      undefined,
+      "fr",
+      new Map([["FLG_BANTU", "Bantou"]])
+    );
+    expect(named.rows.map((row) => row.languageFamily)).toEqual([
+      "Bantou",
+      undefined,
+    ]);
+
+    const unnamed = transformPeoples(demographics, undefined, "fr");
+    expect(unnamed.rows.every((row) => row.languageFamily === undefined)).toBe(
+      true
+    );
+  });
+
   it("sorts by percentage descending", () => {
     const result = transformPeoples(
       bfaCountry.demographics,

@@ -331,6 +331,7 @@ export default async function PaysSlugPage({
                     patronymes.borneByPeoples.length
                   : null,
               }}
+              familyNamesById={familyNamesById}
               onward={
                 <FicheOnward
                   from="country"

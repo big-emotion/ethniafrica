@@ -37,6 +37,12 @@ export interface CountryRecordViewProps {
   summaryFigures?: CountrySummaryFigures;
   /** Null means the derived-language read failed, not that the corpus is empty. */
   countryLanguages?: CountryLanguagesFact | null;
+  /**
+   * The family roster's names by identifier, resolved by the route. A country
+   * fiche files its peoples' families as `FLG_*` and carries no name beside
+   * them.
+   */
+  familyNamesById?: ReadonlyMap<string, string>;
   /** The way out of the fiche, composed by the route and passed straight down. */
   onward?: ReactNode;
   /** Cloudflare Turnstile public site key; without it the flag control is inert. */
@@ -50,10 +56,11 @@ export function CountryRecordView({
   patronymes = null,
   summaryFigures,
   countryLanguages,
+  familyNamesById,
   onward,
 }: CountryRecordViewProps) {
   const copy = countryCopy[language];
-  const data = transformCountryData(country, language);
+  const data = transformCountryData(country, language, familyNamesById);
 
   return (
     <div data-testid="country-record-view">

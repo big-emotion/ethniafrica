@@ -212,6 +212,21 @@ export function shortenFamily(text: string): string {
     .trim();
 }
 
+/**
+ * A people's family as the reader reads it. Every country fiche files it by
+ * identifier; the route resolves the name from the family roster, and a family
+ * it cannot name is left out rather than printed as `FLG_BANTU`.
+ */
+function familyName(
+  value: string | undefined,
+  familyNamesById?: ReadonlyMap<string, string>
+): string | undefined {
+  const family = value?.trim();
+  if (!family) return undefined;
+  if (/^FLG_\w+$/.test(family)) return familyNamesById?.get(family);
+  return shortenFamily(family) || undefined;
+}
+
 // ==========================================
 // TRANSFORM FUNCTIONS
 // ==========================================
@@ -231,7 +246,8 @@ export function transformHero(country: CountryDetail): HeroData {
 export function transformPeoples(
   demographics?: DemographicsSection,
   majorPeoples?: MajorPeopleEntry[],
-  language: Language = "fr"
+  language: Language = "fr",
+  familyNamesById?: ReadonlyMap<string, string>
 ): PeoplesData {
   const totalPopulationIsNational =
     typeof demographics?.totalPopulation === "number" &&
@@ -329,11 +345,11 @@ export function transformPeoples(
       percentage: p.percentageInCountry || 0,
       population: p.population > 0 ? p.population : undefined,
       populationFormatted:
-        p.population > 0 ? formatPeoplePopulation(p.population, language) : undefined,
+        p.population > 0
+          ? formatPeoplePopulation(p.population, language)
+          : undefined,
       region: p.region ? shortenRegion(p.region) : undefined,
-      languageFamily: p.languageFamily
-        ? shortenFamily(p.languageFamily)
-        : undefined,
+      languageFamily: familyName(p.languageFamily, familyNamesById),
       colorIndex: colorIndex,
       peopleId: p.peopleId ?? peopleIdMap.get(nameKey),
     });
@@ -578,14 +594,16 @@ export function transformHistoricalFacts(
 // @req REQ-001
 export function transformCountryData(
   country: CountryDetail,
-  language: Language = "fr"
+  language: Language = "fr",
+  familyNamesById?: ReadonlyMap<string, string>
 ): CountryPageData {
   return {
     hero: transformHero(country),
     peoples: transformPeoples(
       country.demographics,
       country.majorPeoples,
-      language
+      language,
+      familyNamesById
     ),
     kingdoms: transformKingdoms(country.kingdoms, language),
     historicalFacts: transformHistoricalFacts(
