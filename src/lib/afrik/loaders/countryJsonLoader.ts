@@ -10,6 +10,7 @@ import { logger } from "@/lib/api/logger";
 const COUNTRIES_PATH = join(process.cwd(), "dataset/source/afrik/pays");
 const countryCache = new Map<string, Country>();
 
+// @req REQ-033
 export async function loadCountry(
   isoCode: string
 ): Promise<ParsedFile<Country>> {
@@ -40,6 +41,7 @@ export async function loadCountry(
   }
 }
 
+// @req REQ-033
 export async function loadAllCountries(): Promise<Country[]> {
   try {
     const files = readdirSync(COUNTRIES_PATH).filter((f) =>
@@ -56,8 +58,4 @@ export async function loadAllCountries(): Promise<Country[]> {
     logger.error("Failed to load countries", error);
     return [];
   }
-}
-
-export function clearCountryCache(): void {
-  countryCache.clear();
 }

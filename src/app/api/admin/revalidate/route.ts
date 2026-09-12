@@ -1,10 +1,6 @@
 import { NextRequest } from "next/server";
 import { revalidateTag } from "next/cache";
 import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
-import {
-  incrementDataVersion,
-  DATA_VERSION_KEYS,
-} from "@/lib/cache/dataVersion";
 import { logger } from "@/lib/api/logger";
 
 /**
@@ -18,6 +14,7 @@ import { logger } from "@/lib/api/logger";
  * - "afrik-peoples" - Invalide le cache des peuples AFRIK
  * - "afrik-countries" - Invalide le cache des pays AFRIK
  */
+// @req REQ-091
 export async function POST(request: NextRequest) {
   try {
     // Vérifier l'authentification avec un secret
@@ -38,24 +35,12 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Invalider chaque tag et incrémenter les versions correspondantes
     const invalidatedTags: string[] = [];
-    const versionMap: Record<string, string> = {
-      "afrik-language-families": DATA_VERSION_KEYS.AFRIK_LANGUAGE_FAMILIES,
-      "afrik-peoples": DATA_VERSION_KEYS.AFRIK_PEOPLES,
-      "afrik-countries": DATA_VERSION_KEYS.AFRIK_COUNTRIES,
-    };
 
     for (const tag of tags) {
       try {
         revalidateTag(tag, "max");
         invalidatedTags.push(tag);
-
-        // Incrémenter la version correspondante pour invalider le cache client
-        const versionKey = versionMap[tag.toLowerCase()];
-        if (versionKey) {
-          incrementDataVersion(versionKey);
-        }
       } catch (error) {
         logger.error(`Error revalidating tag "${tag}"`, error);
       }
@@ -75,6 +60,7 @@ export async function POST(request: NextRequest) {
   }
 }
 
+// @req REQ-091
 export function OPTIONS() {
   return corsOptionsResponse();
 }

@@ -1,8 +1,9 @@
 {
   "$schema": "https://unpkg.com/knip@5/schema.json",
   "entry": [
-    "src/app/**/{page,layout,loading,error,global-error,not-found,template,default,forbidden,unauthorized,route,sitemap,robots,manifest,icon,apple-icon,opengraph-image,twitter-image}.{ts,tsx}",
-    "src/{middleware,instrumentation,instrumentation-client}.ts",
+    "src/app/**/{page,layout,loading,error,global-error,not-found,template,default,forbidden,unauthorized,route,sitemap,robots,manifest,icon,apple-icon,opengraph-image,twitter-image}.{ts,tsx}!",
+    "src/{middleware,instrumentation,instrumentation-client}.ts!",
+    "{next,tailwind}.config.ts!",
     ".lighthouserc.js",
     ".storybook/{main,preview}.ts",
 
@@ -10,20 +11,23 @@
     "**/__tests__/**/*.{ts,tsx}",
     "eslint/**/*.js",
 
-    "scripts/**/*.{ts,mjs,cjs}",
-    "social/tools/**/*.mjs",
+    "scripts/**/*.{ts,mjs,cjs}!",
+    "social/tools/**/*.mjs!",
     "e2e/**/*.ts",
     "src/test/server-only-stub.ts",
-    "src/lib/atlas/assets/generate-*.mjs",
-    "supabase/functions/**/index.ts",
+    "src/lib/atlas/assets/generate-*.mjs!",
+    "supabase/functions/**/index.ts!",
     "docs/design/mockups/**/*.{js,css}"
   ],
   "project": [
-    "src/**/*.{ts,tsx}",
-    "scripts/**/*.{ts,mjs}",
-    "social/tools/**/*.mjs",
+    "src/**/*.{ts,tsx}!",
+    "!src/components/fiche/ficheStoryViewports.ts!",
+    "{next,tailwind}.config.ts!",
+    "scripts/**/*.{ts,mjs}!",
+    "social/tools/**/*.mjs!",
     "e2e/**/*.ts"
   ],
+  "tailwind": { "entry": ["tailwind.config.ts!"] },
   "ignoreDependencies": ["sharp", "puppeteer", "@storybook/blocks"],
   "ignoreBinaries": ["python3"],
   "ignoreExportsUsedInFile": true
