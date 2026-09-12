@@ -91,27 +91,28 @@
       {
         "title": "Abure, Eyive in Cote d'Ivoire – Joshua Project, 2025",
         "url": "https://joshuaproject.net/people_groups/10141/IV",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Ayemou, K.F. – Aboure et Eotile : deux peuples lies par l'histoire (XVIIe-debut XXe siecles), Ziglobitha, 2021",
         "url": "https://www.ziglobitha.org/wp-content/uploads/2021/11/01-Kadjomou-Ferdinand-AYEMOU-pp01-16.pdf",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for ziglobitha.org."
+        "tier": "referenced"
       },
       {
         "title": "Classes d'age, chefferie et organisation dualiste : les Aboure – JSTOR",
         "url": "https://www.jstor.org/stable/4392603",
-        "tier": "referenced",
-        "notes": "Tier resolved from the authorized source catalogue entry \"jstor\"."
+        "tier": "referenced"
       },
       {
         "title": "Cote d'Ivoire people groups – Joshua Project",
         "url": "https://joshuaproject.net/countries/iv",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

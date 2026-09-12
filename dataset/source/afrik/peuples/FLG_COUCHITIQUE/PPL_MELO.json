@@ -68,39 +68,38 @@
       {
         "title": "Melo language – Ethnologue (SIL International), 18e edition, 2015",
         "url": "https://www.ethnologue.com/language/mfx/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Melo in Ethiopia – Joshua Project, 2025",
         "url": "https://joshuaproject.net/people_groups/13668",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Melo language resources – Joshua Project, 2025",
         "url": "https://joshuaproject.net/languages/mfx",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "ISO 639-3 Language Codes – SIL International / CEDS",
         "url": "https://ceds.ed.gov/iso639-3LanguageCodev7.aspx",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for ceds.ed.gov."
+        "tier": "official"
       },
       {
         "title": "Ethiopian Languages: Semitic, Cushitic, Omotic and Nilo-Saharan – Ethiopian Treasures",
         "url": "http://www.ethiopiantreasures.co.uk/pages/language.htm",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers ethiopiantreasures.co.uk; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Melo of Ethiopia – PeopleGroups.org",
         "url": "https://peoplegroups.org/people_groups/pg011618/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

@@ -72,33 +72,33 @@
       {
         "title": "Kachama-Ganjule Language (KCX) – Ethnologue, SIL International, 2025",
         "url": "https://www.ethnologue.com/language/kcx/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Kachama, Ganjule in Ethiopia – Joshua Project, 2025",
         "url": "https://joshuaproject.net/people_groups/12400",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Blench, R. (2006). Afroasiatic Languages: Omotic sub-group classification",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "T'ej in Other Ethiopian Languages – Ethiopian Tej Blog",
         "url": "https://ethiopiantej.wordpress.com/tej-names/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for wordpress.com, matched as a parent of ethiopiantej.wordpress.com."
+        "tier": "unverified"
       },
       {
         "title": "Afro-Asiatic Languages – Sorosoro, 2011",
         "url": "https://www.sorosoro.org/en/afro-asiatic-languages/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for sorosoro.org."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: none of the 776 people records has an English sidecar, so translating this one alone would make it the atlas's only English people record. It follows the people corpus's first translation pass."
+    }
   }
 }

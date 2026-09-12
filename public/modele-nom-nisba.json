@@ -15,7 +15,7 @@
         "title": "<Titre de la source>",
         "url": "<URL résolvable, ou null pour une œuvre hors ligne>",
         "tier": "official | referenced | unverified",
-        "notes": "<Provenance du tier>"
+        "notes": "<Faits de provenance publiés tels quels au lecteur : éditeur, édition, institution, ce qui a été lu ou recoupé — jamais la raison pour laquelle le tier a été attribué>"
       }
     }
   ],
@@ -30,7 +30,7 @@
         "title": "<Titre de la source>",
         "url": "<URL résolvable, ou null pour une œuvre hors ligne>",
         "tier": "official | referenced | unverified",
-        "notes": "<Provenance du tier>"
+        "notes": "<Faits de provenance publiés tels quels au lecteur : éditeur, édition, institution, ce qui a été lu ou recoupé — jamais la raison pour laquelle le tier a été attribué>"
       }
     ]
   },

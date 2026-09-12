@@ -60,13 +60,13 @@
           "title": "Richard Price, « First-Time: The Historical Vision of an African American People »",
           "url": "https://www.richandsally.net/first_time__the_historical_vision_of_an_african_american_people_8366.htm",
           "tier": "referenced",
-          "notes": "Monographie academique fondatrice sur la conscience historique orale des Saamaka et l'origine africaine de leurs fondateurs ; page bibliographique de l'auteur, ouvrage publie initialement par Johns Hopkins University Press (1983). Tier fonde sur la nature academique et identifiable de la publication."
+          "notes": "Monographie academique fondatrice sur la conscience historique orale des Saamaka et l'origine africaine de leurs fondateurs ; page bibliographique de l'auteur, ouvrage publie initialement par Johns Hopkins University Press (1983)."
         },
         {
           "title": "IWGIA — The Indigenous World 2023: Suriname",
           "url": "https://iwgia.org/en/suriname/5106-iw-2023-suriname.html",
           "tier": "official",
-          "notes": "Tier resolu depuis le catalogue des sources autorisees (domaine iwgia.org) ; documente le statut politique et territorial des peuples marrons du Suriname, dont les Saamaka, issu des traites coloniaux du 18e siecle."
+          "notes": "Documente le statut politique et territorial des peuples marrons du Suriname, dont les Saamaka, issu des traites coloniaux du 18e siecle."
         }
       ]
     },
@@ -108,14 +108,13 @@
       {
         "title": "SIL Ethnologue — Saramaccan language (srm)",
         "url": "https://www.ethnologue.com/language/srm/",
-        "tier": "official",
-        "notes": "Tier resolu depuis le catalogue des sources autorisees (entree « ethnologue »)."
+        "tier": "official"
       },
       {
         "title": "ISO 639-3 Registration Authority — srm",
         "url": "https://iso639-3.sil.org/code/srm",
         "tier": "official",
-        "notes": "Tier resolu depuis le catalogue des sources autorisees (domaine sil.org) ; confirme le code ISO 639-3 du saamaka."
+        "notes": "Confirme le code ISO 639-3 du saamaka."
       },
       {
         "title": "Minority Rights Group International — Maroons in Suriname",
@@ -130,5 +129,10 @@
         "notes": "Article academique evalue par les pairs, revue New West Indian Guide (Brill, 2013) ; source des chiffres demographiques."
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: none of the 776 people records has an English sidecar, so translating this one alone would make it the atlas's only English people record. It follows the people corpus's first translation pass."
+    }
   }
 }

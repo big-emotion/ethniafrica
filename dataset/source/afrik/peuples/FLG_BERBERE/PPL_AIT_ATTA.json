@@ -95,33 +95,33 @@
       {
         "title": "Hart, David. The Ait Atta of Southern Morocco: Daily Life and Recent History. Middle East and North African Studies Press, 1984",
         "url": "https://www.scribd.com/document/352703674/156167417-The-Ait-Atta-of-Southern-Morocco-Daily-Life-and-Recent-History-David-Hart-pdf",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for scribd.com."
+        "tier": "unverified"
       },
       {
         "title": "Amazigh Ethnic Jewels Shop, Berber Tribes - The Ait Atta",
         "url": "https://www.amazigh.it/berber-tribe-ait-atta/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers amazigh.it; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "University of New Mexico, A Comparison of Haratin and Ait Atta Indigenous Legal Systems",
         "url": "https://digitalrepository.unm.edu/cgi/viewcontent.cgi?article=1041&context=tlj",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for digitalrepository.unm.edu."
+        "tier": "referenced"
       },
       {
         "title": "IRCAM (Institut Royal de la Culture Amazighe), Rabat",
         "url": "https://www.ircam.ma/",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for ircam.ma."
+        "tier": "official"
       },
       {
         "title": "IWGIA, The Indigenous World 2024 Morocco",
         "url": "https://iwgia.org/en/morocco/5357-iw-2024-morocco.html",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"iwgia\"."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

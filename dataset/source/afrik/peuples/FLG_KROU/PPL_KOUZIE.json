@@ -72,27 +72,28 @@
       {
         "title": "Adou Coulibaly, Kouassi Emile, Le kouzié, langue kru de Cote d'Ivoire : vitalite linguistique et dynamisme communautaire – Revues Scientifiques Marocaines / Sciences du Langage et Communication, 2018",
         "url": "https://revues.imist.ma/index.php/SLC/article/download/14714/8148/36851",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers revues.imist.ma; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Description linguistique et sociolinguistique du kouzié – Thèse de doctorat, Université Félix Houphouët-Boigny, 2017",
         "url": "https://www.academia.edu/40191884/DESCRIPTION_LINGUISTIQUE_ET_SOCIOLINGUISTIQUE_DU_KOUZIE",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for academia.edu."
+        "tier": "referenced"
       },
       {
         "title": "Ethnologue – Nyabwa language (nwb), SIL International, 2024",
         "url": "https://www.ethnologue.com/language/nwb/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Aka Konin, L'art musical chez les Niaboua, un peuple krou du centre-ouest de la Cote d'Ivoire – Royal Museum for Central Africa, 2012",
         "url": "https://www.africamuseum.be/sites/default/files/media/docs/research/publications/rmca/online/documents-social-sciences-humanities/niaboua.pdf",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for africamuseum.be."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

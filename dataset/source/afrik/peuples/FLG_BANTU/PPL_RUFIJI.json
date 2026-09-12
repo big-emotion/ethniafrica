@@ -78,33 +78,33 @@
       {
         "title": "Rufiji of Tanzania – PeopleGroups.org",
         "url": "https://peoplegroups.org/people_groups/pg050319/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+        "tier": "unverified"
       },
       {
         "title": "RUFIJI DELTA: A HUB FOR MANGROVES – Wetlands International East Africa, 2018",
         "url": "https://eastafrica.wetlands.org/rufiji-delta-a-hub-for-mangroves/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers eastafrica.wetlands.org; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "A Tapestry of the Ruvu Past – Rhonda M. Gonzales, Columbia University Press / Gutenberg-E, 2008",
         "url": "http://www.gutenberg-e.org/gonzales/pdf/gonzales-chapter6.pdf",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for gutenberg-e.org."
+        "tier": "referenced"
       },
       {
         "title": "Rufiji – Indigenous Africa, 2020",
         "url": "https://indigenousafrica.org/rufiji/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers indigenousafrica.org; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "ISO 639-3 Language Codes – National Center for Education Statistics",
         "url": "https://ceds.ed.gov/iso639-3LanguageCodev7.aspx",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for ceds.ed.gov."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

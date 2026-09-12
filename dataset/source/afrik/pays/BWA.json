@@ -201,62 +201,52 @@
       {
         "title": "SIL Ethnologue – Languages of Botswana",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "CIA World Factbook – Botswana",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "UNFPA – World Population Dashboard — Botswana",
         "url": "https://www.unfpa.org/data/world-population/BW",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry for UNFPA."
+        "tier": "official"
       },
       {
         "title": "Schapera, Isaac – \"A Handbook of Tswana Law and Custom\"",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Parsons, Neil – \"A New History of Southern Africa\"",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "UNESCO – Art rupestre san du Botswana (patrimoine mondial)",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Recensements botswanais",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Études anthropologiques sur les peuples du Botswana",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "CIA World Factbook – Botswana (ethnic groups)",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
         "url": "https://unstats.un.org/unsd/methodology/m49/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+        "tier": "official"
       },
       {
         "title": "David Livingstone, Missionary Travels and Researches in South Africa, Londres, John Murray, 1857, p. 200-201",

@@ -98,33 +98,33 @@
       {
         "title": "Ethnologue - Mampruli (maw)",
         "url": "https://www.ethnologue.com/language/maw/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Joshua Project - Mamprusi in Ghana",
         "url": "https://joshuaproject.net/people_groups/13471/GH",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Britannica - Mamprusi",
         "url": "https://www.britannica.com/topic/Mamprusi",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       },
       {
         "title": "Modern Ghana - The Mamprugu Kingdom: Historical Evolution and the Role of the Nayiri (2024)",
         "url": "https://www.modernghana.com/news/1351745/the-mamprugu-kingdom-historical-evolution-and.html",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for modernghana.com."
+        "tier": "referenced"
       },
       {
         "title": "Akolgo, Joseph Octavius - Investiture of Chiefs, a Relic of Colonialism? ASC-TUFS Working Papers (2024)",
         "url": "https://www.jstage.jst.go.jp/article/ascwp/4/0/4_39/_pdf/-char/ja",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for jstage.jst.go.jp."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

@@ -88,51 +88,48 @@
       {
         "title": "Barreteau, Daniel (1984). Description du musey (langue tchadique du Cameroun). Paris : ORSTOM. Classification des dialectes giziga",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Pontie, Guy (1973). Les Guiziga du Cameroun septentrional. Paris : ORSTOM",
         "url": "https://horizon.documentation.ird.fr/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for horizon.documentation.ird.fr."
+        "tier": "referenced"
       },
       {
         "title": "Podlewski, A.M. (1966). La dynamique des principales populations du Nord-Cameroun. Cahiers ORSTOM, serie Sciences Humaines",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "SIL Ethnologue — Giziga (giz)",
         "url": "https://www.ethnologue.com/language/giz/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "SIL Ethnologue — Giziga, North (gis)",
         "url": "https://www.ethnologue.com/language/gis/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "101 Last Tribes — Gisiga people",
         "url": "https://www.101lasttribes.com/tribes/gisiga.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       },
       {
         "title": "PeopleGroups.org — South Gisiga of Cameroon (PG012783)",
         "url": "https://peoplegroups.org/people_groups/pg012783/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+        "tier": "unverified"
       },
       {
         "title": "Kupi.com — Maroua history (Giziga founding peoples)",
         "url": "https://www.kupi.com/en-ae/explore/cameroon-united-republic-of/maroua/history",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers kupi.com; the tier awaits editorial review."
+        "tier": "needs_review"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

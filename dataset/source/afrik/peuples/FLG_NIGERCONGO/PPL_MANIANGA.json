@@ -91,21 +91,23 @@
       {
         "title": "CultureCongo — Brève étude sur les Manianga et leurs musiques",
         "url": "https://culturecongo.com/breve-etude-manianga-leurs-musiques/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers culturecongo.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "SIL Ethnologue — Kikongo (kon)",
         "url": "https://www.ethnologue.com/language/kon",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "CIA World Factbook — Democratic Republic of the Congo",
         "url": "https://www.cia.gov/the-world-factbook/countries/congo-democratic-republic-of-the/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

@@ -74,51 +74,48 @@
       {
         "title": "Gesese, Aemero – A History of Na'o People of Goba Warada, Kafa Zone, ca. 1897 to 1991 (these, Universite de Jimma), 2020",
         "url": "https://repository.ju.edu.et/handle/123456789/5286",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for repository.ju.edu.et."
+        "tier": "referenced"
       },
       {
         "title": "Nao in Ethiopia – Joshua Project, 2025",
         "url": "https://joshuaproject.net/people_groups/13951",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Nao in Ethiopia – Mission Infobank / Joshua Project",
         "url": "https://www.missioninfobank.org/mib/index.php?main_page=document_general_info&products_id=37019",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers missioninfobank.org; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Nao of Ethiopia – PeopleGroups.org",
         "url": "https://peoplegroups.org/people_groups/pg011624/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+        "tier": "unverified"
       },
       {
         "title": "Nayi – Ethnologue",
         "url": "https://www.ethnologue.com/language/noz/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Description and Documentation of the Nayi Language – GLOCAL / AFALA, 2023",
         "url": "https://glocal.soas.ac.uk/afala2024/172-2/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for glocal.soas.ac.uk."
+        "tier": "referenced"
       },
       {
         "title": "Nayi language endangerment – Foundation for Endangered Languages, Ogmios 52, 2013",
         "url": "http://www.ogmios.org/ogmios/Ogmios_052.pdf",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers ogmios.org; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "ISO 639-3: noz (Nayi) – SIL International / Ethnologue",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

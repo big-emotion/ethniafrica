@@ -41,19 +41,44 @@ the work.
   reads as ordinary French and survives review — while telling a visitor about a
   work queue and a research backlog that describe the workshop, not the subject.
 - **Internal corpus labels.** `Corpus AFRIK — …` as a source title.
+- **Tier provenance.** _Tier resolved from the domain ruling for…_, _Tier
+  inferred from published-citation shape_, _the tier awaits editorial review_,
+  _authorized source catalogue entry_, _resolved from the prior needs_review
+  standing_, _tier resolved as…_; in French _tier inféré de la forme
+  éditoriale_, _tier résolu depuis le catalogue_, _tier fondé sur la nature
+  académique_, _non listée au catalogue de domaines officiels_, _doctrine des
+  sources du corpus_ — accented or not. How a source's tier was decided is the
+  workshop's reasoning; the tier badge already tells the reader how far to trust
+  the source. A tiering codemod wrote one such sentence into more than 5 000
+  notes, in English, into French fiches too, and the gate read neither
+  `content.sources`, nor the sources a chapter keeps for itself
+  (`content.historicalAffiliation.sources`), nor French fiches against the
+  English list — so all of them reached the reader. What the source _is_ stays:
+  _encyclopédie adossée à l'Institute for Southern Studies_, _vérifié au
+  catalogue de la BnF_.
+- **Ticket identifiers.** `ETNI-1388`. A ticket number tells the reader which
+  work queue produced a sentence.
 
 The governing sentence: **the reader is owed the silence itself, never the reason
 the workshop has not filled it yet.**
 
 ## How to say it instead
 
-| Curator register                                                                                                                                         | Reader register                                                                                                      |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche. | L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour.             |
-| Le système « clan_name » ne détermine pas à lui seul le mode de transmission : …                                                                         | Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom. |
-| Corpus AFRIK — PPL_DIOULA, organisation clanique                                                                                                         | EthniAfrica — fiche du peuple Dioula, organisation clanique                                                          |
-| Passage source : dataset/…/PPL_DIOULA.json#content.organization.clanOrganization. Le tier hérité n'est pas résolu ; la revue claim-level reste requise.  | Reprise du chapitre « Organisation clanique » de la fiche du peuple Dioula.                                          |
-| Aucun porteur décédé n'a été rattaché au jamu par les sources de cette passe.                                                                            | Aucun porteur n'a été rattaché au jamu par les sources consultées.                                                   |
+| Curator register                                                                                                                                                                    | Reader register                                                                                                      |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche.                            | L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour.             |
+| Le système « clan_name » ne détermine pas à lui seul le mode de transmission : …                                                                                                    | Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom. |
+| Corpus AFRIK — PPL_DIOULA, organisation clanique                                                                                                                                    | EthniAfrica — fiche du peuple Dioula, organisation clanique                                                          |
+| Passage source : dataset/…/PPL_DIOULA.json#content.organization.clanOrganization. Le tier hérité n'est pas résolu ; la revue claim-level reste requise.                             | Reprise du chapitre « Organisation clanique » de la fiche du peuple Dioula.                                          |
+| Aucun porteur décédé n'a été rattaché au jamu par les sources de cette passe.                                                                                                       | Aucun porteur n'a été rattaché au jamu par les sources consultées.                                                   |
+| Tier resolved from the domain ruling for jstor.org.                                                                                                                                 | _(no note — the tier badge says it)_                                                                                 |
+| No URL and no recognisable citation shape; the tier awaits editorial review.                                                                                                        | _(no note — the Non vérifiée badge says it)_                                                                         |
+| Tier resolved from the domain ruling for unesco.org (sous-domaine ich.unesco.org). Fiche d'inscription sur la Liste représentative du patrimoine culturel immatériel de l'humanité. | Fiche d'inscription sur la Liste représentative du patrimoine culturel immatériel de l'humanité.                     |
+
+A note that only explained the tier is removed, not replaced: an empty or
+absent `notes` renders nothing, which is the silence the reader is owed.
+`scripts/afrik/stripTierProvenanceNotes.ts` removes the generated sentences and
+keeps whatever a curator wrote around them.
 
 That last row is its own lesson. DEC-040 lets a fiche name only public figures,
 the deceased, or the self-identified, so a curator searching for eligible bearers
@@ -65,8 +90,15 @@ order to understand that no bearer is documented.
 ## The gate
 
 `checkEditorialRules.ts` enforces this as the `reader-facing-register` rule, at
-`error` severity, on every fiche in `dataset/source/afrik/`. It runs in CI
-through `.github/workflows/editorial-rules.yml`:
+`error` severity, on every fiche in `dataset/source/afrik/` and every English
+sidecar in `dataset/translations/en/`. It walks the fiche and reads every
+`sources[]` array wherever it sits — `sources[]`, `names[].sources[]`,
+`content.sources[]`, `content.historicalAffiliation.sources[]` — rather than a
+list of locations, which missed a new one each time a chapter gained sources.
+`_`-prefixed keys are skipped. It reads a French fiche against the English list
+as well, because a French fiche's source notes are often English. It runs in CI
+through
+`.github/workflows/editorial-rules.yml`:
 
 ```bash
 npx tsx scripts/ci/checkEditorialRules.ts
@@ -76,8 +108,10 @@ npx tsx scripts/ci/checkEditorialRules.ts
 `_coverage-findings.json`, `_manifest.json` — are the curator's own worksheets.
 Nothing loads them and no surface renders them, so the rule leaves them alone.
 
-The banned vocabulary lives in one exported constant,
-`INTERNAL_REGISTER_PATTERNS`, so this document and the gate cannot drift apart.
+The banned vocabulary lives in two exported constants in
+`src/lib/editorial/readerRegister.ts` — `INTERNAL_REGISTER_PATTERNS` (French)
+and `INTERNAL_REGISTER_PATTERNS_EN` (English) — so this document and the gate
+cannot drift apart.
 
 ## Prompt block for curation sessions
 
@@ -88,9 +122,10 @@ Paste this into any agent session that writes or edits fiches.
 **Register rule — mandatory.**
 
 Three fields of an AFRIK fiche are published to the reader word for word:
-`gaps[].reason`, `sources[].title`, `sources[].notes` (and
-`names[].sources[].*` on name fiches). There is no sanitising layer between what
-you write in them and what a visitor reads on the site.
+`gaps[].reason`, `sources[].title`, `sources[].notes` — wherever a fiche nests a
+`sources` array (`names[].sources[]`, `content.sources[]`,
+`content.historicalAffiliation.sources[]`). There is no sanitising layer between
+what you write in them and what a visitor reads on the site.
 
 In those three fields you must never write:
 
@@ -102,6 +137,13 @@ In those three fields you must never write:
 - the vocabulary of your own working process — _file d'attente_, _la passe_,
   _cette passe_, _protocole de recherche_, _revue claim-level_, _tier hérité_,
   _hors corpus_, _plan de couverture_, _vague N_, _Piste :_, _Recherche :_;
+- how a source's tier was decided — _domain ruling_, _citation shape_,
+  _authorized source catalogue_, _awaits editorial review_, _needs_review_,
+  _tier inféré_, _tier résolu_, _tier fondé sur…_, _catalogue de domaines
+  officiels_ — in any language, accented or not: set `tier`, and let the badge
+  speak; keep what the source is (publisher, edition, institution, what was read
+  or cross-checked, the Wikipedia language chain);
+- a ticket number (`ETNI-…`);
 - `Corpus AFRIK — …` as a source title.
 
 Write instead what the atlas knows or does not know, in French, addressed to a

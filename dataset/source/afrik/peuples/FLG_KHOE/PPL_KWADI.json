@@ -80,51 +80,48 @@
       {
         "title": "Ethnologue SIL International — Kwadi language (kwz, extinct)",
         "url": "https://www.ethnologue.com/language/kwz/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Glottolog — Kwadi, code kwad1244",
         "url": "https://glottolog.org/resource/languoid/id/kwad1244",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "Science Advances 2023 — Genome-wide variation in the Angolan Namib Desert reveals unique pre-Bantu heritage",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10516492/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for pmc.ncbi.nlm.nih.gov."
+        "tier": "referenced"
       },
       {
         "title": "Human Molecular Genetics 2021 — The genomic prehistory of peoples speaking Khoisan languages",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8117426/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for pmc.ncbi.nlm.nih.gov."
+        "tier": "referenced"
       },
       {
         "title": "Britannica — Khoisan languages",
         "url": "https://www.britannica.com/topic/Khoisan-languages/Classification-of-the-Khoisan-languages",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       },
       {
         "title": "UNESCO Atlas of the World's Languages in Danger — Kwadi",
         "url": "https://en.unesco.org/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of en.unesco.org."
+        "tier": "official"
       },
       {
         "title": "Rosetta Panglossia — Kwadi language (kwz)",
         "url": "https://rosettapanglossia.longnow.org/index.php?title=Kwadi_language_%28kwz%29",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for rosettapanglossia.longnow.org."
+        "tier": "referenced"
       },
       {
         "title": "Cambridge Core — Tracing contact and migration in pre-Bantu Southern Africa",
         "url": "https://www.cambridge.org/core/journals/evolutionary-human-sciences/article/tracing-contact-and-migration-in-prebantu-southern-africa-through-lexical-borrowing/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for cambridge.org."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

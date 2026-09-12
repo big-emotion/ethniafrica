@@ -92,27 +92,28 @@
       {
         "title": "Gumuz Language (GUK) – Ethnologue, SIL International",
         "url": "https://www.ethnologue.com/language/guk/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Wolde-Selassie Abbute, Gumuz and Highland Resettlers – Ethiopian Studies, 2004",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Bender, M. L. – Gumuz: A Sketch of Grammar and Lexicon, Afrika und Ubersee, 62-1, 1979, p. 38-69",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Ahland, Colleen – A grammar of Northern and Southern Gumuz (these de PhD), University of Oregon, 2004",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

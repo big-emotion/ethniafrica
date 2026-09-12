@@ -100,39 +100,38 @@
       {
         "title": "Ethnologue — Urhobo (urh)",
         "url": "https://www.ethnologue.com/language/urh/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Joshua Project — Urhobo in Nigeria",
         "url": "https://joshuaproject.net/people_groups/15728",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Okpe Union — Okpe Kingdom History",
         "url": "https://okpeunionng.net/okpe-kingdom-history/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers okpeunionng.net; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Darah, G.G. Battles of Songs: Udje Tradition of the Urhobo. Lagos: Delta Publications, 1982",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Purdue University CLCWeb — Urhobo Folklore and Udje Aesthetics",
         "url": "https://docs.lib.purdue.edu/cgi/viewcontent.cgi?article=3014&context=clcweb",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for docs.lib.purdue.edu."
+        "tier": "referenced"
       },
       {
         "title": "Ojaide, Tanure. The Poetry of Tanure Ojaide. Trenton NJ: Africa World Press, 2006",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

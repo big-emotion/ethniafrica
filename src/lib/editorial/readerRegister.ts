@@ -46,6 +46,8 @@ export const LANGUAGE_NEUTRAL_REGISTER_PATTERNS: ReadonlyArray<RegisterPattern> 
       pattern: /\b(?:PPL|FLG|PAT)_(?:[A-Z0-9_]+|\*)/,
     },
     { label: "internal corpus label", pattern: /Corpus AFRIK\s*—/i },
+    // A ticket number tells the reader which work queue produced a sentence.
+    { label: "ticket identifier", pattern: /\bETNI-\d+\b/ },
   ];
 
 // @req REQ-143
@@ -55,6 +57,15 @@ export const INTERNAL_REGISTER_PATTERNS: ReadonlyArray<RegisterPattern> = [
     label: "curation vocabulary",
     pattern:
       /file d'attente|passe de recherche|passe anthroponymique|protocole de recherche|claim-level|tier hérité|hors corpus|plan de couverture|vague \d+ du plan/i,
+  },
+  {
+    // The English tier-provenance class, written in French by hand — often
+    // unaccented. Each alternative names the tier decision itself, so a note
+    // that says what a source is ("vérifié au catalogue de la BnF",
+    // "encyclopédie adossée à…") stays readable.
+    label: "tier provenance",
+    pattern:
+      /\btier (?:inf[ée]r[ée]|r[ée]solu|fond[ée])|catalogue (?:de|des) (?:domaines|sources) (?:officiels|autoris[ée]es)|r[èe]gles? de domaine|doctrine des sources/i,
   },
 ];
 
@@ -70,6 +81,17 @@ export const INTERNAL_REGISTER_PATTERNS_EN: ReadonlyArray<RegisterPattern> = [
     label: "curation vocabulary",
     pattern:
       /(?:candidate|work|research) queue|research (?:pass|protocol)|anthroponym pass|claim-level|inherited tier|out(?:side)? (?:of )?(?:the )?corpus|coverage plan|wave \d+ of the plan/i,
+  },
+  {
+    // The tiering codemod explained its own decision in every note it wrote:
+    // which catalogue entry or domain ruling set the tier, or that nobody had
+    // ruled yet. The tier badge already tells the reader how far to trust a
+    // source; how the workshop reached it is the workshop's business. Curators
+    // who followed the codemod wrote the same reasoning by hand, hence the
+    // `needs_review` marker and "tiered referenced".
+    label: "tier provenance",
+    pattern:
+      /domain ruling|awaits editorial review|citation shape|authori[sz]ed source catalogue|needs_review|tiered (?:as )?(?:official|referenced|unverified)|tier table|\btier (?:resolved|inferred)\b/i,
   },
 ];
 

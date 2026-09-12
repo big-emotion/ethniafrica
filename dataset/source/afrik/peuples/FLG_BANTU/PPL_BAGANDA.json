@@ -155,94 +155,84 @@
       {
         "title": "Uganda Bureau of Statistics (UBOS) – National Population and Housing Census 2024",
         "url": "https://www.ubos.org/wp-content/uploads/2025/06/Buganda-Sub-Region-Census-2024-Profile.pdf",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for ubos.org."
+        "tier": "official"
       },
       {
         "title": "SIL Ethnologue – Luganda (lug)",
         "url": "https://www.ethnologue.com/language/lug/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Roscoe, John (1911). The Baganda: An Account of Their Native Customs and Beliefs. Macmillan",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "UNESCO – Barkcloth making in Uganda (patrimoine immatériel)",
         "url": "https://ich.unesco.org/en/RL/the-making-and-cultural-practices-of-the-kasubi-tombs-00027",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of ich.unesco.org."
+        "tier": "official"
       },
       {
         "title": "Buganda Kingdom official website - History",
         "url": "https://buganda.or.ug/history-of-buganda/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for buganda.or.ug."
+        "tier": "unverified"
       },
       {
         "title": "Uganda Bureau of Statistics (UBOS) - Population projections",
         "url": "https://www.ubos.org/",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for ubos.org."
+        "tier": "official"
       },
       {
         "title": "UNESCO - Barkcloth making in Uganda",
         "url": "https://ich.unesco.org/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of ich.unesco.org."
+        "tier": "official"
       },
       {
         "title": "EBSCO Research Starters - Rise of Buganda",
         "url": "https://www.ebsco.com/research-starters/history/rise-buganda",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for ebsco.com."
+        "tier": "referenced"
       },
       {
         "title": "CIA World Factbook — Uganda",
         "url": "https://www.cia.gov/the-world-factbook/countries/uganda/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+        "tier": "official"
       },
       {
         "title": "Uganda Bureau of Statistics (UBOS) — Uganda Population and Housing Census 2024",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Joshua Project — Baganda in Uganda",
         "url": "https://joshuaproject.net/people_groups/10346/ug",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "UNESCO — Bark cloth making in Uganda (Buganda) — Patrimoine culturel immateriel inscrit 2008",
         "url": "https://ich.unesco.org/en/RL/the-making-and-cultural-practices-of-the-kiganda-bark-cloth-in-uganda-00110",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of ich.unesco.org."
+        "tier": "official"
       },
       {
         "title": "Glottolog — Luganda (luganda1247)",
         "url": "https://glottolog.org/resource/languoid/id/luga1252",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "Uganda Bureau of Statistics (UBOS) — Population Projections 2025-2050",
         "url": "https://www.ubos.org/wp-content/uploads/publications/Population-Projections-2025_2050.pdf",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for ubos.org."
+        "tier": "official"
       },
       {
         "title": "eHRAF World Cultures — Ganda summary",
         "url": "https://ehrafworldcultures.yale.edu/cultures/fk07/summary",
-        "tier": "referenced",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ehraf\"."
+        "tier": "referenced"
       }
     ]
   },
-  "classificationStatus": "colonial-legacy"
+  "classificationStatus": "colonial-legacy",
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
+  }
 }

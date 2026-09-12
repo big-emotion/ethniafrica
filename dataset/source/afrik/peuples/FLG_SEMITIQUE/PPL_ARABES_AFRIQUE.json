@@ -184,45 +184,43 @@
       {
         "title": "Hourani, Albert - A History of the Arab Peoples. Harvard University Press, 1991",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Lapidus, Ira M. - A History of Islamic Societies. Cambridge University Press, 2002",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "SIL Ethnologue - Arabic language varieties",
         "url": "https://www.ethnologue.com/subgroups/arabic-1/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "CIA World Factbook - Country profiles (EGY, DZA, MAR, TUN, LBY, SDN, MRT, TCD, DJI, SOM)",
         "url": "https://www.cia.gov/the-world-factbook/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+        "tier": "official"
       },
       {
         "title": "ONU Population Division - World Population Prospects 2024",
         "url": "https://population.un.org/wpp/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\"."
+        "tier": "official"
       },
       {
         "title": "Djimadoumadji Naidongarti - Les peuples preislamiques et precoloniaux du Tchad. ACAREF, 2024",
         "url": "https://edition-efua.acaref.net/wp-content/uploads/sites/6/2024/03/4-DJIMADOUMADJI-Naidongarti.pdf",
-        "tier": "referenced",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "referenced"
       },
       {
         "title": "Minority Rights Group - Mauritania, Sudan, Chad profiles",
         "url": "https://minorityrights.org/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }
