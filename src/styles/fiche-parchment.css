@@ -1056,6 +1056,22 @@
   text-decoration: underline;
 }
 
+.afh-pill-code {
+  margin-left: 4px;
+  font-family: var(--afh-font-mono);
+  font-size: var(--afh-text-caption);
+  color: var(--afh-text-soft);
+}
+
+.afh-tile-value a {
+  color: var(--accent-ink, var(--afh-text));
+  text-decoration: none;
+}
+
+.afh-tile-value a:hover {
+  text-decoration: underline;
+}
+
 /* ── Callout ──────────────────────────────────────────────────────────
    An aside the section cannot say in its own prose. A rule in the
    surface's accent, never a box, so it reads as part of the same

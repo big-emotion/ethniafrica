@@ -1,7 +1,8 @@
 import { DossierLinks } from "@/components/dossiers/DossierLinks";
 import type { ReactNode } from "react";
 
-import { LanguagesSection } from "@/components/country/LanguagesSection";
+import { FicheTileChapter } from "@/components/fiche/FicheTileChapter";
+import { countryLanguageTiles } from "@/lib/fiche/languages";
 import { PeoplesSection } from "@/components/country/PeoplesSection";
 import { SourcesFooter } from "@/components/country/SourcesFooter";
 import { FicheSection as Section } from "@/components/fiche/FicheSection";
@@ -16,6 +17,7 @@ import { FicheAmendBand } from "@/components/fiche/FicheAmendBand";
 import { chapterAnchorId } from "@/lib/ficheChapters";
 import type { ProvenanceState } from "@/lib/fieldProvenance";
 import type { CountryPageData } from "@/lib/countryDataTransformer";
+import type { LanguageReference } from "@/types/afrik";
 import type { CountryDetail } from "@/types/afrik-frontend";
 import type { Language } from "@/types/shared";
 import { countryCopy } from "@/lib/i18n/copy/country";
@@ -30,6 +32,11 @@ export interface CountryParchmentProps {
   summaryFigures?: CountrySummaryFigures;
   languagesState?: ProvenanceState | "unavailable";
   hasSourceFlag?: boolean;
+  /**
+   * The languages the record shows — declared, or derived from its peoples by
+   * the route. Absent, the record falls back to the ones it declares.
+   */
+  languages?: readonly LanguageReference[];
   /** Name and culture chapters supplied by CountryRecordView. */
   children?: ReactNode;
   /**
@@ -56,10 +63,12 @@ export function CountryParchment({
   summaryFigures,
   languagesState,
   hasSourceFlag,
+  languages,
   children,
   onward,
 }: CountryParchmentProps) {
   const copy = countryCopy[language];
+  const languageReferences = languages ?? country.culture?.mainLanguages ?? [];
   const hasPeoples =
     data.peoples.rows.length > 0 ||
     Boolean(data.peoples.totalPopulationFormatted);
@@ -76,7 +85,7 @@ export function CountryParchment({
           }
         : null,
     peoples: country.demographics?.peoples?.length,
-    languages: data.languages.bubbles.length || null,
+    languages: languageReferences.length || null,
   };
 
   return (
@@ -117,8 +126,11 @@ export function CountryParchment({
             reason={copy.languagesUnavailable}
             language={language}
           />
-        ) : data.languages.bubbles.length > 0 ? (
-          <LanguagesSection data={data.languages} language={language} />
+        ) : languageReferences.length > 0 ? (
+          <FicheTileChapter
+            tiles={countryLanguageTiles(languageReferences, language)}
+            language={language}
+          />
         ) : (
           <FieldProvenanceMarker state="missing" language={language} />
         )}

@@ -3,14 +3,12 @@ import { AutonymExonymHeading } from "@/components/ui/AutonymExonymHeading";
 import { PeopleFicheHead } from "./PeopleFicheHead";
 import { PeopleDetailViewV2 } from "./PeopleDetailViewV2";
 import type { PeopleDetail } from "@/types/afrik-frontend";
-import { PeopleLanguageSection } from "./PeopleLanguageSection";
 import { PeopleRelatedPeoplesSection } from "./PeopleRelatedPeoplesSection";
 import { PeopleCountriesSection } from "./PeopleCountriesSection";
 import { SourcesFooter } from "@/components/country/SourcesFooter";
 import type { AssociatedGroup } from "@/lib/people/associatedPeopleLinks";
 import type {
   PeopleHeroData,
-  PeopleLanguageData,
   PeopleRelatedData,
   PeopleCountriesData,
 } from "@/lib/peopleDataTransformer";
@@ -47,14 +45,6 @@ const yorubaHero: PeopleHeroData = {
   languageFamilyName: "Niger-Congo",
   currentCountries: ["NGA", "BEN", "TGO", "GHA"],
   classificationStatus: null,
-};
-
-const language: PeopleLanguageData = {
-  mainLanguage: "Yoruba (Yorùbá)",
-  isoCodes: ["yor"],
-  dialects: ["Ìjẹ̀bú", "Ẹ̀gbá", "Ẹ̀kìtì", "Ọ̀yọ́", "Ìfẹ̀"],
-  vehicularRole:
-    "Langue véhiculaire au Nigeria du Sud-Ouest ; enseignée à l'université.",
 };
 
 const relatedPeoples: PeopleRelatedData = {
@@ -229,35 +219,6 @@ export const Hero_Desktop: Story = {
   name: "PeopleFicheHead — 1200px",
   parameters: { viewport: { defaultViewport: "desktop1200" } },
   render: Hero_Mobile.render,
-};
-
-// ==========================================
-// PeopleLanguageSection — 430 / 720 / 1200
-// ==========================================
-
-// @req REQ-115
-export const Language_Mobile: Story = {
-  name: "PeopleLanguageSection — 430px",
-  parameters: { viewport: { defaultViewport: "mobile430" } },
-  render: () => (
-    <Card>
-      <PeopleLanguageSection data={language} />
-    </Card>
-  ),
-};
-
-// @req REQ-115
-export const Language_Tablet: Story = {
-  name: "PeopleLanguageSection — 720px",
-  parameters: { viewport: { defaultViewport: "tablet720" } },
-  render: Language_Mobile.render,
-};
-
-// @req REQ-115
-export const Language_Desktop: Story = {
-  name: "PeopleLanguageSection — 1200px",
-  parameters: { viewport: { defaultViewport: "desktop1200" } },
-  render: Language_Mobile.render,
 };
 
 // ==========================================

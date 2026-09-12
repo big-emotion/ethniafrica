@@ -1,7 +1,7 @@
 import { cleanup, render, screen, within } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
 
-import { FicheCultureChapter } from "@/components/fiche/FicheCultureChapter";
+import { FicheTileChapter } from "@/components/fiche/FicheTileChapter";
 import type { ParagraphNoteData } from "@/components/people/peopleFicheNotes";
 import { countryCultureTiles, peopleCultureTiles } from "@/lib/fiche/culture";
 import { resolveAssociatedPeoples } from "@/lib/people/associatedPeopleLinks";
@@ -48,7 +48,7 @@ describe("fiche culture charter", () => {
   // @req REQ-097 REQ-153
   it("lays every rubric out as a closed tile on one grid", () => {
     const { container } = render(
-      <FicheCultureChapter tiles={ovamboTiles()} language="fr" />
+      <FicheTileChapter tiles={ovamboTiles()} language="fr" />
     );
     const grid = container.querySelector(".afh-tiles")!;
     expect(grid.children).toHaveLength(7);
@@ -69,7 +69,7 @@ describe("fiche culture charter", () => {
   // @req REQ-092 REQ-153
   it("folds a long single sentence behind its two-line preview", () => {
     render(
-      <FicheCultureChapter
+      <FicheTileChapter
         tiles={countryCultureTiles(countryRecord("NAM").culture, "fr")}
         language="fr"
       />
@@ -92,7 +92,7 @@ describe("fiche culture charter", () => {
       numberBySourceId: {},
     };
     render(
-      <FicheCultureChapter
+      <FicheTileChapter
         tiles={ovamboTiles()}
         notes={{ artsAndMusic: note }}
         language="fr"
@@ -108,7 +108,7 @@ describe("fiche culture charter", () => {
   // @req REQ-097
   it("links an associated group to its record when the atlas holds one", () => {
     render(
-      <FicheCultureChapter
+      <FicheTileChapter
         tiles={peopleCultureTiles(
           {
             culture: {},
@@ -134,7 +134,7 @@ describe("fiche culture charter", () => {
   // @req REQ-097
   it("places a record's own detail inside the tile it belongs to", () => {
     render(
-      <FicheCultureChapter
+      <FicheTileChapter
         tiles={ovamboTiles()}
         extras={{ relations: <p data-testid="relation-links">Liens</p> }}
         language="fr"
@@ -147,7 +147,7 @@ describe("fiche culture charter", () => {
 
   // @req REQ-119
   it("marks a chapter the record leaves silent", () => {
-    render(<FicheCultureChapter tiles={[]} language="fr" />);
+    render(<FicheTileChapter tiles={[]} language="fr" />);
     expect(screen.getByRole("status")).toBeVisible();
   });
 });

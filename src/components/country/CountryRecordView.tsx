@@ -3,14 +3,11 @@ import type { ReactNode } from "react";
 import { DossierLinks } from "@/components/dossiers/DossierLinks";
 import { FlagTarget } from "@/components/flags/FlagTarget";
 import { CountryParchment } from "@/components/country/CountryParchment";
-import { FicheCultureChapter } from "@/components/fiche/FicheCultureChapter";
+import { FicheTileChapter } from "@/components/fiche/FicheTileChapter";
 import { countryCultureTiles } from "@/lib/fiche/culture";
 import { FicheSection as Section } from "@/components/fiche/FicheSection";
 import { FicheNamesChapter } from "@/components/fiche/FicheNamesChapter";
-import {
-  transformCountryData,
-  transformLanguages,
-} from "@/lib/countryDataTransformer";
+import { transformCountryData } from "@/lib/countryDataTransformer";
 import type { CountryLanguagesFact } from "@/lib/countryLanguagesFact";
 import type { CountrySummaryFigures } from "@/components/fiche/FicheSummaryBrief";
 import type { CountryPatronymes } from "@/api/v2/services/patronymeFicheLinks";
@@ -57,12 +54,6 @@ export function CountryRecordView({
 }: CountryRecordViewProps) {
   const copy = countryCopy[language];
   const data = transformCountryData(country, language);
-  if (countryLanguages) {
-    data.languages = transformLanguages({
-      ...country.culture,
-      mainLanguages: countryLanguages.value,
-    });
-  }
 
   return (
     <div data-testid="country-record-view">
@@ -77,6 +68,7 @@ export function CountryRecordView({
             ? "unavailable"
             : countryLanguages?.provenance
         }
+        languages={countryLanguages?.value}
         onward={onward}
       >
         {/* After the languages, not beside "Noms à travers l'histoire": that
@@ -92,7 +84,7 @@ export function CountryRecordView({
         />
 
         <Section title={copy.sections.culture}>
-          <FicheCultureChapter
+          <FicheTileChapter
             tiles={countryCultureTiles(country.culture, language)}
             language={language}
           />

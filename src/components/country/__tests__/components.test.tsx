@@ -1,14 +1,12 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { PeoplesSection } from "../PeoplesSection";
-import { LanguagesSection } from "../LanguagesSection";
 import { SourcesFooter } from "../SourcesFooter";
 import { HistoricalFactsSection } from "../HistoricalFactsSection";
 import type {
   HeroData,
   PeoplesData,
   KingdomsData,
-  LanguagesData,
   HistoricalFactsData,
 } from "@/lib/countryDataTransformer";
 // ==========================================
@@ -234,82 +232,6 @@ describe("PeoplesSection", () => {
   });
 });
 // ==========================================
-// LanguagesSection
-// ==========================================
-
-describe("LanguagesSection", () => {
-  it("returns null when bubbles list is empty", () => {
-    const data: LanguagesData = {
-      bubbles: [],
-      totalCount: 0,
-      overflowCount: 0,
-    };
-    const { container } = render(<LanguagesSection data={data} />);
-    expect(container.firstChild).toBeNull();
-  });
-
-  it("renders language bubble names", () => {
-    const data: LanguagesData = {
-      bubbles: [
-        { name: "Français", isOfficial: true, size: "big", code: "fra" },
-        { name: "Mooré", isOfficial: false, size: "regular", code: "mos" },
-      ],
-      totalCount: 2,
-      overflowCount: 0,
-    };
-    render(<LanguagesSection data={data} />);
-    // Official language gets a building emoji prepended
-    expect(screen.getByText(/Français/)).toBeTruthy();
-    expect(screen.getByText("Mooré")).toBeTruthy();
-  });
-
-  it("renders official language with building icon prefix", () => {
-    const data: LanguagesData = {
-      bubbles: [{ name: "Français", isOfficial: true, size: "big" }],
-      totalCount: 1,
-      overflowCount: 0,
-    };
-    render(<LanguagesSection data={data} />);
-    // The component renders `🏛 Français` for official languages
-    const bubble = screen.getByText(/🏛.*Français/);
-    expect(bubble).toBeTruthy();
-  });
-
-  it("shows overflow count pill when overflowCount > 0", () => {
-    const data: LanguagesData = {
-      bubbles: [{ name: "Français", isOfficial: true, size: "big" }],
-      totalCount: 16,
-      overflowCount: 4,
-    };
-    render(<LanguagesSection data={data} />);
-    expect(screen.getByText(/\+ 4 autres langues/)).toBeTruthy();
-  });
-
-  // @req REQ-145
-  it("shows the overflow count in English", () => {
-    const data: LanguagesData = {
-      bubbles: [{ name: "French", isOfficial: true, size: "big" }],
-      totalCount: 16,
-      overflowCount: 4,
-    };
-    render(<LanguagesSection data={data} language="en" />);
-    expect(screen.getByText(/\+ 4 other languages/)).toBeVisible();
-  });
-
-  it("renders ISO code badge when code is provided", () => {
-    const data: LanguagesData = {
-      bubbles: [
-        { name: "Mooré", isOfficial: false, size: "regular", code: "mos" },
-      ],
-      totalCount: 1,
-      overflowCount: 0,
-    };
-    render(<LanguagesSection data={data} />);
-    expect(screen.getByText("mos")).toBeTruthy();
-  });
-});
-
-// ==========================================
 // HistoricalFactsSection
 // ==========================================
 
@@ -484,6 +406,5 @@ describe("the country fiche keeps all eight sections", () => {
     // what it encoded — a period inked by its regime — now lives in
     // CountryChronology, which the parchment actually renders.
     expect(country.HistoricalFactsSection).toBeDefined();
-    expect(country.LanguagesSection).toBeDefined();
   });
 });

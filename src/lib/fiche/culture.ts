@@ -8,45 +8,25 @@ import type {
 import type { CountryDetail } from "@/types/afrik-frontend";
 import type { Language } from "@/types/shared";
 
+import { getPeopleRoute } from "@/lib/routing";
+
 import { splitLeadSentence } from "./prose";
+import type { FicheTileData } from "./tileData";
+
+type CulturePassage = FicheTileData["passages"][number];
 
 /**
  * One culture chapter for both records (operator ruling, 2026-09-12). The
- * adapters return data tiles; `FicheCultureChapter` draws them. Every field
+ * adapters return data tiles; `FicheTileChapter` draws them. Every field
  * is carried whole — the country grid used to reduce each one to three
  * keywords with nothing to open — and folded behind its opening words.
  */
-
-interface CulturePassage {
-  /** The corpus field, so a note call can find it. */
-  field?: string;
-  /** A term above the passage when a tile gathers several fields. */
-  label?: string;
-  text: string;
-}
-
-interface CulturePill {
-  label: string;
-  /** The record this group names, when the atlas holds exactly one. */
-  peopleId?: string;
-}
-
-export interface CultureTile {
-  key: string;
-  label: string;
-  value?: string;
-  preview: string;
-  passages: CulturePassage[];
-  pills?: CulturePill[];
-  /** Words the record adds inside the tile, so the tile knows it has a body. */
-  extraText?: string[];
-}
 
 function passageTile(
   key: string,
   label: string,
   candidates: CulturePassage[]
-): CultureTile | null {
+): FicheTileData | null {
   const passages = candidates
     .filter((passage) => passage.text.trim())
     .map((passage) => ({ ...passage, text: passage.text.trim() }));
@@ -77,12 +57,12 @@ interface PeopleCultureInput {
 export function peopleCultureTiles(
   input: PeopleCultureInput,
   language: Language
-): CultureTile[] {
+): FicheTileData[] {
   const labels = ficheCopy[language].culture;
   const fields = peopleCopy[language].relatedFields;
   const { culture, related } = input;
 
-  const tiles: Array<CultureTile | null> = [
+  const tiles: Array<FicheTileData | null> = [
     passageTile("rites", labels.rites, [
       { field: "majorRites", text: culture.majorRites ?? "" },
     ]),
@@ -152,21 +132,24 @@ export function peopleCultureTiles(
         " · "
       ),
       passages: [],
+      wide: true,
       pills: input.associatedGroups.map((group) => ({
         label: group.label,
-        ...(group.peopleId ? { peopleId: group.peopleId } : {}),
+        ...(group.peopleId
+          ? { href: getPeopleRoute(language, group.peopleId) }
+          : {}),
       })),
     });
   }
 
-  return tiles.filter((tile): tile is CultureTile => tile !== null);
+  return tiles.filter((tile): tile is FicheTileData => tile !== null);
 }
 
 // @req REQ-092 REQ-153
 export function countryCultureTiles(
   culture: CountryDetail["culture"],
   language: Language
-): CultureTile[] {
+): FicheTileData[] {
   const labels = ficheCopy[language].culture;
   return [
     passageTile("religions", labels.religions, [
@@ -184,5 +167,5 @@ export function countryCultureTiles(
     passageTile("traditions", labels.traditions, [
       { text: culture?.culturalTraditions ?? "" },
     ]),
-  ].filter((tile): tile is CultureTile => tile !== null);
+  ].filter((tile): tile is FicheTileData => tile !== null);
 }

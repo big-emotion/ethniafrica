@@ -6,11 +6,8 @@ import {
   countryRecord,
   peopleRecord,
 } from "@/components/fiche/__tests__/corpusRecords";
-import {
-  countryCultureTiles,
-  peopleCultureTiles,
-  type CultureTile,
-} from "@/lib/fiche/culture";
+import { countryCultureTiles, peopleCultureTiles } from "@/lib/fiche/culture";
+import type { FicheTileData } from "@/lib/fiche/tileData";
 import { resolveAssociatedPeoples } from "@/lib/people/associatedPeopleLinks";
 import { transformPeopleData } from "@/lib/peopleDataTransformer";
 import type { PeopleDetail } from "@/types/afrik-frontend";
@@ -35,7 +32,7 @@ function peopleTiles(people: PeopleDetail, language: Language = "fr") {
 }
 
 /** Everything a reader reaches in a tile by opening it. */
-function tileText(tile: CultureTile): string {
+function tileText(tile: FicheTileData): string {
   return [
     tile.label,
     tile.value ?? "",

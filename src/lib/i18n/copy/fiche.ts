@@ -19,6 +19,20 @@ const en = {
    * The worded control that closes a tile. Words rather than a glyph, so the
    * reader knows what the press does before making it.
    */
+  /** The language tiles both records share. */
+  languages: {
+    main: "Main language",
+    family: "Language family",
+    dialects: "Speech varieties",
+    vehicular: "Vehicular role",
+    official: "Official language",
+    others: "Other languages of the country",
+    all: "Languages of the country",
+    dialectCount: (count: number) =>
+      `${count} ${count === 1 ? "variety" : "varieties"}`,
+    languageCount: (count: number) =>
+      `${count} ${count === 1 ? "language" : "languages"}`,
+  },
   /** The culture tiles both records share, one short word per rubric. */
   culture: {
     rites: "Rites",
@@ -99,6 +113,17 @@ const fr: FicheCopy = {
   sourceTierNote:
     "Chaque source porte son palier — l'autorité qu'on peut lui accorder.",
   contribute: "Contribuer",
+  languages: {
+    main: "Langue principale",
+    family: "Famille",
+    dialects: "Parlers",
+    vehicular: "Rôle véhiculaire",
+    official: "Langue officielle",
+    others: "Autres langues du pays",
+    all: "Langues du pays",
+    dialectCount: (count) => `${count} ${count === 1 ? "parler" : "parlers"}`,
+    languageCount: (count) => `${count} ${count === 1 ? "langue" : "langues"}`,
+  },
   culture: {
     rites: "Rites",
     symbols: "Symboles",

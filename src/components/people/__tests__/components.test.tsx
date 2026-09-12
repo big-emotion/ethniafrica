@@ -1,11 +1,8 @@
 import { describe, it, expect } from "vitest";
 import { render, screen, waitFor } from "@testing-library/react";
-import type { ParagraphChipData } from "../ProseWithChip";
-import { PeopleLanguageSection } from "../PeopleLanguageSection";
 import { PeopleRelatedPeoplesSection } from "../PeopleRelatedPeoplesSection";
 import { PeopleCountriesSection } from "../PeopleCountriesSection";
 import type {
-  PeopleLanguageData,
   PeopleRelatedData,
   PeopleCountriesData,
 } from "@/lib/peopleDataTransformer";
@@ -21,63 +18,6 @@ const unmatchedGroups = (related: PeopleRelatedData) =>
 // was a teal gradient card — teal is the country accent, and a people fiche
 // is ocre (atlas-charter §2). Its own tests live in PeopleFicheHead.test.tsx.
 // ==========================================
-
-// ==========================================
-// PeopleLanguageSection
-// ==========================================
-
-describe("PeopleLanguageSection", () => {
-  it("returns null when no language data", () => {
-    const empty: PeopleLanguageData = {
-      isoCodes: [],
-      dialects: [],
-    };
-    const { container } = render(<PeopleLanguageSection data={empty} />);
-    expect(container.firstChild).toBeNull();
-  });
-
-  it("renders mainLanguage when present", () => {
-    const data: PeopleLanguageData = {
-      mainLanguage: "Yoruba",
-      isoCodes: ["yor"],
-      dialects: [],
-    };
-    render(<PeopleLanguageSection data={data} />);
-    expect(screen.getByText("Yoruba")).toBeTruthy();
-  });
-
-  it("renders ISO codes as badges", () => {
-    const data: PeopleLanguageData = {
-      isoCodes: ["yor", "yor-NG"],
-      dialects: [],
-    };
-    render(<PeopleLanguageSection data={data} />);
-    expect(screen.getByText("yor")).toBeTruthy();
-    expect(screen.getByText("yor-NG")).toBeTruthy();
-  });
-
-  it("renders dialects list when non-empty", () => {
-    const data: PeopleLanguageData = {
-      isoCodes: [],
-      dialects: ["Ìjẹ̀bú", "Ẹ̀gbá"],
-    };
-    render(<PeopleLanguageSection data={data} />);
-    expect(screen.getByText("Ìjẹ̀bú")).toBeTruthy();
-    expect(screen.getByText("Ẹ̀gbá")).toBeTruthy();
-  });
-
-  it("renders vehicularRole when present", () => {
-    const data: PeopleLanguageData = {
-      isoCodes: [],
-      dialects: [],
-      vehicularRole: "Langue véhiculaire au Nigeria du Sud-Ouest",
-    };
-    render(<PeopleLanguageSection data={data} />);
-    expect(
-      screen.getByText("Langue véhiculaire au Nigeria du Sud-Ouest")
-    ).toBeTruthy();
-  });
-});
 
 // ==========================================
 // PeopleRelatedPeoplesSection
@@ -386,33 +326,3 @@ describe("PeopleCountriesSection", () => {
 // ==========================================
 // Inline chip integration (ETNI-36, Story 2.4)
 // ==========================================
-
-const sampleChip: ParagraphChipData = {
-  chipId: "test-chip",
-  confidenceScore: 82,
-  sourceCount: 2,
-  lastHumanAuditAt: "2025-03-10",
-  assertionStatement: "Assertion de test.",
-  sources: [],
-};
-
-describe("PeopleLanguageSection — chip integration", () => {
-  it("renders chip for vehicularRole when chip provided", async () => {
-    render(
-      <PeopleLanguageSection
-        data={{
-          isoCodes: [],
-          dialects: [],
-          vehicularRole: "Langue véhiculaire.",
-        }}
-        chips={{ vehicularRole: sampleChip }}
-      />
-    );
-    expect(screen.getByText("Langue véhiculaire.")).toBeTruthy();
-    await waitFor(() => {
-      expect(
-        screen.queryByRole("button") ?? screen.queryByText("voir les sources")
-      ).toBeTruthy();
-    });
-  });
-});

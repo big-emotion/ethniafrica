@@ -15,7 +15,6 @@ import type {
   KingdomEntryType,
   KingdomTimeRange,
   MajorPeopleEntry,
-  CultureSection,
   HistoricalNamesSection,
   HistoricalFactsSection,
   DemographicsSection,
@@ -118,21 +117,6 @@ export interface KingdomsData {
   layout: "scroll" | "stack";
 }
 
-export type LanguageBubbleSize = "big" | "regular" | "small";
-
-export interface LanguageBubble {
-  name: string;
-  code?: string;
-  isOfficial: boolean;
-  size: LanguageBubbleSize;
-}
-
-export interface LanguagesData {
-  bubbles: LanguageBubble[];
-  totalCount: number;
-  overflowCount: number;
-}
-
 export interface HistoricalFactsData {
   periods: Array<{
     label: string;
@@ -145,7 +129,6 @@ export interface CountryPageData {
   peoples: PeoplesData;
   kingdoms: KingdomsData;
   historicalFacts?: HistoricalFactsData;
-  languages: LanguagesData;
   sources: FicheSourceEntry[];
 }
 
@@ -567,45 +550,6 @@ export function transformKingdoms(
 }
 
 // @req REQ-001
-export function transformLanguages(culture?: CultureSection): LanguagesData {
-  if (!culture?.mainLanguages || culture.mainLanguages.length === 0) {
-    return { bubbles: [], totalCount: 0, overflowCount: 0 };
-  }
-
-  const langs = culture.mainLanguages;
-  const totalCount = langs.length;
-  const maxVisible = 12;
-  const overflowCount = Math.max(0, totalCount - maxVisible);
-  const visible = langs.slice(0, maxVisible);
-
-  const bubbles: LanguageBubble[] = visible.map((lang, index) => {
-    const isOfficial =
-      lang.isPrimary === true || (lang.name && /officiel/i.test(lang.name));
-
-    let size: LanguageBubbleSize;
-    if (isOfficial || index < 3) {
-      size = "big";
-    } else if (index < 8) {
-      size = "regular";
-    } else {
-      size = "small";
-    }
-
-    // Clean name: remove "(langue officielle, xxx)" part
-    const cleanName = lang.name.replace(/\s*\(.*\)/, "").trim();
-
-    return {
-      name: cleanName,
-      code: lang.isoCode,
-      isOfficial,
-      size,
-    };
-  });
-
-  return { bubbles, totalCount, overflowCount };
-}
-
-// @req REQ-001
 export function transformSources(sources?: FicheSource[]): FicheSourceEntry[] {
   return ficheSourceEntries(sources);
 }
@@ -660,7 +604,6 @@ export function transformCountryData(
       country.historicalFacts,
       language
     ),
-    languages: transformLanguages(country.culture),
     sources: transformSources(country.sources),
   };
 }

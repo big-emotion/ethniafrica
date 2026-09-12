@@ -9,7 +9,6 @@ import {
   transformHero,
   transformPeoples,
   transformKingdoms,
-  transformLanguages,
   transformSources,
   transformHistoricalFacts,
   transformCountryData,
@@ -767,34 +766,6 @@ describe("transformKingdoms", () => {
   });
 });
 
-describe("transformLanguages", () => {
-  it("produces 12 bubbles for BFA", () => {
-    const result = transformLanguages(bfaCountry.culture);
-    expect(result.bubbles).toHaveLength(12);
-    expect(result.totalCount).toBe(12);
-    expect(result.overflowCount).toBe(0);
-  });
-
-  it("marks French as official", () => {
-    const result = transformLanguages(bfaCountry.culture);
-    const french = result.bubbles.find((b) => b.name === "Français");
-    expect(french?.isOfficial).toBe(true);
-    expect(french?.size).toBe("big");
-  });
-
-  it("assigns correct sizes", () => {
-    const result = transformLanguages(bfaCountry.culture);
-    // First 3 should be big
-    expect(result.bubbles[0].size).toBe("big");
-    expect(result.bubbles[1].size).toBe("big");
-    expect(result.bubbles[2].size).toBe("big");
-    // Middle should be regular
-    expect(result.bubbles[5].size).toBe("regular");
-    // Last ones should be small
-    expect(result.bubbles[11].size).toBe("small");
-  });
-});
-
 describe("transformSources", () => {
   // @req REQ-092
   it("keeps every source whole, so each can show its own standing", () => {
@@ -903,7 +874,6 @@ describe("transformCountryData", () => {
     expect(result.hero.countryName).toBe("Burkina Faso");
     expect(result.peoples.rows.length).toBeGreaterThan(0);
     expect(result.kingdoms.cards.length).toBeGreaterThan(0);
-    expect(result.languages.bubbles.length).toBeGreaterThan(0);
     expect(result.sources).toBeTruthy();
   });
 

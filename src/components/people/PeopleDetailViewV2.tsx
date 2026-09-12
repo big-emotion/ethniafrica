@@ -13,7 +13,6 @@ import {
 } from "@/lib/people/associatedPeopleLinks";
 import type { SourcedRelation } from "@/types/relations";
 import {
-  PeopleLanguageSection,
   PeopleHistoricalAffiliationBlock,
   PeopleCountriesSection,
 } from "@/components/people";
@@ -25,7 +24,8 @@ import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip"
 import { PeopleNamingTiles } from "@/components/people/PeopleNamingTiles";
 import { FicheChronologyChapter } from "@/components/fiche/FicheChronologyChapter";
 import { peopleChronology } from "@/lib/fiche/chronology";
-import { FicheCultureChapter } from "@/components/fiche/FicheCultureChapter";
+import { FicheTileChapter } from "@/components/fiche/FicheTileChapter";
+import { peopleLanguageTiles } from "@/lib/fiche/languages";
 import { PeopleRelatedPeoplesSection } from "@/components/people/PeopleRelatedPeoplesSection";
 import { peopleCultureTiles } from "@/lib/fiche/culture";
 import { FicheNamesChapter } from "@/components/fiche/FicheNamesChapter";
@@ -170,6 +170,16 @@ export function PeopleDetailViewV2({
     peopleNameIndex ?? [],
     data.hero.peopleId
   );
+  const languageTiles = peopleLanguageTiles(
+    data.language,
+    resolvedFamilyName ?? data.language.languageFamilyName,
+    language
+  );
+  // The family comes from the record's affiliation, not from its languages
+  // rubric: a named family beside an empty rubric still leaves a gap to mark.
+  const languageRubricFilled = languageTiles.some(
+    (tile) => tile.key !== "family"
+  );
   const cultureTiles = peopleCultureTiles(
     {
       culture: data.culture,
@@ -313,18 +323,16 @@ export function PeopleDetailViewV2({
       </FicheSection>
 
       <FicheSection title={copy.sections.language}>
-        {data.language.mainLanguage ||
-        data.language.isoCodes.length > 0 ||
-        data.language.dialects.length > 0 ||
-        data.language.vehicularRole ? (
-          <PeopleLanguageSection
-            data={data.language}
+        {languageRubricFilled ? null : (
+          <FieldProvenanceMarker state="missing" language={language} />
+        )}
+        {languageTiles.length > 0 ? (
+          <FicheTileChapter
+            tiles={languageTiles}
             notes={notes?.language}
             language={language}
           />
-        ) : (
-          <FieldProvenanceMarker state="missing" language={language} />
-        )}
+        ) : null}
       </FicheSection>
 
       <FicheSection title={copy.sections.historicalRole}>
@@ -358,7 +366,7 @@ export function PeopleDetailViewV2({
       />
 
       <FicheSection title={copy.sections.culture}>
-        <FicheCultureChapter
+        <FicheTileChapter
           tiles={cultureTiles}
           notes={notes?.culture}
           extras={

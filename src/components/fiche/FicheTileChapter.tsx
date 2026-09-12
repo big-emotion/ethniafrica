@@ -5,12 +5,11 @@ import { FicheTile, FicheTiles } from "@/components/fiche/FicheTile";
 import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
 import type { ParagraphNoteData } from "@/components/people/peopleFicheNotes";
 import { ProseWithChip } from "@/components/people/ProseWithChip";
-import type { CultureTile } from "@/lib/fiche/culture";
-import { getPeopleRoute } from "@/lib/routing";
+import type { FicheTileData } from "@/lib/fiche/tileData";
 import type { Language } from "@/types/shared";
 
-export interface FicheCultureChapterProps {
-  tiles: readonly CultureTile[];
+export interface FicheTileChapterProps {
+  tiles: readonly FicheTileData[];
   /** One note call per sourced field, keyed by the field a passage names. */
   notes?: Partial<Record<string, ParagraphNoteData>>;
   /**
@@ -21,29 +20,29 @@ export interface FicheCultureChapterProps {
   language: Language;
 }
 
-function detailOf(tile: CultureTile): string {
+function detailOf(tile: FicheTileData): string {
   return [
     ...tile.passages.map((passage) => passage.text),
-    ...(tile.pills ?? []).map((pill) => pill.label),
+    ...(tile.pills ?? []).flatMap((pill) => [pill.label, pill.code ?? ""]),
     ...(tile.extraText ?? []),
   ].join(" ");
 }
 
 /**
- * The culture chapter both records share: the same tiles on one grid, a
- * preview of two lines, the whole field behind "+ en savoir plus".
+ * The tiles of a shared chapter — culture, languages — on one grid: a preview
+ * of two lines, the whole field behind "+ en savoir plus".
  *
  * The preview is plain text, so an opened tile restates its fields in full
  * with their note calls, and the preview steps aside. A chapter the record
  * leaves silent says so rather than disappearing (atlas charter §4).
  */
-// @req REQ-092 REQ-097 REQ-153
-export function FicheCultureChapter({
+// @req REQ-091 REQ-097 REQ-153
+export function FicheTileChapter({
   tiles,
   notes,
   extras,
   language,
-}: FicheCultureChapterProps) {
+}: FicheTileChapterProps) {
   if (tiles.length === 0) {
     return <FieldProvenanceMarker state="missing" language={language} />;
   }
@@ -55,11 +54,17 @@ export function FicheCultureChapter({
           key={tile.key}
           language={language}
           title={tile.label}
-          value={tile.value}
+          value={
+            tile.value && tile.valueHref ? (
+              <Link href={tile.valueHref}>{tile.value}</Link>
+            ) : (
+              tile.value
+            )
+          }
           closedFact={tile.preview}
           detailText={detailOf(tile)}
           bodyRestatesPreview={tile.passages.length > 0}
-          wide={Boolean(tile.pills?.length)}
+          wide={Boolean(tile.wide)}
         >
           {tile.passages.map((passage, index) => (
             <div
@@ -80,14 +85,15 @@ export function FicheCultureChapter({
           {tile.pills?.length ? (
             <ul className="afh-pills">
               {tile.pills.map((pill) => (
-                <li key={pill.label}>
-                  {pill.peopleId ? (
-                    <Link href={getPeopleRoute(language, pill.peopleId)}>
-                      {pill.label}
-                    </Link>
+                <li key={`${pill.label}-${pill.code ?? ""}`}>
+                  {pill.href ? (
+                    <Link href={pill.href}>{pill.label}</Link>
                   ) : (
-                    pill.label
+                    <span>{pill.label}</span>
                   )}
+                  {pill.code ? (
+                    <span className="afh-pill-code">{pill.code}</span>
+                  ) : null}
                 </li>
               ))}
             </ul>

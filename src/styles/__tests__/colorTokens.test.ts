@@ -378,7 +378,7 @@ describe("people fiche accent text on the warm parchment", () => {
   // @req REQ-090
   it("keeps the raw terracotta out of text colour on the people fiche", () => {
     const peopleComponents = [
-      "src/components/people/PeopleLanguageSection.tsx",
+      "src/components/fiche/FicheTileChapter.tsx",
       "src/components/people/PeopleCountriesSection.tsx",
     ];
 
