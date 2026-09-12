@@ -2,8 +2,11 @@ import { describe, it, expect, vi, beforeEach } from "vitest";
 
 import {
   COUNTRY_FAMILY_PAGE_SIZE,
+  getCountryLanguagesFact,
   getLanguageFamilyIdsByCountry,
 } from "@/lib/supabase/queries/afrik/countryLanguageFamilies";
+import { loadAllPeoples } from "@/lib/afrik/loaders/peopleLoader";
+import { loadAllLanguages } from "@/lib/afrik/loaders/languageCsvLoader";
 
 const mockSupabase = { from: vi.fn() };
 
@@ -49,6 +52,27 @@ function mockCorpus(options: {
     table === "afrik_peoples" ? peoples : relations
   );
   return { peoples, relations };
+}
+
+function mockLanguageCorpus(options: {
+  residences?: Array<Array<Record<string, unknown>>>;
+  speakers?: Array<Array<Record<string, unknown>>>;
+  languages?: Array<Array<Record<string, unknown>>>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  speakersError?: any;
+}) {
+  const tables = {
+    afrik_people_countries: tableChain(options.residences ?? [[]]),
+    afrik_people_languages: tableChain(
+      options.speakers ?? [[]],
+      options.speakersError
+    ),
+    afrik_languages: tableChain(options.languages ?? [[]]),
+  };
+  mockSupabase.from.mockImplementation(
+    (table: keyof typeof tables) => tables[table]
+  );
+  return tables;
 }
 
 const fullPeoplePage = (familyId: string) =>
@@ -201,5 +225,174 @@ describe("the language families a country holds", () => {
     mockCorpus({ peoplesError: { message: "boom" } });
 
     await expect(getLanguageFamilyIdsByCountry()).rejects.toBeTruthy();
+  });
+
+  // @req REQ-119
+  it("rejects a fold when every permitted page is full", async () => {
+    mockCorpus({
+      peoples: Array.from({ length: 40 }, () => fullPeoplePage("FLG_X")),
+    });
+
+    await expect(getLanguageFamilyIdsByCountry()).rejects.toThrow(
+      /exceeded 40 pages/
+    );
+  });
+});
+
+describe("the languages a country holds", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
+  // @req REQ-119
+  it("returns seven named languages for Burundi from the current corpus", async () => {
+    const peoples = await loadAllPeoples();
+    const residents = peoples.filter((people) =>
+      people.currentCountries?.includes("BDI")
+    );
+    const codes = new Set(
+      residents.flatMap((people) => people.content.languages?.isoCodes ?? [])
+    );
+    const languages = loadAllLanguages(peoples).filter((language) =>
+      codes.has(language.id)
+    );
+    mockLanguageCorpus({
+      residences: [
+        residents.map((people) => ({
+          people_id: people.id,
+          country_id: "BDI",
+        })),
+      ],
+      speakers: [
+        residents.flatMap((people) =>
+          (people.content.languages?.isoCodes ?? []).map((language_id) => ({
+            people_id: people.id,
+            language_id,
+          }))
+        ),
+      ],
+      languages: [
+        languages.map((language) => ({
+          id: language.id,
+          name: language.name,
+          content: { nameProvenance: language.nameProvenance },
+        })),
+      ],
+    });
+
+    const fact = await getCountryLanguagesFact("BDI");
+
+    expect(fact.provenance).toBe("derived");
+    expect(fact.value).toHaveLength(7);
+    expect(fact.from?.length).toBeGreaterThan(0);
+  });
+
+  // @req REQ-119
+  it("keeps the country's declared languages without reading any join table", async () => {
+    const fact = await getCountryLanguagesFact("BDI", ["Kirundi", "français"]);
+
+    expect(fact).toEqual({
+      value: ["Kirundi", "français"],
+      provenance: "declared",
+    });
+    expect(mockSupabase.from).not.toHaveBeenCalled();
+  });
+
+  // @req REQ-119
+  it("derives Burundi's languages through its resident peoples and names their ids", async () => {
+    mockLanguageCorpus({
+      residences: [
+        [
+          { people_id: "PPL_HUTU_BURUNDI", country_id: "BDI" },
+          { people_id: "PPL_TUTSI_BURUNDI", country_id: "BDI" },
+          { people_id: "PPL_TWA", country_id: "BDI" },
+          { people_id: "PPL_HUTU_BURUNDI", country_id: "RWA" },
+          { people_id: "PPL_YORUBA", country_id: "NGA" },
+        ],
+      ],
+      speakers: [
+        [
+          { people_id: "PPL_HUTU_BURUNDI", language_id: "run" },
+          { people_id: "PPL_TUTSI_BURUNDI", language_id: "run" },
+          { people_id: "PPL_TWA", language_id: "run" },
+          { people_id: "PPL_YORUBA", language_id: "yor" },
+        ],
+      ],
+      languages: [
+        [
+          { id: "run", name: "Kirundi" },
+          { id: "yor", name: "Yorùbá" },
+        ],
+      ],
+    });
+
+    expect(await getCountryLanguagesFact("BDI")).toEqual({
+      value: ["Kirundi"],
+      provenance: "derived",
+      from: ["PPL_HUTU_BURUNDI", "PPL_TUTSI_BURUNDI", "PPL_TWA"],
+    });
+  });
+
+  // @req REQ-119
+  it("walks every relation and name table by an explicit, ordered range", async () => {
+    const filler = Array.from(
+      { length: COUNTRY_FAMILY_PAGE_SIZE },
+      (_, index) => ({ people_id: `PPL_${index}`, country_id: "NGA" })
+    );
+    const tables = mockLanguageCorpus({
+      residences: [filler, [{ people_id: "PPL_LAST", country_id: "BDI" }]],
+      speakers: [[{ people_id: "PPL_LAST", language_id: "run" }]],
+      languages: [[{ id: "run", name: "Kirundi" }]],
+    });
+
+    expect(await getCountryLanguagesFact("BDI")).toEqual({
+      value: ["Kirundi"],
+      provenance: "derived",
+      from: ["PPL_LAST"],
+    });
+    expect(tables.afrik_people_countries.range).toHaveBeenNthCalledWith(
+      2,
+      COUNTRY_FAMILY_PAGE_SIZE,
+      COUNTRY_FAMILY_PAGE_SIZE * 2 - 1
+    );
+    expect(tables.afrik_people_languages.range).toHaveBeenCalledWith(
+      0,
+      COUNTRY_FAMILY_PAGE_SIZE - 1
+    );
+    expect(tables.afrik_languages.range).toHaveBeenCalledWith(
+      0,
+      COUNTRY_FAMILY_PAGE_SIZE - 1
+    );
+    expect(tables.afrik_people_countries.order).toHaveBeenCalledWith(
+      "people_id"
+    );
+    expect(tables.afrik_people_languages.order).toHaveBeenCalledWith(
+      "people_id"
+    );
+    expect(tables.afrik_languages.order).toHaveBeenCalledWith("id");
+  });
+
+  // @req REQ-119
+  it("reports missing when no speaking people links the country to a named language", async () => {
+    mockLanguageCorpus({
+      residences: [[{ people_id: "PPL_TWA", country_id: "BDI" }]],
+      speakers: [[]],
+      languages: [[]],
+    });
+
+    expect(await getCountryLanguagesFact("BDI", [])).toEqual({
+      value: [],
+      provenance: "missing",
+    });
+  });
+
+  // @req REQ-119
+  it("rejects a failed join walk instead of returning a partial fact", async () => {
+    mockLanguageCorpus({
+      residences: [[{ people_id: "PPL_TWA", country_id: "BDI" }]],
+      speakersError: { message: "boom" },
+    });
+
+    await expect(getCountryLanguagesFact("BDI")).rejects.toBeTruthy();
   });
 });

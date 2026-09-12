@@ -1,5 +1,6 @@
 import { createServerClient } from "@/lib/supabase/server";
 import { logger } from "@/lib/api/logger";
+import type { ProvenancedValue } from "./derivedFicheFact";
 
 /**
  * Which linguistic families the corpus places in each country.
@@ -72,10 +73,9 @@ async function readAllRows<Row>(
     if (batch.length < COUNTRY_FAMILY_PAGE_SIZE) return rows;
   }
 
-  logger.error(
-    `${table} exceeded ${COUNTRY_FAMILY_MAX_PAGES} pages — the fold is truncated`
-  );
-  return rows;
+  const message = `${table} exceeded ${COUNTRY_FAMILY_MAX_PAGES} pages — the fold is truncated`;
+  logger.error(message);
+  throw new Error(message);
 }
 
 /**
@@ -129,4 +129,74 @@ export async function getLanguageFamilyIdsByCountry(): Promise<
       [...present].sort(),
     ])
   );
+}
+
+/** A country's languages when it has not declared its own list. */
+// @req REQ-119
+export async function getCountryLanguagesFact(
+  countryId: string,
+  declaredLanguages?: readonly string[]
+): Promise<ProvenancedValue<string[]>> {
+  const declared = (declaredLanguages ?? []).filter((name) => name.trim());
+  if (declared.length > 0) {
+    return { value: declared, provenance: "declared" };
+  }
+
+  const supabase = createServerClient();
+  const residences = await readAllRows<{
+    people_id: string;
+    country_id: string;
+  }>(supabase, "afrik_people_countries", "people_id, country_id", [
+    "people_id",
+    "country_id",
+  ]);
+
+  const peopleIds = new Set(
+    residences
+      .filter((residence) => residence.country_id === countryId)
+      .map((residence) => residence.people_id)
+  );
+  if (peopleIds.size === 0) return { value: [], provenance: "missing" };
+
+  const speakers = await readAllRows<{
+    people_id: string;
+    language_id: string;
+  }>(supabase, "afrik_people_languages", "people_id, language_id", [
+    "people_id",
+    "language_id",
+  ]);
+  const relevantSpeakers = speakers.filter((speaker) =>
+    peopleIds.has(speaker.people_id)
+  );
+  if (relevantSpeakers.length === 0) {
+    return { value: [], provenance: "missing" };
+  }
+
+  const languages = await readAllRows<{
+    id: string;
+    name: string;
+    content?: { nameProvenance?: string };
+  }>(supabase, "afrik_languages", "id, name, content", ["id"]);
+  // A name that was itself guessed from a people fiche has no independent
+  // language citation to support a second, country-level inference.
+  const nameById = new Map(
+    languages
+      .filter((language) => language.content?.nameProvenance !== "derived")
+      .map((language) => [language.id, language.name])
+  );
+  const names = new Set<string>();
+  const from = new Set<string>();
+  for (const speaker of relevantSpeakers) {
+    const name = nameById.get(speaker.language_id)?.trim();
+    if (!name) continue;
+    names.add(name);
+    from.add(speaker.people_id);
+  }
+
+  if (names.size === 0) return { value: [], provenance: "missing" };
+  return {
+    value: [...names].sort(),
+    provenance: "derived",
+    from: [...from].sort(),
+  };
 }
