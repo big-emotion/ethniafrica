@@ -63,8 +63,7 @@ one fails — a visual whose licence is not stated does not go out.
                   "question": "Ce nom viendrait de l'anglais « crew » ?",
                   "corps":    "Des marins krou montaient sur les navires européens."}
 
-The same block `ethni_carousel.py` draws as a cover, drawn by the same module
-(`ethni_compose.py`), because a viewer meets this channel mid-scroll and knows
+The same block a carousel draws as its cover, drawn by the same composer, because a viewer meets this channel mid-scroll and knows
 nothing. **It carries no entrance**: a block that fades in is a block that is not
 there on frame one, and the first witness made the viewer wait for scene two to
 learn what the video was about.

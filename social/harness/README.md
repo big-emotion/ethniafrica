@@ -4,26 +4,31 @@ The engine, the brand ending and every measured constraint live here. A project
 supplies only its narration, its scene sheet and its assets.
 
 ```
-python3 ethni_audio.py  <Name>    # TTS take → paced narration → captions
-python3 ethni_render.py <Name>    # scene sheet → master → burned captions
-python3 ethni_card.py     <Name>  # card.json + assets/ → the three social images
-python3 ethni_carousel.py <Name>  # cards.json + assets/ → six to eight ordered cards
+python3 ethni_audio.py      <Name>  # TTS take → paced narration → captions
+python3 ethni_montage.py    <Name>  # deck + alignment → video, composed by ethni_compose
+python3 ethni_carrousel2.py <Name>  # cards.json + assets/ → the deck in three formats
+python3 ethni_render.py     <Name>  # old-gabarit scene sheet only — re-renders montages cut before the move
 ```
 
-Four modules are shared and none of them has a second implementation:
+The shared modules, none of which has a second implementation:
 
-| Module             | What it owns                                             |
-| ------------------ | -------------------------------------------------------- |
-| `ethni_paths.py`   | where a production writes, and the one place it must not |
-| `ethni_brand.py`   | the lockup                                               |
-| `ethni_type.py`    | the text roles, the faces, the palette, the entrance     |
-| `ethni_plaque.py`  | the plaque figure                                        |
-| `ethni_compose.py` | the order slots stack in, and how tightly                |
+| Module                | What it owns                                                            |
+| --------------------- | ----------------------------------------------------------------------- |
+| `ethni_paths.py`      | where a production writes, and the one place it must not                |
+| `ethni_tokens.py`     | the palette, the formats and the type roles, read from the tokens       |
+| `ethni_compose.py`    | the three layouts of the gabarit, for a card and for a video keyframe   |
+| `ethni_brand.py`      | the lockup                                                              |
+| `ethni_soustitre.py`  | the captions                                                            |
+| `ethni_type.py`       | old gabarit: the text roles, the faces, the entrance                    |
+| `ethni_plaque.py`     | old gabarit: the plaque figure                                          |
+| `ethni_compose_v1.py` | old gabarit: the order slots stack in — kept only for `ethni_render.py` |
 
-`ethni_render.py`, `ethni_card.py` and `ethni_carousel.py` import them. That is the whole
-point: the mark, the type scale and the plaque on a video frame and on a post
-image have to be the same things, and two implementations of one thing are two
-implementations that drift.
+`ethni_carrousel2.py` and `ethni_montage.py` both draw through `ethni_compose.py`.
+That is the whole point: the mark, the type scale and the layout on a video frame
+and on a post image have to be the same things, and two implementations of one
+thing are two implementations that drift. The retired-gabarit card and carousel
+scripts were deleted once the video engine had moved too; `ethni_render.py` and
+the three old-gabarit modules go together when no old montage needs re-rendering.
 
 A bare subject name resolves under the workshop root, so the short form is both
 the easiest to type and the only one that cannot land somewhere else. An explicit
@@ -187,9 +192,10 @@ on frame one.
 never shortened to fit a frame, so the engine finds the largest scale at which every
 card of a deck clears its band, once per format.
 
-Full schema in `ethni_render.py`'s docstring and `ethni_carousel.py`'s; doctrine in
-`Gabarits/GABARITS-SOCIAL.md`; what was measured to get there in
-`Gabarits/GABARITS-SOCIAL.md`.
+The deck schema and the doctrine are §10 and the rest of
+`docs/design/gabarits-social/GABARITS-SOCIAL.md`; the old-gabarit scene sheet is in
+`ethni_render.py`'s docstring; what was measured to get there is in the dated notes
+under `docs/design/gabarits-social/notes/`.
 
 `items` still works and is the escape hatch for a composition no role covers. A
 project that reaches for it twice has found a missing role — add the role.
