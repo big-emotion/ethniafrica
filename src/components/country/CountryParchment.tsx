@@ -11,7 +11,7 @@ import {
   FicheSummaryBrief,
   type CountrySummaryFigures,
 } from "@/components/fiche/FicheSummaryBrief";
-import { FicheTile } from "@/components/fiche/FicheTile";
+import { CountryChronology } from "@/components/country/CountryChronology";
 import { chapterAnchorId } from "@/lib/ficheChapters";
 import type { ProvenanceState } from "@/lib/fieldProvenance";
 import type { CountryPageData } from "@/lib/countryDataTransformer";
@@ -45,10 +45,6 @@ export interface CountryParchmentProps {
    * render of it to an empty div — see `FicheJsonLd`.
    */
   onward?: ReactNode;
-}
-
-function firstSentence(text: string): string {
-  return text.match(/^.*?[.!?](?=\s|$)/u)?.[0] ?? text;
 }
 
 // @req REQ-115
@@ -188,49 +184,11 @@ export function CountryParchment({
 
       <Section title={copy.sections.history}>
         {hasHistory ? (
-          <ol className="afh-parchment-timeline afh-chronology-spine">
-            {data.kingdoms.cards.map((card) => (
-              <li className="afh-tl-item" key={`${card.name}-${card.period}`}>
-                <span className="afh-tl-period">{card.period ?? "—"}</span>
-                {card.historicalRole || card.centers?.length ? (
-                  <FicheTile
-                    title={card.name}
-                    closedFact={card.period ?? copy.historyDateMissing}
-                  >
-                    {card.historicalRole ? <p>{card.historicalRole}</p> : null}
-                    {card.centers?.length ? (
-                      <p>
-                        {copy.generated.centers} · {card.centers.join(" · ")}
-                      </p>
-                    ) : null}
-                  </FicheTile>
-                ) : (
-                  <h3>{card.name}</h3>
-                )}
-              </li>
-            ))}
-            {data.historicalFacts?.periods.map((period) => {
-              const lead = firstSentence(period.content);
-              const remainder = period.content.slice(lead.length).trim();
-              return (
-                <li
-                  className="afh-tl-item afh-tl-item--fact"
-                  key={period.label}
-                >
-                  {remainder ? (
-                    <FicheTile title={period.label} closedFact={lead}>
-                      <p>{remainder}</p>
-                    </FicheTile>
-                  ) : (
-                    <div>
-                      <h3>{period.label}</h3>
-                      <p>{lead}</p>
-                    </div>
-                  )}
-                </li>
-              );
-            })}
-          </ol>
+          <CountryChronology
+            entities={data.kingdoms.cards}
+            accounts={data.historicalFacts}
+            language={language}
+          />
         ) : (
           <FieldProvenanceMarker state="missing" language={language} />
         )}

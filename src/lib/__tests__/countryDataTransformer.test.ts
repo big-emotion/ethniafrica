@@ -668,14 +668,19 @@ describe("transformKingdoms", () => {
     expect(result.cards[0].tags).toHaveLength(3);
   });
 
-  it("filters out colonies", () => {
+  /**
+   * The list used to be cut to precolonial polities, on the stated promise
+   * that colonial administrations and modern states appeared "further down
+   * the page" in a history timeline. That timeline was built and never wired,
+   * so the promise was never kept and the record simply dropped them. One
+   * chronology carries all three kinds now, each typed so its period can be
+   * inked by the kind of authority that held it.
+   */
+  // @req REQ-148
+  it("keeps every entry and types it, rather than dropping the colonial ones", () => {
     const result = transformKingdoms(bfaCountry.kingdoms);
-    expect(result.cards.every((c) => !/colonie/i.test(c.name))).toBe(true);
-  });
-
-  it("produces 3 cards for BFA (excluding colony)", () => {
-    const result = transformKingdoms(bfaCountry.kingdoms);
-    expect(result.cards).toHaveLength(3);
+    expect(result.cards.some((c) => /colonie/i.test(c.name))).toBe(true);
+    expect(result.cards.every((c) => Boolean(c.entryType))).toBe(true);
   });
 
   it("chooses scroll layout for >= 3 cards", () => {
@@ -704,7 +709,7 @@ describe("transformKingdoms", () => {
    * these four are what a reader met inside a section titled "Royaumes".
    */
   // @req REQ-148
-  it("drops a colonial administration that never says colonie", () => {
+  it("types a colonial administration that never says colonie", () => {
     const result = transformKingdoms([
       {
         name: "Sultanat d'Ajuran",
@@ -727,20 +732,29 @@ describe("transformKingdoms", () => {
         entryType: "modern",
       },
     ]);
-    expect(result.cards.map((c) => c.name)).toEqual(["Sultanat d'Ajuran"]);
+    expect(result.cards.map((c) => [c.name, c.entryType])).toEqual([
+      ["Sultanat d'Ajuran", "polity"],
+      ["Somaliland britannique", "colonial"],
+      ["Somalie italienne", "colonial"],
+      ["République fédérale du Nigeria", "modern"],
+    ]);
   });
 
   /**
-   * The name-based filter stays as a fallback while entries are being typed,
-   * so a fiche that has not been through the backfill does not regress.
+   * The name test stays as a fallback while entries are being typed, so a
+   * fiche the backfill has not reached still shows its colonial entries as
+   * colonial rather than filing them among the kingdoms.
    */
   // @req REQ-148
-  it("still drops an untyped entry whose name says colonie", () => {
+  it("falls back to the name to type an entry the backfill has not reached", () => {
     const result = transformKingdoms([
       { name: "Royaume Mossi", period: "XIe siècle - XIXe siècle" },
       { name: "Colonie de Haute-Volta", period: "1919-1932, 1947-1960" },
     ]);
-    expect(result.cards.map((c) => c.name)).toEqual(["Royaume Mossi"]);
+    expect(result.cards.map((c) => [c.name, c.entryType])).toEqual([
+      ["Royaume Mossi", "polity"],
+      ["Colonie de Haute-Volta", "colonial"],
+    ]);
   });
 
   // @req REQ-148

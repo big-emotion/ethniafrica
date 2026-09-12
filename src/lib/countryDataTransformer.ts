@@ -12,6 +12,7 @@ import {
 import type { CountryDetail } from "@/types/afrik-frontend";
 import type {
   Kingdom,
+  KingdomEntryType,
   KingdomTimeRange,
   MajorPeopleEntry,
   CultureSection,
@@ -103,6 +104,13 @@ export interface PeoplesData {
 export interface KingdomCard {
   name: string;
   period?: string;
+  /**
+   * Which of the three things sharing the corpus array this is. Carried onto
+   * the card so the chronology can ink a period by its regime rather than
+   * guessing the regime back out of the entry's name, which is the guess that
+   * once let twenty-five colonial administrations pass for polities.
+   */
+  entryType?: KingdomEntryType;
   /**
    * The machine bounds, carried through so the timeline can order itself.
    * `period` remains what is rendered — the bounds are never printed.
@@ -649,17 +657,27 @@ export function transformKingdoms(
     };
   }
 
-  // This section is the precolonial one; colonial administrations and modern
-  // states are shown by the history timeline further down the page. The typed
-  // kind decides, because the name cannot: "Somaliland britannique", "Rhodésie
-  // du Nord" and "Condominium anglo-égyptien" all passed the name test that
-  // used to stand here. The name test survives as a fallback for entries the
-  // backfill has not typed yet.
-  const filtered = kingdoms.filter((k) =>
-    k.entryType ? k.entryType === "polity" : !/colonie/i.test(k.name)
+  // Every entry, whatever its regime. The list used to be cut to precolonial
+  // polities on the promise that colonial administrations and modern states
+  // were "shown by the history timeline further down the page" — and that
+  // timeline was built and never wired, so for as long as the filter stood the
+  // record simply dropped them. One chronology carries all three now, and inks
+  // each period by its typed kind.
+  //
+  // The typed kind decides, because the name cannot: "Somaliland britannique",
+  // "Rhodésie du Nord" and "Condominium anglo-égyptien" all passed the name
+  // test that used to stand here. The name test survives only to type an entry
+  // the backfill has not reached.
+  const typed: (Kingdom & { entryType: KingdomEntryType })[] = kingdoms.map(
+    (k) => ({
+      ...k,
+      entryType:
+        k.entryType ?? (/colonie/i.test(k.name) ? "colonial" : "polity"),
+    })
   );
 
-  const ordered = inChronologicalOrder(filtered);
+  const ordered = inChronologicalOrder(typed);
+  const filtered = typed.filter((k) => k.entryType === "polity");
 
   // Build cards
   const cards: KingdomCard[] = ordered.map((k) => {
@@ -674,6 +692,7 @@ export function transformKingdoms(
     return {
       name: k.name.replace(/^\[|\]$/g, ""),
       period: k.period,
+      entryType: k.entryType,
       timeRange: k.timeRange,
       peoples: k.dominantPeoples?.join(", "),
       historicalRole: k.historicalRole,

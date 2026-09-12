@@ -829,12 +829,32 @@
 /* Soft, not the mockup's muted: this is nano-sized, and muted clears only
    2.8:1 on the warm ground. The guard in ficheParchmentContrast.test.ts
    fails the file outright if muted ever appears here. */
-.afh-tl-centers {
+/* Two classes, so it outranks `.afh-tl-item p` — the seat of power rides in a
+   paragraph to keep the left edge a phone would otherwise take from it, and a
+   paragraph is exactly what that rule already dresses. */
+.afh-tl-item .afh-tl-centers {
   display: block;
   margin-top: 6px;
   font-family: var(--afh-font-mono);
   font-size: var(--afh-text-caption);
   color: var(--afh-text-soft);
+}
+
+/* The regime inks the period. Three kinds of authority share the corpus's
+   one array of entities, and until now the page showed them in one colour —
+   which is the same as not distinguishing them.
+
+   The colonial ink is the token literally named for it, and it is the ink a
+   documented gap also borrows elsewhere on this surface. That double duty is
+   inherited, not chosen here, and is raised for a ruling rather than settled
+   quietly: a silence in the corpus and a colonial administration are not the
+   same claim and should not end up the same red. */
+.afh-tl-period[data-regime="colonial"] {
+  color: var(--country-colonial);
+}
+
+.afh-tl-period[data-regime="modern"] {
+  color: var(--country-green);
 }
 
 /* ── Wide layout ──────────────────────────────────────────────────── */

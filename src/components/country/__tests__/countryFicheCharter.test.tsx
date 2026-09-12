@@ -250,6 +250,79 @@ describe("country fiche charter", () => {
     expect(undated?.textContent).not.toMatch(/\d{4}/);
   });
 
+  /**
+   * A precolonial kingdom, a colonial administration and a modern state are
+   * three kinds of authority, and the corpus types each one. The record used
+   * to cut the chronology to the first kind, on the stated promise that the
+   * other two appeared "further down the page" — in a timeline that was
+   * written and never wired. So the promise went unkept and a reader was
+   * shown the kingdoms of a country and none of what replaced them.
+   */
+  // @req REQ-154
+  it("shows all three kinds of authority, each period inked by its own", () => {
+    const { container } = renderParchment(
+      countryFixture({
+        kingdoms: [
+          {
+            name: "Royaume du Burundi",
+            period: "XVIe siècle - 1966",
+            entryType: "polity",
+            historicalRole: "Monarchie du mwami.",
+          },
+          {
+            name: "Ruanda-Urundi",
+            period: "1916 - 1962",
+            entryType: "colonial",
+            historicalRole: "Mandat belge, puis tutelle.",
+          },
+          {
+            name: "République du Burundi",
+            period: "1966 - présent",
+            entryType: "modern",
+            historicalRole: "Abolition de la monarchie.",
+          },
+        ],
+      })
+    );
+
+    const chapter = container.querySelector('[data-fiche-section="Histoire"]');
+    expect(chapter).toHaveTextContent("Ruanda-Urundi");
+    expect(chapter).toHaveTextContent("République du Burundi");
+
+    const regimes = Array.from(
+      chapter?.querySelectorAll(".afh-tl-period") ?? [],
+      (period) => period.getAttribute("data-regime")
+    );
+    expect(regimes).toEqual(["polity", "colonial", "modern"]);
+  });
+
+  // A seat of power is a fact about an entity, and the corpus states it. It
+  // used to be printed in the paragraph dress of the account above it, which
+  // read as one more sentence rather than as a place.
+  // @req REQ-154
+  it("names the seats of power under the account that mentions them", () => {
+    const { container } = renderParchment(
+      countryFixture({
+        kingdoms: [
+          {
+            name: "Royaume du Burundi",
+            period: "XVIe siècle - 1966",
+            entryType: "polity",
+            historicalRole: "Monarchie du mwami.",
+            politicalCenters: ["Gitega", "Muramvya"],
+          },
+        ],
+      })
+    );
+
+    const seats = container.querySelector(
+      '[data-fiche-section="Histoire"] .afh-tl-centers'
+    );
+    expect(seats).toHaveTextContent("Gitega · Muramvya");
+    // A paragraph, because that is what keeps it left of a phone's centre.
+    expect(seats?.tagName).toBe("P");
+  });
+
   // @req REQ-154
   it("keeps a historical period's first sentence visible while disclosing its longer account", () => {
     const { container } = renderParchment(
