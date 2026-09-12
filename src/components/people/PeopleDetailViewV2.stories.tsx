@@ -340,7 +340,9 @@ export const History_Mobile: Story = {
   parameters: { viewport: { defaultViewport: "mobile430" } },
   render: () => (
     <Card>
-      <PeopleHistoryTimeline data={history} />
+      <ol className="afh-parchment-timeline">
+        <PeopleHistoryTimeline data={history} />
+      </ol>
     </Card>
   ),
 };

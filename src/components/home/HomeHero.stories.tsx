@@ -20,6 +20,7 @@ const meta: Meta<typeof HomeHero> = {
   title: "Home/HomeHero",
   component: HomeHero,
   tags: ["autodocs"],
+  args: { language: "fr" },
   parameters: {
     layout: "fullscreen",
     viewport: { viewports },
