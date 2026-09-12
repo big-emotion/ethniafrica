@@ -364,10 +364,16 @@ export default async function PeuplesHubPage({
                       autonym={selfAppellationOf(people)}
                     />
                     <div className="mt-2 flex flex-wrap items-center gap-2 text-afh-small text-afh-text-soft">
+                      {/* Unlinked: the row is already the link. A doctrine
+                          anchor inside it is an <a> inside an <a>, which the
+                          HTML parser splits apart, so the server markup could
+                          never match React's tree (React #418). The doctrine
+                          entry stays one click away, on the fiche. */}
                       {people.classificationStatus && (
                         <ClassificationBadge
                           status={people.classificationStatus}
                           language={language}
+                          linksToDoctrine={false}
                         />
                       )}
                       {familyLabels.get(people.languageFamilyId) && (
