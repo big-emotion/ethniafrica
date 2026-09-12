@@ -89,9 +89,15 @@ jobs:
 
       - name: Install gitleaks
         shell: bash
+        # The digest is the linux_x64 line of the release's
+        # gitleaks_8.21.2_checksums.txt, pinned here rather than fetched: a
+        # checksums file downloaded from the same release a swapped tarball came
+        # from would vouch for it. The binary runs with this job's write token.
         run: |
-          curl -sSfL "https://github.com/gitleaks/gitleaks/releases/download/v8.21.2/gitleaks_8.21.2_linux_x64.tar.gz" \
-            | tar -xz -C /usr/local/bin gitleaks
+          tarball="$RUNNER_TEMP/gitleaks.tar.gz"
+          curl -sSfL -o "$tarball" "https://github.com/gitleaks/gitleaks/releases/download/v8.21.2/gitleaks_8.21.2_linux_x64.tar.gz"
+          echo "5bc41815076e6ed6ef8fbecc9d9b75bcae31f39029ceb55da08086315316e3ba  $tarball" | sha256sum --check --strict
+          tar -xzf "$tarball" -C /usr/local/bin gitleaks
 
       - name: Run Reviewer agent
         id: run-reviewer
@@ -200,7 +206,7 @@ jobs:
         run: |
           mkdir -p codex-home
           npx -y -p @big-emotion/ferry@v1.1.2 ferry-codex-config > codex-home/config.toml
-      - uses: openai/codex-action@a26d2d4d8b78a694338b8e3715c3630254340b2c # v1
+      - uses: openai/codex-action@52fe01ec70a42f454c9d2ebd47598f9fd6893d56 # v1.11
         with:
           openai-api-key: ${{ secrets.OPENAI_API_KEY }}
           prompt: ${{ steps.prompt.outputs.prompt }}

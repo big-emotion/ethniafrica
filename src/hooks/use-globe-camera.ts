@@ -211,7 +211,6 @@ export function useGlobeCamera(
     // enough not to compete with the question and search action.
     const radiansPerMillisecond = (Math.PI * 2) / 180_000;
     let lastTimestamp: number | null = null;
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setAutoRotating(true);
 
     const step = (timestamp: number) => {

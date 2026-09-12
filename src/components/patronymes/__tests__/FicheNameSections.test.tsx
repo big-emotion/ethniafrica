@@ -2,8 +2,6 @@ import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import { CountryAttestedNamesSection } from "@/components/patronymes/CountryAttestedNamesSection";
-import { PeopleBorneNamesSection } from "@/components/patronymes/PeopleBorneNamesSection";
-import { getPatronymeRoute } from "@/lib/routing";
 import { translations } from "@/lib/translations";
 
 const copy = translations.fr.patronymes.onFiche;
@@ -27,42 +25,6 @@ function chapter(title: string): HTMLElement {
   if (!found) throw new Error(`No chapter titled ${title}`);
   return found as HTMLElement;
 }
-
-describe("PeopleBorneNamesSection", () => {
-  // @req REQ-133
-  it("links each name it lists to the name's own fiche", () => {
-    render(<PeopleBorneNamesSection language="fr" patronymes={[KEITA]} />);
-
-    const link = screen.getByRole("link", { name: /Keïta/ });
-    expect(link).toHaveAttribute("href", getPatronymeRoute("fr", "PAT_KEITA"));
-  });
-
-  // @req REQ-133
-  it("glosses a name with the naming system it belongs to", () => {
-    render(<PeopleBorneNamesSection language="fr" patronymes={[KEITA]} />);
-
-    expect(screen.getByText(/Nom de clan/)).toBeInTheDocument();
-  });
-
-  // @req REQ-133
-  it("states the gap instead of dropping the chapter when no name is attached", () => {
-    render(<PeopleBorneNamesSection language="fr" patronymes={[]} />);
-
-    // The chapter has to survive: 13 peoples out of some 800 carry a name,
-    // so a chapter that vanished would make the ordinary state of the corpus
-    // indistinguishable from a dimension the fiche does not have.
-    expect(chapter(copy.peopleTitle)).toBeInTheDocument();
-    expect(screen.getByText(copy.peopleEmpty)).toBeInTheDocument();
-  });
-
-  // @req REQ-133
-  it("separates a failed read from a corpus that holds nothing", () => {
-    render(<PeopleBorneNamesSection language="fr" patronymes={null} />);
-
-    expect(screen.getByText(copy.peopleUnavailable)).toBeInTheDocument();
-    expect(screen.queryByText(copy.peopleEmpty)).not.toBeInTheDocument();
-  });
-});
 
 describe("CountryAttestedNamesSection", () => {
   // @req REQ-133

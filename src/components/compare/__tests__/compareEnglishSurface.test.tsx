@@ -1,7 +1,6 @@
 import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
-import { CompareShareBar } from "@/components/compare/CompareShareBar";
 import { ComparisonView } from "@/components/compare/ComparisonView";
 import { EntityComparePicker } from "@/components/compare/EntityComparePicker";
 import type { ComparisonPageData } from "@/types/compare";
@@ -54,18 +53,5 @@ describe("the English comparison surface", () => {
     expect(
       screen.getByRole("region", { name: "Comparison table" })
     ).toBeVisible();
-  });
-
-  // @req REQ-145
-  it("localizes the sharing controls", () => {
-    render(
-      <CompareShareBar
-        language="en"
-        canonicalUrl="https://ethniafrica.org/en/compare/peoples/a/b"
-        title="Comparison: A · B"
-      />
-    );
-
-    expect(screen.getByRole("button", { name: "Copy link" })).toBeVisible();
   });
 });

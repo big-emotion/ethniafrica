@@ -158,18 +158,3 @@ export function useConsent(): ConsentContextValue {
 
   return context;
 }
-
-/**
- * Consent for a caller that only reads it to decide whether to emit
- * telemetry, and whose real work must proceed either way.
- *
- * Absent a provider this answers `null` instead of throwing. `useConsent`
- * keeps throwing, and remains right to: a consent *banner* rendered outside
- * the provider is a bug that should be loud. But a report dialog is not: it
- * consults consent only to decide whether to send an analytics event, and
- * taking a page down over an optional event inverts their importance.
- */
-// @req REQ-046
-export function useOptionalConsent(): ConsentContextValue | null {
-  return useContext(ConsentContext) ?? null;
-}
