@@ -253,8 +253,14 @@ def _images_fin(dossier, premier, combien):
 
 
 def rendre_images(projet, deck, sous_titres, duree_par_scene, dossier, controle,
-                  plafond_secondes=None):
-    """Every keyframe of every scene, numbered so ffmpeg can read them in order."""
+                  plafond_secondes=None, manquantes=None):
+    """Every keyframe of every scene, numbered so ffmpeg can read them in order.
+
+    `manquantes` stamps the proof band on every frame. A proof used to be marked
+    by its filename alone, which put it one careless double-click away from being
+    published — and in a project that also holds an old-gabarit `work/final.mp4`,
+    the filename is exactly what nobody checks.
+    """
     dossier.mkdir(parents=True, exist_ok=True)
     for f in dossier.glob("*.png"):
         f.unlink()
@@ -283,7 +289,11 @@ def rendre_images(projet, deck, sous_titres, duree_par_scene, dossier, controle,
                 # The control renders with the clock switched off, not with a
                 # different composition: same durations, everything present.
                 instant=None if controle else instant,
-                duree=None if controle else duree)
+                duree=None if controle else duree,
+                # Scoped to the card on screen: the whole lot's gates on every
+                # frame repeat one sentence per card and hide the composition.
+                epreuve=(None if manquantes is None
+                         else gab.portes_de_la_carte(manquantes, carte)))
             im.save(dossier / f"{n:06d}.png")
             n += 1
         debut_scene += duree
@@ -389,7 +399,8 @@ def main():
 
     dossier = projet / "work" / f"images{suffixe}"
     images = rendre_images(projet, deck, sous_titres, duree_par_scene,
-                           dossier, controle, plafond_secondes=debut_fin)
+                           dossier, controle, plafond_secondes=debut_fin,
+                           manquantes=None if verdict.passe else verdict.manquantes)
     if debut_fin:
         _images_fin(dossier, images, round(fin_totale * FPS) - images)
         images = round(fin_totale * FPS)

@@ -34,6 +34,44 @@ def sous_titre_essai():
     return {"lignes": ["Une ligne de narration", "sur deux lignes."], "pivot": "narration"}
 
 
+# A rasterised edge is never one pixel wide; two is the slack a real glyph needs.
+ANTIALIAS = 2
+
+# A row inside the narration slot, clear of both its edges.
+V_NARRATION_MILIEU = gab.V_NARRATION[0] + gab.V_NARRATION[1] // 2
+
+
+def _bord_gauche_de_la_plaque(avec, sans, y, seuil=2):
+    """Where the narration plate starts, on the row `y`.
+
+    Found by differencing the frame against the same frame painted with no
+    subtitle, because the slot is reserved even when empty: the only thing that
+    changes on that row is the plate. Thresholding absolute pixels instead reads
+    the photograph's own contrast as a plate edge — measured, it answered x=15 on
+    a plate that starts past x=350.
+
+    The threshold is low because the plate is composited at alpha over whatever
+    the photograph holds: where the two nearly agree the first plate pixels move
+    the value only slightly, and a threshold of 18 reported the edge eight pixels
+    inside the plate.
+    """
+    for x in range(avec.width):
+        a, s_ = avec.getpixel((x, y)), sans.getpixel((x, y))
+        if max(abs(p - q) for p, q in zip(a[:3], s_[:3])) > seuil:
+            return x
+    return None
+
+
+def _rouges(im):
+    """Pixels carrying the proof band's red, which nothing else in the gabarit uses."""
+    r, v, b = (c.getdata() for c in im.convert("RGB").split())
+    return sum(
+        1
+        for rr, vv, bb in zip(r, v, b)
+        if rr > 120 and rr - vv > 60 and rr - bb > 60
+    )
+
+
 # ------------------------------------------------------- the four fixed slots
 
 
@@ -154,6 +192,93 @@ def test_everything_is_flush_left():
             bord = plaque.x if plaque is not None and bloc.nom == "v-vision" else bloc.x
             assert bord == gab.V_MARGE_X, (
                 f"carte {carte['rang']} : « {bloc.nom} » à x={bord}, pas ferré à gauche")
+
+
+def test_the_narration_plate_is_flush_left_like_everything_else():
+    """§9 bis — « ferré à gauche, toujours », and the plate is painted off-plan.
+
+    `test_everything_is_flush_left` walks the planned blocks, and the narration
+    plate is not one: it is drawn straight onto the frame. So the one block the
+    reader spends the whole montage looking at was the one block the alignment
+    gate never measured, and it was centred — two alignments on a card, which
+    §11 forbids outright.
+
+    Measured on the painted pixels rather than on a coordinate the painter hands
+    back, because the defect is what the frame shows.
+    """
+    deck = deck_essai()
+    carte = deck["cartes"][0]
+    image = image_de(carte)
+    court = {"lignes": ["Trois mots."], "pivot": ""}
+    avec = gab.peindre_video(carte, deck, image=image, sous_titre=court)
+    sans = gab.peindre_video(carte, deck, image=image, sous_titre=False)
+
+    bord = _bord_gauche_de_la_plaque(avec, sans, V_NARRATION_MILIEU)
+    assert bord is not None, "aucune plaque de narration peinte sur une ligne courte"
+    # The plate is the edge the reader sees, exactly as `test_everything_is_flush_left`
+    # measures the vision by its plate rather than by its padded text.
+    assert abs(bord - gab.V_MARGE_X) <= ANTIALIAS, (
+        f"la plaque de narration commence à x={bord}, pas ferrée à gauche sur "
+        f"x={gab.V_MARGE_X} — une ligne courte trahit un centrage"
+    )
+
+
+def test_a_proof_keyframe_is_stamped_on_the_frame():
+    """§3 of the engine brief — a proof says so in its pixels, not in its name.
+
+    The carousel path stamps the diagonal band and the gate list; the video path
+    took no `epreuve` argument at all, so a montage with eight unmet gates came
+    out visually identical to a good-to-publish file. Its only marker was the
+    filename, and a filename is exactly what nobody reads when a second montage
+    of the same subject sits in the next folder.
+    """
+    deck = deck_essai()
+    carte = deck["cartes"][0]
+    image = image_de(carte)
+    portes = ["carte 1 : l'image ne dit pas ce qu'elle montre"]
+
+    propre = gab.peindre_video(carte, deck, image=image, sous_titre=False)
+    tamponnee = gab.peindre_video(carte, deck, image=image, sous_titre=False,
+                                  epreuve=portes)
+
+    assert _rouges(tamponnee) > 0, (
+        "une épreuve vidéo ne porte aucun bandeau — elle est indiscernable "
+        "d'un bon à publier"
+    )
+    assert _rouges(propre) == 0, (
+        "un montage sans porte ouverte porte le bandeau d'épreuve"
+    )
+    # A card with nothing of its own to answer for is still in a failed lot.
+    sans_grief = gab.peindre_video(carte, deck, image=image, sous_titre=False,
+                                   epreuve=[])
+    assert _rouges(sans_grief) > 0, (
+        "une carte sans grief propre perd le bandeau, et son image passe pour "
+        "publiable alors que le lot est refusé"
+    )
+
+
+def test_a_proof_frame_still_shows_the_composition():
+    """§6 of the reset brief — a proof is looked at, so it has to be visible.
+
+    Stamping the lot's every gate on every frame is what buries it: eight cards
+    each missing an identity produced eight wrapped entries, two thirds of the
+    frame, and nothing left to judge. The gates are therefore scoped to the card
+    on screen.
+    """
+    deck = deck_essai()
+    cartes = deck["cartes"]
+    toutes = [f"carte {c['rang']} : l'image ne dit pas ce qu'elle montre" for c in cartes]
+
+    propres = gab.portes_de_la_carte(toutes, cartes[0])
+    assert propres == [toutes[0]], (
+        f"la carte 1 hérite des griefs des autres cartes : {propres}"
+    )
+
+    # A gate that names no card is about the lot, and belongs on every frame.
+    avec_lot = ["la licence n'est pas nommée sur les cartes [3]"] + toutes
+    assert avec_lot[0] in gab.portes_de_la_carte(avec_lot, cartes[0]), (
+        "un grief de lot disparaît des images, et rien ne le rappelle"
+    )
 
 
 def test_the_image_is_full_frame_on_every_keyframe():
