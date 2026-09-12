@@ -478,6 +478,27 @@ describe("transformEgoNetworkPreview", () => {
 });
 
 describe("transformPeopleCountries", () => {
+  // @req REQ-119
+  it("carries derived shares and a conflicting declared total as provenance-valued facts", () => {
+    const result = transformPeopleCountries({
+      totalPopulation: 10_500_000,
+      distributionByCountry: [
+        { country: "BDI", population: 12_200_000 },
+        { country: "RWA", population: 5_865_000 },
+      ],
+    });
+
+    expect(result.distributions[0].share).toEqual({
+      value: 67.5,
+      provenance: "derived",
+      from: ["content.demography.distributionByCountry"],
+    });
+    expect(result.discrepancy?.value).toEqual({
+      declaredTotal: 10_500_000,
+      summedTotal: 18_065_000,
+      relativeDifferencePercent: 72,
+    });
+  });
   // 1063 of these were written across 486 fiches before the strict model
   // declared the field, so the transform dropped every one of them.
   // @req REQ-003

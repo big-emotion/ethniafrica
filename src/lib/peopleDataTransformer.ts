@@ -29,6 +29,11 @@ import type {
 import type { NameRecordView } from "@/types/names";
 import type { RelationBadgeType } from "@/lib/relationsDataTransformer";
 import type { SourcedRelation } from "@/types/relations";
+import {
+  derivePeopleCountryShares,
+  type PopulationTotalDiscrepancy,
+} from "@/lib/supabase/queries/afrik/peopleCountryShare";
+import type { ProvenancedValue } from "@/lib/supabase/queries/afrik/derivedFicheFact";
 
 // ==========================================
 // OUTPUT TYPES
@@ -122,6 +127,7 @@ export interface CountryDistributionRow {
   population?: number;
   populationFormatted?: string;
   percentage?: number;
+  share?: ProvenancedValue<number>;
   /** Where inside the country, in the fiche's own words. */
   note?: string;
 }
@@ -131,6 +137,7 @@ export interface PeopleCountriesData {
   totalPopulationFormatted: string;
   referenceYear?: number;
   distributions: CountryDistributionRow[];
+  discrepancy?: ProvenancedValue<PopulationTotalDiscrepancy>;
   source?: string;
 }
 
@@ -385,15 +392,17 @@ export function transformPeopleCountries(
   demography?: GlobalDemographySection
 ): PeopleCountriesData {
   const totalPopulation = demography?.totalPopulation ?? 0;
+  const { shares, discrepancy } = derivePeopleCountryShares(demography ?? {});
 
   const distributions: CountryDistributionRow[] = (
     demography?.distributionByCountry ?? []
-  ).map((d) => ({
+  ).map((d, index) => ({
     country: d.country,
     population: d.population,
     populationFormatted:
       d.population != null ? formatPeoplePopulation(d.population) : undefined,
     percentage: d.percentage,
+    share: shares[index].share,
     note: d.note,
   }));
 
@@ -402,6 +411,7 @@ export function transformPeopleCountries(
     totalPopulationFormatted: formatPeoplePopulation(totalPopulation),
     referenceYear: demography?.referenceYear,
     distributions,
+    discrepancy,
     source: demography?.source,
   };
 }
