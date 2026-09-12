@@ -71,11 +71,22 @@ export const DEAD_CODE_CEILINGS: Readonly<Record<DeadCodeCategory, number>> = {
   // `RELATION_TYPE_LABEL_FR`, which the games corpus exported and nothing
   // read; the test is now its only consumer, and the wiring PR should decide
   // whether a label with no renderer is worth keeping in either language.
-  exports: 22,
+  //
+  // 22 -> 9 when the production tally went in and the components reachable
+  // only from their own tests were deleted with their modules: the client
+  // cache, the data-version counter, three loader cache-clearers and a
+  // handful of helpers left behind by removed callers. What remains is eight
+  // shadcn sub-components kept as library surface, and one overlay reader
+  // (`getAfricaAdmin0Rings`) whose only caller was the removed Mercator stage.
+  exports: 9,
   // 50 -> 49 when the bilingual glossary's vocabulary file started keying
   // the patronyme labels by `PatronymeNameSystem`, which the parsers file
   // exported and nothing read.
-  types: 49,
+  //
+  // 49 -> 25 in the same purge: the V1-era relation, demography, CSV and
+  // response types in src/types/afrik.ts and afrik-frontend.ts. Most of what
+  // remains is inferred zod types in src/api/v2/schemas.
+  types: 25,
   duplicates: 0,
 };
 
@@ -124,15 +135,50 @@ export function tallyKnipReport(report: KnipReport): DeadCodeCounts {
   return counts;
 }
 
+/**
+ * The same ratchet over `knip --production`, which drops tests and stories as
+ * entry points.
+ *
+ * The default tally declares every test and story an entry point, so a
+ * component whose only importer is its own test counts as used. Measured
+ * 2026-09-12 in production mode, that blind spot held 27 unreachable
+ * components and seven runtime dependencies (recharts, vaul, four Radix
+ * primitives, react-is) while the default tally read zero.
+ *
+ * Only files and dependencies are ratcheted here. Production mode also
+ * reports exports and types, but the default tally already holds those, and
+ * ratcheting them twice would turn every export change into two edits for no
+ * extra signal.
+ */
+export const PRODUCTION_DEAD_CODE_CEILINGS: Readonly<
+  Record<"files" | "dependencies", number>
+> = {
+  // Fifteen modules exercised only by their tests, each waiting on a wiring
+  // decision rather than a deletion: the English games bank and the Mercator
+  // contrast it translates, the glossary's English entries, the person query
+  // and service, name variants, the rights lifecycle, revision publishing, and
+  // the oral-narrative and source parsers with the source model they share.
+  files: 15,
+  // `tailwindcss-animate` is imported by tailwind.config.ts, which knip's
+  // production mode does not follow even when the config is marked as a
+  // production entry. It is a real build dependency; the ceiling holds it at
+  // one so a second unused dependency cannot hide behind it.
+  dependencies: 1,
+};
+
 export function evaluateDeadCode(
   counts: DeadCodeCounts,
   options: {
     ceilings?: Readonly<Record<string, number>>;
     advisory?: ReadonlySet<string>;
+    /** Prefixes every line and names the constant to edit, e.g. "production". */
+    tally?: { label: string; ceilingsName: string };
   } = {}
 ): DeadCodeVerdict {
   const ceilings = options.ceilings ?? DEAD_CODE_CEILINGS;
   const advisory = options.advisory ?? ADVISORY_CATEGORIES;
+  const prefix = options.tally ? `${options.tally.label} ` : "";
+  const ceilingsName = options.tally?.ceilingsName ?? "DEAD_CODE_CEILINGS";
 
   const errors: string[] = [];
   const notices: string[] = [];
@@ -144,21 +190,24 @@ export function evaluateDeadCode(
     if (ceiling === undefined) {
       if (count > 0) {
         errors.push(
-          `${category}: ${count} finding(s) and no ceiling to measure them against — add one to DEAD_CODE_CEILINGS.`
+          `${prefix}${category}: ${count} finding(s) and no ceiling to measure them against — add one to ${ceilingsName}.`
         );
       }
       continue;
     }
 
     if (count > ceiling) {
-      const line = `${category}: ${count} exceeds the ceiling of ${ceiling}.`;
+      const line = `${prefix}${category}: ${count} exceeds the ceiling of ${ceiling}.`;
       if (advisory.has(category)) notices.push(`${line} (advisory)`);
       else errors.push(line);
       continue;
     }
 
     if (count < ceiling) {
-      const line = `${category}: down to ${count} from a ceiling of ${ceiling} — lower the ${category} ceiling to ${count} in scripts/ci/checkDeadCode.ts so it cannot climb back.`;
+      const lower = options.tally
+        ? `lower ${ceilingsName}.${category} to ${count}`
+        : `lower the ${category} ceiling to ${count}`;
+      const line = `${prefix}${category}: down to ${count} from a ceiling of ${ceiling} — ${lower} in scripts/ci/checkDeadCode.ts so it cannot climb back.`;
       if (advisory.has(category)) notices.push(`${line} (advisory)`);
       else errors.push(line);
     }
@@ -167,58 +216,98 @@ export function evaluateDeadCode(
   return { ok: errors.length === 0, errors, notices };
 }
 
-function runKnip(): KnipReport {
-  const stdout = execFileSync(
-    "npx",
-    ["knip", "--reporter", "json", "--no-progress"],
-    { encoding: "utf8", maxBuffer: 64 * 1024 * 1024 }
-  );
-  return JSON.parse(stdout) as KnipReport;
+export function evaluateProductionDeadCode(
+  counts: DeadCodeCounts,
+  options: { ceilings?: Readonly<Record<string, number>> } = {}
+): DeadCodeVerdict {
+  const ceilings = options.ceilings ?? PRODUCTION_DEAD_CODE_CEILINGS;
+  const held: DeadCodeCounts = {};
+  for (const category of Object.keys(ceilings)) {
+    held[category] = counts[category] ?? 0;
+  }
+  return evaluateDeadCode(held, {
+    ceilings,
+    advisory: new Set<string>(),
+    tally: {
+      label: "production",
+      ceilingsName: "PRODUCTION_DEAD_CODE_CEILINGS",
+    },
+  });
 }
 
-function main(): void {
-  let report: KnipReport;
+function runKnip(extraArgs: string[]): KnipReport {
   try {
-    report = runKnip();
+    const stdout = execFileSync(
+      "npx",
+      ["knip", "--reporter", "json", "--no-progress", ...extraArgs],
+      { encoding: "utf8", maxBuffer: 64 * 1024 * 1024 }
+    );
+    return JSON.parse(stdout) as KnipReport;
   } catch (error) {
     // knip exits non-zero whenever it has findings, which is the normal case
     // here — the findings are on stdout and are what we came for. Only an
     // unparseable stdout means knip itself failed.
     const stdout = (error as { stdout?: string }).stdout ?? "";
     try {
-      report = JSON.parse(stdout) as KnipReport;
+      return JSON.parse(stdout) as KnipReport;
     } catch {
-      console.error("check:dead — knip did not produce a report.");
+      console.error(
+        `check:dead — knip ${extraArgs.join(" ")} did not produce a report.`
+      );
       console.error(stdout || (error as Error).message);
       process.exit(1);
-      return;
     }
   }
+}
 
-  const counts = tallyKnipReport(report);
-  const verdict = evaluateDeadCode(counts);
-
-  console.log("check:dead — knip tallies against the recorded ceilings\n");
-  for (const category of DEAD_CODE_CATEGORIES) {
+function printTally(
+  title: string,
+  counts: DeadCodeCounts,
+  ceilings: Readonly<Record<string, number>>
+): void {
+  console.log(`check:dead — ${title}\n`);
+  for (const [category, ceiling] of Object.entries(ceilings)) {
     const count = counts[category] ?? 0;
-    const ceiling = DEAD_CODE_CEILINGS[category];
     const mark = count === ceiling ? " " : count > ceiling ? "↑" : "↓";
     console.log(
       `  ${mark} ${category.padEnd(26)} ${String(count).padStart(4)} / ${ceiling}`
     );
   }
+  console.log("");
+}
 
-  for (const notice of verdict.notices) console.log(`\n  advisory: ${notice}`);
-  for (const error of verdict.errors) console.error(`\n  ✖ ${error}`);
+function main(): void {
+  const counts = tallyKnipReport(runKnip([]));
+  const productionCounts = tallyKnipReport(
+    runKnip(["--production", "--include", "files,dependencies"])
+  );
 
-  if (!verdict.ok) {
+  const verdict = evaluateDeadCode(counts);
+  const productionVerdict = evaluateProductionDeadCode(productionCounts);
+
+  printTally(
+    "knip tallies against the recorded ceilings",
+    counts,
+    DEAD_CODE_CEILINGS
+  );
+  printTally(
+    "knip --production (tests and stories are not entry points)",
+    productionCounts,
+    PRODUCTION_DEAD_CODE_CEILINGS
+  );
+
+  for (const notice of verdict.notices) console.log(`  advisory: ${notice}`);
+  const errors = [...verdict.errors, ...productionVerdict.errors];
+  for (const error of errors) console.error(`  ✖ ${error}`);
+
+  if (errors.length > 0) {
     console.error(
-      "\nRun `npx knip --reporter symbols` to see the findings themselves."
+      "\nRun `npx knip --reporter symbols` (add `--production` for the second tally) to see the findings themselves."
     );
     process.exit(1);
   }
 
-  console.log("\nNo dead code beyond the recorded ceilings.");
+  console.log("No dead code beyond the recorded ceilings.");
 }
 
 if (process.argv[1]?.endsWith("checkDeadCode.ts")) main();

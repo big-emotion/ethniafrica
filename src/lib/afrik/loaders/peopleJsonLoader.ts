@@ -10,6 +10,7 @@ import { logger } from "@/lib/api/logger";
 const PEOPLES_PATH = join(process.cwd(), "dataset/source/afrik/peuples");
 const peopleCache = new Map<string, People>();
 
+// @req REQ-033
 export async function loadPeople(
   peopleId: string
 ): Promise<ParsedFile<People>> {
@@ -55,6 +56,7 @@ export async function loadPeople(
   }
 }
 
+// @req REQ-033
 export async function loadAllPeoples(): Promise<People[]> {
   try {
     const dirs = readdirSync(PEOPLES_PATH).filter((d) =>
@@ -79,6 +81,7 @@ export async function loadAllPeoples(): Promise<People[]> {
   }
 }
 
+// @req REQ-033
 export async function loadPeoplesByLanguageFamily(
   familyId: string
 ): Promise<People[]> {
@@ -98,8 +101,4 @@ export async function loadPeoplesByLanguageFamily(
     logger.error(`Failed to load peoples for family ${familyId}`, error);
     return [];
   }
-}
-
-export function clearPeopleCache(): void {
-  peopleCache.clear();
 }

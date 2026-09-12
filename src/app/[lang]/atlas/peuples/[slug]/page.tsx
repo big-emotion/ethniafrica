@@ -36,10 +36,7 @@ import { PeopleFicheTitle } from "@/components/people/PeopleFicheTitle";
 import { buildPeopleFieldOverlay } from "@/lib/atlas/overlays";
 import { buildPeoplePresenceFacts } from "@/components/people/peoplePresenceFacts";
 import { peopleFallbackNote } from "@/components/people/peopleFallbackNote";
-import {
-  getPeopleById,
-  getPeopleNameIndex,
-} from "@/api/v2/services/peopleService";
+import { getPeopleNameIndex } from "@/api/v2/services/peopleService";
 import { getPeopleNamesDossier } from "@/api/v2/services/names";
 import { getPatronymesBorneByPeople } from "@/api/v2/services/patronymeFicheLinks";
 import { getPeopleFragmentation } from "@/api/v2/services/peopleFragmentation";
