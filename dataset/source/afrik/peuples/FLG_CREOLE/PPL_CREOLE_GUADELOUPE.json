@@ -111,9 +111,13 @@
       {
         "title": "Glottolog 5.3 - Guadeloupean Creole French (guad1243)",
         "url": "https://glottolog.org/resource/languoid/id/guad1243",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: none of the 776 people records has an English sidecar, so translating this one alone would make it the atlas's only English people record. It follows the people corpus's first translation pass."
+    }
   }
 }

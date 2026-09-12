@@ -90,33 +90,33 @@
       {
         "title": "SIL Ethnologue — Seychelles French Creole (crs)",
         "url": "https://www.ethnologue.com/language/crs/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "UNESCO — Moutya, patrimoine immatériel (2021)",
         "url": "https://ich.unesco.org/en/RL/moutya-01559",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of ich.unesco.org."
+        "tier": "official"
       },
       {
         "title": "Seychelles.com — The People of Seychelles: A Melting Pot of Cultures",
         "url": "https://www.seychelles.com/blog-details/2589/highlights/people-seychelles-melting-pot-cultures",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers seychelles.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "The Creole Melting Pot — The Moutya in Seychelles: a Brief History",
         "url": "https://www.thecreolemeltingpot.com/the-moutya-in-seychelles-a-brief-history/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers thecreolemeltingpot.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "CIA World Factbook — Seychelles",
         "url": "https://www.cia.gov/the-world-factbook/countries/seychelles/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

@@ -103,21 +103,23 @@
       {
         "title": "Mauritius Population 2025 – Worldometer",
         "url": "https://www.worldometers.info/world-population/mauritius-population/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for worldometers.info."
+        "tier": "unverified"
       },
       {
         "title": "Population Île Maurice : 1,3 million d'habitants – FairMoove, 2026",
         "url": "https://www.fairmoove.fr/guide-voyage/maurice/decouvrir/population-langues",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers fairmoove.fr; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Aapravasi Ghat – UNESCO World Heritage",
         "url": "https://whc.unesco.org/en/list/1227",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of whc.unesco.org."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

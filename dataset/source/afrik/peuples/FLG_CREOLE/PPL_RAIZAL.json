@@ -104,7 +104,7 @@
         "title": "SIL Ethnologue — Islander Creole English (icr)",
         "url": "https://www.ethnologue.com/language/icr/",
         "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\". Confirme la classification du créole de San Andrés-Providencia comme créole à base lexicale anglaise."
+        "notes": "Confirme la classification du créole de San Andrés-Providencia comme créole à base lexicale anglaise."
       },
       {
         "title": "DANE — Población Negra, Afrocolombiana, Raizal y Palenquera",
@@ -125,5 +125,10 @@
         "notes": "Article publié dans une revue académique universitaire ; documente la politique de « colombianisation » engagée en 1953 et la mobilisation identitaire raizale ayant abouti à la reconnaissance constitutionnelle de 1991."
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: none of the 776 people records has an English sidecar, so translating this one alone would make it the atlas's only English people record. It follows the people corpus's first translation pass."
+    }
   }
 }

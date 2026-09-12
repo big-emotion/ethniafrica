@@ -87,39 +87,38 @@
       {
         "title": "Ethnologue — Ghomara (gho)",
         "url": "https://www.ethnologue.com/language/gho/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Glottolog — Ghomara (ghom1257)",
         "url": "https://glottolog.org/resource/languoid/id/ghom1257",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "Joshua Project — Berber, Ghomara in Morocco",
         "url": "https://joshuaproject.net/people_groups/11882",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "IRCAM (Institut Royal de la Culture Amazighe) — Études amazighes du Rif",
         "url": "https://www.ircam.ma/",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for ircam.ma."
+        "tier": "official"
       },
       {
         "title": "Ibn Khaldoun, Abd ar-Rahman. Kitab al-Ibar (Histoire des Berbères). 14e siècle",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Al-Muqadassi. Ahsan at-Taqasim fi Marifat al-Aqalim. 10e siècle",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

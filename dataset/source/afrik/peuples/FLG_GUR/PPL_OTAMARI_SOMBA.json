@@ -88,33 +88,33 @@
       {
         "title": "Otammari in Benin – Joshua Project, 2025",
         "url": "https://joshuaproject.net/people_groups/14985/BN",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Koutammakou, the Land of the Batammariba – UNESCO World Heritage, 2004",
         "url": "https://whc.unesco.org/en/list/1140",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of whc.unesco.org."
+        "tier": "official"
       },
       {
         "title": "Pays Betammaribe and Pays Tamberma – African Landers, 2024",
         "url": "https://africanlanders.com/en/benin-en/benin-and-togo-pays-betammaribe-and-pays-tamberma-a-tribal-group-with-unique-constructions/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for africanlanders.com."
+        "tier": "unverified"
       },
       {
         "title": "101 Last Tribes – Tammari people",
         "url": "https://www.101lasttribes.com/tribes/tammari.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       },
       {
         "title": "Etude descriptive du ditammari – Theophile Nata, 1974",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

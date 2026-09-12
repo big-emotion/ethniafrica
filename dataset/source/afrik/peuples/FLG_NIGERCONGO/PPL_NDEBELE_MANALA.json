@@ -91,33 +91,33 @@
       {
         "title": "South African History Online — Ndebele",
         "url": "https://sahistory.org.za/article/ndebele",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for sahistory.org.za."
+        "tier": "referenced"
       },
       {
         "title": "Kruger Park Africa — The Southern Ndebele tribe",
         "url": "https://www.krugerpark.co.za/africa_ndebele.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for krugerpark.co.za."
+        "tier": "unverified"
       },
       {
         "title": "Kwekudee — Ndebele (Manala and Ndzundza)",
         "url": "https://kwekudee-tripdownmemorylane.blogspot.com/2013/12/ndebele-manala-ndebele-and-ndzundza.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for kwekudee-tripdownmemorylane.blogspot.com."
+        "tier": "unverified"
       },
       {
         "title": "Ethnologue (SIL) — isiNdebele [nbl]",
         "url": "https://www.ethnologue.com/language/nbl",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Statistics South Africa — Census 2011",
         "url": "https://www.statssa.gov.za/census/census_2011/",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for statssa.gov.za."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

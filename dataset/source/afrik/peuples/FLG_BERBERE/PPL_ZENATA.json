@@ -107,39 +107,38 @@
       {
         "title": "Ibn Khaldun. Kitab al-Ibar (Histoire des Berberes). Trad. de Slane. Alger, 1852-1856",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Modéran, Yves. Les Maures et l'Afrique romaine (4e-7e siecle). Rome: Ecole francaise de Rome, 2003",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Ilahiane, Hsain. Historical Dictionary of the Berbers (Imazighen). Lanham: Scarecrow Press, 2006",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Encyclopaedie Berbere — articles sur Zenata, Marinides, Zayyanides",
         "url": "https://journals.openedition.org/encyclopedieberbere/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the authorized source catalogue entry \"openedition\" (openedition.org), matched as a parent of journals.openedition.org."
+        "tier": "referenced"
       },
       {
         "title": "Ethnologue — Tarifit (rif)",
         "url": "https://www.ethnologue.com/language/rif/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Ethnologue — Chaoui (shy)",
         "url": "https://www.ethnologue.com/language/shy/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

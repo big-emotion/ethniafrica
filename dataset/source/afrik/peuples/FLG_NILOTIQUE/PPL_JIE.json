@@ -80,45 +80,43 @@
       {
         "title": "Gulliver, P.H. (1953). The Age-Set Organization of the Jie Tribe. Journal of the Royal Anthropological Institute, 83",
         "url": "https://www.semanticscholar.org/paper/The-Age-Set-Organization-of-the-Jie-Tribe-Gulliver/848ca133307012084047e26a165f36f395504282",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for semanticscholar.org."
+        "tier": "referenced"
       },
       {
         "title": "Gulliver, P.H. (1953). The Family Herds: A Study of Two Pastoral Tribes in East Africa, the Jie and Turkana",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "SOAS Research Online — The traditional history of the Jie of Uganda (thesis)",
         "url": "https://soas-repository.worktribe.com/output/418348",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for soas-repository.worktribe.com."
+        "tier": "referenced"
       },
       {
         "title": "Kyu Space — Rites of passage of the Jie community of Kotido District",
         "url": "https://kyuspace.kyu.ac.ug/bitstreams/e023ad71-0771-485c-ba59-ec4f0e6d1a68/download",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers kyuspace.kyu.ac.ug; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Kara-Tunga — Karamoja Bibliography",
         "url": "https://www.kara-tunga.com/karamoja-bibliography/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for kara-tunga.com."
+        "tier": "unverified"
       },
       {
         "title": "Swordshare Map — Ng'akarimojong ISO 639-3 kdj",
         "url": "https://map.swordshare.com/kdj",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for map.swordshare.com."
+        "tier": "unverified"
       },
       {
         "title": "Uganda Bureau of Statistics — National Population and Housing Census 2014",
         "url": "https://www.ubos.org/",
-        "tier": "official",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

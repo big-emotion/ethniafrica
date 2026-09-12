@@ -94,21 +94,23 @@
       {
         "title": "Migration Partnership Facility – Cabo Verde's Local Immigration Units Support Migrants Arriving by Boat, 2024",
         "url": "https://www.migrationpartnershipfacility.eu/news/answering-the-call-cabo-verdes-local-immigration-units-support-migrants-arriving-by-boat",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers migrationpartnershipfacility.eu; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Migration Policy Institute – Cabo Verde country profile",
         "url": "https://www.migrationpolicy.org/country-resource/cabo-verde",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for migrationpolicy.org."
+        "tier": "referenced"
       },
       {
         "title": "AAI-INE Cap-Vert – Enquete sur les etrangers et immigrants residant au Cap-Vert, 2022",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

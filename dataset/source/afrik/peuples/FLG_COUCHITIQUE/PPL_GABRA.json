@@ -95,39 +95,38 @@
       {
         "title": "101 Last Tribes — Gabra people",
         "url": "https://www.101lasttribes.com/tribes/gabra.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       },
       {
         "title": "Begin North Adventures — Gabra Tribe",
         "url": "https://beginnorthadventures.com/gabra-tribe/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for beginnorthadventures.com."
+        "tier": "unverified"
       },
       {
         "title": "Joshua Project — Oromo, Gabra in Kenya",
         "url": "https://joshuaproject.net/people_groups/19603/KE",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "SIL Ethnologue — Borana-Arsi-Guji Oromo (gax)",
         "url": "https://www.ethnologue.com/language/gax/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Ultimate Wild Safaris — The Gabbra people",
         "url": "https://ultimatewildsafaris.com/index.php/blog/the-journey-to-explore-the-gabbra-cultural-people-living-in-chalbi-desert-kenya",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers ultimatewildsafaris.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Robinson, P. W. (1985). Gabra Nomadic Pastoralism in Nineteenth and Twentieth Century Northern Kenya. Northwestern University dissertation",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

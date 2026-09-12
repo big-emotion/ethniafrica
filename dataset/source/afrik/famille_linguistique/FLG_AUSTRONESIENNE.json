@@ -64,81 +64,73 @@
       {
         "title": "Adelaar, K. Alexander (2005) – *The Austronesian Languages of Asia and Madagascar*. Routledge",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Dahl, Otto Christian (1951) – *Malgache et Maanjan : une comparaison linguistique*. Egede-Instituttet",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Blust, Robert (2013) – *The Austronesian Languages*. Asia-Pacific Linguistics",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Blench, Roger (2007) – \"New palaeozoogeographical evidence for the settlement of Madagascar\". *Azania: Archaeological Research in Africa*",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Hurles, Matthew E. et al. (2005) – \"The Dual Origin of the Malagasy in Island Southeast Asia and East Africa: Evidence from Maternal and Paternal Lineages\". *American Journal of Human Genetics*",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Pierron, Denis et al. (2017) – \"Genomic landscape of human diversity across Madagascar\". *Proceedings of the National Academy of Sciences*",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "UNESCO – *Atlas of the World's Languages in Danger* (2010)",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "SIL Ethnologue – Malagasy (mlg)",
         "url": "https://www.ethnologue.com/language/mlg",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "CIA World Factbook – Madagascar (2025)",
         "url": "https://www.cia.gov/the-world-factbook/countries/madagascar/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+        "tier": "official"
       },
       {
         "title": "ONU/UNFPA – Projections démographiques Madagascar (2025)",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Schmidt, W. (1899) – *Die sprachlichen Verhältnisse von Deutsch-Neuguinea*",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Glottolog 5.0 (2024) – Classification du nœud \"Malagasic\" [mala1537] : deux branches directes, \"North-Central Malagasic\" [nort3196] et \"Southwestern Malagasic\" [sout3174]",
         "url": "https://glottolog.org/resource/languoid/id/mala1537",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "World Bank (2023) – Population, total, Madagascar : 31 195 932 habitants. (contexte démographique du chiffre de ≈25 000 000 locuteurs du malgache retenu d'après Adelaar 2005)",
         "url": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=MG",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"world-bank\" (worldbank.org), matched as a parent of data.worldbank.org."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: none of the 24 linguistic family records has an English sidecar, so translating this one alone would make it the atlas's only English family record. This is a sequencing choice, not a pipeline refusal. It follows the family corpus's first translation pass."
+    }
   }
 }

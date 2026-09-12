@@ -78,39 +78,38 @@
       {
         "title": "Aka in Central African Republic – Minority Rights Group International, 2018",
         "url": "https://minorityrights.org/communities/aka/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+        "tier": "referenced"
       },
       {
         "title": "Culture and the Mind – Aka fieldsites, Universite de Sheffield",
         "url": "https://cultureandmind.sites.sheffield.ac.uk/fieldsites/aka",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for cultureandmind.sites.sheffield.ac.uk."
+        "tier": "referenced"
       },
       {
         "title": "Kisliuk, Michelle – Seize the Dance! BaAka Musical Life and the Ethnography of Performance, Oxford University Press, 2000",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Verdu, Paul et al. – Origins and Genetic Diversity of Pygmy Hunter-Gatherers from Western Central Africa, Science, 2009",
         "url": "https://www.science.org/content/article/short-history-african-pygmies",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for science.org."
+        "tier": "referenced"
       },
       {
         "title": "UNESCO – Polyphonic Singing of the Ba'Aka, Intangible Cultural Heritage",
         "url": "https://ich.unesco.org",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of ich.unesco.org."
+        "tier": "official"
       },
       {
         "title": "Discover Afrika – The BAaka peoples",
         "url": "https://discover-afrika.com/baaka-peoples/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers discover-afrika.com; the tier awaits editorial review."
+        "tier": "needs_review"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

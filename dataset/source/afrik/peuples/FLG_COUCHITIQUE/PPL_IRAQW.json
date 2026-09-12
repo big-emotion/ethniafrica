@@ -78,33 +78,33 @@
       {
         "title": "Iraqw Language (IRK) – Ethnologue",
         "url": "https://www.ethnologue.com/language/irk/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Iraqw – Glottolog iraq1241",
         "url": "https://glottolog.org/resource/languoid/id/iraq1241",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "Harvey A., Gorwaa (Tanzania) – Language Documentation and Description Journal",
         "url": "https://www.lddjournal.org/article/1200/galley/2445/download/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for lddjournal.org."
+        "tier": "referenced"
       },
       {
         "title": "Mous M., A Grammar of Iraqw, 1993 – référence académique standard sur la langue iraqw",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Appendix ISO 639-3 codes Africa – Wiktionary",
         "url": "https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for en.wiktionary.org."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: none of the 776 people records has an English sidecar, so translating this one alone would make it the atlas's only English people record. It follows the people corpus's first translation pass."
+    }
   }
 }

@@ -90,39 +90,38 @@
       {
         "title": "SIL Ethnologue — Aringa language (luc)",
         "url": "https://www.ethnologue.com/language/luc/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Joshua Project — Aringa in Uganda",
         "url": "https://joshuaproject.net/people_groups/19162",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "JSTOR — The Lugbara States (reference to Aringa-Ole'ba and Bari origins)",
         "url": "https://www.jstor.org/stable/24328592",
-        "tier": "referenced",
-        "notes": "Tier resolved from the authorized source catalogue entry \"jstor\"."
+        "tier": "referenced"
       },
       {
         "title": "Uganda Bureau of Statistics — National Population and Housing Census 2014",
         "url": "https://www.ubos.org/",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for ubos.org."
+        "tier": "official"
       },
       {
         "title": "101 Last Tribes — Aringa",
         "url": "http://www.101lasttribes.com/tribes/aringa.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       },
       {
         "title": "CIA World Factbook — Uganda",
         "url": "https://www.cia.gov/the-world-factbook/countries/uganda/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

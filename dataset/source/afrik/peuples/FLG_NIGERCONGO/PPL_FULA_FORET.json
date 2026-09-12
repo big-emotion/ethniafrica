@@ -107,45 +107,43 @@
       {
         "title": "Joshua Project — Fulbe Futa in Guinea (population 4 979 000 GIN)",
         "url": "https://joshuaproject.net/people_groups/11769/gv",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "African Voice Newspaper — The Fula of Guinea",
         "url": "https://africanvoiceonline.co.uk/the-fula-of-guinea/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers africanvoiceonline.co.uk; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "SIL Ethnologue — Pular (fuf)",
         "url": "https://www.ethnologue.com/language/fuf/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "SIL Ethnologue — Fulfulde Adamawa (fub)",
         "url": "https://www.ethnologue.com/language/fub/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "CIA World Factbook — Guinea",
         "url": "https://www.cia.gov/the-world-factbook/countries/guinea/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+        "tier": "official"
       },
       {
         "title": "CIA World Factbook — Cote d'Ivoire",
         "url": "https://www.cia.gov/the-world-factbook/countries/cote-divoire/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+        "tier": "official"
       },
       {
         "title": "UNFPA — Afrique de l'Ouest population data",
         "url": "https://www.unfpa.org/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"unfpa\"."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

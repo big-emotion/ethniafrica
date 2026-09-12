@@ -77,33 +77,33 @@
       {
         "title": "Before Lusaka: A Brief History of the Soli and Lenje Peoples – Explore Lusaka",
         "url": "https://www.explorelusaka.com/post/before-lusaka-a-brief-history-of-the-soli-and-lenje-peoples",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for explorelusaka.com."
+        "tier": "unverified"
       },
       {
         "title": "Soli of Zambia – PeopleGroups.org",
         "url": "https://peoplegroups.org/people_groups/pg015632/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+        "tier": "unverified"
       },
       {
         "title": "Soli in Zambia – Joshua Project",
         "url": "https://joshuaproject.net/people_groups/print/14977/ZA",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Manchishi, P.C. et Musona, E.T. – A Brief History of the Soli People from 1500-1900 (1990)",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Machinyise, E. et al. – The Birth and Sociolinguistic Features of Sala Language of Zambia, IJRISS 2023",
         "url": "https://rsisinternational.org/journals/ijriss/Digital-Library/volume-7-issue-8/993-1000.pdf",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for rsisinternational.org."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

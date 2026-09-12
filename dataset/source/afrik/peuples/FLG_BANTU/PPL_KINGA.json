@@ -74,39 +74,38 @@
       {
         "title": "Kinga in Tanzania – Joshua Project",
         "url": "https://joshuaproject.net/people_groups/12699",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Kinga – TanzaniaScripture.com, 2021",
         "url": "https://tanzaniascripture.com/languages/kinga/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for tanzaniascripture.com."
+        "tier": "unverified"
       },
       {
         "title": "Kinga people – Tanzania Tourist Board / Facebook, 2024",
         "url": "https://www.facebook.com/TanzaniaTouristBoard/posts/811743427661675/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for facebook.com."
+        "tier": "unverified"
       },
       {
         "title": "Kinga Language: Unearthing Tanzania's Forgotten Bantu Heritage – Language Learners Hub, 2025",
         "url": "https://languagelearnershub.com/blog/kinga-language/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers languagelearnershub.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Kinga of Tanzania – PeopleGroups.org, 2025",
         "url": "https://peoplegroups.org/people_groups/pg014963/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+        "tier": "unverified"
       },
       {
         "title": "Kinga – University of Missouri DICE",
         "url": "https://dice.missouri.edu/assets/docs/niger-congo/Kinga.pdf",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for dice.missouri.edu."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

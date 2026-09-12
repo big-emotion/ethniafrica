@@ -113,7 +113,7 @@
         "title": "SIL Ethnologue — Bassa (bsq)",
         "url": "https://www.ethnologue.com/language/bsq/",
         "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\". ethnologue.com returns HTTP 403 to automated fetches, so the 18th-edition (2015) speaker figures and dialect-cluster names used in this proposal (demography, languages.dialects) were read from its data as relayed in the infobox of the English Wikipedia article \"Bassa language\", crossed on 2026-09-05."
+        "notes": "ethnologue.com returns HTTP 403 to automated fetches, so the 18th-edition (2015) speaker figures and dialect-cluster names used in this proposal (demography, languages.dialects) were read from its data as relayed in the infobox of the English Wikipedia article \"Bassa language\", crossed on 2026-09-05."
       },
       {
         "title": "West Africa Democracy Radio — The Bassa Tribe of Liberia (2023)",
@@ -124,8 +124,7 @@
       {
         "title": "Minority Rights Group — Liberia",
         "url": "https://minorityrights.org/country/liberia/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+        "tier": "referenced"
       },
       {
         "title": "Sage Reference — Encyclopedia of African Religion, Bassa",
@@ -148,8 +147,7 @@
       {
         "title": "StudyGuides.com — Bassa (People)",
         "url": "https://studyguides.com/study-methods/study-guide/cmfwvocp53ouk016qheb0w9jc",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for studyguides.com."
+        "tier": "unverified"
       },
       {
         "title": "Everson, Michael & Riley, Charles (2010) — Final proposal for encoding the Bassa Vah script in the SMP of the UCS",

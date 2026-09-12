@@ -99,39 +99,38 @@
       {
         "title": "Eswatini National Trust Commission — Incwala Ceremony",
         "url": "https://entc.org.sz/incwala-ceremony/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers entc.org.sz; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "The Kingdom of Eswatini — Incwala Festival",
         "url": "https://www.thekingdomofeswatini.com/eswatini-experiences/events/incwala-festival/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers thekingdomofeswatini.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "SIL Ethnologue — siSwati (ssw)",
         "url": "https://www.ethnologue.com/language/ssw/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "CIA World Factbook — Eswatini",
         "url": "https://www.cia.gov/the-world-factbook/countries/eswatini/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+        "tier": "official"
       },
       {
         "title": "Gillis, D. Hugh. The Kingdom of Swaziland: Studies in Political History. Greenwood Press, 1999",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Kuper, Hilda. The Swazi: A South African Kingdom. Holt, Rinehart & Winston, 1963",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

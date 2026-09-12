@@ -104,33 +104,33 @@
       {
         "title": "Creole Heritage Organization California — The Krios: An Abridged History",
         "url": "https://cho-ca.org/the-krios-an-abridged-history",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers cho-ca.org; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "BBC News — The story of Sierra Leone's Krio people",
         "url": "https://www.bbc.com/news/world-africa-49726461",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for bbc.com."
+        "tier": "referenced"
       },
       {
         "title": "Kreol Magazine — Krio: The Creole Language That Unites Sierra Leone",
         "url": "https://kreolmagazine.com/krio-the-creole-language-that-unites-sierra-leone/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for kreolmagazine.com."
+        "tier": "unverified"
       },
       {
         "title": "EBSCO Research Starters — Sierra Leone Creole people",
         "url": "https://www.ebsco.com/research-starters/history/sierra-leone-creole-people",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for ebsco.com."
+        "tier": "referenced"
       },
       {
         "title": "SIL Ethnologue — Krio language (kri)",
         "url": "https://www.ethnologue.com/language/kri/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

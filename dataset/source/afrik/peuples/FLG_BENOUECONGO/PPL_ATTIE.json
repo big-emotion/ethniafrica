@@ -93,51 +93,48 @@
       {
         "title": "Ethnologue : Attié language (ATI)",
         "url": "https://www.ethnologue.com/language/ati/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Joshua Project : Attie in Côte d'Ivoire",
         "url": "https://joshuaproject.net/people_groups/10483/IV",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "UNESCO : Les savoir-faire liés à la fabrication de l'attiéké (2024)",
         "url": "https://ich.unesco.org/fr/RL/les-savoir-faire-lies-a-la-fabrication-de-l-attieke-en-cote-d-ivoire-02086",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of ich.unesco.org."
+        "tier": "official"
       },
       {
         "title": "Spirit Land of Africa : Attié culture",
         "url": "https://spiritlandofafrica.com/products/list/attie/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers spiritlandofafrica.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Rezo Ivoire : Le peuple Attié",
         "url": "https://www.rezoivoire.net/ivoire/patrimoine/2826/le-peuple-attie.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for rezoivoire.net."
+        "tier": "unverified"
       },
       {
         "title": "101 Last Tribes : Akye",
         "url": "https://www.101lasttribes.com/tribes/akye.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       },
       {
         "title": "Santé Tropicale : Approche anthropologique en pays Akyé",
         "url": "https://www.santetropicale.com/Resume/14803.pdf",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers santetropicale.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "YouTube : Le peuple Akié, comment est-il arrivé en Côte d'Ivoire ?",
         "url": "https://www.youtube.com/watch?v=Qpqx8Biibg4",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for youtube.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

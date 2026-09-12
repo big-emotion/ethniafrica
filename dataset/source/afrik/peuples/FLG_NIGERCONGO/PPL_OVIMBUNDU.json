@@ -98,45 +98,43 @@
       {
         "title": "Britannica — Ovimbundu",
         "url": "https://www.britannica.com/topic/Ovimbundu",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       },
       {
         "title": "Minority Rights Group — Ovimbundu in Angola",
         "url": "https://minorityrights.org/communities/ovimbundu/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+        "tier": "referenced"
       },
       {
         "title": "eHRAF World Cultures — Ovimbundu (fp13)",
         "url": "https://ehrafworldcultures.yale.edu/cultures/fp13/summary",
-        "tier": "referenced",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ehraf\"."
+        "tier": "referenced"
       },
       {
         "title": "Country Studies — Angola: Ovimbundu",
         "url": "https://countrystudies.us/angola/59.htm",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for countrystudies.us."
+        "tier": "referenced"
       },
       {
         "title": "SIL Ethnologue — Umbundu language, code umb",
         "url": "https://www.ethnologue.com/language/umb/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Localizely — Umbundu (umb) ISO code",
         "url": "https://localizely.com/language-code/umb/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for localizely.com."
+        "tier": "unverified"
       },
       {
         "title": "Heywood, Linda. Contested Power in Angola, 1840s to the Present. University of Rochester Press, 2000",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

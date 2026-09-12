@@ -90,33 +90,33 @@
       {
         "title": "Madagascar Missions – Antakarana People",
         "url": "https://madmissions.com/madagascar-facts/antakarana-people/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers madmissions.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Glottolog – Antankarana Malagasy (xmv)",
         "url": "https://glottolog.org/resource/languoid/id/anta1255",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "Ethnologue – Malagasy subgroup",
         "url": "https://www.ethnologue.com/subgroup/1795/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "101 Last Tribes – Antankarana",
         "url": "http://www.101lasttribes.com/tribes/antankarana.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       },
       {
         "title": "CIA World Factbook – Madagascar",
         "url": "https://www.cia.gov/the-world-factbook/countries/madagascar/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

@@ -83,33 +83,33 @@
       {
         "title": "Bassa Nge Community of North America : Our History",
         "url": "https://www.bassangecommunityna.org/our-ministries",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers bassangecommunityna.org; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Facebook Historical Nigeria : The Bassa Nge people",
         "url": "https://www.facebook.com/HistoricalNigeria/posts/the-bassa-nge-people-are-an-ethnic-group-in-nigeria",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for facebook.com."
+        "tier": "unverified"
       },
       {
         "title": "Glottolog : Nupoid (classification linguistique)",
         "url": "https://glottolog.org/resource/languoid/id/nupo1239",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "Ethnologue : Nupe-Nupe-Tako (NUP)",
         "url": "https://www.ethnologue.com/language/nup/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "YouTube : The History of Bassa Nigeria",
         "url": "https://www.youtube.com/watch?v=UVGnthv_d7w",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for youtube.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

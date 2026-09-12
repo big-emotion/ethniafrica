@@ -94,33 +94,33 @@
       {
         "title": "Tukulor people – 101 Last Tribes, www.101lasttribes.com/tribes/tukulor.html (consulte 2025)",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Tukulor empire – Encyclopaedia Britannica, www.britannica.com/place/Tukulor-empire (consulte 2025)",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Haalpulaar Identity as a Response to Wolofization – AfricaBib, www.africabib.org/rec.php?RID=147226244 (1995)",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "A Glance to the History of the Fulbe/Haapulaar en – Suudu Baaba, suudubaaba.home.blog (2019)",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Senegal Cultural Field Guide Ethnic Groups – US Military, info.publicintelligence.net/MCIA-SenegalCultureGuide.pdf",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

@@ -72,27 +72,28 @@
       {
         "title": "Machinga Language (MVW) – Ethnologue, SIL International",
         "url": "https://www.ethnologue.com/language/mvw/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Machinga People and their Culture in Tanzania – My Free School Tanzania, 2014",
         "url": "http://myfreeschooltanzania.blogspot.com/2014/10/machinga-people-and-their-culture-in.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for blogspot.com, matched as a parent of myfreeschooltanzania.blogspot.com."
+        "tier": "unverified"
       },
       {
         "title": "Machinga in Tanzania – Joshua Project",
         "url": "https://joshuaproject.net/people_groups/13190",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Machinga – Glottolog 5.3, mach1265",
         "url": "https://glottolog.org/resource/languoid/id/mach1265",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }
