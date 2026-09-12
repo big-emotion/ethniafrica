@@ -29,7 +29,7 @@
  *               $ref: '#/components/schemas/MigrationDetailResponse'
  *         headers:
  *           Cache-Control:
- *             description: "s-maxage=86400, immutable"
+ *             description: "s-maxage=3600 (people-data class, AR18)"
  *             schema:
  *               type: string
  *       422:
@@ -52,75 +52,25 @@
  *               $ref: '#/components/schemas/ApiErrorEnvelope'
  */
 
-import { NextRequest } from "next/server";
 import { getMigrationDetailHandler } from "@/api/v2/handlers/migrations";
 import { migrationDetailParamSchema } from "@/api/v2/schemas/migrations";
-import { createApiError } from "@/api/v2/utils/response";
-import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
-import { logger } from "@/lib/api/logger";
+import {
+  CORPUS_CACHE_CONTROL,
+  corpusDetailRoute,
+} from "@/api/v2/utils/corpusRoute";
+import { corsOptionsResponse } from "@/lib/api/cors";
 
-const CACHE_CONTROL = "s-maxage=86400, immutable";
-
-export async function GET(
-  _request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
-) {
-  const startTime = Date.now();
-  const { id } = await params;
-
-  try {
-    logger.info("GET /api/v2/migrations/[id]", { id });
-
-    if (!migrationDetailParamSchema.safeParse({ id }).success) {
-      logger.warn("Invalid migration ID format", { id });
-      return jsonWithCors(
-        createApiError({
-          code: "VALIDATION_ERROR",
-          message: "Invalid migration ID format",
-          field: "id",
-        }),
-        { status: 422 }
-      );
-    }
-
-    const result = await getMigrationDetailHandler(id);
-
-    if (result.ok === false) {
-      logger.warn("Migration detail request rejected", {
-        id,
-        code: result.code,
-      });
-      return jsonWithCors(
-        createApiError({ code: result.code, message: result.message }),
-        { status: 404 }
-      );
-    }
-
-    const response = jsonWithCors(result.envelope, {
-      headers: { "Cache-Control": CACHE_CONTROL },
-    });
-
-    logger.info("GET /api/v2/migrations/[id] completed", {
-      id,
-      duration: Date.now() - startTime,
-      status: 200,
-    });
-
-    return response;
-  } catch (error) {
-    logger.error(`Error in GET /api/v2/migrations/${id}`, error, {
-      id,
-      duration: Date.now() - startTime,
-    });
-    return jsonWithCors(
-      createApiError({
-        code: "INTERNAL_ERROR",
-        message: "Internal server error",
-      }),
-      { status: 500 }
-    );
-  }
-}
+export const GET = corpusDetailRoute({
+  path: "/api/v2/migrations/[id]",
+  param: "id",
+  isValidId: (id) => migrationDetailParamSchema.safeParse({ id }).success,
+  invalidIdMessage: "Invalid migration ID format",
+  invalidIdStatus: 422,
+  servesLang: false,
+  cacheControl: CORPUS_CACHE_CONTROL,
+  rejectedLog: "Migration detail request rejected",
+  resolve: (id) => getMigrationDetailHandler(id),
+});
 
 export function OPTIONS() {
   return corsOptionsResponse();
