@@ -32,6 +32,21 @@ describe("PeopleNamesChapter", () => {
     expect(text.indexOf("Abikan")).toBeLessThan(text.indexOf("Zola"));
   });
 
+  // A letter is a tap target in a strip of letters, not a word in a sentence:
+  // at its text size it measured 12×24px on PPL_WOLOF, and Lighthouse's
+  // target-size audit held the fiche's accessibility score at 0.97 for it.
+  // happy-dom lays nothing out, so the floor is asserted as the class that
+  // sets it — the same contract the country index already carries.
+  // @req REQ-133
+  it("gives every present letter of the index a 44px hit area", () => {
+    render(<PeopleNamesChapter language="fr" borneNames={borneNames} />);
+
+    for (const letter of ["A", "Z"]) {
+      const link = screen.getByRole("link", { name: letter });
+      expect(link).toHaveClass("min-h-11", "min-w-11");
+    }
+  });
+
   // @req REQ-119 REQ-133
   it("distinguishes a failed read from a documented empty corpus result", () => {
     const copy = getTranslation("en").patronymes.onFiche;

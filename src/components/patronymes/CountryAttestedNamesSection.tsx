@@ -152,9 +152,12 @@ function CountryNameIndex({
                 : null;
               return (
                 <li key={name.id}>
+                  {/* The gloss below is folded into the row above when it
+                      repeats, which leaves the name alone in its row: a
+                      control in a list, owed 44px, not a word in a sentence. */}
                   <Link
                     href={getPatronymeRoute(language, name.id)}
-                    className="font-semibold hover:underline"
+                    className="inline-flex min-h-11 min-w-11 items-center font-semibold hover:underline"
                     style={{ color: "var(--afh-text)" }}
                   >
                     {name.nameMain}
