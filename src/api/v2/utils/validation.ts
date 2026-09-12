@@ -2,10 +2,7 @@
  * Validation utilities for API v2
  */
 
-import {
-  DEFAULT_PAGE_SIZE,
-  MAX_PAGE_SIZE,
-} from "@/api/v2/schemas/pagination";
+import { DEFAULT_PAGE_SIZE, MAX_PAGE_SIZE } from "@/api/v2/schemas/pagination";
 import { mediaSchema, type MediaInput } from "@/api/v2/schemas/media";
 import type { TranslationLocale } from "@/lib/i18n/translationLocale";
 

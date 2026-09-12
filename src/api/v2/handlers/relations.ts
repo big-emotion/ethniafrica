@@ -50,6 +50,7 @@ export type EgoNetworkHandlerResult =
   | { ok: true; envelope: ApiEnvelope<EgoNetworkData> }
   | { ok: false; code: "NOT_FOUND"; message: string };
 
+// @req REQ-097
 export async function getEgoNetworkHandler(
   peopleId: string,
   query: EgoNetworkQuery
@@ -93,6 +94,7 @@ export async function getEgoNetworkHandler(
   }
 }
 
+// @req REQ-097
 export async function listRelationsHandler(
   query: ListRelationsQuery
 ): Promise<ApiEnvelope<PublicRelationRecord[]>> {
@@ -118,6 +120,7 @@ export type RelationDetailHandlerResult =
   | { ok: true; envelope: ApiEnvelope<PublicRelationRecord> }
   | { ok: false; code: "NOT_FOUND"; message: string };
 
+// @req REQ-097
 export async function getRelationDetailHandler(
   id: string
 ): Promise<RelationDetailHandlerResult> {

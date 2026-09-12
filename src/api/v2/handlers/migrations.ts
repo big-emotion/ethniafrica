@@ -21,6 +21,7 @@ export type ListMigrationsHandlerResult =
   | { ok: true; envelope: ApiEnvelope<MigrationSummary[]> }
   | { ok: false; code: "SEMANTIC_ERROR"; message: string };
 
+// @req REQ-099
 export async function listMigrationsHandler(
   query: Omit<ListMigrationsFilters, "limit" | "offset"> & {
     limit?: number;
@@ -59,6 +60,7 @@ export type MigrationDetailHandlerResult =
   | { ok: true; envelope: ApiEnvelope<MigrationDetailRecord> }
   | { ok: false; code: "NOT_FOUND"; message: string };
 
+// @req REQ-099
 export async function getMigrationDetailHandler(
   id: string
 ): Promise<MigrationDetailHandlerResult> {
