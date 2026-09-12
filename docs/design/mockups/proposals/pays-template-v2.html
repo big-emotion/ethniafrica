@@ -1,0 +1,1075 @@
+<title>Gabarit pays réordonné</title>
+<meta name="description" content="Proposition de gabarit pour la fiche pays de l'atlas EthniAfrica, rendue à 430 px avec les données réelles du Burundi.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Nunito+Sans:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+
+<style>
+  /* Les valeurs viennent de src/styles/tokens/color.css et type.css. Aucune
+     couleur n'est inventée ici : une maquette qui invente une teinte ne peut
+     pas servir d'arbitrage. */
+  :root {
+    --bg: #fbf7f2;
+    --bg-warm: #f5ede0;
+    --surface: #ffffff;
+    --border: #e8dfd3;
+    --ink: #2c2018;
+    --ink-soft: #746557;
+    --ink-muted: #9b8b7d;
+    --accent: #33a390;
+    --accent-ink: #226d60;
+    --accent-tint: #cbe7df;
+    --ochre: #c9821f;
+    --terre: #c4573f;
+    --perv: #7a8ce8;
+    --note-bg: #efe6d8;
+
+    --gap-section: 24px;
+    --serif: "Fraunces", Georgia, "Times New Roman", serif;
+    --sans: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #120e0a;
+      --bg-warm: #1d1710;
+      --surface: #271e14;
+      --border: #3a2e20;
+      --ink: #f1e7d8;
+      --ink-soft: #c9b99f;
+      --ink-muted: #8f7f66;
+      --accent: #33a390;
+      --accent-ink: #4cc0ab;
+      --accent-tint: #17332d;
+      --note-bg: #1d1710;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #120e0a;
+    --bg-warm: #1d1710;
+    --surface: #271e14;
+    --border: #3a2e20;
+    --ink: #f1e7d8;
+    --ink-soft: #c9b99f;
+    --ink-muted: #8f7f66;
+    --accent: #33a390;
+    --accent-ink: #4cc0ab;
+    --accent-tint: #17332d;
+    --note-bg: #1d1710;
+  }
+
+  @media (min-width: 768px) {
+    :root { --gap-section: 32px; }
+  }
+  @media (min-width: 1200px) {
+    :root { --gap-section: 48px; }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    padding-block: 28px 64px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .page {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    gap: 32px;
+  }
+
+  @media (min-width: 1040px) {
+    .page {
+      grid-template-columns: 430px minmax(0, 1fr);
+      align-items: start;
+      gap: 48px;
+    }
+  }
+
+  /* ---- l'en-tête de la maquette ---- */
+
+  .masthead { max-width: 62ch; }
+  .masthead p.eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    margin: 0 0 10px;
+  }
+  .masthead h1 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(26px, 6vw, 38px);
+    line-height: 1.12;
+    letter-spacing: -0.015em;
+    margin: 0 0 12px;
+    text-wrap: balance;
+  }
+  .masthead p.standfirst {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 15px;
+  }
+
+  /* ---- la colonne téléphone ---- */
+
+  .phone {
+    background: var(--bg-warm);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 430px;
+    width: 100%;
+    justify-self: center;
+  }
+
+  .rail {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+  }
+  .rail .pos {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--ink-muted);
+    white-space: nowrap;
+  }
+  .rail .pos b { color: var(--accent-ink); font-weight: 500; }
+  .rail .chapter {
+    font-family: var(--serif);
+    font-size: 15px;
+    font-weight: 500;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .rail .contribute {
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 11px;
+    border-radius: 6px;
+    border: 1px solid var(--accent);
+    background: var(--accent-tint);
+    color: var(--accent-ink);
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+  .globe {
+    background: #120e0a;
+    color: #f1e7d8;
+    padding: 22px 18px 26px;
+    text-align: center;
+  }
+  .globe .iso {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #8f7f66;
+    margin: 0 0 8px;
+  }
+  .globe h2 {
+    font-family: var(--serif);
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0 0 4px;
+    letter-spacing: -0.015em;
+  }
+  .globe p.official { margin: 0 0 16px; color: #c9b99f; font-size: 14px; }
+  .globe .orb {
+    width: 132px;
+    height: 132px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background: radial-gradient(circle at 34% 30%, #2f6d61 0%, #1c463e 46%, #121c19 100%);
+    box-shadow: inset -14px -12px 26px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(51, 163, 144, 0.35);
+    position: relative;
+  }
+  .globe .orb::after {
+    content: "";
+    position: absolute;
+    inset: 40% 36% 34% 40%;
+    border: 1.5px solid #33a390;
+    border-radius: 42% 58% 46% 54%;
+    background: rgba(51, 163, 144, 0.28);
+  }
+
+  /* ---- les chapitres ---- */
+
+  .parchment {
+    display: flex;
+    flex-direction: column;
+    /* §5.1 du brief : le seul écart entre deux chapitres. Mesuré à 0 px
+       aujourd'hui sur la production. */
+    gap: var(--gap-section);
+    padding: var(--gap-section) 0;
+    background: var(--bg-warm);
+  }
+
+  section.chapter {
+    background: var(--surface);
+    padding: 20px 16px;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  section.chapter > h3 {
+    font-family: var(--serif);
+    font-size: 21px;
+    font-weight: 600;
+    margin: 0 0 14px;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+
+  /* ---- En bref ---- */
+
+  .brief {
+    background: var(--bg-warm);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    padding: 18px 16px;
+    margin: 0 16px;
+  }
+  .brief .eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    margin: 0 0 12px;
+  }
+  .counters {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 12px;
+    margin: 0 0 16px;
+  }
+  .counters .figure:first-child { grid-column: 1 / -1; }
+  .figure dt {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    line-height: 1.35;
+  }
+  .figure dd {
+    margin: 3px 0 0;
+    font-family: var(--serif);
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink);
+  }
+  .figure dd small {
+    display: block;
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0;
+    color: var(--ink-muted);
+    margin-top: 3px;
+    line-height: 1.4;
+  }
+
+  .anecdote {
+    border-top: 1px solid var(--border);
+    padding-top: 14px;
+  }
+  .anecdote .label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin: 0 0 6px;
+  }
+  .anecdote p {
+    margin: 0 0 8px;
+    font-size: 14.5px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .tier {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    padding: 2px 7px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--ink-soft);
+  }
+
+  /* ---- Peuples ---- */
+
+  .peoples-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .peoples-head .pop {
+    font-family: var(--serif);
+    font-size: 27px;
+    font-weight: 600;
+    color: var(--terre);
+    letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+  }
+  .peoples-head .pop small {
+    display: block;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    color: var(--ink-muted);
+    font-weight: 400;
+  }
+  .peoples-head .count {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .share-bar {
+    display: flex;
+    height: 13px;
+    border-radius: 999px;
+    overflow: hidden;
+    margin-bottom: 14px;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  a:focus-visible,
+  button:focus-visible,
+  summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .people-row {
+    display: grid;
+    grid-template-columns: 12px minmax(0, 1fr) auto;
+    gap: 10px;
+    align-items: start;
+    padding: 11px 0;
+    border-top: 1px solid var(--border);
+    text-align: left;
+  }
+  .people-row .swatch {
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+    margin-top: 5px;
+  }
+  .people-row .autonym {
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--ink);
+  }
+  .people-row .exonym {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    margin-left: 6px;
+  }
+  .people-row .meta {
+    display: block;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.03em;
+    color: var(--ink-muted);
+    margin-top: 3px;
+  }
+  .people-row .share {
+    font-family: var(--serif);
+    font-size: 19px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink);
+  }
+  .coverage {
+    margin: 12px 0 0;
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    line-height: 1.45;
+  }
+
+  /* ---- tuiles ---- */
+
+  .tiles {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .tile {
+    border-radius: 8px;
+    padding: 12px 11px;
+    background: var(--bg-warm);
+    border: 1px solid var(--border);
+  }
+  .tile .tile-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    margin: 0 0 5px;
+  }
+  .tile .tile-value {
+    font-family: var(--serif);
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.2;
+  }
+  .tile .tile-sub {
+    margin: 4px 0 0;
+    font-size: 12px;
+    color: var(--ink-soft);
+    line-height: 1.4;
+  }
+
+  .derived {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    color: var(--ink-muted);
+    border: 1px dashed var(--border);
+    border-radius: 4px;
+    padding: 1px 6px;
+    margin-left: 6px;
+    vertical-align: 2px;
+  }
+
+  /* ---- éperon chronologique ---- */
+
+  .spine { margin: 0; padding: 0 0 0 20px; list-style: none; border-left: 2px solid var(--accent-tint); }
+  .spine li { position: relative; padding: 0 0 18px 4px; }
+  .spine li:last-child { padding-bottom: 0; }
+  .spine li::before {
+    content: "";
+    position: absolute;
+    left: -27px;
+    top: 6px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .spine .years {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--accent-ink);
+    display: block;
+  }
+  .spine .station { font-weight: 700; font-size: 15.5px; display: block; margin-top: 1px; }
+  .spine .undated { color: var(--ink-muted); }
+
+  details.reveal { margin-top: 6px; }
+  details.reveal > summary {
+    cursor: pointer;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    color: var(--accent-ink);
+    list-style: none;
+  }
+  details.reveal > summary::-webkit-details-marker { display: none; }
+  details.reveal > summary::before { content: "+ "; }
+  details.reveal[open] > summary::before { content: "− "; }
+  details.reveal > div {
+    margin-top: 7px;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+  details.reveal:focus-within > summary { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  /* ---- noms groupés ---- */
+
+  .name-group {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg-warm);
+    padding: 11px 12px;
+    margin-bottom: 9px;
+  }
+  .name-group summary {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+    list-style: none;
+  }
+  .name-group summary::-webkit-details-marker { display: none; }
+  .name-group .system { font-weight: 700; font-size: 15px; }
+  .name-group .tally {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--accent-ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .name-group .names {
+    margin: 10px 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .name-group .names li {
+    font-size: 13.5px;
+    padding: 3px 9px;
+    border-radius: 999px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+  }
+  .name-group .via {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--ink-muted);
+    margin: 9px 0 0;
+  }
+
+  /* ---- poursuivre / sources ---- */
+
+  .onward { margin: 0; padding: 0; list-style: none; }
+  .onward li { padding: 9px 0; border-bottom: 1px solid var(--border); }
+  .onward li:last-child { border-bottom: 0; }
+  .onward .kind {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    display: block;
+  }
+  .onward .go { font-weight: 700; font-size: 15.5px; color: var(--accent-ink); }
+
+  section.sources { background: var(--bg); }
+  section.sources .src {
+    padding: 9px 0;
+    border-top: 1px solid var(--border);
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    line-height: 1.45;
+  }
+
+  .contribute-block {
+    margin: 0 16px;
+    border: 1px dashed var(--accent);
+    border-radius: 8px;
+    background: var(--accent-tint);
+    padding: 15px 14px;
+    text-align: left;
+  }
+  .contribute-block p {
+    margin: 0 0 10px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .contribute-block .btn {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 9px 16px;
+    border-radius: 6px;
+    background: var(--accent-ink);
+    color: #fbf7f2;
+    cursor: pointer;
+    border: 0;
+  }
+
+  /* ---- le rail d'annotations ---- */
+
+  .notes { display: grid; gap: 18px; align-content: start; }
+  .notes > h2 {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .note {
+    border-left: 2px solid var(--border);
+    padding-left: 14px;
+  }
+  .note.keep { border-left-color: var(--accent); }
+  .note.refuse { border-left-color: var(--terre); }
+  .note h3 {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin: 0 0 5px;
+  }
+  .note.keep h3 { color: var(--accent-ink); }
+  .note.refuse h3 { color: var(--terre); }
+  .note p { margin: 0 0 6px; font-size: 14px; line-height: 1.55; color: var(--ink-soft); }
+  .note p:last-child { margin-bottom: 0; }
+  .note strong { color: var(--ink); }
+
+  table.measures {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-top: 6px;
+  }
+  table.measures th,
+  table.measures td {
+    text-align: left;
+    padding: 5px 8px 5px 0;
+    border-bottom: 1px solid var(--border);
+    color: var(--ink-soft);
+  }
+  table.measures th {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    font-weight: 400;
+  }
+  table.measures td.num {
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+</style>
+
+<div class="page">
+  <div class="masthead" style="grid-column: 1 / -1">
+    <p class="eyebrow">Proposition · fiche pays · 430 px</p>
+    <h1>Le gabarit pays, réordonné</h1>
+    <p class="standfirst">
+      Les données sont celles du Burundi, telles que le corpus les porte
+      aujourd'hui. L'ordre des chapitres, les compteurs et le regroupement des
+      noms sont la proposition. Le raisonnement et les mesures sont dans
+      <code>docs/design/country-template-brief.md</code>.
+    </p>
+  </div>
+
+  <div class="phone">
+    <div class="rail">
+      <span class="pos"><b>01</b> / 09</span>
+      <span class="chapter">En bref</span>
+      <button class="contribute" type="button">Compléter</button>
+    </div>
+
+    <div class="globe">
+      <p class="iso">BDI · page du pays · réf. 2025</p>
+      <h2>Burundi</h2>
+      <p class="official">République du Burundi</p>
+      <div class="orb" role="img" aria-label="Le Burundi souligné sur le globe"></div>
+    </div>
+
+    <div class="parchment">
+      <div class="brief">
+        <p class="eyebrow">En bref</p>
+        <dl class="counters">
+          <div class="figure">
+            <dt>Population</dt>
+            <dd>14,4 M<small>Recensement 2025, source officielle</small></dd>
+          </div>
+          <div class="figure">
+            <dt>Peuples documentés</dt>
+            <dd>3<small>85 % de la population répartie</small></dd>
+          </div>
+          <div class="figure">
+            <dt>Langues</dt>
+            <dd>7<small>déduites des peuples du pays</small></dd>
+          </div>
+          <div class="figure">
+            <dt>Familles linguistiques</dt>
+            <dd>2</dd>
+          </div>
+          <div class="figure">
+            <dt>Noms référencés ici</dt>
+            <dd>23<small>Le Burundi en porte davantage : l'atlas n'en a documenté que 23.</small></dd>
+          </div>
+        </dl>
+        <div class="anecdote">
+          <p class="label">À savoir</p>
+          <p>
+            Personne ne s'accorde sur ce que veut dire Hutu, et une
+            administration en a fait une race.
+          </p>
+          <span class="tier">Source référencée</span>
+        </div>
+      </div>
+
+      <section class="chapter">
+        <h3>Peuples du pays</h3>
+        <div class="peoples-head">
+          <span class="pop">14,4 M<small>habitants · 2025</small></span>
+          <span class="count">3 peuples</span>
+        </div>
+        <div class="share-bar" role="img" aria-label="Répartition : Abahutu 85 %, Abatutsi 14 %, Abatwa 1 %">
+          <span style="width: 85%; background: #7a8ce8"></span>
+          <span style="width: 14%; background: #5f73d6"></span>
+          <span style="width: 1%; background: #33a390"></span>
+        </div>
+        <a class="people-row" href="#">
+          <span class="swatch" style="background: #7a8ce8"></span>
+          <span>
+            <span class="autonym">Abahutu</span><span class="exonym">Hutu (Burundi)</span>
+            <span class="meta">Plateaux · Bantou</span>
+          </span>
+          <span class="share">85 %</span>
+        </a>
+        <a class="people-row" href="#">
+          <span class="swatch" style="background: #5f73d6"></span>
+          <span>
+            <span class="autonym">Abatutsi</span><span class="exonym">Tutsi (Burundi)</span>
+            <span class="meta">Plateaux · Bantou</span>
+          </span>
+          <span class="share">14 %</span>
+        </a>
+        <a class="people-row" href="#">
+          <span class="swatch" style="background: #33a390"></span>
+          <span>
+            <span class="autonym">Abatwa</span><span class="exonym">Twa</span>
+            <span class="meta">Forêts et zones rurales · Bantou</span>
+          </span>
+          <span class="share">1 %</span>
+        </a>
+        <p class="coverage">
+          Les peuples documentés ici représentent 100 % de la population du pays.
+        </p>
+      </section>
+
+      <section class="chapter">
+        <h3>Le nom et son histoire</h3>
+        <ul class="spine">
+          <li>
+            <span class="years">Avant 1885</span>
+            <span class="station">Royaume du Burundi</span>
+            <details class="reveal">
+              <summary>Ce que le nom désigne</summary>
+              <div>
+                « Burundi » vient probablement du kirundi <i>Uburundi</i>, « pays »
+                ou « territoire ». Le nom fait référence au royaume précolonial
+                qui a unifié les peuples des hautes terres.
+              </div>
+            </details>
+          </li>
+          <li>
+            <span class="years">1885 – 1916</span>
+            <span class="station">Afrique orientale allemande</span>
+          </li>
+          <li>
+            <span class="years">1916 – 1962</span>
+            <span class="station">Ruanda-Urundi</span>
+            <details class="reveal">
+              <summary>Qui a gardé le nom</summary>
+              <div>
+                Les colonisateurs allemands puis belges ont conservé le nom du
+                royaume. L'appellation composée rattache le territoire à son
+                voisin du nord sous une seule tutelle.
+              </div>
+            </details>
+          </li>
+          <li>
+            <span class="years">1962 – 1966</span>
+            <span class="station">Royaume du Burundi</span>
+          </li>
+          <li>
+            <span class="years">Depuis 1966</span>
+            <span class="station">République du Burundi</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="chapter">
+        <h3>Langues <span class="derived">déduites</span></h3>
+        <div class="tiles">
+          <div class="tile">
+            <p class="tile-label">Langue commune</p>
+            <p class="tile-value">Kirundi</p>
+            <p class="tile-sub">Parlée par les trois peuples du pays</p>
+          </div>
+          <div class="tile">
+            <p class="tile-label">Famille</p>
+            <p class="tile-value">Bantou</p>
+            <p class="tile-sub">+ 1 autre famille représentée</p>
+          </div>
+        </div>
+        <p class="coverage">
+          Le corpus ne renseigne pas les langues au niveau du pays. Ces sept
+          langues sont déduites des fiches des peuples qui y vivent, et
+          l'atlas le dit plutôt que d'afficher un vide.
+        </p>
+      </section>
+
+      <section class="chapter">
+        <h3>Histoire</h3>
+        <ul class="spine">
+          <li>
+            <span class="years">XVIe siècle – 1966</span>
+            <span class="station">Royaume du Burundi</span>
+            <details class="reveal">
+              <summary>Le royaume</summary>
+              <div>
+                Royaume centralisé avec une monarchie sacrée (mwami). Système de
+                chefferies hiérarchisées, expansion territoriale et unification
+                culturelle. Les distinctions sociales entre Hutu, Tutsi et Twa y
+                étaient complexes, et furent instrumentalisées par le colonisateur.
+                Centres : Gitega (capitale royale), Muramvya.
+              </div>
+            </details>
+          </li>
+          <li>
+            <span class="years undated">Période non datée</span>
+            <span class="station undated">Chefferies des hautes terres</span>
+          </li>
+          <li>
+            <span class="years">1885 – 1962</span>
+            <span class="station">Administrations coloniales</span>
+            <details class="reveal">
+              <summary>Protectorat allemand, puis tutelle belge</summary>
+              <div>
+                Dans les années 1920, l'administration belge institue des cartes
+                d'identité ethniques obligatoires et fait de la distinction
+                Hutu-Tutsi une hiérarchie fixe, tranchée notamment sur le nombre
+                de vaches possédées.
+              </div>
+            </details>
+          </li>
+          <li>
+            <span class="years">1966 – aujourd'hui</span>
+            <span class="station">Républiques successives</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="chapter">
+        <h3>Noms du pays</h3>
+        <details class="name-group" open>
+          <summary>
+            <span class="system">Patronymes non héréditaires</span>
+            <span class="tally">12 noms</span>
+          </summary>
+          <ul class="names">
+            <li>Bigirimana</li><li>Bukuru</li><li>Hakizimana</li><li>Irakoze</li>
+            <li>Manirakiza</li><li>Ndayizeye</li><li>Ndikumana</li><li>Nduwimana</li>
+            <li>Niyonkuru</li><li>Nsabimana</li><li>Ntahomvukiye</li><li>Nzeyimana</li>
+          </ul>
+          <p class="via">Attestés au Burundi par une source.</p>
+        </details>
+        <details class="name-group">
+          <summary>
+            <span class="system">Portés par les peuples du pays</span>
+            <span class="tally">11 noms</span>
+          </summary>
+          <ul class="names">
+            <li>Bizimana</li><li>Habimana</li><li>Mukamana</li><li>Nizeyimana</li>
+            <li>Nkurunziza</li><li>Nsengiyumva</li><li>Nyirahabimana</li>
+            <li>Nzabonimpa</li><li>Rukundo</li><li>Sibomana</li><li>Uwimana</li>
+          </ul>
+          <p class="via">Par les Banyarwanda · aucune source ne les atteste ici.</p>
+        </details>
+      </section>
+
+      <section class="chapter">
+        <h3>Culture et société</h3>
+        <div class="tiles">
+          <div class="tile">
+            <p class="tile-label">Religions</p>
+            <p class="tile-value">Christianisme</p>
+            <p class="tile-sub">Croyances traditionnelles, islam</p>
+          </div>
+          <div class="tile">
+            <p class="tile-label">Économie</p>
+            <p class="tile-value">Vie rurale</p>
+            <p class="tile-sub">Agriculture, élevage</p>
+          </div>
+          <div class="tile">
+            <p class="tile-label">Organisation</p>
+            <p class="tile-value">Chefferies</p>
+            <p class="tile-sub">Structure clanique patrilinéaire</p>
+          </div>
+          <div class="tile">
+            <p class="tile-label">Relations</p>
+            <p class="tile-value">RDC, Tanzanie</p>
+            <p class="tile-sub">Relations historiques</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="contribute-block">
+        <p>
+          Vous connaissez un nom, une date ou une source que cette page n'a pas ?
+          Elle est faite pour être complétée.
+        </p>
+        <button class="btn" type="button">Compléter cette page</button>
+      </div>
+
+      <section class="chapter">
+        <h3>Poursuivre</h3>
+        <ul class="onward">
+          <li><span class="kind">Peuple</span><a class="go" href="#">Hutu (Burundi) →</a></li>
+          <li><span class="kind">Famille linguistique</span><a class="go" href="#">Bantou →</a></li>
+          <li><span class="kind">Peuple</span><a class="go" href="#">Tutsi (Burundi) →</a></li>
+          <li><span class="kind">Peuple</span><a class="go" href="#">Twa →</a></li>
+        </ul>
+      </section>
+
+      <section class="chapter sources">
+        <h3>Sources</h3>
+        <p class="src">United States Holocaust Memorial Museum — Divided by Ethnicity: Rwanda · Référencée</p>
+        <p class="src">Institut de statistiques et d'études économiques du Burundi · Officielle</p>
+        <p class="src">Ethnologue — Languages of the World · Officielle</p>
+      </section>
+    </div>
+  </div>
+
+  <div class="notes">
+    <h2>Ce que la maquette tranche</h2>
+
+    <div class="note">
+      <h3>La mesure de départ</h3>
+      <p>
+        Relevé sur la production le 12 septembre 2026, à 430 px, vingt secondes
+        après le chargement du globe.
+      </p>
+      <table class="measures">
+        <tr><th>Hauteur de la page</th><td class="num">9 334 px</td></tr>
+        <tr><th>Où commence « Peuples du pays »</th><td class="num">1 817 px</td></tr>
+        <tr><th>Hauteur de « Peuples du pays »</th><td class="num">452 px</td></tr>
+        <tr><th>Hauteur de « Noms attestés »</th><td class="num">1 374 px</td></tr>
+        <tr><th>Écart entre deux chapitres</th><td class="num">0 px</td></tr>
+      </table>
+    </div>
+
+    <div class="note keep">
+      <h3>Le bloc mesuré utile passe premier</h3>
+      <p>
+        C'est le seul bloc dont on sait qu'un lecteur s'en est servi. Il attend
+        aujourd'hui derrière 1 817 px de globe, de chapô et d'étymologie. Il ne
+        change pas, il monte.
+      </p>
+    </div>
+
+    <div class="note keep">
+      <h3>Cinq compteurs, et chacun dit sa portée</h3>
+      <p>
+        « 23 noms référencés ici », jamais « 23 noms ». Un chiffre de couverture
+        pris pour un chiffre de vérité, c'est la seule promesse que cet atlas ne
+        peut pas casser.
+      </p>
+      <p>
+        L'anecdote n'est pas écrite pour l'occasion : la banque en compte
+        <strong>112, réparties sur 42 pays</strong>, toutes sourcées et
+        hiérarchisées. Elles ne sont visibles que sur l'accueil.
+      </p>
+    </div>
+
+    <div class="note keep">
+      <h3>Les langues sont déduites, et le disent</h3>
+      <p>
+        <strong>13 pays sur 54</strong> ne déclarent aucune langue, dont la RDC,
+        le Nigeria, le Kenya, l'Éthiopie et l'Afrique du Sud. Tous les treize
+        affichent « Donnée manquante » alors que leurs peuples en portent de 7 à
+        82.
+      </p>
+    </div>
+
+    <div class="note keep">
+      <h3>« Noms attestés » devient « Noms du pays »</h3>
+      <p>
+        L'intitulé a été lu « noms à tester » par un lecteur francophone. Un
+        libellé qu'on doit expliquer a déjà échoué.
+      </p>
+      <p>
+        La liste plate ne survit pas à sa longueur : <strong>82 lignes et
+        3 711 px</strong> pour la RDC, et sur le Burundi 23 lignes pour deux
+        glosses distinctes. Un prédicat qui ne varie jamais n'est pas une
+        information.
+      </p>
+    </div>
+
+    <div class="note keep">
+      <h3>L'écart entre chapitres est un jeton qui existe déjà</h3>
+      <p>
+        <code>--afh-section-gap</code> est déclaré, documenté dans Storybook et
+        consommé par zéro composant. Les chapitres se touchent à 0 px.
+      </p>
+    </div>
+
+    <div class="note keep">
+      <h3>Contribuer n'est pas signaler</h3>
+      <p>
+        Chaque chapitre propose « Signaler cette section ». Aucun ne dit que la
+        page peut être <strong>complétée</strong>. Ce sont deux intentions, et
+        le lecteur qui a la seconde reçoit la première.
+      </p>
+    </div>
+
+    <div class="note refuse">
+      <h3>Refusé — « Poursuivre » en cartes</h3>
+      <p>
+        La charte atlas §7 l'interdit, mesure à l'appui : des cartes posent
+        quatre cents pixels d'habillage au pied d'un document qui doit avoir
+        l'air vérifiable. Un test de contrat le tient.
+      </p>
+    </div>
+
+    <div class="note refuse">
+      <h3>Refusé — 80 % de visuel par des images</h3>
+      <p>
+        Le corpus ne porte <strong>aucun champ image</strong>, sur aucune de ses
+        890 fiches. Ici, « visuel » veut dire une donnée mise en forme : une
+        barre de répartition, un compteur, un éperon daté, une tuile. Chacune
+        est générée depuis un champ sourcé.
+      </p>
+    </div>
+
+    <div class="note refuse">
+      <h3>Refusé — replier un chapitre entier</h3>
+      <p>
+        Le rail de lecture lit le document rendu et publie une ancre par
+        chapitre. Un chapitre replié est une ancre qui mène à du vide, et la
+        recherche dans la page n'y trouve rien. Le dépliage joue
+        <strong>à l'intérieur</strong> d'un chapitre, jamais sur lui.
+      </p>
+      <p>
+        À noter : le bloc « Culture et société » ne dévoile rien aujourd'hui. Ce
+        sont des tuiles fixes. Le comportement reste à construire.
+      </p>
+    </div>
+  </div>
+</div>
