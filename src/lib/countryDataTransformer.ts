@@ -23,6 +23,7 @@ import type {
 import { flagFromISO3 as countryFlag, NEUTRAL_FLAG } from "@/lib/countryFlag";
 import { countryCopy } from "@/lib/i18n/copy/country";
 import type { Language } from "@/types/shared";
+import type { ProvenancedValue } from "@/lib/supabase/queries/afrik/derivedFicheFact";
 
 // ==========================================
 // OUTPUT TYPES
@@ -139,6 +140,7 @@ export interface LanguagesData {
   bubbles: LanguageBubble[];
   totalCount: number;
   overflowCount: number;
+  fact?: ProvenancedValue<string[]>;
 }
 
 export interface CultureGridItem {
@@ -705,9 +707,17 @@ export function transformKingdoms(
 }
 
 // @req REQ-001
-export function transformLanguages(culture?: CultureSection): LanguagesData {
+export function transformLanguages(
+  culture?: CultureSection,
+  fact?: ProvenancedValue<string[]>
+): LanguagesData {
   if (!culture?.mainLanguages || culture.mainLanguages.length === 0) {
-    return { bubbles: [], totalCount: 0, overflowCount: 0 };
+    return {
+      bubbles: [],
+      totalCount: 0,
+      overflowCount: 0,
+      ...(fact && { fact }),
+    };
   }
 
   const langs = culture.mainLanguages;
@@ -740,7 +750,7 @@ export function transformLanguages(culture?: CultureSection): LanguagesData {
     };
   });
 
-  return { bubbles, totalCount, overflowCount };
+  return { bubbles, totalCount, overflowCount, ...(fact && { fact }) };
 }
 
 // @req REQ-001
@@ -827,7 +837,8 @@ export function transformHistoricalFacts(
 // @req REQ-001
 export function transformCountryData(
   country: CountryDetail,
-  language: Language = "fr"
+  language: Language = "fr",
+  languageFact?: ProvenancedValue<string[]>
 ): CountryPageData {
   return {
     hero: transformHero(country),
@@ -842,7 +853,7 @@ export function transformCountryData(
       country.historicalFacts,
       language
     ),
-    languages: transformLanguages(country.culture),
+    languages: transformLanguages(country.culture, languageFact),
     culture: transformCulture(country.culture, language),
     sources: transformSources(country.sources),
   };

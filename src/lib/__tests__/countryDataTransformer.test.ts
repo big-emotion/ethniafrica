@@ -996,6 +996,18 @@ describe("transformHistoricalFacts", () => {
 });
 
 describe("transformCountryData", () => {
+  // @req REQ-119
+  it("passes a derived language fact through without losing its origin", () => {
+    const fact = {
+      value: ["Kirundi", "Swahili"],
+      provenance: "derived" as const,
+      from: ["PPL_HUTU_BURUNDI", "PPL_TUTSI_BURUNDI"],
+    };
+
+    const result = transformCountryData(bfaCountry, "fr", fact);
+
+    expect(result.languages.fact).toEqual(fact);
+  });
   // @req REQ-140
   // @req REQ-145
   it("localizes generated country-fiche labels in English", () => {
