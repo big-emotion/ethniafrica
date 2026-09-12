@@ -115,7 +115,7 @@ describe("sitemap entity ids", () => {
   });
 
   // @req REQ-110
-  it("stops on the first short page rather than polling an empty table", async () => {
+  it("stops on the first empty page rather than polling past the end", async () => {
     const client = supabaseServing({
       afrik_peoples: ids("PPL_", 5),
       afrik_countries: [],
@@ -129,8 +129,9 @@ describe("sitemap entity ids", () => {
 
     await getSitemapEntityIds();
 
-    // One request per table, since each first page came back short.
-    expect(client.range).toHaveBeenCalledTimes(5);
+    // Two reads for the table holding rows, then one empty read per empty
+    // table: a short page no longer ends a walk, an empty one does.
+    expect(client.range).toHaveBeenCalledTimes(6);
     expect(client.range).toHaveBeenCalledWith(0, SITEMAP_ID_PAGE_SIZE - 1);
   });
 
@@ -297,7 +298,15 @@ describe("sitemap entity ids", () => {
     expect(entries.families).toHaveLength(2);
     expect(entries.languages).toHaveLength(2);
 
-    expect(client.selectsByTable).toEqual({
+    // A walk selects once per page it reads, so the columns are compared as
+    // a set: what matters is which table pays for `content`, not how often.
+    const columnsByTable = Object.fromEntries(
+      Object.entries(client.selectsByTable).map(([table, selects]) => [
+        table,
+        [...new Set(selects)],
+      ])
+    );
+    expect(columnsByTable).toEqual({
       afrik_peoples: ["id"],
       afrik_countries: ["id"],
       afrik_language_families: ["id"],

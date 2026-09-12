@@ -85,6 +85,23 @@ describe("batch request deadline", () => {
   afterEach(() => {
     vi.useRealTimers();
     vi.unstubAllGlobals();
+    vi.unstubAllEnvs();
+    vi.resetModules();
+  });
+
+  // @req REQ-110
+  it("accepts a positive batch timeout override and falls back on invalid input", async () => {
+    vi.stubEnv("SUPABASE_BATCH_REQUEST_TIMEOUT_MS", "180000");
+    vi.resetModules();
+    expect(
+      (await import("../requestDeadline")).SUPABASE_BATCH_REQUEST_TIMEOUT_MS
+    ).toBe(180_000);
+
+    vi.stubEnv("SUPABASE_BATCH_REQUEST_TIMEOUT_MS", "-1");
+    vi.resetModules();
+    expect(
+      (await import("../requestDeadline")).SUPABASE_BATCH_REQUEST_TIMEOUT_MS
+    ).toBe(120_000);
   });
 
   // @req REQ-110

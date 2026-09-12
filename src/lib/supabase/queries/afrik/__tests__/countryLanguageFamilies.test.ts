@@ -155,8 +155,10 @@ describe("the language families a country holds", () => {
     expect(relations.order).toHaveBeenCalledWith("country_id");
   });
 
+  // A short page is also what a server whose max-rows sits below the page size
+  // answers every time, so only an empty page proves the end of the corpus.
   // @req REQ-110
-  it("stops at the first short page rather than reading past the corpus", async () => {
+  it("stops at the first empty page rather than reading past the corpus", async () => {
     const { peoples } = mockCorpus({
       peoples: [[{ id: "PPL_A", language_family_id: "FLG_X" }]],
       relations: [[{ people_id: "PPL_A", country_id: "GHA" }]],
@@ -164,7 +166,7 @@ describe("the language families a country holds", () => {
 
     await getLanguageFamilyIdsByCountry();
 
-    expect(peoples.range).toHaveBeenCalledTimes(1);
+    expect(peoples.range).toHaveBeenCalledTimes(2);
   });
 
   /**

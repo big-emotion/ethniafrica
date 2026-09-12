@@ -86,7 +86,9 @@ export const DEAD_CODE_CEILINGS: Readonly<Record<DeadCodeCategory, number>> = {
   // 49 -> 25 in the same purge: the V1-era relation, demography, CSV and
   // response types in src/types/afrik.ts and afrik-frontend.ts. Most of what
   // remains is inferred zod types in src/api/v2/schemas.
-  types: 25,
+  // 25 -> 8 after the seventeen unused z.infer param/query aliases under
+  // src/api/v2/schemas were removed by the next consolidation pass.
+  types: 8,
   duplicates: 0,
 };
 

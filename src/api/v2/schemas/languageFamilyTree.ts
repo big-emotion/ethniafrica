@@ -3,30 +3,26 @@
  * GET /v2/language-families/{id}/tree/branch (Epic 7, FR48).
  */
 
+import { pageSizeSchema } from "@/api/v2/schemas/pagination";
 import { z } from "zod";
 
+// @req REQ-084
 export const languageFamilyTreeParamSchema = z.object({
   id: z.string().regex(/^FLG_[A-Z_]+$/, {
     message: "Invalid language family id format (expected FLG_*)",
   }),
 });
 
-export type LanguageFamilyTreeParam = z.infer<
-  typeof languageFamilyTreeParamSchema
->;
-
+// @req REQ-084
 export const languageFamilyTreeBranchParamSchema = z.object({
   id: z.string().regex(/^FLG_[A-Z_]+$/, {
     message: "Invalid language family id format (expected FLG_*)",
   }),
 });
 
-export type LanguageFamilyTreeBranchParam = z.infer<
-  typeof languageFamilyTreeBranchParamSchema
->;
-
 const isoLanguageRegex = /^[a-z]{3}$/;
 
+// @req REQ-084
 export const languageFamilyTreeBranchQuerySchema = z
   .object({
     language: z
@@ -36,17 +32,14 @@ export const languageFamilyTreeBranchQuerySchema = z
       })
       .optional(),
     group: z.literal("unlinked").optional(),
-    limit: z.coerce.number().int().min(1).max(100).default(20),
+    limit: pageSizeSchema,
     offset: z.coerce.number().int().min(0).default(0),
   })
   .refine((data) => (data.language ? 1 : 0) + (data.group ? 1 : 0) === 1, {
     message: "Exactly one of `language` or `group=unlinked` is required",
   });
 
-export type LanguageFamilyTreeBranchQuery = z.infer<
-  typeof languageFamilyTreeBranchQuerySchema
->;
-
+// @req REQ-084
 export const familyTreeBranchNodeSchema = z.object({
   id: z.string(),
   nameMain: z.string(),

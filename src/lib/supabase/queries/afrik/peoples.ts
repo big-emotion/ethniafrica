@@ -4,6 +4,7 @@
 
 import { createServerClient } from "../../server";
 import { logger } from "@/lib/api/logger";
+import { walkRanges } from "@/lib/supabase/queries/walkRanges";
 import type { ClassificationStatus, People } from "@/types/afrik";
 
 export interface PeopleQueryFilters {
@@ -183,30 +184,33 @@ export async function getAfrikPeopleIdsInCountry(
   countryId: string
 ): Promise<string[]> {
   const supabase = createServerClient();
-  const peopleIds: string[] = [];
 
-  for (let page = 0; page < PEOPLE_FACET_MAX_PAGES; page++) {
-    const start = page * PEOPLE_FACET_WALK_SIZE;
-    const { data, error } = await supabase
-      .from("afrik_people_countries")
-      .select("people_id")
-      .eq("country_id", countryId)
-      .range(start, start + PEOPLE_FACET_WALK_SIZE - 1);
+  const walk = await walkRanges(
+    async (from, to) => {
+      const { data, error } = await supabase
+        .from("afrik_people_countries")
+        .select("people_id")
+        .eq("country_id", countryId)
+        .range(from, to);
 
-    if (error) {
-      logger.error(`Error fetching people ids for country ${countryId}`, error);
-      throw error;
-    }
-
-    const rows = data || [];
-    for (const row of rows) peopleIds.push(row.people_id as string);
-    if (rows.length < PEOPLE_FACET_WALK_SIZE) return peopleIds;
-  }
-
-  logger.error(
-    `People ids for country ${countryId} exceeded ${PEOPLE_FACET_MAX_PAGES} pages — the list is truncated`
+      if (error) {
+        logger.error(
+          `Error fetching people ids for country ${countryId}`,
+          error
+        );
+        throw error;
+      }
+      return data || [];
+    },
+    { pageSize: PEOPLE_FACET_WALK_SIZE, maxPages: PEOPLE_FACET_MAX_PAGES }
   );
-  return peopleIds;
+
+  if (walk.truncated) {
+    logger.error(
+      `People ids for country ${countryId} exceeded ${PEOPLE_FACET_MAX_PAGES} pages — the list is truncated`
+    );
+  }
+  return walk.rows.map((row) => row.people_id as string);
 }
 
 /**
@@ -292,44 +296,41 @@ export async function getAfrikPeopleCountryIndex(
   if (scopedIds && scopedIds.length === 0) return [];
 
   const supabase = createServerClient();
-  const index: PeopleCountryIndexRow[] = [];
 
-  for (let page = 0; page < PEOPLE_FACET_MAX_PAGES; page++) {
-    const start = page * PEOPLE_FACET_WALK_SIZE;
-    const query = withPeopleFilters(
-      supabase
-        .from("afrik_peoples")
-        .select("id, name_main, afrik_people_countries(country_id)"),
-      filters,
-      scopedIds
+  const walk = await walkRanges(
+    async (from, to) => {
+      const query = withPeopleFilters(
+        supabase
+          .from("afrik_peoples")
+          .select("id, name_main, afrik_people_countries(country_id)"),
+        filters,
+        scopedIds
+      );
+
+      const { data, error } = await query.order("name_main").range(from, to);
+
+      if (error) {
+        logger.error("Error fetching the peoples country index", error);
+        throw error;
+      }
+      return data || [];
+    },
+    { pageSize: PEOPLE_FACET_WALK_SIZE, maxPages: PEOPLE_FACET_MAX_PAGES }
+  );
+
+  if (walk.truncated) {
+    logger.error(
+      `The peoples country index exceeded ${PEOPLE_FACET_MAX_PAGES} pages — it is truncated`
     );
-
-    const { data, error } = await query
-      .order("name_main")
-      .range(start, start + PEOPLE_FACET_WALK_SIZE - 1);
-
-    if (error) {
-      logger.error("Error fetching the peoples country index", error);
-      throw error;
-    }
-
-    const rows = data || [];
-    for (const row of rows) {
-      index.push({
-        id: row.id as string,
-        nameMain: row.name_main as string,
-        countryIds: (row.afrik_people_countries || []).map(
-          (relation: { country_id: string }) => relation.country_id
-        ),
-      });
-    }
-    if (rows.length < PEOPLE_FACET_WALK_SIZE) return index;
   }
 
-  logger.error(
-    `The peoples country index exceeded ${PEOPLE_FACET_MAX_PAGES} pages — it is truncated`
-  );
-  return index;
+  return walk.rows.map((row) => ({
+    id: row.id as string,
+    nameMain: row.name_main as string,
+    countryIds: (row.afrik_people_countries || []).map(
+      (relation: { country_id: string }) => relation.country_id
+    ),
+  }));
 }
 
 /**
