@@ -1,6 +1,6 @@
 """The plaque: the imposed name, the engraved rule, the name the people give itself.
 
-One module, imported by `ethni_render.py` and `ethni_card.py`. It is the atlas's
+One module, imported by `ethni_render.py` and `ethni_compose_v1.py`. It is the atlas's
 own figure — the thing the whole corpus is about, made visible in one block — and
 until now it existed only as a sentence in the guides and as a retired JavaScript
 composition that was deleted on 2026-09-09.

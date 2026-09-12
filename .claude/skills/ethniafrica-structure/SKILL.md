@@ -132,8 +132,8 @@ servent. Ils portent de la doctrine éditoriale datée, pas du code :
 
 ## Ce que tu ne fais pas
 
-Rendre les images. Choisir les dispositions. Ouvrir `ethni_carousel.py` ou
-`ethni_render.py`. Décider une couleur, une taille ou une marge — elles sont dans
+Rendre les images. Choisir les dispositions. Ouvrir `ethni_carrousel2.py`,
+`ethni_compose.py` ou `ethni_montage.py`. Décider une couleur, une taille ou une marge — elles sont dans
 `docs/design/gabarits-social/GABARITS-SOCIAL.md` et dans `docs/design/gabarits-social/tokens/`, et nulle part
 ailleurs.
 

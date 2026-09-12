@@ -2,9 +2,9 @@
 
     ./venv/bin/python ethni_carrousel2.py <Sujet> [--sortie <dossier>]
 
-Reads `<projet>/cards.json` at §10 and the project's `assets/`. Replaces
-`ethni_carousel.py`, which drives the retired gabarit and stays until the video
-engine moves too.
+Reads `<projet>/cards.json` at §10 and the project's `assets/`. Replaces the
+retired-gabarit carousel script and its single-card sibling, both deleted once the
+video engine had moved to `ethni_montage.py` too.
 
 **It always renders.** A lot that fails a gate goes to `_epreuves/` stamped and
 annotated; a lot that passes goes to `images/`. Nothing here asks permission: a
