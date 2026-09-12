@@ -350,8 +350,9 @@ at 52 px — `--afh-text-hero`, the scale's top step — while `!Kung` renders a
 sections read as one document, and it is the axis with the least governance in
 the repo today.
 
-`--afh-section-gap` (24 / 32 / 48 px) is declared in `space.css`, documented in
-`Spacing.mdx` — and consumed by **zero** components.
+`--afh-section-gap` (24 / 32 / 48 px) is declared in `space.css` and documented
+in `Spacing.mdx`. Before REQ-152, no fiche chapter consumed it; fiche chapters
+now do, while the home cadence remains separate.
 
 That does not mean the page is arrhythmic, which an earlier draft of this
 section claimed. Measured on the rendered home, the bands **abut**: there is no
