@@ -81,6 +81,22 @@ function renderTitle(
 }
 
 describe("country fiche charter", () => {
+  /**
+   * A reader decides a record is thin in the first screen. That was also the
+   * screen with no way to say so: the word "contribuer" existed in the
+   * navigation, the footer, the site tree and on the contribute page itself,
+   * and nowhere on the record it was about. The actions charter asks a click
+   * to take a shape, so this is a link to a real address, not a mood.
+   */
+  // @req REQ-091
+  it("offers a way to amend the record from the record's own head", () => {
+    renderTitle(countryFixture());
+
+    const contribute = screen.getByTestId("country-contribute");
+    expect(contribute).toHaveTextContent("Contribuer");
+    expect(contribute).toHaveAttribute("href", "/fr/contribute");
+  });
+
   // @req REQ-145
   it("renders country fiche chrome in English while preserving corpus values", () => {
     const country = countryFixture();
@@ -199,6 +215,41 @@ describe("country fiche charter", () => {
     ]);
   });
 
+  /**
+   * The record says it can be amended, at the point the reader has finished
+   * reading it. The band is deliberately not a chapter: it carries no
+   * `data-fiche-section`, so the nine above stay nine and the reading rail
+   * does not offer an invitation among a country's history.
+   */
+  // @req REQ-091
+  it("invites amendment without adding a tenth chapter", () => {
+    const { container } = renderParchment(countryFixture());
+
+    const band = screen.getByTestId("fiche-amend-band");
+    expect(band).toHaveTextContent("Cette page est amendable.");
+    expect(band).not.toHaveAttribute("data-fiche-section");
+    expect(container.querySelectorAll("[data-fiche-section]")).not.toHaveLength(
+      0
+    );
+    expect(band.querySelector("a")).toHaveAttribute("href", "/fr/contribute");
+  });
+
+  /**
+   * A page resting on seven unexamined sources out of nine is a fact about
+   * the page, and reading nine entries was the only way to learn it. The
+   * line counts each standing separately — a census, never the single
+   * verdict `SourcesFooter` refuses, which would make the strongest source
+   * and the weakest read alike.
+   */
+  // @req REQ-092
+  it("says what the source apparatus amounts to, by standing", () => {
+    const { container } = renderParchment(countryFixture());
+
+    const tally = container.querySelector('[data-testid="sources-tally"]');
+    expect(tally?.textContent).toMatch(/^\d+ sources? · /);
+    expect(tally?.textContent).toMatch(/ : \d+/);
+  });
+
   // @req REQ-154
   it("keeps dated and undated political entries on one history spine without assigning a date", () => {
     const { container } = renderParchment(
@@ -232,6 +283,79 @@ describe("country fiche charter", () => {
     ).find((item) => item.textContent?.includes("Royaume non daté"));
     expect(undated).toHaveTextContent("Précolonial");
     expect(undated?.textContent).not.toMatch(/\d{4}/);
+  });
+
+  /**
+   * A precolonial kingdom, a colonial administration and a modern state are
+   * three kinds of authority, and the corpus types each one. The record used
+   * to cut the chronology to the first kind, on the stated promise that the
+   * other two appeared "further down the page" — in a timeline that was
+   * written and never wired. So the promise went unkept and a reader was
+   * shown the kingdoms of a country and none of what replaced them.
+   */
+  // @req REQ-154
+  it("shows all three kinds of authority, each period inked by its own", () => {
+    const { container } = renderParchment(
+      countryFixture({
+        kingdoms: [
+          {
+            name: "Royaume du Burundi",
+            period: "XVIe siècle - 1966",
+            entryType: "polity",
+            historicalRole: "Monarchie du mwami.",
+          },
+          {
+            name: "Ruanda-Urundi",
+            period: "1916 - 1962",
+            entryType: "colonial",
+            historicalRole: "Mandat belge, puis tutelle.",
+          },
+          {
+            name: "République du Burundi",
+            period: "1966 - présent",
+            entryType: "modern",
+            historicalRole: "Abolition de la monarchie.",
+          },
+        ],
+      })
+    );
+
+    const chapter = container.querySelector('[data-fiche-section="Histoire"]');
+    expect(chapter).toHaveTextContent("Ruanda-Urundi");
+    expect(chapter).toHaveTextContent("République du Burundi");
+
+    const regimes = Array.from(
+      chapter?.querySelectorAll(".afh-tl-period") ?? [],
+      (period) => period.getAttribute("data-regime")
+    );
+    expect(regimes).toEqual(["polity", "colonial", "modern"]);
+  });
+
+  // A seat of power is a fact about an entity, and the corpus states it. It
+  // used to be printed in the paragraph dress of the account above it, which
+  // read as one more sentence rather than as a place.
+  // @req REQ-154
+  it("names the seats of power under the account that mentions them", () => {
+    const { container } = renderParchment(
+      countryFixture({
+        kingdoms: [
+          {
+            name: "Royaume du Burundi",
+            period: "XVIe siècle - 1966",
+            entryType: "polity",
+            historicalRole: "Monarchie du mwami.",
+            politicalCenters: ["Gitega", "Muramvya"],
+          },
+        ],
+      })
+    );
+
+    const seats = container.querySelector(
+      '[data-fiche-section="Histoire"] .afh-tl-centers'
+    );
+    expect(seats).toHaveTextContent("Gitega · Muramvya");
+    // A paragraph, because that is what keeps it left of a phone's centre.
+    expect(seats?.tagName).toBe("P");
   });
 
   // @req REQ-154

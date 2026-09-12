@@ -44,6 +44,24 @@ export function SourcesFooter({
   const numbered = sources.some((source) => Boolean(source.number));
   const ListTag = numbered ? "ol" : "ul";
 
+  /**
+   * The apparatus counted by standing — a census, not the single verdict the
+   * doc block above refuses. Each source keeps its own label in the list; what
+   * this adds is the shape of the whole, which a reader otherwise has to
+   * assemble by reading every entry. Seven sources awaiting examination out of
+   * nine is a fact about the page, and it should not take nine reads to find.
+   *
+   * Insertion order, so the strongest standing the page actually rests on
+   * leads. No ordering is imposed on standings here: that would be a ranking
+   * the list itself does not draw.
+   */
+  const byStanding = new Map<string, number>();
+  for (const source of sources) {
+    const label = sourceStandingLabel(source.standing, language);
+    byStanding.set(label, (byStanding.get(label) ?? 0) + 1);
+  }
+  const tally = countryCopy[language].sourcesTally;
+
   return (
     <div
       className={
@@ -76,6 +94,18 @@ export function SourcesFooter({
           {hasSourceFlag && <SourceVerifyBadge language={language} />}
         </p>
       )}
+      <p
+        data-testid="sources-tally"
+        className="mb-afh-sm font-semibold"
+        style={{ color: "var(--country-text)" }}
+      >
+        {[
+          tally.total(sources.length),
+          ...Array.from(byStanding, ([label, count]) =>
+            tally.standing(label, count)
+          ),
+        ].join(" · ")}
+      </p>
       <ListTag className="flex flex-col gap-[6px]">
         {sources.map((source, index) => (
           <li

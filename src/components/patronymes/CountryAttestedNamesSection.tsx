@@ -37,6 +37,11 @@ export interface CountryAttestedNamesSectionProps {
  */
 type CountryName = PatronymeLinkSummary | PatronymeReachSummary;
 
+/** A–Z. The index shows all of it, so a gap reads as a gap. */
+const ALPHABET = Array.from({ length: 26 }, (_, step) =>
+  String.fromCharCode(65 + step)
+);
+
 function initial(name: string): string {
   return (
     name
@@ -79,21 +84,52 @@ function CountryNameIndex({
     groups.set(letter, group);
   }
 
+  const letters = [...ALPHABET, ...(groups.has("#") ? ["#"] : [])];
+
   return (
     <>
+      {/* There is no name cloud here, and its absence is a decision.
+          The reviewed rendering opens this chapter with one, each name sized
+          by how often it is attested. A name record in this corpus carries an
+          id, a main name and a naming system — nothing that counts
+          attestations — so the only cloud this page could draw is one at a
+          single size, which says nothing the index below does not, while
+          printing every name a second time: a second link per name for a
+          screen reader to read out, on a chapter that can run to hundreds.
+          The cloud belongs with the attestation count, not before it. */}
+
+      {/* The whole alphabet, not only the letters that landed. A row of six
+          pills tells a reader the list is six letters long; a row of
+          twenty-six with twenty dashed tells them where the corpus is thin,
+          which is the fact the atlas exists to show.
+
+          44px, not the reviewed rendering's 34: every one of these is a tap
+          target on a phone, and the absent ones stay the same size so the
+          row does not comb. */}
       <nav
         aria-label={`${copy.onFiche.countryAlphabeticalIndexLabel} — ${registerLabel}`}
         className="mb-afh-md flex flex-wrap gap-afh-xs text-start"
       >
-        {Array.from(groups.keys()).map((letter) => (
-          <a
-            key={letter}
-            href={`#country-name-${register}-${letter.toLowerCase()}`}
-            className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-afh-sm border border-afh-border text-afh-body font-semibold text-afh-text hover:underline"
-          >
-            {letter}
-          </a>
-        ))}
+        {letters.map((letter) =>
+          groups.has(letter) ? (
+            <a
+              key={letter}
+              href={`#country-name-${register}-${letter.toLowerCase()}`}
+              data-letter="present"
+              className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-afh-sm border border-[color:var(--accent)] text-afh-body font-semibold text-[color:var(--accent-ink)] hover:underline"
+            >
+              {letter}
+            </a>
+          ) : (
+            <span
+              key={letter}
+              data-letter="absent"
+              className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-afh-sm border border-dashed border-afh-border text-afh-body text-afh-text-soft"
+            >
+              {letter}
+            </span>
+          )
+        )}
       </nav>
       {Array.from(groups, ([letter, entries]) => (
         <div key={letter} className="mb-afh-md">

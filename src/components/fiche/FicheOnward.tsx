@@ -70,7 +70,14 @@ export function FicheOnward({ from, links, language }: FicheOnwardProps) {
             <span className="afh-parchment-eyebrow afh-onward-kind">
               {copy.kind[link.kind]}
             </span>
+            {/* The display face, one step up. What a reader is being offered
+                here is a name — a people, a country, a family — and a name on
+                this site is set in the display face wherever it is the
+                subject. In the body face at interface size it read as a menu
+                entry, which is what the eyebrow above it already is. Dress
+                only: the chapter's shape is held by `ficheOnwardCharter`. */}
             <ActionLink
+              className="font-afh-display text-afh-h3 font-bold"
               href={link.href}
               onClick={() =>
                 trackEvent("fiche:related_click", { from, to: link.kind })
