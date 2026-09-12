@@ -1,5 +1,6 @@
 import { createServerClient } from "../../server";
 import { logger } from "@/lib/api/logger";
+import { walkRanges } from "@/lib/supabase/queries/walkRanges";
 
 /**
  * Every name the home's seed chips may draw from, as nothing but a string.
@@ -65,33 +66,37 @@ async function namesInTable(
   supabase: SupabaseClient,
   { table, nameColumn }: { table: string; nameColumn: string }
 ): Promise<string[]> {
-  const found: string[] = [];
-
-  for (let page = 0; page < SEED_NAME_MAX_PAGES; page++) {
-    const start = page * SEED_NAME_PAGE_SIZE;
-    const { data, error } = await supabase
-      .from(table)
-      .select(nameColumn)
-      .range(start, start + SEED_NAME_PAGE_SIZE - 1);
-
-    if (error) {
-      logger.error(`Seed chips: could not read names from ${table}`, error);
-      return [];
-    }
-
-    const rows = data || [];
-    for (const row of rows) {
-      // Through `unknown`: the column is chosen at runtime, so the client
-      // cannot type the row and infers its error shape instead.
-      const name = (row as unknown as Record<string, unknown>)[nameColumn];
-      if (typeof name === "string" && name) found.push(name);
-    }
-    if (rows.length < SEED_NAME_PAGE_SIZE) return found;
+  let walk: Awaited<ReturnType<typeof walkRanges<unknown>>>;
+  try {
+    walk = await walkRanges<unknown>(
+      async (from, to) => {
+        const { data, error } = await supabase
+          .from(table)
+          .select(nameColumn)
+          .range(from, to);
+        if (error) throw error;
+        return data || [];
+      },
+      { pageSize: SEED_NAME_PAGE_SIZE, maxPages: SEED_NAME_MAX_PAGES }
+    );
+  } catch (error) {
+    logger.error(`Seed chips: could not read names from ${table}`, error);
+    return [];
   }
 
-  logger.error(
-    `Seed chips: ${table} exceeded ${SEED_NAME_MAX_PAGES} pages — names are truncated`
-  );
+  if (walk.truncated) {
+    logger.error(
+      `Seed chips: ${table} exceeded ${SEED_NAME_MAX_PAGES} pages — names are truncated`
+    );
+  }
+
+  const found: string[] = [];
+  for (const row of walk.rows) {
+    // Through `unknown`: the column is chosen at runtime, so the client
+    // cannot type the row and infers its error shape instead.
+    const name = (row as Record<string, unknown>)[nameColumn];
+    if (typeof name === "string" && name) found.push(name);
+  }
   return found;
 }
 

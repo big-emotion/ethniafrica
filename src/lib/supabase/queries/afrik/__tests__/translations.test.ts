@@ -63,7 +63,8 @@ describe("getAfrikTranslation (REQ-142)", () => {
       .mockResolvedValueOnce({
         data: [{ entity_id: "PPL_LAST" }],
         error: null,
-      });
+      })
+      .mockResolvedValueOnce({ data: [], error: null });
 
     const ids = await getAfrikTranslationIds("people", "en");
 
