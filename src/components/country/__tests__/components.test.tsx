@@ -1,12 +1,10 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { PeoplesSection } from "../PeoplesSection";
-import { HistoricalFactsSection } from "../HistoricalFactsSection";
 import type {
   HeroData,
   PeoplesData,
   KingdomsData,
-  HistoricalFactsData,
 } from "@/lib/countryDataTransformer";
 // ==========================================
 // PeoplesSection
@@ -230,51 +228,6 @@ describe("PeoplesSection", () => {
     expect(endonymEl).not.toHaveAttribute("lang");
   });
 });
-// ==========================================
-// HistoricalFactsSection
-// ==========================================
-
-describe("HistoricalFactsSection", () => {
-  it("renders all period labels and content", () => {
-    const data: HistoricalFactsData = {
-      periods: [
-        { label: "Colonisation", content: "Colonisation française 1880-1960" },
-        {
-          label: "Période post-indépendance",
-          content: "Indépendance proclamée le 5 août 1960",
-        },
-      ],
-    };
-    render(<HistoricalFactsSection data={data} />);
-    expect(screen.getByText("Colonisation")).toBeTruthy();
-    expect(screen.getByText("Colonisation française 1880-1960")).toBeTruthy();
-    expect(screen.getByText("Période post-indépendance")).toBeTruthy();
-    expect(
-      screen.getByText("Indépendance proclamée le 5 août 1960")
-    ).toBeTruthy();
-  });
-
-  it("renders nothing when periods list is empty", () => {
-    const data: HistoricalFactsData = { periods: [] };
-    const { container } = render(<HistoricalFactsSection data={data} />);
-    expect(container.firstChild).toBeNull();
-  });
-
-  it("renders a single period correctly", () => {
-    const data: HistoricalFactsData = {
-      periods: [
-        {
-          label: "Périodes anciennes",
-          content: "Grandes migrations bantoues",
-        },
-      ],
-    };
-    render(<HistoricalFactsSection data={data} />);
-    expect(screen.getByText("Périodes anciennes")).toBeTruthy();
-    expect(screen.getByText("Grandes migrations bantoues")).toBeTruthy();
-  });
-});
-
 describe("PeoplesSection — what the bar admits (FR28)", () => {
   const peoples = (percentages: number[]) => ({
     totalPopulation: "220 M",
@@ -321,24 +274,5 @@ describe("PeoplesSection — what the bar admits (FR28)", () => {
     );
 
     expect(container.querySelector("[data-demo-coverage-note]")).toBeNull();
-  });
-});
-
-/**
- * The mockup frames four sections — Étymologie, Peuples, Royaumes,
- * Sources — but its own note says it follows the order of the eight real
- * ones. The four it does not draw are out of frame, not deleted, and this
- * is what stops a later restyle from quietly dropping them.
- */
-describe("the country fiche keeps all eight sections", () => {
-  // @req REQ-092
-  it("still exports the four sections the mockup leaves out of frame", async () => {
-    const country = await import("@/components/country");
-
-    // The history timeline is not among them any more. It was one of three
-    // renderings of one chronology, two of which were never wired to a page;
-    // what it encoded — a period inked by its regime — now lives in
-    // CountryChronology, which the parchment actually renders.
-    expect(country.HistoricalFactsSection).toBeDefined();
   });
 });
