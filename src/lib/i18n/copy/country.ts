@@ -26,6 +26,8 @@ const en = {
     factTier: "Source tier",
   },
   sections: {
+    nameAndHistory: "The name and its history",
+    history: "History",
     etymology: "Etymology of the name",
     peoples: "Peoples of the country",
     kingdoms: "Kingdoms and political formations",
@@ -35,6 +37,10 @@ const en = {
     culture: "Culture and society",
     sources: "Sources",
   },
+  historyDateMissing: "Date not recorded",
+  languagesDerivedNote:
+    "Derived from the people pages documented in the atlas.",
+  languagesUnavailable: "Language relations are temporarily unavailable.",
   peoples: {
     inhabitants: "inhabitants",
     documentedInhabitants: "documented inhabitants",
@@ -124,6 +130,8 @@ const fr: CountryCopy = {
     factTier: "Niveau de source",
   },
   sections: {
+    nameAndHistory: "Le nom et son histoire",
+    history: "Histoire",
     etymology: "Étymologie du nom",
     peoples: "Peuples du pays",
     kingdoms: "Royaumes et formations politiques",
@@ -133,6 +141,10 @@ const fr: CountryCopy = {
     culture: "Culture et société",
     sources: "Sources",
   },
+  historyDateMissing: "Date non renseignée",
+  languagesDerivedNote: "Déduit des pages peuple documentées dans l’atlas.",
+  languagesUnavailable:
+    "Les liens entre langues et peuples sont temporairement indisponibles.",
   peoples: {
     inhabitants: "habitants",
     documentedInhabitants: "habitants documentés",

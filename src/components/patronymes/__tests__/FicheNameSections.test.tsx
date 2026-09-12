@@ -84,7 +84,9 @@ describe("CountryAttestedNamesSection", () => {
     // published under the first's heading.
     const attestedNames = attested.nextElementSibling as HTMLElement;
     const reachNames = reach.nextElementSibling as HTMLElement;
-    expect(within(attestedNames).getByRole("link")).toHaveTextContent("Keïta");
+    expect(
+      within(attestedNames).getByRole("link", { name: "Keïta" })
+    ).toBeInTheDocument();
     expect(
       within(reachNames).getByRole("link", { name: /Maghrawa/ })
     ).toBeInTheDocument();

@@ -80,10 +80,10 @@ Three surfaces, each stating one claim, none of them merged.
 and the one that makes the name dimension feel part of the atlas rather than a
 separate index.
 
-**On a country fiche** — _Noms attestés_, a reverse join on
-`afrik_patronyme_countries`. Optionally a second, separately headed list of names
-borne by that country's peoples, worded as reach rather than attestation. Never
-one list summing the two.
+**On a country fiche** — _Noms du pays_ contains two separately headed lists:
+names directly attested through `afrik_patronyme_countries`, and names borne by
+the country's peoples, worded as reach rather than attestation. Each list has
+its own alphabetical anchors. Never sum the two into one claim.
 
 ## What it costs
 
