@@ -10,6 +10,8 @@ const en = {
   },
   summary: {
     title: "In brief",
+    /** The country's summary prose, folded behind its first sentence. */
+    portrait: "Portrait",
     referenceYear: (year: number) => `Reference year: ${year}`,
     /**
      * Each count is a name, the reach of what is counted, and what to say
@@ -61,7 +63,7 @@ const en = {
   peoples: {
     inhabitants: "inhabitants",
     documentedInhabitants: "documented inhabitants",
-    count: (count: number) => `${count}+ peoples`,
+    count: (count: number) => `${count} ${count === 1 ? "people" : "peoples"}`,
     groupedCount: (count: number) => `${count} peoples`,
     coverage: (share: number) =>
       `The peoples documented here represent ${share}% of the country's population. The remainder is not yet distributed in the atlas.`,
@@ -70,7 +72,6 @@ const en = {
     otherLanguages: (count: number) => `+ ${count} other languages`,
   },
   reportSection: "Report this section",
-  sourcesReferences: "Sources and references",
   /**
    * What the apparatus amounts to, counted by standing. A census, never a
    * verdict: the list still shows each source's own standing, and the point
@@ -113,12 +114,6 @@ const en = {
       sultanates: "Sultanates & Chiefdoms",
       chiefdoms: "Chiefdoms & Entities",
     },
-    culture: {
-      religion: "Religions",
-      economy: "Economy",
-      social: "Organisation",
-      relations: "Relations",
-    },
     historicalPeriods: {
       ancientPeriods: "Ancient periods",
       middleAges: "Middle Ages",
@@ -141,6 +136,7 @@ const fr: CountryCopy = {
   title: { ficheCountry: "page du pays", reference: "réf." },
   summary: {
     title: "En bref",
+    portrait: "Portrait",
     referenceYear: (year) => `Année de référence : ${year}`,
     figures: {
       population: {
@@ -189,7 +185,7 @@ const fr: CountryCopy = {
   peoples: {
     inhabitants: "habitants",
     documentedInhabitants: "habitants documentés",
-    count: (count) => `${count}+ peuples`,
+    count: (count) => `${count} peuple${count > 1 ? "s" : ""}`,
     groupedCount: (count) => `${count} peuples`,
     coverage: (share) =>
       `Les peuples documentés ici représentent ${share}\u00a0% de la population du pays. Le reste n'est pas encore réparti dans l’atlas.`,
@@ -198,7 +194,6 @@ const fr: CountryCopy = {
     otherLanguages: (count) => `+ ${count} autres langues`,
   },
   reportSection: "Signaler cette section",
-  sourcesReferences: "Sources & Références",
   sourcesTally: {
     total: (count) => `${count} source${count > 1 ? "s" : ""}`,
     standing: (label, count) => `${label} : ${count}`,
@@ -234,12 +229,6 @@ const fr: CountryCopy = {
       kingdoms: "Royaumes & Civilisations",
       sultanates: "Sultanats & Chefferies",
       chiefdoms: "Chefferies & Entités",
-    },
-    culture: {
-      religion: "Religions",
-      economy: "Économie",
-      social: "Organisation",
-      relations: "Relations",
     },
     historicalPeriods: {
       ancientPeriods: "Périodes anciennes",

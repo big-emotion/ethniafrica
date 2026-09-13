@@ -1,18 +1,13 @@
 import { describe, it, expect } from "vitest";
 import {
   flagFromISO3,
-  formatPopulation,
   extractEndonym,
   extractPejorative,
   shortenRegion,
   shortenFamily,
-  extractKeywords,
   transformHero,
-  transformTimeline,
   transformPeoples,
   transformKingdoms,
-  transformLanguages,
-  transformCulture,
   transformSources,
   transformHistoricalFacts,
   transformCountryData,
@@ -232,24 +227,6 @@ describe("flagFromISO3", () => {
   });
 });
 
-describe("formatPopulation", () => {
-  it("formats millions", () => {
-    expect(formatPopulation(23000000)).toBe("23M");
-  });
-
-  it("formats millions with decimal", () => {
-    expect(formatPopulation(11500000)).toBe("11.5M");
-  });
-
-  it("formats thousands", () => {
-    expect(formatPopulation(920000)).toBe("920K");
-  });
-
-  it("formats small numbers", () => {
-    expect(formatPopulation(500)).toBe("500");
-  });
-});
-
 describe("extractEndonym", () => {
   it("extracts endonym from parenthetical format", () => {
     expect(extractEndonym("Moaga (singulier), Moose (pluriel)")).toBe(
@@ -304,17 +281,6 @@ describe("shortenFamily", () => {
   });
 });
 
-describe("extractKeywords", () => {
-  it("extracts up to 5 keywords", () => {
-    const result = extractKeywords(
-      "Islam (majoritaire), christianisme (catholicisme), religions traditionnelles africaines"
-    );
-    expect(result.length).toBeLessThanOrEqual(5);
-    expect(result[0]).toBe("Islam");
-    expect(result[1]).toBe("christianisme");
-  });
-});
-
 // ==========================================
 // TRANSFORM TESTS
 // ==========================================
@@ -346,81 +312,6 @@ describe("transformHero", () => {
   });
 });
 
-describe("transformTimeline", () => {
-  it("produces timeline items for BFA", () => {
-    const result = transformTimeline(bfaCountry.historicalNames);
-    expect(result.items.length).toBeGreaterThan(0);
-
-    const types = result.items.map((i) => i.type);
-    expect(types).toContain("kingdom");
-    expect(types).toContain("colonial");
-    expect(types).toContain("sovereign");
-  });
-
-  it("calculates gradient stops", () => {
-    const result = transformTimeline(bfaCountry.historicalNames);
-    expect(result.gradientStops.goldEnd).toBeGreaterThan(0);
-    expect(result.gradientStops.colonialEnd).toBeGreaterThan(
-      result.gradientStops.goldEnd
-    );
-  });
-
-  it("handles empty historical names", () => {
-    const result = transformTimeline(undefined);
-    expect(result.items).toHaveLength(0);
-  });
-
-  // Most fiches write an era as prose, not as a "date : Nom" list. The prose
-  // is not a name, so it is served whole as the item's prose instead of being
-  // cut into a title — which is what put the same clipped sentence twice on
-  // every country fiche.
-  // @req REQ-092
-  it("keeps a prose era whole instead of clipping it into a title", () => {
-    const prose =
-      "Mosaïque de royaumes et chefferies autonomes : royaumes Akan (Baoulé, Agni, Abron), peuples Krou (Bété, Wé, Dida), Mandé du Nord (Malinké, Dioula), peuples voltaiques (Sénoufo, Lobi, Koulango).";
-
-    const result = transformTimeline({ precolonial: prose });
-
-    expect(result.items).toHaveLength(1);
-    expect(result.items[0].prose).toBe(prose);
-    expect(result.items[0].name).toBeUndefined();
-  });
-
-  // @req REQ-092
-  it("names an era written as a dated list, and gives it no prose", () => {
-    const result = transformTimeline({
-      colonization: "1893-1960 : Colonie de Côte d'Ivoire.",
-    });
-
-    expect(result.items).toHaveLength(1);
-    expect(result.items[0].name).toBe("Colonie de Côte d'Ivoire");
-    expect(result.items[0].era).toBe("1893-1960");
-    expect(result.items[0].prose).toBeUndefined();
-  });
-
-  // @req REQ-092
-  it("clips nothing on any era of a real fiche", () => {
-    const result = transformTimeline(bfaCountry.historicalNames);
-
-    for (const item of result.items) {
-      expect(item.name ?? "").not.toMatch(/\.\.\.$/);
-      expect(item.prose ?? "").not.toMatch(/\.\.\.$/);
-    }
-  });
-
-  // Two prose eras used to collapse into one when both were untitled, because
-  // the de-duplication key read a name that no longer exists.
-  // @req REQ-092
-  it("keeps two distinct prose eras apart", () => {
-    const result = transformTimeline({
-      middleAges: "Développement des royaumes Akan.",
-      precolonial: "Mosaïque de royaumes et chefferies autonomes.",
-    });
-
-    expect(result.items).toHaveLength(2);
-  });
-});
-
 describe("transformPeoples", () => {
   // The country population and the people-level coverage are different facts.
   // Cameroon documents only part of its people breakdown, but the official
@@ -435,7 +326,7 @@ describe("transformPeoples", () => {
     });
 
     expect(result.totalPopulation).toBe(29900000);
-    expect(result.totalPopulationFormatted).toBe("29.9M");
+    expect(result.totalPopulationFormatted).toMatch(/^29,9\sM$/);
     expect(result.totalPopulationIsNational).toBe(true);
     expect(result.everyPeopleDeclaresPopulation).toBe(false);
     expect(result.populationReferenceYear).toBe(2025);
@@ -453,7 +344,7 @@ describe("transformPeoples", () => {
     );
 
     expect(result.totalPopulation).toBe(500000);
-    expect(result.totalPopulationFormatted).toBe("500K");
+    expect(result.totalPopulationFormatted).toMatch(/^500\sk$/);
     expect(result.everyPeopleDeclaresPopulation).toBe(true);
     expect(result.populationReferenceYear).toBe(2025);
   });
@@ -464,9 +355,69 @@ describe("transformPeoples", () => {
       bfaCountry.majorPeoples
     );
     expect(result.totalPopulation).toBe(20700000);
-    expect(result.totalPopulationFormatted).toBe("20.7M");
-    expect(result.peopleCount).toBe(10);
+    expect(result.totalPopulationFormatted).toMatch(/^20,7\sM$/);
+    // This fixture links none of its rows to a people record, so it counts
+    // no people: the count is of records a reader can open, not of rows.
+    expect(result.peopleCount).toBe(0);
     expect(result.rows.length).toBeGreaterThan(0);
+  });
+
+  // "10+ peoples" counted every row, a group with no record of its own
+  // included, and claimed more with its plus sign. A row counts when it
+  // carries an id, or when majorPeoples resolves one for its name.
+  // @req REQ-154
+  it("counts only the peoples linked to a record", () => {
+    const result = transformPeoples(
+      {
+        peoples: [
+          { name: "Ovambo", percentageInCountry: 50, peopleId: "PPL_OVAMBO" },
+          { name: "Herero", percentageInCountry: 7 },
+          { name: "Groupe sans fiche", percentageInCountry: 5 },
+        ],
+      } as never,
+      [{ name: "Herero", peopleId: "PPL_HERERO" }] as never
+    );
+
+    expect(result.peopleCount).toBe(2);
+  });
+
+  // Every country fiche files its peoples' families by identifier, and the
+  // row under each people printed "Plateaux · FLG_BANTU" on all 54 records.
+  // The route resolves the name from the family roster; a family it cannot
+  // name is left out rather than printed as its identifier.
+  // @req REQ-154
+  it("names a people's family from the roster, never by its identifier", () => {
+    const demographics = {
+      peoples: [
+        {
+          name: "Hutu",
+          percentageInCountry: 85,
+          region: "Plateaux",
+          languageFamily: "FLG_BANTU",
+        },
+        {
+          name: "Twa",
+          percentageInCountry: 1,
+          languageFamily: "FLG_INCONNUE",
+        },
+      ],
+    } as never;
+
+    const named = transformPeoples(
+      demographics,
+      undefined,
+      "fr",
+      new Map([["FLG_BANTU", "Bantou"]])
+    );
+    expect(named.rows.map((row) => row.languageFamily)).toEqual([
+      "Bantou",
+      undefined,
+    ]);
+
+    const unnamed = transformPeoples(demographics, undefined, "fr");
+    expect(unnamed.rows.every((row) => row.languageFamily === undefined)).toBe(
+      true
+    );
   });
 
   it("sorts by percentage descending", () => {
@@ -542,7 +493,7 @@ describe("transformPeoples", () => {
       ],
     });
 
-    expect(result.totalPopulationFormatted).toBe("7.7M");
+    expect(result.totalPopulationFormatted).toMatch(/^7,7\sM$/);
     expect(result.everyPeopleDeclaresPopulation).toBe(false);
   });
 
@@ -856,74 +807,6 @@ describe("transformKingdoms", () => {
   });
 });
 
-describe("transformLanguages", () => {
-  it("produces 12 bubbles for BFA", () => {
-    const result = transformLanguages(bfaCountry.culture);
-    expect(result.bubbles).toHaveLength(12);
-    expect(result.totalCount).toBe(12);
-    expect(result.overflowCount).toBe(0);
-  });
-
-  it("marks French as official", () => {
-    const result = transformLanguages(bfaCountry.culture);
-    const french = result.bubbles.find((b) => b.name === "Français");
-    expect(french?.isOfficial).toBe(true);
-    expect(french?.size).toBe("big");
-  });
-
-  it("assigns correct sizes", () => {
-    const result = transformLanguages(bfaCountry.culture);
-    // First 3 should be big
-    expect(result.bubbles[0].size).toBe("big");
-    expect(result.bubbles[1].size).toBe("big");
-    expect(result.bubbles[2].size).toBe("big");
-    // Middle should be regular
-    expect(result.bubbles[5].size).toBe("regular");
-    // Last ones should be small
-    expect(result.bubbles[11].size).toBe("small");
-  });
-});
-
-describe("transformCulture", () => {
-  it("produces 4 grid items", () => {
-    const result = transformCulture(bfaCountry.culture);
-    expect(result.items).toHaveLength(4);
-    expect(result.items.map((i) => i.slot)).toEqual([
-      "religion",
-      "economy",
-      "social",
-      "relations",
-    ]);
-  });
-
-  it("extracts religion keywords (capitalized, max 3)", () => {
-    const result = transformCulture(bfaCountry.culture);
-    const religion = result.items.find((i) => i.slot === "religion");
-    expect(religion?.keywords.length).toBeGreaterThan(0);
-    expect(religion?.keywords.length).toBeLessThanOrEqual(3);
-    expect(religion?.keywords[0]).toBe("Islam");
-    // Keywords should be capitalized
-    for (const kw of religion?.keywords || []) {
-      expect(kw[0]).toBe(kw[0].toUpperCase());
-    }
-  });
-
-  /**
-   * The religion tile used to carry a mosque, whatever the country's
-   * religions were, and the same four pictograms stood over every country in
-   * the atlas. One glyph for "Religions" picks the religion; one for
-   * "Organisation" picks the form of authority. The corpus supplies neither
-   * choice, so the page makes neither.
-   */
-  // @req REQ-092
-  it("attaches no pictogram to a culture rubric", () => {
-    const result = transformCulture(bfaCountry.culture);
-    for (const item of result.items) {
-      expect(Object.keys(item)).not.toContain("icon");
-    }
-  });
-});
-
 describe("transformSources", () => {
   // @req REQ-092
   it("keeps every source whole, so each can show its own standing", () => {
@@ -1024,23 +907,14 @@ describe("transformCountryData", () => {
   it("localizes generated country-fiche labels in English", () => {
     const result = transformCountryData(bfaCountry, "en");
 
-    expect(result.culture.items.map((item) => item.label)).toEqual([
-      "Religions",
-      "Economy",
-      "Organisation",
-      "Relations",
-    ]);
     expect(result.kingdoms.title).toBe("Kingdoms & Civilisations");
   });
 
   it("produces complete page data for BFA", () => {
     const result = transformCountryData(bfaCountry);
     expect(result.hero.countryName).toBe("Burkina Faso");
-    expect(result.timeline.items.length).toBeGreaterThan(0);
     expect(result.peoples.rows.length).toBeGreaterThan(0);
     expect(result.kingdoms.cards.length).toBeGreaterThan(0);
-    expect(result.languages.bubbles.length).toBeGreaterThan(0);
-    expect(result.culture.items).toHaveLength(4);
     expect(result.sources).toBeTruthy();
   });
 

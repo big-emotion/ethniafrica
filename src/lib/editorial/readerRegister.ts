@@ -59,6 +59,11 @@ export const INTERNAL_REGISTER_PATTERNS: ReadonlyArray<RegisterPattern> = [
       /file d'attente|passe de recherche|passe anthroponymique|protocole de recherche|claim-level|tier hérité|hors corpus|plan de couverture|vague \d+ du plan/i,
   },
   {
+    label: "pipeline source note",
+    pattern:
+      /Tier (?:resolved|inferred|resolu)\b|No URL and no recognisable citation shape|No domain ruling covers|the tier awaits editorial review|Resolved from the (?:prior|URL-less)\b/i,
+  },
+  {
     // The English tier-provenance class, written in French by hand — often
     // unaccented. Each alternative names the tier decision itself, so a note
     // that says what a source is ("vérifié au catalogue de la BnF",

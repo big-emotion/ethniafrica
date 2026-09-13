@@ -83,7 +83,7 @@
       "url": "https://arushalinguistics.org/publications/Mbenzi_AWPAL_2024.pdf",
       "tier": "referenced",
       "source_kind": "academic",
-      "notes": "Petrus A. Mbenzi, Arusha Working Papers in African Linguistics 6(1), 2024, p. 80-96. Texte intégral consulté, notamment le tableau p. 87 : Amadhila y est un anthroponyme oshiwambo glosé « birds » et la graphie anglicisée Amathila est analysée comme le remplacement de dh [ð] par th [θ]. L'article étudie des noms personnels ; il ne démontre pas le statut clanique attribué par la file de candidats."
+      "notes": "Petrus A. Mbenzi, Arusha Working Papers in African Linguistics 6(1), 2024, p. 80-96. Texte intégral consulté, notamment le tableau p. 87 : Amadhila y est un anthroponyme oshiwambo glosé « birds » et la graphie anglicisée Amathila est analysée comme le remplacement de dh [ð] par th [θ]. L'article étudie des noms personnels ; il ne démontre pas un statut clanique pour Amadhila."
     }
   ],
   "gaps": [
@@ -107,5 +107,10 @@
       "fieldPath": "transmissionMode",
       "reason": "La recherche web combinant « Amadhila », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme », complétée par les mots-clés « transmission » et « inheritance », puis la lecture de « The Anglicisation of Oshiwambo Names », n'a pas établi de règle de transmission propre à ce nom ; la valeur « other » est donc conservée plutôt qu'une règle familiale supposée."
     }
-  ]
+  ],
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the personal-name corpus receives a coordinated translation and terminology review."
+    }
+  }
 }

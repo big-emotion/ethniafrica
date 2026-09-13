@@ -3,18 +3,13 @@ import { AutonymExonymHeading } from "@/components/ui/AutonymExonymHeading";
 import { PeopleFicheHead } from "./PeopleFicheHead";
 import { PeopleDetailViewV2 } from "./PeopleDetailViewV2";
 import type { PeopleDetail } from "@/types/afrik-frontend";
-import { PeopleOriginBlock } from "./PeopleOriginBlock";
-import { PeopleLanguageSection } from "./PeopleLanguageSection";
-import { PeopleHistoryTimeline } from "./PeopleHistoryTimeline";
+
 import { PeopleRelatedPeoplesSection } from "./PeopleRelatedPeoplesSection";
 import { PeopleCountriesSection } from "./PeopleCountriesSection";
-import { SourcesFooter } from "@/components/country/SourcesFooter";
+import { FicheSources } from "@/components/fiche/FicheSources";
 import type { AssociatedGroup } from "@/lib/people/associatedPeopleLinks";
 import type {
   PeopleHeroData,
-  PeopleOriginData,
-  PeopleLanguageData,
-  PeopleHistoryData,
   PeopleRelatedData,
   PeopleCountriesData,
 } from "@/lib/peopleDataTransformer";
@@ -51,39 +46,6 @@ const yorubaHero: PeopleHeroData = {
   languageFamilyName: "Niger-Congo",
   currentCountries: ["NGA", "BEN", "TGO", "GHA"],
   classificationStatus: null,
-};
-
-const origin: PeopleOriginData = {
-  ancientOrigins:
-    "Peuple originaire d'Ile-Ife (Nigeria actuel), berceau de la civilisation yoruba.",
-  formationPeriod: "VIIe–IXe siècle",
-  migrationRoutes: [
-    "Expansion depuis Ile-Ife vers Oyo (nord-ouest)",
-    "Migrations vers la côte — Lagos, Badagry",
-    "Diaspora atlantique (XVIIe–XIXe siècle)",
-  ],
-  historicalSettlementZones: ["Île-Ifẹ̀", "Oyo", "Lagos", "Ibadan", "Kétou"],
-  externalInfluences:
-    "Contacts avec les Hausa, les Fulani et l'empire du Mali.",
-};
-
-const language: PeopleLanguageData = {
-  mainLanguage: "Yoruba (Yorùbá)",
-  isoCodes: ["yor"],
-  dialects: ["Ìjẹ̀bú", "Ẹ̀gbá", "Ẹ̀kìtì", "Ọ̀yọ́", "Ìfẹ̀"],
-  vehicularRole:
-    "Langue véhiculaire au Nigeria du Sud-Ouest ; enseignée à l'université.",
-};
-
-const history: PeopleHistoryData = {
-  kingdomsOrChiefdoms:
-    "Empire d'Oyo (XIVe–XIXe siècle), cités-états d'Ifẹ̀ et Ọ̀yọ́.",
-  relationsWithNeighbors:
-    "Relations commerciales avec les Hausa au nord et les Igbo à l'est.",
-  conflictsOrAlliances:
-    "Guerres civiles de l'empire d'Oyo (XIXe siècle) ; résistance à la colonisation britannique.",
-  diaspora:
-    "Forte communauté au Brésil (Candomblé), Cuba (Santería), Haïti (Vodou).",
 };
 
 const relatedPeoples: PeopleRelatedData = {
@@ -261,107 +223,7 @@ export const Hero_Desktop: Story = {
 };
 
 // ==========================================
-// PeopleOriginBlock — 430 / 720 / 1200
-// ==========================================
 
-// @req REQ-115
-export const Origin_Mobile: Story = {
-  name: "PeopleOriginBlock — 430px",
-  parameters: { viewport: { defaultViewport: "mobile430" } },
-  render: () => (
-    <Card>
-      <PeopleOriginBlock data={origin} />
-    </Card>
-  ),
-};
-
-// @req REQ-115
-export const Origin_Tablet: Story = {
-  name: "PeopleOriginBlock — 720px",
-  parameters: { viewport: { defaultViewport: "tablet720" } },
-  render: Origin_Mobile.render,
-};
-
-// @req REQ-115
-export const Origin_Desktop: Story = {
-  name: "PeopleOriginBlock — 1200px",
-  parameters: { viewport: { defaultViewport: "desktop1200" } },
-  render: Origin_Mobile.render,
-};
-
-// @req REQ-115
-export const Origin_Empty: Story = {
-  name: "PeopleOriginBlock — empty (calm omission, UX-DR31)",
-  render: () => {
-    const empty: PeopleOriginData = {
-      migrationRoutes: [],
-      historicalSettlementZones: [],
-    };
-    return <PeopleOriginBlock data={empty} />;
-  },
-};
-
-// ==========================================
-// PeopleLanguageSection — 430 / 720 / 1200
-// ==========================================
-
-// @req REQ-115
-export const Language_Mobile: Story = {
-  name: "PeopleLanguageSection — 430px",
-  parameters: { viewport: { defaultViewport: "mobile430" } },
-  render: () => (
-    <Card>
-      <PeopleLanguageSection data={language} />
-    </Card>
-  ),
-};
-
-// @req REQ-115
-export const Language_Tablet: Story = {
-  name: "PeopleLanguageSection — 720px",
-  parameters: { viewport: { defaultViewport: "tablet720" } },
-  render: Language_Mobile.render,
-};
-
-// @req REQ-115
-export const Language_Desktop: Story = {
-  name: "PeopleLanguageSection — 1200px",
-  parameters: { viewport: { defaultViewport: "desktop1200" } },
-  render: Language_Mobile.render,
-};
-
-// ==========================================
-// PeopleHistoryTimeline — 430 / 720 / 1200
-// ==========================================
-
-// @req REQ-115
-export const History_Mobile: Story = {
-  name: "PeopleHistoryTimeline — 430px",
-  parameters: { viewport: { defaultViewport: "mobile430" } },
-  render: () => (
-    <Card>
-      <ol className="afh-parchment-timeline">
-        <PeopleHistoryTimeline data={history} />
-      </ol>
-    </Card>
-  ),
-};
-
-// @req REQ-115
-export const History_Tablet: Story = {
-  name: "PeopleHistoryTimeline — 720px",
-  parameters: { viewport: { defaultViewport: "tablet720" } },
-  render: History_Mobile.render,
-};
-
-// @req REQ-115
-export const History_Desktop: Story = {
-  name: "PeopleHistoryTimeline — 1200px",
-  parameters: { viewport: { defaultViewport: "desktop1200" } },
-  render: History_Mobile.render,
-};
-
-// ==========================================
 // PeopleRelatedPeoplesSection — 430 / 720 / 1200
 // ==========================================
 
@@ -424,18 +286,18 @@ export const Countries_Desktop: Story = {
 };
 
 // ==========================================
-// PeopleSourcesFooter — 430 / 720 / 1200
+// FicheSources — 430 / 720 / 1200
 // ==========================================
 
 // @req REQ-115
 export const Sources_Mobile: Story = {
-  name: "PeopleSourcesFooter — 430px",
+  name: "FicheSources — 430px",
   parameters: { viewport: { defaultViewport: "mobile430" } },
   render: () => (
     <div style={{ padding: "12px" }}>
       {/* One source per tier the corpus actually uses, so the story shows
           what a low-confidence fiche looks like next to a well-sourced one. */}
-      <SourcesFooter
+      <FicheSources
         sources={[
           {
             label: "SIL Ethnologue 2025",
@@ -461,14 +323,14 @@ export const Sources_Mobile: Story = {
 
 // @req REQ-115
 export const Sources_Tablet: Story = {
-  name: "PeopleSourcesFooter — 720px",
+  name: "FicheSources — 720px",
   parameters: { viewport: { defaultViewport: "tablet720" } },
   render: Sources_Mobile.render,
 };
 
 // @req REQ-115
 export const Sources_Desktop: Story = {
-  name: "PeopleSourcesFooter — 1200px",
+  name: "FicheSources — 1200px",
   parameters: { viewport: { defaultViewport: "desktop1200" } },
   render: Sources_Mobile.render,
 };

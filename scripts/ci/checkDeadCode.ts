@@ -88,7 +88,8 @@ export const DEAD_CODE_CEILINGS: Readonly<Record<DeadCodeCategory, number>> = {
   // remains is inferred zod types in src/api/v2/schemas.
   // 25 -> 8 after the seventeen unused z.infer param/query aliases under
   // src/api/v2/schemas were removed by the next consolidation pass.
-  types: 8,
+  // 8 -> 7 after the fiche parity cleanup removed another unused type.
+  types: 7,
   duplicates: 0,
 };
 

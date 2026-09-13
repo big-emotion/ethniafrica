@@ -74,7 +74,8 @@ for (const [kind, markup] of fixtures) {
         [...new Set(result.gaps)],
         `${kind} at ${width}px: ${result.gaps.join(", ")}`
       ).toEqual([result.token]);
-      expect(result.padding).toBe(width < 768 ? "26px 20px" : "34px 40px");
+      // A chapter carries 16px inline below the 760px container, 24px from it.
+      expect(result.padding).toBe(width < 768 ? "24px 16px" : "32px 24px");
     }
   });
 }

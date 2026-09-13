@@ -63,7 +63,7 @@ describe("DRC country source cleanup", () => {
     expect(country.content.sources.map((source) => source.title)).toEqual(
       expect.arrayContaining([
         "UNFPA – World Population Dashboard — République démocratique du Congo",
-        "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "UNSD M49 – Codes normalisés des pays et noms français",
       ])
     );
   });

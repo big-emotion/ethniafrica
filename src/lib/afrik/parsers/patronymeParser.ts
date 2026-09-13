@@ -184,6 +184,10 @@ const patronymeGapSchema = z
 
 const commonShape = {
   _meta: patronymeMetaSchema,
+  _translation: z
+    .object({ deferred: z.record(z.string(), z.string().trim().min(1)) })
+    .strict()
+    .optional(),
   id: z.string().regex(/^PAT_[A-Z0-9_]+$/, {
     message: "id must match ^PAT_[A-Z0-9_]+$",
   }),

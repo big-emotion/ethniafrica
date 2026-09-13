@@ -55,16 +55,16 @@ export function PeopleFicheHead({
 }) {
   const copy = peopleCopy[language].ficheHead;
   const group = hero.ethnoLinguisticGroup ?? hero.languageFamilyName;
-  const corpusKeys = [hero.peopleId, hero.languageFamilyId]
-    .filter(Boolean)
-    .join(" · ");
   const presenceCount = countries.distributions.length;
 
   return (
     <header className="afh-parchment-head">
       <p data-testid="fiche-head-eyebrow" className="afh-parchment-eyebrow">
-        {corpusKeys}
-        {corpusKeys && group ? " · " : null}
+        {/* What the record is, then its group. The corpus keys stood here,
+            PPL_YORUBA · FLG_BENOUECONGO, and a reader who can see the name
+            has no use for its key. */}
+        {copy.kind}
+        {group ? " · " : null}
         {group && <span className="afh-parchment-eyebrow-group">{group}</span>}
       </p>
 

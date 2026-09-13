@@ -73,7 +73,7 @@
       "url": "https://www.behindthename.com/name/farah",
       "tier": "unverified",
       "source_kind": "community",
-      "notes": "Behind the Name, notice consultée intégralement le 2 septembre 2026. Elle donne le script arabe فرح, le sens « joy, happiness », la racine fariḥa et la forme somalie Faarax, en renvoyant au dictionnaire de Hans Wehr (1979, p. 822). Ce livre n'ayant pas été consulté directement, le tier demeure unverified."
+      "notes": "Behind the Name, notice consultée intégralement le 2 septembre 2026. Elle donne le script arabe فرح, le sens « joy, happiness », la racine fariḥa et la forme somalie Faarax, en renvoyant au dictionnaire de Hans Wehr (1979, p. 822). Le dictionnaire cité n'a pas été consulté directement."
     }
   ],
   "gaps": [
@@ -97,5 +97,10 @@
       "fieldPath": "homonyms",
       "reason": "Farah et Faarax ont été recherchés comme anthroponymes, lexèmes et toponymes ; aucune entité homonyme distincte satisfaisant le modèle du corpus n'a été établie."
     }
-  ]
+  ],
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the personal-name corpus receives a coordinated translation and terminology review."
+    }
+  }
 }

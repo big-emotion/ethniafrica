@@ -15,7 +15,6 @@ import type {
   KingdomEntryType,
   KingdomTimeRange,
   MajorPeopleEntry,
-  CultureSection,
   HistoricalNamesSection,
   HistoricalFactsSection,
   DemographicsSection,
@@ -23,6 +22,9 @@ import type {
 } from "@/types/afrik";
 import { flagFromISO3 as countryFlag, NEUTRAL_FLAG } from "@/lib/countryFlag";
 import { countryCopy } from "@/lib/i18n/copy/country";
+// One population formatter for both records. The country kept an English
+// one of its own, which printed "3.1M" beside "habitants".
+import { formatPeoplePopulation } from "@/lib/peopleDataTransformer";
 import type { Language } from "@/types/shared";
 
 // ==========================================
@@ -34,22 +36,6 @@ export interface HeroData {
   nameOfficial?: string;
   iso: string;
   flag: string;
-}
-
-export type TimelineItemType = "kingdom" | "colonial" | "sovereign";
-
-export interface TimelineItem {
-  type: TimelineItemType;
-  era: string;
-  /** The historical name, when the era is written as a "date : Nom" list. */
-  name?: string;
-  /** The era's own words, when it holds no name to extract. */
-  prose?: string;
-}
-
-export interface TimelineData {
-  items: TimelineItem[];
-  gradientStops: { goldEnd: number; colonialEnd: number };
 }
 
 /**
@@ -134,31 +120,6 @@ export interface KingdomsData {
   layout: "scroll" | "stack";
 }
 
-export type LanguageBubbleSize = "big" | "regular" | "small";
-
-export interface LanguageBubble {
-  name: string;
-  code?: string;
-  isOfficial: boolean;
-  size: LanguageBubbleSize;
-}
-
-export interface LanguagesData {
-  bubbles: LanguageBubble[];
-  totalCount: number;
-  overflowCount: number;
-}
-
-export interface CultureGridItem {
-  slot: "religion" | "economy" | "social" | "relations";
-  label: string;
-  keywords: string[];
-}
-
-export interface CultureGridData {
-  items: CultureGridItem[];
-}
-
 export interface HistoricalFactsData {
   periods: Array<{
     label: string;
@@ -168,12 +129,9 @@ export interface HistoricalFactsData {
 
 export interface CountryPageData {
   hero: HeroData;
-  timeline: TimelineData;
   peoples: PeoplesData;
   kingdoms: KingdomsData;
   historicalFacts?: HistoricalFactsData;
-  languages: LanguagesData;
-  culture: CultureGridData;
   sources: FicheSourceEntry[];
 }
 
@@ -193,23 +151,6 @@ export interface CountryPageData {
 export function flagFromISO3(iso3: string): string {
   const flag = countryFlag(iso3);
   return flag === NEUTRAL_FLAG ? "" : flag;
-}
-
-/**
- * Format population number: 23000000 → "23M", 920000 → "920K"
- */
-// @req REQ-001
-export function formatPopulation(n: number): string {
-  if (n >= 1_000_000) {
-    const m = n / 1_000_000;
-    const formatted = m % 1 === 0 ? `${m}M` : `${m.toFixed(1)}M`;
-    return formatted.replace(".0M", "M");
-  }
-  if (n >= 1_000) {
-    const k = Math.round(n / 1_000);
-    return `${k}K`;
-  }
-  return String(n);
 }
 
 /**
@@ -272,27 +213,18 @@ export function shortenFamily(text: string): string {
 }
 
 /**
- * Extract keywords from a paragraph.
+ * A people's family as the reader reads it. Every country fiche files it by
+ * identifier; the route resolves the name from the family roster, and a family
+ * it cannot name is left out rather than printed as `FLG_BANTU`.
  */
-// @req REQ-001
-export function extractKeywords(text: string, maxKeywords = 5): string[] {
-  if (!text) return [];
-  // Remove parenthetical content
-  const clean = text.replace(/\([^)]*\)/g, "");
-  const items = clean.split(",").map((i) => i.trim());
-  const keywords: string[] = [];
-  for (const item of items) {
-    const words = item.split(/\s+/).slice(0, 3);
-    const keyword = words
-      .join(" ")
-      .replace(/[.;:]+$/, "")
-      .trim();
-    if (keyword && !keywords.includes(keyword)) {
-      keywords.push(keyword);
-    }
-    if (keywords.length >= maxKeywords) break;
-  }
-  return keywords;
+function familyName(
+  value: string | undefined,
+  familyNamesById?: ReadonlyMap<string, string>
+): string | undefined {
+  const family = value?.trim();
+  if (!family) return undefined;
+  if (/^FLG_\w+$/.test(family)) return familyNamesById?.get(family);
+  return shortenFamily(family) || undefined;
 }
 
 // ==========================================
@@ -311,114 +243,11 @@ export function transformHero(country: CountryDetail): HeroData {
 }
 
 // @req REQ-001
-export function transformTimeline(
-  historicalNames?: HistoricalNamesSection,
-  language: Language = "fr"
-): TimelineData {
-  const items: TimelineItem[] = [];
-  const eras = countryCopy[language].generated.eras;
-
-  if (!historicalNames) {
-    return { items, gradientStops: { goldEnd: 100, colonialEnd: 100 } };
-  }
-
-  // Parse each era
-  if (historicalNames.middleAges) {
-    parseEraItems(
-      historicalNames.middleAges,
-      "kingdom",
-      eras.middleAges
-    ).forEach((i) => items.push(i));
-  }
-
-  if (historicalNames.precolonial) {
-    parseEraItems(
-      historicalNames.precolonial,
-      "kingdom",
-      eras.precolonial
-    ).forEach((i) => items.push(i));
-  }
-
-  if (historicalNames.colonization) {
-    parseEraItems(
-      historicalNames.colonization,
-      "colonial",
-      eras.colonization
-    ).forEach((i) => items.push(i));
-  }
-
-  if (historicalNames.contemporary) {
-    parseEraItems(
-      historicalNames.contemporary,
-      "sovereign",
-      eras.contemporary
-    ).forEach((i) => items.push(i));
-  }
-
-  // Remove duplicates (keep unique by name, or by the prose that stands in
-  // for one — two untitled eras are two entries, not one)
-  const seen = new Set<string>();
-  const uniqueItems = items.filter((item) => {
-    const key = (item.name ?? item.prose ?? item.era).toLowerCase();
-    if (seen.has(key)) return false;
-    seen.add(key);
-    return true;
-  });
-
-  // Calculate gradient stops
-  const total = uniqueItems.length || 1;
-  const kingdoms = uniqueItems.filter((i) => i.type === "kingdom").length;
-  const colonials = uniqueItems.filter((i) => i.type === "colonial").length;
-  const goldEnd = Math.round((kingdoms / total) * 100);
-  const colonialEnd = Math.round(((kingdoms + colonials) / total) * 100);
-
-  return {
-    items: uniqueItems,
-    gradientStops: { goldEnd, colonialEnd },
-  };
-}
-
-function parseEraItems(
-  text: string,
-  defaultType: TimelineItemType,
-  eraLabel: string
-): TimelineItem[] {
-  const items: TimelineItem[] = [];
-
-  // Extract named entities from the text
-  // Look for patterns like "XXXX-XXXX : Name" or "Name (dates)"
-  const dateNamePattern = /(\d{4}(?:[–-]\d{4})?)\s*:\s*([^.,(]+)/g;
-  let match;
-
-  while ((match = dateNamePattern.exec(text)) !== null) {
-    items.push({
-      type: defaultType,
-      era: match[1],
-      name: match[2].trim(),
-    });
-  }
-
-  // The era holds no dated list, so it is prose about the period rather than
-  // a name to display. Serving it whole is the point: clipping it into a
-  // title left every fiche showing the same cut sentence twice over.
-  if (items.length === 0) {
-    const dateMatch = text.match(/(\d{4}(?:[–-]\d{4})?)/);
-
-    items.push({
-      type: defaultType,
-      era: dateMatch ? dateMatch[1] : eraLabel,
-      prose: text,
-    });
-  }
-
-  return items;
-}
-
-// @req REQ-001
 export function transformPeoples(
   demographics?: DemographicsSection,
   majorPeoples?: MajorPeopleEntry[],
-  language: Language = "fr"
+  language: Language = "fr",
+  familyNamesById?: ReadonlyMap<string, string>
 ): PeoplesData {
   const totalPopulationIsNational =
     typeof demographics?.totalPopulation === "number" &&
@@ -431,7 +260,7 @@ export function transformPeoples(
     return {
       totalPopulation: nationalPopulation,
       totalPopulationFormatted: totalPopulationIsNational
-        ? formatPopulation(nationalPopulation)
+        ? formatPeoplePopulation(nationalPopulation, language)
         : undefined,
       totalPopulationIsNational,
       everyPeopleDeclaresPopulation: false,
@@ -516,11 +345,11 @@ export function transformPeoples(
       percentage: p.percentageInCountry || 0,
       population: p.population > 0 ? p.population : undefined,
       populationFormatted:
-        p.population > 0 ? formatPopulation(p.population) : undefined,
+        p.population > 0
+          ? formatPeoplePopulation(p.population, language)
+          : undefined,
       region: p.region ? shortenRegion(p.region) : undefined,
-      languageFamily: p.languageFamily
-        ? shortenFamily(p.languageFamily)
-        : undefined,
+      languageFamily: familyName(p.languageFamily, familyNamesById),
       colorIndex: colorIndex,
       peopleId: p.peopleId ?? peopleIdMap.get(nameKey),
     });
@@ -535,13 +364,15 @@ export function transformPeoples(
     totalPopulation,
     totalPopulationFormatted:
       totalPopulationIsNational || counted.length > 0
-        ? formatPopulation(totalPopulation)
+        ? formatPeoplePopulation(totalPopulation, language)
         : undefined,
     totalPopulationIsNational,
     everyPeopleDeclaresPopulation:
       filtered.length > 0 && counted.length === filtered.length,
     populationReferenceYear,
-    peopleCount: sorted.length,
+    // The peoples the atlas links to a record. Rows naming a group with no
+    // record of its own are shares, not peoples the reader can open.
+    peopleCount: rows.filter((row) => row.peopleId).length,
     rows: groupedRows,
   };
 }
@@ -582,7 +413,7 @@ function groupSamePercentage(
         population: rows[i].population,
         populationFormatted:
           rows[i].population > 0
-            ? `${formatPopulation(rows[i].population)} ${countryCopy[language].generated.each}`
+            ? `${formatPeoplePopulation(rows[i].population, language)} ${countryCopy[language].generated.each}`
             : undefined,
         colorIndex: rows[i].colorIndex,
         groupedNames: names,
@@ -723,84 +554,6 @@ export function transformKingdoms(
 }
 
 // @req REQ-001
-export function transformLanguages(culture?: CultureSection): LanguagesData {
-  if (!culture?.mainLanguages || culture.mainLanguages.length === 0) {
-    return { bubbles: [], totalCount: 0, overflowCount: 0 };
-  }
-
-  const langs = culture.mainLanguages;
-  const totalCount = langs.length;
-  const maxVisible = 12;
-  const overflowCount = Math.max(0, totalCount - maxVisible);
-  const visible = langs.slice(0, maxVisible);
-
-  const bubbles: LanguageBubble[] = visible.map((lang, index) => {
-    const isOfficial =
-      lang.isPrimary === true || (lang.name && /officiel/i.test(lang.name));
-
-    let size: LanguageBubbleSize;
-    if (isOfficial || index < 3) {
-      size = "big";
-    } else if (index < 8) {
-      size = "regular";
-    } else {
-      size = "small";
-    }
-
-    // Clean name: remove "(langue officielle, xxx)" part
-    const cleanName = lang.name.replace(/\s*\(.*\)/, "").trim();
-
-    return {
-      name: cleanName,
-      code: lang.isoCode,
-      isOfficial,
-      size,
-    };
-  });
-
-  return { bubbles, totalCount, overflowCount };
-}
-
-// @req REQ-001
-export function transformCulture(
-  culture?: CultureSection,
-  language: Language = "fr"
-): CultureGridData {
-  if (!culture) {
-    return { items: [] };
-  }
-
-  const capKeywords = (text: string) =>
-    extractKeywords(text, 3).map((k) => k.charAt(0).toUpperCase() + k.slice(1));
-  const labels = countryCopy[language].generated.culture;
-
-  const items: CultureGridItem[] = [
-    {
-      slot: "religion",
-      label: labels.religion,
-      keywords: capKeywords(culture.dominantReligions || ""),
-    },
-    {
-      slot: "economy",
-      label: labels.economy,
-      keywords: capKeywords(culture.lifestyles || ""),
-    },
-    {
-      slot: "social",
-      label: labels.social,
-      keywords: capKeywords(culture.socialOrganization || ""),
-    },
-    {
-      slot: "relations",
-      label: labels.relations,
-      keywords: capKeywords(culture.regionalRelations || ""),
-    },
-  ];
-
-  return { items };
-}
-
-// @req REQ-001
 export function transformSources(sources?: FicheSource[]): FicheSourceEntry[] {
   return ficheSourceEntries(sources);
 }
@@ -841,23 +594,22 @@ export function transformHistoricalFacts(
 // @req REQ-001
 export function transformCountryData(
   country: CountryDetail,
-  language: Language = "fr"
+  language: Language = "fr",
+  familyNamesById?: ReadonlyMap<string, string>
 ): CountryPageData {
   return {
     hero: transformHero(country),
-    timeline: transformTimeline(country.historicalNames, language),
     peoples: transformPeoples(
       country.demographics,
       country.majorPeoples,
-      language
+      language,
+      familyNamesById
     ),
     kingdoms: transformKingdoms(country.kingdoms, language),
     historicalFacts: transformHistoricalFacts(
       country.historicalFacts,
       language
     ),
-    languages: transformLanguages(country.culture),
-    culture: transformCulture(country.culture, language),
     sources: transformSources(country.sources),
   };
 }

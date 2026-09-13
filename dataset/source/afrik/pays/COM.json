@@ -59,7 +59,7 @@
       {
         "name": "Union des Comores",
         "period": "1975 - présent",
-        "entryType": "polity",
+        "entryType": "modern",
         "timeRange": {
           "startYear": 1975,
           "ongoing": true,
@@ -148,7 +148,7 @@
         "tier": "needs_review"
       },
       {
-        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "title": "UNSD M49 – Codes normalisés des pays et noms français",
         "url": "https://unstats.un.org/unsd/methodology/m49/",
         "tier": "official"
       }

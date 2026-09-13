@@ -432,6 +432,15 @@ prose is the composition it gets. Two corollaries the first pass missed:
 - A block carrying `text-center` made a **decision**, not an inheritance, and
   keeps it. Only the body-level default is overridden.
 
+**An atlas record's parchment is exempt as a block** (operator ruling,
+2026-09-12). Below the globe a record is one document of rounded chapters,
+tiles and a timeline, and every one of them anchors on a left label. A centred
+chapter heading above that grid gave each chapter two edges — the heading's and
+the grid's — which is the §8.1 failure one level up. So `.afh-parchment` is
+left-aligned whole, declared once in `mobile-text.css` beside the other
+exemptions, never per component. The record's head above the globe is not in
+the parchment and keeps the centred composition.
+
 ### 8.2 A band's height is earned by what is in it
 
 `.home-hero` sets `min-height: min(100svh, 760px)`, centres its content, and

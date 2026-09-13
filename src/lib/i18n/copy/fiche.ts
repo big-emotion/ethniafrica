@@ -9,15 +9,71 @@ const en = {
    * the same invitation would read as three different things to do.
    */
   contribute: "Contribute",
+  /** The tile a record's bibliography folds into. */
+  sourcesList: "The list",
   /**
    * The atlas is young and says so. A reader who has just read a thin chapter
    * is the one person who knows exactly what is missing from it, and the band
    * is where the page admits that out loud rather than leaving them to guess
    * whether corrections are wanted.
    */
+  /**
+   * The worded control that closes a tile. Words rather than a glyph, so the
+   * reader knows what the press does before making it.
+   */
+  /** The language tiles both records share. */
+  languages: {
+    main: "Main language",
+    family: "Language family",
+    dialects: "Speech varieties",
+    vehicular: "Vehicular role",
+    official: "Official language",
+    others: "Other languages of the country",
+    all: "Languages of the country",
+    dialectCount: (count: number) =>
+      `${count} ${count === 1 ? "variety" : "varieties"}`,
+    languageCount: (count: number) =>
+      `${count} ${count === 1 ? "language" : "languages"}`,
+  },
+  /** The culture tiles both records share, one short word per rubric. */
+  culture: {
+    rites: "Rites",
+    symbols: "Symbols",
+    arts: "Arts and music",
+    spiritualities: "Spiritualities",
+    organisation: "Organisation",
+    relations: "Relations",
+    groups: "Associated groups",
+    religions: "Religions",
+    lifestyles: "Ways of life",
+    traditions: "Traditions",
+  },
+  /**
+   * The history timeline both records share. A people station is dated by
+   * its regime word, because a people's history carries no date field.
+   */
+  chronology: {
+    label: "Chronology",
+    regime: {
+      polity: "Precolonial",
+      colonial: "Colonial",
+      modern: "Contemporary",
+    },
+    groupedEntities: (count: number) => `${count} political entities`,
+    since: (year: number) => `Since ${year}`,
+    nameAtTheTime: "name",
+    territoryName: "Name of the territory",
+    etymology: "Where the name comes from",
+    otherNames: "Other names the territory has carried",
+    centres: "Centres",
+  },
+  tile: {
+    more: "+ read more",
+    less: "− fold",
+  },
   amendable: {
-    lead: "This page can be amended.",
-    hint: "Correct a fact, report an error, add a source.",
+    lead: "Know a name, a date or a source this page is missing? It is made to be completed.",
+    action: "Complete this page",
   },
   archivedCapture: (version: number) =>
     `This content is an archived capture (v${version}) and will never be changed.`,
@@ -59,9 +115,52 @@ const fr: FicheCopy = {
   sourceTierNote:
     "Chaque source porte son palier — l'autorité qu'on peut lui accorder.",
   contribute: "Contribuer",
+  sourcesList: "La liste",
+  languages: {
+    main: "Langue principale",
+    family: "Famille",
+    dialects: "Parlers",
+    vehicular: "Rôle véhiculaire",
+    official: "Langue officielle",
+    others: "Autres langues du pays",
+    all: "Langues du pays",
+    dialectCount: (count) => `${count} ${count === 1 ? "parler" : "parlers"}`,
+    languageCount: (count) => `${count} ${count === 1 ? "langue" : "langues"}`,
+  },
+  culture: {
+    rites: "Rites",
+    symbols: "Symboles",
+    arts: "Arts et musique",
+    spiritualities: "Spiritualités",
+    organisation: "Organisation",
+    relations: "Relations",
+    groups: "Groupes associés",
+    religions: "Religions",
+    lifestyles: "Modes de vie",
+    traditions: "Traditions",
+  },
+  chronology: {
+    label: "Chronologie",
+    regime: {
+      polity: "Précolonial",
+      colonial: "Colonial",
+      modern: "Contemporain",
+    },
+    groupedEntities: (count) => `${count} entités politiques`,
+    since: (year) => `Depuis ${year}`,
+    nameAtTheTime: "nom",
+    territoryName: "Nom du territoire",
+    etymology: "D'où vient le nom",
+    otherNames: "Autres noms portés par le territoire",
+    centres: "Centres",
+  },
+  tile: {
+    more: "+ en savoir plus",
+    less: "− replier",
+  },
   amendable: {
-    lead: "Cette page est amendable.",
-    hint: "Corriger un fait, signaler une erreur, ajouter une source.",
+    lead: "Vous connaissez un nom, une date ou une source que cette page n'a pas ? Elle est faite pour être complétée.",
+    action: "Compléter cette page",
   },
   archivedCapture: (version) =>
     `Ce contenu est une capture archivée (v${version}) et ne sera jamais modifié.`,

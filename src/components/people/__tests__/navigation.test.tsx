@@ -1,7 +1,8 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { PeopleCountriesSection } from "../PeopleCountriesSection";
-import { PeopleLanguageSection } from "../PeopleLanguageSection";
+import { FicheTileChapter } from "@/components/fiche/FicheTileChapter";
+import { peopleLanguageTiles } from "@/lib/fiche/languages";
 import { PeopleRelatedPeoplesSection } from "../PeopleRelatedPeoplesSection";
 import type {
   PeopleCountriesData,
@@ -58,47 +59,64 @@ describe("PeopleCountriesSection — navigation links", () => {
 });
 
 // ==========================================
-// PeopleLanguageSection — family fiche link
+// Language tiles — family fiche link
 // ==========================================
 
-describe("PeopleLanguageSection — family fiche link", () => {
-  it("renders a link to the family fiche when languageFamilyId is provided", () => {
+describe("language tiles — family fiche link", () => {
+  // @req REQ-091
+  it("links to the family fiche by the family's name", () => {
     const data: PeopleLanguageData = {
       mainLanguage: "Yoruba",
       isoCodes: ["yor"],
       dialects: [],
       languageFamilyId: "FLG_NIGER_CONGO",
-      languageFamilyName: "Niger-Congo",
     };
-    render(<PeopleLanguageSection data={data} />);
+    render(
+      <FicheTileChapter
+        tiles={peopleLanguageTiles(data, "Niger-Congo", "fr")}
+        language="fr"
+      />
+    );
     const link = screen.getByRole("link", { name: /Niger-Congo/i });
-    expect(link).toBeTruthy();
     expect(link.getAttribute("href")).toBe(
       getFamilyRoute("fr", "FLG_NIGER_CONGO")
     );
   });
 
-  it("does not render a family link when languageFamilyId is absent", () => {
+  // @req REQ-091
+  it("offers no family link when the record names no family", () => {
     const data: PeopleLanguageData = {
       mainLanguage: "Yoruba",
       isoCodes: ["yor"],
       dialects: [],
     };
-    render(<PeopleLanguageSection data={data} />);
-    const links = screen.queryAllByRole("link");
-    expect(links).toHaveLength(0);
+    render(
+      <FicheTileChapter
+        tiles={peopleLanguageTiles(data, undefined, "fr")}
+        language="fr"
+      />
+    );
+    expect(screen.queryAllByRole("link")).toHaveLength(0);
   });
 
-  it("falls back to languageFamilyId as link text when languageFamilyName is absent", () => {
+  // A family key is not a word a reader is owed. Without a name the family
+  // stays unlinked rather than printing "FLG_NIGER_CONGO".
+  // @req REQ-091
+  it("never shows the family key as the link text", () => {
     const data: PeopleLanguageData = {
       mainLanguage: "Yoruba",
       isoCodes: [],
       dialects: [],
       languageFamilyId: "FLG_NIGER_CONGO",
     };
-    render(<PeopleLanguageSection data={data} />);
-    const link = screen.getByRole("link", { name: /FLG_NIGER_CONGO/i });
-    expect(link).toBeTruthy();
+    const { container } = render(
+      <FicheTileChapter
+        tiles={peopleLanguageTiles(data, undefined, "fr")}
+        language="fr"
+      />
+    );
+    expect(screen.queryAllByRole("link")).toHaveLength(0);
+    expect(container.textContent).not.toMatch(/FLG_/);
   });
 });
 

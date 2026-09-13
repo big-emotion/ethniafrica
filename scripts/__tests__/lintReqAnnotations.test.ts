@@ -5,9 +5,24 @@ import {
   checkExportTraceability,
   checkNewExports,
   checkTestAnnotations,
+  requirementAnnotations,
   resolveLintMode,
 } from "../lintReqAnnotations";
 import requirementCatalog from "../../docs/confluence-spec/req-catalog.json";
+
+describe("requirementAnnotations", () => {
+  // @req REQ-085
+  it("finds annotations after a template literal without treating strings as comments", () => {
+    const content = [
+      "const id = `PPL_${1}`;",
+      "const example = '// @req REQ-999';",
+      "// @req REQ-009",
+      "it('checks the result', () => {});",
+    ].join("\n");
+
+    expect([...requirementAnnotations(content)]).toEqual(["REQ-009"]);
+  });
+});
 
 describe("resolveLintMode", () => {
   // The 1245 unannotated tests already in the tree mean a repo-wide strict run

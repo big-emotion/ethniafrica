@@ -47,6 +47,13 @@ function ruleBody(selector: string): string {
 }
 
 describe("parchment layout — one continuous document", () => {
+  // @req REQ-154
+  it("gives each linked personal name a 44px touch target", () => {
+    const link = ruleBody(".afh-name-pills a");
+    expect(link).toMatch(/min-height:\s*44px/);
+    expect(link).toMatch(/min-width:\s*44px/);
+  });
+
   // A patronyme is one corpus token, so `text-wrap` cannot help at 320px.
   // Without an emergency wrap, Randriamampionona widens the whole document.
   // @req REQ-147
@@ -124,21 +131,13 @@ describe("parchment layout — one continuous document", () => {
     );
   });
 
-  // The confidence chip opens the people fiche above its first section. It was
-  // inset with its own Tailwind padding, 20px against the section's 40px, so
-  // "voir les sources" sat visibly left of every heading below it.
+  // The confidence chip used to open the people fiche above its first section,
+  // with a gutter of its own to keep in step with the sections' — and when the
+  // two drifted, "voir les sources" sat left of every heading below it. It now
+  // rides inside the "En bref" chapter, so it takes that chapter's gutter and
+  // declares none that could drift.
   // @req REQ-115
-  it("gives the confidence line the same gutter as the sections", () => {
-    const confidence = ruleBody(".afh-parchment-confidence");
-    const section = ruleBody(".afh-parchment-section");
-
-    const gutter = (body: string) =>
-      body
-        .match(/padding:\s*([^;]+);/)?.[1]
-        .trim()
-        .split(/\s+/)
-        .at(1);
-
-    expect(gutter(confidence)).toBe(gutter(section));
+  it("lets the confidence line take the chapter's gutter", () => {
+    expect(ruleBody(".afh-parchment-confidence")).not.toMatch(/padding/);
   });
 });

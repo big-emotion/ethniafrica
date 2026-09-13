@@ -1,16 +1,11 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { PeoplesSection } from "../PeoplesSection";
-import { LanguagesSection } from "../LanguagesSection";
-import { CultureGrid } from "../CultureGrid";
-import { SourcesFooter } from "../SourcesFooter";
+
 import type {
   HeroData,
-  TimelineData,
   PeoplesData,
   KingdomsData,
-  LanguagesData,
-  CultureGridData,
 } from "@/lib/countryDataTransformer";
 // ==========================================
 // PeoplesSection
@@ -44,7 +39,7 @@ describe("PeoplesSection", () => {
     render(<PeoplesSection language="en" data={data} />);
 
     expect(screen.getByText("inhabitants")).toBeVisible();
-    expect(screen.getByText("2+ peoples")).toBeVisible();
+    expect(screen.getByText("2 peoples")).toBeVisible();
     expect(
       screen.getByText(/represent 80% of the country's population/)
     ).toBeVisible();
@@ -234,224 +229,6 @@ describe("PeoplesSection", () => {
     expect(endonymEl).not.toHaveAttribute("lang");
   });
 });
-// ==========================================
-// LanguagesSection
-// ==========================================
-
-describe("LanguagesSection", () => {
-  it("returns null when bubbles list is empty", () => {
-    const data: LanguagesData = {
-      bubbles: [],
-      totalCount: 0,
-      overflowCount: 0,
-    };
-    const { container } = render(<LanguagesSection data={data} />);
-    expect(container.firstChild).toBeNull();
-  });
-
-  it("renders language bubble names", () => {
-    const data: LanguagesData = {
-      bubbles: [
-        { name: "Français", isOfficial: true, size: "big", code: "fra" },
-        { name: "Mooré", isOfficial: false, size: "regular", code: "mos" },
-      ],
-      totalCount: 2,
-      overflowCount: 0,
-    };
-    render(<LanguagesSection data={data} />);
-    // Official language gets a building emoji prepended
-    expect(screen.getByText(/Français/)).toBeTruthy();
-    expect(screen.getByText("Mooré")).toBeTruthy();
-  });
-
-  it("renders official language with building icon prefix", () => {
-    const data: LanguagesData = {
-      bubbles: [{ name: "Français", isOfficial: true, size: "big" }],
-      totalCount: 1,
-      overflowCount: 0,
-    };
-    render(<LanguagesSection data={data} />);
-    // The component renders `🏛 Français` for official languages
-    const bubble = screen.getByText(/🏛.*Français/);
-    expect(bubble).toBeTruthy();
-  });
-
-  it("shows overflow count pill when overflowCount > 0", () => {
-    const data: LanguagesData = {
-      bubbles: [{ name: "Français", isOfficial: true, size: "big" }],
-      totalCount: 16,
-      overflowCount: 4,
-    };
-    render(<LanguagesSection data={data} />);
-    expect(screen.getByText(/\+ 4 autres langues/)).toBeTruthy();
-  });
-
-  // @req REQ-145
-  it("shows the overflow count in English", () => {
-    const data: LanguagesData = {
-      bubbles: [{ name: "French", isOfficial: true, size: "big" }],
-      totalCount: 16,
-      overflowCount: 4,
-    };
-    render(<LanguagesSection data={data} language="en" />);
-    expect(screen.getByText(/\+ 4 other languages/)).toBeVisible();
-  });
-
-  it("renders ISO code badge when code is provided", () => {
-    const data: LanguagesData = {
-      bubbles: [
-        { name: "Mooré", isOfficial: false, size: "regular", code: "mos" },
-      ],
-      totalCount: 1,
-      overflowCount: 0,
-    };
-    render(<LanguagesSection data={data} />);
-    expect(screen.getByText("mos")).toBeTruthy();
-  });
-});
-
-// ==========================================
-// CultureGrid
-// ==========================================
-
-describe("CultureGrid", () => {
-  it("returns null when items list is empty", () => {
-    const data: CultureGridData = { items: [] };
-    const { container } = render(<CultureGrid data={data} />);
-    expect(container.firstChild).toBeNull();
-  });
-
-  it("renders 4 grid items with labels and icons", () => {
-    const data: CultureGridData = {
-      items: [
-        {
-          slot: "religion",
-          label: "Religions",
-          keywords: ["Islam", "Christianisme"],
-        },
-        {
-          slot: "economy",
-          label: "Économie",
-          keywords: ["Agriculture", "Élevage"],
-        },
-        {
-          slot: "social",
-          label: "Organisation",
-          keywords: ["Chefferies", "Clans"],
-        },
-        {
-          slot: "relations",
-          label: "Relations",
-          keywords: ["CEDEAO", "UA"],
-        },
-      ],
-    };
-    render(<CultureGrid data={data} />);
-    expect(screen.getByText("Religions")).toBeTruthy();
-    expect(screen.getByText("Économie")).toBeTruthy();
-    expect(screen.getByText("Organisation")).toBeTruthy();
-    expect(screen.getByText("Relations")).toBeTruthy();
-  });
-
-  it("renders keywords joined by comma", () => {
-    const data: CultureGridData = {
-      items: [
-        {
-          slot: "religion",
-          label: "Religions",
-          keywords: ["Islam", "Christianisme", "Animisme"],
-        },
-      ],
-    };
-    render(<CultureGrid data={data} />);
-    expect(screen.getByText("Islam, Christianisme, Animisme")).toBeTruthy();
-  });
-
-  /**
-   * The tile carried a pictogram above its own label: a mosque over
-   * "Religions", a crown over "Organisation", a sheaf of wheat over
-   * "Économie". Each picked one religion, one form of authority and one
-   * economy to stand for a whole country's, on a surface whose whole posture
-   * is that the page decides none of those.
-   */
-  // @req REQ-092
-  it("names its rubric without a pictogram standing in for a country", () => {
-    const data: CultureGridData = {
-      items: [
-        { slot: "economy", label: "Économie", keywords: ["Agriculture"] },
-      ],
-    };
-    const { container } = render(<CultureGrid data={data} />);
-
-    expect(screen.getByText("Économie")).toBeTruthy();
-    expect(container.textContent).not.toMatch(/\p{Extended_Pictographic}/u);
-  });
-});
-
-// ==========================================
-// SourcesFooter
-// ==========================================
-
-describe("SourcesFooter", () => {
-  const entry = (
-    label: string,
-    standing: "official" | "referenced" | "unverified" | "needs_review"
-  ) => ({ label, url: null, standing });
-
-  // @req REQ-092
-  it("returns null when there is no source at all", () => {
-    const { container } = render(<SourcesFooter sources={[]} />);
-    expect(container.firstChild).toBeNull();
-  });
-
-  // @req REQ-092
-  it("renders every source", () => {
-    render(
-      <SourcesFooter
-        sources={[
-          entry("UN 2025", "official"),
-          entry("UNFPA 2024", "official"),
-          entry("CIA World Factbook", "referenced"),
-        ]}
-      />
-    );
-    expect(screen.getByText("UN 2025")).toBeTruthy();
-    expect(screen.getByText("CIA World Factbook")).toBeTruthy();
-  });
-
-  // @req REQ-092
-  it("renders the section header label", () => {
-    render(<SourcesFooter sources={[entry("UNESCO", "official")]} />);
-    expect(screen.getByText("Sources & Références")).toBeTruthy();
-  });
-
-  // @req REQ-092
-  it("shows each source's own standing rather than one verdict over the list", () => {
-    render(
-      <SourcesFooter
-        sources={[entry("UN 2025", "official"), entry("Un blog", "unverified")]}
-      />
-    );
-    expect(screen.getByText("Officielle")).toBeTruthy();
-    expect(screen.getByText("Non vérifiée")).toBeTruthy();
-  });
-
-  // @req REQ-092
-  it("says a pending source is awaiting review, never that it is unverified", () => {
-    render(<SourcesFooter sources={[entry("À trancher", "needs_review")]} />);
-
-    expect(screen.getByText("En attente d'examen")).toBeTruthy();
-    expect(screen.queryByText("Non vérifiée")).toBeNull();
-  });
-
-  // @req REQ-092
-  it("never prints the retired Tier vocabulary", () => {
-    const { container } = render(
-      <SourcesFooter sources={[entry("UN 2025", "official")]} />
-    );
-    expect(container.textContent).not.toContain("Tier 1");
-  });
-});
 
 describe("PeoplesSection — what the bar admits (FR28)", () => {
   const peoples = (percentages: number[]) => ({
@@ -499,24 +276,5 @@ describe("PeoplesSection — what the bar admits (FR28)", () => {
     );
 
     expect(container.querySelector("[data-demo-coverage-note]")).toBeNull();
-  });
-});
-
-/**
- * The mockup frames four sections — Étymologie, Peuples, Royaumes,
- * Sources — but its own note says it follows the order of the eight real
- * ones. The four it does not draw are out of frame, not deleted, and this
- * is what stops a later restyle from quietly dropping them.
- */
-describe("the country fiche keeps all eight sections", () => {
-  // @req REQ-092
-  it("still exports the four sections the mockup leaves out of frame", async () => {
-    const country = await import("@/components/country");
-
-    // Neither the history timeline nor the historical-facts card is among
-    // them any more: both rendered the chronology CountryChronology now owns,
-    // and neither was ever wired to a page.
-    expect(country.LanguagesSection).toBeDefined();
-    expect(country.CultureGrid).toBeDefined();
   });
 });

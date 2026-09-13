@@ -76,7 +76,7 @@
       "url": "https://www.wisdomlib.org/fr/names/souley",
       "tier": "unverified",
       "source_kind": "community",
-      "notes": "Page communautaire tertiaire consultée en français. Elle propose un lien entre Souley et Souleymane sans citer de travail linguistique identifiable ; l'information est conservée au tier unverified et au statut claimed."
+      "notes": "Page communautaire tertiaire consultée en français. Elle propose un lien entre Souley et Souleymane sans citer de travail linguistique identifiable ; ce rapprochement reste à confirmer."
     },
     {
       "sourceKey": "un-memorial-adamou-souley",
@@ -112,5 +112,10 @@
       "fieldPath": "homonyms",
       "reason": "Les formes Souley, Soulé et Souleymane ont été distinguées dans les recherches onomastiques ; aucune origine indépendante n'a été établie pour constituer un homonyme."
     }
-  ]
+  ],
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the personal-name corpus receives a coordinated translation and terminology review."
+    }
+  }
 }

@@ -1,21 +1,25 @@
-import { Info } from "lucide-react";
 import { DossierLinks } from "@/components/dossiers/DossierLinks";
 import type { ReactNode } from "react";
 
-import { LanguagesSection } from "@/components/country/LanguagesSection";
+import { FicheTileChapter } from "@/components/fiche/FicheTileChapter";
+import { countryLanguageTiles } from "@/lib/fiche/languages";
 import { PeoplesSection } from "@/components/country/PeoplesSection";
-import { SourcesFooter } from "@/components/country/SourcesFooter";
+import { FicheSources } from "@/components/fiche/FicheSources";
 import { FicheSection as Section } from "@/components/fiche/FicheSection";
 import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
 import {
   FicheSummaryBrief,
   type CountrySummaryFigures,
 } from "@/components/fiche/FicheSummaryBrief";
-import { CountryChronology } from "@/components/country/CountryChronology";
+import { FicheChronologyChapter } from "@/components/fiche/FicheChronologyChapter";
+import { countryChronology } from "@/lib/fiche/chronology";
 import { FicheAmendBand } from "@/components/fiche/FicheAmendBand";
+import { FicheTile } from "@/components/fiche/FicheTile";
+import { splitLeadSentence } from "@/lib/fiche/prose";
 import { chapterAnchorId } from "@/lib/ficheChapters";
 import type { ProvenanceState } from "@/lib/fieldProvenance";
 import type { CountryPageData } from "@/lib/countryDataTransformer";
+import type { LanguageReference } from "@/types/afrik";
 import type { CountryDetail } from "@/types/afrik-frontend";
 import type { Language } from "@/types/shared";
 import { countryCopy } from "@/lib/i18n/copy/country";
@@ -30,6 +34,11 @@ export interface CountryParchmentProps {
   summaryFigures?: CountrySummaryFigures;
   languagesState?: ProvenanceState | "unavailable";
   hasSourceFlag?: boolean;
+  /**
+   * The languages the record shows — declared, or derived from its peoples by
+   * the route. Absent, the record falls back to the ones it declares.
+   */
+  languages?: readonly LanguageReference[];
   /** Name and culture chapters supplied by CountryRecordView. */
   children?: ReactNode;
   /**
@@ -56,18 +65,18 @@ export function CountryParchment({
   summaryFigures,
   languagesState,
   hasSourceFlag,
+  languages,
   children,
   onward,
 }: CountryParchmentProps) {
   const copy = countryCopy[language];
-  const etymology = country.etymology?.trim();
-  const nameOriginActor = country.nameOriginActor?.trim();
+  const languageReferences = languages ?? country.culture?.mainLanguages ?? [];
   const hasPeoples =
     data.peoples.rows.length > 0 ||
     Boolean(data.peoples.totalPopulationFormatted);
+  const chronology = countryChronology(country, language);
   const hasHistory =
-    data.kingdoms.cards.length > 0 ||
-    Boolean(data.historicalFacts?.periods.length);
+    chronology.stations.length > 0 || Boolean(chronology.etymology);
   const figures: CountrySummaryFigures = summaryFigures ?? {
     population:
       country.demographics?.totalPopulation &&
@@ -78,45 +87,34 @@ export function CountryParchment({
           }
         : null,
     peoples: country.demographics?.peoples?.length,
-    languages: data.languages.bubbles.length || null,
+    languages: languageReferences.length || null,
   };
-  const remainingFormerNames = (
-    country.historicalNames?.formerNames ?? []
-  ).filter((formerName) => {
-    const normalized = formerName.toLocaleLowerCase(language);
-    const withoutDates = normalized.replace(/\s*\([^)]*\)\s*$/u, "").trim();
-    return !data.timeline.items.some(
-      (item) =>
-        item.name?.toLocaleLowerCase(language) === withoutDates ||
-        item.prose?.toLocaleLowerCase(language).includes(normalized)
-    );
-  });
-  const nameStations = [
-    ...data.timeline.items.filter((item) => item.type !== "sovereign"),
-    ...remainingFormerNames.map((name) => ({
-      era: "—",
-      name,
-      prose: undefined,
-    })),
-    ...data.timeline.items.filter((item) => item.type === "sovereign"),
-  ];
 
   return (
     <div className="afh-parchment" id="fiche">
-      <section
-        data-fiche-section={copy.summary.title}
-        id={chapterAnchorId(copy.summary.title)}
-        aria-label={copy.summary.title}
-      >
+      {/* The chapter's own heading, as on the people record: the panel used
+          to open on an eyebrow and a second title repeating the name. */}
+      <Section title={copy.summary.title}>
         <FicheSummaryBrief
           kind="country"
           entityId={country.id}
           name={country.nameCommonFr || country.nameFr}
           language={language}
           figures={figures}
+          embedded
         />
-        {country.summary?.trim() ? <p>{country.summary}</p> : null}
-      </section>
+        {country.summary?.trim() ? (
+          <FicheTile
+            language={language}
+            title={copy.summary.portrait}
+            closedFact={splitLeadSentence(country.summary).lead}
+            detailText={country.summary}
+            bodyRestatesPreview
+          >
+            <p className="afh-tile-prose">{country.summary.trim()}</p>
+          </FicheTile>
+        ) : null}
+      </Section>
 
       <Section title={copy.sections.peoples}>
         {!hasPeoples ? (
@@ -124,47 +122,6 @@ export function CountryParchment({
         ) : (
           <PeoplesSection data={data.peoples} language={language} />
         )}
-      </Section>
-
-      <Section title={copy.sections.nameAndHistory}>
-        {etymology || nameOriginActor || nameStations.length > 0 ? (
-          <>
-            {etymology && <p>{etymology}</p>}
-            {nameOriginActor && (
-              <div className="afh-parchment-callout">
-                <Info
-                  className="afh-parchment-callout-icon"
-                  aria-hidden="true"
-                />
-                {nameOriginActor}
-              </div>
-            )}
-            {nameStations.length > 0 && (
-              <ol className="afh-parchment-timeline afh-chronology-spine">
-                {nameStations.map((item, index) => (
-                  <li className="afh-tl-item" key={`${item.era}-${index}`}>
-                    {/* A paragraph for the same reason the chronology's is:
-                        a span here drifts to the middle of its own row on a
-                        phone while the name under it stays left. */}
-                    <p className="afh-tl-period">{item.era}</p>
-                    <div>
-                      {item.name ? <h3>{item.name}</h3> : null}
-                      {item.prose ? <p>{item.prose}</p> : null}
-                    </div>
-                  </li>
-                ))}
-              </ol>
-            )}
-          </>
-        ) : (
-          <FieldProvenanceMarker state="missing" language={language} />
-        )}
-        <DossierLinks
-          language={language}
-          kind="country"
-          id={country.id}
-          section="etymology"
-        />
       </Section>
 
       <Section
@@ -179,8 +136,11 @@ export function CountryParchment({
             reason={copy.languagesUnavailable}
             language={language}
           />
-        ) : data.languages.bubbles.length > 0 ? (
-          <LanguagesSection data={data.languages} language={language} />
+        ) : languageReferences.length > 0 ? (
+          <FicheTileChapter
+            tiles={countryLanguageTiles(languageReferences, language)}
+            language={language}
+          />
         ) : (
           <FieldProvenanceMarker state="missing" language={language} />
         )}
@@ -188,14 +148,21 @@ export function CountryParchment({
 
       <Section title={copy.sections.history}>
         {hasHistory ? (
-          <CountryChronology
-            entities={data.kingdoms.cards}
-            accounts={data.historicalFacts}
+          <FicheChronologyChapter
+            stations={chronology.stations}
+            etymology={chronology.etymology}
+            etymologyAnchorId={chapterAnchorId(copy.sections.nameAndHistory)}
             language={language}
           />
         ) : (
           <FieldProvenanceMarker state="missing" language={language} />
         )}
+        <DossierLinks
+          language={language}
+          kind="country"
+          id={country.id}
+          section="etymology"
+        />
       </Section>
 
       {children}
@@ -217,10 +184,9 @@ export function CountryParchment({
         id="sources"
       >
         {data.sources.length > 0 ? (
-          <SourcesFooter
+          <FicheSources
             sources={data.sources}
             hasSourceFlag={hasSourceFlag}
-            variant="parchment"
             language={language}
           />
         ) : (

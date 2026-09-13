@@ -50,7 +50,7 @@ describe("transformLanguageData", () => {
   });
 
   // @req REQ-136
-  it("reshapes sources from the service's tier/title shape to SourcesFooter's standing/label shape", () => {
+  it("reshapes sources from the service's tier/title shape to FicheSources's standing/label shape", () => {
     const data = transformLanguageData(baseLanguage);
 
     expect(data.sources).toEqual([

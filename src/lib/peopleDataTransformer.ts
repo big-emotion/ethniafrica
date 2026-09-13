@@ -428,7 +428,7 @@ export function transformPeopleCountries(
 /**
  * Shape one `PeopleNameRecord` (API view) into a `NameOriginCard`-compatible
  * `NameRecordView` plus the raw confidence fields its chip slot needs. The
- * card and the chip are composed by the caller (`PeopleNamesSection`) —
+ * card and the chip are composed by the caller (`PeopleNamingTiles`) —
  * this transformer stays free of JSX.
  */
 // @req REQ-054
@@ -455,7 +455,7 @@ export function transformPeopleNameRecord(
 
 /**
  * Shape a `PeopleNamesDossier` (GET /v2/peoples/{id}/names) into the
- * endonyms-first `names` payload for `PeopleNamesSection`. Returns `null`
+ * endonyms-first `names` payload for `PeopleNamingTiles`. Returns `null`
  * when there is nothing to show (UX-DR31) — the section omits itself
  * entirely rather than rendering an empty shell.
  */

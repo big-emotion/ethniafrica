@@ -56,7 +56,7 @@
       "url": "https://www.familiegeschiedenis.be/sites/default/files/inline-files/Vlaamse_Stam_2016_3_Wewe_ni_nani.pdf",
       "tier": "unverified",
       "source_kind": "community",
-      "notes": "Article de Johan Roelstraete dans Vlaamse Stam (2016) consulté intégralement. Sa section sur la nomination au Congo cite Ivan Godefroid et présente Kambale comme nom du deuxième garçon chez les Munande. Revue généalogique plutôt que publication linguistique évaluée par les pairs : l'information reste tierée « unverified » et la revendication « claimed »."
+      "notes": "Article de Johan Roelstraete dans Vlaamse Stam (2016) consulté intégralement. Sa section sur la nomination au Congo cite Ivan Godefroid et présente Kambale comme nom du deuxième garçon chez les Munande. Revue généalogique plutôt que publication linguistique évaluée par les pairs ; elle ne suffit pas à établir cette origine."
     }
   ],
   "gaps": [
@@ -76,5 +76,10 @@
       "fieldPath": "homonyms",
       "reason": "la recherche web combinant « Kambale », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'article « Congo en familiegeschiedenis — Wewe ni nani? » de Johan Roelstraete, n'ont pas établi de lignée homonyme d'origine distincte ni d'autre homonyme documentable."
     }
-  ]
+  ],
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the personal-name corpus receives a coordinated translation and terminology review."
+    }
+  }
 }

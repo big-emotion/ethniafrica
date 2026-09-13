@@ -36,34 +36,6 @@ export interface ParagraphChipData {
   contested?: boolean;
 }
 
-/** Chip props subsets keyed by prose field name — one per section component. */
-export interface OriginChips {
-  ancientOrigins?: ParagraphChipData;
-  formationPeriod?: ParagraphChipData;
-  unificationsOrDivisions?: ParagraphChipData;
-  externalInfluences?: ParagraphChipData;
-  majorHistoricalEvents?: ParagraphChipData;
-}
-
-export interface HistoryChips {
-  kingdomsOrChiefdoms?: ParagraphChipData;
-  relationsWithNeighbors?: ParagraphChipData;
-  conflictsOrAlliances?: ParagraphChipData;
-  diaspora?: ParagraphChipData;
-}
-
-/** Keyed by the four `content.culture` fields the strict model declares. */
-export interface CultureChips {
-  majorRites?: ParagraphChipData;
-  symbols?: ParagraphChipData;
-  artsAndMusic?: ParagraphChipData;
-  spiritualities?: ParagraphChipData;
-}
-
-export interface LanguageChips {
-  vehicularRole?: ParagraphChipData;
-}
-
 // ---------------------------------------------------------------------------
 // Internal helpers
 // ---------------------------------------------------------------------------

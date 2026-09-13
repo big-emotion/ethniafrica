@@ -152,20 +152,25 @@ export function checkTestAnnotations(
 
 export function requirementAnnotations(content: string): Set<string> {
   const identifiers = new Set<string>();
-  const scanner = ts.createScanner(
-    ts.ScriptTarget.Latest,
-    false,
-    ts.LanguageVariant.JSX,
-    content
-  );
-  let token = scanner.scan();
-  while (token !== ts.SyntaxKind.EndOfFileToken) {
-    if (token === ts.SyntaxKind.SingleLineCommentTrivia) {
-      const match = /\/\/\s*@req\s+(REQ-\d{3})\b/.exec(scanner.getTokenText());
+  const sourceFile = parseSource(content, "annotations.tsx");
+
+  function collectComments(ranges: ts.CommentRange[] | undefined): void {
+    for (const range of ranges ?? []) {
+      if (range.kind !== ts.SyntaxKind.SingleLineCommentTrivia) continue;
+      const match = /\/\/\s*@req\s+(REQ-\d{3})\b/.exec(
+        content.slice(range.pos, range.end)
+      );
       if (match) identifiers.add(match[1]);
     }
-    token = scanner.scan();
   }
+
+  function visit(node: ts.Node): void {
+    collectComments(ts.getLeadingCommentRanges(content, node.getFullStart()));
+    collectComments(ts.getTrailingCommentRanges(content, node.end));
+    ts.forEachChild(node, visit);
+  }
+
+  visit(sourceFile);
   return identifiers;
 }
 

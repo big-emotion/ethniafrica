@@ -75,11 +75,27 @@ const en = {
     "Only public or historical figures appear here, along with persons who have recognised themselves in this name. The list documents the name: it allows no inference about the ethnic origin of anyone who bears it.",
   roleCategoryFallback: "Role not recorded",
   onFiche: {
+    /**
+     * Titled for what the list holds. "Names borne" said neither whose names
+     * nor what kind; "patronymics" is true of a list only when every entry is
+     * one, so the wider "personal names" is the default.
+     */
+    namesTitle: {
+      people: {
+        personal: "Personal names linked to this people",
+        patronymic: "Patronymics linked to this people",
+      },
+      country: {
+        personal: "Personal names linked to this country",
+        patronymic: "Patronymics linked to this country",
+      },
+    },
+    nameCount: (count: number) => `${count} ${count === 1 ? "name" : "names"}`,
+
     peopleEmpty:
       "The atlas does not yet attach any name to this people. The names dimension has just opened and covers only a small part of the atlas.",
     peopleUnavailable:
       "The names borne could not be loaded. The problem is on our side, not an empty atlas.",
-    countryTitle: "Names of the country",
     countryAlphabeticalIndexLabel: "Alphabetical index",
     attestedLabel: "Attested in the country",
     reachLabel: "Borne by the country's peoples, with no attestation here",
@@ -188,11 +204,22 @@ const fr: PatronymesCopy = {
   // questions, and only the wording keeps a reader from reading the
   // second as an attestation the corpus never made.
   onFiche: {
+    namesTitle: {
+      people: {
+        personal: "Noms de personnes rattachés à ce peuple",
+        patronymic: "Patronymes rattachés à ce peuple",
+      },
+      country: {
+        personal: "Noms de personnes rattachés à ce pays",
+        patronymic: "Patronymes rattachés à ce pays",
+      },
+    },
+    nameCount: (count) => `${count} ${count === 1 ? "nom" : "noms"}`,
+
     peopleEmpty:
       "L’atlas ne rattache encore aucun nom à ce peuple. La dimension des noms vient d'ouvrir et ne couvre qu'une petite part de l'atlas.",
     peopleUnavailable:
       "Les noms portés n'ont pas pu être chargés. Le problème vient de notre côté, pas d'un atlas vide.",
-    countryTitle: "Noms du pays",
     countryAlphabeticalIndexLabel: "Index alphabétique",
     attestedLabel: "Attestés dans le pays",
     // Says both halves of the inference in the label itself — whose

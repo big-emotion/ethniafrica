@@ -3,9 +3,9 @@
  *
  * Renders one name record: the name in Fraunces (weight 700) tagged with
  * `lang` from `languageOfOrigin` when known (UX-DR38), meaning + imposition
- * context in Nunito Sans body, and a required `confidenceChip` slot
- * (source-attached rule, UX-DR49 #2). Renders only the fields it is given —
- * never a placeholder, never an invented value.
+ * context in Nunito Sans body, and a `confidenceChip` slot (source-attached
+ * rule, UX-DR49 #2). Renders only the fields it is given — never a
+ * placeholder, never an invented value.
  *
  * Note: the people's own endonym is always rendered through
  * `AutonymExonymHeading` (UX-DR49 #1); this card is for name-dossier
@@ -22,7 +22,16 @@ import type { Language } from "@/types/shared";
 
 export interface NameOriginCardProps {
   record: NameRecordView;
-  confidenceChip: ReactNode;
+  /**
+   * The record's confidence. Absent only for a name the rubric lists with no
+   * dossier record behind it, which has no confidence to show.
+   */
+  confidenceChip?: ReactNode;
+  /**
+   * False where the tile holding the card already prints the name — the
+   * autonym tile, whose heading is the name — so it is not printed twice.
+   */
+  nameShown?: boolean;
   language?: Language;
 }
 
@@ -30,6 +39,7 @@ export interface NameOriginCardProps {
 export function NameOriginCard({
   record,
   confidenceChip,
+  nameShown = true,
   language = FALLBACK_LOCALE,
 }: NameOriginCardProps) {
   const labels =
@@ -68,12 +78,14 @@ export function NameOriginCard({
   return (
     <article className="rounded-lg border border-afh-border bg-afh-surface p-afh-lg">
       <div className="flex flex-wrap items-center gap-afh-sm">
-        <span
-          lang={bcp47LanguageTag(languageOfOrigin)}
-          className="font-afh-display text-afh-h3 font-bold text-afh-text"
-        >
-          {nameText}
-        </span>
+        {nameShown ? (
+          <span
+            lang={bcp47LanguageTag(languageOfOrigin)}
+            className="font-afh-display text-afh-h3 font-bold text-afh-text"
+          >
+            {nameText}
+          </span>
+        ) : null}
         <NameTypeBadge
           nameType={nameType}
           imposed={Boolean(imposedBy)}
@@ -116,7 +128,9 @@ export function NameOriginCard({
         </dl>
       ) : null}
 
-      <div className="mt-afh-sm">{confidenceChip}</div>
+      {confidenceChip ? (
+        <div className="mt-afh-sm">{confidenceChip}</div>
+      ) : null}
     </article>
   );
 }

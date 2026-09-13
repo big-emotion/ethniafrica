@@ -1,0 +1,23 @@
+{
+  "measuredAt": "2026-09-12",
+  "measuredOn": "https://ethniafrica.com (v4.8.0, same code as origin/recette 6ef38f1f)",
+  "viewport": { "width": 430, "height": 932 },
+  "note": "Document scrollHeight with every tile closed, after networkidle plus 2.5 s. The parity spec requires each route to come in at least 25 % below these values.",
+  "heights": {
+    "/fr/atlas/pays/NAM": 11015,
+    "/fr/atlas/pays/COD": 17633,
+    "/fr/atlas/pays/ETH": 13417,
+    "/fr/atlas/pays/EGY": 13897,
+    "/fr/atlas/pays/GHA": 14495,
+    "/fr/atlas/pays/ZAF": 12854,
+    "/fr/atlas/pays/BDI": 10459,
+    "/fr/atlas/peuples/PPL_OVAMBO": 11211,
+    "/fr/atlas/peuples/PPL_ARABES_AFRIQUE": 20846,
+    "/fr/atlas/peuples/PPL_HAUSA": 17066,
+    "/fr/atlas/peuples/PPL_BAGANDA": 18078,
+    "/fr/atlas/peuples/PPL_MINYANKA": 8747,
+    "/fr/atlas/peuples/PPL_KABYLE": 14686,
+    "/fr/atlas/peuples/PPL_FULA": 15036,
+    "/fr/atlas/familles/FLG_BANTU": 13240
+  }
+}

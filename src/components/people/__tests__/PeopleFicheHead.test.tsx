@@ -39,14 +39,16 @@ describe("PeopleFicheHead (REQ-115)", () => {
     expect(screen.getByText(/ref\. 2025/)).toBeInTheDocument();
   });
 
+  // The overline opened on the corpus keys, PPL_YORUBA · FLG_BENOUECONGO. A
+  // reader who can see the name has no use for its key, and the approved
+  // preview reads "Peuple · Bantou (zone R)" (operator ruling, 2026-09-12).
   // @req REQ-115
-  it("carries the fiche's own identifiers in its overline", () => {
+  it("names what the record is and its group in the overline, never its keys", () => {
     render(<PeopleFicheHead language="fr" hero={hero} countries={countries} />);
 
     const eyebrow = screen.getByTestId("fiche-head-eyebrow");
-    expect(eyebrow).toHaveTextContent("PPL_YORUBA");
-    expect(eyebrow).toHaveTextContent("FLG_BENOUECONGO");
-    expect(eyebrow).toHaveTextContent("Volta-Congo, Yoruboid");
+    expect(eyebrow).toHaveTextContent("Peuple · Volta-Congo, Yoruboid");
+    expect(eyebrow.textContent).not.toMatch(/PPL_|FLG_/);
   });
 
   // 25 of the corpus's 789 fiches declare no ethnoLinguisticGroup. Falling

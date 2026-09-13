@@ -78,7 +78,7 @@
       "url": "https://www.refworld.org/reference/annualreport/usdos/2001/en/25683",
       "tier": "official",
       "source_kind": "government",
-      "notes": "Rapport du Department of State diffusé par Refworld. Il identifie les Yakoma comme sous-groupe ngbandi et Kolingba comme membre de ce groupe. Cette source justifie le remplacement de l'association banda produite par la file de candidats."
+      "notes": "Rapport du Department of State diffusé par Refworld. Il identifie les Yakoma comme sous-groupe ngbandi et Kolingba comme membre de ce groupe. Il ne documente pas une association avec les Banda."
     },
     {
       "sourceKey": "lemonde-2010-kolingba",
@@ -114,5 +114,10 @@
       "fieldPath": "homonyms",
       "reason": "Le lexique yakoma, les catalogues et les recherches exactes sur la graphie n'ont livré aucun homonyme doté d'une origine distincte."
     }
-  ]
+  ],
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the personal-name corpus receives a coordinated translation and terminology review."
+    }
+  }
 }

@@ -79,6 +79,19 @@
     text-align: left;
   }
 
+  /* ─── An atlas record is one left edge ────────────────────────
+     Operator ruling, 2026-09-12. Below the globe a record is a
+     document of rounded chapters, tiles and a timeline, each
+     anchored on a left label. A centred chapter heading above
+     that grid gave every chapter two edges — brand charter §8.1,
+     one level up. The parchment is exempt whole, here and nowhere
+     else, so no component re-declares alignment. The record's head
+     above the globe is not in the parchment and stays centred, and
+     a block inside it that asked for `text-center` keeps it. */
+  .afh-parchment {
+    text-align: left;
+  }
+
   /* Only the body-level default is overridden. A block that asked
      for centring in its own right — the 404's plate, a medallion
      state, anything carrying `text-center` — keeps it, because that

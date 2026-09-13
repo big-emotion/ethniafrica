@@ -94,14 +94,17 @@ itself, never the reason the workshop has not filled it yet.
 | raw corpus identifier | `PPL_ASANTE`, `FLG_KHOE`, `PAT_KEITA`, `PAT_*` — name the people, the country, the name                                                                                                                                                                                       |
 | curation vocabulary   | _queue_, _candidate queue_, _research pass_, _this pass_, _research protocol_, _claim-level review_, _inherited tier_, _outside the corpus_ / _out of corpus_, _coverage plan_, _wave N_, _sweep_, _Lead:_, _Research:_, _sidecar_, _translation class_, _machine provenance_ |
 | internal corpus label | _AFRIK corpus —_ as a source title                                                                                                                                                                                                                                            |
+| pipeline source note  | _Tier resolved from..._, _No URL and no recognisable citation shape_, _No domain ruling covers..._, _the tier awaits editorial review_                                                                                                                                        |
 | ticket identifier     | `ETNI-1388` or any other ticket number                                                                                                                                                                                                                                        |
 | tier provenance       | how a tier was decided — _domain ruling_, _citation shape_, _authorised source catalogue_, _awaits editorial review_, _needs_review_, _tier resolved as…_, _tiered referenced_; in French _tier inféré_, _tier résolu_, _tier fondé_, _catalogue de domaines officiels_       |
 
-The last row of the vocabulary is new to English: the translation pipeline's
+The vocabulary also covers the translation pipeline's
 own words — _sidecar_, _class 3_, _machine_ — are as much workshop vocabulary
 as _la passe_, and a note that says "machine-translated, awaiting review"
 belongs in the `_translation` block, which the reader sees as a provenance
 marker, never in `sources[].notes`.
+Source notes may explain what a source says or why its evidence is limited;
+they must not explain how the source-classification pipeline assigned its tier.
 
 ### How to say it instead
 

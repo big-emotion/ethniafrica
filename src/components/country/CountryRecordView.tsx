@@ -3,13 +3,11 @@ import type { ReactNode } from "react";
 import { DossierLinks } from "@/components/dossiers/DossierLinks";
 import { FlagTarget } from "@/components/flags/FlagTarget";
 import { CountryParchment } from "@/components/country/CountryParchment";
-import { CultureGrid } from "@/components/country";
+import { FicheTileChapter } from "@/components/fiche/FicheTileChapter";
+import { countryCultureTiles } from "@/lib/fiche/culture";
 import { FicheSection as Section } from "@/components/fiche/FicheSection";
-import { CountryAttestedNamesSection } from "@/components/patronymes/CountryAttestedNamesSection";
-import {
-  transformCountryData,
-  transformLanguages,
-} from "@/lib/countryDataTransformer";
+import { FicheNamesChapter } from "@/components/fiche/FicheNamesChapter";
+import { transformCountryData } from "@/lib/countryDataTransformer";
 import type { CountryLanguagesFact } from "@/lib/countryLanguagesFact";
 import type { CountrySummaryFigures } from "@/components/fiche/FicheSummaryBrief";
 import type { CountryPatronymes } from "@/api/v2/services/patronymeFicheLinks";
@@ -39,6 +37,12 @@ export interface CountryRecordViewProps {
   summaryFigures?: CountrySummaryFigures;
   /** Null means the derived-language read failed, not that the corpus is empty. */
   countryLanguages?: CountryLanguagesFact | null;
+  /**
+   * The family roster's names by identifier, resolved by the route. A country
+   * fiche files its peoples' families as `FLG_*` and carries no name beside
+   * them.
+   */
+  familyNamesById?: ReadonlyMap<string, string>;
   /** The way out of the fiche, composed by the route and passed straight down. */
   onward?: ReactNode;
   /** Cloudflare Turnstile public site key; without it the flag control is inert. */
@@ -52,16 +56,11 @@ export function CountryRecordView({
   patronymes = null,
   summaryFigures,
   countryLanguages,
+  familyNamesById,
   onward,
 }: CountryRecordViewProps) {
   const copy = countryCopy[language];
-  const data = transformCountryData(country, language);
-  if (countryLanguages) {
-    data.languages = transformLanguages({
-      ...country.culture,
-      mainLanguages: countryLanguages.value,
-    });
-  }
+  const data = transformCountryData(country, language, familyNamesById);
 
   return (
     <div data-testid="country-record-view">
@@ -76,6 +75,7 @@ export function CountryRecordView({
             ? "unavailable"
             : countryLanguages?.provenance
         }
+        languages={countryLanguages?.value}
         onward={onward}
       >
         {/* After the languages, not beside "Noms à travers l'histoire": that
@@ -84,13 +84,17 @@ export function CountryRecordView({
             Adjacent, three chapters opening on "Nom" would read as a menu of
             one subject rather than three claims. Spoken here, then named
             here, then the rest of the culture. */}
-        <CountryAttestedNamesSection
+        <FicheNamesChapter
+          scope="country"
           patronymes={patronymes}
           language={language}
         />
 
         <Section title={copy.sections.culture}>
-          <CultureGrid data={data.culture} />
+          <FicheTileChapter
+            tiles={countryCultureTiles(country.culture, language)}
+            language={language}
+          />
           <DossierLinks
             kind="country"
             id={country.id}

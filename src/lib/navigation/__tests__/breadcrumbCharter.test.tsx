@@ -3,7 +3,8 @@ import { render, screen } from "@testing-library/react";
 
 import { deriveTrail } from "@/lib/navigation/deriveTrail";
 import { AfrikBreadcrumbs } from "@/components/layout/AfrikBreadcrumbs";
-import { PeopleLanguageSection } from "@/components/people/PeopleLanguageSection";
+import { FicheTileChapter } from "@/components/fiche/FicheTileChapter";
+import { peopleLanguageTiles } from "@/lib/fiche/languages";
 import {
   PAGE_TYPES,
   getCountryRoute,
@@ -343,13 +344,18 @@ describe("the trail a fiche renders", () => {
     ).toEqual(["Accueil", ACCESS_MODE_LABELS.atlas, "Peuples", "Yoruba"]);
 
     const { container } = render(
-      <PeopleLanguageSection
-        data={{
-          languageFamilyId: YORUBA.languageFamilyId,
-          languageFamilyName: "Niger-Congo",
-          isoCodes: [],
-          dialects: [],
-        }}
+      <FicheTileChapter
+        tiles={peopleLanguageTiles(
+          {
+            languageFamilyId: YORUBA.languageFamilyId,
+            languageFamilyName: "Niger-Congo",
+            isoCodes: [],
+            dialects: [],
+          },
+          "Niger-Congo",
+          "fr"
+        )}
+        language="fr"
       />
     );
 

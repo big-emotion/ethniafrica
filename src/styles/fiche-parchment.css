@@ -1,18 +1,25 @@
 /**
  * A fiche's parchment: the reading below the globe band.
  *
- * Sections alternate between the two page grounds and keep a bottom hairline,
- * with the section-gap token between chapters. The fiche is one
- * document, and boxing each section would make it read as a dashboard of
- * unrelated widgets rather than as a text with parts.
+ * Every chapter sits on the same warm ground, rounded, at one width, and the
+ * section-gap token is the only thing between two of them (operator ruling,
+ * 2026-09-12). The alternating grounds this replaced made the seam the only
+ * separator, so anything that was not a section — the amend band, the
+ * country's summary — fell out of the rhythm and measured 0, 22 or 24px.
  *
  * Mobile first throughout: the base rules are the 430px layout, and the
  * container query raises the type and the gutters from the band's own
  * breakpoint so the parchment and the globe change shape at the same width.
  */
 
+/* The gap belongs to the container, not to a margin on the second sibling: a
+   flex gap cannot skip a child that forgot a class. */
 .afh-parchment {
   container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  gap: var(--afh-section-gap);
+  padding: var(--afh-section-gap) var(--afh-space-lg);
   background: var(--afh-bg);
   color: var(--afh-text);
 }
@@ -160,33 +167,23 @@
   color: var(--afh-color-colonial);
 }
 
+/* One ground for every chapter. The page ground shows only in the gaps, which
+   is what separates two chapters now that no hairline or change of ground
+   does. 24px of block padding and a 16px gutter, both on the spacing ramp. */
 .afh-parchment-section {
-  padding: 26px 20px;
-  border-bottom: 1px solid var(--afh-border);
+  padding: 24px 16px;
+  border-radius: var(--afh-radius-lg);
+  background: var(--afh-bg-warm);
 }
 
-.afh-parchment
-  > :is([data-fiche-section], .afh-parchment-section)
-  + :is([data-fiche-section], .afh-parchment-section) {
-  margin-block-start: var(--afh-section-gap);
-}
-
-/* Three family chapters use a wrapper for their background. Their chapter
-   box must meet the wrapper's edge so the measured gap stays the token. */
+/* Three family chapters use a wrapper for their ground. Their chapter box
+   must meet the wrapper's edge so the padding is not counted twice. */
 .afh-parchment-section:has(> [data-fiche-section]) {
   padding: 0;
-  border-bottom: 0;
 }
 
 .afh-parchment-section > [data-fiche-section] {
-  padding: 26px 20px;
-  border-bottom: 1px solid var(--afh-border);
-}
-
-/* Alternating grounds: the seam between two sections is the change of ground,
-   which is why neither needs a card around it. */
-.afh-parchment-section:nth-of-type(even) {
-  background: var(--afh-bg-warm);
+  padding: 24px 16px;
 }
 
 .afh-parchment-section h2 {
@@ -217,12 +214,11 @@
   color: var(--afh-text-soft);
 }
 
-/* The confidence chip opens the people fiche above its first section. It is
-   not a section itself, so it states the gutter rather than inheriting one —
-   and it must state the same gutter, or the fiche's first line sits left of
-   every heading under it. */
+/* The confidence chip rides inside the people fiche's "En bref" chapter, under
+   its heading. It declares no gutter of its own: it takes the chapter's, which
+   is the only way the two can never drift apart again. */
 .afh-parchment-confidence {
-  padding: 20px 20px 0;
+  margin-bottom: var(--afh-space-lg);
 }
 
 /* ConfidenceChip pads itself by 4px so its focus ring is not clipped where it
@@ -350,8 +346,8 @@
   margin: 0;
   background: var(--afh-surface);
   border: 1px solid var(--afh-border);
-  border-radius: var(--afh-radius-md);
-  padding: 14px 15px;
+  border-radius: var(--afh-radius-lg);
+  padding: 16px;
 }
 
 .afh-stat-card dd {
@@ -372,11 +368,21 @@
    came for and files the rest beside it; the family record, which leads with
    none of its four, passes neither and keeps the even dress above. */
 .afh-stat-card[data-emphasis="lead"] {
-  background: var(--afh-bg-warm);
+  background: var(--afh-surface);
 }
 
 .afh-stat-card[data-emphasis="tile"] {
-  padding: 10px 12px;
+  padding: 12px 16px;
+}
+
+/* A people panel carries two words among its counts — a main language, a
+   family. They ride the same card a step smaller than a figure, in the face a
+   name takes on this surface. */
+.afh-stat-card[data-kind="word"] .afh-stat-card-n {
+  font-family: var(--afh-font-display);
+  font-weight: 700;
+  font-size: var(--afh-text-h3);
+  line-height: 1.2;
 }
 
 .afh-stat-card[data-emphasis="tile"] .afh-stat-card-n {
@@ -626,6 +632,631 @@
   color: var(--afh-colonial-ink);
 }
 
+/* ── Source census ─────────────────────────────────────────────────
+   The tally drawn: one segment per standing, as wide as its share of the
+   list. A standing takes the confidence scale's colour, so a record resting
+   on official sources reads that way before a title is read. Awaiting review
+   is not a tier, so it wears a hatch rather than a fill. */
+
+.afh-fiche-sources {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  font-size: var(--afh-text-caption);
+  line-height: 1.6;
+  color: var(--afh-text-soft);
+}
+
+.afh-census {
+  display: flex;
+  height: 10px;
+  overflow: hidden;
+  border: 1px solid var(--afh-border);
+}
+
+.afh-census > span {
+  display: block;
+  height: 100%;
+}
+
+.afh-census > [data-census-standing="official"] {
+  background: var(--afh-conf-high);
+}
+
+.afh-census > [data-census-standing="referenced"] {
+  background: var(--afh-gold);
+}
+
+.afh-census > [data-census-standing="unverified"] {
+  background: var(--afh-conf-low);
+}
+
+.afh-census > [data-census-standing="needs_review"] {
+  background: repeating-linear-gradient(
+    135deg,
+    var(--afh-text-muted) 0 4px,
+    transparent 4px 8px
+  );
+}
+
+.afh-census-legend {
+  margin: 0;
+  font-family: var(--afh-font-mono);
+  color: var(--afh-text-soft);
+}
+
+.afh-fiche-source-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* A corpus title is routinely a URL with no space in it; without this the
+   row grows past the parchment at 430px. */
+.afh-fiche-source-list > li {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.afh-fiche-source-standing {
+  flex: none;
+  padding: 2px 8px;
+  border-radius: var(--afh-radius-full);
+  background: var(--afh-surface);
+  font-size: var(--afh-text-eyebrow);
+  font-weight: 500;
+  color: var(--afh-text-soft);
+}
+
+/* Awaiting review is not a tier, so it does not wear a tier's filled chip. */
+.afh-fiche-source-standing[data-source-standing="needs_review"] {
+  border: 1px solid var(--afh-border);
+  background: transparent;
+}
+
+.afh-fiche-source-note {
+  flex-basis: 100%;
+  font-size: var(--afh-text-eyebrow);
+}
+
+/* The share of a country no people accounts for, drawn rather than left as
+   empty track: the same hatch the source census gives what awaits review. */
+[data-demo-unassigned] {
+  background: repeating-linear-gradient(
+    135deg,
+    var(--afh-border) 0 5px,
+    transparent 5px 10px
+  );
+}
+
+/* ── Tiles ──────────────────────────────────────────────────────────
+   The unit every chapter folds its prose into. Two columns from the phone
+   up, 12px apart, 16px inside: on production the tiles sat 6px apart with
+   their text against the border, and each chapter chose its own gap. An odd
+   last tile takes the whole row rather than leaving a hole beside it. */
+
+.afh-tiles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.afh-tiles > [data-wide="true"],
+.afh-tiles > :last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+.afh-tile {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--afh-border);
+  border-radius: var(--afh-radius-lg);
+  background: var(--afh-surface);
+  text-align: start;
+}
+
+.afh-tile-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.afh-tile-summary::-webkit-details-marker {
+  display: none;
+}
+
+.afh-tile-label {
+  margin: 0;
+  font-family: var(--afh-font-mono);
+  font-size: var(--afh-text-caption);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-ink, var(--afh-text-soft));
+}
+
+.afh-tile-value {
+  margin: 0;
+  font-family: var(--afh-font-display);
+  font-weight: 700;
+  font-size: var(--afh-text-h3);
+  line-height: 1.25;
+  color: var(--afh-text);
+  overflow-wrap: anywhere;
+}
+
+/* Two lines, then the control. The clamp is the whole of "a preview": the
+   sentence is all there, and opening the tile lifts the clamp rather than
+   printing it a second time. */
+.afh-tile-preview {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  font-size: var(--afh-text-small);
+  line-height: 1.5;
+  color: var(--afh-text-soft);
+}
+
+.afh-tile[open] .afh-tile-preview {
+  display: block;
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+
+.afh-tile-control {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-family: var(--afh-font-mono);
+  font-size: var(--afh-text-caption);
+  color: var(--accent-ink, var(--afh-text-soft));
+}
+
+.afh-tile-control [data-when="open"],
+.afh-tile[open] .afh-tile-control [data-when="closed"] {
+  display: none;
+}
+
+.afh-tile[open] .afh-tile-control [data-when="open"] {
+  display: inline;
+}
+
+.afh-tile-body {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--afh-border);
+  font-size: var(--afh-text-small);
+  line-height: 1.6;
+  color: var(--afh-text-soft);
+}
+
+.afh-tile-fact {
+  margin-top: 4px;
+  font-size: var(--afh-text-small);
+  line-height: 1.6;
+  color: var(--afh-text-soft);
+}
+
+.afh-tile[open][data-body-restates-preview="true"] .afh-tile-preview {
+  display: none;
+}
+
+.afh-tile-kicker {
+  margin: 0;
+  font-family: var(--afh-font-mono);
+  font-size: var(--afh-text-caption);
+  font-weight: 700;
+  color: var(--afh-text-soft);
+}
+
+/* A term inside an opened tile: the name of the rubric a passage comes from. */
+.afh-tile-term {
+  margin: 0 0 4px;
+  font-family: var(--afh-font-mono);
+  font-size: var(--afh-text-caption);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--afh-text-soft);
+}
+
+.afh-tile-body .afh-tile-prose {
+  margin: 0 0 8px;
+  font-size: var(--afh-text-small);
+  line-height: 1.6;
+  color: var(--afh-text-soft);
+}
+
+.afh-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.afh-pills > li {
+  padding: 4px 12px;
+  border: 1px solid var(--afh-border);
+  border-radius: var(--afh-radius-full);
+  background: var(--afh-bg);
+  font-size: var(--afh-text-small);
+  color: var(--afh-text);
+}
+
+/* ── Chronology ───────────────────────────────────────────────────────
+   One timeline for both records (operator ruling, 2026-09-12): a line down
+   the stations, a dot and a rule per station inked by its regime, and in
+   each the period, the title, the preview. Three regimes, three existing
+   inks — gold for a precolonial polity, the colonial ink the atlas keeps for
+   imposed authority, green for the contemporary state. */
+
+.afh-chronology-lead {
+  margin-bottom: 16px;
+}
+
+.afh-chronology-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 16px;
+  padding: 0;
+  list-style: none;
+}
+
+.afh-chronology-legend > li {
+  padding: 4px 12px;
+  border: 1px solid var(--afh-border);
+  border-radius: var(--afh-radius-full);
+  background: var(--afh-surface);
+  font-family: var(--afh-font-mono);
+  font-size: var(--afh-text-caption);
+  font-weight: 700;
+  color: var(--afh-regime-ink);
+}
+
+.afh-chronology-legend > [data-regime="polity"],
+.afh-chronology > [data-regime="polity"] {
+  --afh-regime-ink: var(--afh-gold);
+}
+
+.afh-chronology-legend > [data-regime="colonial"],
+.afh-chronology > [data-regime="colonial"] {
+  --afh-regime-ink: var(--afh-colonial-ink);
+}
+
+.afh-chronology-legend > [data-regime="modern"],
+.afh-chronology > [data-regime="modern"] {
+  --afh-regime-ink: var(--afh-conf-high);
+}
+
+.afh-chronology {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0 0 0 24px;
+  list-style: none;
+}
+
+.afh-chronology-station {
+  position: relative;
+}
+
+/* The line is drawn one segment per station, so it changes ink where the
+   regime does. The segments overlap the 12px gap, which keeps it whole. */
+.afh-chronology-station::before {
+  content: "";
+  position: absolute;
+  left: -16px;
+  top: -8px;
+  bottom: -8px;
+  width: 3px;
+  background: var(--afh-regime-ink);
+}
+
+.afh-chronology-station:first-child::before {
+  top: 24px;
+}
+
+.afh-chronology-station:last-child::before {
+  bottom: calc(100% - 24px);
+}
+
+.afh-chronology-station::after {
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: 18px;
+  width: 11px;
+  height: 11px;
+  border-radius: var(--afh-radius-full);
+  background: var(--afh-regime-ink);
+  box-shadow: 0 0 0 3px var(--afh-bg-warm);
+}
+
+.afh-chronology-station > .afh-tile {
+  border-left: 3px solid var(--afh-regime-ink);
+}
+
+.afh-chronology-station .afh-tile-kicker {
+  color: var(--afh-regime-ink);
+}
+
+/* In a station the label is the entity, so it takes the display face. */
+.afh-chronology-station .afh-tile-label {
+  font-family: var(--afh-font-display);
+  font-size: var(--afh-text-h3);
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--afh-text);
+}
+
+.afh-chronology-station .afh-tile-value {
+  font-family: var(--afh-font-body);
+  font-size: var(--afh-text-small);
+  font-weight: 400;
+}
+
+.afh-chronology-names {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.afh-chronology-name {
+  padding: 2px 12px;
+  border: 1px solid var(--afh-regime-ink);
+  border-radius: var(--afh-radius-full);
+  font-weight: 600;
+  color: var(--afh-text);
+}
+
+.afh-chronology-name-term {
+  font-weight: 400;
+  color: var(--afh-text-soft);
+}
+
+.afh-chronology-passage + .afh-chronology-passage {
+  margin-top: 12px;
+}
+
+.afh-chronology-routes {
+  display: grid;
+  gap: 4px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--afh-text-small);
+  color: var(--afh-text);
+}
+
+.afh-chronology-routes > li::before {
+  content: "→ ";
+  color: var(--afh-regime-ink);
+}
+
+.afh-chronology-centres {
+  margin: 8px 0 0;
+  font-family: var(--afh-font-mono);
+  font-size: var(--afh-text-caption);
+  color: var(--afh-text-soft);
+}
+
+/* ── Names ─────────────────────────────────────────────────────────────
+   The names chapter both records share. A group per naming system on a
+   people, a register per provenance on a country, each a surface with its
+   count; the names themselves are pills that lead to their own record. */
+
+.afh-names {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.afh-names-group {
+  padding: 16px;
+  border: 1px solid var(--afh-border);
+  border-radius: var(--afh-radius-lg);
+  background: var(--afh-surface);
+  text-align: start;
+}
+
+.afh-names-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.afh-names-title {
+  margin: 0;
+  font-family: var(--afh-font-display);
+  font-weight: 700;
+  font-size: var(--afh-text-h3);
+  line-height: 1.25;
+  color: var(--afh-text);
+}
+
+.afh-names-tally {
+  font-family: var(--afh-font-mono);
+  font-size: var(--afh-text-caption);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  color: var(--accent-ink, var(--afh-text-soft));
+}
+
+.afh-names-systems {
+  margin: 12px 0 0;
+  font-family: var(--afh-font-mono);
+  font-size: var(--afh-text-caption);
+  color: var(--afh-text-soft);
+}
+
+.afh-name-pills > li {
+  padding: 0;
+}
+
+.afh-name-pills a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 4px 12px;
+  font-weight: 600;
+  color: var(--accent-ink, var(--afh-text));
+  text-decoration: none;
+}
+
+.afh-name-pills a:hover {
+  text-decoration: underline;
+}
+
+.afh-name-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 0 0 12px;
+}
+
+.afh-name-index > [data-letter] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: var(--afh-radius-lg);
+  font-size: var(--afh-text-body);
+}
+
+.afh-name-index > [data-letter="present"] {
+  border: 1px solid var(--accent);
+  font-weight: 600;
+  color: var(--accent-ink);
+  text-decoration: none;
+}
+
+.afh-name-index > [data-letter="absent"] {
+  border: 1px dashed var(--afh-border);
+  color: var(--afh-text-soft);
+}
+
+.afh-name-letter + .afh-name-letter {
+  margin-top: 12px;
+}
+
+.afh-tile-passage + .afh-tile-passage {
+  margin-top: 12px;
+}
+
+.afh-pills a {
+  font-weight: 600;
+  color: var(--accent-ink, var(--afh-text));
+  text-decoration: none;
+}
+
+.afh-pills a:hover {
+  text-decoration: underline;
+}
+
+.afh-pill-code {
+  margin-left: 4px;
+  font-family: var(--afh-font-mono);
+  font-size: var(--afh-text-caption);
+  color: var(--afh-text-soft);
+}
+
+.afh-tile-value a {
+  color: var(--accent-ink, var(--afh-text));
+  text-decoration: none;
+}
+
+.afh-tile-value a:hover {
+  text-decoration: underline;
+}
+
+/* ── Summary panel ────────────────────────────────────────────────────
+   The panel that opens both records. It takes the chapter's width: an inline
+   stylesheet once capped it at min(100% − 1rem, 44rem), which is what left
+   "En bref" narrower than every chapter under it. */
+
+.fiche-summary-brief {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.fiche-summary-brief__eyebrow {
+  margin: 0;
+  font-family: var(--afh-font-mono);
+  font-size: var(--afh-text-eyebrow);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--afh-text-soft);
+}
+
+.fiche-summary-brief h2 {
+  margin: 8px 0 16px;
+  font-family: var(--afh-font-display);
+  font-weight: 700;
+  font-size: var(--afh-text-h2);
+  line-height: 1.15;
+  color: var(--afh-text);
+}
+
+.fiche-summary-brief__counted {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+/* The lead figure takes the whole row. A tile beside it would read as its
+   equal, and the four tiles count what the atlas holds while the lead counts
+   the country or the people itself. */
+.fiche-summary-brief__counted > [data-emphasis="lead"] {
+  grid-column: 1 / -1;
+  border-left: 4px solid var(--accent);
+}
+
+/* A rule down the left rather than a line across the top. A top rule reads
+   as the end of the figures; a left rule reads as a quotation, which is what
+   this is — one sourced sentence, not a sixth count. The gold role, the same
+   one the search surface gives a sourced highlight. */
+.fiche-summary-brief__fact {
+  margin-top: 16px;
+  padding: 12px 16px;
+  border-left: 3px solid var(--afh-gold);
+  border-radius: 0 var(--afh-radius-lg) var(--afh-radius-lg) 0;
+  background: var(--afh-surface);
+}
+
+.fiche-summary-brief__fact p {
+  margin: 0 0 8px;
+  line-height: 1.5;
+}
+
+.fiche-summary-brief__tier {
+  display: inline-block;
+  padding: 4px 8px;
+  border: 1px solid var(--afh-border);
+  font-size: var(--afh-text-small);
+  color: var(--afh-text-soft);
+}
+
+.fiche-summary-brief__source {
+  margin: 8px 0 0;
+  font-size: var(--afh-text-small);
+  color: var(--afh-text-soft);
+}
+
 /* ── Callout ──────────────────────────────────────────────────────────
    An aside the section cannot say in its own prose. A rule in the
    surface's accent, never a box, so it reads as part of the same
@@ -749,137 +1380,19 @@
   color: var(--afh-text-soft);
 }
 
-/* ── Timeline ─────────────────────────────────────────────────────────
-   Historical political entities: a period, what the entity was, and the
-   centres it was governed from. Rows separated by a hairline rather than
-   boxed, like every other part of the parchment. */
-
-.afh-parchment-timeline {
-  display: grid;
-  gap: 0;
-}
-
-/* The country chronology keeps dated and undated stations on one visible line. */
-.afh-chronology-spine {
-  margin: 0;
-  padding: 0 0 0 20px;
-  list-style: none;
-  border-left: 2px solid var(--accent-tint);
-}
-
-.afh-chronology-spine > .afh-tl-item {
-  position: relative;
-}
-
-.afh-chronology-spine > .afh-tl-item::before {
-  content: "";
-  position: absolute;
-  left: -26px;
-  top: 20px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--accent-ink);
-}
-
-.afh-tl-item--fact > * {
-  grid-column: 1 / -1;
-}
-
-.afh-tl-item {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 5px;
-  padding: 14px 0;
-  border-bottom: 1px solid var(--afh-border);
-}
-
-.afh-tl-item:last-child {
-  border-bottom: 0;
-}
-
-/* --accent-ink, not --accent: the mockup sets the period in the fill colour,
-   which lands at 2.3:1 on the parchment at caption size. The ink variant is
-   the same hue scaled to clear AA, which is what accent-coloured text takes
-   anywhere on a tinted surface. axe caught this at all three widths. */
-/* Two classes, so a period written as a paragraph — which is what keeps it
-   left of a phone's centre — is not dressed as the account below it by
-   `.afh-tl-item p`. */
-.afh-tl-item .afh-tl-period {
-  margin: 0;
-  font-family: var(--afh-font-mono);
-  font-size: var(--afh-text-caption);
-  font-weight: 700;
-  line-height: 1.5;
-  padding-top: 2px;
-  color: var(--accent-ink);
-}
-
-.afh-tl-item h3 {
-  margin: 0 0 4px;
-  font-family: var(--afh-font-display);
-  font-weight: 700;
-  font-size: var(--afh-text-h3);
-  color: var(--afh-text);
-}
-
-.afh-tl-item p {
-  margin: 0;
-  font-size: var(--afh-text-small);
-  line-height: 1.65;
-  color: var(--afh-text-soft);
-}
-
-/* Soft, not the mockup's muted: this is nano-sized, and muted clears only
-   2.8:1 on the warm ground. The guard in ficheParchmentContrast.test.ts
-   fails the file outright if muted ever appears here. */
-/* Two classes, so it outranks `.afh-tl-item p` — the seat of power rides in a
-   paragraph to keep the left edge a phone would otherwise take from it, and a
-   paragraph is exactly what that rule already dresses. */
-.afh-tl-item .afh-tl-centers {
-  display: block;
-  margin-top: 6px;
-  font-family: var(--afh-font-mono);
-  font-size: var(--afh-text-caption);
-  color: var(--afh-text-soft);
-}
-
-/* The regime inks the period. Three kinds of authority share the corpus's
-   one array of entities, and until now the page showed them in one colour —
-   which is the same as not distinguishing them.
-
-   The colonial ink is the token literally named for it, and it is the ink a
-   documented gap also borrows elsewhere on this surface. That double duty is
-   inherited, not chosen here, and is raised for a ruling rather than settled
-   quietly: a silence in the corpus and a colonial administration are not the
-   same claim and should not end up the same red. */
-.afh-tl-item .afh-tl-period[data-regime="colonial"] {
-  color: var(--country-colonial);
-}
-
-.afh-tl-item .afh-tl-period[data-regime="modern"] {
-  color: var(--country-green);
-}
-
 /* ── Wide layout ──────────────────────────────────────────────────── */
 
 @container (min-width: 760px) {
-  .afh-parchment-head,
-  .afh-parchment-section {
+  .afh-parchment-head {
     padding: 34px 40px;
+  }
+
+  .afh-parchment-section {
+    padding: 32px 24px;
   }
 
   .afh-parchment-section > [data-fiche-section] {
-    padding: 34px 40px;
-  }
-
-  .afh-tl-item {
-    grid-template-columns: 96px 1fr;
-    gap: 16px;
-  }
-
-  .afh-parchment-confidence {
-    padding: 26px 40px 0;
+    padding: 32px 24px;
   }
 
   /* Side by side only once there is room for two measures. Below this the
@@ -946,58 +1459,36 @@
 
 /* ── The page saying it can be amended ─────────────────────────────── */
 
-/* An ocre tint rather than a card: the parchment boxes nothing, and this is
-   the record speaking about itself rather than another chapter of it. The
-   tint is mixed from the accent so a record scoped to a different accent
-   carries the band in its own hue instead of importing the country's. */
+/* A direct child of the parchment, so the flex gap spaces it and the column
+   gives it the chapter's width. It used to carry its own margins, which is
+   what left it 40px narrower than the chapters and flush against the one
+   above.
+
+   A dashed frame rather than a chapter's ground: this is the record speaking
+   about itself, and a dashed edge reads as a space left open. The tint is
+   mixed from the accent into the chapter ground, so a record scoped to a
+   different accent carries the band in its own hue. */
 .afh-amend-band {
-  margin: 0 20px 22px;
-  padding: 18px;
-  border: 1px solid var(--accent);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 18px 16px;
+  border: 1.5px dashed var(--accent);
   border-radius: var(--afh-radius-lg);
-  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  background: color-mix(in srgb, var(--accent) 12%, var(--afh-bg-warm));
 }
 
 .afh-amend-band-lead {
   margin: 0;
-  font-family: var(--afh-font-display);
-  font-weight: 700;
-  font-size: var(--afh-text-h3);
-  line-height: 1.2;
+  line-height: 1.5;
   color: var(--afh-text);
 }
 
-.afh-amend-band-hint {
-  margin: 6px 0 14px;
-  font-size: var(--afh-text-small);
-  color: var(--afh-text-soft);
-}
-
+/* The accent button sets its own fill, radius and focus ring. The label is
+   a sentence-length verb, so it may wrap on a phone rather than overflow. */
 .afh-amend-band-action {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  padding-inline: var(--afh-space-4xl);
-  border: 1px solid var(--accent);
-  border-radius: var(--afh-radius-base);
-  background: var(--afh-surface);
-  font-size: var(--afh-text-small);
-  font-weight: 600;
-  color: var(--accent-ink);
+  font-weight: 700;
   text-decoration: none;
-}
-
-.afh-amend-band-action:hover {
-  text-decoration: underline;
-}
-
-.afh-amend-band-action:focus-visible {
-  outline: none;
-  box-shadow: var(--afh-ring-focus);
-}
-
-@container (min-width: 760px) {
-  .afh-amend-band {
-    margin-inline: 40px;
-  }
+  white-space: normal;
 }

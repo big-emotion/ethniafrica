@@ -3,12 +3,12 @@ import type { Language } from "@/types/shared";
 const en = {
   summary: {
     title: "In brief",
-    persons: "Persons recorded for this people",
+    persons: "People recorded",
     referenceYear: (year: number) => `Reference year: ${year}`,
-    countriesOfPresence: "Countries of documented presence",
+    countriesOfPresence: "Countries of presence",
     mainLanguage: "Main language",
     linguisticFamily: "Language family",
-    namesReferencedHere: "Names borne and referenced here",
+    namesReferencedHere: "Linked names",
     missingData: "Not recorded in the atlas",
     factTier: "Source tier",
     populationDisagreement: (declared: string, summed: string) =>
@@ -25,7 +25,6 @@ const en = {
     culture: "Culture and society",
     neighbours: "Neighbouring peoples and organisation",
     distribution: "Where this people lives",
-    borneNames: "Names borne",
     referenceYear: "Reference year: 2025",
     fragmentation: "Colonial fragmentation",
     fragmentationNote:
@@ -46,7 +45,6 @@ const en = {
       `${count} associated ${count === 1 ? "group" : "groups"}`,
     documentedRelations: (count: number) =>
       `${count} documented ${count === 1 ? "relation" : "relations"}`,
-    borneNamesIndex: "Alphabetical index of names borne",
   },
   reportSection: "Report this section",
   naming: {
@@ -138,6 +136,8 @@ const en = {
     sourcePage: "Source page",
   },
   ficheHead: {
+    /** What the record is: the first word of the head's overline. */
+    kind: "People",
     people: "people",
     reference: "ref.",
     presenceCountries: (count: number) =>
@@ -170,12 +170,12 @@ type PeopleCopy = typeof en;
 const fr: PeopleCopy = {
   summary: {
     title: "En bref",
-    persons: "Personnes déclarées pour ce peuple",
+    persons: "Personnes recensées",
     referenceYear: (year) => `Année de référence : ${year}`,
-    countriesOfPresence: "Pays de présence documentée",
+    countriesOfPresence: "Pays de présence",
     mainLanguage: "Langue principale",
     linguisticFamily: "Famille linguistique",
-    namesReferencedHere: "Noms portés référencés ici",
+    namesReferencedHere: "Noms rattachés",
     missingData: "Non renseigné dans l’atlas",
     factTier: "Niveau de source",
     populationDisagreement: (declared, summed) =>
@@ -192,7 +192,6 @@ const fr: PeopleCopy = {
     culture: "Culture et société",
     neighbours: "Peuples voisins & organisation",
     distribution: "Où vit ce peuple",
-    borneNames: "Noms portés",
     referenceYear: "Année de référence : 2025",
     fragmentation: "Fragmentation coloniale",
     fragmentationNote: "Dérivé de la présence du peuple dans plusieurs pays",
@@ -209,7 +208,6 @@ const fr: PeopleCopy = {
       `${count} ${count === 1 ? "groupe associé" : "groupes associés"}`,
     documentedRelations: (count) =>
       `${count} ${count === 1 ? "relation documentée" : "relations documentées"}`,
-    borneNamesIndex: "Index alphabétique des noms portés",
   },
   reportSection: "Signaler cette section",
   naming: {
@@ -301,6 +299,7 @@ const fr: PeopleCopy = {
     sourcePage: "Page source",
   },
   ficheHead: {
+    kind: "Peuple",
     people: "personnes",
     reference: "réf.",
     presenceCountries: (count) => `${count} pays de présence`,

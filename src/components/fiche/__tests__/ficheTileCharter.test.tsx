@@ -1,9 +1,27 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+
 import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import { FicheSection } from "@/components/fiche/FicheSection";
-import { FicheTile } from "@/components/fiche/FicheTile";
+import { FicheTile, FicheTiles } from "@/components/fiche/FicheTile";
 import { AutonymExonymHeading } from "@/components/ui/AutonymExonymHeading";
+
+const stylesheet = readFileSync(
+  join(process.cwd(), "src/styles/fiche-parchment.css"),
+  "utf8"
+);
+
+/** The body of the first top-level rule for exactly this selector. */
+function ruleBody(selector: string): string {
+  const escaped = selector.replace(/[.[\]="^$*+?()|{}\\:>]/g, "\\$&");
+  const match = stylesheet.match(
+    new RegExp(`(?:^|\\n)${escaped}\\s*\\{([^}]*)\\}`)
+  );
+  if (!match) throw new Error(`No top-level rule for ${selector}`);
+  return match[1];
+}
 
 describe("FicheTile charter (REQ-153)", () => {
   // @req REQ-153
@@ -144,30 +162,36 @@ describe("FicheTile charter (REQ-153)", () => {
   });
 
   /**
-   * The native triangle is a few pixels wide and says nothing about being
-   * pressable. It is replaced by a circle at the 44px floor the reading
-   * surface owes a thumb — and, because nothing here may turn, the open state
-   * is carried by swapping the glyph rather than rotating it. Two glyphs, one
-   * shown at a time, no transform for a reduced-motion setting to fight.
+   * The closed tile ends on words, not on a glyph (operator ruling,
+   * 2026-09-12): "+ en savoir plus", and "− replier" once open. Both labels
+   * are in the markup and the `open` attribute decides which one shows, so
+   * nothing turns, nothing transitions, and a reduced-motion setting has
+   * nothing to fight. The control keeps the 44px floor the reading surface
+   * owes a thumb.
    */
   // @req REQ-153
-  it("replaces the native marker with a thumb-sized round control", () => {
+  it("ends the closed tile on a worded control that swaps without motion", () => {
     const { container } = render(
-      <FicheTile title="Royaumes" closedFact="3 entités politiques">
+      <FicheTile
+        title="Royaumes"
+        closedFact="3 entités politiques"
+        language="fr"
+      >
         <p>Des sources datent chaque entité.</p>
       </FicheTile>
     );
 
-    const summary = container.querySelector("summary")!;
-    expect(summary.className).toContain("list-none");
-
-    const control = container.querySelector("[data-fiche-tile-chevron]")!;
+    const control = container.querySelector(
+      "summary [data-fiche-tile-control]"
+    )!;
     expect(control).toHaveAttribute("aria-hidden", "true");
-    expect(control.className).toContain("h-11");
-    expect(control.className).toContain("w-11");
-    expect(control.className).toContain("rounded-afh-full");
-    // One glyph for closed, one for open, rather than one glyph turned.
-    expect(control.querySelectorAll("svg")).toHaveLength(2);
+    expect(control.querySelector('[data-when="closed"]')).toHaveTextContent(
+      "+ en savoir plus"
+    );
+    expect(control.querySelector('[data-when="open"]')).toHaveTextContent(
+      "− replier"
+    );
+    expect(container.querySelector("[data-fiche-tile-chevron]")).toBeNull();
   });
 
   // @req REQ-153
@@ -186,5 +210,77 @@ describe("FicheTile charter (REQ-153)", () => {
     expect(
       screen.getByText("Des sources datent chaque entité.")
     ).toBeInTheDocument();
+  });
+
+  // @req REQ-153
+  it("shows a value above the preview and marks the preview for clamping", () => {
+    const { container } = render(
+      <FicheTile
+        title="Parlers"
+        value="6 dialectes"
+        closedFact="Oshikwanyama · Oshindonga · Oshikwambi"
+      >
+        <p>Oshikwanyama : standard écrit.</p>
+      </FicheTile>
+    );
+
+    const value = container.querySelector("[data-tile-value]");
+    const preview = container.querySelector("[data-closed-fact]");
+    expect(value).toHaveTextContent("6 dialectes");
+    expect(preview).toHaveClass("afh-tile-preview");
+    expect(
+      value!.compareDocumentPosition(preview!) &
+        Node.DOCUMENT_POSITION_FOLLOWING
+    ).toBeTruthy();
+  });
+
+  // @req REQ-153
+  it("lays tiles out through one grid, and lets a tile ask for both columns", () => {
+    const { container } = render(
+      <FicheTiles>
+        <FicheTile title="Rites" closedFact="Mariage et feu sacré">
+          <p>Rituels liés au feu sacré du foyer.</p>
+        </FicheTile>
+        <FicheTile title="Groupes" closedFact="9 groupes" wide>
+          <p>Aandonga, Ovakwanyama.</p>
+        </FicheTile>
+      </FicheTiles>
+    );
+
+    const grid = container.querySelector(".afh-tiles");
+    expect(grid).not.toBeNull();
+    expect(grid!.children).toHaveLength(2);
+    expect(grid!.children[1]).toHaveAttribute("data-wide", "true");
+  });
+
+  /**
+   * The dress, asserted on the declarations: happy-dom computes no grid and
+   * no line clamp, so a DOM assertion would pass on a broken layout too.
+   * 16px inside a tile and 12px between two — the tiles on production sat at
+   * 6px apart with their text against the border.
+   */
+  // @req REQ-153
+  it("dresses a tile at 16px inside, 12px apart, clamped to two lines when closed", () => {
+    const grid = ruleBody(".afh-tiles");
+    expect(grid).toMatch(
+      /grid-template-columns:\s*repeat\(2,\s*minmax\(0,\s*1fr\)\)/
+    );
+    expect(grid).toMatch(/gap:\s*12px/);
+
+    const tile = ruleBody(".afh-tile");
+    expect(tile).toMatch(/padding:\s*16px/);
+    expect(tile).toMatch(/border-radius:\s*var\(--afh-radius-lg\)/);
+    expect(tile).toMatch(/background:\s*var\(--afh-surface\)/);
+    expect(tile).toMatch(/text-align:\s*start/);
+
+    expect(ruleBody(".afh-tile-preview")).toMatch(/-webkit-line-clamp:\s*2/);
+    expect(stylesheet).toMatch(
+      /\.afh-tile\[open\]\s+\.afh-tile-preview\s*\{[^}]*-webkit-line-clamp:\s*unset/
+    );
+    expect(stylesheet).toMatch(/\.afh-tiles\s*>\s*\[data-wide="true"\]/);
+    expect(stylesheet).toMatch(
+      /\.afh-tiles\s*>\s*:last-child:nth-child\(odd\)/
+    );
+    expect(stylesheet).not.toMatch(/\.afh-tile[^{]*\{[^}]*transition/);
   });
 });

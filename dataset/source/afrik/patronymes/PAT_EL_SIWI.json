@@ -81,7 +81,7 @@
       "url": "https://elcinema.com/person/1100116/",
       "tier": "unverified",
       "source_kind": "discovery",
-      "notes": "Notice d’une base de cinéma égyptienne, consultée pour le nom du réalisateur et les dates 1949-2025. Source sectorielle non académique, conservée à son tier faible."
+      "notes": "Notice d’une base de cinéma égyptienne, consultée pour le nom du réalisateur et les dates 1949-2025. Source sectorielle non académique."
     }
   ],
   "gaps": [
@@ -113,5 +113,10 @@
   "nisbaSubtype": {
     "value": "geographic",
     "sourceRefs": ["siwi-mpi", "el-siwi-forebears"]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the personal-name corpus receives a coordinated translation and terminology review."
+    }
   }
 }

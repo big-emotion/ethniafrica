@@ -11,14 +11,12 @@ describe("counted fiche summary copy (REQ-151)", () => {
       historyUndated: "Non daté",
       historyRole: "Rôle historique",
       cultureRitesAndSymbols: "Rites & symboles",
-      borneNamesIndex: "Index alphabétique des noms portés",
     });
     expect(peopleCopy.en.chapterDetails).toMatchObject({
       historyChronology: "Historical chronology",
       historyUndated: "Undated",
       historyRole: "Historical role",
       cultureRitesAndSymbols: "Rites and symbols",
-      borneNamesIndex: "Alphabetical index of names borne",
     });
     expect(peopleCopy.fr.chapterDetails.associatedGroups(2)).toBe(
       "2 groupes associés"
@@ -96,18 +94,18 @@ describe("counted fiche summary copy (REQ-151)", () => {
   // @req REQ-151
   it("states the scope of the people counts and distinguishes text facts", () => {
     expect(peopleCopy.fr.summary).toMatchObject({
-      persons: "Personnes déclarées pour ce peuple",
-      countriesOfPresence: "Pays de présence documentée",
+      persons: "Personnes recensées",
+      countriesOfPresence: "Pays de présence",
       mainLanguage: "Langue principale",
       linguisticFamily: "Famille linguistique",
-      namesReferencedHere: "Noms portés référencés ici",
+      namesReferencedHere: "Noms rattachés",
     });
     expect(peopleCopy.en.summary).toMatchObject({
-      persons: "Persons recorded for this people",
-      countriesOfPresence: "Countries of documented presence",
+      persons: "People recorded",
+      countriesOfPresence: "Countries of presence",
       mainLanguage: "Main language",
       linguisticFamily: "Language family",
-      namesReferencedHere: "Names borne and referenced here",
+      namesReferencedHere: "Linked names",
     });
     expect(peopleCopy.fr.summary.title).toBe("En bref");
     expect(peopleCopy.en.summary.title).toBe("In brief");

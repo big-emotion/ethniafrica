@@ -124,7 +124,7 @@ describe("people fiche parity with the mockup", () => {
         "Le nom et ses appellations",
         "Langue",
         "Histoire",
-        "Noms portés",
+        "Noms de personnes rattachés à ce peuple",
         "Culture et société",
         "Poursuivre",
         "Sources",

@@ -21,9 +21,9 @@ const DEFAULT_DATASET_ROOT = "dataset/source/afrik";
  * one sat at 1 010 while the corpus measured 1 002. A classification pass
  * lowers this line in the same change; NEVER raise it.
  *
- * 1010 -> 1002, measured 2026-09-12.
+ * 1010 -> 1002, measured 2026-09-12; 1002 -> 1000 after the Namibia source review.
  */
-export const NEEDS_REVIEW_RATCHET = 1002;
+export const NEEDS_REVIEW_RATCHET = 1000;
 
 /** The doctrine's three tiers, plus the numeric tiers the name/relation/migration fiches still carry. */
 const TIERS_WITH_AUTHORITY = new Set<unknown>([
