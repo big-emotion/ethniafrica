@@ -103,27 +103,28 @@
       {
         "title": "SIL Ethnologue — Ewondo language (ewo)",
         "url": "https://www.ethnologue.com/language/ewo/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "SIL Ethnologue — Fang language (fan)",
         "url": "https://www.ethnologue.com/language/fan/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Joshua Project — Ewondo, Beti in Cameroon",
         "url": "https://joshuaproject.net/people_groups/11170",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "101 Last Tribes — Ewondo people",
         "url": "https://www.101lasttribes.com/tribes/ewondo.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

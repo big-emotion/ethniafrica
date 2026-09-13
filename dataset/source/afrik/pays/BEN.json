@@ -249,62 +249,52 @@
       {
         "title": "SIL Ethnologue – Languages of Benin",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "CIA World Factbook – Benin",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "UNFPA – World Population Dashboard — Bénin",
         "url": "https://www.unfpa.org/data/world-population/BJ",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry for UNFPA."
+        "tier": "official"
       },
       {
         "title": "Law, Robin – \"The Kingdom of Allada\"",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Gender, Politics, and Culture in the Kingdom of Dahomey\"",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Archives du Royaume d'Abomey",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "UNESCO – Tatas somba du Bénin (patrimoine mondial)",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Recensements béninois",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Études anthropologiques sur les peuples du Bénin",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
-        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "title": "UNSD M49 – Codes normalisés des pays et noms français",
         "url": "https://unstats.un.org/unsd/methodology/m49/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+        "tier": "official"
       },
       {
         "title": "Ordonnance n° 76-6 du 26 janvier 1976 portant dénomination des sociétés d'État et d'économie mixte, des établissements publics et autres institutions de l'État, République populaire du Bénin",

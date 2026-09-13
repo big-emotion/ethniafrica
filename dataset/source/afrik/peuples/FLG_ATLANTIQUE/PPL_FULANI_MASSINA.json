@@ -107,33 +107,33 @@
       {
         "title": "Ba, Amadou Hampâté & Daget, Jacques — L'Empire peul du Macina (1818-1853). IFAN/Mouton, 1962",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Joshua Project — Fulani, Maasina in Mali",
         "url": "https://joshuaproject.net/people_groups/11773/ml",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "SIL Ethnologue — Fulfulde, Maasina (ffm)",
         "url": "https://www.ethnologue.com/language/ffm/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Seydou, Christiane — La poesie pastorale peule. Karthala, 1977",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Ba, Amadou Hampâté — Aspects de la civilisation africaine. Presence Africaine, 1972",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

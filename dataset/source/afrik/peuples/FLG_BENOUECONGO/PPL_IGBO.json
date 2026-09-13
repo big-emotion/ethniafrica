@@ -112,39 +112,38 @@
       {
         "title": "Achebe, Chinua — Things Fall Apart (1958), roman fondateur sur la societe igbo pre-coloniale",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Uchendu, Victor — The Igbo of Southeast Nigeria (1965), etude anthropologique classique",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Isichei, Elizabeth — A History of the Igbo People (1976)",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Ethnologue (SIL International) — Igbo language (ibo)",
         "url": "https://www.ethnologue.com/language/ibo/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Nwala, T. Uzodinma — Igbo Philosophy (1985)",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "BeingAfrican.org — Music and Dance in Igbo Culture",
         "url": "https://beingafrican.org/culture-panel/music-and-dance-in-igbo-culture/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for beingafrican.org."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

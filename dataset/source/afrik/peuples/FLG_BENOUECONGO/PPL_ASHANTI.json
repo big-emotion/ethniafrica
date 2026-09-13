@@ -80,21 +80,23 @@
       {
         "title": "Ghana Statistical Service, Population and Housing Census 2021",
         "url": "https://census2021.statsghana.gov.gh",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for census2021.statsghana.gov.gh."
+        "tier": "official"
       },
       {
         "title": "Rattray, Robert Sutherland – Ashanti, Oxford University Press, 1923",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "McCaskie, T. C. – State and Society in Pre-colonial Asante, Cambridge University Press, 1995",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

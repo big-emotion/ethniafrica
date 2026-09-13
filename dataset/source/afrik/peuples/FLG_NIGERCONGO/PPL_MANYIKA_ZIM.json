@@ -94,51 +94,48 @@
       {
         "title": "Encyclopedia Britannica — Manyika",
         "url": "https://www.britannica.com/topic/Manyika",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       },
       {
         "title": "Joshua Project — Manyika in Zimbabwe",
         "url": "https://joshuaproject.net/people_groups/13520/ZW",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "101 Last Tribes — Manyika people",
         "url": "https://www.101lasttribes.com/tribes/manyika.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       },
       {
         "title": "University of Missouri — Manyika, Shona people of Zimbabwe (PDF)",
         "url": "https://dice.missouri.edu/assets/docs/niger-congo/Manyinka.pdf",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for dice.missouri.edu."
+        "tier": "referenced"
       },
       {
         "title": "US Department of Justice EOIR — Manyika/Shona, Zimbabwe (PDF)",
         "url": "https://www.justice.gov/sites/default/files/eoir/legacy/2014/01/06/manyika%20.pdf",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for justice.gov."
+        "tier": "official"
       },
       {
         "title": "Seed Gallery New York — Manyika glossary",
         "url": "https://www.seedgallerynewyork.com/glossary/manyika",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for seedgallerynewyork.com."
+        "tier": "unverified"
       },
       {
         "title": "Glottolog — Manyika (many1258)",
         "url": "https://glottolog.org/resource/languoid/id/many1258",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "Facebook — Manyika people of Zimbabwe and Mozambique",
         "url": "https://www.facebook.com/groups/1055261108291845/posts/2305889616562315/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for facebook.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

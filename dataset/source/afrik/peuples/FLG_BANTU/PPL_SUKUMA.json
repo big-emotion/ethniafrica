@@ -90,45 +90,43 @@
       {
         "title": "Joshua Project — Sukuma in Tanzania",
         "url": "https://joshuaproject.net/people_groups/15112",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "SIL Ethnologue — Sukuma (suk)",
         "url": "https://www.ethnologue.com/language/suk/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "CIA World Factbook — Tanzania",
         "url": "https://www.cia.gov/the-world-factbook/countries/tanzania/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+        "tier": "official"
       },
       {
         "title": "National Bureau of Statistics Tanzania — 2022 Population and Housing Census",
         "url": "https://www.nbs.go.tz/",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for nbs.go.tz."
+        "tier": "official"
       },
       {
         "title": "Glottolog — Sukuma (suku1261)",
         "url": "https://glottolog.org/resource/languoid/id/suku1261",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "Encyclopaedia Britannica — Sukuma",
         "url": "https://www.britannica.com/topic/Sukuma",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       },
       {
         "title": "101 Last Tribes — Sukuma",
         "url": "https://www.101lasttribes.com/tribes/sukuma.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

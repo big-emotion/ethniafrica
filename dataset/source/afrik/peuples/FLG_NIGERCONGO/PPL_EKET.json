@@ -78,27 +78,28 @@
       {
         "title": "Eket in Nigeria – Joshua Project",
         "url": "https://joshuaproject.net/people_groups/11731",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Ekit – Glottolog",
         "url": "https://glottolog.org/resource/languoid/id/ekit1246",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "City Facts – Eket, Akwa Ibom, Nigeria",
         "url": "https://www.city-facts.com/eket/population",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for city-facts.com."
+        "tier": "unverified"
       },
       {
         "title": "Abasiattai, M.B. – History of the Cross River Region of Nigeria, Unical Press, 1988",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

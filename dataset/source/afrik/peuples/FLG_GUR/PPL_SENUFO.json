@@ -123,33 +123,33 @@
       {
         "title": "Ethnologue - Cebaara Senufo (sef)",
         "url": "https://www.ethnologue.com/language/sef/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Britannica - Senufo",
         "url": "https://www.britannica.com/topic/Senufo",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       },
       {
         "title": "Wiktionary - ISO 639-3 codes Africa (Senufo)",
         "url": "https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for en.wiktionary.org."
+        "tier": "unverified"
       },
       {
         "title": "Joshua Project - Senoufo, Southern in Cote d'Ivoire",
         "url": "https://joshuaproject.net/people_groups/15066/IV",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "CIA World Factbook - Burkina Faso",
         "url": "https://www.cia.gov/the-world-factbook/countries/burkina-faso/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

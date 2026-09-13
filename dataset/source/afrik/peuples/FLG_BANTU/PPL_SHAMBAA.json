@@ -80,27 +80,28 @@
       {
         "title": "Shambala in Tanzania – Joshua Project",
         "url": "https://joshuaproject.net/people_groups/14890",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Shambaa – Encyclopedia.com",
         "url": "https://www.encyclopedia.com/humanities/encyclopedias-almanacs-transcripts-and-maps/shambaa",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for encyclopedia.com."
+        "tier": "unverified"
       },
       {
         "title": "101 Last Tribes – Shambaa people",
         "url": "http://www.101lasttribes.com/tribes/shambaa.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       },
       {
         "title": "Omniglot – Shambala language",
         "url": "https://www.omniglot.com/writing/shambala.htm",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for omniglot.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

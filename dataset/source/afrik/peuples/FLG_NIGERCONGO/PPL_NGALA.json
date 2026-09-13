@@ -106,69 +106,69 @@
       {
         "title": "101 Last Tribes — Bangala people",
         "url": "https://www.101lasttribes.com/tribes/bangala.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       },
       {
         "title": "Bokamba, E.G. — Lingala as a Supranational Language in DRC. CERECK, 2019",
         "url": "https://cereck.org/wp-content/uploads/2021/08/Kami-Export-EGBokamba-2019-PRFNL-DRAFt-2-LINGALA-AS-A-SUPRANATIONAL-LANGUAGE-IN-D.R.-CONGO_.pdf",
         "tier": "referenced",
-        "notes": "Tier resolved from a first review of cereck.org: the Center for Research on the Congo-Kinshasa hosts an identifiable, attributable academic paper by linguist E.G. Bokamba; no prior domain ruling existed for cereck.org."
+        "notes": "Academic paper by linguist E. G. Bokamba, hosted by the Center for Research on the Congo-Kinshasa."
       },
       {
         "title": "Ugent Biblio — The linguistic features of Bangala before Lingala",
         "url": "https://backoffice.biblio.ugent.be/download/8644523/8645617",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for biblio.ugent.be, matched as a parent of backoffice.biblio.ugent.be."
+        "tier": "referenced"
       },
       {
         "title": "EBSCO Research Starters — Lingala Language",
         "url": "https://www.ebsco.com/research-starters/language-and-linguistics/lingala-language",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for ebsco.com."
+        "tier": "referenced"
       },
       {
         "title": "MustGo — Lingala Language",
         "url": "https://www.mustgo.com/worldlanguages/lingala/",
         "tier": "unverified",
-        "notes": "Tier resolved from a first review of mustgo.com: a general-reference language site with no identifiable authorship or institutional backing; no prior domain ruling existed for mustgo.com."
+        "notes": "General-reference language site with no identifiable author or institutional backing."
       },
       {
         "title": "Joshua Project — Bangala in DRC",
         "url": "https://joshuaproject.net/people_groups/print/13330/CG",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Ethnologue (SIL) — Lingala [lin]",
         "url": "https://www.ethnologue.com/language/lin",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Glottolog 5.3 — Bangala [bang1353]",
         "url": "https://glottolog.org/resource/languoid/id/bang1353",
         "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"; used to correct the language's ISO 639-3 code (bxg, previously misrecorded as lol, the code for Mongo) and to confirm its Bantu Zone C / Bangi-Ntomba classification and non-endangered status."
+        "notes": "Used to correct the language's ISO 639-3 code (bxg, previously misrecorded as lol, the code for Mongo) and to confirm its Bantu Zone C / Bangi-Ntomba classification and non-endangered status."
       },
       {
         "title": "Meeuwis, M. — Redeeming a killer language: Protestant missionaries' engagements with Bangala and Lingala in the Belgian Congo, 1900–1935. Canadian Journal of African Studies, 58(3), 2024",
         "url": "https://www.tandfonline.com/doi/full/10.1080/00083968.2024.2382715",
         "tier": "referenced",
-        "notes": "Tier resolved as a peer-reviewed academic journal article; used for the confessional (Protestant/Catholic) split in naming practice between bangala and lingala from 1900 onward."
+        "notes": "Used for the confessional (Protestant/Catholic) split in naming practice between bangala and lingala from 1900 onward."
       },
       {
         "title": "Weeks, J.H. — Among Congo Cannibals: Experiences, Impressions, and Adventures during a Thirty Years' Sojourn amongst the Boloki and Other Congo Tribes. Seeley, Service & Co., 1913",
         "url": "https://www.gutenberg.org/ebooks/69650",
         "tier": "referenced",
-        "notes": "Tier resolved as a published, identifiable primary ethnographic account by a missionary resident among the Boloki for thirty years; read with care for its era's colonial framing, and cited here to ground the village/district political-organization content rather than leave it without any attributable source."
+        "notes": "Read with care for its colonial-era framing; used for village and district political organization."
       },
       {
         "title": "Wikidata — Bangala (Q2882454)",
         "url": "https://www.wikidata.org/wiki/Q2882454",
         "tier": "unverified",
-        "notes": "Tier resolved per the aggregator/crowdsourced-database category; used only for the external identifier, not for any factual prose claim."
+        "notes": "Used only for the external identifier, not for any factual prose claim."
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

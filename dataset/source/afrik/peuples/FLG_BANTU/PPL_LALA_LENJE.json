@@ -92,33 +92,33 @@
       {
         "title": "Glottolog – Lenje (lenj1248)",
         "url": "https://glottolog.org/resource/languoid/id/lenj1248",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "Joshua Project – Lenje in Zambia",
         "url": "https://joshuaproject.net/people_groups/13039",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "PeopleGroups.org – Lenje of Zambia PG015590",
         "url": "https://peoplegroups.org/people_groups/pg015590/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+        "tier": "unverified"
       },
       {
         "title": "Explore Lusaka – Before Lusaka: A Brief History of the Soli and Lenje Peoples",
         "url": "https://www.explorelusaka.com/post/before-lusaka-a-brief-history-of-the-soli-and-lenje-peoples",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for explorelusaka.com."
+        "tier": "unverified"
       },
       {
         "title": "Boswell, D. – Chipimpi, Vulgar Clans, and Lala-Lamba Ethnohistory (reference aux Lenje), 2008",
         "url": "https://scholarexchange.furman.edu/cgi/viewcontent.cgi?article=1001&context=ant-publications",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for scholarexchange.furman.edu."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

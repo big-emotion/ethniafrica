@@ -95,51 +95,48 @@
       {
         "title": "Ethnologue (SIL International) — Taa language (nmn)",
         "url": "https://www.ethnologue.com/language/nmn/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Glottolog — West !Xoon",
         "url": "https://glottolog.org/resource/languoid/id/xooo1239",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "Boden, Gertrud — Cultural, Lexical and Conceptual Change in the Southern Kalahari: !Xoon in Namibia between the 1920s and 1970s. Journal of Namibian Studies, 2013",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Boden, Gertrud — Khoisan Kinship Terminologies in Diachronic Perspective. Kalahari Basin Area Project, University of Edinburgh",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Traill, Anthony — Phonetic and Phonological Studies of !Xóõ Bushman. Hamburg: Helmut Buske, 1985",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "DoBeS Project — Documentation of West !Xoon (Taa). 2000s fieldwork in Namibia and Botswana",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "UNESCO — Tsodilo Hills World Heritage Site",
         "url": "https://whc.unesco.org/en/list/1021/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of whc.unesco.org."
+        "tier": "official"
       },
       {
         "title": "IWGIA — Indigenous Peoples in Africa: Botswana and Namibia",
         "url": "https://www.iwgia.org/en/africa.html",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"iwgia\"."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

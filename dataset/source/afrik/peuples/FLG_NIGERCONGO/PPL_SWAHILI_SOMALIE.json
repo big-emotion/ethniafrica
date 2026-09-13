@@ -99,27 +99,28 @@
       {
         "title": "Bajuni Cultural Heritage — Who Are The Bajuni?",
         "url": "https://www.bajuniculturalheritage.org/who-are-bajuni/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers bajuniculturalheritage.org; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "AFL — Bajuni: people, society, geography, history, language",
         "url": "https://aflat.org/files/dnurse/Bajuni.pdf",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers aflat.org; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Memorial University of Newfoundland — Bajuni refugees",
         "url": "https://www.mun.ca/linguistics/media/production/memorial/academic/faculty-of-humanities-and-social-sciences/linguistics/media-library/more/e-books/Bajuni%20refugees.pdf",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers mun.ca; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Ethnologue SIL — Swahili (swa)",
         "url": "https://www.ethnologue.com/language/swa",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

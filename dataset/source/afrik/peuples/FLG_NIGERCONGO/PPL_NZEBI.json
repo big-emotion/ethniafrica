@@ -113,50 +113,43 @@
       {
         "title": "101 Last Tribes — Nzebi people",
         "url": "https://www.101lasttribes.com/tribes/nzebi.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       },
       {
         "title": "Qiraat Africa — The Nzebi people (2025)",
         "url": "https://qiraatafrican.com/en/15644/the-nzebi-people/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
+        "tier": "unverified"
       },
       {
         "title": "Omniglot — Njebi language and alphabet",
         "url": "https://www.omniglot.com/writing/njebi.htm",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for omniglot.com."
+        "tier": "unverified"
       },
       {
         "title": "PeopleGroups.org — Nzebi of Gabon",
         "url": "https://peoplegroups.org/people_groups/pg013010/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+        "tier": "unverified"
       },
       {
         "title": "SIL Ethnologue — Nzebi language, code nzb",
         "url": "https://www.ethnologue.com/language/nzb/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Les Amis du musée du quai Branly – Jacques Chirac — \"Un rare masque nzebi offert au musée grâce au dîner de gala des Amis\" (3 juillet 2018)",
         "url": "https://www.amisquaibranly.fr/un-rare-masque-nzebi-offert-au-musee-grace-au-diner-de-gala-des-amis/",
-        "tier": "referenced",
-        "notes": "Resolved from the prior needs_review standing (no URL) once the museum's own announcement was located. Tiered referenced, following the corpus precedent for museum sources (the Metropolitan Museum of Art is tiered referenced on PPL_FANG, not official)."
+        "tier": "referenced"
       },
       {
         "title": "Georges Dupré — Koto, l'égalité nécessaire : savoir et pouvoir dans une société clanique : les Nzèbi du Congo et du Gabon (L'Harmattan, 2019)",
         "url": "https://searchworks.stanford.edu/view/13386359",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for searchworks.stanford.edu (library catalogue record for an identifiable, verifiable academic monograph by a specialist of Central African lineage societies)."
+        "tier": "referenced"
       },
       {
         "title": "Nestor Ide Righou — Les Nzèbi du Gabon, des origines à 1915 : essai d'étude historique (doctoral thesis, Université Paris 1, 2005, dir. Claude-Hélène Perrot)",
         "url": "https://theses.fr/2005PA010542",
         "tier": "referenced",
-        "notes": "Catalogued on the French national theses portal; tiered referenced as an identifiable, verifiable academic work, consistent with the searchworks.stanford.edu precedent for a library/thesis catalogue record."
+        "notes": "Listed on the French national theses portal as an identifiable academic work."
       },
       {
         "title": "Gérard Collomb — \"Les sept fils de Nzèbi. Un mythe cosmogonique des Banzèbi du Gabon\", Journal des africanistes, vol. 49, fasc. 2 (1979), p. 89-134",
@@ -168,20 +161,25 @@
         "title": "Glottolog 5.x — Njebi [njeb1242]",
         "url": "https://glottolog.org/resource/languoid/id/njeb1242",
         "tier": "official",
-        "notes": "Tier resolved from the domain ruling for glottolog.org. Confirms glottocode njeb1242 and ISO 639-3 nzb, consistent with the fiche's existing languages.isoCodes."
+        "notes": "Confirms glottocode njeb1242 and ISO 639-3 nzb, consistent with the fiche's existing recorded language codes."
       },
       {
         "title": "CIA World Factbook — Gabon, People and Society (ethnic groups)",
         "url": "https://www.cia.gov/the-world-factbook/countries/gabon/",
         "tier": "official",
-        "notes": "Tier resolved from the domain ruling for cia.gov. Reports a composite \"Nzabi-Duma\" category at 11.2% of Gabon's population (2021 est.); cited only for order-of-magnitude corroboration, since it does not isolate Nzebi from the related Duma people."
+        "notes": "Reports a composite \"Nzabi-Duma\" category at 11.2% of Gabon's population (2021 est.); cited only for order-of-magnitude corroboration, since it does not isolate Nzebi from the related Duma people."
       },
       {
         "title": "Wikidata — Nzabi (Q2882351)",
         "url": "https://www.wikidata.org/wiki/Q2882351",
         "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for wikidata.org (openly edited tertiary reference). Cited only to document the externalIdentifiers.wikidataId cross-reference — confirmed instance-of \"ethnic group\" with associated countries Gabon and Republic of the Congo — not as evidence for any narrative claim."
+        "notes": "Cited only to document the Wikidata cross-reference — confirmed instance-of \"ethnic group\" with associated countries Gabon and Republic of the Congo — not as evidence for any narrative claim."
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

@@ -109,39 +109,38 @@
       {
         "title": "Joshua Project — Susu people group all countries (2025)",
         "url": "https://joshuaproject.net/people_groups/15141",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Joshua Project — Susu in Guinea-Bissau (2026)",
         "url": "https://joshuaproject.net/people_groups/15141/PU",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "PeopleGroups.org — Susu of Guinea (PG013431)",
         "url": "https://peoplegroups.org/people_groups/pg013431/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+        "tier": "unverified"
       },
       {
         "title": "SIL Ethnologue — Susu language (sus)",
         "url": "https://www.ethnologue.com/language/sus/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Rosetta Panglossia — Susu Language (sus)",
         "url": "https://rosettapanglossia.longnow.org/index.php?title=Susu_Language_%28sus%29",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for rosettapanglossia.longnow.org."
+        "tier": "referenced"
       },
       {
         "title": "SIL CEDS — ISO 639-3: Susu = sus",
         "url": "https://ceds.ed.gov/iso639-3LanguageCodev7.aspx",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for ceds.ed.gov."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

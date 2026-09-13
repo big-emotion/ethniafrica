@@ -87,33 +87,33 @@
       {
         "title": "Data Commons — Nembe, Bayelsa State, Nigeria",
         "url": "https://datacommons.org/place/wikidataId/Q3510576",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for datacommons.org."
+        "tier": "unverified"
       },
       {
         "title": "City-Facts — Nembe, Bayelsa, Nigeria (population)",
         "url": "https://www.city-facts.com/nembe/population",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for city-facts.com."
+        "tier": "unverified"
       },
       {
         "title": "Alagoa, E.J. (2009). A History of the Niger Delta. Port Harcourt: Onyoma Research Publications",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Ethnologue (SIL) — Southeast Ijo (nvm)",
         "url": "https://www.ethnologue.com/language/nvm/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Guardian Nigeria — Modernising Ijaw language (mention de Kay Williamson et orthographe Nembe)",
         "url": "https://guardian.ng/art/modernising-ijaw-language/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for guardian.ng."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

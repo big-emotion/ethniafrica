@@ -107,33 +107,33 @@
       {
         "title": "Jenkins, Orville Boyd. The Tswa people of Mozambique — A Cultural Profile",
         "url": "http://orvillejenkins.com/profiles/tswa.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for orvillejenkins.com."
+        "tier": "unverified"
       },
       {
         "title": "Joshua Project — Tswa in Mozambique",
         "url": "https://joshuaproject.net/people_groups/15600/MZ",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Ethnologue — Tswa (tsc)",
         "url": "https://www.ethnologue.com/language/tsc/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "CLEAR Global — Language data for Mozambique",
         "url": "https://clearglobal.org/language-data-for-mozambique/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for clearglobal.org."
+        "tier": "referenced"
       },
       {
         "title": "Tgsilundika Cultural Community Centre — The History of Kalanga People",
         "url": "https://tgsilundikaculturalcommunitycentre.org/the-history-of-kalanga-people/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for tgsilundikaculturalcommunitycentre.org."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

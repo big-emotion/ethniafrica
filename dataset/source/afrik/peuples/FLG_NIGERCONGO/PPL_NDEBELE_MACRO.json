@@ -110,33 +110,33 @@
       {
         "title": "Encyclopaedia Britannica — Ndebele (Zimbabwean people)",
         "url": "https://www.britannica.com/topic/Ndebele-Zimbabwean-people",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       },
       {
         "title": "South African History Online — Ndebele",
         "url": "https://sahistory.org.za/article/ndebele",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for sahistory.org.za."
+        "tier": "referenced"
       },
       {
         "title": "Joshua Project — Ndebele, Southern in South Africa",
         "url": "https://joshuaproject.net/people_groups/15054",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "SIL Ethnologue — Northern Ndebele (nde)",
         "url": "https://www.ethnologue.com/language/nde/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "SIL Ethnologue — Southern Ndebele (nbl)",
         "url": "https://www.ethnologue.com/language/nbl/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

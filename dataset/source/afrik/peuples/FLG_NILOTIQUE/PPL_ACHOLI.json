@@ -100,45 +100,43 @@
       {
         "title": "SIL Ethnologue — Acholi language (ach)",
         "url": "https://www.ethnologue.com/language/ach/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Human Rights Watch — Northern Uganda : Abducted and Abused (2003)",
         "url": "https://www.hrw.org/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for hrw.org."
+        "tier": "referenced"
       },
       {
         "title": "Latigo, James Ojera — Northern Uganda: tradition-based practices in the Acholi region. In Traditional Justice and Reconciliation after Violent Conflict, IDEA, 2008",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "p'Bitek, Okot — Song of Lawino (1966), East African Publishing House. Oeuvre litteraire majeure en langue acholi",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Doom, Ruddy & Vlassenroot, Koen — Kony's Message: A New Koine? The Lord's Resistance Army in Northern Uganda. African Affairs, 1999",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Glottolog — Acholi",
         "url": "https://glottolog.org/resource/languoid/id/achi1257",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "UNFPA Uganda — Population data",
         "url": "https://uganda.unfpa.org/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"unfpa\" (unfpa.org), matched as a parent of uganda.unfpa.org."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

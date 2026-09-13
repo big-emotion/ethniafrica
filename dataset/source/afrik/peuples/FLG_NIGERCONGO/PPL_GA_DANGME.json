@@ -99,45 +99,43 @@
       {
         "title": "Britannica - Ga people",
         "url": "https://www.britannica.com/topic/Ga",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       },
       {
         "title": "Visit Ghana - Homowo Festival",
         "url": "https://visitghana.com/homowo-festival/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers visitghana.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "GBC Ghana Online - The Homowo Story",
         "url": "https://www.gbcghanaonline.com/news/the-homowo-story-how-the-ga-people-conquered-hunger/2025/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers gbcghanaonline.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Osabu-Kle, Daniel Tetteh. The Ga People and Homowo Festival. Carleton University African Studies",
         "url": "https://carleton.ca/africanstudies/wp-content/uploads/Ga-People-and-Homowo-Festival.pdf",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for carleton.ca."
+        "tier": "referenced"
       },
       {
         "title": "Glottolog - Ga (gaa)",
         "url": "https://glottolog.org/resource/languoid/id/gaaa1244",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "SIL Ethnologue - Dangme (ada)",
         "url": "https://www.ethnologue.com/language/ada/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Ghana Statistical Service - Population and Housing Census",
         "url": "https://statsghana.gov.gh/",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for statsghana.gov.gh."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

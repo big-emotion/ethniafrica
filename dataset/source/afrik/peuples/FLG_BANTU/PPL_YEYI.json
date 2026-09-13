@@ -93,33 +93,33 @@
       {
         "title": "Omniglot – Yeyi language and alphabet",
         "url": "https://www.omniglot.com/writing/yeyi.htm",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for omniglot.com."
+        "tier": "unverified"
       },
       {
         "title": "US Department of Justice – Wayeyi profile",
         "url": "https://www.justice.gov/eoir/file/876336/dl",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for justice.gov."
+        "tier": "official"
       },
       {
         "title": "Minority Rights Group – Wayeyi in Botswana",
         "url": "https://minorityrights.org/communities/wayeyi/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+        "tier": "referenced"
       },
       {
         "title": "Survival International – Wayeyi related material",
         "url": "https://www.survivalinternational.org/materials/95",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for survivalinternational.org."
+        "tier": "referenced"
       },
       {
         "title": "Africa 101 Last Tribes – The Okavango Delta Peoples of Botswana",
         "url": "https://www.101lasttribes.com/tribes/okavango.pdf",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

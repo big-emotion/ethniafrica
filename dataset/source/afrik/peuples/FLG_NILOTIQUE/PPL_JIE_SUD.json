@@ -12,7 +12,7 @@
         "Donyiro",
         "Jiye (variante orthographique courante)"
       ],
-      "originOfExonyms": "Le terme Jiye est la forme utilisée au Soudan du Sud pour désigner ce groupe, distinct des Jie d'Ouganda (PPL_JIE). Les deux noms partagent la même origine et reflètent la séparation historique des deux communautés au 18e siècle environ. L'administration soudanaise ne considérait pas historiquement les Jiye comme un peuple distinct, les traitant comme une section des Toposa.",
+      "originOfExonyms": "Le terme Jiye est la forme utilisée au Soudan du Sud pour désigner ce groupe, distinct des Jie d'Ouganda. Les deux noms partagent la même origine et reflètent la séparation historique des deux communautés au 18e siècle environ. L'administration soudanaise ne considérait pas historiquement les Jiye comme un peuple distinct, les traitant comme une section des Toposa.",
       "whyProblematic": null,
       "contemporaryUsage": "Le terme Jiye est utilisé en anglais et en arabe soudanais. La communauté est officiellement reconnue comme un groupe ethnique distinct au sein du comté de Pibor (Etat de Jonglei, Soudan du Sud) depuis la fin du conflit civil soudanais.",
       "linguisticFamily": "FLG_NILOTIQUE",
@@ -85,27 +85,28 @@
       {
         "title": "Blog Trip Down Memory Lane — Jiye people: Small Nilotic but Fierce Fighters in South Sudan (2013)",
         "url": "https://kwekudee-tripdownmemorylane.blogspot.com/2013/08/jiye-people-small-nilotic-but-fierce.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for kwekudee-tripdownmemorylane.blogspot.com."
+        "tier": "unverified"
       },
       {
         "title": "Facebook — Jiye people, South Sudan (Nimule, Eastern Equatorial State)",
         "url": "https://www.facebook.com/groups/275114380263865/posts/701811924260773/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for facebook.com."
+        "tier": "unverified"
       },
       {
         "title": "Swordshare Map — Ng'akarimojong ISO 639-3 kdj (inclut Jiye comme nom alternatif)",
         "url": "https://map.swordshare.com/kdj",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for map.swordshare.com."
+        "tier": "unverified"
       },
       {
         "title": "Kara-Tunga — Karamoja Bibliography",
         "url": "https://www.kara-tunga.com/karamoja-bibliography/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for kara-tunga.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

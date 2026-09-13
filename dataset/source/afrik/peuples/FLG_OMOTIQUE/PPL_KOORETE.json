@@ -93,39 +93,38 @@
       {
         "title": "Joshua Project — Koore in Ethiopia",
         "url": "https://joshuaproject.net/people_groups/12790",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "PeopleGroups.org — Koorete of Ethiopia",
         "url": "https://peoplegroups.org/people_groups/pg011608/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+        "tier": "unverified"
       },
       {
         "title": "SIL Ethnologue — Koorete language [kqy]",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Beletu Redda — The Morphology of Koorete. Addis Ababa University",
         "url": "https://www.kooretebible.com/sites/www.kooretebible.com/files/BELETU%20REDDA.pdf",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers kooretebible.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Ethiopian Central Statistical Agency — Summary and Statistical Report of the 2007 Population and Housing Census. Addis Ababa, 2008",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Britannica — Omotic Languages",
         "url": "https://www.britannica.com/topic/Omotic-languages",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

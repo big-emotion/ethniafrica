@@ -87,27 +87,28 @@
       {
         "title": "São Tomé and Príncipe – Minority Rights Group, 2024",
         "url": "https://minorityrights.org/country/sao-tome-and-principe/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+        "tier": "referenced"
       },
       {
         "title": "Population and Demographics – SaoTomeExpert, 2022",
         "url": "https://www.saotomeexpert.pt/en/sao-tome-and-principe-factsheet-population-demographics/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for saotomeexpert.pt."
+        "tier": "unverified"
       },
       {
         "title": "People and Culture of Príncipe Island – SaoTomeExpert",
         "url": "https://www.saotomeexpert.pt/en/sao-tome-people-culture-of-principe-island/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for saotomeexpert.pt."
+        "tier": "unverified"
       },
       {
         "title": "Sao Tome and Principe Demographics Profile – IndexMundi",
         "url": "https://www.indexmundi.com/sao_tome_and_principe/demographics_profile.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for indexmundi.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

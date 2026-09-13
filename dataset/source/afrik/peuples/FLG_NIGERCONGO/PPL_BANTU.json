@@ -279,39 +279,38 @@
       {
         "title": "Nature (2023) — The genetic legacy of the expansion of Bantu-speaking peoples in Africa",
         "url": "https://www.nature.com/articles/s41586-023-06770-6",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for nature.com."
+        "tier": "referenced"
       },
       {
         "title": "Institut Pasteur (2017) — The migration history of Bantu-speaking people",
         "url": "https://www.pasteur.fr/en/home/research-journal/press-documents/migration-history-bantu-speaking-people-genomics-reveals-benefits-admixture-and-sheds-new-light",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for pasteur.fr."
+        "tier": "referenced"
       },
       {
         "title": "Britannica — Bantu peoples",
         "url": "https://www.britannica.com/topic/Bantu-peoples",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       },
       {
         "title": "History Guild — The Bantu Migration",
         "url": "https://historyguild.org/early-africa/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers historyguild.org; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Bantu Cultures of Africa — uVelaphi",
         "url": "https://www.uvelaphi.africa/files/cultures.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for uvelaphi.africa."
+        "tier": "unverified"
       },
       {
         "title": "SIL Ethnologue — Niger-Congo subgroup (Bantu)",
         "url": "https://www.ethnologue.com/subgroup/47/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

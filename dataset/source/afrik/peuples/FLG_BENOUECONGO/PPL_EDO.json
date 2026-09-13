@@ -88,33 +88,33 @@
       {
         "title": "Joshua Project — Edo, Bini in Nigeria (2025)",
         "url": "https://joshuaproject.net/people_groups/11714",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "British Museum — Benin Bronzes",
         "url": "https://www.britishmuseum.org/about-us/british-museum-story/contested-objects-collection/benin-bronzes",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for britishmuseum.org."
+        "tier": "referenced"
       },
       {
         "title": "Benin History — Who Are Edo People?",
         "url": "https://beninhistory.org/origins/f/who-are-edo-people",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers beninhistory.org; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Kumakonda — Benin City and Edo culture",
         "url": "https://kumakonda.com/benin-city-culture-and-masks-edo-nigeria/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for kumakonda.com."
+        "tier": "unverified"
       },
       {
         "title": "Ethnologue (SIL International) — Edo language, code bin",
         "url": "https://www.ethnologue.com/language/bin/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

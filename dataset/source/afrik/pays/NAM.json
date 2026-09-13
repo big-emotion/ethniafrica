@@ -251,62 +251,58 @@
       "precolonial": "Consolidation des chefferies bantoues (Ovambo, Herero, Kavango) et des groupes khoïsan (Nama, San). Commerce régional. Développement des traditions culturelles.",
       "colonization": "1884-1915 : Colonie allemande du Sud-Ouest africain, guerre des Herero (1904-1908, génocide), résistance des peuples autochtones. 1915-1990 : Colonie sud-africaine (Afrique du Sud-Ouest), apartheid, résistance namibienne (SWAPO), guerre d'indépendance (1966-1990).",
       "independenceStruggle": "1966-1990 : Guerre d'indépendance menée par la SWAPO (Organisation du peuple du Sud-Ouest africain), Sam Nujoma, résistance armée contre l'Afrique du Sud. 1988 : Accords de New York, retrait des troupes sud-africaines. 1990 : Indépendance (21 mars 1990), proclamation de la République de Namibie. Sam Nujoma devient premier président.",
-      "postIndependence": "République de Namibie (1990), présidence de Sam Nujoma (1990-2005), Hifikepunye Pohamba (2005-2015), Hage Geingob (2015-2024), Nangolo Mbumba (depuis 2024). Stabilité politique, démocratie multipartite, développement économique, réconciliation nationale. Défis : inégalités économiques, chômage, VIH/sida, développement rural. La Namibie est l'un des pays les plus développés d'Afrique, avec un IDH élevé et une économie diversifiée."
+      "postIndependence": "République de Namibie (1990), présidence de Sam Nujoma (1990-2005), Hifikepunye Pohamba (2005-2015), Hage Geingob (2015-2024), Nangolo Mbumba (2024-2025), puis Netumbo Nandi-Ndaitwah depuis le 21 mars 2025. Stabilité politique, démocratie multipartite, développement économique, réconciliation nationale. Défis : inégalités économiques, chômage, VIH/sida, développement rural. La Namibie est l'un des pays les plus développés d'Afrique, avec un IDH élevé et une économie diversifiée."
     },
     "sources": [
       {
-        "title": "ONU – World Population Prospects 2025",
-        "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "title": "ONU – World Population Prospects 2024 (projections pour 2025)",
+        "url": "https://population.un.org/wpp/",
+        "tier": "official"
       },
       {
         "title": "CIA World Factbook – Namibia",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "SIL Ethnologue – Languages of Namibia",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
-        "title": "Recensements namibiens",
-        "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "title": "Namibia Statistics Agency – Recensement de la population et de l'habitat 2023, rapport principal",
+        "url": "https://nsa.org.na/wp-content/uploads/2024/10/2023-Population-and-Housing-Census-Main-Report-28-Oct-2024.pdf",
+        "tier": "official"
       },
       {
         "title": "Études anthropologiques sur les peuples de Namibie",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Études historiques sur la colonisation allemande et sud-africaine, le génocide des Herero, la guerre d'indépendance",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "CIA World Factbook – Namibia (ethnic groups)",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
-        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "title": "UNSD M49 – Codes normalisés des pays et noms français",
         "url": "https://unstats.un.org/unsd/methodology/m49/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+        "tier": "official"
       },
       {
         "title": "UNFPA – World Population Dashboard — Namibie",
-        "url": "https://www.unfpa.org/data/world-population/NA",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry for UNFPA."
+        "url": "https://www.unfpa.org/data/NA",
+        "tier": "official"
+      },
+      {
+        "title": "Présidence de la Namibie – Netumbo Nandi-Ndaitwah",
+        "url": "https://op.gov.na/president",
+        "tier": "official"
       }
     ],
     "demographics": {
@@ -328,6 +324,11 @@
           "percentageInCountry": 50
         }
       ]
+    }
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until this country fiche receives a complete editorial translation."
     }
   }
 }

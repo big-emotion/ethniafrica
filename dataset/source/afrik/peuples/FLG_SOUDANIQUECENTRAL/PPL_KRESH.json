@@ -100,33 +100,33 @@
       {
         "title": "Glottolog — Kresh-Woro (krs)",
         "url": "https://glottolog.org/resource/languoid/id/gbay1288",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "SIL Ethnologue — Kresh subgroup",
         "url": "https://www.ethnologue.com/subgroup/2721/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Joshua Project — Kresh in Sudan",
         "url": "https://joshuaproject.net/people_groups/11239/SU",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "PeopleGroups.org — Kresh of South Sudan",
         "url": "https://peoplegroups.org/people_groups/pg012073/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+        "tier": "unverified"
       },
       {
         "title": "PaanLuel Wel — How Dinka-Fertit Rivalry began in Wau (2025)",
         "url": "https://paanluelwel.com/2025/05/28/how-dinka-fertit-rivalry-began-in-wau-western-bahr-el-ghazal-state/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers paanluelwel.com; the tier awaits editorial review."
+        "tier": "needs_review"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

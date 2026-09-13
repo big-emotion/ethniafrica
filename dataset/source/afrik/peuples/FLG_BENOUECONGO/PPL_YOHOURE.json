@@ -75,33 +75,33 @@
       {
         "title": "Yaure people – 101 Last Tribes, 2023",
         "url": "https://www.101lasttribes.com/tribes/yaure.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       },
       {
         "title": "Yaure (Yaoure) People – Africa Direct, 2023",
         "url": "https://africadirect.com/blogs/people/african-peoples-art-yaure",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for africadirect.com."
+        "tier": "unverified"
       },
       {
         "title": "Face mask (Yaure) – Smithsonian Institution, NMAFA",
         "url": "https://www.si.edu/object/nmafa_91-21-1",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for si.edu."
+        "tier": "referenced"
       },
       {
         "title": "Arts de la Cote d'Ivoire, autour des Yohoure – Musee Barbier-Mueller, 2019",
         "url": "https://www.barbier-mueller.ch/2019/07/04/arts-de-la-cote-divoire-autour-des-yohoure/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for barbier-mueller.ch."
+        "tier": "referenced"
       },
       {
         "title": "Yohoure mask – Art Masque Africain",
         "url": "https://www.art-masque-africain.com/en/fiche_yohoure-mask_4236",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers art-masque-africain.com; the tier awaits editorial review."
+        "tier": "needs_review"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

@@ -97,39 +97,38 @@
       {
         "title": "Joshua Project – Godie in Côte d'Ivoire",
         "url": "https://joshuaproject.net/people_groups/11913",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Ethnologue – Godié language (god)",
         "url": "https://www.ethnologue.com/language/god/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Rezo Ivoire – Organisation familiale des Godié",
         "url": "https://rezoivoire.net/ivoire/patrimoine/2121/organisation-familiale-des-godie.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for rezoivoire.net."
+        "tier": "unverified"
       },
       {
         "title": "Scribd – Origine et culture du peuple Godié",
         "url": "https://www.scribd.com/document/808295722/Legislation-Et-Reglementation-Scolaire",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for scribd.com."
+        "tier": "unverified"
       },
       {
         "title": "Facebook Tourisme Côte d'Ivoire – Le peuple Godié",
         "url": "https://www.facebook.com/tourismecotedivoire.ci/posts/5252704381496923/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for facebook.com."
+        "tier": "unverified"
       },
       {
         "title": "Minority Rights Group – Krou in Côte d'Ivoire",
         "url": "https://minorityrights.org/communities/krou/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

@@ -237,56 +237,47 @@
       {
         "title": "CIA World Factbook – South Africa",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "SIL Ethnologue – Languages of South Africa",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Recensements nationaux sud-africains",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "ONU – Données démographiques 2025",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "UNFPA – World Population Dashboard — Afrique du Sud",
         "url": "https://www.unfpa.org/data/world-population/ZA",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry for UNFPA."
+        "tier": "official"
       },
       {
         "title": "Études anthropologiques sur les peuples sud-africains",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Études historiques sur l'apartheid et la transition démocratique",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Statistics South Africa – Census 2022 Statistical Release P0301.4 (Figure 2.3: Percentage distribution by population group, 1996–2022)",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for census.statssa.gov.za."
+        "tier": "official"
       },
       {
-        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "title": "UNSD M49 – Codes normalisés des pays et noms français",
         "url": "https://unstats.un.org/unsd/methodology/m49/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+        "tier": "official"
       },
       {
         "title": "Statistics South Africa – Mid-year population estimates 2025 (P0302, population by population group)",
@@ -325,6 +316,11 @@
           "percentageInCountry": 0.4
         }
       ]
+    }
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until this country fiche receives a complete editorial translation."
     }
   }
 }

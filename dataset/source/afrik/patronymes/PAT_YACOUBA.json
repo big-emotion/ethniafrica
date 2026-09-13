@@ -70,7 +70,7 @@
       "url": "https://www.behindthename.com/name/yacouba",
       "tier": "unverified",
       "source_kind": "community",
-      "notes": "Notice onomastique communautaire consultée en anglais. Elle présente Yacouba comme une forme de Yaqub utilisée dans l'Afrique de l'Ouest francophone ; l'affirmation reste au tier unverified et au statut claimed."
+      "notes": "Notice onomastique communautaire consultée en anglais. Elle présente Yacouba comme une forme de Yaqub utilisée dans l'Afrique de l'Ouest francophone ; cette affirmation reste à confirmer."
     },
     {
       "sourceKey": "unff-yacouba-seybou",
@@ -110,5 +110,10 @@
       "fieldPath": "homonyms",
       "reason": "Les formes Yacouba, Yakouba et Yaqub ont été distinguées dans les recherches onomastiques ; aucune origine indépendante n'a été établie pour constituer un homonyme."
     }
-  ]
+  ],
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the personal-name corpus receives a coordinated translation and terminology review."
+    }
+  }
 }

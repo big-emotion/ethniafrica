@@ -110,39 +110,38 @@
       {
         "title": "Jula in Cote d'Ivoire – Joshua Project 2025",
         "url": "https://joshuaproject.net/people_groups/12375/IV",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Jula people group in all countries – Joshua Project 2025",
         "url": "https://joshuaproject.net/people_groups/12375",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Ethnologue, Jula [dyu]",
         "url": "https://www.ethnologue.com/language/dyu/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Jean Derive, Parole et Pouvoir chez les Dioula de Kong, CNRS Editions, Paris, 1987",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Georges Niamkey Kodjo, Le Royaume de Kong, Abidjan, NEA, 2006",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Minority Rights Group – Cote d'Ivoire",
         "url": "https://minorityrights.org/country/cote-divoire/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

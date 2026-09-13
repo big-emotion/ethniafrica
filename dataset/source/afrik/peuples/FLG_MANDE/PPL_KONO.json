@@ -94,39 +94,38 @@
       {
         "title": "KDDA UK — History of the Kono People",
         "url": "https://www.kdda.co.uk/index-aboutus-history.html",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers kdda.co.uk; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Joshua Project — Kono in Sierra Leone",
         "url": "https://joshuaproject.net/people_groups/18920",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Ethnologue — Kono language (kno)",
         "url": "https://www.ethnologue.com/language/kno/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "City Population — Kono District Sierra Leone Census 2021",
         "url": "https://www.citypopulation.de/en/sierraleone/admin/13__kono/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for citypopulation.de."
+        "tier": "referenced"
       },
       {
         "title": "Britannica — Sierra Leone cultural life (Poro and Sande societies)",
         "url": "https://www.britannica.com/place/Sierra-Leone/Cultural-life",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       },
       {
         "title": "101 Last Tribes — Kono people",
         "url": "https://www.101lasttribes.com/tribes/kono.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

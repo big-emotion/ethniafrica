@@ -103,51 +103,48 @@
       {
         "title": "Encyclopedia.com — Lugbara Religion (Encyclopedia of Religion)",
         "url": "https://www.encyclopedia.com/environment/encyclopedias-almanacs-transcripts-and-maps/lugbara-religion",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for encyclopedia.com."
+        "tier": "unverified"
       },
       {
         "title": "Middleton, John. Lugbara Religion: Religion and Authority among an East African People. Oxford University Press, 1960. New ed. 1999",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Middleton, John. The Lugbara of Uganda. New York: Holt, Rinehart and Winston, 1965 (Archive.org: )",
         "url": "https://archive.org/details/lugbaraofuganda00midd",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for archive.org."
+        "tier": "referenced"
       },
       {
         "title": "SIL Ethnologue — Lugbara language (lgg)",
         "url": "https://www.ethnologue.com/language/lgg/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Glottolog — Lugbara",
         "url": "https://glottolog.org/resource/languoid/id/lugb1240",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "Joshua Project — Lugbara, High in Uganda",
         "url": "https://joshuaproject.net/people_groups/13141/UG",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "WorldAtlas — Largest Ethnic Groups In Uganda",
         "url": "https://www.worldatlas.com/articles/largest-ethnic-groups-in-uganda.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for worldatlas.com."
+        "tier": "unverified"
       },
       {
         "title": "Uganda Bureau of Statistics — West Nile Sub Region Census 2024 Profile",
         "url": "https://www.ubos.org/wp-content/uploads/2025/06/West-Nile-Sub-Region-Census-2024-Profile-Report.pdf",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for ubos.org."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

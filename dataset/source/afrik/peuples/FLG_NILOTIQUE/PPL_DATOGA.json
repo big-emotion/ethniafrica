@@ -97,39 +97,38 @@
       {
         "title": "SIL Ethnologue — Datooga language (tcc)",
         "url": "https://www.ethnologue.com/language/tcc/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Nyamera Treks and Safaris — The Datoga Tribe of Tanzania",
         "url": "https://nyameratreksandsafaris.com/the-datoga-tribe-of-tanzania/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers nyameratreksandsafaris.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Mawe Lodges — Exploring the Rich Culture of Lake Eyasi",
         "url": "https://mawelodges.com/lake-eyasi/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers mawelodges.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Lane, Charles — Barabaig: East African Cattle Herders in Jeopardy. San Francisco: Westview Press, 1996",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Glottolog — Datooga",
         "url": "https://glottolog.org/resource/languoid/id/dato1239",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "Joshua Project — Datoga people profile",
         "url": "https://joshuaproject.net/people_groups/11040/TZ",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

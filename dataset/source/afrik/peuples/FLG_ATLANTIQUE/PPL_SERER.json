@@ -137,57 +137,53 @@
       {
         "title": "Gambia Bureau of Statistics — 2024 Population and Housing Census",
         "url": "https://gambia.unfpa.org/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"unfpa\" (unfpa.org), matched as a parent of gambia.unfpa.org."
+        "tier": "official"
       },
       {
         "title": "SIL Ethnologue — Serer-Sine language (srr)",
         "url": "https://www.ethnologue.com/language/srr/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Galvan, Dennis Charles. The State Must Be Our Master of Fire: How Peasants Craft Culturally Sustainable Development in Senegal. University of California Press, 2004",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Gravrand, Henry. La civilisation sereer. Dakar : Nouvelles Editions Africaines, 1983",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Joshua Project, Serer-Sine in Gambia",
         "url": "https://joshuaproject.net/people_groups/14866/GA",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "101 Last Tribes, Serer people",
         "url": "https://www.101lasttribes.com/tribes/serer.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       },
       {
         "title": "Britannica, Serer",
         "url": "https://www.britannica.com/topic/Serer",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       },
       {
         "title": "US Public Intelligence, Senegal Cultural Field Guide (Ethnic Groups)",
         "url": "https://info.publicintelligence.net/MCIA-SenegalCultureGuide.pdf",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for info.publicintelligence.net."
+        "tier": "unverified"
       },
       {
         "title": "Qiraat Africa, The Serer people of West Africa (2026)",
         "url": "https://qiraatafrican.com/en/19893/the-serer-people-of-west-africa/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

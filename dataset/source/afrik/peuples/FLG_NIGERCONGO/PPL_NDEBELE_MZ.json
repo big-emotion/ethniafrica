@@ -85,15 +85,18 @@
       {
         "title": "South African History Online — Mfecane",
         "url": "https://sahistory.org.za/article/mfecane-understanding-period-transformation-southern-africa",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for sahistory.org.za."
+        "tier": "referenced"
       },
       {
         "title": "SIL Ethnologue — Northern Ndebele (nde)",
         "url": "https://www.ethnologue.com/language/nde/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

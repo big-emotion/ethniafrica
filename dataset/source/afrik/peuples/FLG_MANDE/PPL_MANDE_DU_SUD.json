@@ -98,27 +98,28 @@
       {
         "title": "L'amenagement linguistique au Liberia – Universite Laval",
         "url": "https://www.axl.cefan.ulaval.ca/afrique/liberia.htm",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for axl.cefan.ulaval.ca."
+        "tier": "referenced"
       },
       {
         "title": "Dwyer, David – The Mande languages, in Williamson & Blench (eds.), African Languages: An Introduction, 2000",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Vydrin, Valentin – Southern Mande classification, 2009",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Facebook – Ethnies de CI : Les Mande du Sud",
         "url": "https://www.facebook.com/ethniesdeCI/posts/2083382538349935/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for facebook.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

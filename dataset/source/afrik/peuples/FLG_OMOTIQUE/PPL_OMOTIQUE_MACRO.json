@@ -116,39 +116,38 @@
       {
         "title": "Fleming, Harold C. Omotic Overview. In Bender (ed.), The Non-Semitic Languages of Ethiopia, 1976",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Bender, M. Lionel. Omotic: A New Afroasiatic Language Family. Occasional Papers, Southern Illinois University, 1975",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Cambridge Handbook of Linguistic Typology — The Omotic Language Family (chapter 26)",
         "url": "https://www.cambridge.org/core/books/cambridge-handbook-of-linguistic-typology/omotic-language-family/376C86AD112F0E4C5F5677AE4F3DB5FA",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for cambridge.org."
+        "tier": "referenced"
       },
       {
         "title": "Donham, Donald L. & James, Wendy (eds.). The Southern Marches of Imperial Ethiopia. Cambridge University Press, 1986",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Eric ED549340 — Omotic Peoples and the Early History of Agriculture in Ethiopia (dissertation)",
         "url": "https://eric.ed.gov/?id=ED549340",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for eric.ed.gov."
+        "tier": "referenced"
       },
       {
         "title": "Ethnologue — Omotic language family",
         "url": "https://www.ethnologue.com",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

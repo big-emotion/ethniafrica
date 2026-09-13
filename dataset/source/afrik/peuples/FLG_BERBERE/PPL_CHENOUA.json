@@ -89,33 +89,33 @@
       {
         "title": "Joshua Project - Berber Chenoua in Algeria",
         "url": "https://joshuaproject.net/people_groups/11321",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Ethnologue SIL International - Chenoua (cnu)",
         "url": "https://www.ethnologue.com/language/cnu/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "The Tribal Society - The Chenouis",
         "url": "https://thetribalsociety.com/the-chenouis/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for thetribalsociety.com."
+        "tier": "unverified"
       },
       {
         "title": "Glottolog - Shenwa (chen1266)",
         "url": "https://glottolog.org/resource/languoid/id/chen1266",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "UNESCO World Heritage - Tipaza",
         "url": "https://whc.unesco.org/en/list/193/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of whc.unesco.org."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

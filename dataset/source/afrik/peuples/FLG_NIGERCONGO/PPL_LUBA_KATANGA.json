@@ -93,33 +93,33 @@
       {
         "title": "Omniglot — Luba-Katanga language",
         "url": "https://www.omniglot.com/writing/lubakatanga.htm",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for omniglot.com."
+        "tier": "unverified"
       },
       {
         "title": "SIL Ethnologue — Luba-Katanga (lub)",
         "url": "https://www.ethnologue.com/language/lub/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Encyclopaedia Britannica — Luba",
         "url": "https://www.britannica.com/topic/Luba-people",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       },
       {
         "title": "Smarthistory — Lukasa (Memory Board), Luba peoples",
         "url": "https://smarthistory.org/lukasa-memory-board-luba-peoples/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for smarthistory.org."
+        "tier": "referenced"
       },
       {
         "title": "Trailblazer Travelz — The Luba People, DRC",
         "url": "https://www.trailblazertravelz.com/the-luba-people-democratic-republic-of-the-congo/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for trailblazertravelz.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

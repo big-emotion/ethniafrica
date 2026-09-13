@@ -90,39 +90,38 @@
       {
         "title": "Gawwada people – 101 Last Tribes",
         "url": "https://www.101lasttribes.com/tribes/gawwada.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       },
       {
         "title": "Gawwada, Ale in Ethiopia – Joshua Project, 2025",
         "url": "https://joshuaproject.net/people_groups/11836",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "ISO 639-3 gwd : Gawwada – CEDS / National Center for Education Statistics",
         "url": "https://ceds.ed.gov/iso639-3LanguageCodev7.aspx",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for ceds.ed.gov."
+        "tier": "official"
       },
       {
         "title": "Gawwada (gwd) – WOLD / MPI-EVA",
         "url": "https://wold.clld.org/language/3",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers wold.clld.org; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Ethiopia Profile – Languages – Day Translations, 2024",
         "url": "https://www.daytranslations.com/blog/guide/ethiopia/4/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for daytranslations.com."
+        "tier": "unverified"
       },
       {
         "title": "A Summary of the Cushite Peoples of Eastern Africa – Orville Jenkins",
         "url": "http://orvillejenkins.com/peoples/cushite.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for orvillejenkins.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

@@ -103,45 +103,43 @@
       {
         "title": "SIL Ethnologue - Herero language (her)",
         "url": "https://www.ethnologue.com/language/her/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Omniglot - Herero language",
         "url": "https://www.omniglot.com/writing/herero.php",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for omniglot.com."
+        "tier": "unverified"
       },
       {
         "title": "Joshua Project - Herero language resources",
         "url": "https://joshuaproject.net/languages/her",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "BBC News - Germany recognises colonial-era Namibia genocide, 28 mai 2021",
         "url": "https://www.bbc.com/news/world-europe-57279008",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for bbc.com."
+        "tier": "referenced"
       },
       {
         "title": "South African History Online - Herero Revolt 1904-1907",
         "url": "https://sahistory.org.za/article/herero-revolt-1904-1907",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for sahistory.org.za."
+        "tier": "referenced"
       },
       {
         "title": "JFCS Holocaust Center - Herero and Nama Genocide",
         "url": "https://holocaustcenter.jfcs.org/remembering-the-forgotten-genocide-of-the-herero-and-nama/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers holocaustcenter.jfcs.org; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Oxford Guide to Bantu Languages - Otjiherero",
         "url": "https://academic.oup.com/book/61440/chapter/534774683",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for academic.oup.com."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

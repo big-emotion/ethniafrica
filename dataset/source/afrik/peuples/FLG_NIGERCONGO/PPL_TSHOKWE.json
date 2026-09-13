@@ -111,45 +111,43 @@
       {
         "title": "The Metropolitan Museum of Art — Mwanangana (lord of the land) playing a sanza, Chokwe artist, 19th century",
         "url": "https://www.metmuseum.org/art/collection/search/316173",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for metmuseum.org."
+        "tier": "referenced"
       },
       {
         "title": "Smarthistory — Female (pwo) Mask, Chokwe peoples",
         "url": "https://smarthistory.org/female-pwo-mask/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for smarthistory.org."
+        "tier": "referenced"
       },
       {
         "title": "Khan Academy — Female (pwo) Mask (Chokwe peoples)",
         "url": "https://www.khanacademy.org/humanities/ap-art-history/africa-apah/central-africa-apah/a/female-pwo-mask-chokwe",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for khanacademy.org."
+        "tier": "unverified"
       },
       {
         "title": "Joshua Project — Chokwe people group in all countries",
         "url": "https://joshuaproject.net/people_groups/11365",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "CountryStudies.us — Lunda and Chokwe Kingdoms, Angola",
         "url": "https://countrystudies.us/angola/9.htm",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for countrystudies.us."
+        "tier": "referenced"
       },
       {
         "title": "SIL Ethnologue — Chokwe (cjk)",
         "url": "https://www.ethnologue.com/language/cjk/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Bastin, Marie-Louise — Arts of the Angolan Peoples, I: Chokwe. Museu do Dundo, 1961",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

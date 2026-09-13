@@ -89,33 +89,33 @@
       {
         "title": "Ethnologue — Yao language (yao)",
         "url": "https://www.ethnologue.com/language/yao/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Joshua Project — Yao in Mozambique",
         "url": "https://joshuaproject.net/people_groups/15988/MZ",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Gordon-Conwell Center for Global Christianity — Niassa, Mozambique: The Makhuwa-Shirima and Yao (2020)",
         "url": "https://www.gordonconwell.edu/center-for-global-christianity/wp-content/uploads/sites/13/2020/08/Niassa-Dossier.pdf",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers gordonconwell.edu; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Qiraat Africa — The Yao/Wayao people of Lake Malawi",
         "url": "https://qiraatafrican.com/en/19883/the-yao-wayao-people-of-lake-malawi/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
+        "tier": "unverified"
       },
       {
         "title": "CIA World Factbook — Mozambique",
         "url": "https://www.cia.gov/the-world-factbook/countries/mozambique/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

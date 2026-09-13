@@ -88,33 +88,33 @@
       {
         "title": "Joshua Project – Lunda, Ndembu in Angola, 2025",
         "url": "https://joshuaproject.net/people_groups/13276",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "101 Last Tribes – Ndembu people",
         "url": "https://www.101lasttribes.com/tribes/ndembu.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       },
       {
         "title": "Turner, Victor W. – The Forest of Symbols: Aspects of Ndembu Ritual, Cornell University Press, 1967",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Turner, Victor W. – Colour Classification in Ndembu Ritual, Africa, 1966",
         "url": "https://gwern.net/doc/psychology/vision/1966-turner.pdf",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers gwern.net; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Britannica – Ndembu, 2025",
         "url": "https://www.britannica.com/topic/Ndembu",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

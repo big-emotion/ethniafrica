@@ -102,39 +102,38 @@
       {
         "title": "SIL Ethnologue — Bankal (jjr)",
         "url": "https://www.ethnologue.com/language/jjr/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "SIL Ethnologue — Jarawan subgroup",
         "url": "https://www.ethnologue.com/subgroup/622/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Glottolog — Jarawa (Nigeria)",
         "url": "https://glottolog.org/resource/languoid/id/jara1263",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "Kunzaar.com — History and Origin of Jarawa Tribe",
         "url": "https://kunzaar.com.ng/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for kunzaar.com.ng."
+        "tier": "unverified"
       },
       {
         "title": "Scribd — Jos-Bauchi Plateau Peoples Overview",
         "url": "https://www.scribd.com/document/790271702/THE-JOS-BAUCHI",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for scribd.com."
+        "tier": "unverified"
       },
       {
         "title": "CIA World Factbook — Nigeria",
         "url": "https://www.cia.gov/the-world-factbook/countries/nigeria/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

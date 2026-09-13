@@ -56,7 +56,7 @@
       "url": "https://meta.wikimedia.org/wiki/Wikinames_South_Sudan_2025",
       "tier": "unverified",
       "source_kind": "community",
-      "notes": "Collecte communautaire de noms sud-soudanais publiée sur Meta-Wiki. Le tableau Naath/Nuer donne séparément Chuol, Gatluaak et Machar avec une circonstance de nomination ; un premier tableau donne Riek « problem ». Les entrées sont en attente de versement et sans appareil critique individuel : elles sont citées au tier unverified, jamais comme étymologies établies."
+      "notes": "Collecte communautaire de noms sud-soudanais publiée sur Meta-Wiki. Le tableau Naath/Nuer donne séparément Chuol, Gatluaak et Machar avec une circonstance de nomination ; un premier tableau donne Riek « problem ». Les entrées ne donnent pas d'appareil critique individuel et ne permettent pas d'établir une étymologie."
     },
     {
       "sourceKey": "marko-south-sudan-names-2021",
@@ -100,5 +100,10 @@
       "fieldPath": "homonyms",
       "reason": "Les recherches sur la graphie exacte « Chuol » dans les index onomastiques et les tableaux Naath/Nuer de Wikinames, la grammaire nuer d’Indiana, l’article de Markó et les recherches bibliographiques par graphie exacte n’ont pas établi une seconde origine distincte disposant de sa propre provenance."
     }
-  ]
+  ],
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the personal-name corpus receives a coordinated translation and terminology review."
+    }
+  }
 }

@@ -95,27 +95,28 @@
       {
         "title": "SIL Ethnologue — Luo language (luo)",
         "url": "https://www.ethnologue.com/language/luo/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "YouTube — NYATITI The Queen of the Clan (feat. Ayub Ogada)",
         "url": "https://www.youtube.com/watch?v=mAW1JIIufgE",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for youtube.com."
+        "tier": "unverified"
       },
       {
         "title": "UNESCO — Patrimoine immateriel (Kenya)",
         "url": "https://ich.unesco.org/en/state/kenya-KE",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of ich.unesco.org."
+        "tier": "official"
       },
       {
         "title": "RSIS International — Population Movements and the Gem Community in Western Kenya",
         "url": "https://rsisinternational.org/journals/ijriss/articles/population-movements-and-the-consolidation-of-authority-in-the-inter-lacustrine-region-of-western-kenya-a-political-transformation-of-gem-community-in-pre-colonial-times/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for rsisinternational.org."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

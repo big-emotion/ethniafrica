@@ -78,39 +78,38 @@
       {
         "title": "Joshua Project, Tongwe in Tanzania",
         "url": "https://joshuaproject.net/people_groups/15555",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Tongwe Trust",
         "url": "http://www.tongwetrust.org",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers tongwetrust.org; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Wild Philanthropy, Ntakata Tanzania: introducing the Tongwe Trust",
         "url": "https://wildphilanthropy.com/ntakata-tanzania-introducing-the-tongwe-trust-and-the-tongwe-of-ntakata-forest/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers wildphilanthropy.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Cambridge University Press, Culture and subsistence ecology of the Tongwe",
         "url": "https://www.cambridge.org/core/books/mahale-chimpanzees/culture-and-subsistence-ecology-of-the-tongwe-and-their-significance-in-chimpanzee-research/D5ABAE77990DCDEA81B9CC7EE3CD4E39",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for cambridge.org."
+        "tier": "referenced"
       },
       {
         "title": "Ethnologue, Tongwe language TNY",
         "url": "https://www.ethnologue.com/language/tny/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "101 Last Tribes, Tongwe people",
         "url": "https://www.101lasttribes.com/tribes/tongwe.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

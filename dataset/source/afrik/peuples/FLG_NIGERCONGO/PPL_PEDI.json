@@ -118,57 +118,53 @@
       {
         "title": "South African History Online — Pedi",
         "url": "https://sahistory.org.za/article/pedi",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for sahistory.org.za."
+        "tier": "referenced"
       },
       {
         "title": "Britannica — Pedi",
         "url": "https://www.britannica.com/topic/Pedi",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       },
       {
         "title": "Kruger Park — Pedi African Tribe",
         "url": "https://www.krugerpark.co.za/africa_pedi.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for krugerpark.co.za."
+        "tier": "unverified"
       },
       {
         "title": "African Languages — Sesotho sa Leboa (Northern Sotho)",
         "url": "https://africanlanguages.com/northern_sotho/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers africanlanguages.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "SIL Ethnologue — Northern Sotho (nso)",
         "url": "https://www.ethnologue.com/language/nso/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Acta Theologica — The cultural and historical significance of malopo ritual",
         "url": "http://www.scielo.org.za/scielo.php?script=sci_arttext&pid=S1015-87582014000500002",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for scielo.org.za."
+        "tier": "referenced"
       },
       {
         "title": "Literator — The elevation of Sepedi from a dialect to an official standard language",
         "url": "https://literator.org.za/index.php/literator/article/view/1827",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers literator.org.za; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Kwekudee — Pedi (Bapedi/Northern Sotho) People",
         "url": "https://kwekudee-tripdownmemorylane.blogspot.com/2013/06/pedi-bapedinorthern-sotho-people-south.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for kwekudee-tripdownmemorylane.blogspot.com."
+        "tier": "unverified"
       },
       {
         "title": "Statistics South Africa — Census 2011",
         "url": "https://www.statssa.gov.za/census/census_2011/",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for statssa.gov.za."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

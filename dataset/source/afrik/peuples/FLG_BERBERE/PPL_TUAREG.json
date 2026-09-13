@@ -122,39 +122,38 @@
       {
         "title": "Ethnologue — Tuareg macrolanguage (tmh)",
         "url": "https://www.ethnologue.com/language/tmh/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "UNESCO — Patrimoine culturel immatériel : musique Ishumar touareg",
         "url": "https://ich.unesco.org/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of ich.unesco.org."
+        "tier": "official"
       },
       {
         "title": "Claudot-Hawad, Helene. Touaregs : Voix solitaires sous l'horizon confisque. Paris: Editions de l'EHESS, 1996",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Prasse, Karl-Gottfried. The Tuareg: The Blue People. Copenhagen: Museum Tusculanum Press, 1995",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Imuhar / Tamahaq Dictionary",
         "url": "http://imuhar.eu/site/en_dictionary/tamahaq-dictionary-with-grammar.php",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers imuhar.eu; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Joshua Project — Tuareg people groups",
         "url": "https://joshuaproject.net/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

@@ -87,27 +87,28 @@
       {
         "title": "Orient and Ocean: The Chinese Community in Seychelles – Dennis Hardy et Wang Dongxia, Seychelles Research Journal Vol. 4, No. 2, 2022",
         "url": "https://seychellesresearchjournal.com/wp-content/uploads/2022/07/orient_and_ocean-the_chinese_community_in_seychelles-dennis_hardy_and_wang_dongxia-srj-4-2.pdf",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers seychellesresearchjournal.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Han Chinese, Mandarin in Seychelles – Joshua Project, 2024",
         "url": "https://joshuaproject.net/people_groups/12051/SE",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Seychelles – Multicultural, Indian Ocean, Creole – Encyclopaedia Britannica, 2024",
         "url": "https://www.britannica.com/place/Seychelles/People",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       },
       {
         "title": "The Chinese in Seychelles Facts and Origins – My China Roots",
         "url": "https://www.mychinaroots.com/places/685204/seychelles",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for mychinaroots.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

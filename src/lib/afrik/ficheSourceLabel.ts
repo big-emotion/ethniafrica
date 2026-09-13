@@ -12,7 +12,9 @@ import type { SourceTier } from "@/types/sources";
  * is how every country fiche started returning HTTP 500.
  *
  * Returns null for an entry carrying no usable text, so a single malformed
- * source drops out of the list instead of taking the page down with it.
+ * source drops out of the list instead of taking the page down with it. The
+ * old database copy may also carry a machine tier suffix after the title;
+ * remove it until recette has loaded the cleaned corpus.
  */
 // @req REQ-001
 export function ficheSourceLabel(
@@ -21,7 +23,10 @@ export function ficheSourceLabel(
   const text = typeof source === "string" ? source : source?.title;
   if (typeof text !== "string") return null;
 
-  const label = text.replace(/^-\s*/, "").trim();
+  const label = text
+    .replace(/^-\s*/, "")
+    .replace(/\s*[–—-]\s*\[tier \d+\]\s*$/i, "")
+    .trim();
   return label.length > 0 ? label : null;
 }
 
@@ -102,10 +107,11 @@ export function ficheSourceEntries(
  * reader-facing register owes them the silence, never the workshop's reason
  * for it.
  *
- * A render-time stop-gap; rewriting the corpus is the curator's work. They are
- * deliberately not in `INTERNAL_REGISTER_PATTERNS`, whose error severity would
- * fail every record that still carries them.
+ * The corpus no longer carries these notes. Keep this compatibility filter
+ * until the stored fiches have been refreshed from the merged corpus; pages
+ * read the database and can serve an older revision during synchronization.
  */
+// @req REQ-092
 export const PIPELINE_NOTE_PATTERNS: readonly RegExp[] = [
   /^Tier (?:resolved|inferred|resolu)\b/i,
   /^No URL and no recognisable citation shape\b/i,

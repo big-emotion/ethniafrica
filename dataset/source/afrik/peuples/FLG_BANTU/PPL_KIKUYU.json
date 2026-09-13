@@ -98,27 +98,28 @@
       {
         "title": "Ethnologue (SIL) — Gikuyu [kik]",
         "url": "https://www.ethnologue.com/language/kik/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Kenya National Bureau of Statistics — Kenya Population and Housing Census 2019",
         "url": "https://www.knbs.or.ke/2019-kenya-population-and-housing-census/",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for knbs.or.ke."
+        "tier": "official"
       },
       {
         "title": "Ngugi wa Thiong'o — Decolonising the Mind: The Politics of Language in African Literature. James Currey, 1986",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Joshua Project — Kikuyu people group",
         "url": "https://joshuaproject.net/people_groups/11523/KE",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

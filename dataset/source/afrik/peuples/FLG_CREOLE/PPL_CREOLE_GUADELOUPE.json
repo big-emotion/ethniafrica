@@ -60,13 +60,13 @@
           "title": "Debien, Gabriel (1982) - « Les Esclaves », in Histoire des Antilles et de la Guyane (dir. Pierre Pluchon), Privat, pp. 141-161 — hébergé par Généalogie et Histoire de la Caraïbe (GHC)",
           "url": "https://www.ghcaraibe.org/debien/NHC210bis-htm.htm",
           "tier": "referenced",
-          "notes": "Ouvrage académique cité avec auteur, éditeur et pagination ; hébergement par une association spécialisée en généalogie/histoire caribéenne (GHC), non listée au catalogue de domaines officiels."
+          "notes": "Ouvrage académique cité avec auteur, éditeur et pagination ; hébergé par le GHC, une association spécialisée en généalogie et histoire caribéenne."
         },
         {
           "title": "Fondation pour la mémoire de l'esclavage - Biographie de Louis Delgrès",
           "url": "https://memoire-esclavage.org/biographies/louis-delgres",
           "tier": "referenced",
-          "notes": "Fondation nommée, institution de référence sur la mémoire de l'esclavage ; non listée au catalogue de domaines officiels, tier inféré de la forme éditoriale (notice biographique référencée)."
+          "notes": "Fondation de référence sur la mémoire de l'esclavage."
         }
       ]
     },
@@ -99,21 +99,24 @@
       {
         "title": "Insee - L'essentiel sur... la Guadeloupe",
         "url": "https://www.insee.fr/fr/statistiques/4481456",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry — institut national de la statistique."
+        "tier": "official"
       },
       {
         "title": "Ministère de la Culture - créole guadeloupéen (portail des langues de France)",
         "url": "https://www.culture.gouv.fr/fr/Thematiques/portail-langues-en-france/langues/creole-guadeloupeen",
         "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry — domaine ministériel gouvernemental (culture.gouv.fr) ; contenu (auto-désignation « Kréyòl Gwadloup », statut de langue régionale) confirmé par indexation moteur de recherche, la récupération directe de la page étant bloquée par une protection anti-robot."
+        "notes": "Contenu (auto-désignation « Kréyòl Gwadloup », statut de langue régionale) confirmé par indexation moteur de recherche, la récupération directe de la page étant bloquée par une protection anti-robot."
       },
       {
         "title": "Glottolog 5.3 - Guadeloupean Creole French (guad1243)",
         "url": "https://glottolog.org/resource/languoid/id/guad1243",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

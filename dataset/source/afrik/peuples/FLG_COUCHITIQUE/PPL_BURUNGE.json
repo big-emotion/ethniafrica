@@ -75,27 +75,28 @@
       {
         "title": "Burunge – Glottolog 5.3",
         "url": "https://glottolog.org/resource/languoid/id/buru1320",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "Appendix ISO 639-3 codes/Africa – Wiktionary",
         "url": "https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for en.wiktionary.org."
+        "tier": "unverified"
       },
       {
         "title": "Burunge – Encyclopedia Britannica",
         "url": "https://www.britannica.com/topic/Burunge",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       },
       {
         "title": "Burunge tribe – Tanzania Cultural Tours",
         "url": "https://www.hadzabetribe.com/burunge-tribe/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for hadzabetribe.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

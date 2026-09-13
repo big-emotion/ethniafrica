@@ -94,33 +94,33 @@
       {
         "title": "Tukulor people – 101 Last Tribes, www.101lasttribes.com/tribes/tukulor.html (consulte 2025)",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Tukulor empire – Encyclopaedia Britannica, www.britannica.com/place/Tukulor-empire (consulte 2025)",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Haalpulaar Identity as a Response to Wolofization – AfricaBib, www.africabib.org/rec.php?RID=147226244 (1995)",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "A Glance to the History of the Fulbe/Haapulaar en – Suudu Baaba, suudubaaba.home.blog (2019)",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Senegal Cultural Field Guide Ethnic Groups – US Military, info.publicintelligence.net/MCIA-SenegalCultureGuide.pdf",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

@@ -60,7 +60,7 @@
           "title": "Thornton, J. K., « Les Etats de l'Angola et la formation de Palmares (Bresil) »",
           "url": "https://shs.cairn.info/revue-annales-2008-4-page-769?lang=fr",
           "tier": "referenced",
-          "notes": "Article academique publie dans Annales. Histoire, Sciences Sociales (2008), demontrant la filiation entre les structures politiques et militaires angolaises (institution du kilombo chez les Imbangala) et l'organisation de Palmares. Tier fonde sur la nature academique, evaluee par les pairs, de la revue Annales HSS."
+          "notes": "Article academique publie dans Annales. Histoire, Sciences Sociales (2008), demontrant la filiation entre les structures politiques et militaires angolaises (institution du kilombo chez les Imbangala) et l'organisation de Palmares."
         },
         {
           "title": "Anderson, R. N., « The Quilombo of Palmares: A New Overview of a Maroon State in Seventeenth-Century Brazil »",
@@ -99,13 +99,13 @@
         "title": "IBGE News Agency — 2022 Census: Brazil has 1.3 million quilombolas in 1,696 municipalities",
         "url": "https://censo2022.ibge.gov.br/en/component/content/article/2184-news-agency/news/37488-brazil-has-1-3-million-quilombolas-in-1-696-municipalities.html",
         "tier": "official",
-        "notes": "Institut national de statistique du Bresil (IBGE) ; tier fonde sur le statut d'institut national de statistique reconnu par la doctrine des sources du corpus."
+        "notes": "Institut national de statistique du Bresil (IBGE)."
       },
       {
         "title": "Fundacao Cultural Palmares — Informacoes Quilombolas",
         "url": "https://www.gov.br/palmares/pt-br/departamentos/protecao-preservacao-e-articulacao/informacoes-quilombolas",
         "tier": "referenced",
-        "notes": "Organisme federal charge de la certification des communautes quilombolas (decret 4.887/2003) ; source pour le critere d'autoattribution et les autres autodesignations locales. Tier referenced : organisme public identifiable et verifiable, mais non un institut national de statistique."
+        "notes": "Organisme federal charge de la certification des communautes quilombolas (decret 4.887/2003) ; source pour le critere d'autoattribution et les autres autodesignations locales."
       },
       {
         "title": "Oxford English Dictionary — quilombo, n.",
@@ -114,5 +114,10 @@
         "notes": "Dictionnaire academique a auteurs identifies (Oxford University Press) ; confirme l'etymologie kimbundu (kilombo) du terme quilombo, croisee independamment avec les travaux historiques de Thornton citant la meme racine."
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

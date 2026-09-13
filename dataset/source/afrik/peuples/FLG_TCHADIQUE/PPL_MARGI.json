@@ -95,27 +95,28 @@
       {
         "title": "UNESCO World Heritage Centre — Sukur Cultural Landscape (1999)",
         "url": "https://whc.unesco.org/en/list/938/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of whc.unesco.org."
+        "tier": "official"
       },
       {
         "title": "SIL Ethnologue — Marghi Central (mrt)",
         "url": "https://www.ethnologue.com/language/mrt/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "World Monuments Fund — Sukur Cultural Landscape",
         "url": "https://www.wmf.org/monuments/sukur-cultural-landscape",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers wmf.org; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Rosetta Project — Marghi Central Language (mrt)",
         "url": "https://rosettapanglossia.longnow.org/index.php?title=Marghi_Central_Language",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for rosettapanglossia.longnow.org."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

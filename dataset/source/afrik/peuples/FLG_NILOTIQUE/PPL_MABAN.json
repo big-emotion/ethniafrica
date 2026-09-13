@@ -94,39 +94,38 @@
       {
         "title": "SIL Ethnologue — Mabaan language (mfz)",
         "url": "https://www.ethnologue.com/language/mfz/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "101 Last Tribes — Maban people",
         "url": "https://www.101lasttribes.com/tribes/maban.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       },
       {
         "title": "PeopleGroups.org — Mabaan of South Sudan (PG012092)",
         "url": "https://peoplegroups.org/people_groups/pg012092/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+        "tier": "unverified"
       },
       {
         "title": "SCIRP — The Luo People of South Sudan: Theories of Origin, Separation and Migration",
         "url": "https://www.scirp.org/pdf/oalib_1113676.pdf",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for scirp.org."
+        "tier": "referenced"
       },
       {
         "title": "Seligman, Charles G. et Brenda Z. Pagan Tribes of the Nilotic Sudan. London: Routledge, 1932",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Danish Demining Group — South Sudan Assessment, 2011",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

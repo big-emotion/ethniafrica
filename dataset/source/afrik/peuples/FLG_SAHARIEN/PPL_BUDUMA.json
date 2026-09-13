@@ -111,33 +111,33 @@
       {
         "title": "ISO 639-3 — Buduma (bdm)",
         "url": "https://localizely.com/iso-639-3-list/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for localizely.com."
+        "tier": "unverified"
       },
       {
         "title": "Guy Immega — The Buduma Culture of Lake Chad. Mother Tongue Editions",
         "url": "https://mothertongue.us/pdfs/The_Buduma_Culture_of_Lake_Chad_by_Guy_Immega.pdf",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers mothertongue.us; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Minority Rights Group — Chad",
         "url": "https://minorityrights.org/country/chad/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+        "tier": "referenced"
       },
       {
         "title": "YouTube — The Buduma people, the water nomads of the Lake Chad",
         "url": "https://www.youtube.com/watch?v=5fIDlqgiOl8",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for youtube.com."
+        "tier": "unverified"
       },
       {
         "title": "CIA World Factbook — Chad",
         "url": "https://www.cia.gov/the-world-factbook/countries/chad/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

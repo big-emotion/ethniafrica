@@ -111,39 +111,38 @@
       {
         "title": "Gbaya – Encyclopaedia Britannica",
         "url": "https://www.britannica.com/topic/Gbaya",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       },
       {
         "title": "Gbaya-Bossangoa in Central African Republic – Joshua Project, 2025",
         "url": "https://joshuaproject.net/people_groups/11844",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Gbaya, Northwest in Cameroon – Joshua Project, 2025",
         "url": "https://joshuaproject.net/people_groups/10742/CM",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Gbaya, Southwest in Central African Republic – Joshua Project",
         "url": "https://joshuaproject.net/people_groups/11843",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "What Is The Ethnic Composition of the Central African Republic – WorldAtlas, 2019",
         "url": "https://www.worldatlas.com/articles/what-is-the-ethnic-composition-of-the-population-of-central-african-republic.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for worldatlas.com."
+        "tier": "unverified"
       },
       {
         "title": "Gbaya-Bossangoa Language (GBP) – Ethnologue",
         "url": "https://www.ethnologue.com/language/gbp/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

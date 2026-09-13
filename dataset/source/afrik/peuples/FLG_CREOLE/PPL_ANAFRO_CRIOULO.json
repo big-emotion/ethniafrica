@@ -93,33 +93,33 @@
       {
         "title": "International Kreol Magazine — Guinea-Bissau's Creole Culture",
         "url": "https://kreolmagazine.com/guinea-bissaus-creole-culture-evolution-influence-and-resilience/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for kreolmagazine.com."
+        "tier": "unverified"
       },
       {
         "title": "Joshua Project — Crioulo, Upper Guinea in Guinea-Bissau",
         "url": "https://joshuaproject.net/people_groups/11436/PU",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Sorosoro — Guinea-Bissau Creole language",
         "url": "https://www.sorosoro.org/en/guinea-bissau-creole/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for sorosoro.org."
+        "tier": "referenced"
       },
       {
         "title": "Ethnologue — Guinea-Bissau Creole (pov)",
         "url": "https://www.ethnologue.com/language/pov/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Britannica — Guinea-Bissau",
         "url": "https://www.britannica.com/place/Guinea-Bissau",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

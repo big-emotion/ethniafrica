@@ -83,27 +83,28 @@
       {
         "title": "247th Anniversary of Arrival of First Indian Settlers to Seychelles – Seychelles Nation, 2017",
         "url": "https://www.nation.sc/archive/255508/247th-anniversary-of-arrival-of-first-indian-settlers-to-seychelles-remembered",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for nation.sc."
+        "tier": "referenced"
       },
       {
         "title": "Seychelles Population 2026 – World Population Review, 2025",
         "url": "https://worldpopulationreview.com/countries/seychelles",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for worldpopulationreview.com."
+        "tier": "unverified"
       },
       {
         "title": "Population of Overseas Indians – Ministry of External Affairs of India, 2023",
         "url": "https://mea.gov.in/images/attach/nris-and-pios_1.pdf",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers mea.gov.in; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Seychelles – Multicultural, Indian Ocean, Creole – Encyclopaedia Britannica, 2024",
         "url": "https://www.britannica.com/place/Seychelles/People",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

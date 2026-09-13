@@ -75,7 +75,7 @@
       "url": "https://www.behindthename.com/name/idrissa/",
       "tier": "unverified",
       "source_kind": "community",
-      "notes": "Notice onomastique communautaire consultée en anglais. Elle présente Idrissa comme une forme d'Idris courante en Afrique de l'Ouest. Cette affirmation reste au tier unverified et au statut claimed."
+      "notes": "Notice onomastique communautaire consultée en anglais. Elle présente Idrissa comme une forme d'Idris courante en Afrique de l'Ouest. Cette affirmation n'est pas établie par une étude linguistique indépendante."
     },
     {
       "sourceKey": "erder-1990-idris",
@@ -123,5 +123,10 @@
       "fieldPath": "homonyms",
       "reason": "Les formes Idrissa, Idrissou et Idris ont été distinguées dans les recherches onomastiques ; aucune origine indépendante de la forme ouest-africaine d'Idris n'a été établie pour constituer un homonyme."
     }
-  ]
+  ],
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the personal-name corpus receives a coordinated translation and terminology review."
+    }
+  }
 }

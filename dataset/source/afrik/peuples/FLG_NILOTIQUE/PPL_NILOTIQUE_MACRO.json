@@ -139,51 +139,48 @@
       {
         "title": "SIL Ethnologue — Nilotic language family",
         "url": "https://www.ethnologue.com/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Glottolog — Nilotic",
         "url": "https://glottolog.org/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "Ehret, Christopher. A Historical-Comparative Reconstruction of Nilo-Saharan. Cologne: Rudiger Koppe Verlag, 2001",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Evans-Pritchard, E. E. The Nuer. Oxford: Clarendon Press, 1940",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Spear, T. & Waller, R. (eds.). Being Maasai. London: James Currey, 1993",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Lienhardt, G. Divinity and Experience: The Religion of the Dinka. Oxford: Clarendon Press, 1961",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "CIA World Factbook — South Sudan, Kenya, Uganda, Tanzania, Ethiopia",
         "url": "https://www.cia.gov/the-world-factbook/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+        "tier": "official"
       },
       {
         "title": "Joshua Project — Nilotic peoples profiles",
         "url": "https://joshuaproject.net/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

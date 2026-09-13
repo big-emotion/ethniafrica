@@ -152,45 +152,43 @@
       {
         "title": "Britannica — Malinke",
         "url": "https://www.britannica.com/topic/Malinke",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       },
       {
         "title": "101 Last Tribes — Malinke people",
         "url": "https://www.101lasttribes.com/tribes/malinke.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       },
       {
         "title": "Joshua Project — Western Maninka in Mali",
         "url": "https://joshuaproject.net/people_groups/13510/ML",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Peoples of the World — Mandinka",
         "url": "https://www.peoplesoftheworld.org/text?people=Mandinka",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for peoplesoftheworld.org."
+        "tier": "unverified"
       },
       {
         "title": "Niane, Djibril Tamsir — Soundjata ou l'epopee mandingue. Paris : Presence Africaine, 1960",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Levtzion, Nehemia — Ancient Ghana and Mali. Londres : Methuen, 1973",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "SIL Ethnologue — Mandingo macrolanguage (man)",
         "url": "https://www.ethnologue.com/language/man/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

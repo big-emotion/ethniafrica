@@ -108,39 +108,38 @@
       {
         "title": "Ethnologue — Jula language (dyu)",
         "url": "https://www.ethnologue.com/language/dyu/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Joshua Project — Dyula in Mali",
         "url": "https://joshuaproject.net/people_groups/12375/ML",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Joshua Project — Jula in Cote d'Ivoire",
         "url": "https://joshuaproject.net/people_groups/12375/IV",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Britannica — Dyula",
         "url": "https://www.britannica.com/topic/Dyula",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       },
       {
         "title": "Globalization Partners International — Burkina Faso language and culture (2024)",
         "url": "https://www.globalizationpartners.com/2024/07/29/burkina-faso-language-and-culture/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers globalizationpartners.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "101 Last Tribes — Dyula people",
         "url": "https://www.101lasttribes.com/tribes/dyula.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

@@ -88,33 +88,33 @@
       {
         "title": "Adangme (Dangme) – Glottolog 5.3, ISO 639-3 : ada",
         "url": "https://glottolog.org/resource/languoid/id/adan1247",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "Lower Manya Krobo population – CityPopulation.de",
         "url": "https://www.citypopulation.de",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for citypopulation.de."
+        "tier": "referenced"
       },
       {
         "title": "Yilo Krobo Municipal population 2021 – Ghana Statistical Service",
         "url": "https://microdata.statsghana.gov.gh",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for statsghana.gov.gh, matched as a parent of microdata.statsghana.gov.gh."
+        "tier": "official"
       },
       {
         "title": "Krobo People Migration from Klo Mountains – Facebook / Groupes communautaires",
         "url": "https://www.facebook.com/groups/924725521287406/posts/2143468266079786/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for facebook.com."
+        "tier": "unverified"
       },
       {
         "title": "Lower Manya Krobo Ghana statistics 2025 – Global Populations",
         "url": "https://globalpopulations.com/gh/2840258-lower-manya-krobo/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for globalpopulations.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

@@ -103,20 +103,18 @@
       {
         "title": "Haiti Population 2025 — World Population Dashboard",
         "url": "https://www.unfpa.org/data/world-population/HT",
-        "tier": "official",
-        "notes": "Tier résolu par le domaine unfpa.org, agence onusienne (catalogue de sources autorisées)."
+        "tier": "official"
       },
       {
         "title": "Institut Haïtien de Statistique et d'Informatique (IHSI) — AYITISTATS",
         "url": "https://ayitistats.org/?lang=en",
         "tier": "official",
-        "notes": "Institut national officiel de statistique d'Haïti ; tier « official » par doctrine (institut national de statistique), donnée croisée : 11,77 M en 2024."
+        "notes": "Institut haïtien de statistique et d'informatique ; donnée croisée : 11,77 millions d'habitants en 2024."
       },
       {
         "title": "Haitian Creole Language (HAT) — Ethnologue",
         "url": "https://www.ethnologue.com/language/hat/",
-        "tier": "official",
-        "notes": "Tier résolu depuis le catalogue de sources autorisées (« ethnologue »)."
+        "tier": "official"
       },
       {
         "title": "Vodou | Definition, History, West African Vodun, & Facts",

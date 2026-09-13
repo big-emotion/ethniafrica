@@ -87,39 +87,38 @@
       {
         "title": "SIL Ethnologue — Furu language (fuu)",
         "url": "https://www.ethnologue.com/language/fuu/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Glottolog — Furu",
         "url": "https://glottolog.org/resource/languoid/id/furu1242",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "Joshua Project — Furu in Congo, Democratic Republic of",
         "url": "https://joshuaproject.net/people_groups/11780/CG",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Joshua Project — Furu in Central African Republic",
         "url": "https://joshuaproject.net/people_groups/11780/CT",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Blench, Roger. Central Sudanic languages classification. 2012",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Britannica — Central Sudanic languages",
         "url": "https://www.britannica.com/topic/Central-Sudanic-languages",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

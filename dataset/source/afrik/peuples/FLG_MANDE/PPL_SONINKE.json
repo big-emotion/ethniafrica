@@ -194,63 +194,58 @@
       {
         "title": "Joshua Project — Soninke people group all countries (2025)",
         "url": "https://joshuaproject.net/people_groups/14996",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Minority Rights Group — Mali",
         "url": "https://minorityrights.org/country/mali/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+        "tier": "referenced"
       },
       {
         "title": "Glottolog — Soninke (snk)",
         "url": "https://glottolog.org/resource/languoid/id/soni1259",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "SIL CEDS — ISO 639-3: Soninke = snk",
         "url": "https://ceds.ed.gov/iso639-3LanguageCodev7.aspx",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for ceds.ed.gov."
+        "tier": "official"
       },
       {
         "title": "Joshua Project — Soninke in Mali",
         "url": "https://joshuaproject.net/people_groups/14996/ML",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Rosetta Panglossia — Soninke Language (snk)",
         "url": "https://rosettapanglossia.longnow.org/index.php?title=Soninke_Language_%28snk%29",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for rosettapanglossia.longnow.org."
+        "tier": "referenced"
       },
       {
         "title": "Joshua Project – Soninke in Guinea, 2025",
         "url": "https://joshuaproject.net/people_groups/14996/GV",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "101 Last Tribes – Soninke people",
         "url": "https://www.101lasttribes.com/tribes/soninke.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       },
       {
         "title": "Soninkara.com – Association culturelle soninke",
         "url": "https://www.soninkara.com",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers soninkara.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "COCOON/HUMA-NUM – Fiche langue Soninke ISO snk",
         "url": "https://cocoon.huma-num.fr/exist/crdo/language/snk",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for cocoon.huma-num.fr."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

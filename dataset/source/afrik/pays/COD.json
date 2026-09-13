@@ -273,14 +273,12 @@
       {
         "title": "UNFPA – World Population Dashboard — République démocratique du Congo",
         "url": "https://www.unfpa.org/data/world-population/CD",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry for UNFPA."
+        "tier": "official"
       },
       {
-        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "title": "UNSD M49 – Codes normalisés des pays et noms français",
         "url": "https://unstats.un.org/unsd/methodology/m49/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+        "tier": "official"
       },
       {
         "title": "Toponymic Factfile: Congo (Democratic Republic)",

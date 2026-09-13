@@ -125,33 +125,33 @@
       {
         "title": "SIL Ethnologue — Fulfulde dialects",
         "url": "https://www.ethnologue.com/language/ful/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Joshua Project — Fulani, Maasina in Mali",
         "url": "https://joshuaproject.net/people_groups/11773/ml",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "ScienceDirect — Population history and admixture of the Fulani people from the Sahel (2025)",
         "url": "https://www.sciencedirect.com/science/article/pii/S0002929724004579",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for sciencedirect.com."
+        "tier": "referenced"
       },
       {
         "title": "UNFPA — Sahel population data",
         "url": "https://www.unfpa.org/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"unfpa\"."
+        "tier": "official"
       },
       {
         "title": "Riesman, Paul — Freedom in Fulani Social Life. University of Chicago Press, 1977",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

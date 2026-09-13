@@ -86,45 +86,43 @@
       {
         "title": "Minority Rights Group – Angola, 2024",
         "url": "https://minorityrights.org/country/angola/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+        "tier": "referenced"
       },
       {
         "title": "Joshua Project – Nyaneka in Angola",
         "url": "https://joshuaproject.net/people_groups/14084",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Joshua Project – Nkhumbi in Angola",
         "url": "https://joshuaproject.net/people_groups/13417",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Contemporary Capoeira – The Nyaneka-Nkhumbi, 2024",
         "url": "https://capoeirahistory.com/the-nyaneka-nkhumbi/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for capoeirahistory.com."
+        "tier": "unverified"
       },
       {
         "title": "Glottolog – Nyaneka [nyan1305]",
         "url": "https://glottolog.org/resource/languoid/id/nyan1305",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "Refworld – World Directory of Minorities and Indigenous Peoples, Angola",
         "url": "https://www.refworld.org/reference/countryrep/mrgi/2008/62215",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for refworld.org."
+        "tier": "official"
       },
       {
         "title": "101 Last Tribes – Muila people",
         "url": "https://www.101lasttribes.com/tribes/muila.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

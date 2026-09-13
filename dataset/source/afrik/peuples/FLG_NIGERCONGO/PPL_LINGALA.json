@@ -112,45 +112,43 @@
       {
         "title": "APiCS Online — Survey chapter: Lingala (Koen Bostoen et al.)",
         "url": "https://apics-online.info/surveys/60",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for apics-online.info."
+        "tier": "referenced"
       },
       {
         "title": "Britannica — Lingala language",
         "url": "https://www.britannica.com/topic/Lingala-language",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       },
       {
         "title": "Joshua Project — Lingala in Congo, Democratic Republic of",
         "url": "https://joshuaproject.net/people_groups/13068/CG",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "SIL Ethnologue — Lingala (lin)",
         "url": "https://www.ethnologue.com/language/lin/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Translators Without Borders — The four National Languages of DRC",
         "url": "https://translatorswithoutborders.org/wp-content/uploads/2020/07/The-four-National-Languages-of-DRC-EN.pdf",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for translatorswithoutborders.org."
+        "tier": "referenced"
       },
       {
         "title": "CLEAR Global — Four national languages of DRC (2022)",
         "url": "https://clearglobal.org/four-national-languages-drc/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for clearglobal.org."
+        "tier": "referenced"
       },
       {
         "title": "101 Last Tribes — Bangala people",
         "url": "https://www.101lasttribes.com/tribes/bangala.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

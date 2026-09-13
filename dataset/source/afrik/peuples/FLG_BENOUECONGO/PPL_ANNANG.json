@@ -95,33 +95,33 @@
       {
         "title": "Ethnologue, Anaang (ANW). (consulté 2025)",
         "url": "https://www.ethnologue.com/language/anw/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Joshua Project, Anaang in Nigeria. (consulté 2025)",
         "url": "https://joshuaproject.net/people_groups/10305",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Glottolog, Anaang. (consulté 2025)",
         "url": "https://glottolog.org/resource/languoid/id/anaa1238",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "101 Last Tribes, Annang people — Africa. (consulté 2025)",
         "url": "http://www.101lasttribes.com/tribes/annang.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       },
       {
         "title": "Ette, Mercy. Annang People: History and Culture. Uyo: University of Uyo Press, 2008",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

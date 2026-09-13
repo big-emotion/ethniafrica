@@ -97,21 +97,23 @@
       {
         "title": "The Franco-Mauritian Elite: Power and Anxiety in the Face of Change – American Anthropological Association, 2018",
         "url": "https://anthrobookforum.americananthro.org/the-franco-mauritian-elite-power-and-anxiety-in-the-face-of-change/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers anthrobookforum.americananthro.org; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Les Franco-Mauriciens : une diaspora pollinisée – Revue Européenne des Migrations Internationales, Université de Poitiers",
         "url": "https://journals.openedition.org/remi/4215",
-        "tier": "referenced",
-        "notes": "Tier resolved from the authorized source catalogue entry \"openedition\" (openedition.org), matched as a parent of journals.openedition.org."
+        "tier": "referenced"
       },
       {
         "title": "Mauritius Population 2026 – Worldometer, 2025",
         "url": "https://www.worldometers.info/world-population/mauritius-population/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for worldometers.info."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

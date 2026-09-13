@@ -70,7 +70,7 @@
       "url": "https://www.behindthename.com/name/moussa/",
       "tier": "unverified",
       "source_kind": "community",
-      "notes": "Notice onomastique communautaire consultée en anglais. Elle décrit Moussa comme une transcription de Mūsā utilisée en Afrique de l'Ouest. L'étymologie est enregistrée au tier unverified et au statut claimed."
+      "notes": "Notice onomastique communautaire consultée en anglais. Elle décrit Moussa comme une transcription de Mūsā utilisée en Afrique de l'Ouest. Cette étymologie n'est pas établie par une étude linguistique indépendante."
     },
     {
       "sourceKey": "niger-cm-2023-moussa",
@@ -110,5 +110,10 @@
       "fieldPath": "homonyms",
       "reason": "Les formes Moussa et Musa ont été comparées dans les recherches onomastiques ; aucune origine distincte susceptible de constituer un homonyme n'a été établie."
     }
-  ]
+  ],
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the personal-name corpus receives a coordinated translation and terminology review."
+    }
+  }
 }

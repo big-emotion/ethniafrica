@@ -56,6 +56,11 @@ export const INTERNAL_REGISTER_PATTERNS: ReadonlyArray<RegisterPattern> = [
     pattern:
       /file d'attente|passe de recherche|passe anthroponymique|protocole de recherche|claim-level|tier hérité|hors corpus|plan de couverture|vague \d+ du plan/i,
   },
+  {
+    label: "pipeline source note",
+    pattern:
+      /Tier (?:resolved|inferred|resolu)\b|No URL and no recognisable citation shape|No domain ruling covers|the tier awaits editorial review|Resolved from the (?:prior|URL-less)\b/i,
+  },
 ];
 
 /**

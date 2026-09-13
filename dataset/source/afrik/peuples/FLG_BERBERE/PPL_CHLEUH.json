@@ -98,33 +98,33 @@
       {
         "title": "Ethnologue SIL International - Tachelhit (shi)",
         "url": "https://www.ethnologue.com/language/shi/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "IRCAM (Institut Royal de la Culture Amazighe, Rabat)",
         "url": "https://www.ircam.ma/",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for ircam.ma."
+        "tier": "official"
       },
       {
         "title": "Iwziwn.com - Tachelhit, language of the Souss and High Atlas",
         "url": "https://www.iwziwn.com/tachelhit-language-of-the-souss-and-high-atlas/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers iwziwn.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "eHRAF World Cultures Yale - Shluh (Chleuh)",
         "url": "https://ehrafworldcultures.yale.edu/cultures/mw11/summary",
-        "tier": "referenced",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ehraf\"."
+        "tier": "referenced"
       },
       {
         "title": "Recensement HCP Maroc 2024",
         "url": "https://www.hcp.ma/",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for hcp.ma."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

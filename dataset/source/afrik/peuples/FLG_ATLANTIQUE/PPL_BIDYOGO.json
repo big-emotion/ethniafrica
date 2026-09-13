@@ -17,7 +17,7 @@
         "Bijago (français)"
       ],
       "originOfExonyms": "Le terme Bijago (ou Bijagós) est d'usage portugais, utilise depuis les premiers contacts europeens au 15e siecle. Le nom Bidyogo est la forme vernaculaire en langue bidyogo. Le terme Bissago, utilise par les marins portugais, designe a la fois le peuple et l'archipel. L'archipel est appele Bijagós en portugais (Arquipelago dos Bijagós) et Iles Bissagos en français.",
-      "whyProblematic": "Le fichier source classait les Bidyogo dans FLG_TCHADIQUE (famille tchadique), ce qui est une erreur de classification. Les Bidyogo parlent le bijago (ISO 639-3 : bjg), une langue Niger-Congo de la famille Atlantic-Congo, proche des langues Bak (groupe atlanto-congolais). Cette langue n'a aucune relation avec les langues tchadiques (Afro-Asiatique). La classification incorrecte dans FLG_TCHADIQUE est corrigee ici en FLG_ATLANTIQUE. Le pays GIN (Guinee) figurait aussi dans la source, mais les Bidyogo vivent quasi exclusivement en Guinee-Bissau (GNB).",
+      "whyProblematic": "Le bijago a été classé à tort parmi les langues tchadiques. Il appartient aux langues atlantiques du Niger-Congo et présente des liens avec le groupe Bak. Confondre ces familles donne une image inexacte de la langue parlée par les Bidyogo.",
       "contemporaryUsage": "Le terme Bidyogo est utilise par le groupe lui-meme et dans la litterature scientifique francophone. Bijago est la forme internationale et portugaise. En Guinee-Bissau, la langue est la plus importante de l'archipel dans les zones rurales, meme si le creole guineen (Kriol) est devenu dominant en milieu urbain et scolaire depuis les annees 1990. Le bijago n'est pas enseigne dans les ecoles.",
       "linguisticFamily": "FLG_ATLANTIQUE",
       "ethnoLinguisticGroup": "Niger-Congo, Atlantic-Congo, Atlantique, sous-groupe Bak (proche linguistiquement du Joola Kasa)",
@@ -92,45 +92,43 @@
       {
         "title": "SIL Ethnologue — Bijagó (bjg)",
         "url": "https://www.ethnologue.com/language/bjg/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Ethnologue subgroups Niger-Congo — Bijago listing",
         "url": "https://www.ethnologue.com/subgroup/47/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Responsible Travel — Bijagos Archipelago culture",
         "url": "https://www.responsiblevacation.com/vacations/guinea-bissau/travel-guide/the-bijagos-archipelago",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for responsiblevacation.com."
+        "tier": "unverified"
       },
       {
         "title": "Nadia Ferroukhi — Guinea Bissau, Bijago (matriarchy, fanado)",
         "url": "https://nadia-ferroukhi.com/project/guinee-bissau-bijago/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers nadia-ferroukhi.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Comboni Missionaries — Guinea Bissau: A People With A Strong Identity (fanado, religion)",
         "url": "https://combonimissionaries.ie/2017/01/26/guinea-bissau-a-people-with-a-strong-identity/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for combonimissionaries.ie."
+        "tier": "unverified"
       },
       {
         "title": "UNESCO Biosphere Reserve — Bijagos Archipelago (1996)",
         "url": "https://en.unesco.org/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of en.unesco.org."
+        "tier": "official"
       },
       {
         "title": "Kumakonda African Travel — Bijagos Islands matriarchal society",
         "url": "https://kumakonda.com/bijagos-islands-in-guinea-bissau-where-women-rule/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for kumakonda.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

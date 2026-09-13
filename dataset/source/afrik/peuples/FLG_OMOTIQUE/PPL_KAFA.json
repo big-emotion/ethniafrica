@@ -101,69 +101,63 @@
       {
         "title": "UNESCO-MAB — Kafa Biosphere Reserve",
         "url": "https://www.unesco.org/en/mab/kafa",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\"."
+        "tier": "official"
       },
       {
         "title": "Kafa Biosphere Reserve official website",
         "url": "https://www.kafa-biosphere.com",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers kafa-biosphere.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Qiraat Africa — Kafficho People of Ethiopia",
         "url": "https://qiraatafrican.com/en/19029/kafficho-people-of-ethiopia/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
+        "tier": "unverified"
       },
       {
         "title": "Omniglot — Kafa language and alphabet",
         "url": "https://www.omniglot.com/writing/kafa.htm",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for omniglot.com."
+        "tier": "unverified"
       },
       {
         "title": "PeopleGroups.org — Kafa of Ethiopia",
         "url": "https://peoplegroups.org/people_groups/pg011601/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+        "tier": "unverified"
       },
       {
         "title": "Kafa Nature Tours — Kaffa: The Birthplace of Arabica",
         "url": "https://www.kafanaturetours.com/post/kaffa-the-birthplace-of-arabica",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers kafanaturetours.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Kafa – Glottolog 5.3",
         "url": "https://glottolog.org/resource/languoid/id/kafa1242",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "Kafa in Ethiopia – Joshua Project, 2025",
         "url": "https://joshuaproject.net/people_groups/12408",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "XLIII Coffee – Kaffa Coffee and the Journey from the Ethiopian Rainforest, 2025",
         "url": "https://xliiicoffee.com/en/journal/kaffa-coffee-ethiopian-forest-journey/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers xliiicoffee.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Bulatovich, A. (1900) – With the Armies of Menelik II, emperor of Ethiopia",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Pankhurst, R. – The Ethiopian Borderlands, 1997",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

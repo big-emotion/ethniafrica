@@ -101,39 +101,38 @@
       {
         "title": "SIL Ethnologue – Khoekhoe language (naq)",
         "url": "https://www.ethnologue.com/language/naq/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Namibia Statistics Agency – 2023 Population and Housing Census Main Report",
         "url": "https://nsa.org.na/census/wp-content/uploads/2024/10/2023-Population-and-Housing-Census-Main-Report-28-Oct-2024.pdf",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for nsa.org.na."
+        "tier": "official"
       },
       {
         "title": "The Namibian – Aakwanyama, Aandonga and Ovaherero named largest ethnic groups (2024)",
         "url": "https://www.namibian.com.na/aakwanyama-aandonga-and-ovaherero-named-largest-ethnic-groups-in-namibia-2023-census/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for namibian.com.na."
+        "tier": "referenced"
       },
       {
         "title": "Bradshaw Foundation – The Damara People",
         "url": "https://www.bradshawfoundation.com/africa/namibia/damara/index.php",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers bradshawfoundation.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Tsammalex – Khoekhoe/Damara language",
         "url": "https://tsammalex.clld.org/languages/naq-d",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for tsammalex.clld.org."
+        "tier": "referenced"
       },
       {
         "title": "101 Last Tribes – Damara people",
         "url": "https://www.101lasttribes.com/tribes/damara.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

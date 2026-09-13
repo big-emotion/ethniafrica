@@ -120,39 +120,38 @@
       {
         "title": "Ethnologue — Jahanka language (jad)",
         "url": "https://www.ethnologue.com/language/jad/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Joshua Project — Jahanka in Guinea",
         "url": "https://joshuaproject.net/people_groups/12311/GV",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Joshua Project — Jahanka in Gambia",
         "url": "https://joshuaproject.net/people_groups/12311/GA",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Joshua Project — Jahanka in Mali",
         "url": "https://joshuaproject.net/people_groups/12311/ML",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "101 Last Tribes — Jakhanke people",
         "url": "https://www.101lasttribes.com/tribes/jakhanke.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       },
       {
         "title": "Levtzion, Nehemia & Hopkins, J.F.P. Corpus of Early Arabic Sources for West African History. Cambridge University Press, 1981",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

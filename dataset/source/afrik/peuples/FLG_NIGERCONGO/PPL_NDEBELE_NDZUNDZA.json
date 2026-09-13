@@ -94,39 +94,38 @@
       {
         "title": "South African History Online — Ndebele",
         "url": "https://sahistory.org.za/article/ndebele",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for sahistory.org.za."
+        "tier": "referenced"
       },
       {
         "title": "Joshua Project — Ndebele, Southern in South Africa",
         "url": "https://joshuaproject.net/people_groups/15054",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "My Modern Met — Esther Mahlangu: Time in Color",
         "url": "https://mymodernmet.com/esther-mahlangu-time-in-color/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers mymodernmet.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Kruger Park — Southern Ndebele tribe of South Africa",
         "url": "https://kabirasafaris.com/southern-ndebele/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for kabirasafaris.com."
+        "tier": "unverified"
       },
       {
         "title": "Statistics South Africa — Census 2011 (langue isiNdebele)",
         "url": "http://www.statssa.gov.za/",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for statssa.gov.za."
+        "tier": "official"
       },
       {
         "title": "Ethnologue (SIL) — isiNdebele [nbl]",
         "url": "https://www.ethnologue.com/language/nbl",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

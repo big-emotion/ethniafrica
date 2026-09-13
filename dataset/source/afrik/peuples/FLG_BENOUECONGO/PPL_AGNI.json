@@ -93,15 +93,18 @@
       {
         "title": "Ethnologue - Anyin (ANY)",
         "url": "https://www.ethnologue.com/language/any/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "DICE Missouri - Agni (Anyin) database",
         "url": "https://dice.missouri.edu/assets/docs/niger-congo/Agni.pdf",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for dice.missouri.edu."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

@@ -108,39 +108,38 @@
       {
         "title": "UNFPA — Rwanda Population 2025",
         "url": "https://www.unfpa.org/data/world-population/RW",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"unfpa\"."
+        "tier": "official"
       },
       {
         "title": "Minority Rights Group — Banyarwanda in the DRC",
         "url": "https://minorityrights.org/communities/banyarwanda/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+        "tier": "referenced"
       },
       {
         "title": "Bilinguistics — Kinyarwanda Speech and Language Development",
         "url": "https://bilinguistics.com/languages/kinyarwanda-speech-and-language-development/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers bilinguistics.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "TrekRwandaGorillas — Rwanda Population 2025",
         "url": "https://trekrwandagorillas.com/rwanda-population/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers trekrwandagorillas.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "SIL Ethnologue — Kinyarwanda (kin)",
         "url": "https://www.ethnologue.com/language/kin",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "USHMM — Divided by Ethnicity : Rwanda",
         "url": "https://www.ushmm.org/genocide-prevention/countries/rwanda/divided-by-ethnicity",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for ushmm.org."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

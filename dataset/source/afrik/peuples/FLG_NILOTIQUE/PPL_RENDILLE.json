@@ -100,57 +100,53 @@
       {
         "title": "101 Last Tribes — Rendille",
         "url": "https://www.101lasttribes.com/tribes/rendille.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       },
       {
         "title": "Blue Gecko — Rendille stages of life, Traditional Music and Cultures of Kenya",
         "url": "http://www.bluegecko.org/kenya/tribes/rendille/lifestages.htm",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for bluegecko.org."
+        "tier": "unverified"
       },
       {
         "title": "Wiktionary ISO 639-3 codes Africa : rel — Rendille",
         "url": "https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for en.wiktionary.org."
+        "tier": "unverified"
       },
       {
         "title": "Ethnologue — Rendille (REL)",
         "url": "https://www.ethnologue.com/language/rel/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Media North Kenya — Rendille Age-set",
         "url": "https://medianorthkenya.wordpress.com/2016/03/20/rendille-age-set-period-events/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for wordpress.com, matched as a parent of medianorthkenya.wordpress.com."
+        "tier": "unverified"
       },
       {
         "title": "Paukwa — Rendille Initiation Ceremony",
         "url": "https://www.paukwa.or.ke/story-series/kerites/rites-of-passage/rendille-initiation-ceremony/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers paukwa.or.ke; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Chanler, William A. Through Jungle and Desert: Travels in Eastern Africa. New York: Macmillan, 1896",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Schlee, Gunther. Identities on the Move: Clanship and Pastoralism in Northern Kenya. Manchester: Manchester University Press, 1989",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Joshua Project — Rendille in Kenya",
         "url": "https://joshuaproject.net/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

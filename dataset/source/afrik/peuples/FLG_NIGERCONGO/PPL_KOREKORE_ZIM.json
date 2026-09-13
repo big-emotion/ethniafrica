@@ -93,27 +93,28 @@
       {
         "title": "DHCS Zimbabwe — Korekore People",
         "url": "https://dhcs.co.zw/korekore.php",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for dhcs.co.zw."
+        "tier": "unverified"
       },
       {
         "title": "SIL Ethnologue — Shona language (sna)",
         "url": "https://www.ethnologue.com/language/sna/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Zimbabwe Field Guide — Mutapa State",
         "url": "https://zimfieldguide.com/mashonaland-central/mutapa-mwenemutapa-monomotapa-state-its-heyday-c1480-%E2%80%93-c1623",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for zimfieldguide.com."
+        "tier": "unverified"
       },
       {
         "title": "YouTube — The Mysterious Korekore Clan",
         "url": "https://www.youtube.com/watch?v=gHxC89k7V-c",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for youtube.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

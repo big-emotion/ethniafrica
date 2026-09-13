@@ -93,27 +93,28 @@
       {
         "title": "SIL Ethnologue — Fante language (fat)",
         "url": "https://www.ethnologue.com/language/fat/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "World Population Review — Ghana Population 2025",
         "url": "https://worldpopulationreview.com/countries/ghana",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for worldpopulationreview.com."
+        "tier": "unverified"
       },
       {
         "title": "CIA World Factbook — Ghana",
         "url": "https://www.cia.gov/the-world-factbook/countries/ghana/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+        "tier": "official"
       },
       {
         "title": "Recensement national du Ghana, Ghana Statistical Service",
         "url": "https://statsghana.gov.gh/",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for statsghana.gov.gh."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

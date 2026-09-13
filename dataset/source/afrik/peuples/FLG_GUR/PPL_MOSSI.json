@@ -115,33 +115,33 @@
       {
         "title": "Ethnologue - Moore (mos)",
         "url": "https://www.ethnologue.com/language/mos/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Joshua Project - Mossi in Burkina Faso",
         "url": "https://joshuaproject.net/people_groups/13802/uv",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "EBSCO Research Starters - Mossi (people)",
         "url": "https://www.ebsco.com/research-starters/language-and-linguistics/mossi-people",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for ebsco.com."
+        "tier": "referenced"
       },
       {
         "title": "Glottolog - Mossi",
         "url": "https://glottolog.org/resource/languoid/id/moss1236",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "CIA World Factbook - Burkina Faso",
         "url": "https://www.cia.gov/the-world-factbook/countries/burkina-faso/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

@@ -81,39 +81,38 @@
       {
         "title": "Ethnologue SIL – Sokoro language (sok)",
         "url": "https://www.ethnologue.com/language/sok/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Joshua Project – Sokoro, Tunjur in Chad",
         "url": "https://joshuaproject.net/people_groups/14975/CD",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "WorldMap Chad Profile (WMI)",
         "url": "http://www.worldmap.org/uploads/9/3/4/4/9344303/chad_profile.pdf",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for worldmap.org."
+        "tier": "unverified"
       },
       {
         "title": "US Library of Congress Country Studies – Chad, Chadic Languages",
         "url": "https://countrystudies.us/chad/20.htm",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for countrystudies.us."
+        "tier": "referenced"
       },
       {
         "title": "Chesley, William, and David Faris. 1994. Une enquete sociolinguistique parmi les Sokoro du Guera. N'Djamena : SIL. Manuscript",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Mirjam de Bruijn. 2014. The Guera inspiration. Counter Voices in Africa",
         "url": "https://mirjamdebruijn.wordpress.com/2014/04/15/the-guera-inspiration/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for wordpress.com, matched as a parent of mirjamdebruijn.wordpress.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

@@ -118,33 +118,33 @@
       {
         "title": "Guardians of the forest: the Baka and the living spirit of the Dja – UNESCO",
         "url": "https://www.unesco.org/en/articles/guardians-forest-baka-and-living-spirit-dja",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\"."
+        "tier": "official"
       },
       {
         "title": "In Southeastern Cameroon, the Baka People Are Marginalized in the Name of Nature Conservation – Pulitzer Center",
         "url": "https://pulitzercenter.org/stories/southeastern-cameroon-baka-people-are-marginalized-name-nature-conservation",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers pulitzercenter.org; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Baka people of Cameroon – Last Places",
         "url": "https://lastplaces.com/en/travel-is-knowledge/baka-people-cameroon/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for lastplaces.com."
+        "tier": "unverified"
       },
       {
         "title": "SIL Cameroon – Koonzime (ozm)",
         "url": "https://www.silcam.org/resources/archives/3329",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers silcam.org; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Cameroon ethnic groups – Encyclopaedia Britannica",
         "url": "https://www.britannica.com/place/Cameroon/People",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

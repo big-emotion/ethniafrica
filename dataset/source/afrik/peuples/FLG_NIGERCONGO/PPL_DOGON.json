@@ -102,33 +102,33 @@
       {
         "title": "Focus on Geography — Living and Spiritual Worlds of Mali's Dogon People",
         "url": "http://www.focusongeography.org/publications/articles/mali/index.html",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers focusongeography.org; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Dogon Languages — University of Michigan (Heath, J.)",
         "url": "https://public.websites.umich.edu/~jheath/Dogon%20languages.html",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers public.websites.umich.edu; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Britannica — Dogon",
         "url": "https://www.britannica.com/topic/Dogon",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       },
       {
         "title": "eHRAF World Cultures — Dogon summary",
         "url": "https://ehrafworldcultures.yale.edu/cultures/fa16/summary",
-        "tier": "referenced",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ehraf\"."
+        "tier": "referenced"
       },
       {
         "title": "UNESCO — Pays Dogon (patrimoine mondial)",
         "url": "https://whc.unesco.org/fr/list/516/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of whc.unesco.org."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

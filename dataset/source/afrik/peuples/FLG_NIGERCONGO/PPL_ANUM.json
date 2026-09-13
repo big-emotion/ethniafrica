@@ -75,33 +75,33 @@
       {
         "title": "PeopleGroups.org - Anum-Boso of Ghana",
         "url": "https://peoplegroups.org/people_groups/pg013261/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+        "tier": "unverified"
       },
       {
         "title": "Joshua Project - Anum-Boso in Ghana",
         "url": "https://joshuaproject.net/people_groups/print/10357/GH",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Justice Ghana - The Story of Boso, Kwame Ampene",
         "url": "http://www.justiceghana.com/index.php/2012-01-24-13-47-49/6644-the-story-of-boso",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers justiceghana.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Ghana Web - The historic town of Anum-Asamankese, 2021",
         "url": "https://www.ghanaweb.com/GhanaHomePage/NewsArchive/The-historic-town-of-Anum-Asamankese-1166749",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for ghanaweb.com."
+        "tier": "referenced"
       },
       {
         "title": "101 Last Tribes - Guang people",
         "url": "https://www.101lasttribes.com/tribes/guang.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

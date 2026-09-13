@@ -90,39 +90,38 @@
       {
         "title": "SIL Ethnologue — Aringa language (luc)",
         "url": "https://www.ethnologue.com/language/luc/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Joshua Project — Aringa in Uganda",
         "url": "https://joshuaproject.net/people_groups/19162",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "JSTOR — The Lugbara States (reference to Aringa-Ole'ba and Bari origins)",
         "url": "https://www.jstor.org/stable/24328592",
-        "tier": "referenced",
-        "notes": "Tier resolved from the authorized source catalogue entry \"jstor\"."
+        "tier": "referenced"
       },
       {
         "title": "Uganda Bureau of Statistics — National Population and Housing Census 2014",
         "url": "https://www.ubos.org/",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for ubos.org."
+        "tier": "official"
       },
       {
         "title": "101 Last Tribes — Aringa",
         "url": "http://www.101lasttribes.com/tribes/aringa.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       },
       {
         "title": "CIA World Factbook — Uganda",
         "url": "https://www.cia.gov/the-world-factbook/countries/uganda/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

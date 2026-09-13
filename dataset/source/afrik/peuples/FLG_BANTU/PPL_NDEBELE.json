@@ -99,33 +99,33 @@
       {
         "title": "Britannica – Mzilikazi",
         "url": "https://www.britannica.com/biography/Mzilikazi",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       },
       {
         "title": "SIL Ethnologue – Ndebele (nde)",
         "url": "https://www.ethnologue.com/language/nde/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "ZIMSTAT – Zimbabwe 2022 Population and Housing Census",
         "url": "https://www.zimstat.co.zw/population-census/",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for zimstat.co.zw."
+        "tier": "official"
       },
       {
         "title": "UNFPA Zimbabwe – 2022 Census Preliminary Results",
         "url": "https://zimbabwe.unfpa.org/en/publications/2022-population-and-housing-census-preliminary-results",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"unfpa\" (unfpa.org), matched as a parent of zimbabwe.unfpa.org."
+        "tier": "official"
       },
       {
         "title": "Africa Federation – The History of Matabeleland",
         "url": "http://www.africafederation.net/Matabeleland_History.htm",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for africafederation.net."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

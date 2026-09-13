@@ -98,21 +98,23 @@
       {
         "title": "Glottolog — Koyra Chiini Songhay (khq)",
         "url": "https://glottolog.org/resource/languoid/id/koyr1240",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "UNESCO — Tombouctou (patrimoine mondial)",
         "url": "https://whc.unesco.org/fr/list/119",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of whc.unesco.org."
+        "tier": "official"
       },
       {
         "title": "CIA World Factbook — Mali",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

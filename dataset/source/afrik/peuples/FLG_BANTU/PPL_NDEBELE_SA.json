@@ -94,33 +94,33 @@
       {
         "title": "Statistics South Africa – Cultural Dynamics in South Africa, basé sur le Recensement 2022",
         "url": "https://southafrica-info.com/arts-culture/the-languages-of-south-africa/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for southafrica-info.com."
+        "tier": "unverified"
       },
       {
         "title": "SIL Ethnologue – Southern Ndebele (nbl) : code ISO 639-3 nbl",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Wataka Africa – The Vibrant World of Ndebele Art and Culture (2023)",
         "url": "https://wataka.africa/blogs/stories/the-vibrant-world-of-ndebele-art-and-culture",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers wataka.africa; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Amusing Planet – The Painted Houses of The Ndebeles (2014)",
         "url": "https://www.amusingplanet.com/2014/09/the-painted-houses-of-ndebeles.html",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers amusingplanet.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "StatsSA – Census 2022 Statistical Release",
         "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for census.statssa.gov.za."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

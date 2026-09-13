@@ -103,33 +103,33 @@
       {
         "title": "Ethnologue, Etsako (ETS). (consulté 2025)",
         "url": "https://www.ethnologue.com/language/ets/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "AFESANCOM, The Afemai People of Edo State Nigeria. (consulté 2025)",
         "url": "https://www.afesancommunitymaroc.com/the-afemai-people-of-edo-state-nigeria/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers afesancommunitymaroc.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "The African Archives, Afemai Culture. (consulté 2025)",
         "url": "https://theafricanarchives.org/index?article=afemai-culture-",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers theafricanarchives.org; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Presidency of Nigeria (Community Engagement South-South), Edo State. (consulté 2025)",
         "url": "https://communityengagementss.presidency.gov.ng/portfolio/edo/",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for presidency.gov.ng, matched as a parent of communityengagementss.presidency.gov.ng."
+        "tier": "official"
       },
       {
         "title": "Egharevba, Jacob U. A Short History of Benin. Ibadan University Press, 4e éd., 1968",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

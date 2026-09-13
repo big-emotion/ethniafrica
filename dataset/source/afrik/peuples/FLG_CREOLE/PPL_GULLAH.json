@@ -57,13 +57,13 @@
           "title": "Smithsonian Magazine - How the Memory of a Song Reunited Two Women Separated by the Trans-Atlantic Slave Trade",
           "url": "https://www.smithsonianmag.com/history/how-the-memory-of-a-song-reunited-two-women-separated-by-the-trans-atlantic-slave-trade-180983864/",
           "tier": "referenced",
-          "notes": "Tier resolved from the domain ruling for established press/magazine journalism; article names its historical sources (Joseph Opala, Cynthia Schmidt) and dates (1933, 1990)."
+          "notes": "Article names its historical sources (Joseph Opala, Cynthia Schmidt) and dates (1933, 1990)."
         },
         {
           "title": "Turner, Lorenzo Dow (1949) - Africanisms in the Gullah Dialect",
           "url": null,
           "tier": "referenced",
-          "notes": "Offline academic monograph (University of Chicago Press, 1949 ; réédition University of South Carolina Press, 2002). Tier inferred from published-citation shape (named author, publisher, year) ; findings independently cross-checked via Smithsonian Magazine and New Georgia Encyclopedia rather than cited from Wikipedia."
+          "notes": "Offline academic monograph (University of Chicago Press, 1949 ; réédition University of South Carolina Press, 2002). Findings were cross-checked against Smithsonian Magazine and New Georgia Encyclopedia."
         }
       ]
     },
@@ -97,19 +97,19 @@
         "title": "South Carolina Encyclopedia - Gullah",
         "url": "https://www.scencyclopedia.org/sce/entries/gullah/",
         "tier": "referenced",
-        "notes": "Encyclopédie académique adossée à l'Institute for Southern Studies (University of South Carolina). Non listée au catalogue de domaines officiels ; tier inféré de la forme éditoriale (entrée signée, adossement universitaire)."
+        "notes": "Encyclopédie académique adossée à l'Institute for Southern Studies (University of South Carolina)."
       },
       {
         "title": "New Georgia Encyclopedia - Geechee and Gullah Culture (Althea Sumpter, Georgia Institute of Technology)",
         "url": "https://www.georgiaencyclopedia.org/articles/arts-culture/geechee-and-gullah-culture/",
         "tier": "referenced",
-        "notes": "Encyclopédie académique à entrées signées ; auteure affiliée au Georgia Institute of Technology. Tier inféré de la forme de citation (auteure nommée, institution)."
+        "notes": "Encyclopédie académique à entrées signées ; auteure affiliée au Georgia Institute of Technology."
       },
       {
         "title": "APiCS Online - Survey chapter: Gullah (Thomas B. Klein)",
         "url": "https://apics-online.info/surveys/13",
         "tier": "referenced",
-        "notes": "Chapitre d'atlas linguistique académique à comité de relecture (Atlas of Pidgin and Creole Language Structures Online), auteur nommé. Non listé au catalogue de domaines officiels ; tier inféré de la forme de citation académique."
+        "notes": "Chapitre d'atlas linguistique académique à comité de relecture (Atlas of Pidgin and Creole Language Structures Online), auteur nommé."
       },
       {
         "title": "Los Angeles Times - The Gullah people have survived on the Carolina sea islands for centuries. Now development is taking a toll. (Nigel Duara, 4 novembre 2016)",
@@ -121,8 +121,13 @@
         "title": "World Monuments Fund / Google Arts & Culture - Bunce Island and the \"Gullah Connection\"",
         "url": "https://artsandculture.google.com/story/bunce-island-and-the-quot-gullah-connection-quot-world-monuments-fund/GAXhbi_DSY0Yvg?hl=en",
         "tier": "referenced",
-        "notes": "Publication d'une organisation patrimoniale identifiable (World Monuments Fund, avec Leeds Museums & Galleries). Non listée au catalogue de domaines officiels ; tier inféré de la forme éditoriale (institution nommée, contributeurs identifiés)."
+        "notes": "Publication d'une organisation patrimoniale identifiable (World Monuments Fund, avec Leeds Museums & Galleries)."
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

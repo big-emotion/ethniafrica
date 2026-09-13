@@ -75,27 +75,28 @@
       {
         "title": "Urbanisation de la métropole abidjanaise et la mise en minorité des autochtones Ebrié – Oura, Revue de Cinq Continents, 2013",
         "url": "https://www.ssoar.info/ssoar/bitstream/handle/document/38292/ssoar-cinqcon-2013-8-oura-Urbanisation_de_la_metropole_abidjanaise.pdf",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for ssoar.info."
+        "tier": "referenced"
       },
       {
         "title": "Tchaman society – Katherine R. Russell, 2025",
         "url": "https://www.krrussell.com/research/fieldwork/tchaman-society",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers krrussell.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Kyama, Ebrie in Côte d'Ivoire – Joshua Project",
         "url": "https://joshuaproject.net/people_groups/12930",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Les Bidjan, un peuple Kyaman peu connu – Revue Akofena, 2023",
         "url": "https://www.revue-akofena.com/wp-content/uploads/2023/09/03-T09v03-62-Fabrice-ALIMAN_029-040.pdf",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for revue-akofena.com."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

@@ -22,8 +22,8 @@ interface Sweep {
 /**
  * Renders every record's sources and holds the notes it prints to two rules:
  * no clause in the pipeline's register reaches the reader, and every note
- * that is not bookkeeping still does. Counted, so a sweep that printed
- * nothing, or withheld nothing, cannot pass by being empty.
+ * that is not bookkeeping still does. The cleaned corpus should have no
+ * notes for the compatibility filter to withhold.
  */
 function sweep(
   records: Array<{ id: string; sources: FicheSourceEntry[] }>
@@ -79,7 +79,7 @@ describe("fiche sources across the corpus", () => {
 
     expect(result.leaks).toEqual([]);
     expect(result.missing).toEqual([]);
-    expect(result.withheld).toBeGreaterThan(0);
+    expect(result.withheld).toBe(0);
   }, 120_000);
 
   // @req REQ-092
@@ -93,7 +93,7 @@ describe("fiche sources across the corpus", () => {
 
     expect(result.leaks).toEqual([]);
     expect(result.missing).toEqual([]);
-    expect(result.withheld).toBeGreaterThan(0);
+    expect(result.withheld).toBe(0);
     expect(result.printed).toBeGreaterThan(0);
   }, 300_000);
 });

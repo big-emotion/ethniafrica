@@ -179,39 +179,38 @@
       {
         "title": "SIL Ethnologue — Fulfulde language (ful)",
         "url": "https://www.ethnologue.com/language/ful/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Last, Murray — The Sokoto Caliphate. Longman, 1967",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Riesman, Paul — Freedom in Fulani Social Life. University of Chicago Press, 1977",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Diallo, Thierno — Les institutions politiques du Fouta-Djallon au XIXe siecle. IFAN, 1972",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "UNFPA — Sahel population data",
         "url": "https://www.unfpa.org/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"unfpa\"."
+        "tier": "official"
       },
       {
         "title": "CIA World Factbook — Country profiles",
         "url": "https://www.cia.gov/the-world-factbook/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

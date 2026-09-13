@@ -85,15 +85,18 @@
       {
         "title": "Joshua Project – Anyi in Ghana",
         "url": "https://joshuaproject.net/people_groups/10362/GH",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Joshua Project – Ghana people groups",
         "url": "https://joshuaproject.net/countries/gh",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

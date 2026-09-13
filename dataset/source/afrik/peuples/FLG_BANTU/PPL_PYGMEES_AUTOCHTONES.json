@@ -92,33 +92,33 @@
       {
         "title": "La Conservation et le peuple Baka au Cameroun – Ritimo, 2020",
         "url": "https://www.ritimo.org/Violence-corruption-et-fausses-promesses-La-Conservation-et-le-peuple-Baka-au",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers ritimo.org; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Gardiens de la foret : les Baka et l'esprit vivant du Dja – UNESCO, 2025",
         "url": "https://www.unesco.org/fr/articles/gardiens-de-la-foret-les-baka-et-lesprit-vivant-du-dja",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\"."
+        "tier": "official"
       },
       {
         "title": "Statut des Peuples Autochtones – Greenpeace Afrique, 2025",
         "url": "https://www.greenpeace.org/africa/fr/les-blogs/58654/peuples-autochtones-trois-decennies-dattente-pour-une-reconnaissance-legale-et-juridique/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers greenpeace.org; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Les Baka : Territoires et Modes de Vie Traditionnels – IWGIA, Pyhala Aili",
         "url": "https://iwgia.org/images/publications/0584_informe_13_fre_opt.pdf",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"iwgia\"."
+        "tier": "official"
       },
       {
         "title": "Des leaders Baka et Bagyeli exposent les problemes – Forest Peoples Programme, 2010",
         "url": "https://www.forestpeoples.org/fr/publications-resources/news/article/des-leaders-baka-et-bagyeli-exposent-les-problemes-de-leur-forets-aupres-des-medias-et-du-public/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for forestpeoples.org."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

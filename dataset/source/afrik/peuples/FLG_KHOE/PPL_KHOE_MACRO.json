@@ -134,45 +134,43 @@
       {
         "title": "Ethnologue SIL International — Khoe-Kwadi language family",
         "url": "https://www.ethnologue.com/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Britannica — Khoisan languages, Classification",
         "url": "https://www.britannica.com/topic/Khoisan-languages/Classification-of-the-Khoisan-languages",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       },
       {
         "title": "EBSCO Research Starters — Khoekhoen",
         "url": "https://www.ebsco.com/research-starters/history/khoekhoen",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for ebsco.com."
+        "tier": "referenced"
       },
       {
         "title": "South African History Online — The Khoisan",
         "url": "https://sahistory.org.za/article/khoisan",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for sahistory.org.za."
+        "tier": "referenced"
       },
       {
         "title": "BMC Biology — Male-biased migration from East Africa introduced pastoralism into southern Africa",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8650298/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for pmc.ncbi.nlm.nih.gov."
+        "tier": "referenced"
       },
       {
         "title": "Google Arts & Culture — How we heal: The trance dance of San",
         "url": "https://artsandculture.google.com/story/how-we-heal-the-trance-dance-of-san-project-fuel/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for artsandculture.google.com."
+        "tier": "unverified"
       },
       {
         "title": "Joshua Project — Botswana people groups",
         "url": "https://joshuaproject.net/countries/bc",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

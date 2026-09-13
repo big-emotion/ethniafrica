@@ -101,45 +101,43 @@
       {
         "title": "Ethnologue (SIL) — Northern Sotho (nso)",
         "url": "https://www.ethnologue.com/language/nso/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Statistics South Africa — Census 2022 Cultural Dynamics (mars 2025)",
         "url": "https://www.statssa.gov.za",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for statssa.gov.za."
+        "tier": "official"
       },
       {
         "title": "South Africa Gateway — Languages of South Africa (2025)",
         "url": "https://southafrica-info.com/arts-culture/the-languages-of-south-africa/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for southafrica-info.com."
+        "tier": "unverified"
       },
       {
         "title": "PeopleGroups.org — Northern Sotho of South Africa",
         "url": "https://peoplegroups.org/people_groups/pg033365/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+        "tier": "unverified"
       },
       {
         "title": "Monnig, H.O. — The Pedi. Pretoria: Van Schaik, 1967",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Delius, Peter — The Land Belongs to Us: The Pedi Polity, the Boers and the British in the Nineteenth-Century Transvaal. Berkeley: University of California Press, 1984",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Qiraat Africa — Pedi people of South Africa (2024)",
         "url": "https://qiraatafrican.com/en/14630/pedi-people-of-south-africa/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

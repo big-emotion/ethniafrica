@@ -94,39 +94,38 @@
       {
         "title": "Sana'a Center for Strategic Studies — Muwalladeen in Yemen: Racialization, Stigmatization (2022)",
         "url": "https://sanaacenter.org/publications/main-publications/18105",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers sanaacenter.org; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Al Jazeera — Yemen's Muwaladeen: The struggle for equal citizenship (2014)",
         "url": "https://www.aljazeera.com/opinions/2014/4/5/yemens-muwaladeen-the-struggle-for-equal-citizenship",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for aljazeera.com."
+        "tier": "referenced"
       },
       {
         "title": "Scholarly Publishing Collective — We Are All Suffering Equally: The Impact of the War on Muwalladin (2022)",
         "url": "https://scholarlypublishingcollective.org/msup/neas/article/22/1/165/381346/We-Are-All-Suffering-Equally-The-Impact-of-the-War",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for scholarlypublishingcollective.org."
+        "tier": "referenced"
       },
       {
         "title": "Joshua Project — Muhamasheen, Akhdam in Yemen",
         "url": "https://joshuaproject.net/people_groups/10380/ym",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Pink Jinn — African Arabs: Migration and cultural exchange on the Swahili coast (2020)",
         "url": "https://www.pinkjinn.com/2020/09/09/african-arabs-migration-and-cultural-exchange-on-the-swahili-coast/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers pinkjinn.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "CIA Reading Room — Southern Yemen (Aden): The Society",
         "url": "https://www.cia.gov/readingroom/docs/CIA-RDP01-00707R000200100018-6.pdf",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

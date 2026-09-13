@@ -87,33 +87,33 @@
       {
         "title": "UCLA African Languages — Bole",
         "url": "https://aflang.humanities.ucla.edu/language-materials/chadic-languages/yobe/bole/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for aflang.humanities.ucla.edu."
+        "tier": "referenced"
       },
       {
         "title": "Joshua Project — Bole, Bolewa in Nigeria",
         "url": "https://joshuaproject.net/people_groups/10914",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "SIL Ethnologue — Bole (bol)",
         "url": "https://www.ethnologue.com/subgroup/555/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Wiktionary ISO 639-3 codes/Africa",
         "url": "https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for en.wiktionary.org."
+        "tier": "unverified"
       },
       {
         "title": "Gbeyonron & Bare — Language Ecology in Yobe State. Journal of the Nigerian Languages Project, vol. 2, 2020",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

@@ -100,21 +100,23 @@
       {
         "title": "Joshua Project - Mandyak, Manjago in Guinea-Bissau",
         "url": "https://joshuaproject.net/people_groups/13493/PU",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Ethnologue - Mandjak (mfv)",
         "url": "https://www.ethnologue.com/language/mfv/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Glottolog - mand1419 Manjak",
         "url": "https://glottolog.org/resource/languoid/id/mand1419",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

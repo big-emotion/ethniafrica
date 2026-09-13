@@ -94,39 +94,38 @@
       {
         "title": "Ethnologue — Argobba language (agj)",
         "url": "https://www.ethnologue.com/language/agj",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Joshua Project — Argobba in Ethiopia",
         "url": "https://joshuaproject.net/people_groups/10422",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Dergipark — The Gafat and Argobba of Ethiopia: A Historical Survey",
         "url": "https://dergipark.org.tr/en/pub/toplumsalbilimler/article/1352052",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for dergipark.org.tr."
+        "tier": "referenced"
       },
       {
         "title": "101 Last Tribes — Argobba people",
         "url": "https://www.101lasttribes.com/tribes/argobba.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       },
       {
         "title": "Ethiopian Central Statistical Agency (CSA) — Population and Housing Census 2007",
         "url": "https://www.csa.gov.et",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for csa.gov.et."
+        "tier": "official"
       },
       {
         "title": "Encyclopaedia Aethiopica, vol. 1 (Uhlig ed.), Harrassowitz Verlag, 2003",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

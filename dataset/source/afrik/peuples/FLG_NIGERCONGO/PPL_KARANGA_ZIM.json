@@ -95,39 +95,38 @@
       {
         "title": "Joshua Project — Shona-Karanga in Zimbabwe",
         "url": "https://joshuaproject.net/people_groups/12530",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "PeopleGroups.org — Shona-Karanga of Zimbabwe",
         "url": "https://peoplegroups.org/people_groups/pg015659/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+        "tier": "unverified"
       },
       {
         "title": "SIL Ethnologue — Shona language (sna)",
         "url": "https://www.ethnologue.com/language/sna/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Britannica — Karanga people",
         "url": "https://www.britannica.com/topic/Karanga-people",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       },
       {
         "title": "HTS Theological Studies — Karanga people Masvingo",
         "url": "http://www.scielo.org.za/scielo.php?script=sci_arttext&pid=S0259-94222016000400109",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for scielo.org.za."
+        "tier": "referenced"
       },
       {
         "title": "Chigwedere, Aeneas. The Karanga Empire. Books for Africa, Harare, 1986",
         "url": "https://michaelharrison.org.uk/wp-content/uploads/2021/04/The-Karanga-Empire-Aeneas-Chigwedere-Books-for-Africa-Harare-1986.pdf",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for michaelharrison.org.uk."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

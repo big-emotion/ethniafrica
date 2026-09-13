@@ -12,6 +12,7 @@ export type FicheName = PatronymeLinkSummary | PatronymeReachSummary;
  * An alphabet of 26 letters is longer than a list of 24 names. Nine countries
  * and one people pass this; below it the index costs more than it saves.
  */
+// @req REQ-154
 export const NAME_INDEX_THRESHOLD = 24;
 
 /**

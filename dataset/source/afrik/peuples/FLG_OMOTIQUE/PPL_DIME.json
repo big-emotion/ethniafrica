@@ -86,75 +86,68 @@
       {
         "title": "Dime in Ethiopia – Joshua Project, 2024",
         "url": "https://joshuaproject.net/people_groups/11559/ET",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Dimé – Endangered Languages Project ELCAT",
         "url": "http://elcat.colo.hawaii.edu/lang/5247",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for elcat.colo.hawaii.edu."
+        "tier": "referenced"
       },
       {
         "title": "Dime Language (DIM) – Ethnologue",
         "url": "https://www.ethnologue.com/language/dim/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Appendix ISO 639-3 codes/Africa – Wiktionary",
         "url": "https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for en.wiktionary.org."
+        "tier": "unverified"
       },
       {
         "title": "Dizi people – 101 Last Tribes",
         "url": "https://www.101lasttribes.com/tribes/dizi.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       },
       {
         "title": "Omotic languages – Encyclopaedia Britannica",
         "url": "https://www.britannica.com/topic/Omotic-languages",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       },
       {
         "title": "Mulugeta Seyoum. 2008. A Grammar of Dime. Doctoral dissertation, Leiden University",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Mulugeta Seyoum. 2020. Ethiopic Script Based Dime Orthography. Studies in Ethiopian Languages, 9 (2020), 1-25",
         "url": "http://ds22n.cc.yamaguchi-u.ac.jp/~abesha/SEL/pub/2020/Mulugeta-2020.pdf",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers ds22n.cc.yamaguchi-u.ac.jp; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Ralph Siebert. 2002. Sociolinguistic survey report on the Dime language of Ethiopia. SIL Electronic Survey Reports 2002-043",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Joshua Project — Dime in Ethiopia",
         "url": "https://joshuaproject.net/people_groups/11559",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Aklilu Yilma et Ralph Siebert. 2002. Sociolinguistic survey report of the Chara, Dime, Melo and Nayi languages of Ethiopia part 1. SIL Electronic Survey Reports 2002-029",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Glottolog — Dime language",
         "url": "https://glottolog.org/resource/languoid/id/dime1235",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

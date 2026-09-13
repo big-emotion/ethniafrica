@@ -103,51 +103,48 @@
       {
         "title": "SIL Ethnologue — Ju|'hoansi language (ktz)",
         "url": "https://www.ethnologue.com/language/ktz/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Glottolog — South-Eastern Ju (ktz)",
         "url": "https://glottolog.org/resource/languoid/id/juho1239",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "Joshua Project — Ju'hoan language resources",
         "url": "https://joshuaproject.net/languages/ktz",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "UNESCO Tentative List — San Living Cultural Landscape (Tsumkwe District)",
         "url": "https://whc.unesco.org/en/tentativelists/6096/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of whc.unesco.org."
+        "tier": "official"
       },
       {
         "title": "Peoples of the World — The Indigenous Juhoansi People",
         "url": "https://www.peoplesoftheworld.org/text?people=Juhoansi",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for peoplesoftheworld.org."
+        "tier": "unverified"
       },
       {
         "title": "Lee, Richard B. & DeVore, Irven (1976). Kalahari Hunter-Gatherers. Harvard University Press",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Cultural Survival Quarterly — Progress or Poverty? The Dobe Ju|'hoansi",
         "url": "https://www.culturalsurvival.org/publications/cultural-survival-quarterly/progress-or-poverty-dobe-juhoansi",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for culturalsurvival.org."
+        "tier": "referenced"
       },
       {
         "title": "Shamwari Game Reserve — Ju/'hoansi Tracking Cultural Experience",
         "url": "https://www.shamwari.com/cultural-experience/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers shamwari.com; the tier awaits editorial review."
+        "tier": "needs_review"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

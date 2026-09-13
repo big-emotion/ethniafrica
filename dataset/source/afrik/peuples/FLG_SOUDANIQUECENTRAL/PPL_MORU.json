@@ -92,45 +92,43 @@
       {
         "title": "Ethnologue (SIL International) — Moru (mgd)",
         "url": "https://www.scriptureearth.org/maps/SS/mgd.htm",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for scriptureearth.org."
+        "tier": "referenced"
       },
       {
         "title": "Glottolog — Moru (moru1253)",
         "url": "https://glottolog.org/resource/languoid/id/moru1253",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "African Mission — Farewell rituals of the Moru",
         "url": "https://africanmission.org/blog/farewell-rituals-of-the-moru/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers africanmission.org; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Fraser, Kenneth Grant (1926). 'Witchcraft and Healing in the Moru Tribe.' Church Missionary Society",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Evans-Pritchard, Edward Evan (1938). 'A note on rain makers of the Moro clan.' African Studies",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "101LastTribes.com — Moru people",
         "url": "https://www.101lasttribes.com/tribes/moru.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       },
       {
         "title": "CIA World Factbook — South Sudan",
         "url": "https://www.cia.gov/the-world-factbook/countries/south-sudan/",
-        "tier": "official",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

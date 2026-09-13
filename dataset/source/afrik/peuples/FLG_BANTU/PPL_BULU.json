@@ -97,27 +97,28 @@
       {
         "title": "Encyclopaedia Britannica, article Bulu",
         "url": "https://www.britannica.com/topic/Bulu",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       },
       {
         "title": "101 Last Tribes, Bulu people",
         "url": "http://www.101lasttribes.com/tribes/bulu.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       },
       {
         "title": "Ethnologue, Bulu (bum)",
         "url": "https://www.ethnologue.com/language/bum/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "PeopleGroups.org, Bulu of Cameroon",
         "url": "https://peoplegroups.org/people_groups/pg012558/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

@@ -68,13 +68,13 @@
           "title": "Glottolog 5.3 — Coptic",
           "url": "https://glottolog.org/resource/languoid/id/copt1239",
           "tier": "official",
-          "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\". Rattache le copte à la branche égyptienne et non au sémitique."
+          "notes": "Rattache le copte à la branche égyptienne et non au sémitique."
         },
         {
           "title": "Glottolog 5.3 — Egyptian (Ancient)",
           "url": "https://glottolog.org/resource/languoid/id/egyp1246",
           "tier": "official",
-          "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\". Établit la continuité entre l'égyptien ancien et le copte, sur laquelle repose la filiation décrite ci-dessus."
+          "notes": "Établit la continuité entre l'égyptien ancien et le copte, sur laquelle repose la filiation décrite ci-dessus."
         }
       ]
     },
@@ -107,20 +107,25 @@
         "title": "Glottolog 5.3 — Coptic",
         "url": "https://glottolog.org/resource/languoid/id/copt1239",
         "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\". Source du glottocode, du rattachement à la branche égyptienne et de la liste des dialectes."
+        "notes": "Source du glottocode, du rattachement à la branche égyptienne et de la liste des dialectes."
       },
       {
         "title": "SIL Ethnologue — Coptic (cop)",
         "url": "https://www.ethnologue.com/language/cop/",
         "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\". Source du statut liturgique de la langue et de son code ISO 639-3."
+        "notes": "Source du statut liturgique de la langue et de son code ISO 639-3."
       },
       {
         "title": "CIA World Factbook — Egypt",
         "url": "https://www.cia.gov/the-world-factbook/countries/egypt/",
         "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\". Source de la part chrétienne de la population égyptienne, donnée pour l'ensemble des confessions chrétiennes et non pour les seuls Coptes."
+        "notes": "Source de la part chrétienne de la population égyptienne, donnée pour l'ensemble des confessions chrétiennes et non pour les seuls Coptes."
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

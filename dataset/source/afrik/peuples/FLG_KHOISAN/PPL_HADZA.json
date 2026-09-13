@@ -76,27 +76,28 @@
       {
         "title": "Hadza – Glottolog 5.3, ISO 639-3 hts",
         "url": "https://glottolog.org/resource/languoid/id/hadz1240",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "The Ultimate Guide to the Hadza People of Tanzania – Visit Natives, 2024",
         "url": "https://www.visitnatives.com/post/who-are-the-hadzabe-hunter-gatherers-in-lake-eyasi-tanzania",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers visitnatives.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Woodburn, J. – Hunters and Gatherers : the Material Culture of the Nomadic Hadza, 1970, British Museum",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Pontzer, H. et al. – Constrained Total Energy Expenditure and Metabolic Adaptation to Physical Activity in Adult Humans, Current Biology, 2016",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

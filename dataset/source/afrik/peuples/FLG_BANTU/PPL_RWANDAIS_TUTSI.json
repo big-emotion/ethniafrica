@@ -131,63 +131,58 @@
       {
         "title": "Human Rights Watch — Leave None to Tell the Story: Genocide in Rwanda (1999)",
         "url": "https://www.hrw.org/reports/1999/rwanda/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for hrw.org."
+        "tier": "referenced"
       },
       {
         "title": "Council on Foreign Relations — Thirty Years After Rwanda Genocide (2024)",
         "url": "https://www.cfr.org/articles/thirty-years-after-rwandas-genocide-where-country-stands-today",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for cfr.org."
+        "tier": "referenced"
       },
       {
         "title": "CIA World Factbook — Rwanda",
         "url": "https://www.cia.gov/the-world-factbook/countries/rwanda/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+        "tier": "official"
       },
       {
         "title": "NISR Rwanda — Recensement 2022",
         "url": "https://www.statistics.gov.rw/",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for statistics.gov.rw."
+        "tier": "official"
       },
       {
         "title": "Big Ape Africa Safaris — Intore, Rwanda Traditional Dance",
         "url": "https://bigapesafricasafaris.com/intore-traditional-dance-and-music/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers bigapesafricasafaris.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "United Nations — 1994 Genocide against the Tutsi in Rwanda",
         "url": "https://www.un.org/en/preventgenocide/rwanda/historical-background.shtml",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\"."
+        "tier": "official"
       },
       {
         "title": "US Holocaust Memorial Museum — Rwanda (Divided by Ethnicity)",
         "url": "https://www.ushmm.org/genocide-prevention/countries/rwanda/divided-by-ethnicity",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for ushmm.org."
+        "tier": "referenced"
       },
       {
         "title": "Canadian Museum for Human Rights — What led to the genocide against the Tutsi",
         "url": "https://humanrights.ca/story/what-led-genocide-against-tutsi-rwanda",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for humanrights.ca."
+        "tier": "referenced"
       },
       {
         "title": "Musée de l'Holocauste Montréal — Le génocide contre les Tutsi au Rwanda",
         "url": "https://museeholocauste.ca/en/resources-training/the-genocide-against-the-tutsi-in-rwanda/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for museeholocauste.ca."
+        "tier": "referenced"
       },
       {
         "title": "SIL Ethnologue — Kinyarwanda (kin)",
         "url": "https://www.ethnologue.com/language/kin",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

@@ -103,39 +103,38 @@
       {
         "title": "Britannica — Rif people",
         "url": "https://www.britannica.com/topic/Rif-people",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       },
       {
         "title": "Ethnologue — Tarifit (rif)",
         "url": "https://www.ethnologue.com/language/rif/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Omniglot — Riffian language and alphabet",
         "url": "https://www.omniglot.com/writing/riffian.htm",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for omniglot.com."
+        "tier": "unverified"
       },
       {
         "title": "Joshua Project — Berber, Rif in Morocco",
         "url": "https://joshuaproject.net/people_groups/10803/MO",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Glottopedia — Rif Berber",
         "url": "http://www.glottopedia.org/index.php/Rif_Berber",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers glottopedia.org; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "IRCAM (Institut Royal de la Culture Amazighe)",
         "url": "https://www.ircam.ma/",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for ircam.ma."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

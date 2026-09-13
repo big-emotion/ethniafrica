@@ -87,33 +87,33 @@
       {
         "title": "SIL Ethnologue - Masikoro Malagasy (msh)",
         "url": "https://www.ethnologue.com/language/msh/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "SIL Ethnologue - Malagasy macrolanguage (mlg)",
         "url": "https://www.ethnologue.com/language/mlg/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Blench, R. et Walsh, M. (2009) - Faunal names in Malagasy : their etymology and implications for the prehistory of the East African coast, etude sur les substrats linguistiques Mikea",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "CIA World Factbook - Madagascar",
         "url": "https://www.cia.gov/the-world-factbook/countries/madagascar/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+        "tier": "official"
       },
       {
         "title": "Banque mondiale - Madagascar donnees demographiques",
         "url": "https://data.worldbank.org/country/madagascar",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"world-bank\" (worldbank.org), matched as a parent of data.worldbank.org."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

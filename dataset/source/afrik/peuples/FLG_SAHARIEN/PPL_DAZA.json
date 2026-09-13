@@ -117,39 +117,38 @@
       {
         "title": "Ethnologue — Dazaga (DZG)",
         "url": "https://www.ethnologue.com/language/dzg/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Joshua Project — Daza in Niger",
         "url": "https://joshuaproject.net/people_groups/11518/NG",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Minority Rights Group — Chad",
         "url": "https://minorityrights.org/country/chad/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+        "tier": "referenced"
       },
       {
         "title": "CIA — Libya-Chad Cultural Factors (document declassifie)",
         "url": "https://www.cia.gov/readingroom/docs/CIA-RDP06T00412R000200010001-7.pdf",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+        "tier": "official"
       },
       {
         "title": "Jean Chapelle — Nomades Noirs du Sahara. L'Harmattan, 1982",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Haber et al. — Chad Basin: Genetic structure (Toubou Y-DNA study). American Journal of Human Genetics, 2016",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

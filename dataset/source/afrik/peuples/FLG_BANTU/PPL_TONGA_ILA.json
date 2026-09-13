@@ -80,33 +80,33 @@
       {
         "title": "Edwin W. Smith et Andrew M. Dale, The Ila-speaking Peoples of Northern Rhodesia, 2 vol., 1920 (reedition Humanities Press, 1968)",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "eHRAF World Cultures, Ila – Description et Summary",
         "url": "https://ehrafworldcultures.yale.edu/cultures/fq06/description",
-        "tier": "referenced",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ehraf\"."
+        "tier": "referenced"
       },
       {
         "title": "Britannica, Ila – African tribe, Zambia",
         "url": "https://www.britannica.com/topic/Ila-people",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       },
       {
         "title": "Joshua Project, Ila in Zambia",
         "url": "https://joshuaproject.net/people_groups/12208",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Wiktionary, Appendix ISO 639-3 codes Africa – code ilb pour Ila",
         "url": "https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for en.wiktionary.org."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

@@ -102,39 +102,38 @@
       {
         "title": "Qiraat Africa — The Kgalagadi of Botswana",
         "url": "https://qiraatafrican.com/en/19023/the-kgalagadi-of-botswana/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
+        "tier": "unverified"
       },
       {
         "title": "Joshua Project — Bangologa, Kgalagadi in Botswana",
         "url": "https://joshuaproject.net/people_groups/12646/BC",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Ethnologue SIL International — Kgalagadi language (xkv)",
         "url": "https://www.ethnologue.com/language/xkv/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Britannica — Kgalagadi people",
         "url": "https://www.britannica.com/topic/Kgalagadi",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       },
       {
         "title": "Statistics Botswana — Population Distribution 2022",
         "url": "https://statsbots.org.bw/",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for statsbots.org.bw."
+        "tier": "official"
       },
       {
         "title": "Global Recordings Network — Kgalagadi (xkv)",
         "url": "https://globalrecordings.net/en/language/xkv",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for globalrecordings.net."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

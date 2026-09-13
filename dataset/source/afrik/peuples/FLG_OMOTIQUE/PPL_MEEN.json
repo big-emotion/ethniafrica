@@ -100,33 +100,33 @@
       {
         "title": "Glottolog — Me'en, glottocode meen1242, ISO 639-3: mym",
         "url": "https://glottolog.org/resource/languoid/id/meen1242",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "Jenkins, Orville. Meen People Profile",
         "url": "http://orvillejenkins.com/profiles/meen.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for orvillejenkins.com."
+        "tier": "unverified"
       },
       {
         "title": "Abbink, Jon G. An Ethno-Historical Perspective on Me'en Territorial Organization (Southwest Ethiopia). Anthropos, 87(4/6), 1992",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Brilliant Ethiopia — Omo Valley Tribes (Bodi/Me'en section)",
         "url": "https://www.brilliant-ethiopia.com/omo-valley-tribes",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers brilliant-ethiopia.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Recensement éthiopien 2007 — Me'en : 151 489 individus (Nilo-Sahariens)",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

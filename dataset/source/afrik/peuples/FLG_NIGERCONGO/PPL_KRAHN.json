@@ -100,27 +100,28 @@
       {
         "title": "101 Last Tribes - Krahn people",
         "url": "https://www.101lasttribes.com/tribes/krahn.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       },
       {
         "title": "Minority Rights Group - Krou in Cote d'Ivoire",
         "url": "https://minorityrights.org/communities/krou/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+        "tier": "referenced"
       },
       {
         "title": "Joshua Project - Krahn, Western in Liberia",
         "url": "https://joshuaproject.net/people_groups/print/15374/LI",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "SIL Ethnologue - Western Krahn (krw) et Eastern Krahn (kqo)",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

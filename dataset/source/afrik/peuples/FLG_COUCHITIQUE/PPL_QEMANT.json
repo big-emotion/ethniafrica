@@ -89,33 +89,33 @@
       {
         "title": "SIL Ethnologue / Glottolog — Qimant (ahg)",
         "url": "https://glottolog.org/resource/languoid/id/qima1242",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "Joshua Project — Kemant in Ethiopia",
         "url": "https://joshuaproject.net/people_groups/12615",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Frederick C. Gamst — The Qemant : A Pagan-Hebraic Peasantry of Ethiopia. Holt, Rinehart and Winston, 1969",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Ethiopia Insight — The Ethiopian Qemant of the Agaw in perspective, 2019",
         "url": "https://www.ethiopia-insight.com/2019/03/06/the-ethiopian-qemant-of-the-agaw-in-perspective/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for ethiopia-insight.com."
+        "tier": "referenced"
       },
       {
         "title": "101 Last Tribes — Qemant people",
         "url": "https://www.101lasttribes.com/tribes/qemant.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

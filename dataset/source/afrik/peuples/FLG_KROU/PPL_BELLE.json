@@ -81,33 +81,33 @@
       {
         "title": "Ethnologue – Kuwaa Language (BLH)",
         "url": "https://www.ethnologue.com/language/blh/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Joshua Project – Kuwaa, Belle in Liberia",
         "url": "https://joshuaproject.net/people_groups/12894",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Lughayangu – Kuwaa Belle Kowaao Kwaa language dictionary",
         "url": "https://lughayangu.com/kuwaa",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for lughayangu.com."
+        "tier": "unverified"
       },
       {
         "title": "AfricaBib – A Kuwaa (Belle) Wordlist, Liberian Studies Journal",
         "url": "https://www.africabib.org/rec.php?RID=188860991",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for africabib.org."
+        "tier": "referenced"
       },
       {
         "title": "Modern Ghana – Historicity Of Liberia Before The Arrival Of The Settler",
         "url": "https://www.modernghana.com/news/966909/historicity-of-liberia-before-the-arrival-of-the.html",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for modernghana.com."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

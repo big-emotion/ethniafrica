@@ -95,33 +95,33 @@
       {
         "title": "Ethnologue (SIL International) — Igala language (igl)",
         "url": "https://www.ethnologue.com/language/igl/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "101 Last Tribes — Igala",
         "url": "https://www.101lasttribes.com/tribes/igala.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       },
       {
         "title": "PeopleGroups.org — Igala of Nigeria",
         "url": "https://peoplegroups.org/people_groups/pg013842/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+        "tier": "unverified"
       },
       {
         "title": "Idah Royal Chronicles — traditions orales du royaume d'Igala",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Joshua Project — Igala in Nigeria",
         "url": "https://joshuaproject.net/people_groups/12186",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

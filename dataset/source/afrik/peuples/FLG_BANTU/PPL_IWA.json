@@ -72,27 +72,28 @@
       {
         "title": "Iwa of Zambia – PeopleGroups.org",
         "url": "https://peoplegroups.org/people_groups/pg015580/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+        "tier": "unverified"
       },
       {
         "title": "Bantu, Central-Tanzania People Cluster – Joshua Project, 2025",
         "url": "https://www.joshuaproject.net/clusters/341",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Nyamwanga Language – Ethnologue",
         "url": "https://www.ethnologue.com/language/mwn/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Nyamwanga in Tanzania – Joshua Project, 2025",
         "url": "https://joshuaproject.net/people_groups/13901/TZ",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

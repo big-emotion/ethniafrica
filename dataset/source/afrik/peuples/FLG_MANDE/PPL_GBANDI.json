@@ -81,33 +81,33 @@
       {
         "title": "Bandi in Liberia – Joshua Project, 2024",
         "url": "https://joshuaproject.net/people_groups/16125/LI",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Minority Rights Group – Liberia, 2024",
         "url": "https://minorityrights.org/country/liberia/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+        "tier": "referenced"
       },
       {
         "title": "The Gbandi Language: Editor's Note – Gbandi Landers Association in the Americas",
         "url": "http://www.gbandilanders.com/advocacy-organization-about/the-gbandi-language-editors-note",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers gbandilanders.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Grossmann – Discourse Grammar of Bandi, SIL International / The Swiss Bay",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Liberia Population and Housing Census 2022 – LISGIS",
         "url": "https://www.lisgis.gov.lr/document/LiberiaCensus2022Report.pdf",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for lisgis.gov.lr."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

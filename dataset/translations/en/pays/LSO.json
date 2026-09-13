@@ -100,44 +100,37 @@
       {
         "title": "SIL Ethnologue – Languages of Lesotho",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "CIA World Factbook – Lesotho",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "UNFPA – World Population Dashboard — Lesotho",
         "url": "https://www.unfpa.org/data/world-population/LS",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry for UNFPA."
+        "tier": "official"
       },
       {
         "title": "Recensements lesothans",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Études anthropologiques sur les peuples sotho",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Études historiques sur le royaume du Lesotho et Moshoeshoe Ier",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
-        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "title": "UNSD M49 – Codes normalisés des pays et noms français",
         "url": "https://unstats.un.org/unsd/methodology/m49/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+        "tier": "official"
       },
       {
         "title": "Eugène Casalis, Les Bassoutos, ou vingt-trois années de séjour et d'observations au sud de l'Afrique, Paris, Meyrueis, 1859",
@@ -206,7 +199,7 @@
     "kind": "machine",
     "translatedAt": "2026-09-09T09:05:55.742Z",
     "model": "claude-sonnet-5",
-    "sourceHash": "3854d83cffe80a73e9a193782635c68255968ae9f02075293e99c4e4c0183381",
+    "sourceHash": "95be0df6f1df98886529a0cd637070f73f60ec610caf334adbe43869aacdc899",
     "fieldHashes": {
       "nameOfficial": "371006a2dc21ee3f",
       "summary": "36257cc81257a4dc",
@@ -242,13 +235,6 @@
       "content.historicalFacts.colonization": "ae4bb25f62771cca",
       "content.historicalFacts.independenceStruggle": "8ff0e530cda84141",
       "content.historicalFacts.postIndependence": "66466ec291778033",
-      "content.sources[0].notes": "6b52475b40d94130",
-      "content.sources[1].notes": "6b52475b40d94130",
-      "content.sources[2].notes": "5b01fa636848b75c",
-      "content.sources[3].notes": "6b52475b40d94130",
-      "content.sources[4].notes": "6b52475b40d94130",
-      "content.sources[5].notes": "6b52475b40d94130",
-      "content.sources[6].notes": "5f85c6028609b720",
       "content.sources[7].notes": "44f2eb89cd5e6293",
       "content.sources[8].notes": "e825d9ee955a502e",
       "content.sources[9].notes": "84fa33cd8b5d90b0",

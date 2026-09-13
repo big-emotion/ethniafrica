@@ -94,27 +94,28 @@
       {
         "title": "Country Studies US – Angola: Lunda-Chokwe",
         "url": "https://countrystudies.us/angola/62.htm",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for countrystudies.us."
+        "tier": "referenced"
       },
       {
         "title": "Britannica – Lunda empire",
         "url": "https://www.britannica.com/place/Lunda-empire",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       },
       {
         "title": "Joshua Project – Chokwe in Angola",
         "url": "https://joshuaproject.net/people_groups/11365/AO",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Africa Federation – United Kingdom of Lunda Tchokwe",
         "url": "http://www.africafederation.net/Lunda_Tchockwe.htm",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for africafederation.net."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }

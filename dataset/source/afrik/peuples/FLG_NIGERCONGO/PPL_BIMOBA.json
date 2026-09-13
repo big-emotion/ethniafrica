@@ -81,27 +81,28 @@
       {
         "title": "Bimoba, Moba in Ghana – Joshua Project, 2024",
         "url": "https://joshuaproject.net/people_groups/10854",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Bimoba Dictionary Introduction – Webonary/SIL, 2014",
         "url": "https://www.webonary.org/bimoba/introduction/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for webonary.org."
+        "tier": "referenced"
       },
       {
         "title": "Bimoba ISO 639-3 bim – CEDS/ISO, 2024",
         "url": "https://ceds.ed.gov/iso639-3LanguageCodev7.aspx",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for ceds.ed.gov."
+        "tier": "official"
       },
       {
         "title": "Bimoba – ScriptSource/Ethnologue",
         "url": "https://www.scriptsource.org/cms/scripts/page.php?item_id=language_detail&key=bim",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for scriptsource.org."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+    }
   }
 }
