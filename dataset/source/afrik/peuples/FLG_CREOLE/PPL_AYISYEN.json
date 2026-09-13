@@ -103,13 +103,14 @@
       {
         "title": "Haiti Population 2025 — World Population Dashboard",
         "url": "https://www.unfpa.org/data/world-population/HT",
-        "tier": "official"
+        "tier": "official",
+        "notes": "Agence des Nations unies pour la population (UNFPA)."
       },
       {
         "title": "Institut Haïtien de Statistique et d'Informatique (IHSI) — AYITISTATS",
         "url": "https://ayitistats.org/?lang=en",
         "tier": "official",
-        "notes": "Institut haïtien de statistique et d'informatique ; donnée croisée : 11,77 millions d'habitants en 2024."
+        "notes": "Institut national officiel de statistique d'Haïti ; donnée croisée : 11,77 M en 2024."
       },
       {
         "title": "Haitian Creole Language (HAT) — Ethnologue",

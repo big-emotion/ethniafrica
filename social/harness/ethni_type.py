@@ -1,6 +1,6 @@
 """The typographic grammar: what a piece of on-screen text is allowed to be.
 
-One module, imported by `ethni_render.py` and `ethni_card.py`, for the reason
+One module, imported by `ethni_render.py` and `ethni_compose_v1.py`, for the reason
 `ethni_brand.py` is one module — two implementations of the same thing are two
 implementations that drift.
 
@@ -15,8 +15,8 @@ and a text, and the role carries the rest:
 
     {"role": "nom", "text": "Sénégal"}
 
-Doctrine: `Gabarits/GABARITS-SOCIAL.md`, and the note
-`Gabarits/GABARITS-SOCIAL.md` which records what was measured to get here.
+Doctrine: `docs/design/gabarits-social/GABARITS-SOCIAL.md`; what was measured to
+get here is in the dated notes beside it.
 
 ## The roles
 
@@ -60,8 +60,8 @@ import ethni_tokens
 HARNESS = pathlib.Path(__file__).resolve().parent
 REF_W = 1080
 
-# The palette, read once from the charter rather than declared here. Both
-# `ethni_render.py` and `ethni_card.py` used to carry their own copy of the gold,
+# The palette, read once from the charter rather than declared here. The video
+# renderer and the retired card renderer used to carry their own copy of the gold,
 # and the copy that won was `#FFD33D` — a value the brand never defined.
 PALETTE = ethni_tokens.palette()
 

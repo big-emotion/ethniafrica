@@ -8,12 +8,6 @@ const en = {
     ficheCountry: "country page",
     reference: "ref.",
   },
-  brief: {
-    aria: (name: string) => `${name} in brief`,
-    eyebrow: "In brief",
-    title: (name: string) => `${name} — cultural and historical overview`,
-    formerNames: "Former names and designations",
-  },
   summary: {
     title: "In brief",
     /** The country's summary prose, folded behind its first sentence. */
@@ -140,12 +134,6 @@ const fr: CountryCopy = {
     COD: "République démocratique du Congo",
   },
   title: { ficheCountry: "page du pays", reference: "réf." },
-  brief: {
-    aria: (name) => `${name} en bref`,
-    eyebrow: "En bref",
-    title: (name) => `${name} — synthèse culturelle et historique`,
-    formerNames: "Anciens noms et appellations",
-  },
   summary: {
     title: "En bref",
     portrait: "Portrait",

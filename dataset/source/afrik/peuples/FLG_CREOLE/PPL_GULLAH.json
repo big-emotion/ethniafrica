@@ -57,13 +57,13 @@
           "title": "Smithsonian Magazine - How the Memory of a Song Reunited Two Women Separated by the Trans-Atlantic Slave Trade",
           "url": "https://www.smithsonianmag.com/history/how-the-memory-of-a-song-reunited-two-women-separated-by-the-trans-atlantic-slave-trade-180983864/",
           "tier": "referenced",
-          "notes": "Article names its historical sources (Joseph Opala, Cynthia Schmidt) and dates (1933, 1990)."
+          "notes": "Established press journalism; the article names its historical sources (Joseph Opala, Cynthia Schmidt) and dates (1933, 1990)."
         },
         {
           "title": "Turner, Lorenzo Dow (1949) - Africanisms in the Gullah Dialect",
           "url": null,
           "tier": "referenced",
-          "notes": "Offline academic monograph (University of Chicago Press, 1949 ; réédition University of South Carolina Press, 2002). Findings were cross-checked against Smithsonian Magazine and New Georgia Encyclopedia."
+          "notes": "Offline academic monograph (University of Chicago Press, 1949 ; réédition University of South Carolina Press, 2002). Findings independently cross-checked via Smithsonian Magazine and New Georgia Encyclopedia rather than cited from Wikipedia."
         }
       ]
     },
@@ -97,7 +97,7 @@
         "title": "South Carolina Encyclopedia - Gullah",
         "url": "https://www.scencyclopedia.org/sce/entries/gullah/",
         "tier": "referenced",
-        "notes": "Encyclopédie académique adossée à l'Institute for Southern Studies (University of South Carolina)."
+        "notes": "Encyclopédie académique adossée à l'Institute for Southern Studies (University of South Carolina) ; entrée signée."
       },
       {
         "title": "New Georgia Encyclopedia - Geechee and Gullah Culture (Althea Sumpter, Georgia Institute of Technology)",
@@ -121,13 +121,13 @@
         "title": "World Monuments Fund / Google Arts & Culture - Bunce Island and the \"Gullah Connection\"",
         "url": "https://artsandculture.google.com/story/bunce-island-and-the-quot-gullah-connection-quot-world-monuments-fund/GAXhbi_DSY0Yvg?hl=en",
         "tier": "referenced",
-        "notes": "Publication d'une organisation patrimoniale identifiable (World Monuments Fund, avec Leeds Museums & Galleries)."
+        "notes": "Publication d'une organisation patrimoniale identifiable (World Monuments Fund, avec Leeds Museums & Galleries), contributeurs identifiés."
       }
     ]
   },
   "_translation": {
     "deferred": {
-      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+      "en": "English translation is deferred: none of the 776 people records has an English sidecar, so translating this one alone would make it the atlas's only English people record. It follows the people corpus's first translation pass."
     }
   }
 }

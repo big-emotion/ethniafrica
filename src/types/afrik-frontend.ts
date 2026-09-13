@@ -11,7 +11,6 @@ import type {
   CountryId,
   LanguageFamilyId,
   PeopleId,
-  LanguageId,
   ClassificationStatus,
   FicheSource,
   // Content sections
@@ -36,45 +35,8 @@ import type {
 import type { PersonPeopleLink } from "./persons";
 
 // ==========================================
-// PAGINATION
-// ==========================================
-
-export interface PaginationMeta {
-  total: number;
-  page: number;
-  perPage: number;
-  totalPages: number;
-  /**
-   * Peoples not reachable through any returnable family, surfaced instead of
-   * silently omitted (REQ-108). Only populated on the language-families list.
-   */
-  unclassifiedPeoplesCount?: number;
-}
-
-export interface PaginatedResponse<T> {
-  data: T[];
-  meta: PaginationMeta;
-}
-
-// ==========================================
 // LANGUAGE FAMILY TYPES
 // ==========================================
-
-/**
- * Version légère pour les listes de familles linguistiques
- */
-export interface LanguageFamilySummary {
-  id: LanguageFamilyId;
-  nameFr: string;
-  nameEn?: string;
-  // Editorial classification (migration 009) — surfaced in list cards.
-  classificationStatus?: ClassificationStatus | null;
-  // Données agrégées pour l'affichage en liste
-  totalSpeakers?: number;
-  numberOfLanguages?: number;
-  geographicArea?: string;
-  peopleCount?: number;
-}
 
 /**
  * Version complète pour la page de détail d'une famille linguistique
@@ -136,23 +98,6 @@ export interface LanguageFamilyDetail {
 // ==========================================
 
 /**
- * Version légère pour les listes de peuples
- */
-export interface PeopleSummary {
-  id: PeopleId;
-  nameMain: string;
-  languageFamilyId: LanguageFamilyId;
-  languageFamilyName?: string;
-  currentCountries: CountryId[];
-  // Editorial classification (migration 009) — surfaced in list cards.
-  classificationStatus?: ClassificationStatus | null;
-  // Données agrégées pour l'affichage en liste
-  totalPopulation?: number;
-  countryCount?: number;
-  selfAppellation?: string;
-}
-
-/**
  * Version complète pour la page de détail d'un peuple
  * Inclut les 8 sections AFRIK
  */
@@ -204,74 +149,9 @@ export interface PeopleDetail {
   sources?: FicheSource[];
 }
 
-/**
- * Section culture simplifiée pour l'affichage
- */
-export interface CultureDisplaySection {
-  // A. Divinités et esprits
-  divinities?: {
-    supremeDeity?: string;
-    intermediates?: string[];
-    natureSpirits?: string;
-    ancestors?: string;
-  };
-
-  // B. Cosmologie
-  cosmology?: {
-    worldStructure?: string;
-    lifeDeathCycle?: string;
-    sacredTimeSpace?: string;
-  };
-
-  // C. Conception de la personne et de la nature
-  personAndNature?: {
-    bodyAndSpirit?: string;
-    totemicAnimals?: string[];
-    sacredPlants?: string[];
-  };
-
-  // D. Rites et pratiques spirituelles
-  rites?: {
-    initiation?: string;
-    funerary?: string;
-    agricultural?: string;
-    divination?: string;
-  };
-
-  // E. Symboles, arts, culture matérielle
-  arts?: {
-    symbols?: string[];
-    music?: string;
-    gastronomy?: string;
-  };
-
-  // F. Spiritualités contemporaines
-  contemporary?: {
-    christianity?: string;
-    islam?: string;
-    traditional?: string;
-    syncretism?: string;
-  };
-}
-
 // ==========================================
 // COUNTRY TYPES
 // ==========================================
-
-/**
- * Version légère pour les listes de pays
- */
-export interface CountrySummary {
-  id: CountryId; // ISO 3166-1 alpha-3
-  nameFr: string;
-  nameCommonFr: string;
-  nameOfficial?: string;
-  // Editorial classification (migration 009) — surfaced in list cards.
-  classificationStatus?: ClassificationStatus | null;
-  // Données agrégées pour l'affichage en liste
-  majorPeoplesCount?: number;
-  population?: number;
-}
 
 /**
  * Version complète pour la page de détail d'un pays
@@ -316,18 +196,6 @@ export interface CountryDetail {
 
 export type SearchEntityType =
   "country" | "people" | "language" | "languageFamily" | "person" | "patronyme";
-
-/**
- * Filtres de recherche
- */
-export interface SearchFilters {
-  query?: string;
-  type?: SearchEntityType;
-  languageFamilyId?: LanguageFamilyId;
-  countryId?: CountryId;
-  page?: number;
-  perPage?: number;
-}
 
 /**
  * Résultat de recherche individuel
@@ -444,15 +312,6 @@ export interface SearchResult {
 }
 
 /**
- * Réponse de recherche paginée
- */
-export interface SearchResponse {
-  data: SearchResult[];
-  meta: PaginationMeta;
-  filters: SearchFilters;
-}
-
-/**
  * Near-miss lead (REQ-125): what the search engine almost understood, shown
  * only when a search's `total` is 0. `type` reuses `SearchEntityType`'s
  * naming (`languageFamily`, not the API's `family`) so a lead can share
@@ -468,77 +327,6 @@ export interface SearchLead {
 }
 
 // ==========================================
-// STATISTICS TYPES
-// ==========================================
-
-/**
- * Statistiques globales pour la page d'accueil
- */
-export interface GlobalStats {
-  totalLanguageFamilies: number;
-  totalPeoples: number;
-  totalCountries: number;
-  totalPopulation: number;
-  lastUpdated?: string;
-}
-
-/**
- * Statistiques par famille linguistique
- */
-export interface LanguageFamilyStats {
-  id: LanguageFamilyId;
-  nameFr: string;
-  totalSpeakers: number;
-  numberOfPeoples: number;
-  percentage: number; // Pourcentage de la population africaine
-}
-
-/**
- * Distribution d'un peuple par pays
- */
-export interface PeopleDistribution {
-  countryId: CountryId;
-  countryName: string;
-  population: number;
-  percentage: number;
-}
-
-/**
- * Distribution des peuples dans un pays
- */
-export interface CountryPeopleDistribution {
-  peopleId: PeopleId;
-  peopleName: string;
-  population: number;
-  percentage: number;
-  languageFamilyId: LanguageFamilyId;
-}
-
-// ==========================================
-// NAVIGATION & UI TYPES
-// ==========================================
-
-/**
- * Élément de l'arbre de navigation hiérarchique.
- *
- * Superseded by the richer `HierarchyNode` in
- * `src/components/system/hierarchy-types.ts` (shared by the classification
- * tree and HierarchyTextIndex). Re-exported here for compatibility; import
- * from `@/components/system/hierarchy-types` in new code.
- */
-export type { HierarchyNode } from "@/components/system/hierarchy-types";
-
-/**
- * Breadcrumb pour la navigation
- */
-export interface BreadcrumbItem {
-  type: "home" | "family" | "people" | "country" | "search";
-  id?: string;
-  label: string;
-  href: string;
-}
-
-// ==========================================
 // API ERROR TYPES
 // ==========================================
 
@@ -546,62 +334,6 @@ export interface ApiError {
   code: string;
   message: string;
   details?: Record<string, unknown>;
-}
-
-export interface ApiErrorResponse {
-  error: ApiError;
-}
-
-// ==========================================
-// LOADER TYPES
-// ==========================================
-
-/**
- * État de chargement pour les composants
- */
-export interface LoadingState<T> {
-  data: T | null;
-  isLoading: boolean;
-  error: ApiError | null;
-}
-
-/**
- * Options de pagination pour les requêtes
- */
-export interface PaginationOptions {
-  page?: number;
-  perPage?: number;
-}
-
-/**
- * Options de filtrage pour les peuples
- */
-export interface PeopleFilterOptions extends PaginationOptions {
-  languageFamilyId?: LanguageFamilyId;
-  countryId?: CountryId;
-  search?: string;
-  letter?: string;
-}
-
-// ==========================================
-// HELPER TYPES
-// ==========================================
-
-/**
- * Mapping des noms de pays (pour l'affichage)
- */
-export type CountryNameMap = Record<CountryId, string>;
-
-/**
- * Mapping des noms de familles linguistiques (pour l'affichage)
- */
-export type LanguageFamilyNameMap = Record<LanguageFamilyId, string>;
-
-/**
- * Type générique pour les réponses API single item
- */
-export interface SingleItemResponse<T> {
-  data: T;
 }
 
 // ==========================================

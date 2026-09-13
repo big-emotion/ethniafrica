@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { AFRICA_ADMIN0 } from "@/lib/atlas/assets/africaAdmin0";
+import { ALPHA3_TO_ALPHA2 } from "@/lib/isoCountryCodes";
 import {
-  ALPHA3_TO_ALPHA2,
   COUNTRIES_WITHOUT_ISO_FLAG,
   flagFromISO3,
   NATURAL_EARTH_ALIASES,

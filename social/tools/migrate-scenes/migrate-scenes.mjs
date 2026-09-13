@@ -29,34 +29,16 @@ import fs from "node:fs";
 import path from "node:path";
 
 import { imageSize } from "../migrate-cards/image-size.mjs";
+import {
+  ACCENT_PAR_PILIER,
+  PILIER_DEFAUT,
+  decomposerCredit,
+  dossiersASujet,
+  lireArguments,
+} from "../deck-migration.mjs";
 import { productionsRoot } from "../paths.mjs";
 
 const PROJETS = productionsRoot();
-
-const LICENCE =
-  /(CC0|CC BY-SA \d(?:\.\d)?|CC BY-ND[\w.\- ]*|CC BY-NC[\w.\- ]*|CC BY \d(?:\.\d)?|domaine public|public domain|licence ouverte|open licence)/i;
-
-const PILIER_DEFAUT = "L'atlas";
-const ACCENT_PAR_PILIER = {
-  "L'atlas": "ocre",
-  "Les dossiers": "teal",
-  Jouer: "perv",
-};
-
-function decomposerCredit(lignes) {
-  const texte = (lignes ?? []).join(" · ");
-  const licence = texte.match(LICENCE)?.[1] ?? null;
-  const [premiere, ...reste] = lignes ?? [];
-  const derniere = reste.length ? reste[reste.length - 1] : "";
-  return {
-    credit: (premiere ?? "").trim(),
-    depot: derniere
-      .replace(LICENCE, "")
-      .replace(/[·,\s]+$/, "")
-      .trim(),
-    licence,
-  };
-}
 
 /** The series line, which the retired schema repeated on every scene. */
 function serieDuDeck(doc) {
@@ -293,18 +275,11 @@ function migrerProjet(dossier, essai, rapport) {
   }
 }
 
-const args = process.argv.slice(2);
-const essai = args.includes("--essai");
-const sujet = args.find((a) => !a.startsWith("--"));
+const { essai, sujet } = lireArguments(process.argv.slice(2));
 
 const rapport = { migres: [], dejaFaits: [], rejets: [], sansLicence: [] };
 
-const dossiers = sujet
-  ? [path.join(PROJETS, sujet)]
-  : fs
-      .readdirSync(PROJETS, { withFileTypes: true })
-      .filter((e) => e.isDirectory())
-      .map((e) => path.join(PROJETS, e.name));
+const dossiers = dossiersASujet(PROJETS, sujet, { ignorerSouligne: false });
 
 for (const d of dossiers) migrerProjet(d, essai, rapport);
 

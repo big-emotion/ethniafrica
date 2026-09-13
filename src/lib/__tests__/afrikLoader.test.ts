@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
-import { getLanguageFamilies, search, searchWithLeads } from "../afrikLoader";
+import { search, searchWithLeads } from "../afrikLoader";
 
 // Mock fetch globally
 const mockFetch = vi.fn();
@@ -42,117 +42,6 @@ describe("afrikLoader", () => {
 
   afterEach(() => {
     vi.resetAllMocks();
-  });
-
-  describe("getLanguageFamilies", () => {
-    it("should return paginated language families", async () => {
-      const mockResponse = {
-        data: [
-          {
-            id: "FLG_BANTU",
-            name_fr: "Bantou",
-            name_en: "Bantu",
-            content: {
-              generalInfo: {
-                totalSpeakers: 350000000,
-                numberOfLanguages: 500,
-                geographicArea: "Sub-Saharan Africa",
-              },
-              associatedPeoples: [{ id: "PPL_SHONA" }, { id: "PPL_ZULU" }],
-            },
-          },
-        ],
-        meta: {
-          total: 24,
-          page: 1,
-          perPage: 20,
-        },
-      };
-
-      mockFetch.mockResolvedValueOnce({
-        ok: true,
-        json: () => Promise.resolve(mockResponse),
-      });
-
-      const result = await getLanguageFamilies(1, 20);
-
-      expect(mockFetch).toHaveBeenCalledWith(
-        "/api/v2/language-families?page=1&perPage=20"
-      );
-      expect(result.data).toHaveLength(1);
-      expect(result.data[0].id).toBe("FLG_BANTU");
-      expect(result.data[0].nameFr).toBe("Bantou");
-      expect(result.meta.total).toBe(24);
-    });
-
-    // @req REQ-108
-    it("should read peopleCount from the row-computed API field, not fiche-declared content", async () => {
-      const mockResponse = {
-        data: [
-          {
-            id: "FLG_BANTU",
-            name_fr: "Bantou",
-            peopleCount: 28,
-            content: {
-              // Stale fiche-declared list — must not be used for the count.
-              associatedPeoples: [{ id: "PPL_SHONA" }],
-            },
-          },
-          {
-            id: "FLG_EMPTY",
-            name_fr: "Empty",
-            peopleCount: 0,
-            content: {},
-          },
-        ],
-        meta: { total: 2, page: 1, perPage: 20 },
-      };
-
-      mockFetch.mockResolvedValueOnce({
-        ok: true,
-        json: () => Promise.resolve(mockResponse),
-      });
-
-      const result = await getLanguageFamilies(1, 20);
-
-      expect(result.data[0].peopleCount).toBe(28);
-      // A real zero must render, not be dropped as undefined.
-      expect(result.data[1].peopleCount).toBe(0);
-    });
-
-    // @req REQ-108
-    it("should carry unclassifiedPeoplesCount through to the frontend meta", async () => {
-      mockFetch.mockResolvedValueOnce({
-        ok: true,
-        json: () =>
-          Promise.resolve({
-            data: [],
-            meta: {
-              total: 20,
-              page: 1,
-              perPage: 20,
-              unclassifiedPeoplesCount: 64,
-            },
-          }),
-      });
-
-      const result = await getLanguageFamilies(1, 20);
-
-      expect(result.meta.unclassifiedPeoplesCount).toBe(64);
-    });
-
-    it("should return empty data on error", async () => {
-      mockFetch.mockResolvedValueOnce({
-        ok: false,
-        status: 500,
-        json: () => Promise.resolve({ error: { message: "Server error" } }),
-      });
-
-      const result = await getLanguageFamilies();
-
-      expect(result.data).toHaveLength(0);
-      expect(result.meta.total).toBe(0);
-    });
   });
 
   describe("search", () => {
@@ -463,28 +352,6 @@ describe("afrikLoader", () => {
         person: 0,
         patronyme: 0,
       });
-    });
-  });
-
-  describe("error handling", () => {
-    it("should handle network errors gracefully", async () => {
-      mockFetch.mockRejectedValueOnce(new Error("Network error"));
-
-      const result = await getLanguageFamilies();
-
-      expect(result.data).toHaveLength(0);
-      expect(result.meta.total).toBe(0);
-    });
-
-    it("should handle invalid JSON response", async () => {
-      mockFetch.mockResolvedValueOnce({
-        ok: true,
-        json: () => Promise.reject(new Error("Invalid JSON")),
-      });
-
-      const result = await getLanguageFamilies();
-
-      expect(result.data).toHaveLength(0);
     });
   });
 });

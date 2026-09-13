@@ -49,7 +49,11 @@ function rangedTable(rows: Array<Record<string, unknown>>) {
   query.eq = vi.fn(chain);
   query.in = vi.fn(chain);
   query.order = vi.fn(chain);
-  query.range = vi.fn(() => Promise.resolve({ data: rows, error: null }));
+  // Answers the range it is asked for: the walks end on an empty page, so a
+  // double serving every row to every range would never run dry.
+  query.range = vi.fn((from: number, to: number) =>
+    Promise.resolve({ data: rows.slice(from, to + 1), error: null })
+  );
   return query;
 }
 

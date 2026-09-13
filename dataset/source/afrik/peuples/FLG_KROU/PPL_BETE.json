@@ -133,7 +133,7 @@
         "title": "Ethnologue – Bété, Gagnoa (btg)",
         "url": "https://www.ethnologue.com/language/btg/",
         "tier": "official",
-        "notes": "Supports the corrected ISO 639-3 code."
+        "notes": "Supports the ISO 639-3 code btg."
       },
       {
         "title": "Tchetche, Mathieu Obou – L'exemple des effets du KUIZI chez le peuple Bété de Côte d'Ivoire. Revue SLC, 2023",
@@ -155,7 +155,7 @@
   },
   "_translation": {
     "deferred": {
-      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
     }
   }
 }

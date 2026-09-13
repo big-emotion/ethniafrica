@@ -160,7 +160,7 @@ verification. On failure, keep `dataset/source/afrik/logs/migration_errors_<date
 diagnosis, then restore the pre-sync snapshot if the target is not internally consistent.
 
 `.github/workflows/production-data-sync.yml` runs this same validate → preview → apply sequence
-automatically after a successful Vercel _Production_ deployment of `main`. If you are loading by
+automatically after a successful OVH production deploy of `main`. If you are loading by
 hand shortly after a deploy, check whether that workflow has already done it — see
 [the automated production sync](#the-automated-production-sync) for the secrets it needs.
 
@@ -249,6 +249,55 @@ repository secrets, which are **recette's** and are what the rest of CI uses.
 With either secret missing the job **fails** and names the one that is absent. It does not skip:
 a skipped sync leaves the production corpus stale while the deploy reports success, which is
 exactly the failure mode this workflow used to have.
+
+---
+
+## Does the database serve what git holds?
+
+`scripts/afrik/verifyCorpusInDatabase.ts` answers that question on its own, read-only, and is
+the last step of the sync job in both `recette-data-sync.yml` and `production-data-sync.yml`:
+
+```bash
+npx tsx --conditions=react-server scripts/afrik/verifyCorpusInDatabase.ts --target=<recette|production>
+```
+
+It needs Node ≥ 22 for the same reason the loader does, and resolves `--target` through the same
+guard, with the same credentials.
+
+The loader's own post-sync check compares the `content` of three tables, and only when the apply
+step runs to completion. A load that stops short, or never starts, reports nothing — recette once
+served a frozen corpus for days while git advanced, with no red run anywhere. The verifier does
+not depend on the load having run. For each table of the entity backbone — `afrik_language_families`,
+`afrik_languages`, `afrik_peoples`, `afrik_people_languages`, `afrik_countries`,
+`afrik_people_countries`, `afrik_patronymes` — it:
+
+- compares the row count with what the JSON loaders produce. **Both directions fail.** The sync
+  only upserts, so a row git dropped is still served, and an extra row is as much a divergence
+  as a missing one;
+- takes a deterministic sample — keys sorted, every Nth, about 50 per table (per people for the
+  two relation tables) — and compares a hash of exactly the columns the loader writes. A
+  mismatch names the key and, for a single row, the columns that differ.
+
+The column lists restate the loader's upserts; `verifyCorpusInDatabase.test.ts` reads those
+upserts back and fails when the loader starts writing a column the verifier does not compare.
+
+### Reading a red verification
+
+| Line                                                         | Meaning                                                                                                                                                                                   |
+| ------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `row count: git holds N, the database has M` with `M > N`    | Rows the corpus no longer declares. For the three entity tables, preview then `--prune --apply` (see [Retiring a people identifier](#retiring-a-people-identifier)); relation rows below. |
+| `row count: … M < N`, or `KEY: absent from the database`     | The load did not deliver: read the loader's error report artifact, fix, re-run the sync.                                                                                                  |
+| `KEY: differs in content, …`                                 | The database serves an older version of that fiche: the load did not reach it or failed on it.                                                                                            |
+| `PPL_X: git holds 2 row(s), the database 3, and they differ` | A relation git no longer declares for a people that still exists. No tool removes it: `--prune` covers only the three entity tables. Delete it by hand, recette first.                    |
+
+Never make the check pass by loosening it. A red verification means readers are served something
+git does not hold.
+
+Measured on recette on 2026-09-12, before the step existed: every sampled row of every table
+hashed identically, and four counts were over — `afrik_peoples` 804 against 776,
+`afrik_languages` 763 against 762, `afrik_people_languages` 1 224 against 1 189 and
+`afrik_people_countries` 1 607 against 1 485. The first recette sync after this step lands is red
+until those rows are pruned.
 
 ---
 

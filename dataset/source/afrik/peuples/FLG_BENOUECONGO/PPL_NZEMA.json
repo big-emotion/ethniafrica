@@ -105,13 +105,13 @@
         "title": "Glottolog 5.2 — Nzima [nzim1238]",
         "url": "https://glottolog.org/resource/languoid/id/nzim1238",
         "tier": "official",
-        "notes": "Confirms glottocode nzim1238 and ISO 639-3 nzi, consistent with the fiche's recorded language codes."
+        "notes": "Confirms glottocode nzim1238 and ISO 639-3 nzi, consistent with the fiche's existing isoCodes."
       }
     ]
   },
   "_translation": {
     "deferred": {
-      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
     }
   }
 }

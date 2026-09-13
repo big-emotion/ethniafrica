@@ -1,6 +1,7 @@
 import { mapRowToSource } from "@/api/v2/services/sourceMapper";
 import type { Source } from "@/api/v2/schemas/sources";
 import { createServerClient } from "@/lib/supabase/server";
+import { walkRanges } from "@/lib/supabase/queries/walkRanges";
 import { escapeSearchTerm } from "@/lib/supabase/searchTerm";
 import { sourceStandingLabel } from "@/lib/glossaire/vocabularies";
 import {
@@ -99,7 +100,7 @@ export const SOURCES_FACET_PAGE_SIZES = [20, 50, 100] as const;
  */
 const CHOICES_PAGE_SIZE = 1000;
 
-/** Bounds the loop against a server that never returns a short page. */
+/** Bounds the walk against a server that ignores `.range()` and never runs dry. */
 const CHOICES_MAX_PAGES = 50;
 
 const SORT_COLUMNS: Record<
@@ -129,25 +130,22 @@ interface ChoiceRow {
  */
 async function readEveryChoiceRow(): Promise<ChoiceRow[]> {
   const supabase = createServerClient();
-  const rows: ChoiceRow[] = [];
 
-  for (let page = 0; page < CHOICES_MAX_PAGES; page += 1) {
-    const from = page * CHOICES_PAGE_SIZE;
-    const { data, error } = await supabase
-      .from("sources")
-      .select(CHOICE_COLUMNS)
-      .order("id")
-      .range(from, from + CHOICES_PAGE_SIZE - 1);
+  const walk = await walkRanges(
+    async (from, to) => {
+      const { data, error } = await supabase
+        .from("sources")
+        .select(CHOICE_COLUMNS)
+        .order("id")
+        .range(from, to);
 
-    if (error) throw new Error(error.message);
+      if (error) throw new Error(error.message);
+      return (data ?? []) as ChoiceRow[];
+    },
+    { pageSize: CHOICES_PAGE_SIZE, maxPages: CHOICES_MAX_PAGES }
+  );
 
-    const batch = (data ?? []) as ChoiceRow[];
-    rows.push(...batch);
-    // A short page is the end of the table; a full one may not be.
-    if (batch.length < CHOICES_PAGE_SIZE) break;
-  }
-
-  return rows;
+  return walk.rows;
 }
 
 function decadeOf(year: number): number {

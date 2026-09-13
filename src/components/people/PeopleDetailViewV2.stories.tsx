@@ -3,6 +3,7 @@ import { AutonymExonymHeading } from "@/components/ui/AutonymExonymHeading";
 import { PeopleFicheHead } from "./PeopleFicheHead";
 import { PeopleDetailViewV2 } from "./PeopleDetailViewV2";
 import type { PeopleDetail } from "@/types/afrik-frontend";
+
 import { PeopleRelatedPeoplesSection } from "./PeopleRelatedPeoplesSection";
 import { PeopleCountriesSection } from "./PeopleCountriesSection";
 import { FicheSources } from "@/components/fiche/FicheSources";
@@ -222,6 +223,7 @@ export const Hero_Desktop: Story = {
 };
 
 // ==========================================
+
 // PeopleRelatedPeoplesSection — 430 / 720 / 1200
 // ==========================================
 

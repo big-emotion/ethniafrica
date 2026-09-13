@@ -17,6 +17,7 @@ import { z } from "zod";
  * extension) — the fabric's entity_type column is TEXT, so this is an
  * additive union change, not a DB schema change.
  */
+// @req REQ-084
 export const confidenceEntityTypeSchema = z.enum([
   "people",
   "language-family",
@@ -26,6 +27,7 @@ export const confidenceEntityTypeSchema = z.enum([
 
 export type ConfidenceEntityType = z.infer<typeof confidenceEntityTypeSchema>;
 
+// @req REQ-084
 export const confidenceEntityIdSchema = z
   .string()
   .min(1)
@@ -40,6 +42,7 @@ const entityTypePrefixes: Record<ConfidenceEntityType, string> = {
   migration: "MGR_",
 };
 
+// @req REQ-084
 export const confidenceParamsSchema = z
   .object({
     entityType: confidenceEntityTypeSchema,
@@ -56,8 +59,7 @@ export const confidenceParamsSchema = z
     }
   });
 
-export type ConfidenceParams = z.infer<typeof confidenceParamsSchema>;
-
+// @req REQ-084
 export const confidenceRecordSchema = z.object({
   entityType: confidenceEntityTypeSchema,
   entityId: z.string(),

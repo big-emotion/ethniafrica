@@ -34,21 +34,6 @@ const en = {
     wholeArea: "The whole continent",
     areaNoun: "the continent",
   },
-  projection: {
-    heading: "The map and what it conceals",
-    label: "Projection",
-    equalArea: "Equal area",
-    equalAreaAria:
-      "Equal-area world map: every reference circle covers the same area on the globe and occupies the same area on screen.",
-    mercatorAria: (inflation: string) =>
-      `Mercator world map: every reference circle covers the same area on the globe, but the circle at 60 degrees latitude is drawn ${inflation} times larger than the circle at the equator.`,
-    equalAreaNote:
-      "All occupy the same area on screen. Their shape changes, not their area.",
-    mercatorNote: (inflation: string) =>
-      `At 60° latitude, an area is drawn ${inflation} times too large.`,
-    explanation:
-      "The twenty-five circles all cover exactly the same area on the globe. Every difference visible between them was added by the projection.",
-  },
 };
 
 type GamesCopy = typeof en;
@@ -87,21 +72,6 @@ const fr: GamesCopy = {
       "Carte de l'Afrique, à plat : ce navigateur ne peut pas afficher le globe.",
     wholeArea: "Tout le continent",
     areaNoun: "le continent",
-  },
-  projection: {
-    heading: "La carte, et ce qu'elle vous cache",
-    label: "Projection",
-    equalArea: "Surfaces vraies",
-    equalAreaAria:
-      "Planisphère à surfaces vraies : les cercles témoins couvrent tous la même surface sur le globe et en occupent autant à l'écran.",
-    mercatorAria: (inflation) =>
-      `Planisphère de Mercator : les cercles témoins couvrent tous la même surface sur le globe, mais celui de 60 degrés de latitude est dessiné ${inflation} fois plus grand que celui de l'équateur.`,
-    equalAreaNote:
-      "Tous occupent la même surface à l'écran. Leur forme change, pas leur surface.",
-    mercatorNote: (inflation) =>
-      `À 60° de latitude, une surface est dessinée ${inflation} fois trop grande.`,
-    explanation:
-      "Les vingt-cinq cercles couvrent tous exactement la même surface sur le globe. Toute différence que vous voyez entre eux a été ajoutée par la projection.",
   },
 };
 

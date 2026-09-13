@@ -10,14 +10,21 @@ import { join } from "path";
 import { logger } from "@/lib/api/logger";
 import { normalizeToKey } from "@/lib/normalize";
 import { parseNameRecordFile } from "@/lib/afrik/parsers/nameRecordParser";
+import {
+  findLatestOrCreatePlaceholderRevision,
+  findOrCreateAssertion,
+  supabaseErrorMessage,
+  upsertSource,
+} from "@/lib/afrik/loaders/provenanceWriter";
 import { createAdminClient } from "@/lib/supabase/admin";
-import type {
-  NameRecordDossier,
-  NameRecordEntry,
-  NameRecordSource,
-} from "@/types/names";
+import type { NameRecordDossier, NameRecordEntry } from "@/types/names";
 
 const AFRIK_ROOT = join(process.cwd(), "dataset/source/afrik");
+
+const PLACEHOLDER_REVISION_SNAPSHOT = {
+  source: "nameRecordJsonLoader",
+  note: "Placeholder revision for name-record assertions; dataset/source/afrik/noms/ is the canonical source, not a moderation-authored fiche revision.",
+};
 
 export type AdminClient = ReturnType<typeof createAdminClient>;
 
@@ -38,10 +45,6 @@ function isIllustrative(raw: unknown): boolean {
     raw !== null &&
     (raw as { _meta?: { illustrative?: boolean } })._meta?.illustrative === true
   );
-}
-
-function errorMessage(value: { message: string } | null | undefined): string {
-  return value?.message ?? "unknown Supabase error";
 }
 
 /**
@@ -92,141 +95,6 @@ export function loadAllNameRecordDossiers(
   return dossiers;
 }
 
-async function upsertSource(
-  supabase: AdminClient,
-  source: NameRecordSource
-): Promise<{ id: string } | { error: string }> {
-  const { data, error } = await supabase
-    .from("sources")
-    .upsert(
-      {
-        title: source.title,
-        author: source.author,
-        year: source.year,
-        url: source.url,
-        tier: source.tier,
-        notes: source.notes ?? null,
-        added_at: new Date().toISOString(),
-      },
-      { onConflict: "title" }
-    )
-    .select("id")
-    .single();
-
-  if (error || !data) {
-    return { error: errorMessage(error) };
-  }
-  return { id: data.id as string };
-}
-
-/**
- * `assertions.fiche_revision_id` is a NOT NULL FK to `fiche_revisions`
- * (migration 020) — every assertion has to be anchored to a published
- * snapshot. The moderation pipeline (migration 051) creates that snapshot
- * as part of publishing a reviewed revision; a noms/ dossier has no such
- * revision, so this loader stands up a single placeholder `fiche_revisions`
- * row per entity (version 1) and reuses it across every name entry in that
- * entity's dossier — same find-or-create shape as `findOrCreateAssertion`.
- */
-async function findOrCreateFicheRevision(
-  supabase: AdminClient,
-  entityType: NameRecordDossier["entityType"],
-  entityId: string
-): Promise<{ id: string } | { error: string }> {
-  const { data: existing, error: selectError } = await supabase
-    .from("fiche_revisions")
-    .select("id")
-    .eq("entity_type", entityType)
-    .eq("entity_id", entityId)
-    .order("version", { ascending: false })
-    .limit(1)
-    .maybeSingle();
-
-  if (selectError) {
-    return { error: errorMessage(selectError) };
-  }
-  if (existing) {
-    return { id: existing.id as string };
-  }
-
-  const { data: inserted, error: insertError } = await supabase
-    .from("fiche_revisions")
-    .insert({
-      entity_type: entityType,
-      entity_id: entityId,
-      version: 1,
-      content_snapshot: {
-        source: "nameRecordJsonLoader",
-        note: "Placeholder revision for name-record assertions; dataset/source/afrik/noms/ is the canonical source, not a moderation-authored fiche revision.",
-      },
-      published_at: new Date().toISOString(),
-    })
-    .select("id")
-    .single();
-
-  if (insertError || !inserted) {
-    return { error: errorMessage(insertError) };
-  }
-  return { id: inserted.id as string };
-}
-
-/**
- * assertions has no unique constraint on (entity_type, entity_id,
- * field_path), so idempotency on re-run is enforced here via
- * select-before-write rather than a database guarantee.
- */
-async function findOrCreateAssertion(
-  supabase: AdminClient,
-  entityType: NameRecordDossier["entityType"],
-  entityId: string,
-  fieldPath: string,
-  statement: string,
-  sourceIds: string[],
-  ficheRevisionId: string
-): Promise<{ id: string } | { error: string }> {
-  const { data: existing, error: selectError } = await supabase
-    .from("assertions")
-    .select("id")
-    .eq("entity_type", entityType)
-    .eq("entity_id", entityId)
-    .eq("field_path", fieldPath)
-    .maybeSingle();
-
-  if (selectError) {
-    return { error: errorMessage(selectError) };
-  }
-
-  if (existing) {
-    const { error: updateError } = await supabase
-      .from("assertions")
-      .update({ statement, source_ids: sourceIds })
-      .eq("id", existing.id);
-
-    if (updateError) {
-      return { error: errorMessage(updateError) };
-    }
-    return { id: existing.id as string };
-  }
-
-  const { data: inserted, error: insertError } = await supabase
-    .from("assertions")
-    .insert({
-      entity_type: entityType,
-      entity_id: entityId,
-      field_path: fieldPath,
-      statement,
-      source_ids: sourceIds,
-      fiche_revision_id: ficheRevisionId,
-    })
-    .select("id")
-    .single();
-
-  if (insertError || !inserted) {
-    return { error: errorMessage(insertError) };
-  }
-  return { id: inserted.id as string };
-}
-
 async function upsertNameRecordEntry(
   supabase: AdminClient,
   entityType: NameRecordDossier["entityType"],
@@ -239,7 +107,14 @@ async function upsertNameRecordEntry(
 
   const sourceIds: string[] = [];
   for (const source of entry.sources) {
-    const result = await upsertSource(supabase, source);
+    const result = await upsertSource(supabase, {
+      title: source.title,
+      author: source.author,
+      year: source.year,
+      url: source.url,
+      tier: source.tier,
+      notes: source.notes ?? null,
+    });
     if ("error" in result) {
       report.errors.push(
         `${recordLabel}: source "${source.title}" — ${result.error}`
@@ -249,10 +124,13 @@ async function upsertNameRecordEntry(
     sourceIds.push(result.id);
   }
 
-  const ficheRevision = await findOrCreateFicheRevision(
+  // A noms/ dossier annotates an entity that owns its own revisions, so it
+  // reuses the latest one across every name entry rather than publishing one.
+  const ficheRevision = await findLatestOrCreatePlaceholderRevision(
     supabase,
     entityType,
-    entityId
+    entityId,
+    PLACEHOLDER_REVISION_SNAPSHOT
   );
   if ("error" in ficheRevision) {
     report.errors.push(
@@ -261,16 +139,14 @@ async function upsertNameRecordEntry(
     return;
   }
 
-  const fieldPath = `names.${entry.nameType}.${normalizeToKey(entry.nameText)}`;
-  const assertion = await findOrCreateAssertion(
-    supabase,
+  const assertion = await findOrCreateAssertion(supabase, {
     entityType,
     entityId,
-    fieldPath,
-    entry.nameText,
+    fieldPath: `names.${entry.nameType}.${normalizeToKey(entry.nameText)}`,
+    statement: entry.nameText,
     sourceIds,
-    ficheRevision.id
-  );
+    ficheRevisionId: ficheRevision.id,
+  });
   if ("error" in assertion) {
     report.errors.push(`${recordLabel}: assertion — ${assertion.error}`);
     return;
@@ -297,7 +173,7 @@ async function upsertNameRecordEntry(
   );
 
   if (nameRecordError) {
-    const reason = errorMessage(nameRecordError);
+    const reason = supabaseErrorMessage(nameRecordError);
     logger.warn(`name_records row rejected for ${recordLabel}`, { reason });
     report.dropped.push(`${recordLabel}: ${reason}`);
     return;

@@ -1109,7 +1109,8 @@
 .afh-name-pills a {
   display: inline-flex;
   align-items: center;
-  min-height: 32px;
+  min-height: 44px;
+  min-width: 44px;
   padding: 4px 12px;
   font-weight: 600;
   color: var(--accent-ink, var(--afh-text));

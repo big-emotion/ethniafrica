@@ -61,7 +61,7 @@
           "title": "Queen Nanny of the Maroons (? - 1733)",
           "url": "https://blackpast.org/global-african-history/queen-nanny-maroons-1733/",
           "tier": "referenced",
-          "notes": "BlackPast.org : encyclopédie en ligne à comité éditorial et auteurs identifiés (fondée par un historien universitaire) ; source de l'origine ashanti attribuée à Nanny dans l'historiographie jamaïcaine. Plafonnée volontairement à « referenced » pour cette fiche (voir directive éditoriale ETNI-1388 : aucune source « official » n'est utilisée dans ce fichier)."
+          "notes": "BlackPast.org : encyclopédie en ligne à comité éditorial et auteurs identifiés (fondée par un historien universitaire) ; source de l'origine ashanti attribuée à Nanny dans l'historiographie jamaïcaine."
         },
         {
           "title": "Maroon heritage of Moore Town — Representative List of the Intangible Cultural Heritage of Humanity",
@@ -143,7 +143,7 @@
   },
   "_translation": {
     "deferred": {
-      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+      "en": "English translation is deferred: none of the 776 people records has an English sidecar, so translating this one alone would make it the atlas's only English people record. It follows the people corpus's first translation pass."
     }
   }
 }

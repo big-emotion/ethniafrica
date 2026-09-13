@@ -345,7 +345,7 @@
   },
   "_translation": {
     "deferred": {
-      "en": "English translation is deferred until this country fiche receives a complete editorial translation."
+      "en": "English translation is deferred: 7 of the 54 country records have an English sidecar, and this one follows the country corpus's translation pass."
     }
   }
 }

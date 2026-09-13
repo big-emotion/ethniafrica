@@ -52,76 +52,26 @@
  *               $ref: '#/components/schemas/ApiErrorEnvelope'
  */
 
-import { NextRequest } from "next/server";
 import { getLanguageFamilyTreeHandler } from "@/api/v2/handlers/languageFamilyTree";
 import { languageFamilyTreeParamSchema } from "@/api/v2/schemas/languageFamilyTree";
-import { createApiError } from "@/api/v2/utils/response";
-import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
-import { logger } from "@/lib/api/logger";
+import { corpusDetailRoute } from "@/api/v2/utils/corpusRoute";
+import { corsOptionsResponse } from "@/lib/api/cors";
 
-const CACHE_CONTROL = "s-maxage=86400";
+// @req REQ-084
+export const GET = corpusDetailRoute({
+  path: "/api/v2/language-families/[id]/tree",
+  param: "id",
+  isValidId: (id) => languageFamilyTreeParamSchema.safeParse({ id }).success,
+  invalidIdMessage: "Invalid language family ID format",
+  servesLang: false,
+  // The skeleton is a day-cached derived view, deliberately longer than the
+  // records it counts; not part of the corpus cache class.
+  cacheControl: "s-maxage=86400",
+  rejectedLog: "Language family tree request rejected",
+  resolve: (id) => getLanguageFamilyTreeHandler(id),
+});
 
-export async function GET(
-  _request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
-) {
-  const startTime = Date.now();
-  const { id } = await params;
-
-  try {
-    logger.info("GET /api/v2/language-families/[id]/tree", { id });
-
-    if (!languageFamilyTreeParamSchema.safeParse({ id }).success) {
-      logger.warn("Invalid language family ID format", { id });
-      return jsonWithCors(
-        createApiError({
-          code: "VALIDATION_ERROR",
-          message: "Invalid language family ID format",
-          field: "id",
-        }),
-        { status: 400 }
-      );
-    }
-
-    const result = await getLanguageFamilyTreeHandler(id);
-
-    if (result.ok === false) {
-      logger.warn("Language family tree request rejected", {
-        id,
-        code: result.code,
-      });
-      return jsonWithCors(
-        createApiError({ code: result.code, message: result.message }),
-        { status: 404 }
-      );
-    }
-
-    const response = jsonWithCors(result.envelope, {
-      headers: { "Cache-Control": CACHE_CONTROL },
-    });
-
-    logger.info("GET /api/v2/language-families/[id]/tree completed", {
-      id,
-      duration: Date.now() - startTime,
-      status: 200,
-    });
-
-    return response;
-  } catch (error) {
-    logger.error(`Error in GET /api/v2/language-families/${id}/tree`, error, {
-      id,
-      duration: Date.now() - startTime,
-    });
-    return jsonWithCors(
-      createApiError({
-        code: "INTERNAL_ERROR",
-        message: "Internal server error",
-      }),
-      { status: 500 }
-    );
-  }
-}
-
+// @req REQ-084
 export function OPTIONS() {
   return corsOptionsResponse();
 }

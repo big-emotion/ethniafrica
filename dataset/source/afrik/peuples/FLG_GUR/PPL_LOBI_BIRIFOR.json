@@ -123,7 +123,7 @@
   },
   "_translation": {
     "deferred": {
-      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+      "en": "English translation is deferred: none of the 776 people records has an English sidecar, so translating this one alone would make it the atlas's only English people record. It follows the people corpus's first translation pass."
     }
   }
 }

@@ -63,10 +63,6 @@ const en = {
   viewSources: "view sources",
   editorialConfidence: (name: string) => `Editorial confidence — ${name}`,
   scoreExplainer: "how this score is calculated",
-  share: "Share",
-  copyLink: "Copy link",
-  copied: "copied",
-  selectManually: "select manually",
   metadataTitle: (labels: string) => `Comparison: ${labels}`,
   metadataDescription: (labels: string) =>
     `Comparison of AFRIK pages: ${labels}. Identity, languages, demography and editorial confidence side by side.`,
@@ -152,10 +148,6 @@ const fr: CompareCopy = {
   viewSources: "voir les sources",
   editorialConfidence: (name) => `Confiance éditoriale — ${name}`,
   scoreExplainer: "comment ce score est calculé",
-  share: "Partager",
-  copyLink: "Copier le lien",
-  copied: "copié",
-  selectManually: "sélectionner manuellement",
   metadataTitle: (labels) => `Comparaison : ${labels}`,
   metadataDescription: (labels) =>
     `Comparaison de pages AFRIK : ${labels}. Identité, langues, démographie et confiance éditoriale côte à côte.`,

@@ -91,6 +91,7 @@ const en = {
       },
     },
     nameCount: (count: number) => `${count} ${count === 1 ? "name" : "names"}`,
+
     peopleEmpty:
       "The atlas does not yet attach any name to this people. The names dimension has just opened and covers only a small part of the atlas.",
     peopleUnavailable:
@@ -214,6 +215,7 @@ const fr: PatronymesCopy = {
       },
     },
     nameCount: (count) => `${count} ${count === 1 ? "nom" : "noms"}`,
+
     peopleEmpty:
       "L’atlas ne rattache encore aucun nom à ce peuple. La dimension des noms vient d'ouvrir et ne couvre qu'une petite part de l'atlas.",
     peopleUnavailable:

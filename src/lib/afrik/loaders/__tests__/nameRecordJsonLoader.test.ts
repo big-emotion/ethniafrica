@@ -653,4 +653,53 @@ describe("nameRecordJsonLoader", () => {
       warnSpy.mockRestore();
     });
   });
+
+  // The loaders once carried private copies of the same writers; these pin the
+  // row each one actually sends, so a shared writer cannot quietly widen or
+  // narrow a payload.
+  describe("provenance rows", () => {
+    // @req REQ-057
+    it("sends author and year on the source and stamps the placeholder revision it creates", async () => {
+      const database = createSupabaseDouble();
+
+      await loadNameRecords(database.client as never, [
+        patronymeDossierWithSources([dialloVariantSource]),
+      ]);
+
+      expect(Object.keys(database.sources[0]).sort()).toEqual([
+        "added_at",
+        "author",
+        "id",
+        "notes",
+        "tier",
+        "title",
+        "url",
+        "year",
+      ]);
+      expect(database.ficheRevisions[0]).toHaveProperty("published_at");
+      expect(database.ficheRevisions[0]).toMatchObject({
+        content_snapshot: { source: "nameRecordJsonLoader" },
+      });
+    });
+
+    // A name dossier annotates an entity whose revisions moderation owns, so
+    // it must attach to the latest one rather than overwrite version 1.
+    // @req REQ-057
+    it("attaches assertions to the entity's latest existing revision without writing one", async () => {
+      const database = createSupabaseDouble();
+      database.ficheRevisions.push({
+        id: "rev-moderated",
+        entity_type: "patronyme",
+        entity_id: "PAT_DIALLO",
+        version: 3,
+      });
+
+      await loadNameRecords(database.client as never, [
+        patronymeDossierWithSources([dialloVariantSource]),
+      ]);
+
+      expect(database.ficheRevisions).toHaveLength(1);
+      expect(database.assertions[0].fiche_revision_id).toBe("rev-moderated");
+    });
+  });
 });

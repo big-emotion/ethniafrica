@@ -34,8 +34,12 @@ for (const facet of FACETS) {
       waitUntil: "domcontentloaded",
     });
 
-    const form = page.getByTestId("facet-filter-bar");
-    const search = page.getByRole("searchbox", { name: facet.label });
+    // Scoped to the hub: on a streamed first paint the document can still
+    // hold the fallback's copy of the bar beside the hydrated one, and an
+    // unscoped test id then resolves to two forms and fails on strict mode.
+    const hub = page.getByTestId("facet-hub");
+    const form = hub.getByTestId("facet-filter-bar");
+    const search = hub.getByRole("searchbox", { name: facet.label });
     const primarySelect = form.locator("select").first();
 
     await expect(search).toBeVisible();

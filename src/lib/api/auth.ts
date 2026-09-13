@@ -16,6 +16,7 @@ const PBKDF2_ITERATIONS = 600_000;
 const SALT_BYTES = 16;
 const KEY_PREFIX_LENGTH = 20;
 
+// @req REQ-034
 export function getKeyPrefix(rawKey: string): string {
   return rawKey.substring(0, KEY_PREFIX_LENGTH);
 }
@@ -46,12 +47,32 @@ async function pbkdf2Derive(
  * Hash a raw API key with PBKDF2-SHA256 + random salt.
  * Returns a self-describing string: "pbkdf2v1:{iterations}:{base64_salt}:{hex_hash}".
  */
+// @req REQ-034
 export async function hashApiKey(rawKey: string): Promise<string> {
   const salt = new Uint8Array(SALT_BYTES);
   crypto.getRandomValues(salt);
   const saltB64 = btoa(String.fromCharCode(...Array.from(salt)));
   const hash = await pbkdf2Derive(rawKey, salt, PBKDF2_ITERATIONS);
   return `pbkdf2v1:${PBKDF2_ITERATIONS}:${saltB64}:${hash}`;
+}
+
+/**
+ * Equality that visits every character whatever differs, so the time taken
+ * says nothing about how much of a candidate hash was right — `===` returns at
+ * the first mismatch.
+ *
+ * Written out rather than taken from `node:crypto`: this module is imported by
+ * `src/middleware.ts`, which Next compiles into the edge bundle, where Node
+ * built-ins do not exist. Importing `timingSafeEqual` built cleanly and then
+ * failed every request with a 500 at runtime.
+ */
+function constantTimeEqual(a: string, b: string): boolean {
+  if (a.length !== b.length) return false;
+  let difference = 0;
+  for (let index = 0; index < a.length; index++) {
+    difference |= a.charCodeAt(index) ^ b.charCodeAt(index);
+  }
+  return difference === 0;
 }
 
 async function verifyHashedKey(
@@ -66,7 +87,7 @@ async function verifyHashedKey(
   if (!iterations || !saltB64 || !expectedHex) return false;
   const salt = Uint8Array.from(atob(saltB64), (c) => c.charCodeAt(0));
   const computed = await pbkdf2Derive(rawKey, salt, iterations);
-  return computed === expectedHex;
+  return constantTimeEqual(computed, expectedHex);
 }
 
 /** Canonical api_keys.tier values (migration 013 CHECK constraint). */
@@ -80,6 +101,7 @@ export type ValidateResult =
  * Validate an API key and update last_used_at if valid.
  * Looks up by key_prefix, then verifies with PBKDF2.
  */
+// @req REQ-034
 export async function validateApiKey(rawKey: string): Promise<ValidateResult> {
   if (!rawKey || rawKey.trim() === "") {
     return { valid: false, reason: "missing_api_key" };

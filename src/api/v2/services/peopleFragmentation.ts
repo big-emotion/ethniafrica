@@ -10,6 +10,7 @@
 
 import { createServerClient } from "@/lib/supabase/server";
 import { logger } from "@/lib/api/logger";
+import { walkRanges, type RangeWalk } from "@/lib/supabase/queries/walkRanges";
 import type {
   BorderPair,
   FragmentationCountry,
@@ -312,32 +313,31 @@ interface FragmentationCandidate {
 async function sweepCandidates(
   supabase: ReturnType<typeof createServerClient>
 ): Promise<FragmentationCandidate[] | null> {
-  const candidates: FragmentationCandidate[] = [];
-
-  for (let page = 0; page < CANDIDATE_MAX_PAGES; page++) {
-    const start = page * CANDIDATE_PAGE_SIZE;
-    const { data, error } = await supabase
-      .from("afrik_peoples")
-      .select(CANDIDATE_SELECT)
-      .order("id", { ascending: true })
-      .range(start, start + CANDIDATE_PAGE_SIZE - 1);
-
-    if (error || !data) {
-      logger.error("peopleFragmentation.sweepCandidates failed", error, {
-        page,
-      });
-      return null;
-    }
-
-    const rows = data as unknown as FragmentationCandidate[];
-    candidates.push(...rows);
-    if (rows.length < CANDIDATE_PAGE_SIZE) return candidates;
+  let walk: RangeWalk<FragmentationCandidate>;
+  try {
+    walk = await walkRanges(
+      async (from, to) => {
+        const { data, error } = await supabase
+          .from("afrik_peoples")
+          .select(CANDIDATE_SELECT)
+          .order("id", { ascending: true })
+          .range(from, to);
+        if (error || !data) throw error ?? new Error("no rows returned");
+        return data as unknown as FragmentationCandidate[];
+      },
+      { pageSize: CANDIDATE_PAGE_SIZE, maxPages: CANDIDATE_MAX_PAGES }
+    );
+  } catch (error) {
+    logger.error("peopleFragmentation.sweepCandidates failed", error);
+    return null;
   }
 
-  logger.error(
-    `peopleFragmentation.sweepCandidates exceeded ${CANDIDATE_MAX_PAGES} pages — the index is truncated`
-  );
-  return candidates;
+  if (walk.truncated) {
+    logger.error(
+      `peopleFragmentation.sweepCandidates exceeded ${CANDIDATE_MAX_PAGES} pages — the index is truncated`
+    );
+  }
+  return walk.rows;
 }
 
 /**

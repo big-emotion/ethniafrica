@@ -246,7 +246,7 @@
   },
   "_translation": {
     "deferred": {
-      "en": "English translation is deferred until the linguistic-family corpus receives a coordinated translation and terminology review."
+      "en": "English translation is deferred: none of the 24 linguistic family records has an English sidecar, so translating this one alone would make it the atlas's only English family record. This is a sequencing choice, not a pipeline refusal. It follows the family corpus's first translation pass."
     }
   }
 }

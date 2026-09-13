@@ -15,12 +15,15 @@ import path from "path";
 const DEFAULT_DATASET_ROOT = "dataset/source/afrik";
 
 /**
- * DESCENDING RATCHET. This number is the count the corpus stood at when the
- * gate landed. Lower it whenever a classification pass clears sources; NEVER
- * raise it. Raising it would let a regression in and turn the gate into a
- * record of the drift instead of a brake on it.
+ * A ratchet, not a budget — the same rule as `DEAD_CODE_CEILINGS`. A count
+ * above it fails, and so does a count below it: a ceiling left standing above
+ * the real number is room to regress into without a red run, which is how this
+ * one sat at 1 010 while the corpus measured 1 002. A classification pass
+ * lowers this line in the same change; NEVER raise it.
+ *
+ * 1010 -> 1002, measured 2026-09-12; 1002 -> 1000 after the Namibia source review.
  */
-export const NEEDS_REVIEW_RATCHET = 1010;
+export const NEEDS_REVIEW_RATCHET = 1000;
 
 /** The doctrine's three tiers, plus the numeric tiers the name/relation/migration fiches still carry. */
 const TIERS_WITH_AUTHORITY = new Set<unknown>([
@@ -42,6 +45,8 @@ export interface SourceTierCoverageResult {
   count: number;
   threshold: number;
   untiered: UntieredSource[];
+  /** Why the gate failed, including which line to change; null when it holds. */
+  error: string | null;
 }
 
 function collectJsonFiles(root: string): string[] {
@@ -125,13 +130,16 @@ export function checkSourceTierCoverage(
   threshold: number
 ): SourceTierCoverageResult {
   const untiered = findUntieredSources(datasetRoot);
+  const count = untiered.length;
 
-  return {
-    ok: untiered.length <= threshold,
-    count: untiered.length,
-    threshold,
-    untiered,
-  };
+  let error: string | null = null;
+  if (count > threshold) {
+    error = `Source tier coverage regressed: ${count} untiered sources exceed the ratchet of ${threshold}. Tier the new sources — do not raise the ratchet.`;
+  } else if (count < threshold) {
+    error = `Source tier coverage improved: ${count} untiered sources against a ratchet of ${threshold} — lower NEEDS_REVIEW_RATCHET to ${count} in scripts/ci/checkSourceTierCoverage.ts so it cannot climb back.`;
+  }
+
+  return { ok: error === null, count, threshold, untiered, error };
 }
 
 function main(): void {
@@ -147,20 +155,15 @@ function main(): void {
     `Untiered sources: ${result.count} across ${byFile.size} fiches (ratchet: ${result.threshold})`
   );
 
-  if (!result.ok) {
+  if (result.count > result.threshold) {
     for (const entry of result.untiered.slice(0, 40)) {
       console.log(`  ${entry.file} ${entry.path}: ${entry.title}`);
     }
-    console.error(
-      `Source tier coverage regressed: ${result.count} untiered sources exceed the ratchet of ${result.threshold}. Tier the new sources — do not raise the ratchet.`
-    );
-    process.exit(1);
   }
 
-  if (result.count < result.threshold) {
-    console.log(
-      `Ratchet can be lowered to ${result.count} in scripts/ci/checkSourceTierCoverage.ts.`
-    );
+  if (!result.ok) {
+    console.error(result.error);
+    process.exit(1);
   }
 }
 

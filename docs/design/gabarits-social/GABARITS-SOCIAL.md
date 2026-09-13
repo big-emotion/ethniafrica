@@ -1,7 +1,8 @@
 # Gabarits sociaux EthniAfrica — spécification de reproduction
 
 Version 1 · 2026-09-10
-Cible : `ethni_carousel.py` (images) et `ethni_render.py` (vidéo).
+Cible : `ethni_carrousel2.py` → `ethni_compose.py` (images) et `ethni_audio.py` →
+`ethni_montage.py` (vidéo), sous `social/harness/`.
 Ce document suffit à reproduire les gabarits au pixel près sans lire le HTML.
 
 ---

@@ -1,5 +1,6 @@
 import { createServerClient } from "@/lib/supabase/server";
 import { logger } from "@/lib/api/logger";
+import { walkRanges } from "@/lib/supabase/queries/walkRanges";
 
 /**
  * Which linguistic families the corpus places in each country.
@@ -20,9 +21,8 @@ import { logger } from "@/lib/api/logger";
  */
 
 /**
- * Rows per page. Under PostgREST's 1000-row default ceiling, so that a page
- * the server truncated cannot be mistaken for the last one — a short page is
- * how the walk below knows it has reached the end.
+ * Rows asked for per request. The server may answer fewer; `walkRanges`
+ * keeps reading until a page comes back empty.
  */
 // @req REQ-110
 export const COUNTRY_FAMILY_PAGE_SIZE = 500;
@@ -48,34 +48,30 @@ async function readAllRows<Row>(
   columns: string,
   orderBy: readonly string[]
 ): Promise<Row[]> {
-  const rows: Row[] = [];
+  const walk = await walkRanges(
+    async (from, to) => {
+      let query = supabase.from(table).select(columns);
+      for (const column of orderBy) {
+        query = query.order(column);
+      }
 
-  for (let page = 0; page < COUNTRY_FAMILY_MAX_PAGES; page++) {
-    const start = page * COUNTRY_FAMILY_PAGE_SIZE;
-    let query = supabase.from(table).select(columns);
-    for (const column of orderBy) {
-      query = query.order(column);
-    }
+      const { data, error } = await query.range(from, to);
 
-    const { data, error } = await query.range(
-      start,
-      start + COUNTRY_FAMILY_PAGE_SIZE - 1
-    );
-
-    if (error) {
-      logger.error(`Error walking ${table}`, error);
-      throw error;
-    }
-
-    const batch = (data ?? []) as Row[];
-    rows.push(...batch);
-    if (batch.length < COUNTRY_FAMILY_PAGE_SIZE) return rows;
-  }
-
-  logger.error(
-    `${table} exceeded ${COUNTRY_FAMILY_MAX_PAGES} pages — the fold is truncated`
+      if (error) {
+        logger.error(`Error walking ${table}`, error);
+        throw error;
+      }
+      return (data ?? []) as Row[];
+    },
+    { pageSize: COUNTRY_FAMILY_PAGE_SIZE, maxPages: COUNTRY_FAMILY_MAX_PAGES }
   );
-  return rows;
+
+  if (walk.truncated) {
+    logger.error(
+      `${table} exceeded ${COUNTRY_FAMILY_MAX_PAGES} pages — the fold is truncated`
+    );
+  }
+  return walk.rows;
 }
 
 /**

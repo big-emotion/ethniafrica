@@ -1,20 +1,21 @@
 """The retired gabarit's composer — slots, one composition per role.
 
-Superseded for cards by `ethni_compose.py`, which implements the three layouts of
-GABARITS-SOCIAL.md §5. Kept under a version in its name, rather than deleted,
-because `ethni_render.py` still drives the video through it and migrating the
-video engine is a separate piece of work.
+Superseded by `ethni_compose.py`, which implements the three layouts of
+GABARITS-SOCIAL.md §5 and which `ethni_montage.py` renders new video through. Kept
+under a version in its name only because `ethni_render.py` still re-renders
+montages cut on the retired gabarit; the carousel script that also imported it
+has been deleted.
 
-Nothing new should import this. When the video moves to the new engine, this file
-goes.
+Nothing new should import this. When the last old-gabarit montage no longer needs
+re-rendering, this file and `ethni_render.py` go together.
 """
 """How a block of slots is stacked, for the card and for the video frame alike.
 
 `ethni_type.py` says what one piece of text is. `ethni_plaque.py` draws the figure.
-This module says **in what order they appear and how tightly they sit**, and it is
-imported by `ethni_carousel.py` and by `ethni_render.py` so that the first frame of
-a video and the cover of its carousel are the same composition rather than two
-things that resemble each other.
+This module says **in what order they appear and how tightly they sit**. It was
+imported by the retired carousel script and by `ethni_render.py` so that the first
+frame of a video and the cover of its carousel were the same composition rather
+than two things that resemble each other.
 
 That was the operator's finding on the first witness, and it is the reason this
 module exists: *« La première frame de la vidéo doit ressembler à une image de
@@ -53,8 +54,8 @@ SLOTS = {
     # The opening. Used by a carousel cover and by a video's first scene.
     "couverture": ["serie", "nom", "lieu", "question", "corps"],
     # One point, made once, with its figure and its own source. The figure is a
-    # plaque or a counter, and a card carries one of the two: `ethni_carousel.check`
-    # has always required it, and `ethni_type.ROLES["chiffre"]` has always drawn it
+    # plaque or a counter, and a card carries one of the two: the retired carousel
+    # script's `check` always required it, and `ethni_type.ROLES["chiffre"]` has always drawn it
     # with its `legende` beneath. Only this list was missing, so a counter card
     # passed every check and rendered without its figure — silently, because a
     # missing slot is skipped rather than refused. Carousel 4 is the one deck whose

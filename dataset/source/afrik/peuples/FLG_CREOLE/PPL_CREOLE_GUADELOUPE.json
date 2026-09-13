@@ -60,13 +60,13 @@
           "title": "Debien, Gabriel (1982) - « Les Esclaves », in Histoire des Antilles et de la Guyane (dir. Pierre Pluchon), Privat, pp. 141-161 — hébergé par Généalogie et Histoire de la Caraïbe (GHC)",
           "url": "https://www.ghcaraibe.org/debien/NHC210bis-htm.htm",
           "tier": "referenced",
-          "notes": "Ouvrage académique cité avec auteur, éditeur et pagination ; hébergé par le GHC, une association spécialisée en généalogie et histoire caribéenne."
+          "notes": "Ouvrage académique cité avec auteur, éditeur et pagination ; hébergement par une association spécialisée en généalogie/histoire caribéenne (GHC)."
         },
         {
           "title": "Fondation pour la mémoire de l'esclavage - Biographie de Louis Delgrès",
           "url": "https://memoire-esclavage.org/biographies/louis-delgres",
           "tier": "referenced",
-          "notes": "Fondation de référence sur la mémoire de l'esclavage."
+          "notes": "Fondation nommée, institution de référence sur la mémoire de l'esclavage ; notice biographique référencée."
         }
       ]
     },
@@ -105,7 +105,7 @@
         "title": "Ministère de la Culture - créole guadeloupéen (portail des langues de France)",
         "url": "https://www.culture.gouv.fr/fr/Thematiques/portail-langues-en-france/langues/creole-guadeloupeen",
         "tier": "official",
-        "notes": "Contenu (auto-désignation « Kréyòl Gwadloup », statut de langue régionale) confirmé par indexation moteur de recherche, la récupération directe de la page étant bloquée par une protection anti-robot."
+        "notes": "Auto-désignation « Kréyòl Gwadloup » et statut de langue régionale, relevés dans l'index d'un moteur de recherche : la page elle-même n'a pas pu être consultée directement."
       },
       {
         "title": "Glottolog 5.3 - Guadeloupean Creole French (guad1243)",
@@ -116,7 +116,7 @@
   },
   "_translation": {
     "deferred": {
-      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+      "en": "English translation is deferred: none of the 776 people records has an English sidecar, so translating this one alone would make it the atlas's only English people record. It follows the people corpus's first translation pass."
     }
   }
 }

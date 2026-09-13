@@ -126,8 +126,6 @@ export const quizThemeOptionSchema = z.object({
   playable: z.boolean(),
 });
 
-export type QuizThemeOptionView = z.infer<typeof quizThemeOptionSchema>;
-
 export type QuizScopeOptionView = z.infer<typeof quizScopeOptionSchema>;
 
 // @req REQ-103

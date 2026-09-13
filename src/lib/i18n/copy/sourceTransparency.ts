@@ -37,19 +37,6 @@ const en = {
     expand: "expand pinned version indicator",
     collapse: "collapse pinned version indicator",
   },
-  revisionHistory: {
-    sectionTitle: "History",
-    title: "Revision history",
-    description:
-      "List of all revisions published for this page, with date, moderator and reason.",
-    loading: "Loading…",
-    loadError: "Unable to load the history.",
-    retry: "Try again",
-    empty: "No published revision — initial page",
-    showLess: "Show less",
-    showMore: "Show more",
-    loadMore: "Load more",
-  },
 };
 
 type SourceTransparencyCopy = typeof en;
@@ -93,19 +80,6 @@ const fr: SourceTransparencyCopy = {
       `Depuis cette version figée, ${count} ${count === 1 ? "assertion a" : "assertions ont"} été corrigée${count === 1 ? "" : "s"}`,
     expand: "développer l’indicateur de version figée",
     collapse: "réduire l’indicateur de version figée",
-  },
-  revisionHistory: {
-    sectionTitle: "Historique",
-    title: "Historique des révisions",
-    description:
-      "Liste de toutes les révisions publiées pour cette page, avec date, modérateur et raison.",
-    loading: "Chargement…",
-    loadError: "Impossible de charger l'historique.",
-    retry: "Réessayer",
-    empty: "Aucune révision publiée — page initiale",
-    showLess: "Voir moins",
-    showMore: "Voir plus",
-    loadMore: "Charger plus",
   },
 };
 

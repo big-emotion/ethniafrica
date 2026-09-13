@@ -69,10 +69,9 @@ import { quizLanguageSchema } from "@/api/v2/schemas/quiz";
 import { createApiError } from "@/api/v2/utils/response";
 import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
 import { applyRateLimit } from "@/lib/api/rate-limit";
+import { CORPUS_CACHE_CONTROL as CACHE_CONTROL } from "@/api/v2/utils/corpusRoute";
 import { logger } from "@/lib/api/logger";
 import type { NextRequest } from "next/server";
-
-const CACHE_CONTROL = "s-maxage=3600";
 
 // @req REQ-103
 export async function GET(request: NextRequest) {

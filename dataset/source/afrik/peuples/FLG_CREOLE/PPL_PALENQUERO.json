@@ -58,7 +58,7 @@
           "title": "Ansari-Pour, N. et al., « Palenque de San Basilio in Colombia: genetic data support an oral history of a paternal ancestry in Congo »",
           "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4822459/",
           "tier": "referenced",
-          "notes": "Article publie dans Proceedings of the Royal Society B: Biological Sciences (2016)."
+          "notes": "Article publie dans Proceedings of the Royal Society B: Biological Sciences (2016), revue academique evaluee par les pairs."
         },
         {
           "title": "Schwegler, A., « On the African origin(s) of Palenquero »",
@@ -114,7 +114,7 @@
   },
   "_translation": {
     "deferred": {
-      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+      "en": "English translation is deferred: none of the 776 people records has an English sidecar, so translating this one alone would make it the atlas's only English people record. It follows the people corpus's first translation pass."
     }
   }
 }

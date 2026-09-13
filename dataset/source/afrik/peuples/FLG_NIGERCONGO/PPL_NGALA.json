@@ -112,7 +112,7 @@
         "title": "Bokamba, E.G. — Lingala as a Supranational Language in DRC. CERECK, 2019",
         "url": "https://cereck.org/wp-content/uploads/2021/08/Kami-Export-EGBokamba-2019-PRFNL-DRAFt-2-LINGALA-AS-A-SUPRANATIONAL-LANGUAGE-IN-D.R.-CONGO_.pdf",
         "tier": "referenced",
-        "notes": "Academic paper by linguist E. G. Bokamba, hosted by the Center for Research on the Congo-Kinshasa."
+        "notes": "Academic paper by the linguist E.G. Bokamba, hosted by the Center for Research on the Congo-Kinshasa."
       },
       {
         "title": "Ugent Biblio — The linguistic features of Bangala before Lingala",
@@ -128,7 +128,7 @@
         "title": "MustGo — Lingala Language",
         "url": "https://www.mustgo.com/worldlanguages/lingala/",
         "tier": "unverified",
-        "notes": "General-reference language site with no identifiable author or institutional backing."
+        "notes": "General-reference language site; no author or institution is identified."
       },
       {
         "title": "Joshua Project — Bangala in DRC",
@@ -144,31 +144,31 @@
         "title": "Glottolog 5.3 — Bangala [bang1353]",
         "url": "https://glottolog.org/resource/languoid/id/bang1353",
         "tier": "official",
-        "notes": "Used to correct the language's ISO 639-3 code (bxg, previously misrecorded as lol, the code for Mongo) and to confirm its Bantu Zone C / Bangi-Ntomba classification and non-endangered status."
+        "notes": "Supports the language's ISO 639-3 code bxg (not lol, the code for Mongo), its Bantu Zone C / Bangi-Ntomba classification and its non-endangered status."
       },
       {
         "title": "Meeuwis, M. — Redeeming a killer language: Protestant missionaries' engagements with Bangala and Lingala in the Belgian Congo, 1900–1935. Canadian Journal of African Studies, 58(3), 2024",
         "url": "https://www.tandfonline.com/doi/full/10.1080/00083968.2024.2382715",
         "tier": "referenced",
-        "notes": "Used for the confessional (Protestant/Catholic) split in naming practice between bangala and lingala from 1900 onward."
+        "notes": "Peer-reviewed academic journal article; used for the confessional (Protestant/Catholic) split in naming practice between bangala and lingala from 1900 onward."
       },
       {
         "title": "Weeks, J.H. — Among Congo Cannibals: Experiences, Impressions, and Adventures during a Thirty Years' Sojourn amongst the Boloki and Other Congo Tribes. Seeley, Service & Co., 1913",
         "url": "https://www.gutenberg.org/ebooks/69650",
         "tier": "referenced",
-        "notes": "Read with care for its colonial-era framing; used for village and district political organization."
+        "notes": "Published primary ethnographic account by a missionary resident among the Boloki for thirty years; read with care for its era's colonial framing, and cited here to ground the village/district political-organization content."
       },
       {
         "title": "Wikidata — Bangala (Q2882454)",
         "url": "https://www.wikidata.org/wiki/Q2882454",
         "tier": "unverified",
-        "notes": "Used only for the external identifier, not for any factual prose claim."
+        "notes": "Crowdsourced database; used only for the external identifier, not for any factual prose claim."
       }
     ]
   },
   "_translation": {
     "deferred": {
-      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
     }
   }
 }

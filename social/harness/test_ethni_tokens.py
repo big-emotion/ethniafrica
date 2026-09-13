@@ -1,12 +1,12 @@
-"""Checks that the two render scripts can no longer hold a style value of their own.
+"""Checks that the render modules can no longer hold a style value of their own.
 
     ./venv/bin/python test_ethni_tokens.py
 
 Plain assertions rather than pytest: the harness has no test dependency and adding
 one to check a CSS parser would cost more than it buys.
 
-The last assertion is the one that matters. It reads `ethni_carousel.py` and
-`ethni_render.py` and fails on any hex literal left in them, which is the drift
+The last assertion is the one that matters. It reads every module that draws a
+published frame and fails on any hex literal left in them, which is the drift
 that put a logo gold on text — `#FFD33D` on a parchment card, illegible.
 """
 import pathlib
@@ -188,11 +188,26 @@ def test_internal_notes_never_reach_a_printed_field():
     assert not tk.note_interne("G. W. Bacon, Londres, v. 1906")
 
 
+# The live path — cards through `ethni_carrousel2.py` → `ethni_compose.py`, video
+# through `ethni_audio.py` → `ethni_montage.py` with `ethni_soustitre.py` — plus
+# `ethni_render.py`, which still renders montages cut on the old gabarit. The gate
+# used to read the retired carousel script instead, so it was guarding a file no
+# render went through while the modules that did draw were never scanned.
+RENDER_MODULES = (
+    "ethni_carrousel2.py",
+    "ethni_compose.py",
+    "ethni_audio.py",
+    "ethni_montage.py",
+    "ethni_soustitre.py",
+    "ethni_render.py",
+)
+
+
 def test_no_style_literal_survives_in_the_render_scripts():
     """The hard rule of the reset, enforced rather than promised."""
     hexes = re.compile(r"#[0-9A-Fa-f]{3,8}\b")
     offenders = []
-    for name in ("ethni_carousel.py", "ethni_render.py"):
+    for name in RENDER_MODULES:
         source = (HARNESS / name).read_text(encoding="utf-8")
         # Strip docstrings and comments: a hex quoted in prose explaining the old
         # defect is documentation, and deleting the explanation would invite the

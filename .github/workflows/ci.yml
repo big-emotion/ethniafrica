@@ -54,7 +54,7 @@ jobs:
 
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
-          node-version: "20.x"
+          node-version: "22"
           cache: "npm"
 
       - run: npm ci
@@ -111,7 +111,13 @@ jobs:
 
       - run: npm run check:jira-template
 
-      - run: npm run check:action-pins
+      # --resolve also asks GitHub whether each pinned commit exists. A pin with
+      # a perfect shape and an invented hash failed the Storybook deploy fifteen
+      # times on main while this step, checking the shape only, stayed green.
+      # The check asks through the preinstalled `gh`, which reads GH_TOKEN.
+      - run: npm run check:action-pins -- --resolve
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # A `run:` block is shell source that YAML validation never parses, so a
       # quoting mistake in one only surfaces as a red run, minutes later, with
@@ -149,6 +155,12 @@ jobs:
       # migrate-recette.yml, and nightly in data-integrity.yml.
       - run: npm run check:migration-files
 
+      # Replays the migration files as a schema timeline and fails on any live
+      # table that never received ENABLE ROW LEVEL SECURITY — the anon key ships
+      # in the browser bundle, so such a table is writable by any visitor. The
+      # script existed, passed, and was wired to nothing.
+      - run: npm run check:rls-coverage
+
       - run: npm run typecheck
 
       - run: npm run format:check
@@ -184,3 +196,37 @@ jobs:
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co' }}
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder-anon-key' }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY || 'placeholder-service-role-key' }}
+
+      # Nothing above may rewrite a tracked file or leave an unignored one.
+      # next-env.d.ts was rewritten by every `next build` and committed back by
+      # whoever built last, so its content flipped with each contributor; it is
+      # untracked now, and this step keeps the next generated file from taking
+      # its place unnoticed.
+      - name: Check the gates left the tree clean
+        run: |
+          git diff --exit-code
+          dirty="$(git status --porcelain)"
+          if [ -n "$dirty" ]; then
+            printf 'Untracked or modified files after the build:\n%s\n' "$dirty"
+            exit 1
+          fi
+
+  dependency-audit:
+    # A high-severity advisory in the installed tree fails the PR that
+    # introduces it. Its own job so it reports without waiting on the build,
+    # and so a new advisory published against an untouched lockfile names
+    # itself instead of hiding inside the build's failure. Moderate findings
+    # stay visible in the log without blocking.
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "20.x"
+          cache: "npm"
+
+      - run: npm audit --audit-level=high

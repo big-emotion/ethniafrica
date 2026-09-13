@@ -2,6 +2,7 @@
  * Country Service - Business logic for countries
  */
 
+import { DEFAULT_PAGE_SIZE } from "@/api/v2/schemas/pagination";
 import {
   getAllAfrikCountries,
   getAfrikCountryById,
@@ -26,7 +27,7 @@ export interface PaginatedResult<T> {
 // @req REQ-019
 export async function getCountries(
   page: number = 1,
-  perPage: number = 20
+  perPage: number = DEFAULT_PAGE_SIZE
 ): Promise<PaginatedResult<Country>> {
   const all = await getAllAfrikCountries();
   const start = (page - 1) * perPage;

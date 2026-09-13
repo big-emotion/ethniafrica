@@ -53,9 +53,8 @@ import { listDossiersHandler } from "@/api/v2/handlers/dossiers";
 import { listDossiersQuerySchema } from "@/api/v2/schemas/dossiers";
 import { createApiError } from "@/api/v2/utils/response";
 import { corsOptionsResponse, jsonWithCors } from "@/lib/api/cors";
+import { CORPUS_CACHE_CONTROL as CACHE_CONTROL } from "@/api/v2/utils/corpusRoute";
 import { logger } from "@/lib/api/logger";
-
-const CACHE_CONTROL = "s-maxage=3600";
 
 // @req REQ-114
 export async function GET(request: NextRequest) {

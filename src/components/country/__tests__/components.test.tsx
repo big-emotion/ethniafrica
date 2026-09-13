@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { PeoplesSection } from "../PeoplesSection";
+
 import type {
   HeroData,
   PeoplesData,
@@ -228,6 +229,7 @@ describe("PeoplesSection", () => {
     expect(endonymEl).not.toHaveAttribute("lang");
   });
 });
+
 describe("PeoplesSection — what the bar admits (FR28)", () => {
   const peoples = (percentages: number[]) => ({
     totalPopulation: "220 M",

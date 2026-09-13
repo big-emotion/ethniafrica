@@ -1,5 +1,7 @@
 import { z } from "zod";
 
+import { SOURCE_TIERS } from "@/types/sources";
+
 const languageIdSchema = z.string().regex(/^[a-z]{3}$/, {
   message: "Invalid language id format (expected lowercase ISO 639-3)",
 });
@@ -10,7 +12,7 @@ const languageSourceSchema = z.object({
   id: nonEmptyStringSchema,
   title: nonEmptyStringSchema,
   url: z.string().nullable(),
-  tier: z.enum(["official", "referenced", "unverified"]),
+  tier: z.enum(SOURCE_TIERS),
   notes: z.string().nullable().optional(),
 });
 

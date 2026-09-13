@@ -138,18 +138,20 @@
       {
         "title": "Les Amis du musée du quai Branly – Jacques Chirac — \"Un rare masque nzebi offert au musée grâce au dîner de gala des Amis\" (3 juillet 2018)",
         "url": "https://www.amisquaibranly.fr/un-rare-masque-nzebi-offert-au-musee-grace-au-diner-de-gala-des-amis/",
-        "tier": "referenced"
+        "tier": "referenced",
+        "notes": "The museum's own announcement of the acquisition."
       },
       {
         "title": "Georges Dupré — Koto, l'égalité nécessaire : savoir et pouvoir dans une société clanique : les Nzèbi du Congo et du Gabon (L'Harmattan, 2019)",
         "url": "https://searchworks.stanford.edu/view/13386359",
-        "tier": "referenced"
+        "tier": "referenced",
+        "notes": "Library catalogue record of an academic monograph by a specialist of Central African lineage societies."
       },
       {
         "title": "Nestor Ide Righou — Les Nzèbi du Gabon, des origines à 1915 : essai d'étude historique (doctoral thesis, Université Paris 1, 2005, dir. Claude-Hélène Perrot)",
         "url": "https://theses.fr/2005PA010542",
         "tier": "referenced",
-        "notes": "Listed on the French national theses portal as an identifiable academic work."
+        "notes": "Catalogued on the French national theses portal."
       },
       {
         "title": "Gérard Collomb — \"Les sept fils de Nzèbi. Un mythe cosmogonique des Banzèbi du Gabon\", Journal des africanistes, vol. 49, fasc. 2 (1979), p. 89-134",
@@ -161,7 +163,7 @@
         "title": "Glottolog 5.x — Njebi [njeb1242]",
         "url": "https://glottolog.org/resource/languoid/id/njeb1242",
         "tier": "official",
-        "notes": "Confirms glottocode njeb1242 and ISO 639-3 nzb, consistent with the fiche's existing recorded language codes."
+        "notes": "Confirms glottocode njeb1242 and ISO 639-3 nzb."
       },
       {
         "title": "CIA World Factbook — Gabon, People and Society (ethnic groups)",
@@ -173,13 +175,13 @@
         "title": "Wikidata — Nzabi (Q2882351)",
         "url": "https://www.wikidata.org/wiki/Q2882351",
         "tier": "unverified",
-        "notes": "Cited only to document the Wikidata cross-reference — confirmed instance-of \"ethnic group\" with associated countries Gabon and Republic of the Congo — not as evidence for any narrative claim."
+        "notes": "Openly edited reference, cited only for the Wikidata identifier — an item described as an ethnic group associated with Gabon and the Republic of the Congo — and not as evidence for any narrative claim."
       }
     ]
   },
   "_translation": {
     "deferred": {
-      "en": "English translation is deferred until the people-record corpus receives a coordinated translation pass and terminology review."
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
     }
   }
 }

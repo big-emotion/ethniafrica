@@ -47,6 +47,13 @@ function ruleBody(selector: string): string {
 }
 
 describe("parchment layout — one continuous document", () => {
+  // @req REQ-154
+  it("gives each linked personal name a 44px touch target", () => {
+    const link = ruleBody(".afh-name-pills a");
+    expect(link).toMatch(/min-height:\s*44px/);
+    expect(link).toMatch(/min-width:\s*44px/);
+  });
+
   // A patronyme is one corpus token, so `text-wrap` cannot help at 320px.
   // Without an emergency wrap, Randriamampionona widens the whole document.
   // @req REQ-147
