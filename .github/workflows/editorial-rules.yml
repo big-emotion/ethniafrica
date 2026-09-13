@@ -3,10 +3,6 @@ name: Editorial Rules Gate
 on:
   pull_request:
     branches: [main, recette]
-    paths:
-      - "dataset/source/afrik/**"
-      - "scripts/ci/checkEditorialRules.ts"
-      - ".github/workflows/editorial-rules.yml"
   workflow_dispatch:
 
 # The `push` trigger on the same two branches re-ran this gate on merge over an
